@@ -18,7 +18,7 @@ class DentalRecord extends StatelessWidget {
   Widget build(BuildContext context) {
     var scaffold = Scaffold(
         appBar: AppBar(
-          title: Text('Detal Charting'),
+          title: Text('Dental Charting'),
         ),
         body: Container(
           child: Center(
