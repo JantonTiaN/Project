@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "223940111084",
+    "firebase_url": "https://fundee-fb816.firebaseio.com",
+    "project_id": "fundee-fb816",
+    "storage_bucket": "fundee-fb816.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223940111084:android:1b6e26444991ad52b613c9",
+        "android_client_info": {
+          "package_name": "com.example.fundee"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "223940111084-oqbagr3kvqgoj95ohmmuj3dahf7bvqfj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7m-zLKSFYTF78w9O-I7xAcrdAe4OkhSM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "223940111084-oqbagr3kvqgoj95ohmmuj3dahf7bvqfj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
