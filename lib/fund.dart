@@ -3,10 +3,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:fundee/detail.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 class FunD extends StatelessWidget {
-  @override
   Widget dentalChart() {
     return Container(
       width: 400.0,
@@ -41,16 +39,4 @@ class FunD extends StatelessWidget {
   }
 }
 
-// body: ListView.builder(
-//   itemCount: 1,
-//   itemBuilder: (context,i){
-//     return GestureDetector(
-//       onTap: () => Navigator.push(context, MaterialPageRoute(
-//           builder: (context) => DetailDental()
-//           )),
-//       child: Row(
 
-//       )
-//     );
-//   },
-// ),
