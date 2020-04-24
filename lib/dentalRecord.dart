@@ -3,10 +3,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:fundee/detail.dart';
-import 'package:cached_network_image/cached_network_image.dart';
+
 
 class DentalRecord extends StatelessWidget {
-  @override
   Widget dentalChart() {
     return Container(
       width: 400.0,
