@@ -4,8 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:fundee/detail.dart';
 
-
-class DentalRecord extends StatelessWidget {
+class FunD extends StatelessWidget {
   Widget dentalChart() {
     return Container(
       width: 400.0,
@@ -17,7 +16,7 @@ class DentalRecord extends StatelessWidget {
   Widget build(BuildContext context) {
     var scaffold = Scaffold(
         appBar: AppBar(
-          title: Text('Dental Charting'),
+          title: Text('FunD'),
         ),
         body: Container(
           child: Center(
@@ -39,4 +38,5 @@ class DentalRecord extends StatelessWidget {
     return scaffold;
   }
 }
+
 
