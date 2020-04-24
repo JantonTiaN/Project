@@ -41,16 +41,3 @@ class DentalRecord extends StatelessWidget {
   }
 }
 
-// body: ListView.builder(
-//   itemCount: 1,
-//   itemBuilder: (context,i){
-//     return GestureDetector(
-//       onTap: () => Navigator.push(context, MaterialPageRoute(
-//           builder: (context) => DetailDental()
-//           )),
-//       child: Row(
-
-//       )
-//     );
-//   },
-// ),
