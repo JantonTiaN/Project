@@ -31,7 +31,7 @@ class Home extends StatelessWidget{
     return Container(
       width: 150.0,
       height: 150.0,
-      child: Image.asset("assets/images/tooth1.png"),     
+      child: Image.asset("assets/images/ToothLogo.png"),     
     );
     
 
