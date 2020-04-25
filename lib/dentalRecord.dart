@@ -5,14 +5,13 @@ import 'package:flutter/material.dart';
 import 'package:fundee/detail.dart';
 
 class DentalRecord extends StatelessWidget {
-  @override
-  Widget dentalChart() {
-    return Container(
-      width: 400.0,
-      height: 400.0,
-      child: Image.asset('assets/images/DentalChart(Adult).png'),
-    );
-  }
+  // Widget dentalChart() {
+  //   return Container(
+  //     width: 400.0,
+  //     height: 400.0,
+  //     child: Image.asset('assets/images/DentalChart(Adult).png'),
+  //   );
+  // }
 
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,4 +55,5 @@ class DentalRecord extends StatelessWidget {
         
   }
 }
+
 
