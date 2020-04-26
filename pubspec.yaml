@@ -45,17 +45,48 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-   - assets/images/
-   - assets/images/1.png
-   - assets/images/2.png
-   - assets/images/AllGum.png
    - assets/images/button.png
+   - assets/images/DentalChart(Adult).png
    - assets/images/ToothLogo.png
    - assets/images/ToothNo1.png
    - assets/images/tooth1-1.png
    - assets/images/tooth1-2.png
    - assets/images/tooth1-3.png
-   #  - assets/images/a_dot_ham.jpeg
+   - images/tooth/AllGum.png
+   - images/tooth/1-lastest.png
+   - images/tooth/2-lastest.png
+   - images/tooth/3-lastest.png
+   - images/tooth/4-lastest.png
+   - images/tooth/5-lastest.png
+   - images/tooth/6-lastest.png
+   - images/tooth/7-lastest.png
+   - images/tooth/8-lastest.png
+   - images/tooth/9-lastest.png
+   - images/tooth/10-lastest.png
+   - images/tooth/11-lastest.png
+   - images/tooth/12-lastest.png
+   - images/tooth/13-lastest.png
+   - images/tooth/14-lastest.png
+   - images/tooth/15-lastest.png
+   - images/tooth/16-lastest.png
+   - images/tooth/17-lastest.png
+   - images/tooth/18-lastest.png
+   - images/tooth/19-lastest.png
+   - images/tooth/20-lastest.png
+   - images/tooth/21-lastest.png
+   - images/tooth/22-lastest.png
+   - images/tooth/23-lastest.png
+   - images/tooth/24-lastest.png
+   - images/tooth/25-lastest.png
+   - images/tooth/26-lastest.png
+   - images/tooth/27-lastest.png
+   - images/tooth/28-lastest.png
+   - images/tooth/29-lastest.png
+   - images/tooth/30-lastest.png
+   - images/tooth/31-lastest.png
+   - images/tooth/32-lastest.png
+   #  - assets/images/a_dot_ham.jpeg  
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

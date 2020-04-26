@@ -15,6 +15,6 @@ class DetailDental extends StatelessWidget {
 Widget tooth() {
   return Container(
       child: Center(
-        child: Image.asset('assets/images/tooth.png'),
-      ));
+          // child: Image.asset('assets/images/1.png'),
+          ));
 }
