@@ -52,7 +52,7 @@ Widget tooth1Detail(BuildContext context) {
 
 Widget tooth2Detail(BuildContext context) {
   return Scaffold(
-    appBar: AppBar(title: Text('Tooth1 Detail')),
+    appBar: AppBar(title: Text('Tooth2 Detail')),
     body: Center(
       child: Stack(
         children: <Widget>[
@@ -88,7 +88,7 @@ Widget tooth2Detail(BuildContext context) {
 
 Widget tooth3Detail(BuildContext context) {
   return Scaffold(
-    appBar: AppBar(title: Text('Tooth1 Detail')),
+    appBar: AppBar(title: Text('Tooth3 Detail')),
     body: Center(
       child: Stack(
         children: <Widget>[
