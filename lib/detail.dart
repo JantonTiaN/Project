@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fundee/dentalRecord.dart';
 
 class DetailDental extends StatelessWidget {
   @override
@@ -6,9 +7,7 @@ class DetailDental extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text('Dental Charting')),
       body: Center(
-        child: Column(
-          children: <Widget>[tooth1(), tooth2(), tooth3()],
-        ),
+
       ),
       extendBody: true,
       bottomNavigationBar: BottomAppBar(
@@ -29,8 +28,6 @@ class DetailDental extends StatelessWidget {
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
-}
-
 Widget tooth1() {
   return Container(
       width: 200,
@@ -50,4 +47,6 @@ Widget tooth3() {
       width: 200,
       height: 200,
       child: Image.asset("assets/images/tooth1-3.png"));
+
+}
 }

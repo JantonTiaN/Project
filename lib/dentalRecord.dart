@@ -19,10 +19,11 @@ class DentalRecord extends StatelessWidget {
                 child: IconButton(
                     icon: Image.asset('images/tooth/1-lastest.png'),
                     onPressed: () {
+                      // tooth1Detail();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth1Detail(context)));
                     }),
               ),
               Container(
@@ -33,7 +34,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth2Detail(context)));
                     }),
               ),
               Container(
@@ -44,7 +45,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth3Detail(context)));
                     }),
               ),
               Container(
@@ -259,7 +260,7 @@ class DentalRecord extends StatelessWidget {
               Container(
                 height: 43,
                 width: 43,
-                margin: EdgeInsets.fromLTRB(235, 329, 00, 0),
+                margin: EdgeInsets.fromLTRB(237, 330, 00, 0),
                 child: IconButton(
                     icon: Image.asset('images/tooth/21-lastest.png'),
                     onPressed: () {
@@ -270,9 +271,9 @@ class DentalRecord extends StatelessWidget {
                     }),
               ),
               Container(
-                height: 39,
-                width: 39,
-                margin: EdgeInsets.fromLTRB(223, 346, 00, 0),
+                height: 38,
+                width: 38,
+                margin: EdgeInsets.fromLTRB(225, 346, 00, 0),
                 child: IconButton(
                     icon: Image.asset('images/tooth/22-lastest.png'),
                     onPressed: () {
@@ -285,7 +286,7 @@ class DentalRecord extends StatelessWidget {
               Container(
                 height: 36.5,
                 width: 36.5,
-                margin: EdgeInsets.fromLTRB(211, 357, 00, 0),
+                margin: EdgeInsets.fromLTRB(212, 357, 00, 0),
                 child: IconButton(
                     icon: Image.asset('images/tooth/23-lastest.png'),
                     onPressed: () {
