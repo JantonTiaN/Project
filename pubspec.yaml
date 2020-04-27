@@ -82,6 +82,15 @@ flutter:
    - images/tooth/30-lastest.png
    - images/tooth/31-lastest.png
    - images/tooth/32-lastest.png
+   - images/tooth/detail/1-1.png
+   - images/tooth/detail/1-2.png
+   - images/tooth/detail/1-3.png
+   - images/tooth/detail/2-1.png
+   - images/tooth/detail/2-2.png
+   - images/tooth/detail/2-3.png
+   - images/tooth/detail/3-1.png
+   - images/tooth/detail/3-2.png
+   - images/tooth/detail/3-3.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
