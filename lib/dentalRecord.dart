@@ -19,7 +19,6 @@ class DentalRecord extends StatelessWidget {
                 child: IconButton(
                     icon: Image.asset('images/tooth/1-lastest.png'),
                     onPressed: () {
-                      // tooth1Detail();
                       Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -56,7 +55,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth4Detail(context)));
                     }),
               ),
               Container(
@@ -69,7 +68,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth5Detail(context)));
                     }),
               ),
               Container(
@@ -82,7 +81,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth6Detail(context)));
                     }),
               ),
               Container(
@@ -95,7 +94,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth7Detail(context)));
                     }),
               ),
               Container(
@@ -108,7 +107,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth8Detail(context)));
                     }),
               ),
               Container(
@@ -121,7 +120,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth9Detail(context)));
                     }),
               ),
               Container(
@@ -134,7 +133,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth10Detail(context)));
                     }),
               ),
               Container(
@@ -147,7 +146,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth11Detail(context)));
                     }),
               ),
               Container(
@@ -160,7 +159,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth12Detail(context)));
                     }),
               ),
               Container(
@@ -173,7 +172,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth13Detail(context)));
                     }),
               ),
               Container(
@@ -186,7 +185,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth14Detail(context)));
                     }),
               ),
               Container(
@@ -197,7 +196,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth15Detail(context)));
                     }),
               ),
               Container(
@@ -208,7 +207,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DetailDental()));
+                              builder: (context) => tooth16Detail(context)));
                     }),
               ),
               Container(
