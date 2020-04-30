@@ -914,7 +914,7 @@ Widget tooth22Detail(BuildContext context) {
           Container(
             width: 150,
             height: 150,
-            margin: EdgeInsets.fromLTRB(0, 85, 0, 0),
+            margin: EdgeInsets.fromLTRB(0, 100, 0, 0),
             child: IconButton(
               icon: Image.asset('images/tooth/detail/22-2.png'), 
               onPressed: (){
@@ -924,7 +924,7 @@ Widget tooth22Detail(BuildContext context) {
           Container(
             width: 150,
             height: 150,
-            margin: EdgeInsets.fromLTRB(0, 170, 0, 0),
+            margin: EdgeInsets.fromLTRB(0, 200, 0, 0),
             child: IconButton(
               icon: Image.asset('images/tooth/detail/22-3.png'), 
               onPressed: (){
@@ -1124,7 +1124,7 @@ Widget tooth27Detail(BuildContext context) {
           Container(
             width: 150,
             height: 150,
-            margin: EdgeInsets.fromLTRB(0, 85, 0, 0),
+            margin: EdgeInsets.fromLTRB(0, 100, 0, 0),
             child: IconButton(
               icon: Image.asset('images/tooth/detail/27-2.png'), 
               onPressed: (){
@@ -1134,7 +1134,7 @@ Widget tooth27Detail(BuildContext context) {
           Container(
             width: 150,
             height: 150,
-            margin: EdgeInsets.fromLTRB(0, 170, 0, 0),
+            margin: EdgeInsets.fromLTRB(0, 200, 0, 0),
             child: IconButton(
               icon: Image.asset('images/tooth/detail/27-3.png'), 
               onPressed: (){
