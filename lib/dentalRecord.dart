@@ -2,205 +2,174 @@ import 'package:flutter/material.dart';
 import 'package:fundee/detail.dart';
 
 class DentalRecord extends StatelessWidget {
-
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(title: Text('Dental Charting')),
         body: Center(
           child: Stack(
             children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.all(40),
-                child: Center(
-                  child: Container(
-                    child: Column(
+              Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: Padding(
+                  padding: const EdgeInsets.all(30),
+                  child: Center(
+                    child: Container(
+                      child: Column(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Text('Upper'),
-                          Text('Lower')
-                        ],
-                      ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(20),
-                child: Container(
-                    child: Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Text('Right'),
-                          Text('Left')
-                        ],
+                        children: <Widget>[Text('Upper'), Text('Lower')],
                       ),
                     ),
                   ),
+                ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(65, 260, 65, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('1'),
-                    Text('16')
-                  ],
-                )
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: Padding(
+                  padding: const EdgeInsets.all(20),
+                  child: Container(
+                    child: Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[Text('Right'), Text('Left')],
+                      ),
+                    ),
+                  ),
+                ),
               ),
               Container(
-                margin: EdgeInsets.fromLTRB(67, 227, 70, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('2'),
-                    Text('15')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(63, 0, 65, 80),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('1'), Text('16')],
+                  )),
               Container(
-                margin: EdgeInsets.fromLTRB(75, 190, 75, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('3'),
-                    Text('14')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(65, 0, 68, 150),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('2'), Text('15')],
+                  )),
               Container(
-                margin: EdgeInsets.fromLTRB(85, 160, 85, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('4'),
-                    Text('13')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(72, 0, 75, 220),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('3'), Text('14')],
+                  )),
               Container(
-                margin: EdgeInsets.fromLTRB(102, 130, 102, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('5'),
-                    Text('12')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(82, 0, 85, 280),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('4'), Text('13')],
+                  )),
               Container(
-                margin: EdgeInsets.fromLTRB(122, 104, 122, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('6'),
-                    Text('11')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(98, 0, 102, 335),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('5'), Text('12')],
+                  )),
               Container(
-                margin: EdgeInsets.fromLTRB(143, 86, 150, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('7'),
-                    Text('10')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(118, 0, 121, 385),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('6'), Text('11')],
+                  )),
               Container(
-                margin: EdgeInsets.fromLTRB(177, 74, 194, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('8'),
-                    Text('9')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(143, 0, 150, 430),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('7'), Text('10')],
+                  )),
               Container(
-                margin: EdgeInsets.fromLTRB(60, 340, 65, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('32'),
-                    Text('17')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(177, 0, 194, 450),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('8'), Text('9')],
+                  )),
               Container(
-                margin: EdgeInsets.fromLTRB(62, 375, 67, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('31'),
-                    Text('18')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(56, 100, 62, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('32'), Text('17')],
+                  )),
               Container(
-                margin: EdgeInsets.fromLTRB(67, 410, 72, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('30'),
-                    Text('19')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(60, 180, 65, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('31'), Text('18')],
+                  )),
               Container(
-                margin: EdgeInsets.fromLTRB(79, 447, 81, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('29'),
-                    Text('20')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(67, 250, 72, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('30'), Text('19')],
+                  )),
               Container(
-                margin: EdgeInsets.fromLTRB(100, 485, 102, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('28'),
-                    Text('21')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(82, 320, 85, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('29'), Text('20')],
+                  )),
               Container(
-                margin: EdgeInsets.fromLTRB(128, 505, 135, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('27'),
-                    Text('22')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(102, 380, 105, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('28'), Text('21')],
+                  )),
               Container(
-                margin: EdgeInsets.fromLTRB(155, 515, 163, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('26'),
-                    Text('23')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(128, 425, 135, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('27'), Text('22')],
+                  )),
               Container(
-                margin: EdgeInsets.fromLTRB(180, 520, 190, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('25'),
-                    Text('24')
-                  ],
-                )
-              ),
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(155, 448, 163, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('26'), Text('23')],
+                  )),
+              Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  margin: EdgeInsets.fromLTRB(182, 460, 188, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[Text('25'), Text('24')],
+                  )),
               Center(
                 child: Container(
-                  width: 430,
-                  height: 430,
+                  width: MediaQuery.of(context).size.width * 0.84,
+                  height: MediaQuery.of(context).size.height * 0.84,
                   child: Image.asset('images/tooth/AllGum.png'),
                 ),
               ),
@@ -624,8 +593,4 @@ class DentalRecord extends StatelessWidget {
           ),
         ));
   }
-}
-
-Widget number(){
-  
 }
