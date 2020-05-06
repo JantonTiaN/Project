@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fundee/detail.dart';
+import 'dart:ui';
 
 class DentalRecord extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -9,8 +10,8 @@ class DentalRecord extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                 child: Padding(
                   padding: const EdgeInsets.all(30),
                   child: Center(
@@ -24,8 +25,8 @@ class DentalRecord extends StatelessWidget {
                 ),
               ),
               Container(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height,
+                width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                 child: Padding(
                   padding: const EdgeInsets.all(20),
                   child: Container(
@@ -39,128 +40,128 @@ class DentalRecord extends StatelessWidget {
                 ),
               ),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(63, 0, 65, 80),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('1'), Text('16')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(65, 0, 68, 150),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('2'), Text('15')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(72, 0, 75, 220),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('3'), Text('14')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(82, 0, 85, 280),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('4'), Text('13')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio ,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(98, 0, 102, 335),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('5'), Text('12')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(118, 0, 121, 385),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('6'), Text('11')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(143, 0, 150, 430),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('7'), Text('10')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(177, 0, 194, 450),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('8'), Text('9')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(56, 100, 62, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('32'), Text('17')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(60, 180, 65, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('31'), Text('18')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(67, 250, 72, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('30'), Text('19')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(82, 320, 85, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('29'), Text('20')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(102, 380, 105, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('28'), Text('21')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(128, 425, 135, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('27'), Text('22')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(155, 448, 163, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[Text('26'), Text('23')],
                   )),
               Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio,
                   margin: EdgeInsets.fromLTRB(182, 460, 188, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
