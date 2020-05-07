@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fundee/buttonRecord.dart';
 import 'package:fundee/detail.dart';
 
 class DentalRecord extends StatelessWidget {
@@ -408,4 +409,46 @@ class DentalRecord extends StatelessWidget {
           ),
         ));
   }
+  Widget tooth1Detail(BuildContext context) {
+  return Scaffold(
+    appBar: AppBar(title: Text('Tooth1 Detail')),
+    body: Center(
+      child: Stack(
+        children: <Widget>[
+          Container(
+            width: 150,
+            height: 150,
+            margin: EdgeInsets.fromLTRB(0, 0, 0, 260),
+            child: IconButton(
+              icon: Image.asset('images/tooth/detail/1-1.png'), 
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DetailDental()));
+              })
+          ),
+          Container(
+            width: 150,
+            height: 150,
+            margin: EdgeInsets.fromLTRB(0, 85, 0, 0),
+            child: IconButton(
+              icon: Image.asset('images/tooth/detail/1-2.png'), 
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DetailDental()));
+              })
+          ),
+          Container(
+            width: 150,
+            height: 150,
+            margin: EdgeInsets.fromLTRB(0, 170, 0, 0),
+            child: IconButton(
+              icon: Image.asset('images/tooth/detail/1-3.png'), 
+              onPressed: (){
+                Navigator.push(context, MaterialPageRoute(builder: (context) => DetailDental()));
+              })
+          ),
+                    
+        ],
+          
+    )
+  ));
+}
 }
