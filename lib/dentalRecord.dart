@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fundee/buttonRecord.dart';
 import 'package:fundee/detail.dart';
 import 'dart:ui';
 

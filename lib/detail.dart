@@ -1,53 +1,64 @@
 import 'package:flutter/material.dart';
-import 'package:fundee/buttonRecord.dart';
-import 'package:fundee/dentalRecord.dart';
-import 'package:fundee/recordData.dart';
+
 
 class DetailDental extends StatefulWidget {
+
   @override
   _DetailDentalState createState() => _DetailDentalState();
 }
-
 class _DetailDentalState extends State<DetailDental> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text('Dental Charting')),
-      body: Center(
-        child: Text("To Be Continued..."),
-      ),
-      extendBody: true,
-      bottomNavigationBar: BottomAppBar(
+    return Scaffold(         
+      body: SafeArea(
+        child: Card(
+          margin: EdgeInsets.all(10),
             clipBehavior: Clip.antiAlias,
-            shape: const CircularNotchedRectangle(),
-            child: Container(
-                color: Colors.blue,
-                height: 50.0,
+            elevation: 0.0,
+            color: Colors.grey[200],
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(25.0),       
+            ),
+            child: Stack(
+              children: <Widget>[
+                Positioned.fill(
+                  bottom: -90,
+                  right: -90,
+                  child: Align(
+
+                  )),
+                  Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: 500,
+                  child: Padding(                    
+                    padding: const EdgeInsets.only(left: 20.0, top: 20.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        InkWell(
+                          onTap: () {
+                                  Navigator.of(context).pop(true);
+                                  return Future.value(false);
+                                },
+                                child: Icon(
+                                  Icons.arrow_back,
+                                )
+                        )
+                      ],
+                    ),
+                    ),
+                    
+                  
+                  )
+              ],
             ),
         ),
-        floatingActionButton: FloatingActionButton(
-            backgroundColor: Colors.white,
-            onPressed: () {},
-            child: Icon(Icons.add,color: Colors.blue,),
-        ),
-        floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
-    );
+      ),
+      );      
+     
   }
 }
-
-// class DetailDental extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       appBar: AppBar(title: Text('Dental Charting')),
-//       body: Center(
-//         child: Text("To Be Continued..."),
-//       ),
-//     );
-//   }
-// }
-
 
 Widget tooth1Detail(BuildContext context) {
   return Scaffold(
