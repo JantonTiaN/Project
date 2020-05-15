@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fundee/addPatient.dart';
 
 
 class PatientList extends StatefulWidget {
@@ -12,8 +13,9 @@ class _PatientListState extends State<PatientList> {
     return Scaffold(
       appBar: AppBar(title: Text('Patients')),
     floatingActionButton: FloatingActionButton(
-      onPressed: (){},
-      child: Text("+"),
+      onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AddPatient())),
+      child: Text("+"), 
+      
     ),
     );
   }
