@@ -50,9 +50,9 @@ flutter:
    - assets/images/DentalChart(Adult).png
    - assets/images/ToothLogo.png
    - assets/images/ToothNo1.png
-   - assets/images/tooth1-1.png
-   - assets/images/tooth1-2.png
-   - assets/images/tooth1-3.png
+  #  - assets/images/tooth1-1.png
+  #  - assets/images/tooth1-2.png
+  #  - assets/images/tooth1-3.png
    - images/tooth/AllGum.png
    - images/tooth/1-lastest.png
    - images/tooth/2-lastest.png
