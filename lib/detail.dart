@@ -22,20 +22,16 @@ class _DetailDentalState extends State<DetailDental> {
             ),
             child: Stack(
               children: <Widget>[
-                Positioned.fill(
-                  bottom: -90,
-                  right: -90,
-                  child: Align(
-
-                  )),
-                  Container(
+                Container(
                   width: MediaQuery.of(context).size.width,
                   height: 500,
                   child: Padding(                    
                     padding: const EdgeInsets.only(left: 20.0, top: 20.0),
                     child: Column(
+                      
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
+                        
                         InkWell(
                           onTap: () {
                                   Navigator.of(context).pop(true);
@@ -43,6 +39,7 @@ class _DetailDentalState extends State<DetailDental> {
                                 },
                                 child: Icon(
                                   Icons.arrow_back,
+                                  
                                 )
                         )
                       ],
