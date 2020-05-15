@@ -21,6 +21,7 @@ dependencies:
   flutter:
     sdk: flutter
   simple_animations: ^1.3.3
+  curved_navigation_bar: ^0.1.2 #latest version
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -49,9 +50,12 @@ flutter:
    - assets/images/DentalChart(Adult).png
    - assets/images/ToothLogo.png
    - assets/images/ToothNo1.png
-   - assets/images/tooth1-1.png
-   - assets/images/tooth1-2.png
-   - assets/images/tooth1-3.png
+   - assets/images/patient.png
+  #  - assets/images/tooth1-1.png
+  #  - assets/images/tooth1-2.png
+  #  - assets/images/tooth1-3.png
+   - assets/images/Fun-D-Logo-(Blue-New).png
+   - assets/images/Fun-D-Logo-(White-New).png
    - images/tooth/AllGum.png
    - images/tooth/1-lastest.png
    - images/tooth/2-lastest.png
