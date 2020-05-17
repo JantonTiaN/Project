@@ -1,123 +1,86 @@
 import 'package:flutter/material.dart';
+import 'package:fundee/dentalCase.dart';
 import 'package:fundee/patientList.dart';
 
-
 class DetailDental extends StatefulWidget {
-
   @override
   _DetailDentalState createState() => _DetailDentalState();
 }
-class _DetailDentalState extends State<DetailDental> {
 
+class _DetailDentalState extends State<DetailDental> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(         
-      body: SafeArea(
-        child: Card(
-          margin: EdgeInsets.all(10),
-            clipBehavior: Clip.antiAlias,
-            elevation: 0.0,
-            color: Colors.grey[200],
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(25.0),       
-            ),
-            child: Stack(
-              children: <Widget>[
-                Positioned.fill(
-                  bottom: -90,
-                  right: -90,
-                  child: Align(
-
-                  )),
-                  Container(
-                  width: MediaQuery.of(context).size.width,
-                  height: 500,
-                  child: Padding(                    
-                    padding: const EdgeInsets.only(left: 20.0, top: 20.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: <Widget>[
-                        InkWell(
-                          onTap: () {
-                                  Navigator.of(context).pop(true);
-                                  return Future.value(false);
-                                },
-                                child: Icon(
-                                  Icons.arrow_back,
-                                )
-                        )
-                      ],
-                    ),
-                    ),
-                    
-                  
-                  )
-              ],
-            ),
-        ),
-      ),
-      );      
-     
+    return Scaffold(
+      
+    );
   }
 }
+
+class Icontooth {}
 
 Widget tooth1Detail(BuildContext context) {
   return Scaffold(
       appBar: AppBar(title: Text('Tooth1 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/1-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => PatientList()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/1-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/1-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/1-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DentalCase()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/1-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DentalCase()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/1-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DentalCase()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth2Detail(BuildContext context) {
@@ -125,58 +88,64 @@ Widget tooth2Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth2 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/2-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/2-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/2-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/2-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>DentalCase()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/2-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DentalCase()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/2-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DentalCase()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth3Detail(BuildContext context) {
@@ -184,58 +153,64 @@ Widget tooth3Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth3 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/3-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/3-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/3-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/3-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DentalCase()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/3-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DentalCase()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/3-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DentalCase()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth4Detail(BuildContext context) {
@@ -243,58 +218,64 @@ Widget tooth4Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth4 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/4-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/4-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/4-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/4-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/4-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/4-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth5Detail(BuildContext context) {
@@ -302,58 +283,64 @@ Widget tooth5Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth5 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/5-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/5-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/5-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/5-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/5-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/5-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth6Detail(BuildContext context) {
@@ -361,58 +348,64 @@ Widget tooth6Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth6 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/6-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/6-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/6-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/6-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/6-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/6-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth7Detail(BuildContext context) {
@@ -420,58 +413,64 @@ Widget tooth7Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth7 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/7-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/7-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/7-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/7-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/7-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/7-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth8Detail(BuildContext context) {
@@ -479,58 +478,64 @@ Widget tooth8Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth8 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/8-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/8-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/8-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/8-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/8-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/8-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth9Detail(BuildContext context) {
@@ -538,58 +543,64 @@ Widget tooth9Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth9 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/9-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/9-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/9-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/9-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/9-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/9-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth10Detail(BuildContext context) {
@@ -597,58 +608,64 @@ Widget tooth10Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth10 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/10-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/10-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/10-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/10-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/10-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/10-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth11Detail(BuildContext context) {
@@ -656,58 +673,64 @@ Widget tooth11Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth11 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/11-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/11-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/11-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/11-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/11-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/11-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth12Detail(BuildContext context) {
@@ -715,58 +738,64 @@ Widget tooth12Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth12 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/12-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/12-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/12-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/12-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/12-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/12-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth13Detail(BuildContext context) {
@@ -774,58 +803,64 @@ Widget tooth13Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth13 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/13-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/13-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/13-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/13-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/13-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/13-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth14Detail(BuildContext context) {
@@ -833,58 +868,64 @@ Widget tooth14Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth14 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/14-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/14-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/14-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/14-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/14-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/14-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth15Detail(BuildContext context) {
@@ -892,58 +933,64 @@ Widget tooth15Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth15 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/15-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/15-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/15-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/15-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/15-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/15-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth16Detail(BuildContext context) {
@@ -951,58 +998,64 @@ Widget tooth16Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth16 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/16-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/16-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/16-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/16-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/16-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/16-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth17Detail(BuildContext context) {
@@ -1010,58 +1063,64 @@ Widget tooth17Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth17 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/17-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/17-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/17-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/17-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/17-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/17-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth18Detail(BuildContext context) {
@@ -1069,58 +1128,64 @@ Widget tooth18Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth18 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/18-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/18-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/18-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/18-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/18-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/18-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth19Detail(BuildContext context) {
@@ -1128,58 +1193,64 @@ Widget tooth19Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth19 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/19-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/19-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/19-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/19-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/19-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/19-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth20Detail(BuildContext context) {
@@ -1187,58 +1258,64 @@ Widget tooth20Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth20 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/20-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/20-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/20-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/20-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/20-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/20-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth21Detail(BuildContext context) {
@@ -1246,58 +1323,64 @@ Widget tooth21Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth21 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/21-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/21-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/21-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/21-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/21-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/21-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth22Detail(BuildContext context) {
@@ -1305,58 +1388,64 @@ Widget tooth22Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth22 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/22-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/22-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/22-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/22-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/22-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/22-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth23Detail(BuildContext context) {
@@ -1364,58 +1453,64 @@ Widget tooth23Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth23 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/23-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/23-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/23-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/23-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/23-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/23-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth24Detail(BuildContext context) {
@@ -1423,58 +1518,64 @@ Widget tooth24Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth24 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/24-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/24-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/24-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/24-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/24-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/24-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth25Detail(BuildContext context) {
@@ -1482,58 +1583,64 @@ Widget tooth25Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth25 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/25-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/25-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/25-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/25-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/25-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/25-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth26Detail(BuildContext context) {
@@ -1541,58 +1648,64 @@ Widget tooth26Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth26 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/26-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/26-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/26-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/26-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/26-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/26-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth27Detail(BuildContext context) {
@@ -1600,58 +1713,64 @@ Widget tooth27Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth27 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/27-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/27-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/27-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/27-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/27-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/27-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth28Detail(BuildContext context) {
@@ -1659,58 +1778,64 @@ Widget tooth28Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth28 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/28-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/28-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/28-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/28-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/28-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/28-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth29Detail(BuildContext context) {
@@ -1718,58 +1843,64 @@ Widget tooth29Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth29 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/29-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/29-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/29-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/29-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/29-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/29-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth30Detail(BuildContext context) {
@@ -1777,58 +1908,64 @@ Widget tooth30Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth30 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/30-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/30-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/30-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/30-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/30-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/30-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth31Detail(BuildContext context) {
@@ -1836,58 +1973,64 @@ Widget tooth31Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth31 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/31-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/31-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/31-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/31-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/31-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/31-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
 
 Widget tooth32Detail(BuildContext context) {
@@ -1895,57 +2038,62 @@ Widget tooth32Detail(BuildContext context) {
       appBar: AppBar(title: Text('Tooth32 Detail')),
       body: Center(
           child: Container(
-        margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-        padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-        color: Colors.grey[300],
-          child: Stack(
-        children: <Widget>[
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/32-1.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.07,
-            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/32-2.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          ),
-          Container(
-            width: MediaQuery.of(context).size.width *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            height: MediaQuery.of(context).size.height *
-                MediaQuery.of(context).devicePixelRatio *
-                0.1,
-            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-            child: IconButton(
-                icon: Image.asset('images/tooth/detail/32-3.png'),
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DetailDental()));
-                }),
-          )
-        ],
-      ))));
+              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+              color: Colors.grey[300],
+              child: Stack(
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/32-1.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.07,
+                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/32-2.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  ),
+                  Container(
+                    width: MediaQuery.of(context).size.width *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    height: MediaQuery.of(context).size.height *
+                        MediaQuery.of(context).devicePixelRatio *
+                        0.1,
+                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                    child: IconButton(
+                        icon: Image.asset('images/tooth/detail/32-3.png'),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DetailDental()));
+                        }),
+                  )
+                ],
+              ))));
 }
-
