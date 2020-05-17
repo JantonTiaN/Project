@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "223940111084",
-    "firebase_url": "https://fundee-fb816.firebaseio.com",
-    "project_id": "fundee-fb816",
-    "storage_bucket": "fundee-fb816.appspot.com"
+    "project_number": "465859122110",
+    "firebase_url": "https://fun-d-d3f33.firebaseio.com",
+    "project_id": "fun-d-d3f33",
+    "storage_bucket": "fun-d-d3f33.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:223940111084:android:1b6e26444991ad52b613c9",
+        "mobilesdk_app_id": "1:465859122110:android:6ff26fba7550a03db85fef",
         "android_client_info": {
-          "package_name": "com.example.fundee"
+          "package_name": "com.example.fundee_sproject"
         }
       },
       "oauth_client": [
         {
-          "client_id": "223940111084-oqbagr3kvqgoj95ohmmuj3dahf7bvqfj.apps.googleusercontent.com",
+          "client_id": "465859122110-crosqi3lsou0f84shpekf92jqimc7cum.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA7m-zLKSFYTF78w9O-I7xAcrdAe4OkhSM"
+          "current_key": "AIzaSyDQXtSvyb3XTsVjMDVO_BoIa9DARyLb96I"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "223940111084-oqbagr3kvqgoj95ohmmuj3dahf7bvqfj.apps.googleusercontent.com",
+              "client_id": "465859122110-crosqi3lsou0f84shpekf92jqimc7cum.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
