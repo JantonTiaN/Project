@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+enum Gender { MALE, FEMALE, OTHER }
+
 class AddPatient extends StatefulWidget {
   @override
   _AddPatientState createState() => _AddPatientState();
@@ -12,9 +14,13 @@ class _AddPatientState extends State<AddPatient> {
   final lname = TextEditingController();
   final address = TextEditingController();
   final drugallergy = TextEditingController();
-  final sex = TextEditingController();
+  final gender = TextEditingController();
   final tel = TextEditingController();
   final email = TextEditingController();
+
+  int _radioVal = 0;
+  Gender _genderValue = Gender.MALE;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +35,6 @@ class _AddPatientState extends State<AddPatient> {
                 padding: const EdgeInsets.all(20),
                 child: Column(
                   children: <Widget>[
-                    
                     TextFormField(
                       textCapitalization: TextCapitalization.words,
                       decoration: InputDecoration(
@@ -37,14 +42,14 @@ class _AddPatientState extends State<AddPatient> {
                         filled: true,
                         // icon: Icon(Icons.person),
                         labelText: "เลขประจำตัวประชาชน*",
-                      ),keyboardType: TextInputType.phone,
+                      ),
+                      keyboardType: TextInputType.phone,
                       controller: cID,
                       inputFormatters: <TextInputFormatter>[
                         WhitelistingTextInputFormatter.digitsOnly,
                       ],
                     ),
                     Padding(padding: const EdgeInsets.all(10)),
-                   
                     TextFormField(
                       textCapitalization: TextCapitalization.words,
                       decoration: InputDecoration(
@@ -56,7 +61,6 @@ class _AddPatientState extends State<AddPatient> {
                       controller: fname,
                     ),
                     Padding(padding: const EdgeInsets.all(10)),
-                    
                     TextFormField(
                       textCapitalization: TextCapitalization.words,
                       decoration: InputDecoration(
@@ -68,19 +72,38 @@ class _AddPatientState extends State<AddPatient> {
                       controller: lname,
                     ),
                     Padding(padding: const EdgeInsets.all(10)),
-                    
-                    TextFormField(
-                      textCapitalization: TextCapitalization.words,
-                      decoration: InputDecoration(
-                        border: UnderlineInputBorder(),
-                        filled: true,
-                        // icon: Icon(Icons.person),
-                        labelText: "เพศ",
-                      ),
-                      controller: sex,
+                    // Divider(),
+
+                    Text('เพศ'),
+                    RadioListTile(
+                      title: const Text('ชาย'),
+                      value: Gender.MALE,
+                      groupValue: this._genderValue,
+                      onChanged: (value) {
+                        setState(() => this._genderValue = value);
+                      },
                     ),
+
+                    RadioListTile(
+                      title: const Text('หญิง'),
+                      value: Gender.FEMALE,
+                      groupValue: this._genderValue,
+                      onChanged: (value) {
+                        setState(() => this._genderValue = value);
+                      },
+                    ),
+
+                    RadioListTile(
+                      title: const Text('ไม่ระบุ'),
+                      value: Gender.OTHER,
+                      groupValue: this._genderValue,
+                      onChanged: (value) {
+                        setState(() => this._genderValue = value);
+                      },
+                    ),
+
+                    // Divider(),
                     Padding(padding: const EdgeInsets.all(10)),
-                    
                     TextFormField(
                       decoration: const InputDecoration(
                         border: UnderlineInputBorder(),
@@ -96,7 +119,6 @@ class _AddPatientState extends State<AddPatient> {
                       ],
                     ),
                     Padding(padding: const EdgeInsets.all(10)),
-                    
                     TextFormField(
                       textCapitalization: TextCapitalization.words,
                       decoration: InputDecoration(
@@ -108,7 +130,6 @@ class _AddPatientState extends State<AddPatient> {
                       controller: drugallergy,
                     ),
                     Padding(padding: const EdgeInsets.all(10)),
-                    
                     TextFormField(
                       decoration: InputDecoration(
                         border: UnderlineInputBorder(),
@@ -131,13 +152,15 @@ class _AddPatientState extends State<AddPatient> {
                       controller: address,
                     ),
                     Padding(padding: const EdgeInsets.all(10)),
-                    
                     RaisedButton(
                       child: Text("ยืนยัน"),
                       color: Colors.blue[300],
                       onPressed: () {
-                        if (cID.text == "" || fname.text == "" || lname.text == "" || tel.text== ""
-                        || drugallergy.text == "") {
+                        if (cID.text == "" ||
+                            fname.text == "" ||
+                            lname.text == "" ||
+                            tel.text == "" ||
+                            drugallergy.text == "") {
                           showDialog<String>(
                             context: context,
                             builder: (BuildContext context) => AlertDialog(
@@ -148,16 +171,17 @@ class _AddPatientState extends State<AddPatient> {
                               actions: <Widget>[
                                 FlatButton(
                                   child: Text('ยกเลิก'),
-                                  onPressed: () => Navigator.pop(context, 'Cancel'),
-                                  ),
-                                  FlatButton(
-                                    child: Text('ตกลง'),
-                                    onPressed: () => Navigator.pop(context, 'OK'),
-                                  )
-                              ],  
+                                  onPressed: () =>
+                                      Navigator.pop(context, 'Cancel'),
+                                ),
+                                FlatButton(
+                                  child: Text('ตกลง'),
+                                  onPressed: () => Navigator.pop(context, 'OK'),
+                                )
+                              ],
                             ),
-                            );
-                        }
+                          );
+                        } else {}
                       },
                     )
                   ],
@@ -170,3 +194,5 @@ class _AddPatientState extends State<AddPatient> {
     );
   }
 }
+
+class _radioVal {}
