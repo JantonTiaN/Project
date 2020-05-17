@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fundee/detail.dart';
-import 'package:fundee/dentalCase.dart';
 
 class DentalRecord extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -224,7 +223,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DentalCase()));
+                              builder: (context) => User()));
                     }),
               ),
               Container(
@@ -241,7 +240,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DentalCase()));
+                              builder: (context) => tooth2Detail(context)));
                     }),
               ),
               Container(
@@ -258,7 +257,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => DentalCase()));
+                              builder: (context) => tooth3Detail(context)));
                     }),
               ),
               Container(

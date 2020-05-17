@@ -1,22 +1,64 @@
-import 'package:flutter/material.dart';
-import 'package:fundee/dentalCase.dart';
-import 'package:fundee/patientList.dart';
+// import 'dart:ffi';
 
-class DetailDental extends StatefulWidget {
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fundee/models/account_model.dart';
+import 'package:fundee/models/user_model.dart';
+import 'package:fundee/dentalCase.dart';
+
+class User extends StatefulWidget {
   @override
-  _DetailDentalState createState() => _DetailDentalState();
+  _UserState createState() => _UserState();
 }
 
-class _DetailDentalState extends State<DetailDental> {
+class _UserState extends State<User> {
+  List<UserModel> userModels = List();
+  List<AccountModel> accountModels = List();
+
+  @override
+  void initState() {
+    super.initState();
+    readAllData();
+  }
+
+  Future<void> readAllData() async {
+    Firestore firestore = Firestore.instance;
+    CollectionReference collectionReference = firestore.collection('Account').document('6WzZ7oB9langXaG7lU0J').collection('User');
+    await collectionReference.snapshots().listen((response) {
+      List<DocumentSnapshot> snapshots = response.documents;
+      for (var snapshot in snapshots) {
+        UserModel userModel = UserModel.fromMap(snapshot.data);
+        setState(() {
+          userModels.add(userModel);
+        });
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      
+    return Stack(
+      children: <Widget>[
+        Container(
+          child: tooth1Detail(context),
+        ),
+        Container(
+            child: ListView.builder(
+                itemCount: userModels.length,
+                itemBuilder: (BuildContext buildContext, int index) {
+                  return Container(
+                    child: Container(
+                      margin: EdgeInsets.fromLTRB(200, 180, 0, 0),
+                      
+                      child: Text(userModels[index].firstName + ' ' +userModels[index].lastName, style: TextStyle(fontSize: 15, color: Colors.black))
+                      )
+                    );
+                })),
+      ],
     );
   }
 }
-
-class Icontooth {}
 
 Widget tooth1Detail(BuildContext context) {
   return Scaffold(
@@ -107,7 +149,7 @@ Widget tooth2Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) =>DentalCase()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -237,7 +279,7 @@ Widget tooth4Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -254,7 +296,7 @@ Widget tooth4Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -271,7 +313,7 @@ Widget tooth4Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -302,7 +344,7 @@ Widget tooth5Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -319,7 +361,7 @@ Widget tooth5Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -336,7 +378,7 @@ Widget tooth5Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -367,7 +409,7 @@ Widget tooth6Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -384,7 +426,7 @@ Widget tooth6Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -401,7 +443,7 @@ Widget tooth6Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -432,7 +474,7 @@ Widget tooth7Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -449,7 +491,7 @@ Widget tooth7Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -466,7 +508,7 @@ Widget tooth7Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -497,7 +539,7 @@ Widget tooth8Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -514,7 +556,7 @@ Widget tooth8Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -531,7 +573,7 @@ Widget tooth8Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -562,7 +604,7 @@ Widget tooth9Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -579,7 +621,7 @@ Widget tooth9Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -596,7 +638,7 @@ Widget tooth9Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -627,7 +669,7 @@ Widget tooth10Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -644,7 +686,7 @@ Widget tooth10Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -661,7 +703,7 @@ Widget tooth10Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -692,7 +734,7 @@ Widget tooth11Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -709,7 +751,7 @@ Widget tooth11Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -726,7 +768,7 @@ Widget tooth11Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -757,7 +799,7 @@ Widget tooth12Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -774,7 +816,7 @@ Widget tooth12Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -791,7 +833,7 @@ Widget tooth12Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -822,7 +864,7 @@ Widget tooth13Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -839,7 +881,7 @@ Widget tooth13Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -856,7 +898,7 @@ Widget tooth13Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -887,7 +929,7 @@ Widget tooth14Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -904,7 +946,7 @@ Widget tooth14Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -921,7 +963,7 @@ Widget tooth14Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -952,7 +994,7 @@ Widget tooth15Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -969,7 +1011,7 @@ Widget tooth15Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -986,7 +1028,7 @@ Widget tooth15Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1017,7 +1059,7 @@ Widget tooth16Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1034,7 +1076,7 @@ Widget tooth16Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1051,7 +1093,7 @@ Widget tooth16Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1082,7 +1124,7 @@ Widget tooth17Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1099,7 +1141,7 @@ Widget tooth17Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1116,7 +1158,7 @@ Widget tooth17Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1147,7 +1189,7 @@ Widget tooth18Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1164,7 +1206,7 @@ Widget tooth18Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1181,7 +1223,7 @@ Widget tooth18Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1212,7 +1254,7 @@ Widget tooth19Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1229,7 +1271,7 @@ Widget tooth19Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1246,7 +1288,7 @@ Widget tooth19Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1277,7 +1319,7 @@ Widget tooth20Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1294,7 +1336,7 @@ Widget tooth20Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1311,7 +1353,7 @@ Widget tooth20Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1342,7 +1384,7 @@ Widget tooth21Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1359,7 +1401,7 @@ Widget tooth21Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1376,7 +1418,7 @@ Widget tooth21Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1407,7 +1449,7 @@ Widget tooth22Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1424,7 +1466,7 @@ Widget tooth22Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1441,7 +1483,7 @@ Widget tooth22Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1472,7 +1514,7 @@ Widget tooth23Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1489,7 +1531,7 @@ Widget tooth23Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1506,7 +1548,7 @@ Widget tooth23Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1537,7 +1579,7 @@ Widget tooth24Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1554,7 +1596,7 @@ Widget tooth24Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1571,7 +1613,7 @@ Widget tooth24Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1602,7 +1644,7 @@ Widget tooth25Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1619,7 +1661,7 @@ Widget tooth25Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1636,7 +1678,7 @@ Widget tooth25Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1667,7 +1709,7 @@ Widget tooth26Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1684,7 +1726,7 @@ Widget tooth26Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1701,7 +1743,7 @@ Widget tooth26Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1732,7 +1774,7 @@ Widget tooth27Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1749,7 +1791,7 @@ Widget tooth27Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1766,7 +1808,7 @@ Widget tooth27Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1797,7 +1839,7 @@ Widget tooth28Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1814,7 +1856,7 @@ Widget tooth28Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1831,7 +1873,7 @@ Widget tooth28Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1862,7 +1904,7 @@ Widget tooth29Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1879,7 +1921,7 @@ Widget tooth29Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1896,7 +1938,7 @@ Widget tooth29Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1927,7 +1969,7 @@ Widget tooth30Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1944,7 +1986,7 @@ Widget tooth30Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -1961,7 +2003,7 @@ Widget tooth30Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -1992,7 +2034,7 @@ Widget tooth31Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -2009,7 +2051,7 @@ Widget tooth31Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -2026,7 +2068,7 @@ Widget tooth31Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
@@ -2057,7 +2099,7 @@ Widget tooth32Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -2074,7 +2116,7 @@ Widget tooth32Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   ),
                   Container(
@@ -2091,7 +2133,7 @@ Widget tooth32Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DetailDental()));
+                                  builder: (context) => DentalCase()));
                         }),
                   )
                 ],
