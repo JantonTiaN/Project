@@ -18,7 +18,6 @@ class _AddPatientState extends State<AddPatient> {
   final tel = TextEditingController();
   final email = TextEditingController();
 
-  int _radioVal = 0;
   Gender _genderValue = Gender.MALE;
 
   @override
@@ -194,5 +193,3 @@ class _AddPatientState extends State<AddPatient> {
     );
   }
 }
-
-class _radioVal {}
