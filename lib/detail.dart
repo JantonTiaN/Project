@@ -7,61 +7,90 @@ import 'package:fundee/models/account_model.dart';
 import 'package:fundee/models/user_model.dart';
 import 'package:fundee/dentalCase.dart';
 
-class Tooth1 extends StatefulWidget {
-  @override
-  _Tooth1State createState() => _Tooth1State();
-}
+// class Detail extends StatefulWidget {
+//   @override
+//   _DetailState createState() => _DetailState();
+// }
 
-class _Tooth1State extends State<Tooth1> {
-  List<UserModel> userModels = List();
-  List<AccountModel> accountModels = List();
+// class _DetailState extends State<Detail> {
+//   List<UserModel> userModels = List();
+//   List<AccountModel> accountModels = List();
 
-  @override
-  void initState() {
-    super.initState();
-    readAllData();
-  }
+//   @override
+//   void initState() {
+//     super.initState();
+//     readAllData();
+//   }
 
-  Future<void> readAllData() async {
-    Firestore firestore = Firestore.instance;
-    CollectionReference collectionReference = firestore.collection('Account').document('account').collection('Users');
-    await collectionReference.snapshots().listen((response) {
-      List<DocumentSnapshot> snapshots = response.documents;
-      for (var snapshot in snapshots) {
-        UserModel userModel = UserModel.fromMap(snapshot.data);
-        setState(() {
-          userModels.add(userModel);
-        });
-      }
-    });
-  }
+//   Future<void> readAllData() async {
+//     Firestore firestore = Firestore.instance;
+//     CollectionReference collectionReference = firestore.collection('Account').document('6WzZ7oB9langXaG7lU0J').collection('User');
+//     await collectionReference.snapshots().listen((response) {
+//       List<DocumentSnapshot> snapshots = response.documents;
+//       for (var snapshot in snapshots) {
+//         UserModel userModel = UserModel.fromMap(snapshot.data);
+//         setState(() {
+//           userModels.add(userModel);
+//         });
+//       }
+//     });
+//   }
+
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Container(
-          child: tooth1Detail(context),
-        ),
-        Container(
-          padding: EdgeInsets.all(0.3),
-          // color: Colors.grey[300],
-          width: MediaQuery.of(context).size.width * 0.5,
-          height: MediaQuery.of(context).size.height * 0.1,
-          margin: EdgeInsets.fromLTRB(180, 180, 0, 0),
-            child: ListView.builder(
-                itemCount: userModels.length,
-                itemBuilder: (BuildContext buildContext, int index) {
-                  return Container(
-                    child: Container(
-                      child: Text(' ' + userModels[index].firstName + ' ' +userModels[index].lastName, style: TextStyle(fontSize: 15, color: Colors.black))
-                      )
-                    );
-                })),
-      ],
-    );
+    // return Stack(
+    //   children: <Widget>[
+    //     Container(
+    //       child: tooth1Detail(context),
+    //     ),
+    //     Container(
+    //       padding: EdgeInsets.all(0.3),
+    //       // color: Colors.grey[300],
+    //       width: MediaQuery.of(context).size.width * 0.5,
+    //       height: MediaQuery.of(context).size.height * 0.1,
+    //       margin: EdgeInsets.fromLTRB(180, 180, 0, 0),
+    //         child: ListView.builder(
+    //             itemCount: userModels.length,
+    //             itemBuilder: (BuildContext buildContext, int index) {
+    //               return Container(
+    //                 child: Container(
+    //                   child: Text(' ' + userModels[index].firstName + ' ' +userModels[index].lastName, style: TextStyle(fontSize: 15, color: Colors.black))
+    //                   )
+    //                 );
+    //             })),
+    //   ],
+    // );
   }
-}
+
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return Stack(
+//       children: <Widget>[
+//         Container(
+//           child: tooth1Detail(context),
+//         ),
+//         Container(
+//           padding: EdgeInsets.all(0.3),
+//           color: Colors.grey[300],
+//           width: MediaQuery.of(context).size.width * 0.5,
+//           height: MediaQuery.of(context).size.height * 0.1,
+//           margin: EdgeInsets.fromLTRB(20, 180, 0, 0),
+//             child: ListView.builder(
+//                 itemCount: userModels.length,
+//                 itemBuilder: (BuildContext buildContext, int index) {
+//                   return Container(
+//                     child: Container(
+//                       child: Text(' ' + userModels[index].firstName + ' ' +userModels[index].lastName, style: TextStyle(fontSize: 15, color: Colors.black))
+//                       )
+//                     );
+//                 })),
+//       ],
+//     );
+//   }
+// }
+
 
 Widget tooth1Detail(BuildContext context) {
   return Scaffold(
