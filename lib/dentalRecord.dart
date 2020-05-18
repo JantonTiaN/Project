@@ -263,8 +263,8 @@ class DentalRecord extends StatelessWidget {
                   )),
               Center(
                 child: Container(
-                  width: MediaQuery.of(context).size.width * 0.84,
-                  height: MediaQuery.of(context).size.height * 0.84,
+                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio* 0.32,
+                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio* 0.32,
                   child: Image.asset('images/tooth/AllGum.png'),
                 ),
               ),
