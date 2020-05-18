@@ -14,9 +14,11 @@ class _PatientListState extends State<PatientList> {
       appBar: AppBar(title: Text('Patients')),
     floatingActionButton: FloatingActionButton(
       onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => AddPatient())),
-      child: Text("+"), 
-      
+      child: Text("+"),
     ),
+    // body: StreamBuilder(
+
+    // ),
     );
   }
 }

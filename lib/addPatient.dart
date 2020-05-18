@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fundee/Services/add_patient_service..dart';
+import 'package:fundee/Services/logger_service.dart';
 
 enum Gender { MALE, FEMALE, OTHER }
 
@@ -186,7 +188,22 @@ class _AddPatientState extends State<AddPatient> {
                               ],
                             ),
                           );
-                        } else {}
+                          logger.e("cID, fname, lname, tel, drugallergy can't  be null");
+                        } else {
+                          addPatient(
+                            context, 
+                            {'firstName': fname.text, 'lastName': lname.text, 'citizenID': cID.text,
+                            'gender': gender.text, 'tel': tel.text, 'drugAllergy': drugallergy.text,
+                            'eMail': email.text, 'address': address.text},
+                            fname.text="");
+                            lname.text = "";
+                            cID.text = "";
+                            gender.text = "";
+                            tel.text = "";
+                            drugallergy.text = "";
+                            email.text = "";
+                            address.text = "";
+                        }
                       },
                     )
                   ],

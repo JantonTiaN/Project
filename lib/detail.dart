@@ -60,6 +60,7 @@ class _DetailState extends State<Detail> {
   }
 }
 
+
 Widget tooth1Detail(BuildContext context) {
   return Scaffold(
       appBar: AppBar(title: Text('Tooth1 Detail')),
