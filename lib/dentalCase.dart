@@ -30,7 +30,11 @@ class DentalCase extends StatelessWidget {
                   )),
             ),
             ),
-            Card(
+            FlatButton(
+              onPressed: (){
+
+              },
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -42,7 +46,12 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+             onPressed: (){
+
+             }, 
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -54,7 +63,12 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){
+                 
+              },
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -66,7 +80,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -78,7 +95,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -90,7 +110,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -102,7 +125,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+            onPressed: (){},  
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -114,7 +140,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -126,7 +155,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -138,7 +170,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -150,7 +185,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -162,7 +200,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -174,7 +215,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -186,7 +230,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -198,7 +245,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+              child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -210,7 +260,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+              child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -222,7 +275,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -234,7 +290,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -246,7 +305,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -258,7 +320,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -270,7 +335,10 @@ class DentalCase extends StatelessWidget {
                     ),
                   )),
             ),
-            Card(
+            ),
+            FlatButton(
+              onPressed: (){},
+            child: Card(
               color: Colors.blue[100],
               elevation: 10,
               child: Container(
@@ -280,6 +348,7 @@ class DentalCase extends StatelessWidget {
                         border: InputBorder.none,
                         hintText: 'Other Detail',),
                   )),
+            ),
             ),
           ],
         ),
