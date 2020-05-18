@@ -8,9 +8,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:465859122110:android:6ff26fba7550a03db85fef",
+        "mobilesdk_app_id": "1:465859122110:android:c27626fa3cc96024b85fef",
         "android_client_info": {
-          "package_name": "com.example.fundee_sproject"
+          "package_name": "com.example.fundee"
         }
       },
       "oauth_client": [
