@@ -9,11 +9,11 @@ Future<void> addPatient(
       .collection('Account')
       .document('account')
       .collection('Users')
-      .document('user999')
+      .document()
       .setData(data, merge: true)
       .then((returnData) {
     showMessageBox(
-        context, "Success", "Added patient $documentName to Firestore",
+        context, "สำเร็จ", "ข้อมูลของคุณถูกบันทึกแล้ว",
         actions: [dismissButton(context)]);
     logger.i("setData success");
   }).catchError((e) {

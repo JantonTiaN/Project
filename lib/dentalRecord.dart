@@ -23,7 +23,7 @@ class _Tooth1State extends State<Tooth1> {
   Future<void> readAllData() async {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore.collection('Account').document('account').collection('Users');
-    await collectionReference.snapshots().listen((response) {
+    collectionReference.snapshots().listen((response) {
       List<DocumentSnapshot> snapshots = response.documents;
       for (var snapshot in snapshots) {
         UserModel userModel = UserModel.fromMap(snapshot.data);
@@ -41,7 +41,7 @@ class _Tooth1State extends State<Tooth1> {
           padding: EdgeInsets.all(0.3),
           color: Colors.grey[300],
           width: MediaQuery.of(context).size.width * 0.5,
-          height: MediaQuery.of(context).size.height * 0.05,
+          height: MediaQuery.of(context).size.height * 0.15,
             child: ListView.builder(
                 itemCount: userModels.length,
                 itemBuilder: (BuildContext buildContext, int index) {
