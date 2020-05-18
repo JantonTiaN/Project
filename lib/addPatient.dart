@@ -72,8 +72,14 @@ class _AddPatientState extends State<AddPatient> {
                     ),
                     Padding(padding: const EdgeInsets.all(10)),
                     // Divider(),
+                    Container(
+                      child: Row(
+                        children: <Widget>[
+                          Text('เพศ'),
+                        ],
+                      ),
+                    ),
 
-                    Text('เพศ'),
                     RadioListTile(
                       title: const Text('ชาย'),
                       value: Gender.MALE,

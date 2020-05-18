@@ -223,7 +223,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => User()));
+                              builder: (context) => Tooth1()));
                     }),
               ),
               Container(
