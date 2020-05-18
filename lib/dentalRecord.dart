@@ -1,5 +1,61 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/detail.dart';
+import 'package:fundee/models/account_model.dart';
+import 'package:fundee/models/user_model.dart';
+
+
+class Tooth1 extends StatefulWidget {
+  @override
+  _Tooth1State createState() => _Tooth1State();
+}
+
+class _Tooth1State extends State<Tooth1> {
+  List<UserModel> userModels = List();
+  List<AccountModel> accountModels = List();
+
+  @override
+  void initState() {
+    super.initState();
+    readAllData();
+  }
+
+  Future<void> readAllData() async {
+    Firestore firestore = Firestore.instance;
+    CollectionReference collectionReference = firestore.collection('Account').document('account').collection('Users');
+    await collectionReference.snapshots().listen((response) {
+      List<DocumentSnapshot> snapshots = response.documents;
+      for (var snapshot in snapshots) {
+        UserModel userModel = UserModel.fromMap(snapshot.data);
+        setState(() {
+          userModels.add(userModel);
+        });
+      }
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return 
+        Container(
+          padding: EdgeInsets.all(0.3),
+          color: Colors.grey[300],
+          width: MediaQuery.of(context).size.width * 0.5,
+          height: MediaQuery.of(context).size.height * 0.05,
+            child: ListView.builder(
+                itemCount: userModels.length,
+                itemBuilder: (BuildContext buildContext, int index) {
+                  return Container(
+                    child: Container(
+                      child: Text(' ' + userModels[index].firstName + ' ' +userModels[index].lastName, style: TextStyle(fontSize: 15, color: Colors.black))
+                      )
+                    );
+                }
+      ));
+      
+    
+  }
+}
 
 class DentalRecord extends StatelessWidget {
   Widget build(BuildContext context) {
@@ -8,6 +64,9 @@ class DentalRecord extends StatelessWidget {
         body: Center(
           child: Stack(
             children: <Widget>[
+              Container(
+                child: Tooth1(),
+              ),
               Container(
                 width: MediaQuery.of(context).size.width *
                     MediaQuery.of(context).devicePixelRatio,
@@ -223,7 +282,7 @@ class DentalRecord extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => Tooth1()));
+                              builder: (context) => tooth1Detail(context)));
                     }),
               ),
               Container(
