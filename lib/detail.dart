@@ -45,7 +45,7 @@ class _Tooth1State extends State<Tooth1> {
         ),
         Container(
           padding: EdgeInsets.all(0.3),
-          color: Colors.grey[300],
+          // color: Colors.grey[300],
           width: MediaQuery.of(context).size.width * 0.5,
           height: MediaQuery.of(context).size.height * 0.1,
           margin: EdgeInsets.fromLTRB(180, 180, 0, 0),
