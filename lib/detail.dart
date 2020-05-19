@@ -44,7 +44,7 @@ class _DetailState extends State<Detail> {
           padding: EdgeInsets.all(0.3),
           color: Colors.grey[300],
           width: MediaQuery.of(context).size.width * 0.5,
-          height: MediaQuery.of(context).size.height * 0.1,
+          height: MediaQuery.of(context).size.height * 0.0,
           margin: EdgeInsets.fromLTRB(20, 180, 0, 0),
             child: ListView.builder(
                 itemCount: userModels.length,
