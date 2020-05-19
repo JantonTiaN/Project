@@ -23,7 +23,7 @@ class _Tooth1State extends State<Tooth1> {
   Future<void> readAllData() async {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore.collection('Account').document('account').collection('Users');
-    await collectionReference.snapshots().listen((response) {
+    collectionReference.snapshots().listen((response) {
       List<DocumentSnapshot> snapshots = response.documents;
       for (var snapshot in snapshots) {
         UserModel userModel = UserModel.fromMap(snapshot.data);

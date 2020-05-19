@@ -5,12 +5,12 @@ import 'package:fundee/Services/logger_service.dart';
 
 enum Gender { MALE, FEMALE, OTHER }
 
-class AddPatient extends StatefulWidget {
+class PatientForm extends StatefulWidget {
   @override
-  _AddPatientState createState() => _AddPatientState();
+  _PatientFormState createState() => _PatientFormState();
 }
 
-class _AddPatientState extends State<AddPatient> {
+class _PatientFormState extends State<PatientForm> {
   final cID = TextEditingController();
   final fname = TextEditingController();
   final lname = TextEditingController();
