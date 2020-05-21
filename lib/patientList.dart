@@ -63,12 +63,12 @@ class _PatientListState extends State<PatientList> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => PatientInfo(
-                                          fname: snapshot
+                                          firstname: snapshot
                                               .data.documents[index].data["firstName"],
-                                          id: snapshot
+                                          fname: snapshot
                                               .data
                                               .documents[index]
-                                              .data["firstName"],
+                                              .documentID,
                                         )));
                           },
                           child: Column(
