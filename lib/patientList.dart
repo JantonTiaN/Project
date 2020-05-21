@@ -64,8 +64,8 @@ class _PatientListState extends State<PatientList> {
                                 MaterialPageRoute(
                                     builder: (context) => PatientInfo(
                                           fname: snapshot
-                                              .data.documents[index].documentID,
-                                          lname: snapshot
+                                              .data.documents[index].data["firstName"],
+                                          id: snapshot
                                               .data
                                               .documents[index]
                                               .data["firstName"],
@@ -75,9 +75,9 @@ class _PatientListState extends State<PatientList> {
                             children: <Widget>[
                               ListTile(
                                 title: Text(
-                                    snapshot.data.documents[index].documentID),
+                                    snapshot.data.documents[index].data["firstName"]),
                                 subtitle: Text(snapshot
-                                    .data.documents[index].data["firstName"]),
+                                    .data.documents[index].documentID),
                               ),
                             ],
                           ),

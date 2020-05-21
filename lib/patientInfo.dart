@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class PatientInfo extends StatefulWidget {
+  final String id;
   final String fname;
-  final String lname;
-  PatientInfo({Key key, @required this.fname, @required this.lname})
+  PatientInfo({Key key, @required this.id, @required this.fname})
       : super(key: key);
 
   @override
@@ -12,7 +12,7 @@ class PatientInfo extends StatefulWidget {
 }
 
 class _PatientInfoState extends State<PatientInfo> {
-  String lname = "กำลังโหลด...";
+  String fname = "กำลังโหลด...";
 
   @override
   void initState() {
@@ -21,11 +21,11 @@ class _PatientInfoState extends State<PatientInfo> {
         .collection("Account")
         .document('account')
         .collection('Users')
-        .document(widget.fname)
+        .document(widget.id)
         .get()
         .then((value) {
       setState(() {
-        lname = value.data["firstName"];
+        fname = value.data["firstName"];
       });
     });
   }
@@ -34,7 +34,7 @@ class _PatientInfoState extends State<PatientInfo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.fname),
+        title: Text(widget.id),
         // backgroundColor: Colors.orange,
       ),
       body: Center(
@@ -42,14 +42,14 @@ class _PatientInfoState extends State<PatientInfo> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              widget.fname,
+              widget.id,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Padding(
               padding: const EdgeInsets.all(20),
             ),
             Text(
-              lname,
+              fname,
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ],
