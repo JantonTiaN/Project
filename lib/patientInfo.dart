@@ -12,7 +12,7 @@ class PatientInfo extends StatefulWidget {
 }
 
 class _PatientInfoState extends State<PatientInfo> {
-  String lname = "Please wait...";
+  String lname = "กำลังโหลด...";
 
   @override
   void initState() {
@@ -25,7 +25,7 @@ class _PatientInfoState extends State<PatientInfo> {
         .get()
         .then((value) {
       setState(() {
-        lname = value.data["tel"];
+        lname = value.data["firstName"];
       });
     });
   }
@@ -35,7 +35,7 @@ class _PatientInfoState extends State<PatientInfo> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.fname),
-        backgroundColor: Colors.orange,
+        // backgroundColor: Colors.orange,
       ),
       body: Center(
         child: Column(
@@ -43,7 +43,7 @@ class _PatientInfoState extends State<PatientInfo> {
           children: <Widget>[
             Text(
               widget.fname,
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
             ),
             Padding(
               padding: const EdgeInsets.all(20),

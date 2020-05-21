@@ -41,7 +41,7 @@ class _Tooth1State extends State<Tooth1> {
           padding: EdgeInsets.all(0.3),
           color: Colors.grey[300],
           width: MediaQuery.of(context).size.width * 0.5,
-          height: MediaQuery.of(context).size.height * 0.15,
+          height: MediaQuery.of(context).size.height * 0.03,
             child: ListView.builder(
                 itemCount: userModels.length,
                 itemBuilder: (BuildContext buildContext, int index) {

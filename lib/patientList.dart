@@ -27,7 +27,7 @@ class _PatientListState extends State<PatientList> {
 //           userModels.add(userModel);
 //         });
 //       }
-//     });
+//     }); 
 //   }
 
   Widget build(BuildContext context) {
@@ -68,7 +68,7 @@ class _PatientListState extends State<PatientList> {
                                           lname: snapshot
                                               .data
                                               .documents[index]
-                                              .data["tel"],
+                                              .data["firstName"],
                                         )));
                           },
                           child: Column(
@@ -77,7 +77,7 @@ class _PatientListState extends State<PatientList> {
                                 title: Text(
                                     snapshot.data.documents[index].documentID),
                                 subtitle: Text(snapshot
-                                    .data.documents[index].data["tel"]),
+                                    .data.documents[index].data["firstName"]),
                               ),
                             ],
                           ),
