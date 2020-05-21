@@ -2,6 +2,7 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/dentalRecord.dart';
+import 'package:fundee/login.dart';
 import 'package:fundee/patientlist.dart';
 
 
@@ -25,7 +26,7 @@ class Home extends StatelessWidget {
             ListTile(
               title: Text("Login"),
               onTap: (){
-                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
               },
             ),
             ListTile(
