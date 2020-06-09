@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fundee/Screen/welcome_screen.dart';
 import 'Screen/constants.dart';
 
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -20,7 +21,14 @@ class MyApp extends StatelessWidget {
               color: bPrimaryColor,
             ),
             headline: TextStyle(color: Colors.white, fontWeight: FontWeight.normal),
-            )),
-        home: WelcomeScreen());
+            ),
+            inputDecorationTheme: InputDecorationTheme(
+              enabledBorder: UnderlineInputBorder(
+                borderSide: BorderSide(color: Colors.white.withOpacity(.2),
+                ))
+                ),
+            ),
+        home: WelcomeScreen(),
+        );
   }
 }
