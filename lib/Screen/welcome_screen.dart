@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'constants.dart';
+
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -12,7 +12,7 @@ class WelcomeScreen extends StatelessWidget {
               child: Container(
             decoration: BoxDecoration(
                 image: DecorationImage(
-              image: AssetImage("assets/images/ToothbrushFix.jpg"),
+              image: AssetImage("assets/images/ToothbrushFixed.jpg"),
               fit: BoxFit.cover,
             )),
           )),
@@ -37,7 +37,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 FittedBox(
                   child: Container(
-                    margin: EdgeInsets.only(bottom: 125),
+                    margin: EdgeInsets.only(bottom: 55),
                     padding: EdgeInsets.symmetric(horizontal: 26, vertical: 16),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
