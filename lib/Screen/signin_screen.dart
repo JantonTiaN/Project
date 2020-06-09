@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class SignInScreen extends StatelessWidget {
+class SignInScreen extends StatefulWidget {
+  @override
+  _SignInScreenState createState() => _SignInScreenState();
+}
+
+class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +39,7 @@ class SignInScreen extends StatelessWidget {
                           style: Theme.of(context).textTheme.display1,
                         ),
                         Text(
+                          
                           "SIGN UP",
                           style: Theme.of(context).textTheme.button,
                         ),
@@ -48,7 +54,7 @@ class SignInScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(right: 16),
                             child: Icon(
-                              Icons.alternate_email,
+                              Icons.email,
                               color: bPrimaryColor,
                             ),
                           ),
@@ -71,7 +77,10 @@ class SignInScreen extends StatelessWidget {
                           ),
                         ),
                         Expanded(
-                            child: TextField(
+                            child: TextFormField(
+                              keyboardType: TextInputType.text,
+                              // controller: ,
+
                           decoration: InputDecoration(hintText: "Password"),
                         ))
                       ],

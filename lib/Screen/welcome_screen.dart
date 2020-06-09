@@ -25,7 +25,7 @@ class WelcomeScreen extends StatelessWidget {
                   text: TextSpan(
                     children: [
                       TextSpan(
-                        text: "DENTAL CARE\n",
+                        text: "FUN-D CARE\n",
                         style: Theme.of(context).textTheme.display1,
                       ),
                       TextSpan(
