@@ -1,15 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:fundee/login.dart';
-import 'home.dart';
-import 'login.dart';
-// import 'home_page.dart';
-
+import 'package:fundee/Screen/welcome_screen.dart';
+import 'Screen/constants.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: Home());
+    return MaterialApp(
+        theme: ThemeData(
+            primaryColor: bPrimaryColor,
+            scaffoldBackgroundColor: bBackgroundColor,
+            textTheme: TextTheme(
+                display1: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+            button: TextStyle(
+              color: bPrimaryColor,
+            ),
+            headline: TextStyle(color: Colors.white, fontWeight: FontWeight.normal),
+            )),
+        home: WelcomeScreen());
   }
 }
