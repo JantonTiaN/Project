@@ -38,10 +38,14 @@ class _SignInScreenState extends State<SignInScreen> {
                           "SIGN IN",
                           style: Theme.of(context).textTheme.display1,
                         ),
-                        Text(
-                          
-                          "SIGN UP",
-                          style: Theme.of(context).textTheme.button,
+                        InkWell(
+                          onTap: () {
+                            Navigator.pushNamed(context, 'SignUp');
+                          },
+                          child: Text(
+                            "SIGN UP",
+                            style: Theme.of(context).textTheme.button,
+                          ),
                         ),
                       ],
                     ),
@@ -78,16 +82,24 @@ class _SignInScreenState extends State<SignInScreen> {
                         ),
                         Expanded(
                             child: TextFormField(
-                              keyboardType: TextInputType.text,
-                              // controller: ,
+                          keyboardType: TextInputType.text,
+                          // controller: ,
 
                           decoration: InputDecoration(hintText: "Password"),
                         ))
                       ],
                     ),
+                    // Spacer(),
+                    // Center(
+                    //   child: RichText(
+                    //       text: TextSpan(
+                    //     text: 'Don\'t have an account?',
+                    //     style: TextStyle(color: Colors.black38),
+                    //   )),
+                    // ),
                     Spacer(),
                     Padding(
-                      padding: const EdgeInsets.only(bottom: 28),
+                      padding: const EdgeInsets.only(bottom: 20),
                       child: Row(
                         children: <Widget>[
                           Container(
@@ -117,8 +129,11 @@ class _SignInScreenState extends State<SignInScreen> {
                             decoration: BoxDecoration(
                               shape: BoxShape.circle,
                               color: bPrimaryColor,
-                              ),
-                              child: Icon(Icons.arrow_forward, color: Colors.black,),
+                            ),
+                            child: Icon(
+                              Icons.arrow_forward,
+                              color: Colors.black,
+                            ),
                           )
                         ],
                       ),
