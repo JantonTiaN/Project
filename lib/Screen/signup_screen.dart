@@ -37,7 +37,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   Positioned(
                       bottom: -10,
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(10.0),
                         child: Text(
                           'Create New Account',
                           style: TextStyle(
