@@ -107,6 +107,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Email Adcress"),
                     controller: email,
+                    keyboardType: TextInputType.emailAddress,
                   ),
                 )),
               ],

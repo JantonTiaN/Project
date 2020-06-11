@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:fundee/Screen/signin_screen.dart';
 
 import '../font_awesome_flutter.dart';
 import 'constants.dart';
@@ -85,6 +87,10 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Phone Number"),
                     controller: tel,
+                    keyboardType: TextInputType.phone,
+                    inputFormatters: <TextInputFormatter>[
+                        WhitelistingTextInputFormatter.digitsOnly,
+                      ],
                   ),
                 )),
               ],
@@ -97,7 +103,7 @@ class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
                   onTap: () {
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return PersonalInfoScreen();
+                        return SignInScreen();
                       },
                     ));
                   },
