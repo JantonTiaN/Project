@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/personalinfo_screen.dart';
 
 import 'constants.dart';
 
@@ -13,8 +14,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final fname = TextEditingController();
   final lname = TextEditingController();
   final username = TextEditingController();
-  final drugallergy = TextEditingController();
-  final tel = TextEditingController();
   final email = TextEditingController();
   final password = TextEditingController();
   final confirmpassword = TextEditingController();
@@ -24,7 +23,33 @@ class _SignUpScreenState extends State<SignUpScreen> {
     return Scaffold(
       body: ListView(
         children: <Widget>[
-          BackButtonWidget(),
+          Container(
+            height: 200,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage("assets/images/ToothbrushFixed.jpg"),
+                fit: BoxFit.cover,
+              ),
+            ),
+            child: Positioned(
+              child: Stack(
+                children: <Widget>[
+                  Positioned(
+                      bottom: -10,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text(
+                          'Create New Account',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20),
+                        ),
+                      ))
+                ],
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Row(
@@ -111,79 +136,56 @@ class _SignUpScreenState extends State<SignUpScreen> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10.0),
-            child: Container(
-              height: 1.0,
-              // width: 130.0,
-              color: Colors.black12,
+            padding: const EdgeInsets.only(left: 60, right: 20, bottom: 20),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                    child: Container(
+                  margin: EdgeInsets.only(right: 20, left: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(hintText: "Confirm Password"),
+                    controller: confirmpassword,
+                  ),
+                )),
+              ],
             ),
           ),
-        ],
-      ),
-    );
-  }
-}
-
-class BackButtonWidget extends StatelessWidget {
-  const BackButtonWidget({
-    Key key,
-    @required this.context,
-  }) : super(key: key);
-
-  final BuildContext context;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage("assets/images/ToothbrushFixed.jpg"),
-          fit: BoxFit.cover,
-        ),
-      ),
-      child: Positioned(
-        child: Stack(
-          children: <Widget>[
-            Positioned(
-              top: 20,
-              child: Row(
-                children: <Widget>[
-                  IconButton(
-                      icon: Icon(
-                        Icons.arrow_back_ios,
-                        color: Colors.white,
-                      ),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      }),
-                  InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(context, 'SignIn');
-                    },
-                    child: Text(
-                      'Back',
-                      style: TextStyle(
-                          color: Colors.white, fontWeight: FontWeight.bold),
+          Column(
+            children: <Widget>[
+              FittedBox(
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(
+                      builder: (context) {
+                        return PersonalInfoScreen();
+                      },
+                    ));
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(bottom: 20),
+                    padding: EdgeInsets.symmetric(horizontal: 26, vertical: 16),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: bPrimaryColor,
                     ),
-                  )
-                ],
-              ),
-            ),
-            Positioned(
-                bottom: -10,
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text(
-                    'Create New Account',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20),
+                    child: Row(
+                      children: <Widget>[
+                        Text(
+                          "NEXT",
+                          style: Theme.of(context)
+                              .textTheme
+                              .button
+                              .copyWith(color: Colors.black),
+                        ),
+                      ],
+                    ),
                   ),
-                ))
-          ],
-        ),
+                ),
+              ),
+            ],
+          )
+        ],
       ),
     );
   }
