@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -8,6 +10,12 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+
+  // FacebookLogin fbLogin = new FacebookLogin();
+  final fbLogin = FacebookLogin();
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,15 +110,25 @@ class _SignInScreenState extends State<SignInScreen> {
                       padding: const EdgeInsets.only(bottom: 20),
                       child: Row(
                         children: <Widget>[
-                          Container(
-                            padding: EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: Colors.white.withOpacity(.5),
-                                )),
-                            child: Icon(FontAwesomeIcons.facebookF,
-                                color: Colors.white.withOpacity(.5)),
+                          InkWell(
+                                                      child: Container(
+                              padding: EdgeInsets.all(16),
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: Colors.white.withOpacity(.5),
+                                  )),
+                              child: Icon(FontAwesomeIcons.facebookF,
+                                  color: Colors.white.withOpacity(.5)),
+                                  
+                            ),
+                            onTap: () {
+                              fbLogin.logIn(['email','public_profile']).then((result) {
+                                switch (result.status){
+
+                                }
+                              });
+                            }
                           ),
                           SizedBox(width: 20),
                           Container(
@@ -144,5 +162,17 @@ class _SignInScreenState extends State<SignInScreen> {
         ],
       ),
     );
+    
+  }
+  Future loginWithFacebook(BuildContext context) async {
+    FacebookLogin facebookLogin = FacebookLogin();
+    FacebookLoginResult result = await facebookLogin
+        .logIn(['email', "public_profile"]);
+ 
+    String token = result.accessToken.token;
+    // print("Access token = $token");
+    // await _auth.signInWithCredential(
+    //     FacebookAuthProvider.getCredential(accessToken: token));
+    // checkAuth(context); // after success, navigate to home.
   }
 }
