@@ -122,13 +122,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                   color: Colors.white.withOpacity(.5)),
                                   
                             ),
-                            onTap: () {
-                              fbLogin.logIn(['email','public_profile']).then((result) {
-                                switch (result.status){
-
-                                }
-                              });
-                            }
+                            onTap: () => loginWithFacebook(context)
                           ),
                           SizedBox(width: 20),
                           Container(
@@ -167,12 +161,12 @@ class _SignInScreenState extends State<SignInScreen> {
   Future loginWithFacebook(BuildContext context) async {
     FacebookLogin facebookLogin = FacebookLogin();
     FacebookLoginResult result = await facebookLogin
-        .logIn(['email', "public_profile"]);
- 
-    String token = result.accessToken.token;
-    // print("Access token = $token");
-    // await _auth.signInWithCredential(
-    //     FacebookAuthProvider.getCredential(accessToken: token));
-    // checkAuth(context); // after success, navigate to home.
+        .logIn(['email', 'public_profile']);
+    if(result.status == FacebookLoginStatus.loggedIn){
+    FacebookAccessToken facebookAccessToken = result.accessToken;
+    AuthCredential authCredential = FacebookAuthProvider.getCredential(accessToken: facebookAccessToken.token);
+    FirebaseUser fbUser;
+    fbUser = (await FirebaseAuth.instance.signInWithCredential(authCredential)).user;
+  }
   }
 }
