@@ -1,22 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:fundee/Screen/personalinfo_screen.dart';
+import 'package:flutter/services.dart';
+import 'package:fundee/Screen/patient_personalinfo_screen.dart';
+import 'package:fundee/Screen/signin_screen.dart';
+import 'package:fundee/Services/add_patient_service..dart';
 
+import '../font_awesome_flutter.dart';
 import 'constants.dart';
 
-class SignUpScreen extends StatefulWidget {
+class PatientSignUpScreen extends StatefulWidget {
   @override
-  _SignUpScreenState createState() => _SignUpScreenState();
+  _PatientSignUpScreenState createState() => _PatientSignUpScreenState();
 }
 
 final _formKey = new GlobalKey<FormState>();
 
-class _SignUpScreenState extends State<SignUpScreen> {
+class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
   final fname = TextEditingController();
   final lname = TextEditingController();
   final username = TextEditingController();
   final email = TextEditingController();
   final password = TextEditingController();
   final confirmpassword = TextEditingController();
+  final drugallergy = TextEditingController();
+  final tel = TextEditingController();
+  final gender = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -152,14 +159,65 @@ class _SignUpScreenState extends State<SignUpScreen> {
               ],
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(right: 16),
+                  child: Icon(
+                    FontAwesomeIcons.pills,
+                    color: bPrimaryColor,
+                  ),
+                ),
+                Expanded(
+                    child: Container(
+                  margin: EdgeInsets.only(right: 20, left: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(hintText: "Drug Allergy"),
+                    controller: drugallergy,
+                  ),
+                )),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(right: 16),
+                  child: Icon(
+                    Icons.phone,
+                    color: bPrimaryColor,
+                  ),
+                ),
+                Expanded(
+                    child: Container(
+                  margin: EdgeInsets.only(right: 20, left: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(hintText: "Phone Number"),
+                    controller: tel,
+                    keyboardType: TextInputType.phone,
+                    inputFormatters: <TextInputFormatter>[
+                        WhitelistingTextInputFormatter.digitsOnly,
+                      ],
+                  ),
+                )),
+              ],
+            ),
+          ),
           Column(
             children: <Widget>[
               FittedBox(
                 child: GestureDetector(
                   onTap: () {
+                    // addPatient(context, {'fisrtName': fname.text}, documentName);
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return PersonalInfoScreen();
+                        return SignInScreen();
                       },
                     ));
                   },
@@ -173,7 +231,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     child: Row(
                       children: <Widget>[
                         Text(
-                          "NEXT",
+                          "SIGN UP",
                           style: Theme.of(context)
                               .textTheme
                               .button
