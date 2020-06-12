@@ -10,11 +10,8 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-
   // FacebookLogin fbLogin = new FacebookLogin();
   final fbLogin = FacebookLogin();
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -111,19 +108,17 @@ class _SignInScreenState extends State<SignInScreen> {
                       child: Row(
                         children: <Widget>[
                           InkWell(
-                                                      child: Container(
-                              padding: EdgeInsets.all(16),
-                              decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  border: Border.all(
-                                    color: Colors.white.withOpacity(.5),
-                                  )),
-                              child: Icon(FontAwesomeIcons.facebookF,
-                                  color: Colors.white.withOpacity(.5)),
-                                  
-                            ),
-                            onTap: () => loginWithFacebook(context)
-                          ),
+                              child: Container(
+                                padding: EdgeInsets.all(16),
+                                decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    border: Border.all(
+                                      color: Colors.white.withOpacity(.5),
+                                    )),
+                                child: Icon(FontAwesomeIcons.facebookF,
+                                    color: Colors.white.withOpacity(.5)),
+                              ),
+                              onTap: () => loginWithFacebook(context)),
                           SizedBox(width: 20),
                           Container(
                             padding: EdgeInsets.all(16),
@@ -156,17 +151,20 @@ class _SignInScreenState extends State<SignInScreen> {
         ],
       ),
     );
-    
   }
+
   Future loginWithFacebook(BuildContext context) async {
     FacebookLogin facebookLogin = FacebookLogin();
-    FacebookLoginResult result = await facebookLogin
-        .logIn(['email', 'public_profile']);
-    if(result.status == FacebookLoginStatus.loggedIn){
-    FacebookAccessToken facebookAccessToken = result.accessToken;
-    AuthCredential authCredential = FacebookAuthProvider.getCredential(accessToken: facebookAccessToken.token);
-    FirebaseUser fbUser;
-    fbUser = (await FirebaseAuth.instance.signInWithCredential(authCredential)).user;
-  }
+    FacebookLoginResult result =
+        await facebookLogin.logIn(['email', 'public_profile']);
+    if (result.status == FacebookLoginStatus.loggedIn) {
+      FacebookAccessToken facebookAccessToken = result.accessToken;
+      AuthCredential authCredential = FacebookAuthProvider.getCredential(
+          accessToken: facebookAccessToken.token);
+      FirebaseUser fbUser;
+      fbUser =
+          (await FirebaseAuth.instance.signInWithCredential(authCredential))
+              .user;
+    }
   }
 }
