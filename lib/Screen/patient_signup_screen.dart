@@ -159,56 +159,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(right: 16),
-                  child: Icon(
-                    FontAwesomeIcons.pills,
-                    color: bPrimaryColor,
-                  ),
-                ),
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 10),
-                  child: TextFormField(
-                    decoration: InputDecoration(hintText: "Drug Allergy"),
-                    controller: drugallergy,
-                  ),
-                )),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(right: 16),
-                  child: Icon(
-                    Icons.phone,
-                    color: bPrimaryColor,
-                  ),
-                ),
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 10),
-                  child: TextFormField(
-                    decoration: InputDecoration(hintText: "Phone Number"),
-                    controller: tel,
-                    keyboardType: TextInputType.phone,
-                    inputFormatters: <TextInputFormatter>[
-                        WhitelistingTextInputFormatter.digitsOnly,
-                      ],
-                  ),
-                )),
-              ],
-            ),
-          ),
           Column(
             children: <Widget>[
               FittedBox(
