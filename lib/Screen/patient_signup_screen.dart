@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fundee/Screen/patient_personalinfo_screen.dart';
 import 'package:fundee/Screen/signin_screen.dart';
-import 'package:fundee/Services/add_patient_service..dart';
+import 'package:fundee/Services/add_patient_service.dart';
 
 import '../font_awesome_flutter.dart';
 import 'constants.dart';
@@ -217,7 +217,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     // addPatient(context, {'fisrtName': fname.text}, documentName);
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return SignInScreen();
+                        return PatientPersonalInfoScreen();
                       },
                     ));
                   },
@@ -231,7 +231,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     child: Row(
                       children: <Widget>[
                         Text(
-                          "SIGN UP",
+                          "NEXT",
                           style: Theme.of(context)
                               .textTheme
                               .button
