@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fundee/Services/add_patient_service..dart';
+import 'package:fundee/Services/add_patient_service.dart';
 import 'package:fundee/Services/logger_service.dart';
+
+import 'Services/add_patient_service.dart';
 
 enum Gender { MALE, FEMALE, OTHER }
 
