@@ -1,22 +1,40 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fundee/Screen/patient_personalinfo_screen.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:fundee/Services/add_patient_service.dart';
+import 'package:intl/intl.dart';
 
-import '../font_awesome_flutter.dart';
-import 'constants.dart';
+import '../../font_awesome_flutter.dart';
+import '../constants.dart';
 
-class PatientSignUpScreen extends StatefulWidget {
+class PatientPersonalInfoScreen extends StatefulWidget {
   @override
-  _PatientSignUpScreenState createState() => _PatientSignUpScreenState();
+  _PatientPersonalInfoScreenState createState() =>
+      _PatientPersonalInfoScreenState();
 }
 
-final _formKey = new GlobalKey<FormState>();
-
-class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
+class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
+  DateTime _currentDate = new DateTime.now();
+  final formatDate = new DateFormat('dd-MM-yyyy');
+  Future<Null> _selectdate(BuildContext context) async{
+      final DateTime _seldate = await showDatePicker(
+        context: context,
+        initialDate: _currentDate,
+        firstDate: DateTime(1900),
+        lastDate: DateTime.now(),
+        builder: (context,child) {
+          return SingleChildScrollView(child: child,);
+        }
+      );
+      if(_seldate!=null) {
+        setState(() {
+          _currentDate = _seldate;
+        });
+      }
+  }
   @override
   Widget build(BuildContext context) {
+    String _formattedate = new DateFormat.yMMMd().format(_currentDate);
     return Scaffold(
       body: ListView(
         children: <Widget>[
@@ -36,7 +54,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
-                          'Create New Account',
+                          'Welcome to Fun-D',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -47,6 +65,17 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
               ),
             ),
           ),
+          Positioned(
+              child: Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Text(
+              'Personal Information',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.normal,
+                  fontSize: 16),
+            ),
+          )),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Row(
@@ -55,7 +84,33 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                 Padding(
                   padding: const EdgeInsets.only(right: 16),
                   child: Icon(
-                    Icons.person,
+                    FontAwesomeIcons.birthdayCake,
+                    color: bPrimaryColor,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 0),
+                  child: FlatButton(
+                      textColor: Colors.black54,
+                      child: Text('$_formattedate',
+                          style: new TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.normal)),
+                      onPressed: () {
+                        _selectdate(context);
+                      }),
+                )
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(right: 16),
+                  child: Icon(
+                    Icons.phone,
                     color: bPrimaryColor,
                   ),
                 ),
@@ -63,22 +118,11 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     child: Container(
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
-                    decoration: InputDecoration(hintText: "Firstname"),
-                  ),
-                )),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 60, right: 20, bottom: 20),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 10),
-                  child: TextFormField(
-                    decoration: InputDecoration(hintText: "Lastname"),
+                    decoration: InputDecoration(hintText: "Phone Number"),
+                    keyboardType: TextInputType.phone,
+                    inputFormatters: <TextInputFormatter>[
+                      WhitelistingTextInputFormatter.digitsOnly,
+                    ],
                   ),
                 )),
               ],
@@ -92,7 +136,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                 Padding(
                   padding: const EdgeInsets.only(right: 16),
                   child: Icon(
-                    Icons.mail,
+                    FontAwesomeIcons.pills,
                     color: bPrimaryColor,
                   ),
                 ),
@@ -100,45 +144,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     child: Container(
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
-                    decoration: InputDecoration(hintText: "Email Adcress"),
-                    keyboardType: TextInputType.emailAddress,
-                  ),
-                )),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(right: 16),
-                  child: Icon(
-                    Icons.lock,
-                    color: bPrimaryColor,
-                  ),
-                ),
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 10),
-                  child: TextFormField(
-                    decoration: InputDecoration(hintText: "Password"),
-                  ),
-                )),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 60, right: 20, bottom: 20),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 10),
-                  child: TextFormField(
-                    decoration: InputDecoration(hintText: "Confirm Password"),
+                    decoration: InputDecoration(hintText: "Drug Allergy"),
                   ),
                 )),
               ],
@@ -152,7 +158,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     // addPatient(context, {'fisrtName': fname.text}, documentName);
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        return PatientPersonalInfoScreen();
+                        return SignInScreen();
                       },
                     ));
                   },
@@ -166,7 +172,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     child: Row(
                       children: <Widget>[
                         Text(
-                          "NEXT",
+                          "SIGN UP",
                           style: Theme.of(context)
                               .textTheme
                               .button

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:fundee/Screen/patient_home_screen.dart';
+import 'package:fundee/Screen/Patient/patient_home_screen.dart';
 import 'package:fundee/Screen/welcome_screen.dart';
 import 'Screen/constants.dart';
-import 'Screen/patient_signup_screen.dart';
+import 'Screen/Patient/patient_signup_screen.dart';
 import 'Screen/signin_screen.dart';
 
 
