@@ -14,11 +14,27 @@ class PatientPersonalInfoScreen extends StatefulWidget {
 }
 
 class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
-  DateTime currentDate = new DateTime.now();
+  DateTime _currentDate = new DateTime.now();
   final formatDate = new DateFormat('dd-MM-yyyy');
-  DateTime _dateTime;
+   Future<Null> _selectdate(BuildContext context) async{
+      final DateTime _seldate = await showDatePicker(
+        context: context,
+        initialDate: _currentDate,
+        firstDate: DateTime(1990),
+        lastDate: DateTime(2020),
+        builder: (context,child) {
+          return SingleChildScrollView(child: child,);
+        }
+      );
+      if(_seldate!=null) {
+        setState(() {
+          _currentDate = _seldate;
+        });
+      }
+  }
   @override
   Widget build(BuildContext context) {
+    String _formattedate = new DateFormat.yMMMd().format(_currentDate);
     return Scaffold(
       body: ListView(
         children: <Widget>[
@@ -81,12 +97,13 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                 //         fontSize: 16,
                 //       )),
                 // )),
+                
                 // Text(_dateTime == null ? 'Nothing has been picked yet': _dateTime.toString()),
                 Padding(
                   padding: const EdgeInsets.only(left: 0),
                   child: FlatButton(
                       textColor: Colors.black54,
-                      child: Text('Date of Birth',
+                      child: Text('$_formattedate',
                           style: new TextStyle(
                               fontSize: 17, fontWeight: FontWeight.normal)),
                       onPressed: () {
@@ -94,12 +111,7 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                                 context: context,
                                 initialDate: DateTime.now(),
                                 firstDate: DateTime(1900),
-                                lastDate: DateTime.now())
-                            .then((date) {
-                          setState(() {
-                            _dateTime = date;
-                          });
-                        });
+                                lastDate: DateTime.now());
                       }),
                 )
               ],
