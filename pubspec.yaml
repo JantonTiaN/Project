@@ -25,6 +25,7 @@ dependencies:
   curved_navigation_bar: ^0.1.2 #latest version
   font_awesome_flutter: ^8.8.1
   flutter_facebook_login: ^3.0.0
+  intl: 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:fundee/Services/add_patient_service.dart';
+import 'package:intl/intl.dart';
 
 import '../font_awesome_flutter.dart';
 import 'constants.dart';
@@ -13,6 +14,8 @@ class PatientPersonalInfoScreen extends StatefulWidget {
 }
 
 class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
+DateTime currentDate = new DateTime.now();
+final formatDate = new DateFormat('dd-MM-yyyy');
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,10 +72,10 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                   ),
                 ),
                 Expanded(
-                    child: Container(
+                  child: Container(
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
-                    decoration: InputDecoration(hintText: "Birth Date"),
+                    decoration: InputDecoration(hintText: "Date of Birth"),
                     inputFormatters: <TextInputFormatter>[
                       WhitelistingTextInputFormatter.digitsOnly,
                     ],
