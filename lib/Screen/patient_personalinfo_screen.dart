@@ -16,12 +16,12 @@ class PatientPersonalInfoScreen extends StatefulWidget {
 class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
   DateTime _currentDate = new DateTime.now();
   final formatDate = new DateFormat('dd-MM-yyyy');
-   Future<Null> _selectdate(BuildContext context) async{
+  Future<Null> _selectdate(BuildContext context) async{
       final DateTime _seldate = await showDatePicker(
         context: context,
         initialDate: _currentDate,
-        firstDate: DateTime(1990),
-        lastDate: DateTime(2020),
+        firstDate: DateTime(1900),
+        lastDate: DateTime.now(),
         builder: (context,child) {
           return SingleChildScrollView(child: child,);
         }
@@ -88,17 +88,6 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                     color: bPrimaryColor,
                   ),
                 ),
-                // Expanded(
-                //     child: Container(
-                //   margin: EdgeInsets.only(right: 20, left: 10),
-                //   child: Text('Date of Birth',
-                //       style: TextStyle(
-                //         color: Colors.black54,
-                //         fontSize: 16,
-                //       )),
-                // )),
-                
-                // Text(_dateTime == null ? 'Nothing has been picked yet': _dateTime.toString()),
                 Padding(
                   padding: const EdgeInsets.only(left: 0),
                   child: FlatButton(
@@ -107,11 +96,7 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                           style: new TextStyle(
                               fontSize: 17, fontWeight: FontWeight.normal)),
                       onPressed: () {
-                        showDatePicker(
-                                context: context,
-                                initialDate: DateTime.now(),
-                                firstDate: DateTime(1900),
-                                lastDate: DateTime.now());
+                        _selectdate(context);
                       }),
                 )
               ],
