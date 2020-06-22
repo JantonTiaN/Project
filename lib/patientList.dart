@@ -93,3 +93,10 @@ class _PatientListState extends State<PatientList> {
     );
   }
 }
+
+// class _ListItem{
+//   _ListItem(this.value, this.checked);
+//   final String value;
+//   bool checked;
+// }
+
