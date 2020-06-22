@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/patient_home_screen.dart';
 import 'package:fundee/Screen/welcome_screen.dart';
 import 'Screen/constants.dart';
 import 'Screen/patient_signup_screen.dart';
 import 'Screen/signin_screen.dart';
-import 'Screen/home_screen.dart';
 
 
 void main() => runApp(MyApp());
@@ -38,7 +38,7 @@ class MyApp extends StatelessWidget {
           'SignIn':(context) => SignInScreen(),
           'SignUp':(context) => PatientSignUpScreen(),
           'Welcome': (context) => WelcomeScreen(),
-          'Home': (context) => HomeScreen(),
+          'PHome': (context) => PatientHomeScreen(),
         },
         );
   }
