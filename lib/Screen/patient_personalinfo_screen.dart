@@ -73,7 +73,6 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Birth Date"),
-                    keyboardType: TextInputType.phone,
                     inputFormatters: <TextInputFormatter>[
                       WhitelistingTextInputFormatter.digitsOnly,
                     ],
