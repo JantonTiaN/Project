@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fundee/Screen/signin_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fundee/Screen/patient_signup_screen.dart';
 import 'package:fundee/Services/add_patient_service.dart';
 
 import '../font_awesome_flutter.dart';
@@ -16,6 +18,8 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
   final drugallergy = TextEditingController();
   final tel = TextEditingController();
   final gender = TextEditingController();
+  final databaseReference = Firestore.instance;
+  final firestoreInstance = Firestore.instance;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -141,9 +145,9 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
               FittedBox(
                 child: GestureDetector(
                   onTap: () {
-                    // addPatient(context, {'fisrtName': fname.text}, documentName);
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
+                        // return Text('asdasdasd');
                         return SignInScreen();
                       },
                     ));
@@ -157,12 +161,14 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                     ),
                     child: Row(
                       children: <Widget>[
-                        Text(
-                          "SIGN UP",
-                          style: Theme.of(context)
-                              .textTheme
-                              .button
-                              .copyWith(color: Colors.black),
+                        Container(
+                          child: Text(
+                            "SIGN UP",
+                            style: Theme.of(context)
+                                .textTheme
+                                .button
+                                .copyWith(color: Colors.black),
+                          ),
                         ),
                       ],
                     ),
@@ -174,5 +180,16 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
         ],
       ),
     );
+  }
+
+  void createRecord() async {
+    await databaseReference.collection("patients").document("1").setData(
+        {'firstName': drugallergy, 'lastName': 'Programming Guide for Dart'});
+
+    DocumentReference ref = await databaseReference.collection("patients").add({
+      'title': 'Flutter in Action',
+      'description': 'Complete Programming Guide to learn Flutter'
+    });
+    print(ref.documentID);
   }
 }

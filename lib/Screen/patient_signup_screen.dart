@@ -1,5 +1,8 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fundee/Screen/patient_personalinfo_screen.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:fundee/Services/add_patient_service.dart';
@@ -24,6 +27,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
   final drugallergy = TextEditingController();
   final tel = TextEditingController();
   final gender = TextEditingController();
+  final firestoreInstance = Firestore.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -164,6 +168,13 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
               FittedBox(
                 child: GestureDetector(
                   onTap: () {
+                    // firestoreInstance.collection("patients").add({
+                    //   "firstName": fname,
+                    //   "lastName": lname,
+                    //   "email": email,
+                    // }).then((value) {
+                    //   print(value.documentID);
+                    // });
                     // addPatient(context, {'fisrtName': fname.text}, documentName);
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
@@ -198,4 +209,12 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
       ),
     );
   }
+
+
+  // void createUser() async => await databaseReference.collection('patients').document('1').setData({
+  //     'firstName': fname,
+  //     'lastName': lname,
+  //     'eMail': email,
+  //     'password': password
+  //   });
 }

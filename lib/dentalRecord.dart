@@ -47,7 +47,7 @@ class _Tooth1State extends State<Tooth1> {
                 itemBuilder: (BuildContext buildContext, int index) {
                   return Container(
                     child: Container(
-                      child: Text(' ' + userModels[index].firstName + ' ' +userModels[index].lastName, style: TextStyle(fontSize: 15, color: Colors.black))
+                      child: Text(' ' + userModels[6].firstName + ' ' +userModels[6].lastName, style: TextStyle(fontSize: 15, color: Colors.black))
                       )
                     );
                 }
