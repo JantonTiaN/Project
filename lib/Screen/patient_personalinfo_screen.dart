@@ -13,9 +13,6 @@ class PatientPersonalInfoScreen extends StatefulWidget {
 }
 
 class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
-  final drugallergy = TextEditingController();
-  final tel = TextEditingController();
-  final gender = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,7 +73,6 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Birth Date"),
-                    controller: tel,
                     keyboardType: TextInputType.phone,
                     inputFormatters: <TextInputFormatter>[
                       WhitelistingTextInputFormatter.digitsOnly,
@@ -103,7 +99,6 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Phone Number"),
-                    controller: tel,
                     keyboardType: TextInputType.phone,
                     inputFormatters: <TextInputFormatter>[
                       WhitelistingTextInputFormatter.digitsOnly,
@@ -130,7 +125,6 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Drug Allergy"),
-                    controller: drugallergy,
                   ),
                 )),
               ],

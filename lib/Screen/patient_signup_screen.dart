@@ -15,16 +15,6 @@ class PatientSignUpScreen extends StatefulWidget {
 final _formKey = new GlobalKey<FormState>();
 
 class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
-  final fname = TextEditingController();
-  final lname = TextEditingController();
-  final username = TextEditingController();
-  final email = TextEditingController();
-  final password = TextEditingController();
-  final confirmpassword = TextEditingController();
-  final drugallergy = TextEditingController();
-  final tel = TextEditingController();
-  final gender = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +64,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Firstname"),
-                    controller: fname,
                   ),
                 )),
               ],
@@ -90,7 +79,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Lastname"),
-                    controller: lname,
                   ),
                 )),
               ],
@@ -113,7 +101,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Email Adcress"),
-                    controller: email,
                     keyboardType: TextInputType.emailAddress,
                   ),
                 )),
@@ -137,7 +124,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Password"),
-                    controller: password,
                   ),
                 )),
               ],
@@ -153,7 +139,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Confirm Password"),
-                    controller: confirmpassword,
                   ),
                 )),
               ],
