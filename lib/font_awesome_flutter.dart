@@ -1603,6 +1603,3 @@ class FontAwesomeIcons {
   static const IconData youtubeSquare = const IconDataBrands(0xf431);
   static const IconData zhihu = const IconDataBrands(0xf63f);
 }
-
-class IconDataBrands {
-}

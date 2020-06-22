@@ -1,9 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import '../font_awesome_flutter.dart';
-import 'constants.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
-
+import 'constants.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -158,7 +157,7 @@ class _SignInScreenState extends State<SignInScreen> {
     FacebookLogin facebookLogin = FacebookLogin();
     FacebookLoginResult result =
         await facebookLogin.logIn(['email', 'public_profile']);
-    if (result.status == FacebookLogin.loggedIn) {
+    if (result.status == FacebookLoginStatus.loggedIn) {
       FacebookAccessToken facebookAccessToken = result.accessToken;
       AuthCredential authCredential = FacebookAuthProvider.getCredential(
           accessToken: facebookAccessToken.token);
@@ -168,10 +167,4 @@ class _SignInScreenState extends State<SignInScreen> {
               .user;
     }
   }
-}
-
-class FacebookLoginResult {
-}
-
-class FacebookLogin {
 }
