@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-=======
 import 'package:fundee/Screen/Patient/patient_home_screen.dart';
->>>>>>> e248597f5f8de14dab1f200d8314a3ff2caf319f
 import 'package:fundee/Screen/welcome_screen.dart';
 import 'Screen/constants.dart';
 import 'Screen/Patient/patient_signup_screen.dart';

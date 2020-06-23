@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fundee/Screen/patient_signup_screen.dart';
+import 'package:fundee/Screen/Patient/patient_signup_screen.dart';
 import 'package:fundee/Services/add_patient_service.dart';
 
 import '../../font_awesome_flutter.dart';
