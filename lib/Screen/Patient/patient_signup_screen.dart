@@ -1,8 +1,10 @@
+import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fundee/Screen/Patient/patient_personalinfo_screen.dart';
+import 'package:fundee/Screen/signin_screen.dart';
 import 'package:fundee/Services/add_patient_service.dart';
-
 import '../constants.dart';
 
 class PatientSignUpScreen extends StatefulWidget {
@@ -13,6 +15,17 @@ class PatientSignUpScreen extends StatefulWidget {
 final _formKey = new GlobalKey<FormState>();
 
 class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
+  final fname = TextEditingController();
+  final lname = TextEditingController();
+  final username = TextEditingController();
+  final email = TextEditingController();
+  final password = TextEditingController();
+  final confirmpassword = TextEditingController();
+  final drugallergy = TextEditingController();
+  final tel = TextEditingController();
+  final gender = TextEditingController();
+  final firestoreInstance = Firestore.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,6 +75,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Firstname"),
+                    controller: fname,
                   ),
                 )),
               ],
@@ -77,6 +91,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Lastname"),
+                    controller: lname,
                   ),
                 )),
               ],
@@ -99,6 +114,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Email Adcress"),
+                    controller: email,
                     keyboardType: TextInputType.emailAddress,
                   ),
                 )),
@@ -122,6 +138,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Password"),
+                    controller: password,
                   ),
                 )),
               ],
@@ -137,6 +154,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Confirm Password"),
+                    controller: confirmpassword,
                   ),
                 )),
               ],
@@ -147,6 +165,13 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
               FittedBox(
                 child: GestureDetector(
                   onTap: () {
+                    // firestoreInstance.collection("patients").add({
+                    //   "firstName": fname,
+                    //   "lastName": lname,
+                    //   "email": email,
+                    // }).then((value) {
+                    //   print(value.documentID);
+                    // });
                     // addPatient(context, {'fisrtName': fname.text}, documentName);
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
@@ -181,4 +206,12 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
       ),
     );
   }
+
+
+  // void createUser() async => await databaseReference.collection('patients').document('1').setData({
+  //     'firstName': fname,
+  //     'lastName': lname,
+  //     'eMail': email,
+  //     'password': password
+  //   });
 }
