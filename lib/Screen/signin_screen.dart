@@ -43,14 +43,21 @@ class _SignInScreenState extends State<SignInScreen> {
                           "SIGN IN",
                           style: Theme.of(context).textTheme.display1,
                         ),
-                        InkWell(
-                          onTap: () {
-                            Navigator.pushNamed(context, 'SignUp');
+                        // InkWell(
+                        //   onTap: () {
+                        //     Navigator.pushNamed(context, 'SignUp');
+                        //   },
+                        //   child: Text(
+                        //     "SIGN UP",
+                        //     style: Theme.of(context).textTheme.button,
+                        //   ),
+                        // ),
+                        FlatButton(
+                          textColor: bPrimaryColor,
+                          child: Text('SIGN UP'),
+                          onPressed: () {
+
                           },
-                          child: Text(
-                            "SIGN UP",
-                            style: Theme.of(context).textTheme.button,
-                          ),
                         ),
                       ],
                     ),
