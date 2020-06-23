@@ -12,25 +12,32 @@ class PatientPersonalInfoScreen extends StatefulWidget {
   _PatientPersonalInfoScreenState createState() =>
       _PatientPersonalInfoScreenState();
 }
+
 class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
   DateTime _currentDate = new DateTime.now();
   final formatDate = new DateFormat('dd-MM-yyyy');
-  Future<Null> _selectdate(BuildContext context) async{
-      final DateTime _seldate = await showDatePicker(
+  final drugallergy = TextEditingController();
+  final tel = TextEditingController();
+  final birthdate = TextEditingController();
+
+  Future<Null> _selectdate(BuildContext context) async {
+    final DateTime _seldate = await showDatePicker(
         context: context,
         initialDate: _currentDate,
         firstDate: DateTime(1900),
         lastDate: DateTime.now(),
-        builder: (context,child) {
-          return SingleChildScrollView(child: child,);
-        }
-      );
-      if(_seldate!=null) {
-        setState(() {
-          _currentDate = _seldate;
+        builder: (context, child) {
+          return SingleChildScrollView(
+            child: child,
+          );
         });
-      }
+    if (_seldate != null) {
+      setState(() {
+        _currentDate = _seldate;
+      });
+    }
   }
+
   @override
   Widget build(BuildContext context) {
     String _formattedate = new DateFormat.yMMMd().format(_currentDate);
@@ -122,6 +129,7 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                     inputFormatters: <TextInputFormatter>[
                       WhitelistingTextInputFormatter.digitsOnly,
                     ],
+                    controller: tel,
                   ),
                 )),
               ],
@@ -144,6 +152,7 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Drug Allergy"),
+                    controller: drugallergy,
                   ),
                 )),
               ],

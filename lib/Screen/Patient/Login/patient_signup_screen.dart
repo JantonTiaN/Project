@@ -9,6 +9,12 @@ class PatientSignUpScreen extends StatefulWidget {
 }
 
 class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
+  final fname = TextEditingController();
+  final lname = TextEditingController();
+  final username = TextEditingController();
+  final email = TextEditingController();
+  final password = TextEditingController();
+  final confirmpassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -59,6 +65,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Firstname"),
+                    controller: fname,
                   ),
                 )),
               ],
@@ -74,6 +81,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Lastname"),
+                    controller: lname,
                   ),
                 )),
               ],
@@ -97,6 +105,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Email Adcress"),
                     keyboardType: TextInputType.emailAddress,
+                    controller: email,
                   ),
                 )),
               ],
@@ -119,6 +128,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Password"),
+                    controller: password,
                     obscureText: true,
                   ),
                 )),
@@ -135,6 +145,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Confirm Password"),
+                    controller: confirmpassword,
                     obscureText: true,
                   ),
                 )),
@@ -187,7 +198,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
       ),
     );
   }
-
 
   // void createUser() async => await databaseReference.collection('patients').document('1').setData({
   //     'firstName': fname,
