@@ -5,8 +5,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fundee/Screen/patient_signup_screen.dart';
 import 'package:fundee/Services/add_patient_service.dart';
 
-import '../font_awesome_flutter.dart';
-import 'constants.dart';
+import '../../font_awesome_flutter.dart';
+import '../constants.dart';
 
 class PatientPersonalInfoScreen extends StatefulWidget {
   @override

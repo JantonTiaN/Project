@@ -2,13 +2,16 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+<<<<<<< HEAD:lib/Screen/patient_signup_screen.dart
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fundee/Screen/patient_personalinfo_screen.dart';
+=======
+import 'package:fundee/Screen/Patient/patient_personalinfo_screen.dart';
+>>>>>>> e248597f5f8de14dab1f200d8314a3ff2caf319f:lib/Screen/Patient/patient_signup_screen.dart
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:fundee/Services/add_patient_service.dart';
 
-import '../font_awesome_flutter.dart';
-import 'constants.dart';
+import '../constants.dart';
 
 class PatientSignUpScreen extends StatefulWidget {
   @override
