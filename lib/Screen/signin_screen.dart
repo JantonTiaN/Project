@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+import 'package:fundee/States/current_user.dart';
+import 'package:provider/provider.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -10,8 +12,21 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  // FacebookLogin fbLogin = new FacebookLogin();
   final fbLogin = FacebookLogin();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+
+  void _loginUser(String email, String password, BuildContext context) async{
+    CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+
+    try{
+      if(await _currentUser.loginUser(email, password)){
+        // Navigator.of(context)
+      }
+    }catch(e){
+      print(e);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +70,7 @@ class _SignInScreenState extends State<SignInScreen> {
                         FlatButton(
                           textColor: bPrimaryColor,
                           child: Text('SIGN UP'),
-                          onPressed: () {
-
-                          },
+                          onPressed: () {},
                         ),
                       ],
                     ),
@@ -78,7 +91,8 @@ class _SignInScreenState extends State<SignInScreen> {
                               child: TextField(
                             decoration:
                                 InputDecoration(hintText: "Email Address"),
-                                keyboardType: TextInputType.emailAddress,
+                            keyboardType: TextInputType.emailAddress,
+                            controller: _emailController,
                           ))
                         ],
                       ),
@@ -97,8 +111,9 @@ class _SignInScreenState extends State<SignInScreen> {
                             child: TextFormField(
                           keyboardType: TextInputType.text,
                           // controller: ,
-
                           decoration: InputDecoration(hintText: "Password"),
+                          obscureText: true,
+                          controller: _passwordController,
                         ))
                       ],
                     ),
@@ -139,16 +154,22 @@ class _SignInScreenState extends State<SignInScreen> {
                                 color: Colors.white.withOpacity(.5)),
                           ),
                           Spacer(),
-                          Container(
-                            padding: EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: bPrimaryColor,
+                          InkWell(
+                            child: Container(
+                              padding: EdgeInsets.all(16),
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: bPrimaryColor,
+                              ),
+                              child: Icon(
+                                Icons.arrow_forward,
+                                color: Colors.black,
+                              ),
                             ),
-                            child: Icon(
-                              Icons.arrow_forward,
-                              color: Colors.black,
-                            ),
+                            onTap: () {
+                              _loginUser(_emailController.text,
+                                  _passwordController.text, context);
+                            },
                           )
                         ],
                       ),

@@ -136,6 +136,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Password"),
                     controller: password,
+                    obscureText: true,
                   ),
                 )),
               ],
@@ -152,6 +153,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Confirm Password"),
                     controller: confirmpassword,
+                    obscureText: true,
                   ),
                 )),
               ],
