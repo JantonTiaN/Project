@@ -78,6 +78,7 @@ class _SignInScreenState extends State<SignInScreen> {
                               child: TextField(
                             decoration:
                                 InputDecoration(hintText: "Email Address"),
+                                keyboardType: TextInputType.emailAddress,
                           ))
                         ],
                       ),
