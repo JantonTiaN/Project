@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:provider/provider.dart';
+import '../home.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -21,7 +22,18 @@ class _SignInScreenState extends State<SignInScreen> {
 
     try{
       if(await _currentUser.loginUser(email, password)){
-        // Navigator.of(context)
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => Home(),
+          )
+        );
+      } else {
+        Scaffold.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Incorrect email or password, try agian'),
+            duration: Duration(seconds: 2),
+          )
+        );
       }
     }catch(e){
       print(e);
