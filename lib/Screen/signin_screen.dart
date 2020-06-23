@@ -20,8 +20,10 @@ class _SignInScreenState extends State<SignInScreen> {
   void _loginUser(String email, String password, BuildContext context) async{
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
 
+
     try{
-      if(await _currentUser.loginUser(email, password)){
+      String _returnString = await _currentUser.loginUser(email, password);
+      if(_returnString == 'success'){
         Navigator.of(context).push(
           MaterialPageRoute(
             builder: (context) => Home(),
@@ -30,9 +32,9 @@ class _SignInScreenState extends State<SignInScreen> {
       } else {
         Scaffold.of(context).showSnackBar(
           SnackBar(
-            content: Text('Incorrect email or password, try agian'),
-            duration: Duration(seconds: 2),
-          )
+            content: Text(_returnString),
+            duration: Duration(seconds: 3),
+          ),
         );
       }
     }catch(e){
@@ -82,7 +84,9 @@ class _SignInScreenState extends State<SignInScreen> {
                         FlatButton(
                           textColor: bPrimaryColor,
                           child: Text('SIGN UP'),
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.pushNamed(context, 'PSignUp');
+                          },
                         ),
                       ],
                     ),

@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-class CurrentUser extends ChangeNotifier{
+class CurrentUser extends ChangeNotifier {
   String _userid;
   String _email;
 
@@ -10,32 +10,31 @@ class CurrentUser extends ChangeNotifier{
 
   FirebaseAuth _auth = FirebaseAuth.instance;
 
-  Future<bool> signUpUser(String email, String password) async{
-    bool returnVal = false;
+  Future<String> signUpUser(String email, String password) async {
+    String returnVal = 'error';
 
-    try{
-      AuthResult _authReult = await _auth.createUserWithEmailAndPassword(email: email, password: password);
-      if(_authReult.user != null){
-        returnVal = true;
-      }
-    } catch (e){
-      print(e);
+    try {
+      await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      returnVal = 'success';
+    } catch (e) {
+      returnVal = e.message;
     }
     return returnVal;
   }
 
-  Future<bool> loginUser(String email, String password) async{
-    bool returnVal = false;
+  Future<String> loginUser(String email, String password) async {
+    String returnVal = 'error';
 
-    try{
-      AuthResult _authReult = await _auth.signInWithEmailAndPassword(email: email, password: password);
-      if(_authReult.user != null){
-        _userid = _authReult.user.uid;
-        _email = _authReult.user.email;
-        returnVal = true;
-      }
-    } catch (e){
-      print(e);
+    try {
+      AuthResult _authReult = await _auth.signInWithEmailAndPassword(
+          email: email, password: password);
+
+      _userid = _authReult.user.uid;
+      _email = _authReult.user.email;
+      returnVal = 'success';
+    } catch (e) {
+      returnVal = e.message;
     }
     return returnVal;
   }
