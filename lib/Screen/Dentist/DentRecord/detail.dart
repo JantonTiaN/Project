@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fundee/models/account_model.dart';
 import 'package:fundee/models/user_model.dart';
-import 'package:fundee/dentalCase.dart';
+import 'dentalCase.dart';
 
 class Detail extends StatefulWidget {
   @override

@@ -1,10 +1,8 @@
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fundee/dentalRecord.dart';
-import 'package:fundee/login.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'package:fundee/patientlist.dart';
-
 
 class Home extends StatelessWidget {
   @override
@@ -26,7 +24,7 @@ class Home extends StatelessWidget {
             ListTile(
               title: Text("Login"),
               onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
               },
             ),
             ListTile(

@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:fundee/detail.dart';
+import 'detail.dart';
 import 'package:fundee/models/account_model.dart';
 import 'package:fundee/models/user_model.dart';
 
