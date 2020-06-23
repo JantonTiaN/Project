@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:fundee/Screen/welcome_screen.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:provider/provider.dart';
-import 'Screen/Patient/Login/patient_signup_screen.dart';
+import 'Screen/Patient/Signup/patient_signup_screen.dart';
 import 'Screen/constants.dart';
 import 'Screen/signin_screen.dart';
 

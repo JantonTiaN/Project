@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fundee/Screen/Patient/Login/patient_personalinfo_screen.dart';
+import 'package:fundee/Screen/Patient/Signup/patient_personalinfo_screen.dart';
 import '../../constants.dart';
 
 class PatientSignUpScreen extends StatefulWidget {
