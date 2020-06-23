@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fundee/Screen/signin_screen.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fundee/Services/add_patient_service.dart';
+import 'package:intl/intl.dart';
 
 import '../../../font_awesome_flutter.dart';
 import '../../constants.dart';
@@ -11,15 +12,28 @@ class PatientPersonalInfoScreen extends StatefulWidget {
   _PatientPersonalInfoScreenState createState() =>
       _PatientPersonalInfoScreenState();
 }
-
 class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
-  final drugallergy = TextEditingController();
-  final tel = TextEditingController();
-  final gender = TextEditingController();
-  final databaseReference = Firestore.instance;
-  final firestoreInstance = Firestore.instance;
+  DateTime _currentDate = new DateTime.now();
+  final formatDate = new DateFormat('dd-MM-yyyy');
+  Future<Null> _selectdate(BuildContext context) async{
+      final DateTime _seldate = await showDatePicker(
+        context: context,
+        initialDate: _currentDate,
+        firstDate: DateTime(1900),
+        lastDate: DateTime.now(),
+        builder: (context,child) {
+          return SingleChildScrollView(child: child,);
+        }
+      );
+      if(_seldate!=null) {
+        setState(() {
+          _currentDate = _seldate;
+        });
+      }
+  }
   @override
   Widget build(BuildContext context) {
+    String _formattedate = new DateFormat.yMMMd().format(_currentDate);
     return Scaffold(
       body: ListView(
         children: <Widget>[
@@ -73,18 +87,17 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                     color: bPrimaryColor,
                   ),
                 ),
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 10),
-                  child: TextFormField(
-                    decoration: InputDecoration(hintText: "Birth Date"),
-                    controller: tel,
-                    keyboardType: TextInputType.phone,
-                    inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter.digitsOnly,
-                    ],
-                  ),
-                )),
+                Padding(
+                  padding: const EdgeInsets.only(left: 0),
+                  child: FlatButton(
+                      textColor: Colors.black54,
+                      child: Text('$_formattedate',
+                          style: new TextStyle(
+                              fontSize: 17, fontWeight: FontWeight.normal)),
+                      onPressed: () {
+                        _selectdate(context);
+                      }),
+                )
               ],
             ),
           ),
@@ -105,7 +118,6 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Phone Number"),
-                    controller: tel,
                     keyboardType: TextInputType.phone,
                     inputFormatters: <TextInputFormatter>[
                       WhitelistingTextInputFormatter.digitsOnly,
@@ -132,7 +144,6 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Drug Allergy"),
-                    controller: drugallergy,
                   ),
                 )),
               ],
@@ -143,9 +154,9 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
               FittedBox(
                 child: GestureDetector(
                   onTap: () {
+                    // addPatient(context, {'fisrtName': fname.text}, documentName);
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        // return Text('asdasdasd');
                         return SignInScreen();
                       },
                     ));
@@ -159,14 +170,12 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                     ),
                     child: Row(
                       children: <Widget>[
-                        Container(
-                          child: Text(
-                            "SIGN UP",
-                            style: Theme.of(context)
-                                .textTheme
-                                .button
-                                .copyWith(color: Colors.black),
-                          ),
+                        Text(
+                          "SIGN UP",
+                          style: Theme.of(context)
+                              .textTheme
+                              .button
+                              .copyWith(color: Colors.black),
                         ),
                       ],
                     ),
@@ -178,16 +187,5 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
         ],
       ),
     );
-  }
-
-  void createRecord() async {
-    await databaseReference.collection("patients").document("1").setData(
-        {'firstName': drugallergy, 'lastName': 'Programming Guide for Dart'});
-
-    DocumentReference ref = await databaseReference.collection("patients").add({
-      'title': 'Flutter in Action',
-      'description': 'Complete Programming Guide to learn Flutter'
-    });
-    print(ref.documentID);
   }
 }
