@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fundee/Screen/signin_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fundee/Screen/Patient/Login/patient_personalinfo_screen.dart';
+import '../../constants.dart';
 
-import '../../font_awesome_flutter.dart';
-import '../constants.dart';
-
-class PatientPersonalInfoScreen extends StatefulWidget {
+class PatientSignUpScreen extends StatefulWidget {
   @override
-  _PatientPersonalInfoScreenState createState() =>
-      _PatientPersonalInfoScreenState();
+  _PatientSignUpScreenState createState() => _PatientSignUpScreenState();
 }
 
-class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
+final _formKey = new GlobalKey<FormState>();
+
+class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
+  final fname = TextEditingController();
+  final lname = TextEditingController();
+  final username = TextEditingController();
+  final email = TextEditingController();
+  final password = TextEditingController();
+  final confirmpassword = TextEditingController();
   final drugallergy = TextEditingController();
   final tel = TextEditingController();
   final gender = TextEditingController();
-  final databaseReference = Firestore.instance;
   final firestoreInstance = Firestore.instance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -39,7 +44,7 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                       child: Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
-                          'Welcome to Fun-D',
+                          'Create New Account',
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -50,17 +55,6 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
               ),
             ),
           ),
-          Positioned(
-              child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text(
-              'Personal Information',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.normal,
-                  fontSize: 16),
-            ),
-          )),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Row(
@@ -69,7 +63,7 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                 Padding(
                   padding: const EdgeInsets.only(right: 16),
                   child: Icon(
-                    FontAwesomeIcons.birthdayCake,
+                    Icons.person,
                     color: bPrimaryColor,
                   ),
                 ),
@@ -77,12 +71,24 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                     child: Container(
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
-                    decoration: InputDecoration(hintText: "Birth Date"),
-                    controller: tel,
-                    keyboardType: TextInputType.phone,
-                    inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter.digitsOnly,
-                    ],
+                    decoration: InputDecoration(hintText: "Firstname"),
+                    controller: fname,
+                  ),
+                )),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 60, right: 20, bottom: 20),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                    child: Container(
+                  margin: EdgeInsets.only(right: 20, left: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(hintText: "Lastname"),
+                    controller: lname,
                   ),
                 )),
               ],
@@ -96,7 +102,7 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                 Padding(
                   padding: const EdgeInsets.only(right: 16),
                   child: Icon(
-                    Icons.phone,
+                    Icons.mail,
                     color: bPrimaryColor,
                   ),
                 ),
@@ -104,12 +110,9 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                     child: Container(
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
-                    decoration: InputDecoration(hintText: "Phone Number"),
-                    controller: tel,
-                    keyboardType: TextInputType.phone,
-                    inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter.digitsOnly,
-                    ],
+                    decoration: InputDecoration(hintText: "Email Adcress"),
+                    controller: email,
+                    keyboardType: TextInputType.emailAddress,
                   ),
                 )),
               ],
@@ -123,7 +126,7 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                 Padding(
                   padding: const EdgeInsets.only(right: 16),
                   child: Icon(
-                    FontAwesomeIcons.pills,
+                    Icons.lock,
                     color: bPrimaryColor,
                   ),
                 ),
@@ -131,8 +134,24 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                     child: Container(
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
-                    decoration: InputDecoration(hintText: "Drug Allergy"),
-                    controller: drugallergy,
+                    decoration: InputDecoration(hintText: "Password"),
+                    controller: password,
+                  ),
+                )),
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 60, right: 20, bottom: 20),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Expanded(
+                    child: Container(
+                  margin: EdgeInsets.only(right: 20, left: 10),
+                  child: TextFormField(
+                    decoration: InputDecoration(hintText: "Confirm Password"),
+                    controller: confirmpassword,
                   ),
                 )),
               ],
@@ -143,10 +162,17 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
               FittedBox(
                 child: GestureDetector(
                   onTap: () {
+                    // firestoreInstance.collection("patients").add({
+                    //   "firstName": fname,
+                    //   "lastName": lname,
+                    //   "email": email,
+                    // }).then((value) {
+                    //   print(value.documentID);
+                    // });
+                    // addPatient(context, {'fisrtName': fname.text}, documentName);
                     Navigator.push(context, MaterialPageRoute(
                       builder: (context) {
-                        // return Text('asdasdasd');
-                        return SignInScreen();
+                        return PatientPersonalInfoScreen();
                       },
                     ));
                   },
@@ -159,14 +185,12 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
                     ),
                     child: Row(
                       children: <Widget>[
-                        Container(
-                          child: Text(
-                            "SIGN UP",
-                            style: Theme.of(context)
-                                .textTheme
-                                .button
-                                .copyWith(color: Colors.black),
-                          ),
+                        Text(
+                          "NEXT",
+                          style: Theme.of(context)
+                              .textTheme
+                              .button
+                              .copyWith(color: Colors.black),
                         ),
                       ],
                     ),
@@ -180,14 +204,11 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
     );
   }
 
-  void createRecord() async {
-    await databaseReference.collection("patients").document("1").setData(
-        {'firstName': drugallergy, 'lastName': 'Programming Guide for Dart'});
 
-    DocumentReference ref = await databaseReference.collection("patients").add({
-      'title': 'Flutter in Action',
-      'description': 'Complete Programming Guide to learn Flutter'
-    });
-    print(ref.documentID);
-  }
+  // void createUser() async => await databaseReference.collection('patients').document('1').setData({
+  //     'firstName': fname,
+  //     'lastName': lname,
+  //     'eMail': email,
+  //     'password': password
+  //   });
 }
