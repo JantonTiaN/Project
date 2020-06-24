@@ -5,6 +5,7 @@ import 'package:provider/provider.dart';
 import 'Screen/Patient/Signup/patient_signup_screen.dart';
 import 'Screen/constants.dart';
 import 'Screen/signin_screen.dart';
+import 'States/root.dart';
 
 void main() => runApp(MyApp());
 
@@ -36,11 +37,12 @@ class MyApp extends StatelessWidget {
           ))),
         ),
         // home: WelcomeScreen(),
-        initialRoute: "Welcome",
+        initialRoute: "OurRoot",
         routes: {
           'SignIn': (context) => SignInScreen(),
           'PSignUp': (context) => PatientSignUpScreen(),
           'Welcome': (context) => WelcomeScreen(),
+          'OurRoot': (context) => OurRoot(),
         },
       ),
     );
