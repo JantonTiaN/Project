@@ -11,13 +11,27 @@ class CurrentUser extends ChangeNotifier {
 
   FirebaseAuth _auth = FirebaseAuth.instance;
 
-  Future<String> onStartUp() async{
+  Future<String> onStartUp() async {
     String returnVal = 'error';
 
     try {
       FirebaseUser _firebaseUser = await _auth.currentUser();
       _userid = _firebaseUser.uid;
       _email = _firebaseUser.email;
+      returnVal = 'success';
+    } catch (e) {
+      print(e);
+    }
+    return returnVal;
+  }
+
+  Future<String> signOut() async {
+    String returnVal = 'error';
+
+    try {
+      await _auth.signOut();
+      _userid = null;
+      _email = null;
       returnVal = 'success';
     } catch (e) {
       print(e);
@@ -53,19 +67,20 @@ class CurrentUser extends ChangeNotifier {
     }
     return returnVal;
   }
-  
-    Future<String> loginUserWithGoogle() async {
+
+  Future<String> loginUserWithGoogle() async {
     String returnVal = 'error';
     GoogleSignIn _googleSignIn = GoogleSignIn(
-  scopes: [
-    'email',
-    'https://www.googleapis.com/auth/contacts.readonly',
-  ],
-);
+      scopes: [
+        'email',
+        'https://www.googleapis.com/auth/contacts.readonly',
+      ],
+    );
     try {
       GoogleSignInAccount _googleUser = await _googleSignIn.signIn();
       GoogleSignInAuthentication _googleAuth = await _googleUser.authentication;
-      final AuthCredential credential = GoogleAuthProvider.getCredential(idToken: _googleAuth.idToken, accessToken: _googleAuth.accessToken);
+      final AuthCredential credential = GoogleAuthProvider.getCredential(
+          idToken: _googleAuth.idToken, accessToken: _googleAuth.accessToken);
       AuthResult _authReult = await _auth.signInWithCredential(credential);
 
       _userid = _authReult.user.uid;

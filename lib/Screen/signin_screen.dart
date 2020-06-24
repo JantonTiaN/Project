@@ -31,19 +31,22 @@ class _SignInScreenState extends State<SignInScreen> {
 
       switch (type) {
         case LoginType.email:
-          _returnString = await _currentUser.loginUserWithEmail(email, password);
+          _returnString =
+              await _currentUser.loginUserWithEmail(email, password);
           break;
-          case LoginType.google:
+        case LoginType.google:
           _returnString = await _currentUser.loginUserWithGoogle();
           break;
         default:
       }
 
-      
       if (_returnString == 'success') {
-        Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => Home(),
-        ));
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Home(),
+            ),
+            (route) => false);
       } else {
         Scaffold.of(context).showSnackBar(
           SnackBar(
@@ -187,8 +190,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             ),
                             onTap: () {
                               _loginUser(
-                                  type: LoginType.google,
-                                  context: context);
+                                  type: LoginType.google, context: context);
                             },
                           ),
                           Spacer(),
