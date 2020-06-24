@@ -211,6 +211,6 @@ class _SignInScreenState extends State<SignInScreen> {
           (await FirebaseAuth.instance.signInWithCredential(authCredential))
               .user;
     }
-    Navigator.push(context, MaterialPageRoute(builder: (context) => Home(),));
+    // Navigator.push(context, MaterialPageRoute(builder: (context) => Home(),));
   }
 }
