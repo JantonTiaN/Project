@@ -19,6 +19,8 @@ environment:
 dependencies:
   logger: ^0.8.3
   cloud_firestore: ^0.13.5
+  firebase_core: ^0.4.5
+  firebase_auth: ^0.16.1
   flutter:
     sdk: flutter
   simple_animations: ^1.3.3
@@ -26,8 +28,7 @@ dependencies:
   font_awesome_flutter: ^8.8.1
   flutter_facebook_login: ^3.0.0
 
-  intl: 
-  firebase_auth:
+  intl:   
   provider:
   google_sign_in:
 
