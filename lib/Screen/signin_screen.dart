@@ -117,10 +117,10 @@ class _SignInScreenState extends State<SignInScreen> {
                             PopupMenuItem(
                               child: Row(
                                 children: <Widget>[
-                                  Icon(Icons.person),
+                                  // Icon(Icons.person),
                                   SizedBox(width: 10.0),
                                   Text("Dentist",
-                                      style: TextStyle(color: Colors.black54)),
+                                      style: TextStyle(color: Colors.black)),
                                 ],
                               ),
                               value: 0,
@@ -128,10 +128,10 @@ class _SignInScreenState extends State<SignInScreen> {
                             PopupMenuItem(
                               child: Row(
                                 children: <Widget>[
-                                  Icon(Icons.lock),
+                                  // Icon(Icons.person),
                                   SizedBox(width: 10.0),
                                   Text("Patient",
-                                      style: TextStyle(color: Colors.black54)),
+                                      style: TextStyle(color: Colors.black)),
                                 ],
                               ),
                               value: 1,
