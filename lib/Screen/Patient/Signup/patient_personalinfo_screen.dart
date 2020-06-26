@@ -48,7 +48,7 @@ class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
             height: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/ToothbrushFixed.jpg"),
+                image: AssetImage("assets/images/patient-signup-screen.png"),
                 fit: BoxFit.cover,
               ),
             ),

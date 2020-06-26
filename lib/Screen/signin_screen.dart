@@ -117,7 +117,7 @@ class _SignInScreenState extends State<SignInScreen> {
                             PopupMenuItem(
                               child: Row(
                                 children: <Widget>[
-                                  // Icon(Icons.person),
+                                  // Icon(Icons.local_hospital),
                                   SizedBox(width: 10.0),
                                   Text("Dentist",
                                       style: TextStyle(color: Colors.black)),
