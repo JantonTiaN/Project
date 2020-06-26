@@ -200,8 +200,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
   Future loginWithFacebook(BuildContext context) async {
     FacebookLogin facebookLogin = FacebookLogin();
-    FacebookLoginResult result =
-        await facebookLogin.logIn(['email', 'public_profile']);
+    FacebookLoginResult result = await facebookLogin.logIn(['email','public_profile']);
+
     if (result.status == FacebookLoginStatus.loggedIn) {
       FacebookAccessToken facebookAccessToken = result.accessToken;
       AuthCredential authCredential = FacebookAuthProvider.getCredential(
@@ -211,5 +211,6 @@ class _SignInScreenState extends State<SignInScreen> {
           (await FirebaseAuth.instance.signInWithCredential(authCredential))
               .user;
     }
+    // Navigator.push(context, MaterialPageRoute(builder: (context) => Home(),));
   }
 }
