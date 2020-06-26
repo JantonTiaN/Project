@@ -99,12 +99,44 @@ class _SignInScreenState extends State<SignInScreen> {
                         //     style: Theme.of(context).textTheme.button,
                         //   ),
                         // ),
-                        FlatButton(
-                          textColor: bPrimaryColor,
-                          child: Text('SIGN UP'),
-                          onPressed: () {
-                            Navigator.pushNamed(context, 'PSignUp');
+                        PopupMenuButton(
+                          child: Text("SIGN UP",
+                              style: TextStyle(
+                                  color: bPrimaryColor,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600)),
+                          onSelected: (result) {
+                            if (result == 0) {
+                              Navigator.pushNamed(context, 'DSignUp');
+                            }
+                            if (result == 1) {
+                              Navigator.pushNamed(context, 'PSignUp');
+                            }
                           },
+                          itemBuilder: (context) => [
+                            PopupMenuItem(
+                              child: Row(
+                                children: <Widget>[
+                                  // Icon(Icons.person),
+                                  SizedBox(width: 10.0),
+                                  Text("Dentist",
+                                      style: TextStyle(color: Colors.black)),
+                                ],
+                              ),
+                              value: 0,
+                            ),
+                            PopupMenuItem(
+                              child: Row(
+                                children: <Widget>[
+                                  // Icon(Icons.person),
+                                  SizedBox(width: 10.0),
+                                  Text("Patient",
+                                      style: TextStyle(color: Colors.black)),
+                                ],
+                              ),
+                              value: 1,
+                            ),
+                          ],
                         ),
                       ],
                     ),
