@@ -1,13 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-<<<<<<< HEAD:lib/Screen/Patient/Login/patient_signup_screen.dart
-import 'package:fundee/Screen/Patient/Login/patient_personalinfo_screen.dart';
+import 'package:fundee/Screen/Patient/Signup/patient_personalinfo_screen.dart';
 import 'package:intl/intl.dart';
 import '../../../font_awesome_flutter.dart';
-=======
-import 'package:fundee/Screen/Patient/Signup/patient_personalinfo_screen.dart';
->>>>>>> f86c8cdc64ba869504d8736a85dc8b58e4bb0be9:lib/Screen/Patient/Signup/patient_signup_screen.dart
 import '../../constants.dart';
 import '../../signin_screen.dart';
 
