@@ -7,6 +7,8 @@ import '../home.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+enum LoginType { email, google }
+
 class SignInScreen extends StatefulWidget {
   @override
   _SignInScreenState createState() => _SignInScreenState();
@@ -17,18 +19,34 @@ class _SignInScreenState extends State<SignInScreen> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
-  void _loginUser(String email, String password, BuildContext context) async{
+  void _loginUser(
+      {@required LoginType type,
+      String email,
+      String password,
+      BuildContext context}) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
 
+    try {
+      String _returnString;
 
-    try{
-      String _returnString = await _currentUser.loginUser(email, password);
-      if(_returnString == 'success'){
-        Navigator.of(context).push(
-          MaterialPageRoute(
-            builder: (context) => Home(),
-          )
-        );
+      switch (type) {
+        case LoginType.email:
+          _returnString =
+              await _currentUser.loginUserWithEmail(email, password);
+          break;
+        case LoginType.google:
+          _returnString = await _currentUser.loginUserWithGoogle();
+          break;
+        default:
+      }
+
+      if (_returnString == 'success') {
+        Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(
+              builder: (context) => Home(),
+            ),
+            (route) => false);
       } else {
         Scaffold.of(context).showSnackBar(
           SnackBar(
@@ -37,7 +55,7 @@ class _SignInScreenState extends State<SignInScreen> {
           ),
         );
       }
-    }catch(e){
+    } catch (e) {
       print(e);
     }
   }
@@ -81,12 +99,44 @@ class _SignInScreenState extends State<SignInScreen> {
                         //     style: Theme.of(context).textTheme.button,
                         //   ),
                         // ),
-                        FlatButton(
-                          textColor: bPrimaryColor,
-                          child: Text('SIGN UP'),
-                          onPressed: () {
-                            Navigator.pushNamed(context, 'PSignUp');
+                        PopupMenuButton(
+                          child: Text("SIGN UP",
+                              style: TextStyle(
+                                  color: bPrimaryColor,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w600)),
+                          onSelected: (result) {
+                            if (result == 0) {
+                              Navigator.pushNamed(context, 'DSignUp');
+                            }
+                            if (result == 1) {
+                              Navigator.pushNamed(context, 'PSignUp');
+                            }
                           },
+                          itemBuilder: (context) => [
+                            PopupMenuItem(
+                              child: Row(
+                                children: <Widget>[
+                                  // Icon(Icons.person),
+                                  SizedBox(width: 10.0),
+                                  Text("Dentist",
+                                      style: TextStyle(color: Colors.black)),
+                                ],
+                              ),
+                              value: 0,
+                            ),
+                            PopupMenuItem(
+                              child: Row(
+                                children: <Widget>[
+                                  // Icon(Icons.person),
+                                  SizedBox(width: 10.0),
+                                  Text("Patient",
+                                      style: TextStyle(color: Colors.black)),
+                                ],
+                              ),
+                              value: 1,
+                            ),
+                          ],
                         ),
                       ],
                     ),
@@ -159,15 +209,21 @@ class _SignInScreenState extends State<SignInScreen> {
                               ),
                               onTap: () => loginWithFacebook(context)),
                           SizedBox(width: 20),
-                          Container(
-                            padding: EdgeInsets.all(16),
-                            decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                border: Border.all(
-                                  color: Colors.white.withOpacity(.5),
-                                )),
-                            child: Icon(FontAwesomeIcons.google,
-                                color: Colors.white.withOpacity(.5)),
+                          InkWell(
+                            child: Container(
+                              padding: EdgeInsets.all(16),
+                              decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  border: Border.all(
+                                    color: Colors.white.withOpacity(.5),
+                                  )),
+                              child: Icon(FontAwesomeIcons.google,
+                                  color: Colors.white.withOpacity(.5)),
+                            ),
+                            onTap: () {
+                              _loginUser(
+                                  type: LoginType.google, context: context);
+                            },
                           ),
                           Spacer(),
                           InkWell(
@@ -183,8 +239,11 @@ class _SignInScreenState extends State<SignInScreen> {
                               ),
                             ),
                             onTap: () {
-                              _loginUser(_emailController.text,
-                                  _passwordController.text, context);
+                              _loginUser(
+                                  type: LoginType.email,
+                                  email: _emailController.text,
+                                  password: _passwordController.text,
+                                  context: context);
                             },
                           )
                         ],
@@ -200,7 +259,8 @@ class _SignInScreenState extends State<SignInScreen> {
 
   Future loginWithFacebook(BuildContext context) async {
     FacebookLogin facebookLogin = FacebookLogin();
-    FacebookLoginResult result = await facebookLogin.logIn(['email','public_profile']);
+    FacebookLoginResult result =
+        await facebookLogin.logIn(['email', 'public_profile']);
 
     if (result.status == FacebookLoginStatus.loggedIn) {
       FacebookAccessToken facebookAccessToken = result.accessToken;

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "465859122110-bpvdf50j29u405ft4ig4hfdm407vpnan.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fundee",
+            "certificate_hash": "1ac250b1b6e6304e92aca0750c4a44d5b1399dfa"
+          }
+        },
+        {
           "client_id": "465859122110-crosqi3lsou0f84shpekf92jqimc7cum.apps.googleusercontent.com",
           "client_type": 3
         }

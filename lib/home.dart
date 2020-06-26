@@ -2,7 +2,10 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
+import 'package:fundee/States/current_user.dart';
+import 'package:fundee/States/root.dart';
 import 'package:fundee/patientlist.dart';
+import 'package:provider/provider.dart';
 
 class Home extends StatelessWidget {
   @override
@@ -22,17 +25,26 @@ class Home extends StatelessWidget {
             ),
             ),
             ListTile(
-              title: Text("Login"),
-              onTap: (){
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+              title: Text("Sign Out"),
+              onTap: () async {
+                CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+                String _returnString = await _currentUser.signOut();
+                if(_returnString == 'success'){
+                  Navigator.pushAndRemoveUntil(
+                    context, 
+                    MaterialPageRoute(
+                      builder: (context) => OurRoot(),
+                      ), 
+                      (route) => false);
+                }
               },
             ),
-            ListTile(
-              title: Text("Etc"),
-              onTap: (){
-                Navigator.pop(context);
-              },
-            )
+            // ListTile(
+            //   title: Text("Etc"),
+            //   onTap: (){
+            //     Navigator.pop(context);
+            //   },
+            // )
           ],
         ),
       ), 
