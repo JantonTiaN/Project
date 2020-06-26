@@ -1,46 +1,46 @@
-// import 'package:cloud_firestore/cloud_firestore.dart';
-// import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart';
-// import 'package:fundee/Screen/signin_screen.dart';
-// import 'package:fundee/Services/add_patient_service.dart';
-// import 'package:intl/intl.dart';
-// import 'package:fundee/Screen/Patient/Login/patient_signup_screen.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:fundee/Screen/signin_screen.dart';
+import 'package:fundee/Services/add_patient_service.dart';
+import 'package:intl/intl.dart';
+import 'package:fundee/Screen/Patient/Signup/patient_signup_screen.dart';
 
-// import '../../../font_awesome_flutter.dart';
-// import '../../constants.dart';
+import '../../../font_awesome_flutter.dart';
+import '../../constants.dart';
 
-// class PatientPersonalInfoScreen extends StatefulWidget {
-//   @override
-//   _PatientPersonalInfoScreenState createState() =>
-//       _PatientPersonalInfoScreenState();
-// }
+class PatientPersonalInfoScreen extends StatefulWidget {
+  @override
+  _PatientPersonalInfoScreenState createState() =>
+      _PatientPersonalInfoScreenState();
+}
 
-// class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
-//   DateTime _currentDate = new DateTime.now();
-//   final formatDate = new DateFormat('dd-MM-yyyy');
-//   final drugallergy = TextEditingController();
-//   final tel = TextEditingController();
-//   final birthdate = TextEditingController();
+class _PatientPersonalInfoScreenState extends State<PatientPersonalInfoScreen> {
+  DateTime _currentDate = new DateTime.now();
+  final formatDate = new DateFormat('dd-MM-yyyy');
+  final drugallergy = TextEditingController();
+  final tel = TextEditingController();
+  final birthdate = TextEditingController();
 
-//   Future<Null> _selectdate(BuildContext context) async {
-//     final DateTime _seldate = await showDatePicker(
-//         context: context,
-//         initialDate: _currentDate,
-//         firstDate: DateTime(1900),
-//         lastDate: DateTime.now(),
-//         builder: (context, child) {
-//           return SingleChildScrollView(
-//             child: child,
-//           );
-//         });
-//     if (_seldate != null) {
-//       setState(() {
-//         _currentDate = _seldate;
-//       });
-//     }
-//   }
+  Future<Null> _selectdate(BuildContext context) async {
+    final DateTime _seldate = await showDatePicker(
+        context: context,
+        initialDate: _currentDate,
+        firstDate: DateTime(1900),
+        lastDate: DateTime.now(),
+        builder: (context, child) {
+          return SingleChildScrollView(
+            child: child,
+          );
+        });
+    if (_seldate != null) {
+      setState(() {
+        _currentDate = _seldate;
+      });
+    }
+  }
 
-<<<<<<< HEAD
+
   @override
   Widget build(BuildContext context) {
     String _formattedate = new DateFormat.yMMMd().format(_currentDate);
@@ -201,7 +201,7 @@
     );
   }
 }
-=======
+
 //   @override
 //   Widget build(BuildContext context) {
 //     String _formattedate = new DateFormat.yMMMd().format(_currentDate);
@@ -367,4 +367,3 @@
 //     );
 //   }
 // }
->>>>>>> 8b90c16df8e3b5acbbb8b2384922aba770f74696
