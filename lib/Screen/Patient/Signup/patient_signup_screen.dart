@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fundee/Screen/Patient/Signup/patient_personalinfo_screen.dart';
 import 'package:intl/intl.dart';
 import '../../../font_awesome_flutter.dart';
 import '../../constants.dart';
@@ -25,8 +24,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
   final tel = TextEditingController();
   final birthdate = TextEditingController();
 
-
-Future<Null> _selectdate(BuildContext context) async {
+  Future<Null> _selectdate(BuildContext context) async {
     final DateTime _seldate = await showDatePicker(
         context: context,
         initialDate: _currentDate,
@@ -43,6 +41,7 @@ Future<Null> _selectdate(BuildContext context) async {
       });
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -184,11 +183,49 @@ Future<Null> _selectdate(BuildContext context) async {
               FittedBox(
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return Personalinfo();
-                      },
-                    ));
+                    if (fname.text.isEmpty ||
+                        lname.text.isEmpty ||
+                        email.text.isEmpty ||
+                        password.text.isEmpty ||
+                        confirmpassword.text.isEmpty) {
+                      showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Text('เกิดข้อผิดพลาด'),
+                          content: Text(
+                            'กรุณาใส่ข้อมูลให้ครบ',
+                          ),
+                          actions: <Widget>[
+                            FlatButton(
+                              child: Text('ตกลง'),
+                              onPressed: () => Navigator.pop(context, 'OK'),
+                            )
+                          ],
+                        ),
+                      );
+                    } else if (password.text == confirmpassword.text) {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return personalinfo();
+                        },
+                      ));
+                    } else {
+                      showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Text('เกิดข้อผิดพลาด'),
+                          content: Text(
+                            'รหัสผ่านไม่ตรงกัน กรุณากรอกใหม่',
+                          ),
+                          actions: <Widget>[
+                            FlatButton(
+                              child: Text('ตกลง'),
+                              onPressed: () => Navigator.pop(context, 'OK'),
+                            )
+                          ],
+                        ),
+                      );
+                    }
                   },
                   child: Container(
                     margin: EdgeInsets.only(bottom: 20),
@@ -217,8 +254,8 @@ Future<Null> _selectdate(BuildContext context) async {
       ),
     );
   }
-  @override
-  Widget Personalinfo() {
+
+  Widget personalinfo() {
     String _formattedate = new DateFormat.yMMMd().format(_currentDate);
     return Scaffold(
       body: ListView(
@@ -342,22 +379,51 @@ Future<Null> _selectdate(BuildContext context) async {
               FittedBox(
                 child: GestureDetector(
                   onTap: () {
-                    Firestore.instance.collection('patients').add(
-                      {
-                        'firstname' : fname.text,
-                        'lastname' : lname.text,
-                        'email' : email.text,
-                        'phonenumber' : tel.text,
-                        'password' : password.text,
-                        'drugallergy' : drugallergy.text,
-                        'date' : _currentDate,
-                      }
-                    );
-                    Navigator.push(context, MaterialPageRoute(
-                      builder: (context) {
-                        return SignInScreen();
-                      },
-                    ));
+                    if (tel.text.isEmpty || drugallergy.text.isEmpty) {
+                      showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                                title: const Text('เกิดข้อผิดพลาด'),
+                                content: Text(
+                                  'กรุณาใส่ข้อมูลให้ครบ',
+                                ),
+                                actions: <Widget>[
+                                  FlatButton(
+                                    child: Text('ตกลง'),
+                                    onPressed: () =>
+                                        Navigator.pop(context, 'OK'),
+                                  )
+                                ],
+                              ));
+                    } else {
+                      Firestore.instance.collection('patients').add({
+                        'firstname': fname.text,
+                        'lastname': lname.text,
+                        'email': email.text,
+                        'phonenumber': tel.text,
+                        'password': password.text,
+                        'drugallergy': drugallergy.text,
+                        'birthdate': _currentDate,
+                      });
+                      showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => AlertDialog(
+                                content: Text(
+                                  'ลงทะเบียนเสร็จสิ้น',
+                                ),
+                                actions: <Widget>[
+                                  FlatButton(
+                                    child: Text('ตกลง'),
+                                    onPressed: () => Navigator.push(context,
+                                        MaterialPageRoute(
+                                      builder: (context) {
+                                        return SignInScreen();
+                                      },
+                                    )),
+                                  )
+                                ],
+                              ));
+                    }
                   },
                   child: Container(
                     margin: EdgeInsets.only(bottom: 20),
