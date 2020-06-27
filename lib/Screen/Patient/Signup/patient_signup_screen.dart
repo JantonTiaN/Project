@@ -51,7 +51,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
             height: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/ToothbrushFixed.jpg"),
+                image: AssetImage("assets/images/patient-signup-screen2.png"),
                 fit: BoxFit.cover,
               ),
             ),
@@ -264,7 +264,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
             height: 200,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage("assets/images/ToothbrushFixed.jpg"),
+                image: AssetImage("assets/images/patient-signup-screen2.png"),
                 fit: BoxFit.cover,
               ),
             ),
