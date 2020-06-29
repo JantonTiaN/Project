@@ -1,13 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:fundee/Services/database.dart';
+import 'package:fundee/models/users.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class CurrentUser extends ChangeNotifier {
-  String _userid;
-  String _email;
+  OurUser _currentUser;
 
-  String get getUserid => _userid;
-  String get getUseremail => _email;
+  OurUser get getCurrentUser => _currentUser;
 
   FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -16,8 +17,8 @@ class CurrentUser extends ChangeNotifier {
 
     try {
       FirebaseUser _firebaseUser = await _auth.currentUser();
-      _userid = _firebaseUser.uid;
-      _email = _firebaseUser.email;
+      _currentUser.uid = _firebaseUser.uid;
+      _currentUser.email = _firebaseUser.email;
       returnVal = 'success';
     } catch (e) {
       print(e);
@@ -30,8 +31,7 @@ class CurrentUser extends ChangeNotifier {
 
     try {
       await _auth.signOut();
-      _userid = null;
-      _email = null;
+      _currentUser = null;
       returnVal = 'success';
     } catch (e) {
       print(e);
@@ -39,15 +39,24 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
-  Future<String> signUpUser(String email, String password) async {
+  Future<String> signUpUser(String email, String password, String fullName) async {
     String returnVal = 'error';
-
+    OurUser _user = OurUser();
     try {
-      await _auth.createUserWithEmailAndPassword(
+      AuthResult _authResulf = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
+      _user.uid = _authResulf.user.uid;
+      _user.email = _authResulf.user.email;
+      _user.fullName = fullName;
+      String _returnString = await OurDatabase().createUser(_user);
+      if(_returnString == 'success'){
+        returnVal = 'success';
+      }
       returnVal = 'success';
-    } catch (e) {
+    } on PlatformException catch (e) {
       returnVal = e.message;
+    } catch (e){
+      print(e);
     }
     return returnVal;
   }
@@ -59,8 +68,8 @@ class CurrentUser extends ChangeNotifier {
       AuthResult _authReult = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
 
-      _userid = _authReult.user.uid;
-      _email = _authReult.user.email;
+      _currentUser.uid = _authReult.user.uid;
+      _currentUser.email = _authReult.user.email;
       returnVal = 'success';
     } catch (e) {
       returnVal = e.message;
@@ -83,8 +92,8 @@ class CurrentUser extends ChangeNotifier {
           idToken: _googleAuth.idToken, accessToken: _googleAuth.accessToken);
       AuthResult _authReult = await _auth.signInWithCredential(credential);
 
-      _userid = _authReult.user.uid;
-      _email = _authReult.user.email;
+      _currentUser.uid = _authReult.user.uid;
+      _currentUser.email = _authReult.user.email;
       returnVal = 'success';
     } catch (e) {
       returnVal = e.message;

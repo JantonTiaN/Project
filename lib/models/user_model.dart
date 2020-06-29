@@ -17,9 +17,4 @@ class UserModel{
     tel = map['tel'];
     userID = map['userID'];
   }
-
-
-
-
-
 }

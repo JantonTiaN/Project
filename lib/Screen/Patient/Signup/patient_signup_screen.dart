@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fundee/States/current_user.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 import '../../../font_awesome_flutter.dart';
 import '../../constants.dart';
 import '../../signin_screen.dart';
@@ -12,17 +14,15 @@ class PatientSignUpScreen extends StatefulWidget {
 }
 
 class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
-  final fname = TextEditingController();
-  final lname = TextEditingController();
-  final username = TextEditingController();
-  final email = TextEditingController();
-  final password = TextEditingController();
-  final confirmpassword = TextEditingController();
+  TextEditingController _fullNameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  TextEditingController _confirmpasswordController = TextEditingController();
   DateTime _currentDate = new DateTime.now();
-  final formatDate = new DateFormat('dd-MM-yyyy');
-  final drugallergy = TextEditingController();
-  final tel = TextEditingController();
-  final birthdate = TextEditingController();
+  // final formatDate = new DateFormat('dd-MM-yyyy');
+  TextEditingController _drugallergyController = TextEditingController();
+  TextEditingController _telController = TextEditingController();
+  // TextEditingController _birthdateController = TextEditingController();
 
   Future<Null> _selectdate(BuildContext context) async {
     final DateTime _seldate = await showDatePicker(
@@ -42,10 +42,31 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
     }
   }
 
+  void _signUpUser(String email, String password, BuildContext context,
+      String fullName) async {
+    CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+    try {
+      String _returnString =
+          await _currentUser.signUpUser(email, password, fullName);
+      if (_returnString == 'secess') {
+        Navigator.pop(context);
+      } else {
+        Scaffold.of(context).showSnackBar(SnackBar(
+          content: Text(_returnString),
+          duration: Duration(seconds: 2),
+        ));
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    String _formattedate = new DateFormat.yMMMd().format(_currentDate);
     return Scaffold(
-      body: ListView(
+      body: Builder(builder: (context) =>
+      ListView(
         children: <Widget>[
           Container(
             height: 200,
@@ -90,24 +111,8 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     child: Container(
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
-                    decoration: InputDecoration(hintText: "Firstname"),
-                    controller: fname,
-                  ),
-                )),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 60, right: 20, bottom: 20),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 10),
-                  child: TextFormField(
-                    decoration: InputDecoration(hintText: "Lastname"),
-                    controller: lname,
+                    controller: _fullNameController,
+                    decoration: InputDecoration(hintText: "Full Name"),
                   ),
                 )),
               ],
@@ -129,9 +134,9 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     child: Container(
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
+                    controller: _emailController,
                     decoration: InputDecoration(hintText: "Email Adcress"),
                     keyboardType: TextInputType.emailAddress,
-                    controller: email,
                   ),
                 )),
               ],
@@ -153,8 +158,8 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     child: Container(
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
+                    controller: _passwordController,
                     decoration: InputDecoration(hintText: "Password"),
-                    controller: password,
                     obscureText: true,
                   ),
                 )),
@@ -170,134 +175,14 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     child: Container(
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
+                    controller: _confirmpasswordController,
                     decoration: InputDecoration(hintText: "Confirm Password"),
-                    controller: confirmpassword,
                     obscureText: true,
                   ),
                 )),
               ],
             ),
           ),
-          Column(
-            children: <Widget>[
-              FittedBox(
-                child: GestureDetector(
-                  onTap: () {
-                    if (fname.text.isEmpty ||
-                        lname.text.isEmpty ||
-                        email.text.isEmpty ||
-                        password.text.isEmpty ||
-                        confirmpassword.text.isEmpty) {
-                      showDialog<String>(
-                        context: context,
-                        builder: (BuildContext context) => AlertDialog(
-                          title: const Text('เกิดข้อผิดพลาด'),
-                          content: Text(
-                            'กรุณาใส่ข้อมูลให้ครบ',
-                          ),
-                          actions: <Widget>[
-                            FlatButton(
-                              child: Text('ตกลง'),
-                              onPressed: () => Navigator.pop(context, 'OK'),
-                            )
-                          ],
-                        ),
-                      );
-                    } else if (password.text == confirmpassword.text) {
-                      Navigator.push(context, MaterialPageRoute(
-                        builder: (context) {
-                          return personalinfo();
-                        },
-                      ));
-                    } else {
-                      showDialog<String>(
-                        context: context,
-                        builder: (BuildContext context) => AlertDialog(
-                          title: const Text('เกิดข้อผิดพลาด'),
-                          content: Text(
-                            'รหัสผ่านไม่ตรงกัน กรุณากรอกใหม่',
-                          ),
-                          actions: <Widget>[
-                            FlatButton(
-                              child: Text('ตกลง'),
-                              onPressed: () => Navigator.pop(context, 'OK'),
-                            )
-                          ],
-                        ),
-                      );
-                    }
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(bottom: 20),
-                    padding: EdgeInsets.symmetric(horizontal: 26, vertical: 16),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: bPrimaryColor,
-                    ),
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          "NEXT",
-                          style: Theme.of(context)
-                              .textTheme
-                              .button
-                              .copyWith(color: Colors.black),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          )
-        ],
-      ),
-    );
-  }
-
-  Widget personalinfo() {
-    String _formattedate = new DateFormat.yMMMd().format(_currentDate);
-    return Scaffold(
-      body: ListView(
-        children: <Widget>[
-          Container(
-            height: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/patient-signup-screen2.png"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Positioned(
-              child: Stack(
-                children: <Widget>[
-                  Positioned(
-                      bottom: -10,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          'Welcome to Fun-D',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                        ),
-                      ))
-                ],
-              ),
-            ),
-          ),
-          Positioned(
-              child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text(
-              'Personal Information',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.normal,
-                  fontSize: 16),
-            ),
-          )),
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: Row(
@@ -345,7 +230,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     inputFormatters: <TextInputFormatter>[
                       WhitelistingTextInputFormatter.digitsOnly,
                     ],
-                    controller: tel,
+                    controller: _telController,
                   ),
                 )),
               ],
@@ -368,7 +253,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Drug Allergy"),
-                    controller: drugallergy,
+                    controller: _drugallergyController,
                   ),
                 )),
               ],
@@ -379,50 +264,64 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
               FittedBox(
                 child: GestureDetector(
                   onTap: () {
-                    if (tel.text.isEmpty || drugallergy.text.isEmpty) {
+                    if (_fullNameController.text.isEmpty ||
+                        _emailController.text.isEmpty ||
+                        _passwordController.text.isEmpty ||
+                        _confirmpasswordController.text.isEmpty ||
+                        _telController.text.isEmpty ||
+                        _drugallergyController.text.isEmpty) {
+                      showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Text('เกิดข้อผิดพลาด'),
+                          content: Text(
+                            'กรุณาใส่ข้อมูลให้ครบ',
+                          ),
+                          actions: <Widget>[
+                            FlatButton(
+                              child: Text('ตกลง'),
+                              onPressed: () => Navigator.pop(context, 'OK'),
+                            )
+                          ],
+                        ),
+                      );
+                    } else if (_passwordController.text ==
+                        _confirmpasswordController.text || _emailController.text == '#@#.com') {
+                      _signUpUser(
+                          _emailController.text,
+                          _passwordController.text,
+                          context,
+                          _fullNameController.text);
                       showDialog<String>(
                           context: context,
                           builder: (BuildContext context) => AlertDialog(
-                                title: const Text('เกิดข้อผิดพลาด'),
-                                content: Text(
-                                  'กรุณาใส่ข้อมูลให้ครบ',
-                                ),
-                                actions: <Widget>[
-                                  FlatButton(
-                                    child: Text('ตกลง'),
-                                    onPressed: () =>
-                                        Navigator.pop(context, 'OK'),
-                                  )
-                                ],
-                              ));
-                    } else {
-                      Firestore.instance.collection('patients').add({
-                        'firstname': fname.text,
-                        'lastname': lname.text,
-                        'email': email.text,
-                        'phonenumber': tel.text,
-                        'password': password.text,
-                        'drugallergy': drugallergy.text,
-                        'birthdate': _currentDate,
-                      });
-                      showDialog<String>(
-                          context: context,
-                          builder: (BuildContext context) => AlertDialog(
-                                content: Text(
-                                  'ลงทะเบียนเสร็จสิ้น',
-                                ),
+                                content: Text('ลงทะเบียนเสร็จสิ้น'),
                                 actions: <Widget>[
                                   FlatButton(
                                     child: Text('ตกลง'),
                                     onPressed: () => Navigator.push(context,
-                                        MaterialPageRoute(
-                                      builder: (context) {
-                                        return SignInScreen();
-                                      },
-                                    )),
+                                        MaterialPageRoute(builder: (context) {
+                                      return SignInScreen();
+                                    })),
                                   )
                                 ],
                               ));
+                    }else {
+                      showDialog<String>(
+                        context: context,
+                        builder: (BuildContext context) => AlertDialog(
+                          title: const Text('เกิดข้อผิดพลาด'),
+                          content: Text(
+                            'รหัสผ่านไม่ตรงกัน กรุณากรอกใหม่',
+                          ),
+                          actions: <Widget>[
+                            FlatButton(
+                              child: Text('ตกลง'),
+                              onPressed: () => Navigator.pop(context, 'OK'),
+                            )
+                          ],
+                        ),
+                      );
                     }
                   },
                   child: Container(
@@ -444,12 +343,12 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       ],
                     ),
                   ),
-                ),
+                  ),
               ),
             ],
           )
         ],
       ),
-    );
+    ));
   }
 }
