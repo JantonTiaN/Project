@@ -65,8 +65,8 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
   Widget build(BuildContext context) {
     String _formattedate = new DateFormat.yMMMd().format(_currentDate);
     return Scaffold(
-      body: Builder(builder: (context) =>
-      ListView(
+        body: Builder(
+      builder: (context) => ListView(
         children: <Widget>[
           Container(
             height: 200,
@@ -183,8 +183,24 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
               ],
             ),
           ),
+          Divider(
+            color: Colors.blueGrey,
+            // height: 10,
+            indent: 20,
+            endIndent: 20,
+          ),
           Padding(
             padding: const EdgeInsets.all(20.0),
+            child: Text(
+              "Personal Information",
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
@@ -286,7 +302,8 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                         ),
                       );
                     } else if (_passwordController.text ==
-                        _confirmpasswordController.text || _emailController.text == '#@#.com') {
+                            _confirmpasswordController.text ||
+                        _emailController.text == '#@#.com') {
                       _signUpUser(
                           _emailController.text,
                           _passwordController.text,
@@ -306,7 +323,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                                   )
                                 ],
                               ));
-                    }else {
+                    } else {
                       showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
@@ -343,7 +360,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       ],
                     ),
                   ),
-                  ),
+                ),
               ),
             ],
           )

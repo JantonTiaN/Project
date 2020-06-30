@@ -14,16 +14,14 @@ class DentistSignUpScreen extends StatefulWidget {
 }
 
 class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
+  DateTime _currentDate = new DateTime.now();
   TextEditingController _fullNameController = TextEditingController();
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _confirmpasswordController = TextEditingController();
-  DateTime _currentDate = new DateTime.now();
-  // final formatDate = new DateFormat('dd-MM-yyyy');
-  TextEditingController _drugallergyController = TextEditingController();
+  TextEditingController _citizenidController = TextEditingController();
   TextEditingController _telController = TextEditingController();
-  // TextEditingController _birthdateController = TextEditingController();
-  // final GlobalKey<FormFieldState<String>> _passwordFieldKey = GlobalKey<FormFieldState<String>>();
+  TextEditingController _permissionController = TextEditingController();
 
   //value for checkbox timetable
   //mon
@@ -273,7 +271,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                   child: TextFormField(
                     decoration: InputDecoration(hintText: "Citizen ID"),
                     keyboardType: TextInputType.number,
-                    // controller: ,
+                    controller: _citizenidController,
                   ),
                 )),
               ],
@@ -325,7 +323,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                     decoration: InputDecoration(
                         hintText: "ใบอนุญาตประกอบวิชาชีพเลขที่"),
                     keyboardType: TextInputType.number,
-                    // controller: ,
+                    controller: _permissionController,
                   ),
                 )),
               ],
@@ -607,7 +605,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                   fontWeight: FontWeight.normal),
             ),
           ),
-                    Padding(
+          Padding(
             padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
             child: Row(
               children: <Widget>[
@@ -633,10 +631,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                   "Afternoon",
                   style: TextStyle(fontSize: 12, color: Colors.black54),
                 ),
-                Checkbox(
-                  tristate: true,
-                    value: null,
-                    onChanged: null),
+                Checkbox(tristate: true, value: null, onChanged: null),
                 Text(
                   "Evening",
                   style: TextStyle(fontSize: 12, color: Colors.black54),
@@ -654,7 +649,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                   fontWeight: FontWeight.normal),
             ),
           ),
-                    Padding(
+          Padding(
             padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
             child: Row(
               children: <Widget>[
@@ -680,10 +675,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                   "Afternoon",
                   style: TextStyle(fontSize: 12, color: Colors.black54),
                 ),
-                Checkbox(
-                  tristate: true,
-                    value: null,
-                    onChanged: null),
+                Checkbox(tristate: true, value: null, onChanged: null),
                 Text(
                   "Evening",
                   style: TextStyle(fontSize: 12, color: Colors.black54),
@@ -701,7 +693,8 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                         _passwordController.text.isEmpty ||
                         _confirmpasswordController.text.isEmpty ||
                         _telController.text.isEmpty ||
-                        _drugallergyController.text.isEmpty) {
+                        _citizenidController.text.isEmpty ||
+                        _permissionController.text.isEmpty) {
                       showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
