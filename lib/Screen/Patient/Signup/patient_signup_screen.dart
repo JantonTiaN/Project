@@ -42,12 +42,12 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
     }
   }
 
-  void _signUpUser(String email, String password, BuildContext context,
+  void _signUpPatient(String email, String password, BuildContext context,
       String fullName) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString =
-          await _currentUser.signUpUser(email, password, fullName);
+          await _currentUser.signUpPatient(email, password, fullName);
       if (_returnString == 'secess') {
         Navigator.pop(context);
       } else {
@@ -304,7 +304,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     } else if (_passwordController.text ==
                             _confirmpasswordController.text ||
                         _emailController.text == '#@#.com') {
-                      _signUpUser(
+                      _signUpPatient(
                           _emailController.text,
                           _passwordController.text,
                           context,

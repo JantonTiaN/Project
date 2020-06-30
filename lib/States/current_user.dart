@@ -39,7 +39,29 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
-  Future<String> signUpUser(String email, String password, String fullName) async {
+  Future<String> signUpPatient(String email, String password, String fullName) async {
+    String returnVal = 'error';
+    OurUser _user = OurUser();
+    try {
+      AuthResult _authResulf = await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+      _user.uid = _authResulf.user.uid;
+      _user.email = _authResulf.user.email;
+      _user.fullName = fullName;
+      String _returnString = await OurDatabase().createUser(_user);
+      if(_returnString == 'success'){
+        returnVal = 'success';
+      }
+      returnVal = 'success';
+    } on PlatformException catch (e) {
+      returnVal = e.message;
+    } catch (e){
+      print(e);
+    }
+    return returnVal;
+  }
+
+    Future<String> signUpDentist(String email, String password, String fullName) async {
     String returnVal = 'error';
     OurUser _user = OurUser();
     try {

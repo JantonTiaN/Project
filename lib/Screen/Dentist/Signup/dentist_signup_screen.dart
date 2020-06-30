@@ -70,12 +70,12 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
     }
   }
 
-  void _signUpUser(String email, String password, BuildContext context,
+  void _signUpDentist(String email, String password, BuildContext context,
       String fullName) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString =
-          await _currentUser.signUpUser(email, password, fullName);
+          await _currentUser.signUpDentist(email, password, fullName);
       if (_returnString == 'success') {
         Navigator.pop(context);
       } else {
@@ -723,7 +723,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                     } else if (_passwordController.text ==
                             _confirmpasswordController.text ||
                         _emailController.text == '#@#.com') {
-                      _signUpUser(
+                      _signUpDentist(
                           _emailController.text,
                           _passwordController.text,
                           context,
