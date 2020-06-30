@@ -289,13 +289,13 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                          title: const Text('เกิดข้อผิดพลาด'),
+                          title: const Text('Missing'),
                           content: Text(
-                            'กรุณาใส่ข้อมูลให้ครบ',
+                            'Please fill out empty field!',
                           ),
                           actions: <Widget>[
                             FlatButton(
-                              child: Text('ตกลง'),
+                              child: Text('OK'),
                               onPressed: () => Navigator.pop(context, 'OK'),
                             )
                           ],
@@ -312,10 +312,10 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       showDialog<String>(
                           context: context,
                           builder: (BuildContext context) => AlertDialog(
-                                content: Text('ลงทะเบียนเสร็จสิ้น'),
+                                content: Text('Successful'),
                                 actions: <Widget>[
                                   FlatButton(
-                                    child: Text('ตกลง'),
+                                    child: Text('Done'),
                                     onPressed: () => Navigator.push(context,
                                         MaterialPageRoute(builder: (context) {
                                       return SignInScreen();
@@ -327,13 +327,13 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                          title: const Text('เกิดข้อผิดพลาด'),
+                          title: const Text('Error'),
                           content: Text(
-                            'รหัสผ่านไม่ตรงกัน กรุณากรอกใหม่',
+                            'Please make sure your password match',
                           ),
                           actions: <Widget>[
                             FlatButton(
-                              child: Text('ตกลง'),
+                              child: Text('OK'),
                               onPressed: () => Navigator.pop(context, 'OK'),
                             )
                           ],
