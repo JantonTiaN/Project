@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/cupertino.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
 import 'package:fundee/Screen/Dentist/Signup/dentist_signup_screen.dart';
