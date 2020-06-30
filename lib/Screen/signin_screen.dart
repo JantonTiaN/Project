@@ -64,123 +64,144 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-          children: <Widget>[
-            Expanded(
-              flex: 4,
-              child: Container(
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage("assets/images/ToothbrushFixed.jpg"),
-                    fit: BoxFit.cover,
-                    // alignment: Alignment.bottomCenter,
+      body: SingleChildScrollView(
+              child: ConstrainedBox(
+          constraints: BoxConstraints(maxHeight: 700),
+                child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Flexible(
+                fit: FlexFit.loose,
+                flex: 4,
+                child: Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage("assets/images/ToothbrushFixed.jpg"),
+                      fit: BoxFit.cover,
+                      // alignment: Alignment.bottomCenter,
+                    ),
                   ),
                 ),
               ),
-            ),
-            Expanded(
-                flex: 5,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Column(
-                    children: <Widget>[
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          Text(
-                            "SIGN IN",
-                            style: Theme.of(context).textTheme.display1,
-                          ),
-                          PopupMenuButton(
-                            child: Text("SIGN UP",
-                                style: TextStyle(
-                                    color: bPrimaryColor,
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600)),
-                            onSelected: (result) {
-                              if (result == 0) {
-                                Navigator.pushNamed(context, 'DSignUp');
-                              }
-                              if (result == 1) {
-                                Navigator.pushNamed(context, 'PSignUp');
-                              }
-                            },
-                            itemBuilder: (context) => [
-                              PopupMenuItem(
-                                child: Row(
-                                  children: <Widget>[
-                                    // Icon(Icons.local_hospital),
-                                    SizedBox(width: 10.0),
-                                    Text("Dentist",
-                                        style: TextStyle(color: Colors.black)),
-                                  ],
+              Flexible(
+                  fit: FlexFit.loose,
+                  flex: 5,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: Column(
+                      children: <Widget>[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            Text(
+                              "SIGN IN",
+                              style: Theme.of(context).textTheme.display1,
+                            ),
+                            PopupMenuButton(
+                              child: Text("SIGN UP",
+                                  style: TextStyle(
+                                      color: bPrimaryColor,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w600)),
+                              onSelected: (result) {
+                                if (result == 0) {
+                                  Navigator.pushNamed(context, 'DSignUp');
+                                }
+                                if (result == 1) {
+                                  Navigator.pushNamed(context, 'PSignUp');
+                                }
+                              },
+                              itemBuilder: (context) => [
+                                PopupMenuItem(
+                                  child: Row(
+                                    children: <Widget>[
+                                      // Icon(Icons.local_hospital),
+                                      SizedBox(width: 10.0),
+                                      Text("Dentist",
+                                          style: TextStyle(color: Colors.black)),
+                                    ],
+                                  ),
+                                  value: 0,
                                 ),
-                                value: 0,
-                              ),
-                              PopupMenuItem(
-                                child: Row(
-                                  children: <Widget>[
-                                    // Icon(Icons.person),
-                                    SizedBox(width: 10.0),
-                                    Text("Patient",
-                                        style: TextStyle(color: Colors.black)),
-                                  ],
+                                PopupMenuItem(
+                                  child: Row(
+                                    children: <Widget>[
+                                      // Icon(Icons.person),
+                                      SizedBox(width: 10.0),
+                                      Text("Patient",
+                                          style: TextStyle(color: Colors.black)),
+                                    ],
+                                  ),
+                                  value: 1,
                                 ),
-                                value: 1,
+                              ],
+                            ),
+                          ],
+                        ),
+                        Spacer(),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 30),
+                          child: Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(right: 16),
+                                child: Icon(
+                                  Icons.email,
+                                  color: bPrimaryColor,
+                                ),
                               ),
+                              Flexible(
+                                  fit: FlexFit.loose,
+                                  child: TextField(
+                                    decoration:
+                                        InputDecoration(hintText: "Email Address"),
+                                    keyboardType: TextInputType.emailAddress,
+                                    controller: _emailController,
+                                  ))
                             ],
                           ),
-                        ],
-                      ),
-                      Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 30),
-                        child: Row(
+                        ),
+                        Row(
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: <Widget>[
                             Padding(
                               padding: const EdgeInsets.only(right: 16),
                               child: Icon(
-                                Icons.email,
+                                Icons.lock,
                                 color: bPrimaryColor,
                               ),
                             ),
-                            Expanded(
-                                child: TextField(
-                              decoration:
-                                  InputDecoration(hintText: "Email Address"),
-                              keyboardType: TextInputType.emailAddress,
-                              controller: _emailController,
-                            ))
+                            Flexible(
+                                fit: FlexFit.loose,
+                                child: TextFormField(
+                                  keyboardType: TextInputType.text,
+                                  // controller: ,
+                                  decoration: InputDecoration(hintText: "Password"),
+                                  obscureText: true,
+                                  controller: _passwordController,
+                                ))
                           ],
                         ),
-                      ),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(right: 16),
-                            child: Icon(
-                              Icons.lock,
-                              color: bPrimaryColor,
-                            ),
-                          ),
-                          Expanded(
-                              child: TextFormField(
-                            keyboardType: TextInputType.text,
-                            // controller: ,
-                            decoration: InputDecoration(hintText: "Password"),
-                            obscureText: true,
-                            controller: _passwordController,
-                          ))
-                        ],
-                      ),
-                      Spacer(),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 20),
-                        child: Row(
-                          children: <Widget>[
-                            InkWell(
+                        Spacer(),
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 20),
+                          child: Row(
+                            children: <Widget>[
+                              InkWell(
+                                  child: Container(
+                                    padding: EdgeInsets.all(16),
+                                    decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        border: Border.all(
+                                          color: Colors.white.withOpacity(.5),
+                                        )),
+                                    child: Icon(FontAwesomeIcons.facebookF,
+                                        color: Colors.white.withOpacity(.5)),
+                                  ),
+                                  onTap: () => loginWithFacebook(context)),
+                              SizedBox(width: 20),
+                              InkWell(
                                 child: Container(
                                   padding: EdgeInsets.all(16),
                                   decoration: BoxDecoration(
@@ -188,56 +209,45 @@ class _SignInScreenState extends State<SignInScreen> {
                                       border: Border.all(
                                         color: Colors.white.withOpacity(.5),
                                       )),
-                                  child: Icon(FontAwesomeIcons.facebookF,
+                                  child: Icon(FontAwesomeIcons.google,
                                       color: Colors.white.withOpacity(.5)),
                                 ),
-                                onTap: () => loginWithFacebook(context)),
-                            SizedBox(width: 20),
-                            InkWell(
-                              child: Container(
-                                padding: EdgeInsets.all(16),
-                                decoration: BoxDecoration(
+                                onTap: () {
+                                  _loginUser(
+                                      type: LoginType.google, context: context);
+                                },
+                              ),
+                              Spacer(),
+                              InkWell(
+                                child: Container(
+                                  padding: EdgeInsets.all(16),
+                                  decoration: BoxDecoration(
                                     shape: BoxShape.circle,
-                                    border: Border.all(
-                                      color: Colors.white.withOpacity(.5),
-                                    )),
-                                child: Icon(FontAwesomeIcons.google,
-                                    color: Colors.white.withOpacity(.5)),
-                              ),
-                              onTap: () {
-                                _loginUser(
-                                    type: LoginType.google, context: context);
-                              },
-                            ),
-                            Spacer(),
-                            InkWell(
-                              child: Container(
-                                padding: EdgeInsets.all(16),
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                  color: bPrimaryColor,
+                                    color: bPrimaryColor,
+                                  ),
+                                  child: Icon(
+                                    Icons.arrow_forward,
+                                    color: Colors.black,
+                                  ),
                                 ),
-                                child: Icon(
-                                  Icons.arrow_forward,
-                                  color: Colors.black,
-                                ),
-                              ),
-                              onTap: () {
-                                _loginUser(
-                                    type: LoginType.email,
-                                    email: _emailController.text,
-                                    password: _passwordController.text,
-                                    context: context);
-                              },
-                            )
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
-                ))
-          ],
+                                onTap: () {
+                                  _loginUser(
+                                      type: LoginType.email,
+                                      email: _emailController.text,
+                                      password: _passwordController.text,
+                                      context: context);
+                                },
+                              )
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ))
+            ],
+          ),
         ),
+      ),
     );
   }
 
