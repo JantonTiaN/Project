@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/cupertino.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
 import 'package:fundee/Screen/Dentist/Signup/dentist_signup_screen.dart';
 import 'package:fundee/Screen/welcome_screen.dart';
 import 'package:fundee/States/current_user.dart';
@@ -39,7 +41,7 @@ class MyApp extends StatelessWidget {
             color: Colors.white.withOpacity(.2),
           ))),
         ),
-        // home: ,
+        // home: Cupertino(),
         initialRoute: "OurRoot",
         routes: {
           'SignIn': (context) => SignInScreen(),
