@@ -66,7 +66,7 @@ class _SignInScreenState extends State<SignInScreen> {
     return Scaffold(
       body: SingleChildScrollView(
               child: ConstrainedBox(
-          constraints: BoxConstraints(maxHeight: 700),
+          constraints: BoxConstraints(maxHeight: 650),
                 child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
