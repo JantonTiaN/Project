@@ -4,6 +4,7 @@ import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:provider/provider.dart';
 import '../home.dart';
+import 'Patient/patient_home_screen.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 

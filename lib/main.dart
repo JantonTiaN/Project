@@ -4,6 +4,7 @@ import 'package:fundee/Screen/welcome_screen.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:provider/provider.dart';
 import 'Screen/Patient/Signup/patient_signup_screen.dart';
+import 'Screen/Patient/patient_home_screen.dart';
 import 'Screen/constants.dart';
 import 'Screen/signin_screen.dart';
 import 'States/root.dart';
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
           ))),
         ),
         // home: ,
-        initialRoute: "OurRoot",
+        initialRoute: "Welcome",
         routes: {
           'SignIn': (context) => SignInScreen(),
           'PSignUp': (context) => PatientSignUpScreen(),
