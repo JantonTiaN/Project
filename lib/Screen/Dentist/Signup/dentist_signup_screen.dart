@@ -336,13 +336,23 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
             endIndent: 20,
           ),
           Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: const EdgeInsets.only(left: 20, right: 20),
             child: Text(
               "Availiable Working Timetable",
               style: TextStyle(
                   color: Colors.white,
                   fontSize: 16,
                   fontWeight: FontWeight.bold),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+            child: Text(
+              "*(Morning means 9.00-12.00, Afternoon means 13.00-16.00, and Evening means 16.30-20.00)*",
+              style: TextStyle(
+                color: Colors.blueGrey,
+                fontSize: 10
+              ),
             ),
           ),
           Padding(
