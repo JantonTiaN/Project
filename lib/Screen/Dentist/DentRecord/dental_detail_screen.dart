@@ -72,7 +72,7 @@ Widget tooth1Detail(BuildContext context) {
           child: Container(
               margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
               padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-              color: Colors.grey[300],
+              // color: Colors.grey[300],
               child: Stack(
                 children: <Widget>[
                   Container(
@@ -249,49 +249,71 @@ Widget tooth1Detail(BuildContext context) {
                                       ),
                                       ListTile(
                                         title: Text("Rotation"),
-                                        // leading: Icon(Icons.text_format),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/rotation.jpg'),
+                                        ),
                                         onTap: () {
                                           //add to firebase
                                         },
                                       ),
                                       ListTile(
                                         title: Text("Temporary"),
-                                        // leading: Icon(Icons.text_format),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
                                         onTap: () {
                                           //add to firebase
                                         },
                                       ),
                                       ListTile(
                                         title: Text("Permanentrestoration"),
-                                        // leading: Icon(Icons.text_format),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/black.png'),
+                                        ),
                                         onTap: () {
                                           //add to firebase
                                         },
                                       ),
                                       ListTile(
                                         title: Text("Gold restoration"),
-                                        // leading: Icon(Icons.text_format),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/yellow.jpg'),
+                                        ),
                                         onTap: () {
                                           //add to firebase
                                         },
                                       ),
                                       ListTile(
-                                        title: Text("Porcelain"),
-                                        // leading: Icon(Icons.text_format),
+                                        title: Text("Porcelain/metal crown"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/black.png'),
+                                        ),
                                         onTap: () {
                                           //add to firebase
                                         },
                                       ),
                                       ListTile(
-                                        title: Text("extract"),
-                                        // leading: Icon(Icons.text_format),
+                                        title:
+                                            Text("Extract and have fix bridge"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/red-cross.jpg'),
+                                        ),
                                         onTap: () {
                                           //add to firebase
                                         },
                                       ),
                                       ListTile(
                                         title: Text("Other"),
-                                        // leading: Icon(Icons.text_format),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/other.jpg'),
+                                        ),
                                         onTap: () {
                                           //add to firebase
                                         },

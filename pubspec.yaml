@@ -82,6 +82,9 @@ flutter:
    - assets/images/dental_cases/food-impaction.jpg
    - assets/images/dental_cases/plus.jpg
    - assets/images/dental_cases/minus.jpg
+   - assets/images/dental_cases/rotation.jpg
+   - assets/images/dental_cases/yellow.jpg
+   - assets/images/dental_cases/other.jpg
   #  - assets/images/tooth1-1.png
   #  - assets/images/tooth1-2.png
   #  - assets/images/tooth1-3.png
