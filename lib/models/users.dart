@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class OurUser {
+class OurPatients {
   String uid;
   String email;
   String fullName;
@@ -8,7 +8,7 @@ class OurUser {
   String drugallergy;
   String birthDate;
 
-  OurUser({
+  OurPatients({
     this.uid,
     this.email,
     this.fullName,
@@ -16,4 +16,8 @@ class OurUser {
     this.drugallergy,
     this.birthDate,
   });
+}
+
+class OurDentists {
+
 }

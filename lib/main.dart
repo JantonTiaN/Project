@@ -47,7 +47,7 @@ class MyApp extends StatelessWidget {
           'PSignUp': (context) => PatientSignUpScreen(),
           'Welcome': (context) => WelcomeScreen(),
           'OurRoot': (context) => OurRoot(),
-          // 'DSignUp': (context) => DentistSignUpScreen(),
+          'DSignUp': (context) => DentistSignUpScreen(),
           'DRecord': (context) => DentalRecord(),
         },
       ),

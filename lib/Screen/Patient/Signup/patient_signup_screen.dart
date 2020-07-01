@@ -44,7 +44,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
       String fullName, String tel, String drugallergy, String brithDate) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
-      String _returnString = await _currentUser.signUpUser(
+      String _returnString = await _currentUser.signUpPatients(
           email, password, fullName, tel, drugallergy, brithDate);
       if (_returnString == 'success') {
         showDialog<String>(
