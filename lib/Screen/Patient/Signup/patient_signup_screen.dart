@@ -44,12 +44,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
       String fullName, String tel, String drugallergy, String brithDate) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
-<<<<<<< HEAD
-      String _returnString =
-          await _currentUser.signUpPatient(email, password, fullName);
-      if (_returnString == 'success') {
-        Navigator.pop(context);
-=======
       String _returnString = await _currentUser.signUpPatients(
           email, password, fullName, tel, drugallergy, brithDate);
       if (_returnString == 'success') {
@@ -67,7 +61,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     )
                   ],
                 ));
->>>>>>> bcd18be080aabedf4a2a365a9396d7f31ce40434
       } else {
         Scaffold.of(context).showSnackBar(SnackBar(
           content: Text(_returnString),
@@ -332,8 +325,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                           ],
                         ),
                       );
-                    }
-                    else if (_passwordController.text ==
+                    } else if (_passwordController.text ==
                         _confirmpasswordController.text) {
                       _signUpUser(
                           _emailController.text,
