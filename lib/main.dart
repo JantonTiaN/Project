@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
           ))),
         ),
         // home: Cupertino(),
-        initialRoute: "DRecord",
+        initialRoute: "OurRoot",
         routes: {
           'SignIn': (context) => SignInScreen(),
           'PSignUp': (context) => PatientSignUpScreen(),
