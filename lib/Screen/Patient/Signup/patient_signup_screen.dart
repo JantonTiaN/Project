@@ -48,7 +48,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
     try {
       String _returnString =
           await _currentUser.signUpPatient(email, password, fullName);
-      if (_returnString == 'secess') {
+      if (_returnString == 'success') {
         Navigator.pop(context);
       } else {
         Scaffold.of(context).showSnackBar(SnackBar(
