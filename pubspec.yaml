@@ -68,6 +68,23 @@ flutter:
    - assets/images/dentist-signup-screen.png
    - assets/images/patient-signup-screen.png
    - assets/images/patient-signup-screen2.png
+
+  #  dental cases
+   - assets/images/dental_cases/blue.png
+   - assets/images/dental_cases/black.png
+   - assets/images/dental_cases/red-cross.jpg
+   - assets/images/dental_cases/green-circle.jpg
+   - assets/images/dental_cases/imp.jpg
+   - assets/images/dental_cases/pe.jpg
+   - assets/images/dental_cases/arrow.jpg
+   - assets/images/dental_cases/loss-of-contact.jpg
+   - assets/images/dental_cases/poor-contact-point.jpg
+   - assets/images/dental_cases/food-impaction.jpg
+   - assets/images/dental_cases/plus.jpg
+   - assets/images/dental_cases/minus.jpg
+   - assets/images/dental_cases/rotation.jpg
+   - assets/images/dental_cases/yellow.jpg
+   - assets/images/dental_cases/other.jpg
   #  - assets/images/tooth1-1.png
   #  - assets/images/tooth1-2.png
   #  - assets/images/tooth1-3.png

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DentalCase extends StatelessWidget {
+class DentalCaseScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

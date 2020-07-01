@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dental_case_screen.dart';
 import 'package:fundee/models/account_model.dart';
 import 'package:fundee/models/user_model.dart';
-import 'dentalCase.dart';
 
-class Detail extends StatefulWidget {
+class DentalDetailScreen extends StatefulWidget {
   @override
-  _DetailState createState() => _DetailState();
+  _DentalDetailScreenState createState() => _DentalDetailScreenState();
 }
 
-class _DetailState extends State<Detail> {
+class _DentalDetailScreenState extends State<DentalDetailScreen> {
   List<UserModel> userModels = List();
   List<AccountModel> accountModels = List();
 
@@ -21,7 +21,8 @@ class _DetailState extends State<Detail> {
 
   Future<void> readFirestore() async {
     Firestore firestore = Firestore.instance;
-    CollectionReference collectionReference = firestore.collection('Account').document('account').collection('Users');
+    CollectionReference collectionReference =
+        firestore.collection('Account').document('account').collection('Users');
     collectionReference.snapshots().listen((response) {
       List<DocumentSnapshot> snapshots = response.documents;
       for (var snapshot in snapshots) {
@@ -41,25 +42,28 @@ class _DetailState extends State<Detail> {
           child: tooth1Detail(context),
         ),
         Container(
-          padding: EdgeInsets.all(0.3),
-          color: Colors.grey[300],
-          width: MediaQuery.of(context).size.width * 0.5,
-          height: MediaQuery.of(context).size.height * 0.0,
-          margin: EdgeInsets.fromLTRB(20, 180, 0, 0),
+            padding: EdgeInsets.all(0.3),
+            color: Colors.grey[300],
+            width: MediaQuery.of(context).size.width * 0.5,
+            height: MediaQuery.of(context).size.height * 0.0,
+            margin: EdgeInsets.fromLTRB(20, 180, 0, 0),
             child: ListView.builder(
                 itemCount: userModels.length,
                 itemBuilder: (BuildContext buildContext, int index) {
                   return Container(
-                    child: Container(
-                      child: Text(' ' + userModels[index].firstName + ' ' +userModels[index].lastName, style: TextStyle(fontSize: 15, color: Colors.black))
-                      )
-                    );
+                      child: Container(
+                          child: Text(
+                              ' ' +
+                                  userModels[index].firstName +
+                                  ' ' +
+                                  userModels[index].lastName,
+                              style: TextStyle(
+                                  fontSize: 15, color: Colors.black))));
                 })),
       ],
     );
   }
 }
-
 
 Widget tooth1Detail(BuildContext context) {
   return Scaffold(
@@ -68,7 +72,7 @@ Widget tooth1Detail(BuildContext context) {
           child: Container(
               margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
               padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-              color: Colors.grey[300],
+              // color: Colors.grey[300],
               child: Stack(
                 children: <Widget>[
                   Container(
@@ -82,10 +86,246 @@ Widget tooth1Detail(BuildContext context) {
                     child: IconButton(
                         icon: Image.asset('images/tooth/detail/1-1.png'),
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (context) {
+                                return SingleChildScrollView(
+                                  child: Wrap(
+                                    children: <Widget>[
+                                      ListTile(
+                                        title: Center(
+                                            child: Text("Select Case Symptom")),
+                                      ),
+                                      ListTile(
+                                        title: Text("Dental Caries"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text(
+                                            "Attrition, abrasion, abfraction"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Fractured tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Retained root"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("RCT tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/black.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Extracted tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/red-cross.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Missing tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/green-circle.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Impacted tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/imp.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Partial eruption"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/pe.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Tilting, drifting"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/arrow.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Loss of contact"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/loss-of-contact.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Poor contact point"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/poor-contact-point.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Food impaction"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/food-impaction.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Supraclusion"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/plus.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Infraclusion"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/minus.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Rotation"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/rotation.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Temporary"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Permanentrestoration"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/black.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Gold restoration"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/yellow.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Porcelain/metal crown"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/black.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title:
+                                            Text("Extract and have fix bridge"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/red-cross.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Other"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/other.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              });
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -99,10 +339,246 @@ Widget tooth1Detail(BuildContext context) {
                     child: IconButton(
                         icon: Image.asset('images/tooth/detail/1-2.png'),
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (context) {
+                                return SingleChildScrollView(
+                                  child: Wrap(
+                                    children: <Widget>[
+                                      ListTile(
+                                        title: Center(
+                                            child: Text("Select Case Symptom")),
+                                      ),
+                                      ListTile(
+                                        title: Text("Dental Caries"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text(
+                                            "Attrition, abrasion, abfraction"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Fractured tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Retained root"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("RCT tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/black.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Extracted tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/red-cross.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Missing tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/green-circle.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Impacted tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/imp.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Partial eruption"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/pe.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Tilting, drifting"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/arrow.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Loss of contact"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/loss-of-contact.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Poor contact point"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/poor-contact-point.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Food impaction"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/food-impaction.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Supraclusion"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/plus.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Infraclusion"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/minus.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Rotation"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/rotation.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Temporary"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Permanentrestoration"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/black.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Gold restoration"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/yellow.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Porcelain/metal crown"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/black.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title:
+                                            Text("Extract and have fix bridge"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/red-cross.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Other"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/other.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              });
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -116,10 +592,246 @@ Widget tooth1Detail(BuildContext context) {
                     child: IconButton(
                         icon: Image.asset('images/tooth/detail/1-3.png'),
                         onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                          showModalBottomSheet(
+                              context: context,
+                              builder: (context) {
+                                return SingleChildScrollView(
+                                  child: Wrap(
+                                    children: <Widget>[
+                                      ListTile(
+                                        title: Center(
+                                            child: Text("Select Case Symptom")),
+                                      ),
+                                      ListTile(
+                                        title: Text("Dental Caries"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text(
+                                            "Attrition, abrasion, abfraction"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Fractured tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Retained root"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("RCT tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/black.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Extracted tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/red-cross.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Missing tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/green-circle.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Impacted tooth"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/imp.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Partial eruption"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/pe.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Tilting, drifting"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/arrow.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Loss of contact"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/loss-of-contact.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Poor contact point"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/poor-contact-point.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Food impaction"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/food-impaction.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Supraclusion"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/plus.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Infraclusion"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/minus.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Rotation"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/rotation.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Temporary"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/blue.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Permanentrestoration"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/black.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Gold restoration"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/yellow.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Porcelain/metal crown"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/black.png'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title:
+                                            Text("Extract and have fix bridge"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/red-cross.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                      ListTile(
+                                        title: Text("Other"),
+                                        leading: CircleAvatar(
+                                          backgroundImage: AssetImage(
+                                              'assets/images/dental_cases/other.jpg'),
+                                        ),
+                                        onTap: () {
+                                          //add to firebase
+                                        },
+                                      ),
+                                    ],
+                                  ),
+                                );
+                              });
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -150,7 +862,7 @@ Widget tooth2Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -167,7 +879,7 @@ Widget tooth2Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -184,7 +896,7 @@ Widget tooth2Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -215,7 +927,7 @@ Widget tooth3Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -232,7 +944,7 @@ Widget tooth3Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -249,7 +961,7 @@ Widget tooth3Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -280,7 +992,7 @@ Widget tooth4Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -297,7 +1009,7 @@ Widget tooth4Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -314,7 +1026,7 @@ Widget tooth4Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -345,7 +1057,7 @@ Widget tooth5Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -362,7 +1074,7 @@ Widget tooth5Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -379,7 +1091,7 @@ Widget tooth5Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -410,7 +1122,7 @@ Widget tooth6Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -427,7 +1139,7 @@ Widget tooth6Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -444,7 +1156,7 @@ Widget tooth6Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -475,7 +1187,7 @@ Widget tooth7Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -492,7 +1204,7 @@ Widget tooth7Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -509,7 +1221,7 @@ Widget tooth7Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -540,7 +1252,7 @@ Widget tooth8Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -557,7 +1269,7 @@ Widget tooth8Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -574,7 +1286,7 @@ Widget tooth8Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -605,7 +1317,7 @@ Widget tooth9Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -622,7 +1334,7 @@ Widget tooth9Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -639,7 +1351,7 @@ Widget tooth9Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -670,7 +1382,7 @@ Widget tooth10Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -687,7 +1399,7 @@ Widget tooth10Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -704,7 +1416,7 @@ Widget tooth10Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -735,7 +1447,7 @@ Widget tooth11Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -752,7 +1464,7 @@ Widget tooth11Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -769,7 +1481,7 @@ Widget tooth11Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -800,7 +1512,7 @@ Widget tooth12Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -817,7 +1529,7 @@ Widget tooth12Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -834,7 +1546,7 @@ Widget tooth12Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -865,7 +1577,7 @@ Widget tooth13Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -882,7 +1594,7 @@ Widget tooth13Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -899,7 +1611,7 @@ Widget tooth13Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -930,7 +1642,7 @@ Widget tooth14Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -947,7 +1659,7 @@ Widget tooth14Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -964,7 +1676,7 @@ Widget tooth14Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -995,7 +1707,7 @@ Widget tooth15Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1012,7 +1724,7 @@ Widget tooth15Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1029,7 +1741,7 @@ Widget tooth15Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1060,7 +1772,7 @@ Widget tooth16Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1077,7 +1789,7 @@ Widget tooth16Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1094,7 +1806,7 @@ Widget tooth16Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1125,7 +1837,7 @@ Widget tooth17Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1142,7 +1854,7 @@ Widget tooth17Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1159,7 +1871,7 @@ Widget tooth17Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1190,7 +1902,7 @@ Widget tooth18Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1207,7 +1919,7 @@ Widget tooth18Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1224,7 +1936,7 @@ Widget tooth18Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1255,7 +1967,7 @@ Widget tooth19Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1272,7 +1984,7 @@ Widget tooth19Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1289,7 +2001,7 @@ Widget tooth19Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1320,7 +2032,7 @@ Widget tooth20Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1337,7 +2049,7 @@ Widget tooth20Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1354,7 +2066,7 @@ Widget tooth20Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1385,7 +2097,7 @@ Widget tooth21Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1402,7 +2114,7 @@ Widget tooth21Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1419,7 +2131,7 @@ Widget tooth21Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1450,7 +2162,7 @@ Widget tooth22Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1467,7 +2179,7 @@ Widget tooth22Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1484,7 +2196,7 @@ Widget tooth22Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1515,7 +2227,7 @@ Widget tooth23Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1532,7 +2244,7 @@ Widget tooth23Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1549,7 +2261,7 @@ Widget tooth23Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1580,7 +2292,7 @@ Widget tooth24Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1597,7 +2309,7 @@ Widget tooth24Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1614,7 +2326,7 @@ Widget tooth24Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1645,7 +2357,7 @@ Widget tooth25Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1662,7 +2374,7 @@ Widget tooth25Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1679,7 +2391,7 @@ Widget tooth25Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1710,7 +2422,7 @@ Widget tooth26Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1727,7 +2439,7 @@ Widget tooth26Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1744,7 +2456,7 @@ Widget tooth26Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1775,7 +2487,7 @@ Widget tooth27Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1792,7 +2504,7 @@ Widget tooth27Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1809,7 +2521,7 @@ Widget tooth27Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1840,7 +2552,7 @@ Widget tooth28Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1857,7 +2569,7 @@ Widget tooth28Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1874,7 +2586,7 @@ Widget tooth28Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1905,7 +2617,7 @@ Widget tooth29Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1922,7 +2634,7 @@ Widget tooth29Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1939,7 +2651,7 @@ Widget tooth29Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -1970,7 +2682,7 @@ Widget tooth30Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1987,7 +2699,7 @@ Widget tooth30Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -2004,7 +2716,7 @@ Widget tooth30Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -2035,7 +2747,7 @@ Widget tooth31Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -2052,7 +2764,7 @@ Widget tooth31Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -2069,7 +2781,7 @@ Widget tooth31Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -2100,7 +2812,7 @@ Widget tooth32Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -2117,7 +2829,7 @@ Widget tooth32Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -2134,7 +2846,7 @@ Widget tooth32Detail(BuildContext context) {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalCase()));
+                                  builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
