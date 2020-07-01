@@ -325,8 +325,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                           ],
                         ),
                       );
-                    }
-                    else if (_passwordController.text ==
+                    } else if (_passwordController.text ==
                         _confirmpasswordController.text) {
                       _signUpUser(
                           _emailController.text,
