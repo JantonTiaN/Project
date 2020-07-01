@@ -11,9 +11,9 @@ class OurDatabase {
       await _firestore.collection('Account').document('account').collection('Users').document(user.email).setData({
         'fullName' : user.fullName,
         'eMail' : user.email,
-        'accountCreated' : Timestamp.now(),
+        'birthDay' : user.birthDate,
         'tel' : user.tel,
-        'drugAllergy' : user.drugallergy
+        'drugAllergy' : user.drugallergy,
       });
       retVal = 'success';
     } catch (e) {

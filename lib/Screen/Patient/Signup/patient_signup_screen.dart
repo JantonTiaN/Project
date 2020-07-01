@@ -19,10 +19,8 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _confirmpasswordController = TextEditingController();
   DateTime _currentDate = new DateTime.now();
-  // final formatDate = new DateFormat('dd-MM-yyyy');
   TextEditingController _drugallergyController = TextEditingController();
   TextEditingController _telController = TextEditingController();
-  // TextEditingController _birthdateController = TextEditingController();
 
   Future<Null> _selectdate(BuildContext context) async {
     final DateTime _seldate = await showDatePicker(
@@ -43,18 +41,45 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
   }
 
   void _signUpUser(String email, String password, BuildContext context,
-      String fullName) async {
+      String fullName, String tel, String drugallergy, String brithDate) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
-      String _returnString =
-          await _currentUser.signUpUser(email, password, fullName);
-      if (_returnString == 'secess') {
-        Navigator.pop(context);
+      String _returnString = await _currentUser.signUpUser(
+          email, password, fullName, tel, drugallergy, brithDate);
+      if (_returnString == 'success') {
+        showDialog<String>(
+            context: context,
+            builder: (BuildContext context) => AlertDialog(
+                  content: Text('Registration complete'),
+                  actions: <Widget>[
+                    FlatButton(
+                      child: Text('OK'),
+                      onPressed: () => Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return SignInScreen();
+                      })),
+                    )
+                  ],
+                ));
       } else {
         Scaffold.of(context).showSnackBar(SnackBar(
           content: Text(_returnString),
           duration: Duration(seconds: 2),
         ));
+        showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+            content: Text(
+              _returnString,
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('ตกลง'),
+                onPressed: () => Navigator.pop(context, 'OK'),
+              )
+            ],
+          ),
+        );
       }
     } catch (e) {
       print(e);
@@ -289,51 +314,38 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                          title: const Text('เกิดข้อผิดพลาด'),
                           content: Text(
-                            'กรุณาใส่ข้อมูลให้ครบ',
+                            'Please fill out all information.',
                           ),
                           actions: <Widget>[
                             FlatButton(
-                              child: Text('ตกลง'),
+                              child: Text('OK'),
                               onPressed: () => Navigator.pop(context, 'OK'),
                             )
                           ],
                         ),
                       );
-                    } else if (_passwordController.text ==
-                            _confirmpasswordController.text ||
-                        _emailController.text == '#@#.com') {
+                    }
+                    else if (_passwordController.text ==
+                        _confirmpasswordController.text) {
                       _signUpUser(
                           _emailController.text,
                           _passwordController.text,
                           context,
-                          _fullNameController.text);
-                      showDialog<String>(
-                          context: context,
-                          builder: (BuildContext context) => AlertDialog(
-                                content: Text('ลงทะเบียนเสร็จสิ้น'),
-                                actions: <Widget>[
-                                  FlatButton(
-                                    child: Text('ตกลง'),
-                                    onPressed: () => Navigator.push(context,
-                                        MaterialPageRoute(builder: (context) {
-                                      return SignInScreen();
-                                    })),
-                                  )
-                                ],
-                              ));
+                          _fullNameController.text,
+                          _telController.text,
+                          _drugallergyController.text,
+                          _currentDate.toString());
                     } else {
                       showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                          title: const Text('เกิดข้อผิดพลาด'),
                           content: Text(
-                            'รหัสผ่านไม่ตรงกัน กรุณากรอกใหม่',
+                            'Passwords do not match.',
                           ),
                           actions: <Widget>[
                             FlatButton(
-                              child: Text('ตกลง'),
+                              child: Text('OK'),
                               onPressed: () => Navigator.pop(context, 'OK'),
                             )
                           ],

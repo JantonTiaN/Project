@@ -6,7 +6,7 @@ class OurUser {
   String fullName;
   String tel;
   String drugallergy;
-  Timestamp accountCreated;
+  String birthDate;
 
   OurUser({
     this.uid,
@@ -14,6 +14,6 @@ class OurUser {
     this.fullName,
     this.tel,
     this.drugallergy,
-    this.accountCreated,
+    this.birthDate,
   });
 }
