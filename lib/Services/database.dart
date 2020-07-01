@@ -4,16 +4,16 @@ import 'package:fundee/models/users.dart';
 class OurDatabase {
   final Firestore _firestore = Firestore.instance;
 
-  Future<String> createUser (OurUser user) async {
+  Future<String> createUser (OurPatients patient) async {
     String retVal = 'error';
 
     try {
-      await _firestore.collection('Account').document('account').collection('Users').document(user.email).setData({
-        'fullName' : user.fullName,
-        'eMail' : user.email,
-        'accountCreated' : Timestamp.now(),
-        'tel' : user.tel,
-        'drugAllergy' : user.drugallergy
+      await _firestore.collection('Account').document('account').collection('Users').document(patient.email).setData({
+        'fullName' : patient.fullName,
+        'eMail' : patient.email,
+        'birthDay' : patient.birthDate,
+        'tel' : patient.tel,
+        'drugAllergy' : patient.drugallergy,
       });
       retVal = 'success';
     } catch (e) {

@@ -1,19 +1,23 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class OurUser {
+class OurPatients {
   String uid;
   String email;
   String fullName;
   String tel;
   String drugallergy;
-  Timestamp accountCreated;
+  String birthDate;
 
-  OurUser({
+  OurPatients({
     this.uid,
     this.email,
     this.fullName,
     this.tel,
     this.drugallergy,
-    this.accountCreated,
+    this.birthDate,
   });
+}
+
+class OurDentists {
+
 }

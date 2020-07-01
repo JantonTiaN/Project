@@ -19,10 +19,8 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
   TextEditingController _passwordController = TextEditingController();
   TextEditingController _confirmpasswordController = TextEditingController();
   DateTime _currentDate = new DateTime.now();
-  // final formatDate = new DateFormat('dd-MM-yyyy');
   TextEditingController _drugallergyController = TextEditingController();
   TextEditingController _telController = TextEditingController();
-  // TextEditingController _birthdateController = TextEditingController();
 
   Future<Null> _selectdate(BuildContext context) async {
     final DateTime _seldate = await showDatePicker(
@@ -42,19 +40,53 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
     }
   }
 
-  void _signUpPatient(String email, String password, BuildContext context,
-      String fullName) async {
+  void _signUpUser(String email, String password, BuildContext context,
+      String fullName, String tel, String drugallergy, String brithDate) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
+<<<<<<< HEAD
       String _returnString =
           await _currentUser.signUpPatient(email, password, fullName);
       if (_returnString == 'success') {
         Navigator.pop(context);
+=======
+      String _returnString = await _currentUser.signUpPatients(
+          email, password, fullName, tel, drugallergy, brithDate);
+      if (_returnString == 'success') {
+        showDialog<String>(
+            context: context,
+            builder: (BuildContext context) => AlertDialog(
+                  content: Text('Registration complete'),
+                  actions: <Widget>[
+                    FlatButton(
+                      child: Text('OK'),
+                      onPressed: () => Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return SignInScreen();
+                      })),
+                    )
+                  ],
+                ));
+>>>>>>> bcd18be080aabedf4a2a365a9396d7f31ce40434
       } else {
         Scaffold.of(context).showSnackBar(SnackBar(
           content: Text(_returnString),
           duration: Duration(seconds: 2),
         ));
+        showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+            content: Text(
+              _returnString,
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('ตกลง'),
+                onPressed: () => Navigator.pop(context, 'OK'),
+              )
+            ],
+          ),
+        );
       }
     } catch (e) {
       print(e);
@@ -289,9 +321,8 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                          title: const Text('Missing'),
                           content: Text(
-                            'Please fill out empty field!',
+                            'Please fill out all information.',
                           ),
                           actions: <Widget>[
                             FlatButton(
@@ -301,35 +332,23 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                           ],
                         ),
                       );
-                    } else if (_passwordController.text ==
-                            _confirmpasswordController.text ||
-                        _emailController.text == '#@#.com') {
-                      _signUpPatient(
+                    }
+                    else if (_passwordController.text ==
+                        _confirmpasswordController.text) {
+                      _signUpUser(
                           _emailController.text,
                           _passwordController.text,
                           context,
-                          _fullNameController.text);
-                      showDialog<String>(
-                          context: context,
-                          builder: (BuildContext context) => AlertDialog(
-                                content: Text('Successful'),
-                                actions: <Widget>[
-                                  FlatButton(
-                                    child: Text('Done'),
-                                    onPressed: () => Navigator.push(context,
-                                        MaterialPageRoute(builder: (context) {
-                                      return SignInScreen();
-                                    })),
-                                  )
-                                ],
-                              ));
+                          _fullNameController.text,
+                          _telController.text,
+                          _drugallergyController.text,
+                          _currentDate.toString());
                     } else {
                       showDialog<String>(
                         context: context,
                         builder: (BuildContext context) => AlertDialog(
-                          title: const Text('Error'),
                           content: Text(
-                            'Please make sure your password match',
+                            'Passwords do not match.',
                           ),
                           actions: <Widget>[
                             FlatButton(

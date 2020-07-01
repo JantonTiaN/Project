@@ -70,24 +70,24 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
     }
   }
 
-  void _signUpDentist(String email, String password, BuildContext context,
-      String fullName) async {
-    CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
-    try {
-      String _returnString =
-          await _currentUser.signUpDentist(email, password, fullName);
-      if (_returnString == 'success') {
-        Navigator.pop(context);
-      } else {
-        Scaffold.of(context).showSnackBar(SnackBar(
-          content: Text(_returnString),
-          duration: Duration(seconds: 2),
-        ));
-      }
-    } catch (e) {
-      print(e);
-    }
-  }
+  // void _signUpDentist(String email, String password, BuildContext context,
+  //     String fullName) async {
+  //   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  //   try {
+  //     String _returnString =
+  //         await _currentUser.signUpDentists(email, password, fullName);
+  //     if (_returnString == 'success') {
+  //       Navigator.pop(context);
+  //     } else {
+  //       Scaffold.of(context).showSnackBar(SnackBar(
+  //         content: Text(_returnString),
+  //         duration: Duration(seconds: 2),
+  //       ));
+  //     }
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -698,67 +698,67 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
               FittedBox(
                 child: GestureDetector(
                   onTap: () {
-                    if (_fullNameController.text.isEmpty ||
-                        _emailController.text.isEmpty ||
-                        _passwordController.text.isEmpty ||
-                        _confirmpasswordController.text.isEmpty ||
-                        _telController.text.isEmpty ||
-                        _citizenidController.text.isEmpty ||
-                        _permissionController.text.isEmpty) {
-                      showDialog<String>(
-                        context: context,
-                        builder: (BuildContext context) => AlertDialog(
-                          title: const Text('Missing'),
-                          content: Text(
-                            'Please fill out empty field!',
-                          ),
-                          actions: <Widget>[
-                            FlatButton(
-                              child: Text('OK'),
-                              onPressed: () => Navigator.pop(context, 'OK'),
-                            )
-                          ],
-                        ),
-                      );
-                    } else if (_passwordController.text ==
-                            _confirmpasswordController.text ||
-                        _emailController.text == '#@#.com') {
-                      _signUpDentist(
-                          _emailController.text,
-                          _passwordController.text,
-                          context,
-                          _fullNameController.text);
-                      showDialog<String>(
-                          context: context,
-                          builder: (BuildContext context) => AlertDialog(
-                                content: Text('Successful'),
-                                actions: <Widget>[
-                                  FlatButton(
-                                    child: Text('Done'),
-                                    onPressed: () => Navigator.push(context,
-                                        MaterialPageRoute(builder: (context) {
-                                      return SignInScreen();
-                                    })),
-                                  )
-                                ],
-                              ));
-                    } else {
-                      showDialog<String>(
-                        context: context,
-                        builder: (BuildContext context) => AlertDialog(
-                          title: const Text('Error'),
-                          content: Text(
-                            'Please make sure your password match',
-                          ),
-                          actions: <Widget>[
-                            FlatButton(
-                              child: Text('OK'),
-                              onPressed: () => Navigator.pop(context, 'OK'),
-                            )
-                          ],
-                        ),
-                      );
-                    }
+                    // if (_fullNameController.text.isEmpty ||
+                    //     _emailController.text.isEmpty ||
+                    //     _passwordController.text.isEmpty ||
+                    //     _confirmpasswordController.text.isEmpty ||
+                    //     _telController.text.isEmpty ||
+                    //     _citizenidController.text.isEmpty ||
+                    //     _permissionController.text.isEmpty) {
+                    //   showDialog<String>(
+                    //     context: context,
+                    //     builder: (BuildContext context) => AlertDialog(
+                    //       title: const Text('Missing'),
+                    //       content: Text(
+                    //         'Please fill out empty field!',
+                    //       ),
+                    //       actions: <Widget>[
+                    //         FlatButton(
+                    //           child: Text('OK'),
+                    //           onPressed: () => Navigator.pop(context, 'OK'),
+                    //         )
+                    //       ],
+                    //     ),
+                    //   );
+                    // } else if (_passwordController.text ==
+                    //         _confirmpasswordController.text ||
+                    //     _emailController.text == '#@#.com') {
+                    //   _signUpDentist(
+                    //       _emailController.text,
+                    //       _passwordController.text,
+                    //       context,
+                    //       _fullNameController.text);
+                    //   showDialog<String>(
+                    //       context: context,
+                    //       builder: (BuildContext context) => AlertDialog(
+                    //             content: Text('Successful'),
+                    //             actions: <Widget>[
+                    //               FlatButton(
+                    //                 child: Text('Done'),
+                    //                 onPressed: () => Navigator.push(context,
+                    //                     MaterialPageRoute(builder: (context) {
+                    //                   return SignInScreen();
+                    //                 })),
+                    //               )
+                    //             ],
+                    //           ));
+                    // } else {
+                    //   showDialog<String>(
+                    //     context: context,
+                    //     builder: (BuildContext context) => AlertDialog(
+                    //       title: const Text('Error'),
+                    //       content: Text(
+                    //         'Please make sure your password match',
+                    //       ),
+                    //       actions: <Widget>[
+                    //         FlatButton(
+                    //           child: Text('OK'),
+                    //           onPressed: () => Navigator.pop(context, 'OK'),
+                    //         )
+                    //       ],
+                    //     ),
+                    //   );
+                    // }
                   },
                   child: Container(
                     margin: EdgeInsets.only(bottom: 20),
