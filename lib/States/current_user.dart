@@ -17,8 +17,8 @@ class CurrentUser extends ChangeNotifier {
 
     try {
       FirebaseUser _firebaseUser = await _auth.currentUser();
-      _currentUser.uid = _firebaseUser.uid;
-      _currentUser.email = _firebaseUser.email;
+      _currentUser.patientId = _firebaseUser.uid;
+      _currentUser.patientEmail = _firebaseUser.email;
       returnVal = 'success';
     } catch (e) {
       print(e);
@@ -39,51 +39,54 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
-  // Future<String> signUpDentists(String email, String password, String fullName, String tel, String drugallergy, String birthDate) async {
-  //   String returnVal = 'error';
-  //   OurPatients _user = OurPatients();
-  //   try {
-  //     AuthResult _authResulf = await _auth.createUserWithEmailAndPassword(
-  //         email: email, password: password);
-  //     _user.uid = _authResulf.user.uid;
-  //     _user.email = _authResulf.user.email;
-  //     _user.fullName = fullName;
-  //     _user.tel = tel;
-  //     _user.drugallergy = drugallergy;
-  //     _user.birthDate = birthDate;
-  //     String _returnString = await OurDatabase().createUser(_user);
-  //     if(_returnString == 'success'){
-  //       returnVal = 'success';
-  //     }
-  //     returnVal = 'success';
-  //   } on PlatformException catch (e) {
-  //     returnVal = e.message;
-  //   } catch (e){
-  //     print(e);
-  //   }
-  //   return returnVal;
-  // }
-
-  Future<String> signUpPatients(String email, String password, String fullName, String tel, String drugallergy, String birthDate) async {
+  Future<String> signUpDentists(String dentistEmail, String dentistPassword, String dentistFullname, String dentistTel,
+    String dentistCitizenID, String dentistPermission, String dentistBirthDate) async {
     String returnVal = 'error';
-    OurPatients _patient = OurPatients();
+    OurDentists _dentist = OurDentists();
     try {
       AuthResult _authResulf = await _auth.createUserWithEmailAndPassword(
-          email: email, password: password);
-      _patient.uid = _authResulf.user.uid;
-      _patient.email = _authResulf.user.email;
-      _patient.fullName = fullName;
-      _patient.tel = tel;
-      _patient.drugallergy = drugallergy;
-      _patient.birthDate = birthDate;
-      String _returnString = await OurDatabase().createUser(_patient);
-      if(_returnString == 'success'){
+          email: dentistEmail, password: dentistPassword);
+      _dentist.dentistID = _authResulf.user.uid;
+      _dentist.dentistEmail = _authResulf.user.email;
+      _dentist.dentistFullname = dentistFullname;
+      _dentist.dentistTel = dentistTel;
+      _dentist.dentistCitizenID = dentistCitizenID;
+      _dentist.dentistPermission = dentistPermission;
+      _dentist.dentistBirthDate = dentistBirthDate;
+      String _returnString = await DentistDatabase().createDentists(_dentist);
+      if (_returnString == 'success') {
         returnVal = 'success';
       }
       returnVal = 'success';
     } on PlatformException catch (e) {
       returnVal = e.message;
-    } catch (e){
+    } catch (e) {
+      print(e);
+    }
+    return returnVal;
+  }
+
+  Future<String> signUpPatients(String patientEmail, String patientPassword, String patientFullName,
+      String patientTel, String patientDrugallergy, String patientBirthDate) async {
+    String returnVal = 'error';
+    OurPatients _patient = OurPatients();
+    try {
+      AuthResult _authResulf = await _auth.createUserWithEmailAndPassword(
+          email: patientEmail, password: patientPassword);
+      _patient.patientId = _authResulf.user.uid;
+      _patient.patientEmail = _authResulf.user.email;
+      _patient.patientFullName = patientFullName;
+      _patient.patientTel = patientTel;
+      _patient.patientDrugallergy = patientDrugallergy;
+      _patient.patientBirthDate = patientBirthDate;
+      String _returnString = await PatientDatabase().createPatient(_patient);
+      if (_returnString == 'success') {
+        returnVal = 'success';
+      }
+      returnVal = 'success';
+    } on PlatformException catch (e) {
+      returnVal = e.message;
+    } catch (e) {
       print(e);
     }
     return returnVal;
@@ -96,8 +99,8 @@ class CurrentUser extends ChangeNotifier {
       AuthResult _authReult = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
 
-      _currentUser.uid = _authReult.user.uid;
-      _currentUser.email = _authReult.user.email;
+      _currentUser.patientId = _authReult.user.uid;
+      _currentUser.patientEmail = _authReult.user.email;
       returnVal = 'success';
     } catch (e) {
       returnVal = e.message;
@@ -120,8 +123,8 @@ class CurrentUser extends ChangeNotifier {
           idToken: _googleAuth.idToken, accessToken: _googleAuth.accessToken);
       AuthResult _authReult = await _auth.signInWithCredential(credential);
 
-      _currentUser.uid = _authReult.user.uid;
-      _currentUser.email = _authReult.user.email;
+      _currentUser.patientId = _authReult.user.uid;
+      _currentUser.patientEmail = _authReult.user.email;
       returnVal = 'success';
     } catch (e) {
       returnVal = e.message;

@@ -40,7 +40,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
     }
   }
 
-  void _signUpUser(String email, String password, BuildContext context,
+  void _signUpPatient(String email, String password, BuildContext context,
       String fullName, String tel, String drugallergy, String brithDate) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
@@ -327,7 +327,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                       );
                     } else if (_passwordController.text ==
                         _confirmpasswordController.text) {
-                      _signUpUser(
+                      _signUpPatient(
                           _emailController.text,
                           _passwordController.text,
                           context,

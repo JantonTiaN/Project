@@ -1,23 +1,40 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class OurPatients {
-  String uid;
-  String email;
-  String fullName;
-  String tel;
-  String drugallergy;
-  String birthDate;
+  String patientId;
+  String patientEmail;
+  String patientFullName;
+  String patientTel;
+  String patientDrugallergy;
+  String patientBirthDate;
 
   OurPatients({
-    this.uid,
-    this.email,
-    this.fullName,
-    this.tel,
-    this.drugallergy,
-    this.birthDate,
+    this.patientId,
+    this.patientEmail,
+    this.patientFullName,
+    this.patientTel,
+    this.patientDrugallergy,
+    this.patientBirthDate,
   });
 }
 
 class OurDentists {
+  String dentistID;
+  String dentistFullname;
+  String dentistEmail;
+  String dentistCitizenID;
+  String dentistTel;
+  String dentistPermission;
+  String dentistBirthDate;
 
+  OurDentists({
+    this.dentistID,
+    this.dentistFullname,
+    this.dentistEmail,
+    this.dentistCitizenID,
+    this.dentistTel,
+    this.dentistPermission,
+    this.dentistBirthDate
+    
+  });
 }
