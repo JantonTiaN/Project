@@ -8,7 +8,7 @@ class OurDatabase {
     String retVal = 'error';
 
     try {
-      await _firestore.collection('Account').document('account').collection('Users').document(patient.email).setData({
+      await _firestore.collection('Account').document('account').collection('Patients').document(patient.email).setData({
         'fullName' : patient.fullName,
         'eMail' : patient.email,
         'birthDay' : patient.birthDate,
