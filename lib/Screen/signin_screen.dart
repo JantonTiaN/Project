@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/States/current_user.dart';
+import 'package:fundee/homeScreen.dart';
 import 'package:provider/provider.dart';
 import '../home.dart';
 import 'Patient/patient_home_screen.dart';
@@ -16,7 +17,13 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-  final fbLogin = FacebookLogin();
+
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  void initState() {
+    super.initState();
+    checkAuth(context);
+  }
+  
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -256,15 +263,20 @@ class _SignInScreenState extends State<SignInScreen> {
     FacebookLoginResult result =
         await facebookLogin.logIn(['email', 'public_profile']);
 
-    if (result.status == FacebookLoginStatus.loggedIn) {
-      FacebookAccessToken facebookAccessToken = result.accessToken;
-      AuthCredential authCredential = FacebookAuthProvider.getCredential(
-          accessToken: facebookAccessToken.token);
-      FirebaseUser fbUser;
-      fbUser =
-          (await FirebaseAuth.instance.signInWithCredential(authCredential))
-              .user;
+     String token = result.accessToken.token;
+    print("Access Token = $token");
+    await _auth.signInWithCredential(
+      FacebookAuthProvider.getCredential(accessToken: token)
+    );
+    checkAuth(context);
+  }
+
+  Future checkAuth(BuildContext context) async {
+    FirebaseUser user = await _auth.currentUser();
+    if(user != null){
+      print("Already signin with");
+      Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => HomeScreen(user)));
     }
-    // Navigator.push(context, MaterialPageRoute(builder: (context) => Home(),));
   }
 }
