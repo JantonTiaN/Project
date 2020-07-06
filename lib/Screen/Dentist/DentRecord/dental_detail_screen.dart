@@ -67,7 +67,7 @@ class _DentalDetailScreenState extends State<DentalDetailScreen> {
 
 Widget tooth1Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth1 Detail')),
+      appBar: AppBar(title: Text('Tooth 1 Detail')),
       body: Center(
           child: Container(
               margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
@@ -75,6 +75,9 @@ Widget tooth1Detail(BuildContext context) {
               // color: Colors.grey[300],
               child: Stack(
                 children: <Widget>[
+                  Container(
+                    child: Text("Upper (R) Third Molar"),
+                  ),
                   Container(
                     width: MediaQuery.of(context).size.width *
                         MediaQuery.of(context).devicePixelRatio *
