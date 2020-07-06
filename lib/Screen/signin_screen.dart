@@ -264,6 +264,10 @@ class _SignInScreenState extends State<SignInScreen> {
         await facebookLogin.logIn(['email', 'public_profile']);
 
      String token = result.accessToken.token;
+     if(token = null){
+       Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => SignInScreen()));
+     }
     print("Access Token = $token");
     await _auth.signInWithCredential(
       FacebookAuthProvider.getCredential(accessToken: token)
@@ -279,4 +283,5 @@ class _SignInScreenState extends State<SignInScreen> {
         context, MaterialPageRoute(builder: (context) => HomeScreen(user)));
     }
   }
+   
 }
