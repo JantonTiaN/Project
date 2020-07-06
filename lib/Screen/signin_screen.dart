@@ -2,10 +2,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/States/current_user.dart';
-import 'package:fundee/homeScreen.dart';
+import 'package:fundee/home_screen.dart';
 import 'package:provider/provider.dart';
 import '../home.dart';
-import 'Patient/patient_home_screen.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -17,13 +16,12 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
-
   final FirebaseAuth _auth = FirebaseAuth.instance;
   void initState() {
     super.initState();
     checkAuth(context);
   }
-  
+
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
@@ -72,9 +70,9 @@ class _SignInScreenState extends State<SignInScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-              child: ConstrainedBox(
+        child: ConstrainedBox(
           constraints: BoxConstraints(maxHeight: 650),
-                child: Column(
+          child: Column(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               Flexible(
@@ -125,7 +123,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                       // Icon(Icons.local_hospital),
                                       SizedBox(width: 10.0),
                                       Text("Dentist",
-                                          style: TextStyle(color: Colors.black)),
+                                          style:
+                                              TextStyle(color: Colors.black)),
                                     ],
                                   ),
                                   value: 0,
@@ -136,7 +135,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                       // Icon(Icons.person),
                                       SizedBox(width: 10.0),
                                       Text("Patient",
-                                          style: TextStyle(color: Colors.black)),
+                                          style:
+                                              TextStyle(color: Colors.black)),
                                     ],
                                   ),
                                   value: 1,
@@ -161,8 +161,8 @@ class _SignInScreenState extends State<SignInScreen> {
                               Flexible(
                                   fit: FlexFit.loose,
                                   child: TextField(
-                                    decoration:
-                                        InputDecoration(hintText: "Email Address"),
+                                    decoration: InputDecoration(
+                                        hintText: "Email Address"),
                                     keyboardType: TextInputType.emailAddress,
                                     controller: _emailController,
                                   ))
@@ -184,7 +184,8 @@ class _SignInScreenState extends State<SignInScreen> {
                                 child: TextFormField(
                                   keyboardType: TextInputType.text,
                                   // controller: ,
-                                  decoration: InputDecoration(hintText: "Password"),
+                                  decoration:
+                                      InputDecoration(hintText: "Password"),
                                   obscureText: true,
                                   controller: _passwordController,
                                 ))
@@ -270,17 +271,16 @@ class _SignInScreenState extends State<SignInScreen> {
      }
     print("Access Token = $token");
     await _auth.signInWithCredential(
-      FacebookAuthProvider.getCredential(accessToken: token)
-    );
+        FacebookAuthProvider.getCredential(accessToken: token));
     checkAuth(context);
   }
 
   Future checkAuth(BuildContext context) async {
     FirebaseUser user = await _auth.currentUser();
-    if(user != null){
+    if (user != null) {
       print("Already signin with");
       Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => HomeScreen(user)));
+          context, MaterialPageRoute(builder: (context) => HomeScreen(user)));
     }
   }
    
