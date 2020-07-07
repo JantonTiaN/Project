@@ -25,7 +25,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
 
   //value for checkbox timetable
   //mon
-  bool monMorning = false;  
+  bool monMorning = false;
   bool monAfternoon = false;
   bool monEvening = false;
   //tue
@@ -52,6 +52,98 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
   bool sunMorning = false;
   bool sunAfternoon = false;
   bool sunEvening = false;
+
+
+  List _workingTime() {
+    String time = '';
+    var workingTime = new List();
+    if(monMorning == true){
+      time = 'Monday Morning';
+      workingTime.add(time);
+    }
+    if(monAfternoon == true){
+      time = 'Monday Afternoon';
+      workingTime.add(time);
+    }
+    if(monEvening == true){
+      time = 'Monday Evening';
+      workingTime.add(time);
+    }
+    if(tueMorning == true){
+      time = 'Tuesday Morning';
+      workingTime.add(time);
+    }
+    if(tueAfternoon == true){
+      time = 'Tuesday Afternoon';
+      workingTime.add(time);
+    }
+    if(tueEvening == true){
+      time = 'Tuesday Evening';
+      workingTime.add(time);
+    }
+    if(wedMorning == true){
+      time = 'Wednesday Morning';
+      workingTime.add(time);
+    }
+    if(wedAfternoon == true){
+      time = 'Wednesday Afternoon';
+      workingTime.add(time);
+    }
+    if(wedEvening == true){
+      time = 'Wednesday Evening';
+      workingTime.add(time);
+    }
+    if(thuMorning == true){
+      time = 'Thursday Morning';
+      workingTime.add(time);
+    }
+    if(thuAfternoon == true){
+      time = 'Thursday Afternoon';
+      workingTime.add(time);
+    }
+    if(thuEvening == true){
+      time = 'Thursday Evening';
+      workingTime.add(time);
+    }
+    if(friMorning == true){
+      time = 'Friday Morning';
+      workingTime.add(time);
+    }
+    if(friAfternoon == true){
+      time = 'Friday Afternoon';
+      workingTime.add(time);
+    }
+    if(friEvening == true){
+      time = 'Friday Evening';
+      workingTime.add(time);
+    }
+    if(satMorning == true){
+      time = 'Saturday Morning';
+      workingTime.add(time);
+    }
+    if(satAfternoon == true){
+      time = 'Saturday Afternoon';
+      workingTime.add(time);
+    }
+    // if(satAfternoon == true){
+    //   time = 'Saturday Evening';
+    //   _workingTime.add(time);
+    // }
+    if(sunMorning == true){
+      time = 'Sunday Morning';
+      workingTime.add(time);
+    }
+    if(sunAfternoon == true){
+      time = 'Sunday Afternoon';
+      workingTime.add(time);
+    }
+    // if(sunAfternoon == true){
+    //   time = 'Sunday Evening';
+    //   _workingTime.add(time);
+    // }
+    return workingTime;
+  }
+
   Future<Null> _selectdate(BuildContext context) async {
     final DateTime _seldate = await showDatePicker(
         context: context,
@@ -75,7 +167,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString =
-          await _currentUser.signUpDentists(email, password, fullName, tel, citizenID, permission, birthDate);
+          await _currentUser.signUpDentists(email, password, fullName, tel, citizenID, permission, birthDate, _workingTime);
       if (_returnString == 'success') {
         showDialog<String>(
             context: context,
@@ -755,51 +847,52 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                           _citizenidController.text,
                           _permissionController.text,
                           _currentDate.toString());
-                    } else {
-                      showDialog<String>(
-                        context: context,
-                        builder: (BuildContext context) => AlertDialog(
-                          title: const Text('Error'),
-                          content: Text(
-                            'Please make sure your password match',
-                          ),
-                          actions: <Widget>[
-                            FlatButton(
-                              child: Text('OK'),
-                              onPressed: () => Navigator.pop(context, 'OK'),
-                            )
-                          ],
-                        ),
-                      );
-                    }
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(bottom: 20),
-                    padding: EdgeInsets.symmetric(horizontal: 26, vertical: 16),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: bPrimaryColor,
-                    ),
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          "SIGN UP",
-                          style: Theme.of(context)
-                              .textTheme
-                              .button
-                              .copyWith(color: Colors.black),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          )
-        ],
-      ),
-    ));
-  }
+                          _workingTime();
+                                              } else {
+                                                showDialog<String>(
+                                                  context: context,
+                                                  builder: (BuildContext context) => AlertDialog(
+                                                    title: const Text('Error'),
+                                                    content: Text(
+                                                      'Please make sure your password match',
+                                                    ),
+                                                    actions: <Widget>[
+                                                      FlatButton(
+                                                        child: Text('OK'),
+                                                        onPressed: () => Navigator.pop(context, 'OK'),
+                                                      )
+                                                    ],
+                                                  ),
+                                                );
+                                              }
+                                            },
+                                            child: Container(
+                                              margin: EdgeInsets.only(bottom: 20),
+                                              padding: EdgeInsets.symmetric(horizontal: 26, vertical: 16),
+                                              decoration: BoxDecoration(
+                                                borderRadius: BorderRadius.circular(25),
+                                                color: bPrimaryColor,
+                                              ),
+                                              child: Row(
+                                                children: <Widget>[
+                                                  Text(
+                                                    "SIGN UP",
+                                                    style: Theme.of(context)
+                                                        .textTheme
+                                                        .button
+                                                        .copyWith(color: Colors.black),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ));
+                            }
 }
 
 
