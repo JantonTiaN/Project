@@ -264,15 +264,19 @@ class _SignInScreenState extends State<SignInScreen> {
     FacebookLoginResult result =
         await facebookLogin.logIn(['email', 'public_profile']);
 
-     String token = result.accessToken.token;
-     if(token = null){
-       Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => SignInScreen()));
+     
+
+     if(result.status == FacebookLoginStatus.loggedIn){
+       FacebookAccessToken token = result.accessToken;
+       AuthCredential credential = FacebookAuthProvider.getCredential(accessToken: token.token);
+       print("Access Token = $token");
+       var user = await FirebaseAuth.instance.signInWithCredential(credential);
+       checkAuth(context);
      }
-    print("Access Token = $token");
-    await _auth.signInWithCredential(
-        FacebookAuthProvider.getCredential(accessToken: token));
-    checkAuth(context);
+     
+    
+    
+    
   }
 
   Future checkAuth(BuildContext context) async {
