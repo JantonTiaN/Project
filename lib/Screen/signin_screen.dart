@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:fundee/home_screen.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import '../home.dart';
 import 'constants.dart';
@@ -221,8 +222,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                       color: Colors.white.withOpacity(.5)),
                                 ),
                                 onTap: () {
-                                  _loginUser(
-                                      type: LoginType.google, context: context);
+                                  loginWithGoogle(context);
                                 },
                               ),
                               Spacer(),
@@ -257,6 +257,16 @@ class _SignInScreenState extends State<SignInScreen> {
         ),
       ),
     );
+  }
+
+  Future loginWithGoogle(BuildContext context) async {
+    GoogleSignIn _googleSignIn = GoogleSignIn(
+      scopes: ['https://www.googleapis.com/auth/cloud-platform.read-only',]
+    );
+    GoogleSignInAccount user = await _googleSignIn.signIn();
+    GoogleSignInAuthentication userAuth = await user.authentication;
+    await _auth.signInWithCredential(GoogleAuthProvider.getCredential(idToken: null, accessToken: userAuth.accessToken));
+    checkAuth(context);
   }
 
   Future loginWithFacebook(BuildContext context) async {

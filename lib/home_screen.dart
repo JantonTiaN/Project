@@ -53,7 +53,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                       Row(
                         children: <Widget>[
-                          Image.network(widget.user.photoUrl),
+                          Image.network(widget.user.photoUrl,height: 50,width: 50,),
                           Text("     "),
                           Text(widget.user.displayName)
                         ],
