@@ -40,7 +40,7 @@ class CurrentUser extends ChangeNotifier {
   }
 
   Future<String> signUpDentists(String dentistEmail, String dentistPassword, String dentistFullname, String dentistTel,
-    String dentistCitizenID, String dentistPermission, String dentistBirthDate) async {
+    String dentistCitizenID, String dentistPermission, String dentistBirthDate, List workingTime())async {
     String returnVal = 'error';
     OurDentists _dentist = OurDentists();
     try {
@@ -53,6 +53,7 @@ class CurrentUser extends ChangeNotifier {
       _dentist.dentistCitizenID = dentistCitizenID;
       _dentist.dentistPermission = dentistPermission;
       _dentist.dentistBirthDate = dentistBirthDate;
+      _dentist.dentistWorkingTime = workingTime();
       String _returnString = await DentistDatabase().createDentists(_dentist);
       if (_returnString == 'success') {
         returnVal = 'success';

@@ -26,6 +26,7 @@ class OurDentists {
   String dentistTel;
   String dentistPermission;
   String dentistBirthDate;
+  List dentistWorkingTime;
 
   OurDentists({
     this.dentistID,
@@ -34,7 +35,7 @@ class OurDentists {
     this.dentistCitizenID,
     this.dentistTel,
     this.dentistPermission,
-    this.dentistBirthDate
-    
+    this.dentistBirthDate,
+    this.dentistWorkingTime
   });
 }

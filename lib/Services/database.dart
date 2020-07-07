@@ -38,6 +38,7 @@ class DentistDatabase {
         'tel' : dentist.dentistTel,
         'citizenID' : dentist.dentistCitizenID,
         'permission' : dentist.dentistPermission,
+        'workingTime' : dentist.dentistWorkingTime
       });
       retVal = 'success';
     }catch (e){
