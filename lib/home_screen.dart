@@ -11,7 +11,6 @@ import 'States/root.dart';
 import 'patientList.dart';
 
 class HomeScreen extends StatefulWidget {
-  
   final FirebaseUser user;
   HomeScreen(this.user, {Key key}) : super(key: key);
 
@@ -26,7 +25,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-  
   }
 
   @override
@@ -43,15 +41,12 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: Container(
                   child: Column(
                     children: <Widget>[
-                      Text(
-                        "Welcome to Fun-D CARE",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 18),
-                      ),
-                      Text(
-                        "Don't RUSH when you BRUSH",
-                        style: TextStyle(
-                          fontStyle: FontStyle.italic,
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 15),
+                        child: Text(
+                          "Welcome to Fun-D",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
                         ),
                       ),
                       Row(
@@ -59,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           //signEmail(),
                           Image.network(widget.user.photoUrl,height: 50,width: 50,),
                           Text("     "),
-                          Text(widget.user.displayName)
+                          Text("Hi, " + widget.user.displayName)
                         ],
                       )
                     ],
@@ -103,7 +98,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         body: Container(
           child: Column(
-            children: <Widget>[              
+            children: <Widget>[
               FlatButton(
                   child: record(),
                   onPressed: () => Navigator.push(context,

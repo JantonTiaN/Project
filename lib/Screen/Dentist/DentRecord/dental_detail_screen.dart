@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_case_screen.dart';
@@ -5,6 +6,8 @@ import 'package:fundee/models/account_model.dart';
 import 'package:fundee/models/user_model.dart';
 
 class DentalDetailScreen extends StatefulWidget {
+  final FirebaseUser user;
+  DentalDetailScreen(this.user, {Key key}) : super(key: key);
   @override
   _DentalDetailScreenState createState() => _DentalDetailScreenState();
 }
@@ -52,13 +55,14 @@ class _DentalDetailScreenState extends State<DentalDetailScreen> {
                 itemBuilder: (BuildContext buildContext, int index) {
                   return Container(
                       child: Container(
-                          child: Text(
-                              ' ' +
-                                  userModels[index].firstName +
-                                  ' ' +
-                                  userModels[index].lastName,
-                              style: TextStyle(
-                                  fontSize: 15, color: Colors.black))));
+                          child: Text(widget.user.displayName
+                              // ' ' +
+                              //     userModels[index].firstName +
+                              //     ' ' +
+                              //     userModels[index].lastName,
+                              // style: TextStyle(
+                              //     fontSize: 15, color: Colors.black)
+                              )));
                 })),
       ],
     );
