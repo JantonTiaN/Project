@@ -261,7 +261,7 @@ class _SignInScreenState extends State<SignInScreen> {
   Future<FirebaseUser> signIn() async {
     await _auth.signInWithEmailAndPassword(
     email: _emailController.text.trim(), password: _passwordController.text.trim());
-    //checkAuth(context);
+    checkAuth(context);
   }
 
   //Google SignIn
