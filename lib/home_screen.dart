@@ -3,11 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:provider/provider.dart';
-
 import 'Screen/Dentist/DentRecord/dentalRecord.dart';
-import 'States/current_user.dart';
-import 'States/root.dart';
 import 'patientList.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -21,7 +17,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final FacebookLogin _facebookLogin = FacebookLogin();
   final GoogleSignIn _googleSignIn = GoogleSignIn();
-  final FirebaseAuth _auth = FirebaseAuth.instance;  
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   void initState() {
     super.initState();
@@ -52,9 +48,13 @@ class _HomeScreenState extends State<HomeScreen> {
                       Row(
                         children: <Widget>[
                           //signEmail(),
-                          Image.network(widget.user.photoUrl,height: 50,width: 50,),
-                          Text("     "),
-                          Text("Hi, " + widget.user.displayName)
+                          // Image.network(
+                          //   widget.user.photoUrl,
+                          //   height: 50,
+                          //   width: 50,
+                          // ),
+                          // Text("     "),
+                          // Text("Hi, " + widget.user.displayName)
                         ],
                       )
                     ],
@@ -145,27 +145,30 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Image.asset("assets/images/patient.png"),
     );
   }
-  signEmail(){
-    if(Image.network(widget.user.photoUrl) == null){
-      return Image.asset("assets/images/Dentalcaries.png",height: 50, width: 50,);
+
+  signEmail() {
+    if (Image.network(widget.user.photoUrl) == null) {
+      return Image.asset(
+        "assets/images/Dentalcaries.png",
+        height: 50,
+        width: 50,
+      );
     }
-   
-    
   }
 
-
-   Future _signOut(BuildContext context) async {
-     await _facebookLogin.logOut();   
-     await _auth.signOut();
-     await _googleSignIn.signOut();     
-    Navigator.pushAndRemoveUntil(context,
-     MaterialPageRoute(builder: (context) => SignInScreen()), (route) => false);
+  Future _signOut(BuildContext context) async {
+    await _facebookLogin.logOut();
+    await _auth.signOut();
+    await _googleSignIn.signOut();
+    Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => SignInScreen()),
+        (route) => false);
 
     //  await _auth.signOut();
     //  Navigator.pushAndRemoveUntil(
     //     context,
     //     MaterialPageRoute(builder: (context) => SignInScreen()),
     //     ModalRoute.withName('/'));
-  } 
-
+  }
 }

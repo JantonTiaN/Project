@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:fundee/patientForm.dart';
 import 'package:fundee/patientInfo.dart';
 
-import 'models/user_model.dart';
 
 
 class PatientList extends StatefulWidget {

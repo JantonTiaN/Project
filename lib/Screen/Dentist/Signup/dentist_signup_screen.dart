@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fundee/States/current_user.dart';
@@ -844,16 +843,51 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                       );
                     } else if (_passwordController.text ==
                         _confirmpasswordController.text) {
-                      _signUpDentist(
-                          _emailController.text,
-                          _passwordController.text,
-                          context,
-                          _fullNameController.text,
-                          _telController.text,
-                          _citizenidController.text,
-                          _permissionController.text,
-                          _currentDate.toString());
-                      _workingTime();
+                      if (_citizenidController.text.length != 13) {
+                        showDialog<String>(
+                            context: context,
+                            builder: (BuildContext context) => AlertDialog(
+                                  title: const Text('Error'),
+                                  content: Text(
+                                    'Invalid Citizen ID',
+                                  ),
+                                  actions: <Widget>[
+                                    FlatButton(
+                                      child: Text('OK'),
+                                      onPressed: () =>
+                                          Navigator.pop(context, 'OK'),
+                                    )
+                                  ],
+                                ));
+                                } else if (_telController.text.length != 10) {
+                        showDialog<String>(
+                            context: context,
+                            builder: (BuildContext context) => AlertDialog(
+                                  title: const Text('Error'),
+                                  content: Text(
+                                    'Invalid Phone Number',
+                                  ),
+                                  actions: <Widget>[
+                                    FlatButton(
+                                      child: Text('OK'),
+                                      onPressed: () =>
+                                          Navigator.pop(context, 'OK'),
+                                    )
+                                  ],
+                                ));
+                      }
+                      } else {
+                        _signUpDentist(
+                            _emailController.text,
+                            _passwordController.text,
+                            context,
+                            _fullNameController.text,
+                            _telController.text,
+                            _citizenidController.text,
+                            _permissionController.text,
+                            _currentDate.toString());
+                        _workingTime();
+                      }
                     } else {
                       showDialog<String>(
                         context: context,
