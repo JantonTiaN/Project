@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:fundee/Screen/welcome_screen.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:fundee/home.dart';
-import 'package:fundee/home_screen.dart';
 import 'package:provider/provider.dart';
 
 enum AuthStatus {

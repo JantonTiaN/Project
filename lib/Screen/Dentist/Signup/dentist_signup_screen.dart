@@ -859,7 +859,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                                     )
                                   ],
                                 ));
-                                } else if (_telController.text.length != 10) {
+                      } else if (_telController.text.length != 10) {
                         showDialog<String>(
                             context: context,
                             builder: (BuildContext context) => AlertDialog(
@@ -875,7 +875,6 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                                     )
                                   ],
                                 ));
-                      }
                       } else {
                         _signUpDentist(
                             _emailController.text,
