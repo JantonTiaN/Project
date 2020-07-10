@@ -12,12 +12,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 enum LoginType { email, google }
 
 class SignInScreen extends StatefulWidget {
-  
   @override
   _SignInScreenState createState() => _SignInScreenState();
 }
 
-class _SignInScreenState extends State<SignInScreen> {  
+class _SignInScreenState extends State<SignInScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   void initState() {
     super.initState();
@@ -26,8 +25,6 @@ class _SignInScreenState extends State<SignInScreen> {
 
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
-
-
 
   // void _loginUser(
   //     {@required LoginType type,
@@ -257,36 +254,41 @@ class _SignInScreenState extends State<SignInScreen> {
       ),
     );
   }
+
   //Email SignIn
   Future<FirebaseUser> signIn() async {
     await _auth.signInWithEmailAndPassword(
-    email: _emailController.text.trim(), password: _passwordController.text.trim());
-    //checkAuth(context);
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim());
+    // checkAuth(context);
   }
 
   //Google SignIn
   Future loginWithGoogle(BuildContext context) async {
-    GoogleSignIn _googleSignIn = GoogleSignIn(
-      scopes: ['https://www.googleapis.com/auth/cloud-platform.read-only',]
-    );
+    GoogleSignIn _googleSignIn = GoogleSignIn(scopes: [
+      'https://www.googleapis.com/auth/cloud-platform.read-only',
+    ]);
     GoogleSignInAccount user = await _googleSignIn.signIn();
     GoogleSignInAuthentication userAuth = await user.authentication;
-    await _auth.signInWithCredential(GoogleAuthProvider.getCredential(idToken: null, accessToken: userAuth.accessToken));
+    await _auth.signInWithCredential(GoogleAuthProvider.getCredential(
+        idToken: null, accessToken: userAuth.accessToken));
     checkAuth(context);
   }
+
   //Facebook SignIn
   Future loginWithFacebook(BuildContext context) async {
     FacebookLogin facebookLogin = FacebookLogin();
     FacebookLoginResult result =
-        await facebookLogin.logIn(['email', 'public_profile']);     
+        await facebookLogin.logIn(['email', 'public_profile']);
 
-     if(result.status == FacebookLoginStatus.loggedIn){
-       FacebookAccessToken token = result.accessToken;
-       AuthCredential credential = FacebookAuthProvider.getCredential(accessToken: token.token);
-       print("Access Token = $token");
-       var user = await FirebaseAuth.instance.signInWithCredential(credential);              
-       checkAuth(context);
-     }
+    if (result.status == FacebookLoginStatus.loggedIn) {
+      FacebookAccessToken token = result.accessToken;
+      AuthCredential credential =
+          FacebookAuthProvider.getCredential(accessToken: token.token);
+      print("Access Token = $token");
+      var user = await FirebaseAuth.instance.signInWithCredential(credential);
+      checkAuth(context);
+    }
   }
 
   Future checkAuth(BuildContext context) async {
@@ -297,5 +299,4 @@ class _SignInScreenState extends State<SignInScreen> {
           context, MaterialPageRoute(builder: (context) => HomeScreen(user)));
     }
   }
-   
 }

@@ -46,7 +46,6 @@ class _DentalDetailScreenState extends State<DentalDetailScreen> {
         ),
         Container(
             padding: EdgeInsets.all(0.3),
-            color: Colors.grey[300],
             width: MediaQuery.of(context).size.width * 0.5,
             height: MediaQuery.of(context).size.height * 0.0,
             margin: EdgeInsets.fromLTRB(20, 180, 0, 0),
@@ -71,778 +70,780 @@ class _DentalDetailScreenState extends State<DentalDetailScreen> {
 
 Widget tooth1Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 1 Detail')),
-      body: Center(
+    appBar: AppBar(title: Text('Tooth 1 Detail')),
+    body:
+        // child: Container(
+        //     color: Colors.grey,
+        //     margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+        //     padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+        // color: Colors.grey[300],
+        Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(8.0),
           child: Container(
-              margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-              // color: Colors.grey[300],
-              child: Stack(
-                children: <Widget>[
-                  Container(
-                    child: Text("Upper (R) Third Molar"),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio *
-                        0.1,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio *
-                        0.1,
-                    margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-                    child: IconButton(
-                        icon: Image.asset('images/tooth/detail/1-1.png'),
-                        onPressed: () {
-                          showModalBottomSheet(
-                              context: context,
-                              builder: (context) {
-                                return SingleChildScrollView(
-                                  child: Wrap(
-                                    children: <Widget>[
-                                      ListTile(
-                                        title: Center(
-                                            child: Text("Select Case Symptom")),
-                                      ),
-                                      ListTile(
-                                        title: Text("Dental Caries"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text(
-                                            "Attrition, abrasion, abfraction"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Fractured tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Retained root"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("RCT tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/black.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Extracted tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/red-cross.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Missing tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/green-circle.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Impacted tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/imp.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Partial eruption"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/pe.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Tilting, drifting"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/arrow.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Loss of contact"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/loss-of-contact.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Poor contact point"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/poor-contact-point.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Food impaction"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/food-impaction.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Supraclusion"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/plus.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Infraclusion"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/minus.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Rotation"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/rotation.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Temporary"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Permanentrestoration"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/black.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Gold restoration"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/yellow.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Porcelain/metal crown"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/black.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title:
-                                            Text("Extract and have fix bridge"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/red-cross.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Other"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/other.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
-                        }),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio *
-                        0.07,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio *
-                        0.07,
-                    margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-                    child: IconButton(
-                        icon: Image.asset('images/tooth/detail/1-2.png'),
-                        onPressed: () {
-                          showModalBottomSheet(
-                              context: context,
-                              builder: (context) {
-                                return SingleChildScrollView(
-                                  child: Wrap(
-                                    children: <Widget>[
-                                      ListTile(
-                                        title: Center(
-                                            child: Text("Select Case Symptom")),
-                                      ),
-                                      ListTile(
-                                        title: Text("Dental Caries"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text(
-                                            "Attrition, abrasion, abfraction"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Fractured tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Retained root"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("RCT tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/black.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Extracted tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/red-cross.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Missing tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/green-circle.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Impacted tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/imp.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Partial eruption"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/pe.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Tilting, drifting"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/arrow.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Loss of contact"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/loss-of-contact.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Poor contact point"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/poor-contact-point.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Food impaction"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/food-impaction.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Supraclusion"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/plus.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Infraclusion"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/minus.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Rotation"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/rotation.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Temporary"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Permanentrestoration"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/black.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Gold restoration"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/yellow.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Porcelain/metal crown"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/black.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title:
-                                            Text("Extract and have fix bridge"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/red-cross.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Other"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/other.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
-                        }),
-                  ),
-                  Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio *
-                        0.1,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio *
-                        0.1,
-                    margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-                    child: IconButton(
-                        icon: Image.asset('images/tooth/detail/1-3.png'),
-                        onPressed: () {
-                          showModalBottomSheet(
-                              context: context,
-                              builder: (context) {
-                                return SingleChildScrollView(
-                                  child: Wrap(
-                                    children: <Widget>[
-                                      ListTile(
-                                        title: Center(
-                                            child: Text("Select Case Symptom")),
-                                      ),
-                                      ListTile(
-                                        title: Text("Dental Caries"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text(
-                                            "Attrition, abrasion, abfraction"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Fractured tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Retained root"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("RCT tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/black.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Extracted tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/red-cross.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Missing tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/green-circle.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Impacted tooth"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/imp.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Partial eruption"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/pe.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Tilting, drifting"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/arrow.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Loss of contact"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/loss-of-contact.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Poor contact point"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/poor-contact-point.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Food impaction"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/food-impaction.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Supraclusion"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/plus.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Infraclusion"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/minus.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Rotation"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/rotation.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Temporary"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/blue.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Permanentrestoration"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/black.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Gold restoration"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/yellow.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Porcelain/metal crown"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/black.png'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title:
-                                            Text("Extract and have fix bridge"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/red-cross.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                      ListTile(
-                                        title: Text("Other"),
-                                        leading: CircleAvatar(
-                                          backgroundImage: AssetImage(
-                                              'assets/images/dental_cases/other.jpg'),
-                                        ),
-                                        onTap: () {
-                                          //add to firebase
-                                        },
-                                      ),
-                                    ],
-                                  ),
-                                );
-                              });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
-                        }),
-                  )
-                ],
-              ))));
+            color: Colors.yellow,
+            child: Text("Upper (R) Third Molar"),
+          ),
+        ),
+        Container(
+          color: Colors.red,
+          width: MediaQuery.of(context).size.width *
+              MediaQuery.of(context).devicePixelRatio *
+              0.1,
+          height: MediaQuery.of(context).size.height *
+              MediaQuery.of(context).devicePixelRatio *
+              0.1,
+          // margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+          child: IconButton(
+              icon: Image.asset('images/tooth/detail/1-1.png'),
+              onPressed: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return SingleChildScrollView(
+                        child: Wrap(
+                          children: <Widget>[
+                            ListTile(
+                              title: Center(child: Text("Select Case Symptom")),
+                            ),
+                            ListTile(
+                              title: Text("Dental Caries"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Attrition, abrasion, abfraction"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Fractured tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Retained root"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("RCT tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/black.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Extracted tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/red-cross.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Missing tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/green-circle.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Impacted tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/imp.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Partial eruption"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/pe.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Tilting, drifting"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/arrow.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Loss of contact"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/loss-of-contact.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Poor contact point"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/poor-contact-point.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Food impaction"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/food-impaction.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Supraclusion"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/plus.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Infraclusion"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/minus.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Rotation"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/rotation.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Temporary"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Permanentrestoration"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/black.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Gold restoration"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/yellow.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Porcelain/metal crown"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/black.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Extract and have fix bridge"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/red-cross.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Other"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/other.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                          ],
+                        ),
+                      );
+                    });
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => DentalCaseScreen()));
+              }),
+        ),
+        Container(
+          color: Colors.blue,
+          width: MediaQuery.of(context).size.width *
+              MediaQuery.of(context).devicePixelRatio *
+              0.07,
+          height: MediaQuery.of(context).size.height *
+              MediaQuery.of(context).devicePixelRatio *
+              0.07,
+          // margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+          child: IconButton(
+              icon: Image.asset('images/tooth/detail/1-2.png'),
+              onPressed: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return SingleChildScrollView(
+                        child: Wrap(
+                          children: <Widget>[
+                            ListTile(
+                              title: Center(child: Text("Select Case Symptom")),
+                            ),
+                            ListTile(
+                              title: Text("Dental Caries"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Attrition, abrasion, abfraction"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Fractured tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Retained root"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("RCT tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/black.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Extracted tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/red-cross.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Missing tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/green-circle.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Impacted tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/imp.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Partial eruption"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/pe.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Tilting, drifting"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/arrow.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Loss of contact"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/loss-of-contact.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Poor contact point"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/poor-contact-point.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Food impaction"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/food-impaction.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Supraclusion"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/plus.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Infraclusion"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/minus.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Rotation"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/rotation.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Temporary"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Permanentrestoration"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/black.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Gold restoration"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/yellow.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Porcelain/metal crown"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/black.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Extract and have fix bridge"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/red-cross.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Other"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/other.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                          ],
+                        ),
+                      );
+                    });
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => DentalCaseScreen()));
+              }),
+        ),
+        Container(
+          color: Colors.green,
+          width: MediaQuery.of(context).size.width *
+              MediaQuery.of(context).devicePixelRatio *
+              0.1,
+          height: MediaQuery.of(context).size.height *
+              MediaQuery.of(context).devicePixelRatio *
+              0.1,
+          // margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+          child: IconButton(
+              icon: Image.asset('images/tooth/detail/1-3.png'),
+              onPressed: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (context) {
+                      return SingleChildScrollView(
+                        child: Wrap(
+                          children: <Widget>[
+                            ListTile(
+                              title: Center(child: Text("Select Case Symptom")),
+                            ),
+                            ListTile(
+                              title: Text("Dental Caries"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Attrition, abrasion, abfraction"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Fractured tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Retained root"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("RCT tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/black.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Extracted tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/red-cross.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Missing tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/green-circle.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Impacted tooth"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/imp.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Partial eruption"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/pe.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Tilting, drifting"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/arrow.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Loss of contact"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/loss-of-contact.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Poor contact point"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/poor-contact-point.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Food impaction"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/food-impaction.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Supraclusion"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/plus.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Infraclusion"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/minus.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Rotation"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/rotation.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Temporary"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/blue.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Permanentrestoration"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/black.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Gold restoration"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/yellow.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Porcelain/metal crown"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/black.png'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Extract and have fix bridge"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/red-cross.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                            ListTile(
+                              title: Text("Other"),
+                              leading: CircleAvatar(
+                                backgroundImage: AssetImage(
+                                    'assets/images/dental_cases/other.jpg'),
+                              ),
+                              onTap: () {
+                                //add to firebase
+                              },
+                            ),
+                          ],
+                        ),
+                      );
+                    });
+                // Navigator.push(
+                //     context,
+                //     MaterialPageRoute(
+                //         builder: (context) => DentalCaseScreen()));
+              }),
+        )
+      ],
+    ),
+  );
 }
 
 Widget tooth2Detail(BuildContext context) {

@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => CurrentUser(),
       child: MaterialApp(
-        title: "Sign Up Screen",
+        title: "Fun-D",
         theme: ThemeData(
           primaryColor: bPrimaryColor,
           scaffoldBackgroundColor: bBackgroundColor,
