@@ -1,11 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
-import 'package:fundee/States/current_user.dart';
 import 'package:fundee/home_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:provider/provider.dart';
-import '../home.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -261,6 +258,8 @@ class _SignInScreenState extends State<SignInScreen> {
         email: _emailController.text.trim(),
         password: _passwordController.text.trim());
     // checkAuth(context);
+    email: _emailController.text.trim(), password: _passwordController.text.trim());
+    checkAuth(context);
   }
 
   //Google SignIn

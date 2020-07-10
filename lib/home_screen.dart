@@ -3,11 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:provider/provider.dart';
-
 import 'Screen/Dentist/DentRecord/dentalRecord.dart';
-import 'States/current_user.dart';
-import 'States/root.dart';
 import 'patientList.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -59,6 +55,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           // ),
                           Text("     "),
                           Text("Hi, " + widget.user.displayName)
+                          // Text("     "),
+                          // Text("Hi, " + widget.user.displayName)
                         ],
                       )
                     ],
