@@ -258,7 +258,10 @@ class _SignInScreenState extends State<SignInScreen> {
         email: _emailController.text.trim(),
         password: _passwordController.text.trim());
     // checkAuth(context);
-    email: _emailController.text.trim(), password: _passwordController.text.trim());
+    email:
+    _emailController.text.trim();
+    password:
+    _passwordController.text.trim();
     checkAuth(context);
   }
 
