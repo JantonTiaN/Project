@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:fundee/Screen/constants.dart';
+import 'package:fundee/font_awesome_flutter.dart';
+import 'package:intl/intl.dart';
 
 class FbSignupScreen extends StatefulWidget {
   @override
@@ -6,8 +10,32 @@ class FbSignupScreen extends StatefulWidget {
 }
 
 class _FbSignupScreenState extends State<FbSignupScreen> {
+  DateTime _currentDate = new DateTime.now();
+  TextEditingController _drugallergyController = TextEditingController();
+  TextEditingController _telController = TextEditingController();
+
+  Future<Null> _selectdate(BuildContext context) async {
+    DateTime _currentDate = new DateTime.now();
+    final DateTime _seldate = await showDatePicker(
+        context: context,
+        initialDate: _currentDate,
+        firstDate: DateTime(1900),
+        lastDate: DateTime.now(),
+        builder: (context, child) {
+          return SingleChildScrollView(
+            child: child,
+          );
+        });
+    if (_seldate != null) {
+      setState(() {
+        _currentDate = _seldate;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
+    String _formattedate = new DateFormat.yMMMd().format(_currentDate);
     return Scaffold(
         body: Builder(
             builder: (context) => ListView(
@@ -33,10 +61,170 @@ class _FbSignupScreenState extends State<FbSignupScreen> {
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
-                          fontSize: 16,
+                          fontSize: 18,
                         ),
                       )),
                     ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 0, 0, 20),
+                      child: Center(
+                          child: Text(
+                        "Important Information",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 13,
+                          decoration: TextDecoration.underline,
+                        ),
+                      )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 20, right: 20, bottom: 20),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 16),
+                            child: Icon(FontAwesomeIcons.birthdayCake,
+                                color: Colors.blue),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 0),
+                            child: FlatButton(
+                                textColor: Colors.black54,
+                                child: Text('$_formattedate',
+                                    style: new TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.normal,
+                                        color: Colors.blueGrey)),
+                                onPressed: () {
+                                  _selectdate(context);
+                                }),
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 20, right: 20, bottom: 20),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 16),
+                            child: Icon(
+                              Icons.phone,
+                              color: Colors.blue,
+                            ),
+                          ),
+                          Expanded(
+                              child: Container(
+                            margin: EdgeInsets.only(right: 20, left: 10),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                  hintText: "Phone Number",
+                                  hintStyle: TextStyle(color: Colors.blueGrey)),
+                              keyboardType: TextInputType.phone,
+                              inputFormatters: <TextInputFormatter>[
+                                WhitelistingTextInputFormatter.digitsOnly,
+                              ],
+                              controller: _telController,
+                            ),
+                          )),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 20, right: 20, bottom: 20),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 16),
+                            child: Icon(FontAwesomeIcons.pills,
+                                color: Colors.blue),
+                          ),
+                          Expanded(
+                              child: Container(
+                            margin: EdgeInsets.only(right: 20, left: 10),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                  hintText: "Drug Allergy",
+                                  hintStyle: TextStyle(color: Colors.blueGrey)),
+                              controller: _drugallergyController,
+                            ),
+                          )),
+                        ],
+                      ),
+                    ),
+                    Column(
+                      children: <Widget>[
+                        FittedBox(
+                          child: GestureDetector(
+                            onTap: () {
+                              if (_telController.text.isEmpty ||
+                                  _drugallergyController.text.isEmpty) {
+                                showDialog<String>(
+                                  context: context,
+                                  builder: (BuildContext context) =>
+                                      AlertDialog(
+                                    content: Text(
+                                      'Please fill out all information.',
+                                    ),
+                                    actions: <Widget>[
+                                      FlatButton(
+                                        child: Text('OK'),
+                                        onPressed: () =>
+                                            Navigator.pop(context, 'OK'),
+                                      )
+                                    ],
+                                  ),
+                                );
+                              } else if (_telController.text.length != 10) {
+                                showDialog<String>(
+                                  context: context,
+                                  builder: (BuildContext context) =>
+                                      AlertDialog(
+                                    content: Text(
+                                      'Please make sure your Phone Number is correct',
+                                    ),
+                                    actions: <Widget>[
+                                      FlatButton(
+                                        child: Text('OK'),
+                                        onPressed: () =>
+                                            Navigator.pop(context, 'OK'),
+                                      )
+                                    ],
+                                  ),
+                                );
+                              }
+                            },
+                            child: Container(
+                              margin: EdgeInsets.only(bottom: 20),
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 26, vertical: 16),
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                color: Colors.blue[400],
+                              ),
+                              child: Row(
+                                children: <Widget>[
+                                  Text(
+                                    "SIGN UP",
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .button
+                                        .copyWith(color: Colors.white),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 )));
   }
