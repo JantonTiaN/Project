@@ -6,8 +6,8 @@ import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
 class FbSignupScreen extends StatefulWidget {
-  final FirebaseUser user;
-  FbSignupScreen(this.user, {Key key}) : super(key: key);
+  // final FirebaseUser user;
+  // FbSignupScreen(this.user, {Key key}) : super(key: key);
   @override
   _FbSignupScreenState createState() => _FbSignupScreenState();
 }
@@ -16,6 +16,12 @@ class _FbSignupScreenState extends State<FbSignupScreen> {
   DateTime _currentDate = new DateTime.now();
   TextEditingController _drugallergyController = TextEditingController();
   TextEditingController _telController = TextEditingController();
+  String _selectedRole = 'Select a User Role';
+  String get selectedRole => _selectedRole;
+  void setSelectedRole(String role) {
+    _selectedRole = role;
+    // notifyListeners();
+  }
 
   Future<Null> _selectdate(BuildContext context) async {
     DateTime _currentDate = new DateTime.now();
@@ -39,6 +45,7 @@ class _FbSignupScreenState extends State<FbSignupScreen> {
   @override
   Widget build(BuildContext context) {
     String _formattedate = new DateFormat.yMMMd().format(_currentDate);
+
     return Scaffold(
         body: Builder(
             builder: (context) => ListView(
@@ -86,12 +93,30 @@ class _FbSignupScreenState extends State<FbSignupScreen> {
                       child: Row(
                         children: <Widget>[
                           Text(
-                            "Welcome, " + widget.user.displayName,
+                            "Welcome",
+                            // "Welcome, " + widget.user.displayName,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 14,
                             ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Column(
+                        children: <Widget>[
+                          DropdownButton<String>(
+                            items: <String>['Dentist', 'Patient']
+                                .map((String userRole) {
+                              return new DropdownMenuItem<String>(
+                                value: userRole,
+                                child: new Text("Role"),
+                              );
+                            }).toList(),
+                            onChanged: (_) {},
                           ),
                         ],
                       ),
