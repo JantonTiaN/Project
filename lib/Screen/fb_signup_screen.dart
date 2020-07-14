@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fundee/Screen/constants.dart';
@@ -5,6 +6,8 @@ import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
 class FbSignupScreen extends StatefulWidget {
+  final FirebaseUser user;
+  FbSignupScreen(this.user, {Key key}) : super(key: key);
   @override
   _FbSignupScreenState createState() => _FbSignupScreenState();
 }
@@ -77,6 +80,21 @@ class _FbSignupScreenState extends State<FbSignupScreen> {
                           decoration: TextDecoration.underline,
                         ),
                       )),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(20, 0, 0, 20),
+                      child: Row(
+                        children: <Widget>[
+                          Text(
+                            "Welcome, " + widget.user.displayName,
+                            style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(

@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
           ))),
         ),
         // home: Cupertino(),
-        initialRoute: "FBSignUp",
+        initialRoute: "OurRoot",
         routes: {
           'SignIn': (context) => SignInScreen(),
           'PSignUp': (context) => PatientSignUpScreen(),
@@ -49,7 +49,6 @@ class MyApp extends StatelessWidget {
           'OurRoot': (context) => OurRoot(),
           'DSignUp': (context) => DentistSignUpScreen(),
           'DRecord': (context) => DentalRecord(),
-          'FBSignUp': (context) => FbSignupScreen(),
           'GGSignUp': (context) => GgSignUpScreen(),
         },
       ),
