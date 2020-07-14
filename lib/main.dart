@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'package:fundee/Screen/Dentist/Signup/dentist_signup_screen.dart';
+import 'package:fundee/Screen/fb_signup_screen.dart';
+import 'package:fundee/Screen/gg_signup_screen.dart';
 import 'package:fundee/Screen/welcome_screen.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:provider/provider.dart';
@@ -39,7 +41,7 @@ class MyApp extends StatelessWidget {
           ))),
         ),
         // home: Cupertino(),
-        initialRoute: "OurRoot",
+        initialRoute: "FBSignUp",
         routes: {
           'SignIn': (context) => SignInScreen(),
           'PSignUp': (context) => PatientSignUpScreen(),
@@ -47,6 +49,8 @@ class MyApp extends StatelessWidget {
           'OurRoot': (context) => OurRoot(),
           'DSignUp': (context) => DentistSignUpScreen(),
           'DRecord': (context) => DentalRecord(),
+          'FBSignUp': (context) => FbSignupScreen(),
+          'GGSignUp': (context) => GgSignUpScreen(),
         },
       ),
     );

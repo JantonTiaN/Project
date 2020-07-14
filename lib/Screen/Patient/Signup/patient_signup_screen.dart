@@ -159,7 +159,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   margin: EdgeInsets.only(right: 20, left: 10),
                   child: TextFormField(
                     controller: _emailController,
-                    decoration: InputDecoration(hintText: "Email Adcress"),
+                    decoration: InputDecoration(hintText: "Email Address"),
                     keyboardType: TextInputType.emailAddress,
                   ),
                 )),

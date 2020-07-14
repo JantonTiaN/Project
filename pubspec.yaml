@@ -91,6 +91,11 @@ flutter:
    - assets/images/dental_cases/rotation.jpg
    - assets/images/dental_cases/yellow.jpg
    - assets/images/dental_cases/other.jpg
+
+   #Logo
+   - assets/images/Logo/Facebook-Logo.png
+   - assets/images/Logo/Google-Logo.png
+   
   #  - assets/images/tooth1-1.png
   #  - assets/images/tooth1-2.png
   #  - assets/images/tooth1-3.png
