@@ -6,8 +6,8 @@ import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
 class FbPSignupScreen extends StatefulWidget {
-  final FirebaseUser user;
-  FbPSignupScreen(this.user, {Key key}) : super(key: key);
+  // final FirebaseUser user;
+  // FbPSignupScreen(this.user, {Key key}) : super(key: key);
   @override
   _FbPSignupScreenState createState() => _FbPSignupScreenState();
 }
@@ -16,12 +16,6 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
   DateTime _currentDate = new DateTime.now();
   TextEditingController _drugallergyController = TextEditingController();
   TextEditingController _telController = TextEditingController();
-  String _selectedRole = 'Select a User Role';
-  String get selectedRole => _selectedRole;
-  void setSelectedRole(String role) {
-    _selectedRole = role;
-    // notifyListeners();
-  }
 
   Future<Null> _selectdate(BuildContext context) async {
     DateTime _currentDate = new DateTime.now();
@@ -76,15 +70,13 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
                       )),
                     ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 0, 0, 20),
+                      padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                       child: Center(
                           child: Text(
-                        "Important Information",
+                        "More Information",
                         style: TextStyle(
                           color: Colors.white,
-                          fontWeight: FontWeight.bold,
                           fontSize: 13,
-                          decoration: TextDecoration.underline,
                         ),
                       )),
                     ),
@@ -93,7 +85,8 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
                       child: Row(
                         children: <Widget>[
                           Text(
-                            "Welcome, " + widget.user.displayName,
+                            "Welcome, ",
+                            // "Welcome, " + widget.user.displayName,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,

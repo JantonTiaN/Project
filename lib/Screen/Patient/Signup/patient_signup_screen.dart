@@ -61,10 +61,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   ],
                 ));
       } else {
-        Scaffold.of(context).showSnackBar(SnackBar(
-          content: Text(_returnString),
-          duration: Duration(seconds: 2),
-        ));
         showDialog<String>(
           context: context,
           builder: (BuildContext context) => AlertDialog(

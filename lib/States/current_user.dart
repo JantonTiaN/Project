@@ -39,8 +39,15 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
-  Future<String> signUpDentists(String dentistEmail, String dentistPassword, String dentistFullname, String dentistTel,
-    String dentistCitizenID, String dentistPermission, String dentistBirthDate, List workingTime())async {
+  Future<String> signUpDentists(
+      String dentistEmail,
+      String dentistPassword,
+      String dentistFullname,
+      String dentistTel,
+      String dentistCitizenID,
+      String dentistPermission,
+      String dentistBirthDate,
+      List workingTime()) async {
     String returnVal = 'error';
     OurDentists _dentist = OurDentists();
     try {
@@ -67,8 +74,13 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
-  Future<String> signUpPatients(String patientEmail, String patientPassword, String patientFullName,
-      String patientTel, String patientDrugallergy, String patientBirthDate) async {
+  Future<String> signUpPatients(
+      String patientEmail,
+      String patientPassword,
+      String patientFullName,
+      String patientTel,
+      String patientDrugallergy,
+      String patientBirthDate) async {
     String returnVal = 'error';
     OurPatients _patient = OurPatients();
     try {
@@ -77,6 +89,27 @@ class CurrentUser extends ChangeNotifier {
       _patient.patientId = _authResulf.user.uid;
       _patient.patientEmail = _authResulf.user.email;
       _patient.patientFullName = patientFullName;
+      _patient.patientTel = patientTel;
+      _patient.patientDrugallergy = patientDrugallergy;
+      _patient.patientBirthDate = patientBirthDate;
+      String _returnString = await PatientDatabase().createPatient(_patient);
+      if (_returnString == 'success') {
+        returnVal = 'success';
+      }
+      returnVal = 'success';
+    } on PlatformException catch (e) {
+      returnVal = e.message;
+    } catch (e) {
+      print(e);
+    }
+    return returnVal;
+  }
+
+  Future<String> signUpPatientsWithGg(String patientTel,
+      String patientDrugallergy, String patientBirthDate) async {
+    String returnVal = 'error';
+    OurPatients _patient = OurPatients();
+    try {
       _patient.patientTel = patientTel;
       _patient.patientDrugallergy = patientDrugallergy;
       _patient.patientBirthDate = patientBirthDate;
