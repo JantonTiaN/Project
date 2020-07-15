@@ -201,7 +201,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
             ),
             actions: <Widget>[
               FlatButton(
-                child: Text('ตกลง'),
+                child: Text('OK'),
                 onPressed: () => Navigator.pop(context, 'OK'),
               )
             ],
@@ -385,7 +385,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                 Padding(
                   padding: const EdgeInsets.only(right: 16),
                   child: Icon(
-                    FontAwesomeIcons.pills,
+                    FontAwesomeIcons.solidIdCard,
                     color: bPrimaryColor,
                   ),
                 ),
@@ -455,7 +455,6 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
           ),
           Divider(
             color: Colors.blueGrey,
-            // height: 10,
             indent: 20,
             endIndent: 20,
           ),
