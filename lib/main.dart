@@ -4,6 +4,7 @@ import 'package:fundee/Screen/Dentist/Signup/dentist_signup_screen.dart';
 import 'package:fundee/Screen/Dentist/Signup/fb_d_signup_screen.dart';
 import 'package:fundee/Screen/Patient/Signup/fb_p_signup_screen.dart';
 import 'package:fundee/Screen/Patient/Signup/gg_p_signup_screen.dart';
+import 'package:fundee/Screen/gg_select_role.dart';
 import 'package:fundee/Screen/welcome_screen.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:provider/provider.dart';
@@ -42,18 +43,16 @@ class MyApp extends StatelessWidget {
             color: Colors.white.withOpacity(.2),
           ))),
         ),
-        // home: GgDSignupScreen(),
-        initialRoute: "OurRoot",
-        routes: {
-          'SignIn': (context) => SignInScreen(),
-          'PSignUp': (context) => PatientSignUpScreen(),
-          'Welcome': (context) => WelcomeScreen(),
-          'OurRoot': (context) => OurRoot(),
-          'DSignUp': (context) => DentistSignUpScreen(),
-          'DRecord': (context) => DentalRecord(),
-          'GGPSignUp': (context) => GgPSignupScreen(),
-          'FBPSignUp': (context) => FbPSignupScreen(),
-        },
+        home: FbPSignupScreen(),
+        // initialRoute: "OurRoot",
+        // routes: {
+        //   'SignIn': (context) => SignInScreen(),
+        //   'PSignUp': (context) => PatientSignUpScreen(),
+        //   'Welcome': (context) => WelcomeScreen(),
+        //   'OurRoot': (context) => OurRoot(),
+        //   'DSignUp': (context) => DentistSignUpScreen(),
+        //   'DRecord': (context) => DentalRecord(),
+        // },
       ),
     );
   }
