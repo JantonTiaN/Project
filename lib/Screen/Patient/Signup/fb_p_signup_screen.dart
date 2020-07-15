@@ -5,14 +5,14 @@ import 'package:fundee/Screen/constants.dart';
 import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
-class FbSignupScreen extends StatefulWidget {
-  // final FirebaseUser user;
-  // FbSignupScreen(this.user, {Key key}) : super(key: key);
+class FbPSignupScreen extends StatefulWidget {
+  final FirebaseUser user;
+  FbPSignupScreen(this.user, {Key key}) : super(key: key);
   @override
-  _FbSignupScreenState createState() => _FbSignupScreenState();
+  _FbPSignupScreenState createState() => _FbPSignupScreenState();
 }
 
-class _FbSignupScreenState extends State<FbSignupScreen> {
+class _FbPSignupScreenState extends State<FbPSignupScreen> {
   DateTime _currentDate = new DateTime.now();
   TextEditingController _drugallergyController = TextEditingController();
   TextEditingController _telController = TextEditingController();
@@ -93,8 +93,7 @@ class _FbSignupScreenState extends State<FbSignupScreen> {
                       child: Row(
                         children: <Widget>[
                           Text(
-                            "Welcome",
-                            // "Welcome, " + widget.user.displayName,
+                            "Welcome, " + widget.user.displayName,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -107,18 +106,7 @@ class _FbSignupScreenState extends State<FbSignupScreen> {
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
-                        children: <Widget>[
-                          DropdownButton<String>(
-                            items: <String>['Dentist', 'Patient']
-                                .map((String userRole) {
-                              return new DropdownMenuItem<String>(
-                                value: userRole,
-                                child: new Text("Role"),
-                              );
-                            }).toList(),
-                            onChanged: (_) {},
-                          ),
-                        ],
+                        children: <Widget>[],
                       ),
                     ),
                     Padding(
