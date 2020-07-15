@@ -18,7 +18,6 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
   TextEditingController _telController = TextEditingController();
 
   Future<Null> _selectdate(BuildContext context) async {
-    DateTime _currentDate = new DateTime.now();
     final DateTime _seldate = await showDatePicker(
         context: context,
         initialDate: _currentDate,

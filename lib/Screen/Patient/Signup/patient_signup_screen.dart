@@ -69,7 +69,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
             ),
             actions: <Widget>[
               FlatButton(
-                child: Text('ตกลง'),
+                child: Text('OK'),
                 onPressed: () => Navigator.pop(context, 'OK'),
               )
             ],
