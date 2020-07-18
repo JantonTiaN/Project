@@ -161,6 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Future _signOut(BuildContext context) async {
     await _facebookLogin.logOut();
     await _auth.signOut();
+    FirebaseAuth.instance.signOut();    
     await _googleSignIn.signOut();
     Navigator.pushAndRemoveUntil(
         context,
