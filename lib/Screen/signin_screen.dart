@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+import 'package:fundee/Screen/Dentist/Signup/fb_d_signup_screen.dart';
 import 'package:fundee/home_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'constants.dart';
@@ -289,7 +290,7 @@ class _SignInScreenState extends State<SignInScreen> {
           FacebookAuthProvider.getCredential(accessToken: token.token);
       print("Access Token = $token");
       var user = await FirebaseAuth.instance.signInWithCredential(credential);
-      checkAuth(context);
+      checkAuthFacebook(context);
     }
   }
 
@@ -299,6 +300,15 @@ class _SignInScreenState extends State<SignInScreen> {
       print("Already signin with");
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => HomeScreen(user)));
+    }
+  }
+
+  Future checkAuthFacebook(BuildContext context) async {
+    FirebaseUser user = await _auth.currentUser();
+    if (user != null) {
+      print("Already signin with");
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => FbDSignupScreen(user)));
     }
   }
 }

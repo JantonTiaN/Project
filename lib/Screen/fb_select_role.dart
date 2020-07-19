@@ -1,15 +1,17 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/Signup/fb_d_signup_screen.dart';
 import 'package:fundee/Screen/Patient/Signup/fb_p_signup_screen.dart';
 
 class FbSelectRole extends StatefulWidget {
-  // final FirebaseUser user;
-  // FbPSignupScreen(this.user, {Key key}) : super(key: key);
+  final FirebaseUser user;
+  FbSelectRole(this.user, {Key key}) : super(key: key);
   @override
   _FbSelectRoleState createState() => _FbSelectRoleState();
 }
 
 class _FbSelectRoleState extends State<FbSelectRole> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +40,7 @@ class _FbSelectRoleState extends State<FbSelectRole> {
                             onTap: () {
                               Navigator.push(context, MaterialPageRoute(
                                 builder: (context) {
-                                  return FbDSignupScreen();
+                                  //return FbDSignupScreen();
                                 },
                               ));
                             },

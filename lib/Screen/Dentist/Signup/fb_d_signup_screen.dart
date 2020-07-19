@@ -6,8 +6,11 @@ import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
 class FbDSignupScreen extends StatefulWidget {
-  // final FirebaseUser user;
-  // FbPSignupScreen(this.user, {Key key}) : super(key: key);
+  
+  final FirebaseUser user;
+  FbDSignupScreen(this.user, {Key key}) : super (key : key);
+  
+  
   @override
   _FbDSignupScreenState createState() => _FbDSignupScreenState();
 }
@@ -18,6 +21,10 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
   TextEditingController _telController = TextEditingController();
   TextEditingController _citizenidController = TextEditingController();
   TextEditingController _permissionController = TextEditingController();
+  @override
+  void initState() {
+    super.initState();
+  }
 
   //value for checkbox timetable
   //mon
@@ -206,7 +213,7 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                       child: Row(
                         children: <Widget>[
                           Text(
-                            "Welcome, ",
+                            "Welcome "+widget.user.displayName,
                             // "Welcome, " + widget.user.displayName,
                             style: TextStyle(
                               color: Colors.white,
