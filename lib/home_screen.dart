@@ -1,7 +1,9 @@
+import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/Screen/signin_screen.dart';
+import 'package:fundee/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'patientList.dart';
@@ -18,118 +20,166 @@ class _HomeScreenState extends State<HomeScreen> {
   final FacebookLogin _facebookLogin = FacebookLogin();
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  int currentIndex;
+
   @override
   void initState() {
     super.initState();
   }
 
+  // changePage(int index) {
+  //   setState(() {
+  //     currentIndex = index;
+  //   });
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text("Home"),
-        ),
-        drawer: Drawer(
-          child: ListView(
-            children: <Widget>[
-              DrawerHeader(
-                decoration: BoxDecoration(color: Colors.blue[50]),
-                child: Container(
-                  child: Column(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 15),
-                        child: Text(
-                          "Welcome to Fun-D",
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18),
-                        ),
+      appBar: AppBar(
+        title: Text("Home"),
+      ),
+      drawer: Drawer(
+        child: ListView(
+          children: <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(color: Colors.blue[50]),
+              child: Container(
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 15),
+                      child: Text(
+                        "Welcome to Fun-D",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 18),
                       ),
-                      Row(
-                        children: <Widget>[
-                          //signEmail(),
-                          // Image.network(
-                          //   widget.user.photoUrl,
-                          //   height: 50,
-                          //   width: 50,
-                          // ),
-                          Text("     "),
-                          Text("Hi, " + widget.user.displayName)
-                          // Text("     "),
-                          // Text("Hi, " + widget.user.displayName)
-                        ],
-                      )
-                    ],
-                  ),
+                    ),
+                    Row(
+                      children: <Widget>[
+                        //signEmail(),
+                        // Image.network(
+                        //   widget.user.photoUrl,
+                        //   height: 50,
+                        //   width: 50,
+                        // ),
+                        Text("     "),
+                        Text("Hi, " + widget.user.displayName)
+                      ],
+                    )
+                  ],
                 ),
               ),
-              ListTile(
-                leading: Icon(Icons.notifications),
-                title: Text("Notifications"),
-              ),
-              ListTile(
-                leading: Icon(Icons.settings),
-                title: Text("Setting"),
-              ),
-              ListTile(
-                leading: Icon(Icons.exit_to_app),
-                title: Text("Sign Out"),
-                onTap: () {
-                  _signOut(context);
-                  // CurrentUser _currentUser =
-                  //     Provider.of<CurrentUser>(context, listen: false);
-                  // String _returnString = await _currentUser.signOut();
-                  // if (_returnString == 'success') {
-                  //   Navigator.pushAndRemoveUntil(
-                  //       context,
-                  //       MaterialPageRoute(
-                  //         builder: (context) => OurRoot(),
-                  //       ),
-                  //       (route) => false);
-                  // }
-                },
-              ),
-              // ListTile(
-              //   title: Text("Etc"),
-              //   onTap: (){
-              //     Navigator.pop(context);
-              //   },
-              // )
-            ],
-          ),
+            ),
+            ListTile(
+              leading: Icon(Icons.notifications),
+              title: Text("Notifications"),
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("Setting"),
+            ),
+            ListTile(
+              leading: Icon(Icons.exit_to_app),
+              title: Text("Sign Out"),
+              onTap: () {
+                _signOut(context);
+                // CurrentUser _currentUser =
+                //     Provider.of<CurrentUser>(context, listen: false);
+                // String _returnString = await _currentUser.signOut();
+                // if (_returnString == 'success') {
+                //   Navigator.pushAndRemoveUntil(
+                //       context,
+                //       MaterialPageRoute(
+                //         builder: (context) => OurRoot(),
+                //       ),
+                //       (route) => false);
+                // }
+              },
+            ),
+          ],
         ),
-        body: Container(
-          child: Column(
-            children: <Widget>[
-              FlatButton(
-                  child: record(),
-                  onPressed: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => DentalRecord()))),
-              Text("Dental Record"),
-              FlatButton(
-                  child: patient(),
-                  onPressed: () => Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => PatientList()))),
-              Text("Patient List"),
-            ],
-          ),
-
-          // bottomNavigationBar: CurvedNavigationBar(
-
-          //   items: <Widget>[
-          //     Icon(Icons.home, size: 20, color: Colors.black),
-          //     Icon(Icons.calendar_today, size: 20, color: Colors.black),
-          //     Icon(Icons.add, size: 20, color: Colors.black),
-          //     Icon(Icons.list, size: 20, color: Colors.black),
-          //     Icon(Icons.account_circle, size: 20, color: Colors.black),
-          //   ],
-          //   animationDuration: Duration(milliseconds: 200),
-          //   animationCurve: Curves.bounceInOut,
-          //   onTap: (index) {
-          //     debugPrint("Current Index is $index");
-          //   },
-          // ),
-        ));
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(FontAwesomeIcons.tooth),
+        backgroundColor: Colors.amber,
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      bottomNavigationBar: BubbleBottomBar(
+        opacity: .2,
+        currentIndex: currentIndex,
+        // onTap: changePage,
+        borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+        elevation: 8,
+        fabLocation: BubbleBottomBarFabLocation.end,
+        hasNotch: true,
+        hasInk: true,
+        inkColor: Colors.black12,
+        items: <BubbleBottomBarItem>[
+          BubbleBottomBarItem(
+              backgroundColor: Colors.red,
+              icon: Icon(
+                Icons.home,
+                color: Colors.black,
+              ),
+              activeIcon: Icon(
+                Icons.home,
+                color: Colors.red,
+              ),
+              title: Text("Home")),
+          BubbleBottomBarItem(
+              backgroundColor: Colors.indigo,
+              icon: Icon(
+                Icons.calendar_today,
+                color: Colors.black,
+              ),
+              activeIcon: Icon(
+                Icons.calendar_today,
+                color: Colors.indigo,
+              ),
+              title: Text("Dating")),
+          BubbleBottomBarItem(
+              backgroundColor: Colors.deepPurple,
+              icon: Icon(
+                Icons.recent_actors,
+                color: Colors.black,
+              ),
+              activeIcon: Icon(
+                Icons.recent_actors,
+                color: Colors.deepPurple,
+              ),
+              title: Text("Patient")),
+          BubbleBottomBarItem(
+              backgroundColor: Colors.green,
+              icon: Icon(
+                Icons.person,
+                color: Colors.black,
+              ),
+              activeIcon: Icon(
+                Icons.person,
+                color: Colors.green,
+              ),
+              title: Text("Profile")),
+        ],
+      ),
+      body: Container(
+        child: Column(
+          children: <Widget>[
+            FlatButton(
+                child: record(),
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => DentalRecord()))),
+            Text("Dental Record"),
+            FlatButton(
+                child: patient(),
+                onPressed: () => Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PatientList()))),
+            Text("Patient List"),
+          ],
+        ),
+      ),
+    );
   }
 
   Widget record() {
