@@ -2,6 +2,9 @@ import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+import 'package:fundee/Screen/Dentist/dentist_appointment_screen.dart';
+import 'package:fundee/Screen/Dentist/dentist_home_screen.dart';
+import 'package:fundee/Screen/Dentist/dentist_profile_screen.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:fundee/font_awesome_flutter.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -20,11 +23,21 @@ class _HomeScreenState extends State<HomeScreen> {
   final FacebookLogin _facebookLogin = FacebookLogin();
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  int currentIndex;
+
+  int _selectPage = 0;
+  final _pageOptions = [
+    // HomeScreen(user),
+    DentHomeScreen(),
+    DentAppointmentScreen(),
+    PatientList(),
+    DentProfileScreen(),
+    DentalRecord()
+  ];
 
   @override
   void initState() {
     super.initState();
+    // currentIndex = 0;
   }
 
   // changePage(int index) {
@@ -101,15 +114,23 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => DentalRecord()));
+        },
         child: Icon(FontAwesomeIcons.tooth),
         backgroundColor: Colors.amber,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      body: _pageOptions[_selectPage],
       bottomNavigationBar: BubbleBottomBar(
         opacity: .2,
-        currentIndex: currentIndex,
-        // onTap: changePage,
+        currentIndex: _selectPage,
+        onTap: (int index) {
+          setState(() {
+            _selectPage = index;
+          });
+        },
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
         elevation: 8,
         fabLocation: BubbleBottomBarFabLocation.end,
@@ -163,22 +184,22 @@ class _HomeScreenState extends State<HomeScreen> {
               title: Text("Profile")),
         ],
       ),
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            FlatButton(
-                child: record(),
-                onPressed: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => DentalRecord()))),
-            Text("Dental Record"),
-            FlatButton(
-                child: patient(),
-                onPressed: () => Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => PatientList()))),
-            Text("Patient List"),
-          ],
-        ),
-      ),
+      // body: Container(
+      //   child: Column(
+      //     children: <Widget>[
+      //       FlatButton(
+      //           child: record(),
+      //           onPressed: () => Navigator.push(context,
+      //               MaterialPageRoute(builder: (context) => DentalRecord()))),
+      //       Text("Dental Record"),
+      //       FlatButton(
+      //           child: patient(),
+      //           onPressed: () => Navigator.push(context,
+      //               MaterialPageRoute(builder: (context) => PatientList()))),
+      //       Text("Patient List"),
+      //     ],
+      //   ),
+      // ),
     );
   }
 
