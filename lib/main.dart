@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'package:fundee/Screen/Dentist/Signup/dentist_signup_screen.dart';
-import 'package:fundee/Screen/Dentist/Signup/fb_d_signup_screen.dart';
-import 'package:fundee/Screen/Patient/Signup/fb_p_signup_screen.dart';
-import 'package:fundee/Screen/Patient/Signup/gg_p_signup_screen.dart';
-import 'package:fundee/Screen/SignupProcess/fb_select_role.dart';
-import 'package:fundee/Screen/SignupProcess/gg_select_role.dart';
 import 'package:fundee/Screen/welcome_screen.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:provider/provider.dart';
-import 'Screen/Dentist/Signup/gg_d_signup_screen.dart';
 import 'Screen/Patient/Signup/patient_signup_screen.dart';
 import 'Screen/constants.dart';
 import 'Screen/signin_screen.dart';

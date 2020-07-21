@@ -7,9 +7,11 @@ import 'package:fundee/Screen/Dentist/dentist_home_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_profile_screen.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:fundee/font_awesome_flutter.dart';
+import 'package:fundee/user.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'patientList.dart';
+import 'Screen/constants.dart';
 
 class HomeScreen extends StatefulWidget {
   final FirebaseUser user;
@@ -37,19 +39,13 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   void initState() {
     super.initState();
-    // currentIndex = 0;
   }
-
-  // changePage(int index) {
-  //   setState(() {
-  //     currentIndex = index;
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("Home"),
       ),
       drawer: Drawer(
@@ -119,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
               context, MaterialPageRoute(builder: (context) => DentalRecord()));
         },
         child: Icon(FontAwesomeIcons.tooth),
-        backgroundColor: Colors.amber,
+        backgroundColor: bPrimaryColor,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       body: _pageOptions[_selectPage],
@@ -152,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
           BubbleBottomBarItem(
               backgroundColor: Colors.indigo,
               icon: Icon(
-                Icons.calendar_today,
+                FontAwesomeIcons.calendarDay,
                 color: Colors.black,
               ),
               activeIcon: Icon(
@@ -232,7 +228,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Future _signOut(BuildContext context) async {
     await _facebookLogin.logOut();
     await _auth.signOut();
-    FirebaseAuth.instance.signOut();    
+    FirebaseAuth.instance.signOut();
     await _googleSignIn.signOut();
     Navigator.pushAndRemoveUntil(
         context,
