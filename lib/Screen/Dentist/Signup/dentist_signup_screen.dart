@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fundee/Screen/Dentist/Signup/signupImage.dart';
+import 'package:fundee/Screen/signupImage.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -913,7 +913,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                       color: bPrimaryColor,
                     ),
                     child: Row(
-                      children: <Widget>[                        
+                      children: <Widget>[
                         Text(
                           "SIGN UP",
                           style: Theme.of(context)
