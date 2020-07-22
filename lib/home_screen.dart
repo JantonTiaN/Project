@@ -135,47 +135,47 @@ class _HomeScreenState extends State<HomeScreen> {
         inkColor: Colors.black12,
         items: <BubbleBottomBarItem>[
           BubbleBottomBarItem(
-              backgroundColor: Colors.red,
+              backgroundColor: Colors.redAccent,
               icon: Icon(
                 Icons.home,
                 color: Colors.black,
               ),
               activeIcon: Icon(
                 Icons.home,
-                color: Colors.red,
+                color: Colors.redAccent,
               ),
               title: Text("Home")),
           BubbleBottomBarItem(
-              backgroundColor: Colors.indigo,
+              backgroundColor: Colors.redAccent,
               icon: Icon(
                 FontAwesomeIcons.calendarDay,
                 color: Colors.black,
               ),
               activeIcon: Icon(
                 Icons.calendar_today,
-                color: Colors.indigo,
+                color: Colors.redAccent,
               ),
               title: Text("Dating")),
           BubbleBottomBarItem(
-              backgroundColor: Colors.deepPurple,
+              backgroundColor: Colors.redAccent,
               icon: Icon(
                 Icons.recent_actors,
                 color: Colors.black,
               ),
               activeIcon: Icon(
                 Icons.recent_actors,
-                color: Colors.deepPurple,
+                color: Colors.redAccent,
               ),
               title: Text("Patient")),
           BubbleBottomBarItem(
-              backgroundColor: Colors.green,
+              backgroundColor: Colors.redAccent,
               icon: Icon(
                 Icons.person,
                 color: Colors.black,
               ),
               activeIcon: Icon(
                 Icons.person,
-                color: Colors.green,
+                color: Colors.redAccent,
               ),
               title: Text("Profile")),
         ],
