@@ -148,14 +148,19 @@ class _HomeScreenState extends State<HomeScreen> {
           BubbleBottomBarItem(
               backgroundColor: Colors.redAccent,
               icon: Icon(
-                FontAwesomeIcons.calendarDay,
+                Icons.calendar_today,
                 color: Colors.black,
+                size: 20,
               ),
               activeIcon: Icon(
                 Icons.calendar_today,
                 color: Colors.redAccent,
+                size: 20,
               ),
-              title: Text("Dating")),
+              title: Text(
+                "Appointment",
+                style: TextStyle(fontSize: 10),
+              )),
           BubbleBottomBarItem(
               backgroundColor: Colors.redAccent,
               icon: Icon(
