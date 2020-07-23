@@ -307,8 +307,8 @@ class _SignInScreenState extends State<SignInScreen> {
     FirebaseUser user = await _auth.currentUser();
     if (user != null) {
       print("Already signin with");
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => FbDSignupScreen(user)));
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => FbDSignupScreen(user)));
     }
   }
 }

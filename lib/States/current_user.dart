@@ -74,6 +74,39 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
+  Future<String> signUpDentistsWithFB(
+      String dentistTel,
+      String dentistCitizenID,
+      String dentistPermission,
+      String dentistBirthDate,
+      List workingTime()) async {
+    String returnVal = 'error';
+    OurDentists _dentist = OurDentists();
+    try {
+      // AuthResult _authResulf = await _auth.createUserWithEmailAndPassword(
+      //     email: dentistEmail, password: dentistPassword);
+      // _dentist.dentistID = _authResulf.user.uid;
+      // _dentist.dentistEmail = _authResulf.user.email;
+      // _dentist.dentistFullname = dentistFullname;
+      _dentist.dentistTel = dentistTel;
+      _dentist.dentistCitizenID = dentistCitizenID;
+      _dentist.dentistPermission = dentistPermission;
+      _dentist.dentistBirthDate = dentistBirthDate;
+      _dentist.dentistWorkingTime = workingTime();
+      String _returnString =
+          await DentistWithFBDatabase().createDentists(_dentist);
+      if (_returnString == 'success') {
+        returnVal = 'success';
+      }
+      returnVal = 'success';
+    } on PlatformException catch (e) {
+      returnVal = e.message;
+    } catch (e) {
+      print(e);
+    }
+    return returnVal;
+  }
+
   Future<String> signUpPatients(
       String patientEmail,
       String patientPassword,
