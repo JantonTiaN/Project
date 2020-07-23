@@ -6,14 +6,15 @@ import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
 class FbPSignupScreen extends StatefulWidget {
-  // final FirebaseUser user;
-  // FbPSignupScreen(this.user, {Key key}) : super(key: key);
+  final FirebaseUser user;
+  FbPSignupScreen(this.user, {Key key}) : super(key: key);
   @override
   _FbPSignupScreenState createState() => _FbPSignupScreenState();
 }
 
 class _FbPSignupScreenState extends State<FbPSignupScreen> {
   DateTime _currentDate = new DateTime.now();
+  TextEditingController _fullnameController = TextEditingController();
   TextEditingController _drugallergyController = TextEditingController();
   TextEditingController _telController = TextEditingController();
 
@@ -72,7 +73,7 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
                       padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                       child: Center(
                           child: Text(
-                        "More Information",
+                        "Personal Information",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 13,
@@ -84,14 +85,39 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
                       child: Row(
                         children: <Widget>[
                           Text(
-                            "Welcome, ",
-                            // "Welcome, " + widget.user.displayName,
+                            // "Welcome, ",
+                            "Welcome, " + widget.user.displayName,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 14,
                             ),
                           ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 16),
+                            child: Icon(
+                              Icons.person,
+                              color: Colors.blue,
+                            ),
+                          ),
+                          Expanded(
+                              child: Container(
+                            margin: EdgeInsets.only(right: 20, left: 10),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                  hintText: "Fullname",
+                                  hintStyle: TextStyle(color: Colors.blueGrey)),
+                              controller: _fullnameController,
+                            ),
+                          )),
                         ],
                       ),
                     ),

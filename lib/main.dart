@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'package:fundee/Screen/Dentist/Signup/dentist_signup_screen.dart';
+import 'package:fundee/Screen/Dentist/Signup/fb_d_signup_screen.dart';
 import 'package:fundee/Screen/welcome_screen.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:provider/provider.dart';
@@ -38,16 +39,16 @@ class MyApp extends StatelessWidget {
             color: Colors.white.withOpacity(.2),
           ))),
         ),
-        // home: GgSelectRole(),
-        initialRoute: "OurRoot",
-        routes: {
-          'SignIn': (context) => SignInScreen(),
-          'PSignUp': (context) => PatientSignUpScreen(),
-          'Welcome': (context) => WelcomeScreen(),
-          'OurRoot': (context) => OurRoot(),
-          'DSignUp': (context) => DentistSignUpScreen(),
-          'DRecord': (context) => DentalRecord(),
-        },
+        home: FbDSignupScreen(),
+        // initialRoute: "OurRoot",
+        // routes: {
+        //   'SignIn': (context) => SignInScreen(),
+        //   'PSignUp': (context) => PatientSignUpScreen(),
+        //   'Welcome': (context) => WelcomeScreen(),
+        //   'OurRoot': (context) => OurRoot(),
+        //   'DSignUp': (context) => DentistSignUpScreen(),
+        //   'DRecord': (context) => DentalRecord(),
+        // },
       ),
     );
   }
