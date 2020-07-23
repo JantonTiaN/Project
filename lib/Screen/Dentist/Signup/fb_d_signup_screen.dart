@@ -6,11 +6,9 @@ import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
 class FbDSignupScreen extends StatefulWidget {
-  
   final FirebaseUser user;
-  FbDSignupScreen(this.user, {Key key}) : super (key : key);
-  
-  
+  FbDSignupScreen(this.user, {Key key}) : super(key: key);
+
   @override
   _FbDSignupScreenState createState() => _FbDSignupScreenState();
 }
@@ -169,6 +167,7 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
     String _formattedate = new DateFormat.yMMMd().format(_currentDate);
 
     return Scaffold(
+        backgroundColor: bBackgroundColor,
         body: Builder(
             builder: (context) => ListView(
                   children: <Widget>[
@@ -213,7 +212,7 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                       child: Row(
                         children: <Widget>[
                           Text(
-                            "Welcome "+widget.user.displayName,
+                            "Welcome " + widget.user.displayName,
                             // "Welcome, " + widget.user.displayName,
                             style: TextStyle(
                               color: Colors.white,

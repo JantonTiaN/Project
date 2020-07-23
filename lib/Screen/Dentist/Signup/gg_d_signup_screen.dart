@@ -162,6 +162,7 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
     String _formattedate = new DateFormat.yMMMd().format(_currentDate);
 
     return Scaffold(
+        backgroundColor: bBackgroundColor,
         body: Builder(
             builder: (context) => ListView(
                   children: <Widget>[

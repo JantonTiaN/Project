@@ -68,6 +68,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bBackgroundColor,
       body: SingleChildScrollView(
         child: ConstrainedBox(
           constraints: BoxConstraints(maxHeight: 650),
@@ -307,8 +308,8 @@ class _SignInScreenState extends State<SignInScreen> {
     FirebaseUser user = await _auth.currentUser();
     if (user != null) {
       print("Already signin with");
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => FbDSignupScreen(user)));
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => FbDSignupScreen(user)));
     }
   }
 }

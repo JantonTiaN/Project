@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
         title: "Fun-D",
         theme: ThemeData(
           primaryColor: bPrimaryColor,
-          scaffoldBackgroundColor: bBackgroundColor,
+          // scaffoldBackgroundColor: bBackgroundColor,
           textTheme: TextTheme(
             display1: TextStyle(
               color: Colors.white,
