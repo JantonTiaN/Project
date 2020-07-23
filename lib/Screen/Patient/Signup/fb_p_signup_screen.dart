@@ -6,8 +6,8 @@ import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
 class FbPSignupScreen extends StatefulWidget {
-  final FirebaseUser user;
-  FbPSignupScreen(this.user, {Key key}) : super(key: key);
+  // final FirebaseUser user;
+  // FbPSignupScreen(this.user, {Key key}) : super(key: key);
   @override
   _FbPSignupScreenState createState() => _FbPSignupScreenState();
 }
@@ -85,8 +85,8 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
                       child: Row(
                         children: <Widget>[
                           Text(
-                            // "Welcome, ",
-                            "Welcome, " + widget.user.displayName,
+                            "Welcome, ",
+                            // "Welcome, " + widget.user.displayName,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,

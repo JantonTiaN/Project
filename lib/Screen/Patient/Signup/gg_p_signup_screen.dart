@@ -6,8 +6,8 @@ import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 
 class GgPSignupScreen extends StatefulWidget {
-  final FirebaseUser user;
-  GgPSignupScreen(this.user, {Key key}) : super(key: key);
+  // final FirebaseUser user;
+  // GgPSignupScreen(this.user, {Key key}) : super(key: key);
   @override
   _GgPSignupScreenState createState() => _GgPSignupScreenState();
 }
@@ -85,8 +85,8 @@ class _GgPSignupScreenState extends State<GgPSignupScreen> {
                       child: Row(
                         children: <Widget>[
                           Text(
-                            // "Welcome, ",
-                            "Welcome, " + widget.user.displayName,
+                            "Welcome, ",
+                            // "Welcome, " + widget.user.displayName,
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
