@@ -2,8 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fundee/Screen/constants.dart';
+import 'package:fundee/States/current_user.dart';
 import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
+
+import '../../signin_screen.dart';
 
 class FbDSignupScreen extends StatefulWidget {
   final FirebaseUser user;
@@ -163,6 +167,52 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
     }
   }
 
+  void _signUpDentistWithFB(BuildContext context, String tel, String citizenID,
+      String permission, String birthDate) async {
+    CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+    try {
+      String _returnString = await _currentUser.signUpDentistsWithFB(
+          tel, citizenID, permission, birthDate, _workingTime);
+      if (_returnString == 'success') {
+        showDialog<String>(
+            context: context,
+            builder: (BuildContext context) => AlertDialog(
+                  content: Text('Registration complete'),
+                  actions: <Widget>[
+                    FlatButton(
+                      child: Text('OK'),
+                      onPressed: () => Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return SignInScreen();
+                      })),
+                    )
+                  ],
+                ));
+      } else {
+        Scaffold.of(context).showSnackBar(SnackBar(
+          content: Text(_returnString),
+          duration: Duration(seconds: 2),
+        ));
+        showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+            content: Text(
+              _returnString,
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('OK'),
+                onPressed: () => Navigator.pop(context, 'OK'),
+              )
+            ],
+          ),
+        );
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     String _formattedate = new DateFormat.yMMMd().format(_currentDate);
@@ -214,7 +264,11 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                         children: <Widget>[
                           Text(
                             "Welcome " + widget.user.displayName,
+<<<<<<< HEAD
+                            // "Welcome, " + widget.user.displayName,
+=======
                             // "Welcome, ",
+>>>>>>> 56b1e9d49b6e572021a021667f18a79e5cbbc961
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
@@ -763,7 +817,9 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                           child: GestureDetector(
                             onTap: () {
                               if (_telController.text.isEmpty ||
-                                  _drugallergyController.text.isEmpty) {
+                                  _drugallergyController.text.isEmpty ||
+                                  _citizenidController.text.isEmpty ||
+                                  _permissionController.text.isEmpty) {
                                 showDialog<String>(
                                   context: context,
                                   builder: (BuildContext context) =>
@@ -797,6 +853,13 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                                     ],
                                   ),
                                 );
+                              } else {
+                                _signUpDentistWithFB(
+                                    context,
+                                    _telController.text,
+                                    _citizenidController.text,
+                                    _permissionController.text,
+                                    _currentDate.toString());
                               }
                             },
                             child: Container(
