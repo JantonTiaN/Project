@@ -10,7 +10,7 @@ class _DentAppointmentScreenState extends State<DentAppointmentScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: Text("Dentist Appointmemt Page"),
+        child: Text("Patient Suggestion Page"),
       ),
     );
   }

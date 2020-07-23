@@ -5,20 +5,18 @@ import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/Screen/Dentist/dentist_appointment_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_home_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_profile_screen.dart';
-import 'package:fundee/font_awesome_flutter.dart';
+import 'package:fundee/Screen/signin_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'DentRecord/dentalRecord.dart';
-import '../../patientList.dart';
 
-class DentMenu extends StatefulWidget {
+class PatientMenuScreen extends StatefulWidget {
   final FirebaseUser user;
-  DentMenu(this.user, {Key key}) : super(key: key);
+  PatientMenuScreen(this.user, {Key key}) : super(key: key);
 
   @override
-  _DentMenuState createState() => _DentMenuState();
+  _PatientMenuScreenState createState() => _PatientMenuScreenState();
 }
 
-class _DentMenuState extends State<DentMenu> {
+class _PatientMenuScreenState extends State<PatientMenuScreen> {
   final FacebookLogin _facebookLogin = FacebookLogin();
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -27,9 +25,7 @@ class _DentMenuState extends State<DentMenu> {
   final _pageOptions = [
     DentHomeScreen(),
     DentAppointmentScreen(),
-    PatientList(),
     DentProfileScreen(),
-    DentalRecord()
   ];
 
   @override
@@ -41,14 +37,6 @@ class _DentMenuState extends State<DentMenu> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => DentalRecord()));
-        },
-        child: Icon(FontAwesomeIcons.tooth),
-        backgroundColor: Colors.blue[300],
-      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       body: _pageOptions[_selectPage],
       bottomNavigationBar: BubbleBottomBar(
@@ -96,14 +84,14 @@ class _DentMenuState extends State<DentMenu> {
           BubbleBottomBarItem(
               backgroundColor: Colors.blue[300],
               icon: Icon(
-                Icons.recent_actors,
+                Icons.note,
                 color: Colors.black,
               ),
               activeIcon: Icon(
-                Icons.recent_actors,
+                Icons.note,
                 color: Colors.blue[300],
               ),
-              title: Text("Patient")),
+              title: Text("Suggestion")),
           BubbleBottomBarItem(
               backgroundColor: Colors.blue[300],
               icon: Icon(
@@ -128,5 +116,22 @@ class _DentMenuState extends State<DentMenu> {
         width: 50,
       );
     }
+  }
+
+  Future _signOut(BuildContext context) async {
+    await _facebookLogin.logOut();
+    await _auth.signOut();
+    FirebaseAuth.instance.signOut();
+    await _googleSignIn.signOut();
+    Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => SignInScreen()),
+        (route) => false);
+
+    //  await _auth.signOut();
+    //  Navigator.pushAndRemoveUntil(
+    //     context,
+    //     MaterialPageRoute(builder: (context) => SignInScreen()),
+    //     ModalRoute.withName('/'));
   }
 }

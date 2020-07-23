@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/Screen/Dentist/Signup/fb_d_signup_screen.dart';
-import 'package:fundee/dent_home_screen.dart';
+import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
