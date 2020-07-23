@@ -930,11 +930,11 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                       ),
                     ),
                   ),
-                  FlatButton(
-                    child: Text("Next"),
-                    onPressed: () => Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => SingupImage())),
-                  ),
+                  // FlatButton(
+                  //   child: Text("Next"),
+                  //   onPressed: () => Navigator.push(context,
+                  //       MaterialPageRoute(builder: (context) => SingupImage())),
+                  // ),
                 ],
               )
             ],
