@@ -264,11 +264,8 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                         children: <Widget>[
                           Text(
                             "Welcome " + widget.user.displayName,
-<<<<<<< HEAD
                             // "Welcome, " + widget.user.displayName,
-=======
                             // "Welcome, ",
->>>>>>> 56b1e9d49b6e572021a021667f18a79e5cbbc961
                             style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
