@@ -28,7 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   int _selectPage = 0;
   final _pageOptions = [
-    // HomeScreen(user),
     DentHomeScreen(),
     DentAppointmentScreen(),
     PatientList(),
@@ -45,14 +44,14 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: AppBar(
-        centerTitle: true,
-        title: Text(
-          "Home",
-          style: TextStyle(color: Colors.white),
-        ),
-        backgroundColor: Colors.blue[300],
-      ),
+      // appBar: AppBar(
+      //   centerTitle: true,
+      //   title: Text(
+      //     "Home",
+      //     style: TextStyle(color: Colors.white),
+      //   ),
+      //   backgroundColor: Colors.blue[300],
+      // ),
       drawer: Drawer(
         child: ListView(
           children: <Widget>[
