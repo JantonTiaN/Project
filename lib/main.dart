@@ -39,16 +39,16 @@ class MyApp extends StatelessWidget {
             color: Colors.white.withOpacity(.2),
           ))),
         ),
-        home: FbDSignupScreen(),
-        // initialRoute: "OurRoot",
-        // routes: {
-        //   'SignIn': (context) => SignInScreen(),
-        //   'PSignUp': (context) => PatientSignUpScreen(),
-        //   'Welcome': (context) => WelcomeScreen(),
-        //   'OurRoot': (context) => OurRoot(),
-        //   'DSignUp': (context) => DentistSignUpScreen(),
-        //   'DRecord': (context) => DentalRecord(),
-        // },
+        // home: FbDSignupScreen(),
+        initialRoute: "OurRoot",
+        routes: {
+          'SignIn': (context) => SignInScreen(),
+          'PSignUp': (context) => PatientSignUpScreen(),
+          'Welcome': (context) => WelcomeScreen(),
+          'OurRoot': (context) => OurRoot(),
+          'DSignUp': (context) => DentistSignUpScreen(),
+          'DRecord': (context) => DentalRecord(),
+        },
       ),
     );
   }
