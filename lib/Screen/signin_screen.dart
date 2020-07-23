@@ -68,6 +68,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bBackgroundColor,
       body: SingleChildScrollView(
         child: ConstrainedBox(
           constraints: BoxConstraints(maxHeight: 650),

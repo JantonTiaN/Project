@@ -14,6 +14,7 @@ class GgDSignupScreen extends StatefulWidget {
 
 class _GgDSignupScreenState extends State<GgDSignupScreen> {
   DateTime _currentDate = new DateTime.now();
+  TextEditingController _fullnameController = TextEditingController();
   TextEditingController _drugallergyController = TextEditingController();
   TextEditingController _telController = TextEditingController();
   TextEditingController _citizenidController = TextEditingController();
@@ -162,6 +163,7 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
     String _formattedate = new DateFormat.yMMMd().format(_currentDate);
 
     return Scaffold(
+        backgroundColor: bBackgroundColor,
         body: Builder(
             builder: (context) => ListView(
                   children: <Widget>[
@@ -194,7 +196,7 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
                       padding: const EdgeInsets.fromLTRB(0, 0, 0, 20),
                       child: Center(
                           child: Text(
-                        "More Information",
+                        "Personal Information",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 13,
@@ -214,6 +216,31 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
                               fontSize: 14,
                             ),
                           ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 16),
+                            child: Icon(
+                              Icons.person,
+                              color: Colors.blue,
+                            ),
+                          ),
+                          Expanded(
+                              child: Container(
+                            margin: EdgeInsets.only(right: 20, left: 10),
+                            child: TextFormField(
+                              decoration: InputDecoration(
+                                  hintText: "Fullname",
+                                  hintStyle: TextStyle(color: Colors.blueGrey)),
+                              controller: _fullnameController,
+                            ),
+                          )),
                         ],
                       ),
                     ),

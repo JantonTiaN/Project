@@ -6,6 +6,7 @@ class WelcomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bBackgroundColor,
       body: Column(
         children: <Widget>[
           Expanded(
@@ -37,10 +38,11 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 FittedBox(
                   child: GestureDetector(
-                    onTap: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context){
-                        return SignInScreen();
-                      },
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(
+                        builder: (context) {
+                          return SignInScreen();
+                        },
                       ));
                     },
                     child: Container(

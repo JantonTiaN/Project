@@ -44,9 +44,14 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        title: Text("Home"),
+        title: Text(
+          "Home",
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.blue[300],
       ),
       drawer: Drawer(
         child: ListView(
@@ -115,7 +120,7 @@ class _HomeScreenState extends State<HomeScreen> {
               context, MaterialPageRoute(builder: (context) => DentalRecord()));
         },
         child: Icon(FontAwesomeIcons.tooth),
-        backgroundColor: bPrimaryColor,
+        backgroundColor: Colors.blue[300],
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       body: _pageOptions[_selectPage],
@@ -135,18 +140,18 @@ class _HomeScreenState extends State<HomeScreen> {
         inkColor: Colors.black12,
         items: <BubbleBottomBarItem>[
           BubbleBottomBarItem(
-              backgroundColor: Colors.redAccent,
+              backgroundColor: Colors.blue[300],
               icon: Icon(
                 Icons.home,
                 color: Colors.black,
               ),
               activeIcon: Icon(
                 Icons.home,
-                color: Colors.redAccent,
+                color: Colors.blue[300],
               ),
               title: Text("Home")),
           BubbleBottomBarItem(
-              backgroundColor: Colors.redAccent,
+              backgroundColor: Colors.blue[300],
               icon: Icon(
                 Icons.calendar_today,
                 color: Colors.black,
@@ -154,7 +159,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               activeIcon: Icon(
                 Icons.calendar_today,
-                color: Colors.redAccent,
+                color: Colors.blue[300],
                 size: 20,
               ),
               title: Text(
@@ -162,25 +167,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 style: TextStyle(fontSize: 10),
               )),
           BubbleBottomBarItem(
-              backgroundColor: Colors.redAccent,
+              backgroundColor: Colors.blue[300],
               icon: Icon(
                 Icons.recent_actors,
                 color: Colors.black,
               ),
               activeIcon: Icon(
                 Icons.recent_actors,
-                color: Colors.redAccent,
+                color: Colors.blue[300],
               ),
               title: Text("Patient")),
           BubbleBottomBarItem(
-              backgroundColor: Colors.redAccent,
+              backgroundColor: Colors.blue[300],
               icon: Icon(
                 Icons.person,
                 color: Colors.black,
               ),
               activeIcon: Icon(
                 Icons.person,
-                color: Colors.redAccent,
+                color: Colors.blue[300],
               ),
               title: Text("Profile")),
         ],
