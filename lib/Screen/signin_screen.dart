@@ -299,7 +299,7 @@ class _SignInScreenState extends State<SignInScreen> {
   Future checkAuth(BuildContext context) async {
     FirebaseUser user = await _auth.currentUser();
     if (user != null) {
-      print("Already signin with");
+      print("Already signin with Email");
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
     }
@@ -308,7 +308,7 @@ class _SignInScreenState extends State<SignInScreen> {
   Future checkAuthFacebook(BuildContext context) async {
     FirebaseUser user = await _auth.currentUser();
     if (user != null) {
-      print("Already signin with Socia  l media");
+      print("Already signin with Social media");
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => FbSelectRole(user)));
     }
