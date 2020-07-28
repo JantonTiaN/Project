@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/Screen/Dentist/Signup/fb_d_signup_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
+import 'package:fundee/Screen/SignupProcess/gg_select_role.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'SignupProcess/fb_select_role.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fundee/Screen/SignupProcess/fb_select_role.dart';
@@ -277,7 +279,7 @@ class _SignInScreenState extends State<SignInScreen> {
     GoogleSignInAuthentication userAuth = await user.authentication;
     await _auth.signInWithCredential(GoogleAuthProvider.getCredential(
         idToken: null, accessToken: userAuth.accessToken));
-    checkAuth(context);
+    checkAuthGoogle(context);
   }
 
   //Facebook SignIn
@@ -311,6 +313,15 @@ class _SignInScreenState extends State<SignInScreen> {
       print("Already signin with Social media");
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => FbSelectRole(user)));
+    }
+  }
+
+  Future checkAuthGoogle(BuildContext context) async {
+    FirebaseUser user = await _auth.currentUser();
+    if (user != null) {
+      print("Already signin with");
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => GgSelectRole(user)));
     }
   }
 }
