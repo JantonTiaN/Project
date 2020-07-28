@@ -74,7 +74,8 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
-  Future<String> signUpDentistsWithFB(
+  Future<String> signUpDentistsWithFBAndGG(
+      String dentistFullname,
       String dentistTel,
       String dentistCitizenID,
       String dentistPermission,
@@ -87,14 +88,14 @@ class CurrentUser extends ChangeNotifier {
       //     email: dentistEmail, password: dentistPassword);
       // _dentist.dentistID = _authResulf.user.uid;
       // _dentist.dentistEmail = _authResulf.user.email;
-      // _dentist.dentistFullname = dentistFullname;
+      _dentist.dentistFullname = dentistFullname;
       _dentist.dentistTel = dentistTel;
       _dentist.dentistCitizenID = dentistCitizenID;
       _dentist.dentistPermission = dentistPermission;
       _dentist.dentistBirthDate = dentistBirthDate;
       _dentist.dentistWorkingTime = workingTime();
       String _returnString =
-          await DentistWithFBDatabase().createDentists(_dentist);
+          await DentistWithFBAndGGDatabase().createDentists(_dentist);
       if (_returnString == 'success') {
         returnVal = 'success';
       }
@@ -138,15 +139,16 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
-  Future<String> signUpPatientsWithGg(String patientTel,
+  Future<String> signUpPatientsWithFBAndGG(String patientFullName, String patientTel,
       String patientDrugallergy, String patientBirthDate) async {
     String returnVal = 'error';
     OurPatients _patient = OurPatients();
     try {
+      _patient.patientFullName = patientFullName;
       _patient.patientTel = patientTel;
       _patient.patientDrugallergy = patientDrugallergy;
       _patient.patientBirthDate = patientBirthDate;
-      String _returnString = await PatientDatabase().createPatient(_patient);
+      String _returnString = await PatientWithFBAndGGDatabase().createPatient(_patient);
       if (_returnString == 'success') {
         returnVal = 'success';
       }

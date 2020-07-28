@@ -19,8 +19,7 @@ class FbDSignupScreen extends StatefulWidget {
 
 class _FbDSignupScreenState extends State<FbDSignupScreen> {
   DateTime _currentDate = new DateTime.now();
-  TextEditingController _fullnameController = TextEditingController();
-  TextEditingController _drugallergyController = TextEditingController();
+  TextEditingController _fullnameController = TextEditingController();  
   TextEditingController _telController = TextEditingController();
   TextEditingController _citizenidController = TextEditingController();
   TextEditingController _permissionController = TextEditingController();
@@ -167,12 +166,12 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
     }
   }
 
-  void _signUpDentistWithFB(BuildContext context, String tel, String citizenID,
+  void _signUpDentistWithFB(String fullName, BuildContext context, String tel, String citizenID,
       String permission, String birthDate) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
-      String _returnString = await _currentUser.signUpDentistsWithFB(
-          tel, citizenID, permission, birthDate, _workingTime);
+      String _returnString = await _currentUser.signUpDentistsWithFBAndGG(
+          fullName, tel, citizenID, permission, birthDate, _workingTime);
       if (_returnString == 'success') {
         showDialog<String>(
             context: context,
@@ -852,7 +851,8 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                                 );
                               } else {
                                 _signUpDentistWithFB(
-                                    context,
+                                  _fullnameController.text,
+                                    context,                                    
                                     _telController.text,
                                     _citizenidController.text,
                                     _permissionController.text,

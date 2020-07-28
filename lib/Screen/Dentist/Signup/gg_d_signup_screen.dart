@@ -2,8 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fundee/Screen/constants.dart';
+import 'package:fundee/States/current_user.dart';
 import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
+
+import '../../signin_screen.dart';
 
 class GgDSignupScreen extends StatefulWidget {
   // final FirebaseUser user;
@@ -15,7 +19,6 @@ class GgDSignupScreen extends StatefulWidget {
 class _GgDSignupScreenState extends State<GgDSignupScreen> {
   DateTime _currentDate = new DateTime.now();
   TextEditingController _fullnameController = TextEditingController();
-  TextEditingController _drugallergyController = TextEditingController();
   TextEditingController _telController = TextEditingController();
   TextEditingController _citizenidController = TextEditingController();
   TextEditingController _permissionController = TextEditingController();
@@ -155,6 +158,52 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
       setState(() {
         _currentDate = _seldate;
       });
+    }
+  }
+
+  void _signUpDentistWithGG(String fullName, BuildContext context, String tel,
+      String citizenID, String permission, String birthDate) async {
+    CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+    try {
+      String _returnString = await _currentUser.signUpDentistsWithFBAndGG(
+          fullName, tel, citizenID, permission, birthDate, _workingTime);
+      if (_returnString == 'success') {
+        showDialog<String>(
+            context: context,
+            builder: (BuildContext context) => AlertDialog(
+                  content: Text('Registration complete'),
+                  actions: <Widget>[
+                    FlatButton(
+                      child: Text('OK'),
+                      onPressed: () => Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return SignInScreen();
+                      })),
+                    )
+                  ],
+                ));
+      } else {
+        Scaffold.of(context).showSnackBar(SnackBar(
+          content: Text(_returnString),
+          duration: Duration(seconds: 2),
+        ));
+        showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+            content: Text(
+              _returnString,
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('OK'),
+                onPressed: () => Navigator.pop(context, 'OK'),
+              )
+            ],
+          ),
+        );
+      }
+    } catch (e) {
+      print(e);
     }
   }
 
@@ -758,7 +807,9 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
                           child: GestureDetector(
                             onTap: () {
                               if (_telController.text.isEmpty ||
-                                  _drugallergyController.text.isEmpty) {
+                                  _fullnameController.text.isEmpty ||
+                                  _permissionController.text.isEmpty ||
+                                  _citizenidController.text.isEmpty) {
                                 showDialog<String>(
                                   context: context,
                                   builder: (BuildContext context) =>
@@ -792,6 +843,32 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
                                     ],
                                   ),
                                 );
+                              } else if (_citizenidController.text.length !=
+                                  13) {
+                                showDialog<String>(
+                                    context: context,
+                                    builder: (BuildContext context) =>
+                                        AlertDialog(
+                                          title: const Text('Error'),
+                                          content: Text(
+                                            'Invalid Citizen ID',
+                                          ),
+                                          actions: <Widget>[
+                                            FlatButton(
+                                              child: Text('OK'),
+                                              onPressed: () =>
+                                                  Navigator.pop(context, 'OK'),
+                                            )
+                                          ],
+                                        ));
+                              } else {
+                                _signUpDentistWithGG(
+                                    _fullnameController.text,
+                                    context,
+                                    _telController.text,
+                                    _citizenidController.text,
+                                    _permissionController.text,
+                                    _currentDate.toString());
                               }
                             },
                             child: Container(
