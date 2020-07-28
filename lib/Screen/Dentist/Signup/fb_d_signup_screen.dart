@@ -10,8 +10,8 @@ import 'package:provider/provider.dart';
 import '../../signin_screen.dart';
 
 class FbDSignupScreen extends StatefulWidget {
-  final FirebaseUser user;
-  FbDSignupScreen(this.user, {Key key}) : super(key: key);
+  // final FirebaseUser user;
+  // FbDSignupScreen(this.user, {Key key}) : super(key: key);
 
   @override
   _FbDSignupScreenState createState() => _FbDSignupScreenState();
@@ -263,7 +263,7 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                       child: Row(
                         children: <Widget>[
                           Text(
-                            "Welcome " + widget.user.displayName,
+                            "Welcome ",
                             // "Welcome, " + widget.user.displayName,
                             // "Welcome, ",
                             style: TextStyle(
@@ -814,7 +814,7 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                           child: GestureDetector(
                             onTap: () {
                               if (_telController.text.isEmpty ||
-                                  _drugallergyController.text.isEmpty ||
+                                  _fullnameController.text.isEmpty ||
                                   _citizenidController.text.isEmpty ||
                                   _permissionController.text.isEmpty) {
                                 showDialog<String>(
