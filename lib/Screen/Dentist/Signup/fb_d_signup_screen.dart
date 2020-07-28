@@ -19,7 +19,7 @@ class FbDSignupScreen extends StatefulWidget {
 
 class _FbDSignupScreenState extends State<FbDSignupScreen> {
   DateTime _currentDate = new DateTime.now();
-  TextEditingController _fullnameController = TextEditingController();  
+  TextEditingController _fullnameController = TextEditingController();
   TextEditingController _telController = TextEditingController();
   TextEditingController _citizenidController = TextEditingController();
   TextEditingController _permissionController = TextEditingController();
@@ -166,8 +166,8 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
     }
   }
 
-  void _signUpDentistWithFB(String fullName, BuildContext context, String tel, String citizenID,
-      String permission, String birthDate) async {
+  void _signUpDentistWithFB(String fullName, BuildContext context, String tel,
+      String citizenID, String permission, String birthDate) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString = await _currentUser.signUpDentistsWithFBAndGG(
@@ -261,16 +261,16 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                       padding: const EdgeInsets.fromLTRB(20, 0, 0, 20),
                       child: Row(
                         children: <Widget>[
-                          Text(
-                            "Welcome ",
-                            // "Welcome, " + widget.user.displayName,
-                            // "Welcome, ",
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 14,
-                            ),
-                          ),
+                          // Text(
+                          //   "Welcome " + widget.user.displayName,
+                          //   // "Welcome, " + widget.user.displayName,
+                          //   // "Welcome, ",
+                          //   style: TextStyle(
+                          //     color: Colors.white,
+                          //     fontWeight: FontWeight.bold,
+                          //     fontSize: 14,
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),
@@ -812,8 +812,8 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                         FittedBox(
                           child: GestureDetector(
                             onTap: () {
-                              if (_telController.text.isEmpty ||
-                                  _fullnameController.text.isEmpty ||
+                              if (_fullnameController.text.isEmpty ||
+                                  _telController.text.isEmpty ||
                                   _citizenidController.text.isEmpty ||
                                   _permissionController.text.isEmpty) {
                                 showDialog<String>(
@@ -849,10 +849,28 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                                     ],
                                   ),
                                 );
+                              } else if (_citizenidController.text.length !=
+                                  13) {
+                                showDialog<String>(
+                                    context: context,
+                                    builder: (BuildContext context) =>
+                                        AlertDialog(
+                                          title: const Text('Error'),
+                                          content: Text(
+                                            'Invalid Citizen ID',
+                                          ),
+                                          actions: <Widget>[
+                                            FlatButton(
+                                              child: Text('OK'),
+                                              onPressed: () =>
+                                                  Navigator.pop(context, 'OK'),
+                                            )
+                                          ],
+                                        ));
                               } else {
                                 _signUpDentistWithFB(
-                                  _fullnameController.text,
-                                    context,                                    
+                                    _fullnameController.text,
+                                    context,
                                     _telController.text,
                                     _citizenidController.text,
                                     _permissionController.text,
