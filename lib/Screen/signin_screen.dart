@@ -6,6 +6,7 @@ import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:fundee/Screen/SignupProcess/fb_select_role.dart';
 
 enum LoginType { email, google }
 
@@ -307,9 +308,9 @@ class _SignInScreenState extends State<SignInScreen> {
   Future checkAuthFacebook(BuildContext context) async {
     FirebaseUser user = await _auth.currentUser();
     if (user != null) {
-      print("Already signin with");
+      print("Already signin with Socia  l media");
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => FbDSignupScreen(user)));
+          MaterialPageRoute(builder: (context) => FbSelectRole(user)));
     }
   }
 }
