@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/Signup/fb_d_signup_screen.dart';
 import 'package:fundee/Screen/Patient/Signup/fb_p_signup_screen.dart';
+import 'package:fundee/Screen/constants.dart';
 
 class FbSelectRole extends StatefulWidget {
   final FirebaseUser user;
@@ -11,10 +12,10 @@ class FbSelectRole extends StatefulWidget {
 }
 
 class _FbSelectRoleState extends State<FbSelectRole> {
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: bBackgroundColor,
         body: Builder(
             builder: (context) => Center(
                   child: Column(
