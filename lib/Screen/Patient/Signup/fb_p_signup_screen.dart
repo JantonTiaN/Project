@@ -40,8 +40,8 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
     }
   }
 
-  void _signUpPatientWithFB(BuildContext context,
-      String fullName, String tel, String drugallergy, String brithDate) async {
+  void _signUpPatientWithFB(BuildContext context, String fullName, String tel,
+      String drugallergy, String brithDate) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString = await _currentUser.signUpPatientsWithFBAndGG(
@@ -85,8 +85,8 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
   @override
   Widget build(BuildContext context) {
     String _formattedate = new DateFormat.yMMMd().format(_currentDate);
-
     return Scaffold(
+        backgroundColor: bBackgroundColor,
         body: Builder(
             builder: (context) => ListView(
                   children: <Widget>[
@@ -296,12 +296,12 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
                                   ),
                                 );
                               } else {
-                                _signUpPatientWithFB(context,
-                                  _fullnameController.text,
-                                  _telController.text,
-                                  _drugallergyController.text,
-                                  _currentDate.toString()
-                                );
+                                _signUpPatientWithFB(
+                                    context,
+                                    _fullnameController.text,
+                                    _telController.text,
+                                    _drugallergyController.text,
+                                    _currentDate.toString());
                               }
                             },
                             child: Container(

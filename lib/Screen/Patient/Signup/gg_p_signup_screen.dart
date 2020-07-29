@@ -39,8 +39,8 @@ class _GgPSignupScreenState extends State<GgPSignupScreen> {
   @override
   Widget build(BuildContext context) {
     String _formattedate = new DateFormat.yMMMd().format(_currentDate);
-
     return Scaffold(
+        backgroundColor: bBackgroundColor,
         body: Builder(
             builder: (context) => ListView(
                   children: <Widget>[
