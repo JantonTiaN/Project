@@ -265,6 +265,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                     keyboardType: TextInputType.phone,
                     inputFormatters: <TextInputFormatter>[
                       WhitelistingTextInputFormatter.digitsOnly,
+                      LengthLimitingTextInputFormatter(10)
                     ],
                     controller: _telController,
                   ),

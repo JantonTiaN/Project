@@ -19,7 +19,7 @@ class FbDSignupScreen extends StatefulWidget {
 
 class _FbDSignupScreenState extends State<FbDSignupScreen> {
   DateTime _currentDate = new DateTime.now();
-  TextEditingController _fullnameController = TextEditingController();  
+  TextEditingController _fullnameController = TextEditingController();
   TextEditingController _telController = TextEditingController();
   TextEditingController _citizenidController = TextEditingController();
   TextEditingController _permissionController = TextEditingController();
@@ -166,8 +166,8 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
     }
   }
 
-  void _signUpDentistWithFB(String fullName, BuildContext context, String tel, String citizenID,
-      String permission, String birthDate) async {
+  void _signUpDentistWithFB(String fullName, BuildContext context, String tel,
+      String citizenID, String permission, String birthDate) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString = await _currentUser.signUpDentistsWithFBAndGG(
@@ -354,6 +354,10 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                                   hintStyle: TextStyle(color: Colors.blueGrey)),
                               keyboardType: TextInputType.number,
                               controller: _citizenidController,
+                              inputFormatters: <TextInputFormatter>[
+                                WhitelistingTextInputFormatter.digitsOnly,
+                                LengthLimitingTextInputFormatter(13)
+                              ],
                             ),
                           )),
                         ],
@@ -382,6 +386,7 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                               keyboardType: TextInputType.phone,
                               inputFormatters: <TextInputFormatter>[
                                 WhitelistingTextInputFormatter.digitsOnly,
+                                LengthLimitingTextInputFormatter(10)
                               ],
                               controller: _telController,
                             ),
@@ -851,8 +856,8 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                                 );
                               } else {
                                 _signUpDentistWithFB(
-                                  _fullnameController.text,
-                                    context,                                    
+                                    _fullnameController.text,
+                                    context,
                                     _telController.text,
                                     _citizenidController.text,
                                     _permissionController.text,

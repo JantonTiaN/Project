@@ -223,6 +223,7 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
                               keyboardType: TextInputType.phone,
                               inputFormatters: <TextInputFormatter>[
                                 WhitelistingTextInputFormatter.digitsOnly,
+                                LengthLimitingTextInputFormatter(10)
                               ],
                               controller: _telController,
                             ),

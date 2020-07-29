@@ -348,6 +348,10 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
                                   hintStyle: TextStyle(color: Colors.blueGrey)),
                               keyboardType: TextInputType.number,
                               controller: _citizenidController,
+                              inputFormatters: <TextInputFormatter>[
+                                WhitelistingTextInputFormatter.digitsOnly,
+                                LengthLimitingTextInputFormatter(13)
+                              ],
                             ),
                           )),
                         ],
@@ -376,6 +380,7 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
                               keyboardType: TextInputType.phone,
                               inputFormatters: <TextInputFormatter>[
                                 WhitelistingTextInputFormatter.digitsOnly,
+                                LengthLimitingTextInputFormatter(10)
                               ],
                               controller: _telController,
                             ),
