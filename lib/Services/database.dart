@@ -12,7 +12,7 @@ class PatientDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientEmail)
+          .document(patient.patientTel)
           .setData({
         'fullName': patient.patientFullName,
         'eMail': patient.patientEmail,
@@ -40,7 +40,7 @@ class DentistDatabase {
           .collection('Account')
           .document('account')
           .collection('Dentists')
-          .document(dentist.dentistEmail)
+          .document(dentist.dentistTel)
           .setData({
         'fullName': dentist.dentistFullname,
         'eMail': dentist.dentistEmail,
@@ -68,10 +68,9 @@ class DentistWithFBAndGGDatabase {
           .collection('Account')
           .document('account')
           .collection('Dentists')
-          .document(dentist.dentistEmail)
+          .document(dentist.dentistTel)
           .setData({
-        'fullName' : dentist.dentistFullname,
-        'eMail' : dentist.dentistEmail,
+        'fullName': dentist.dentistFullname,
         'birthDay': dentist.dentistBirthDate,
         'tel': dentist.dentistTel,
         'citizenID': dentist.dentistCitizenID,
@@ -96,10 +95,9 @@ class PatientWithFBAndGGDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientEmail)
+          .document(patient.patientTel)
           .setData({
         'fullName': patient.patientFullName,
-        'eMail': patient.patientEmail,
         'birthDay': patient.patientBirthDate,
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
