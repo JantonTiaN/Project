@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fundee/models/dental_case.dart';
 import 'package:fundee/models/users.dart';
 
 class PatientDatabase {
@@ -70,8 +71,8 @@ class DentistWithFBAndGGDatabase {
           .collection('Dentists')
           .document(dentist.dentistEmail)
           .setData({
-        'fullName' : dentist.dentistFullname,
-        'eMail' : dentist.dentistEmail,
+        'fullName': dentist.dentistFullname,
+        'eMail': dentist.dentistEmail,
         'birthDay': dentist.dentistBirthDate,
         'tel': dentist.dentistTel,
         'citizenID': dentist.dentistCitizenID,
@@ -110,5 +111,17 @@ class PatientWithFBAndGGDatabase {
     }
 
     return retVal;
+  }
+}
+
+class Case {
+  final Firestore _firestore = Firestore.instance;
+
+  Future<String> addCase(DentalCase cases) async {
+    String retVal = 'error';
+
+    // try {
+    // await _firestore.collection('Account').document('account').collection('Patients').document(patient)
+    // }
   }
 }
