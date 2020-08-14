@@ -85,294 +85,298 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
   Widget build(BuildContext context) {
     String _formattedate = new DateFormat.yMMMd().format(_currentDate);
     return Scaffold(
+        backgroundColor: bBackgroundColor,
         body: Builder(
-      builder: (context) => ListView(
-        children: <Widget>[
-          Container(
-            height: 200,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage("assets/images/patient-signup-screen2.png"),
-                fit: BoxFit.cover,
-              ),
-            ),
-            child: Positioned(
-              child: Stack(
-                children: <Widget>[
-                  Positioned(
-                      bottom: -10,
-                      child: Padding(
-                        padding: const EdgeInsets.all(10.0),
-                        child: Text(
-                          'Create New Account',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20),
-                        ),
-                      ))
-                ],
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(right: 16),
-                  child: Icon(
-                    Icons.person,
-                    color: bPrimaryColor,
-                  ),
-                ),
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 10),
-                  child: TextFormField(
-                    controller: _fullNameController,
-                    decoration: InputDecoration(hintText: "Full Name"),
-                  ),
-                )),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(right: 16),
-                  child: Icon(
-                    Icons.mail,
-                    color: bPrimaryColor,
-                  ),
-                ),
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 10),
-                  child: TextFormField(
-                    controller: _emailController,
-                    decoration: InputDecoration(hintText: "Email Address"),
-                    keyboardType: TextInputType.emailAddress,
-                  ),
-                )),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(right: 16),
-                  child: Icon(
-                    Icons.lock,
-                    color: bPrimaryColor,
-                  ),
-                ),
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 10),
-                  child: TextFormField(
-                    controller: _passwordController,
-                    decoration: InputDecoration(hintText: "Password"),
-                    obscureText: true,
-                  ),
-                )),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 60, right: 20, bottom: 20),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 10),
-                  child: TextFormField(
-                    controller: _confirmpasswordController,
-                    decoration: InputDecoration(hintText: "Confirm Password"),
-                    obscureText: true,
-                  ),
-                )),
-              ],
-            ),
-          ),
-          Divider(
-            color: Colors.blueGrey,
-            // height: 10,
-            indent: 20,
-            endIndent: 20,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Text(
-              "Personal Information",
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(right: 16),
-                  child: Icon(
-                    FontAwesomeIcons.birthdayCake,
-                    color: bPrimaryColor,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 0),
-                  child: FlatButton(
-                      textColor: Colors.black54,
-                      child: Text('$_formattedate',
-                          style: new TextStyle(
-                              fontSize: 17, fontWeight: FontWeight.normal)),
-                      onPressed: () {
-                        _selectdate(context);
-                      }),
-                )
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(right: 16),
-                  child: Icon(
-                    Icons.phone,
-                    color: bPrimaryColor,
-                  ),
-                ),
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 10),
-                  child: TextFormField(
-                    decoration: InputDecoration(hintText: "Phone Number"),
-                    keyboardType: TextInputType.phone,
-                    inputFormatters: <TextInputFormatter>[
-                      WhitelistingTextInputFormatter.digitsOnly,
-                      LengthLimitingTextInputFormatter(10)
-                    ],
-                    controller: _telController,
-                  ),
-                )),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                Padding(
-                  padding: const EdgeInsets.only(right: 16),
-                  child: Icon(
-                    FontAwesomeIcons.pills,
-                    color: bPrimaryColor,
-                  ),
-                ),
-                Expanded(
-                    child: Container(
-                  margin: EdgeInsets.only(right: 20, left: 10),
-                  child: TextFormField(
-                    decoration: InputDecoration(hintText: "Drug Allergy"),
-                    controller: _drugallergyController,
-                  ),
-                )),
-              ],
-            ),
-          ),
-          Column(
+          builder: (context) => ListView(
             children: <Widget>[
-              FittedBox(
-                child: GestureDetector(
-                  onTap: () {
-                    if (_fullNameController.text.isEmpty ||
-                        _emailController.text.isEmpty ||
-                        _passwordController.text.isEmpty ||
-                        _confirmpasswordController.text.isEmpty ||
-                        _telController.text.isEmpty ||
-                        _drugallergyController.text.isEmpty) {
-                      showDialog<String>(
-                        context: context,
-                        builder: (BuildContext context) => AlertDialog(
-                          content: Text(
-                            'Please fill out all information.',
-                          ),
-                          actions: <Widget>[
-                            FlatButton(
-                              child: Text('OK'),
-                              onPressed: () => Navigator.pop(context, 'OK'),
-                            )
-                          ],
-                        ),
-                      );
-                    } else if (_passwordController.text ==
-                        _confirmpasswordController.text) {
-                      _signUpPatient(
-                          _emailController.text,
-                          _passwordController.text,
-                          context,
-                          _fullNameController.text,
-                          _telController.text,
-                          _drugallergyController.text,
-                          _currentDate.toString());
-                    } else {
-                      showDialog<String>(
-                        context: context,
-                        builder: (BuildContext context) => AlertDialog(
-                          content: Text(
-                            'Passwords do not match.',
-                          ),
-                          actions: <Widget>[
-                            FlatButton(
-                              child: Text('OK'),
-                              onPressed: () => Navigator.pop(context, 'OK'),
-                            )
-                          ],
-                        ),
-                      );
-                    }
-                  },
-                  child: Container(
-                    margin: EdgeInsets.only(bottom: 20),
-                    padding: EdgeInsets.symmetric(horizontal: 26, vertical: 16),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: bPrimaryColor,
-                    ),
-                    child: Row(
-                      children: <Widget>[
-                        Text(
-                          "SIGN UP",
-                          style: Theme.of(context)
-                              .textTheme
-                              .button
-                              .copyWith(color: Colors.black),
-                        ),
-                      ],
-                    ),
+              Container(
+                height: 200,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image:
+                        AssetImage("assets/images/patient-signup-screen2.png"),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                child: Positioned(
+                  child: Stack(
+                    children: <Widget>[
+                      Positioned(
+                          bottom: -10,
+                          child: Padding(
+                            padding: const EdgeInsets.all(10.0),
+                            child: Text(
+                              'Create New Account',
+                              style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20),
+                            ),
+                          ))
+                    ],
                   ),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(right: 16),
+                      child: Icon(
+                        Icons.person,
+                        color: bPrimaryColor,
+                      ),
+                    ),
+                    Expanded(
+                        child: Container(
+                      margin: EdgeInsets.only(right: 20, left: 10),
+                      child: TextFormField(
+                        controller: _fullNameController,
+                        decoration: InputDecoration(hintText: "Full Name"),
+                      ),
+                    )),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(right: 16),
+                      child: Icon(
+                        Icons.mail,
+                        color: bPrimaryColor,
+                      ),
+                    ),
+                    Expanded(
+                        child: Container(
+                      margin: EdgeInsets.only(right: 20, left: 10),
+                      child: TextFormField(
+                        controller: _emailController,
+                        decoration: InputDecoration(hintText: "Email Address"),
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+                    )),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(right: 16),
+                      child: Icon(
+                        Icons.lock,
+                        color: bPrimaryColor,
+                      ),
+                    ),
+                    Expanded(
+                        child: Container(
+                      margin: EdgeInsets.only(right: 20, left: 10),
+                      child: TextFormField(
+                        controller: _passwordController,
+                        decoration: InputDecoration(hintText: "Password"),
+                        obscureText: true,
+                      ),
+                    )),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 60, right: 20, bottom: 20),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Expanded(
+                        child: Container(
+                      margin: EdgeInsets.only(right: 20, left: 10),
+                      child: TextFormField(
+                        controller: _confirmpasswordController,
+                        decoration:
+                            InputDecoration(hintText: "Confirm Password"),
+                        obscureText: true,
+                      ),
+                    )),
+                  ],
+                ),
+              ),
+              Divider(
+                color: Colors.blueGrey,
+                // height: 10,
+                indent: 20,
+                endIndent: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: Text(
+                  "Personal Information",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(right: 16),
+                      child: Icon(
+                        FontAwesomeIcons.birthdayCake,
+                        color: bPrimaryColor,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 0),
+                      child: FlatButton(
+                          textColor: Colors.black54,
+                          child: Text('$_formattedate',
+                              style: new TextStyle(
+                                  fontSize: 17, fontWeight: FontWeight.normal)),
+                          onPressed: () {
+                            _selectdate(context);
+                          }),
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(right: 16),
+                      child: Icon(
+                        Icons.phone,
+                        color: bPrimaryColor,
+                      ),
+                    ),
+                    Expanded(
+                        child: Container(
+                      margin: EdgeInsets.only(right: 20, left: 10),
+                      child: TextFormField(
+                        decoration: InputDecoration(hintText: "Phone Number"),
+                        keyboardType: TextInputType.phone,
+                        inputFormatters: <TextInputFormatter>[
+                          WhitelistingTextInputFormatter.digitsOnly,
+                          LengthLimitingTextInputFormatter(10)
+                        ],
+                        controller: _telController,
+                      ),
+                    )),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(right: 16),
+                      child: Icon(
+                        FontAwesomeIcons.pills,
+                        color: bPrimaryColor,
+                      ),
+                    ),
+                    Expanded(
+                        child: Container(
+                      margin: EdgeInsets.only(right: 20, left: 10),
+                      child: TextFormField(
+                        decoration: InputDecoration(hintText: "Drug Allergy"),
+                        controller: _drugallergyController,
+                      ),
+                    )),
+                  ],
+                ),
+              ),
+              Column(
+                children: <Widget>[
+                  FittedBox(
+                    child: GestureDetector(
+                      onTap: () {
+                        if (_fullNameController.text.isEmpty ||
+                            _emailController.text.isEmpty ||
+                            _passwordController.text.isEmpty ||
+                            _confirmpasswordController.text.isEmpty ||
+                            _telController.text.isEmpty ||
+                            _drugallergyController.text.isEmpty) {
+                          showDialog<String>(
+                            context: context,
+                            builder: (BuildContext context) => AlertDialog(
+                              content: Text(
+                                'Please fill out all information.',
+                              ),
+                              actions: <Widget>[
+                                FlatButton(
+                                  child: Text('OK'),
+                                  onPressed: () => Navigator.pop(context, 'OK'),
+                                )
+                              ],
+                            ),
+                          );
+                        } else if (_passwordController.text ==
+                            _confirmpasswordController.text) {
+                          _signUpPatient(
+                              _emailController.text,
+                              _passwordController.text,
+                              context,
+                              _fullNameController.text,
+                              _telController.text,
+                              _drugallergyController.text,
+                              _currentDate.toString());
+                        } else {
+                          showDialog<String>(
+                            context: context,
+                            builder: (BuildContext context) => AlertDialog(
+                              content: Text(
+                                'Passwords do not match.',
+                              ),
+                              actions: <Widget>[
+                                FlatButton(
+                                  child: Text('OK'),
+                                  onPressed: () => Navigator.pop(context, 'OK'),
+                                )
+                              ],
+                            ),
+                          );
+                        }
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(bottom: 20),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 26, vertical: 16),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          color: bPrimaryColor,
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              "SIGN UP",
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .button
+                                  .copyWith(color: Colors.black),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              )
             ],
-          )
-        ],
-      ),
-    ));
+          ),
+        ));
   }
 }

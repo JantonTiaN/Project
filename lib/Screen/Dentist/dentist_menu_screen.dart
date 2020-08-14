@@ -113,15 +113,15 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => DentalRecord()));
-        },
-        child: Icon(FontAwesomeIcons.tooth),
-        backgroundColor: Colors.blue[300],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Navigator.push(
+      //         context, MaterialPageRoute(builder: (context) => DentalRecord()));
+      //   },
+      //   child: Icon(FontAwesomeIcons.tooth),
+      //   backgroundColor: Colors.blue[300],
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       body: _pageOptions[_selectPage],
       bottomNavigationBar: BubbleBottomBar(
         opacity: .2,
@@ -133,7 +133,7 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
         },
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
         elevation: 8,
-        fabLocation: BubbleBottomBarFabLocation.end,
+        // fabLocation: BubbleBottomBarFabLocation.end,
         hasNotch: true,
         hasInk: true,
         inkColor: Colors.black12,
@@ -163,7 +163,7 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
               ),
               title: Text(
                 "Appointment",
-                style: TextStyle(fontSize: 10),
+                style: TextStyle(fontSize: 13),
               )),
           BubbleBottomBarItem(
               backgroundColor: Colors.blue[300],
