@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 class PatientInfo extends StatefulWidget {
-  final String fname;
-  final String firstname;
-  PatientInfo({Key key, @required this.fname, @required this.firstname})
+  final String fullname;
+  final String tel;
+  PatientInfo({Key key, @required this.fullname, @required this.tel})
       : super(key: key);
 
   @override
@@ -12,7 +12,7 @@ class PatientInfo extends StatefulWidget {
 }
 
 class _PatientInfoState extends State<PatientInfo> {
-  String firstname = "กำลังโหลด...";
+  String pnumber = "Loading...เบอร์ไม่ขึ้นน";
 
   @override
   void initState() {
@@ -20,12 +20,12 @@ class _PatientInfoState extends State<PatientInfo> {
     Firestore.instance
         .collection("Account")
         .document('account')
-        .collection('Users')
-        .document(widget.fname)
+        .collection('Patients')
+        .document(widget.fullname)
         .get()
         .then((value) {
       setState(() {
-        firstname = value.data["firstName"];
+        pnumber = value.data['tel'];
       });
     });
   }
@@ -34,7 +34,7 @@ class _PatientInfoState extends State<PatientInfo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.fname),
+        title: Text(widget.fullname),
         // backgroundColor: Colors.orange,
       ),
       body: Center(
@@ -42,15 +42,18 @@ class _PatientInfoState extends State<PatientInfo> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              widget.fname,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              widget.fullname,
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.pink),
             ),
             Padding(
               padding: const EdgeInsets.all(20),
             ),
             Text(
-              firstname,
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              pnumber,
+              style: TextStyle(fontSize: 20),
             ),
           ],
         ),
