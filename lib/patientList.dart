@@ -41,6 +41,7 @@ class _PatientListState extends State<PatientList> {
             .collection("Account")
             .document('account')
             .collection('Patients')
+            .orderBy('fullName')
             .snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
