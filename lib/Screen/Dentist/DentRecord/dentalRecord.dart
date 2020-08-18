@@ -5,71 +5,100 @@ import 'dental_detail_screen.dart';
 import 'package:fundee/models/account_model.dart';
 import 'package:fundee/models/user_model.dart';
 
-class Tooth1 extends StatefulWidget {
+// class Tooth1 extends StatefulWidget {
+//   @override
+//   _Tooth1State createState() => _Tooth1State();
+// }
+
+// class _Tooth1State extends State<Tooth1> {
+// List<UserModel> userModels = List();
+// List<AccountModel> accountModels = List();
+
+// @override
+// void initState() {
+//   super.initState();
+//   readAllData();
+// }
+
+// Future<void> readAllData() async {
+//   Firestore firestore = Firestore.instance;
+//   CollectionReference collectionReference =
+//       firestore.collection('Account').document('account').collection('Users');
+//   collectionReference.snapshots().listen((response) {
+//     List<DocumentSnapshot> snapshots = response.documents;
+//     for (var snapshot in snapshots) {
+//       UserModel userModel = UserModel.fromMap(snapshot.data);
+//       setState(() {
+//         userModels.add(userModel);
+//       });
+//     }
+//   });
+// }
+
+// @override
+// Widget build(BuildContext context) {
+//   return Container(
+//       padding: EdgeInsets.all(0.3),
+//       // color: Colors.grey[300],
+//       width: MediaQuery.of(context).size.width * 0.5,
+//       height: MediaQuery.of(context).size.height * 0.03,
+//       child: ListView.builder(
+//           itemCount: userModels.length,
+//           itemBuilder: (BuildContext buildContext, int index) {
+//             return Container(
+//                 child: Container(
+//                     child: Text(
+//                         ' ' +
+//                             userModels[6].firstName +
+//                             ' ' +
+//                             userModels[6].lastName,
+//                         style:
+//                             TextStyle(fontSize: 15, color: Colors.black))));
+//           }));
+//   }
+// }
+
+class DentalRecord extends StatefulWidget {
+  final String fullname;
+  final String tel;
+  DentalRecord({Key key, @required this.fullname, @required this.tel})
+      : super(key: key);
   @override
-  _Tooth1State createState() => _Tooth1State();
+  _DentalRecordState createState() => _DentalRecordState();
 }
 
-class _Tooth1State extends State<Tooth1> {
-  List<UserModel> userModels = List();
-  List<AccountModel> accountModels = List();
-
+class _DentalRecordState extends State<DentalRecord> {
   @override
   void initState() {
     super.initState();
-    readAllData();
-  }
-
-  Future<void> readAllData() async {
-    Firestore firestore = Firestore.instance;
-    CollectionReference collectionReference =
-        firestore.collection('Account').document('account').collection('Users');
-    collectionReference.snapshots().listen((response) {
-      List<DocumentSnapshot> snapshots = response.documents;
-      for (var snapshot in snapshots) {
-        UserModel userModel = UserModel.fromMap(snapshot.data);
-        setState(() {
-          userModels.add(userModel);
-        });
-      }
+    Firestore.instance
+        .collection("Account")
+        .document('account')
+        .collection('Patients')
+        .document(widget.fullname)
+        .get()
+        .then((value) {
+      // setState(() {
+      //   pnumber = value.data['tel'];
+      // });
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        padding: EdgeInsets.all(0.3),
-        // color: Colors.grey[300],
-        width: MediaQuery.of(context).size.width * 0.5,
-        height: MediaQuery.of(context).size.height * 0.03,
-        child: ListView.builder(
-            itemCount: userModels.length,
-            itemBuilder: (BuildContext buildContext, int index) {
-              return Container(
-                  child: Container(
-                      child: Text(
-                          ' ' +
-                              userModels[6].firstName +
-                              ' ' +
-                              userModels[6].lastName,
-                          style:
-                              TextStyle(fontSize: 15, color: Colors.black))));
-            }));
-  }
-}
-
-class DentalRecord extends StatelessWidget {
-  Widget build(BuildContext context) {
     return Scaffold(
         // backgroundColor: bBackgroundColor,
-        appBar: AppBar(title: Text('Dental Charting')),
+        appBar: AppBar(
+          title: Text(widget.fullname),
+          backgroundColor: Colors.white,
+        ),
         body: SingleChildScrollView(
           child: Center(
             child: Stack(
               children: <Widget>[
-                Container(
-                  child: Tooth1(),
-                ),
+                // Container(
+                //   child: Tooth1(),
+                // ),
                 // Container(
                 //   width: MediaQuery.of(context).size.width *
                 //       MediaQuery.of(context).devicePixelRatio,

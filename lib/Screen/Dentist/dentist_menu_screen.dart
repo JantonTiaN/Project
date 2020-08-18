@@ -32,7 +32,6 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
     DentAppointmentScreen(),
     PatientList(),
     DentProfileScreen(),
-    DentalRecord()
   ];
 
   @override

@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
-import 'package:fundee/patientInfo.dart';
 
 class PatientList extends StatefulWidget {
   @override
@@ -67,7 +66,12 @@ class _PatientListState extends State<PatientList> {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DentalRecord()
+                                  builder: (context) => DentalRecord(
+                                        fullname: snapshot.data.documents[index]
+                                            .data["fullName"],
+                                        tel: snapshot
+                                            .data.documents[index].documentID,
+                                      )
                                   // PatientInfo(
                                   //       fullname: snapshot.data.documents[index]
                                   //           .data["fullName"],
