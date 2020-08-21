@@ -5,6 +5,7 @@ import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/Screen/Dentist/dentist_appointment_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_home_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_profile_screen.dart';
+import 'package:fundee/Screen/Patient/patient_sug_screen.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
@@ -25,6 +26,7 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
   final _pageOptions = [
     DentHomeScreen(),
     DentAppointmentScreen(),
+    DentSuggestion(),
     DentProfileScreen(),
   ];
 
