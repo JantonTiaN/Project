@@ -2,8 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_case_screen.dart';
+import 'package:fundee/States/current_user.dart';
 import 'package:fundee/models/account_model.dart';
 import 'package:fundee/models/user_model.dart';
+import 'package:provider/provider.dart';
 
 class DentalDetailScreen extends StatefulWidget {
   final FirebaseUser user;
@@ -69,6 +71,25 @@ class _DentalDetailScreenState extends State<DentalDetailScreen> {
 }
 
 Widget tooth1Detail(BuildContext context) {
+  var _case = new List();
+
+  List _dentalCase() {
+    var dentalCase = _case;
+    return dentalCase;
+  }
+
+  void _addDentalCase(BuildContext context, List addCase) async {
+    CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+    try {
+      String _returnString = await _currentUser.addDentalCase(_dentalCase);
+      if (_returnString == 'success') {
+        Navigator.pop(context, 'OK');
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
   return Scaffold(
     appBar: AppBar(title: Text('Tooth 1 Detail')),
     body:
@@ -116,7 +137,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/blue.png'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Dental Carise') {
+                                    _case.remove('Dental Carise');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Dental Carise');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -126,7 +155,17 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/blue.png'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] ==
+                                      'Attrition, abrasion, abfraction') {
+                                    _case.remove(
+                                        'Attrition, abrasion, abfraction');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Attrition, abrasion, abfraction');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -136,7 +175,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/blue.png'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Fractured tooth') {
+                                    _case.remove('Fractured tooth');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Fractured tooth');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -146,7 +193,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/blue.png'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Retained root') {
+                                    _case.remove('Retained root');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Retained root');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -156,7 +211,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/black.png'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'RCT tooth') {
+                                    _case.remove('RCT tooth');
+                                  }
+                                  i++;
+                                }
+                                _case.add('RCT tooth');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -166,7 +229,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/red-cross.jpg'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Extracted tooth') {
+                                    _case.remove('Extracted tooth');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Extracted tooth');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -176,7 +247,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/green-circle.jpg'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Missing tooth') {
+                                    _case.remove('Missing tooth');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Missing tooth');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -186,7 +265,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/imp.jpg'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Impacted tooth') {
+                                    _case.remove('Impacted tooth');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Impacted tooth');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -196,7 +283,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/pe.jpg'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Partial eruption') {
+                                    _case.remove('Partial eruption');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Partial eruption');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -206,7 +301,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/arrow.jpg'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Tilting, drifting') {
+                                    _case.remove('Tilting, drifting');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Tilting, drifting');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -216,7 +319,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/loss-of-contact.jpg'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Loss of contact') {
+                                    _case.remove('Loss of contact');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Loss of contact');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -226,7 +337,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/poor-contact-point.jpg'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Poor contact point') {
+                                    _case.remove('Poor contact point');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Poor contact point');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -236,7 +355,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/food-impaction.jpg'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Food impaction') {
+                                    _case.remove('Food impaction');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Food impaction');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -246,7 +373,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/plus.jpg'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Supraclusion') {
+                                    _case.remove('Supraclusion');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Supraclusion');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -256,7 +391,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/minus.jpg'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Infraclusion') {
+                                    _case.remove('Infraclusion');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Infraclusion');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -266,7 +409,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/rotation.jpg'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Rotation') {
+                                    _case.remove('Rotation');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Rotation');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -276,7 +427,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/blue.png'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Temporary') {
+                                    _case.remove('Temporary');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Temporary');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -286,7 +445,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/black.png'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Permanentrestoration') {
+                                    _case.remove('Permanentrestoration');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Permanentrestoration');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -296,7 +463,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/yellow.jpg'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Gold restoration') {
+                                    _case.remove('Gold restoration');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Gold restoration');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -306,7 +481,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/black.png'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Porcelain/metal crown') {
+                                    _case.remove('Porcelain/metal crown');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Porcelain/metal crown');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -316,7 +499,16 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/red-cross.jpg'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] ==
+                                      'Extract and have fix bridge') {
+                                    _case.remove('Extract and have fix bridge');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Extract and have fix bridge');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                             ListTile(
@@ -326,7 +518,15 @@ Widget tooth1Detail(BuildContext context) {
                                     'assets/images/dental_cases/other.jpg'),
                               ),
                               onTap: () {
-                                //add to firebase
+                                int i = 0;
+                                while (i != _case.length) {
+                                  if (_case[i] == 'Other') {
+                                    _case.remove('Other');
+                                  }
+                                  i++;
+                                }
+                                _case.add('Other');
+                                _addDentalCase(context, _dentalCase());
                               },
                             ),
                           ],

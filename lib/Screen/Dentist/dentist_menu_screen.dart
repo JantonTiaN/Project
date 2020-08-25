@@ -116,7 +116,7 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => DentalRecord()));
+              context, MaterialPageRoute(builder: (context) => PatientList()));
         },
         child: Icon(FontAwesomeIcons.tooth),
         backgroundColor: Colors.blue[300],

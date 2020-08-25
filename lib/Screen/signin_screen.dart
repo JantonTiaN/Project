@@ -311,7 +311,7 @@ class _SignInScreenState extends State<SignInScreen> {
       print("Already signin with Social media");
       print(user.toString());
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => FbSelectRole(user)));
+          MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
     }
   }
 }
