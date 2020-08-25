@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/Signup/gg_d_signup_screen.dart';
 import 'package:fundee/Screen/Patient/Signup/gg_p_signup_screen.dart';
+import 'package:fundee/Screen/constants.dart';
 
 class GgSelectRole extends StatefulWidget {
   // final FirebaseUser user;
@@ -13,6 +14,7 @@ class _GgSelectRoleState extends State<GgSelectRole> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: bBackgroundColor,
         body: Builder(
             builder: (context) => Center(
                   child: Column(

@@ -400,6 +400,10 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                         decoration: InputDecoration(hintText: "Citizen ID"),
                         keyboardType: TextInputType.number,
                         controller: _citizenidController,
+                        inputFormatters: <TextInputFormatter>[
+                          WhitelistingTextInputFormatter.digitsOnly,
+                          LengthLimitingTextInputFormatter(13)
+                        ],
                       ),
                     )),
                   ],
@@ -425,6 +429,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                         keyboardType: TextInputType.phone,
                         inputFormatters: <TextInputFormatter>[
                           WhitelistingTextInputFormatter.digitsOnly,
+                          LengthLimitingTextInputFormatter(10)
                         ],
                         controller: _telController,
                       ),

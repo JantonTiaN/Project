@@ -2,8 +2,12 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fundee/Screen/constants.dart';
+import 'package:fundee/States/current_user.dart';
 import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
+
+import '../../signin_screen.dart';
 
 class GgPSignupScreen extends StatefulWidget {
   // final FirebaseUser user;
@@ -36,11 +40,53 @@ class _GgPSignupScreenState extends State<GgPSignupScreen> {
     }
   }
 
+  void _signUpPatientWithGG(BuildContext context, String fullName, String tel,
+      String drugallergy, String brithDate) async {
+    CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+    try {
+      String _returnString = await _currentUser.signUpPatientsWithFBAndGG(
+          fullName, tel, drugallergy, brithDate);
+      if (_returnString == 'success') {
+        showDialog<String>(
+            context: context,
+            builder: (BuildContext context) => AlertDialog(
+                  content: Text('Registration complete'),
+                  actions: <Widget>[
+                    FlatButton(
+                      child: Text('OK'),
+                      onPressed: () => Navigator.push(context,
+                          MaterialPageRoute(builder: (context) {
+                        return SignInScreen();
+                      })),
+                    )
+                  ],
+                ));
+      } else {
+        showDialog<String>(
+          context: context,
+          builder: (BuildContext context) => AlertDialog(
+            content: Text(
+              _returnString,
+            ),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('OK'),
+                onPressed: () => Navigator.pop(context, 'OK'),
+              )
+            ],
+          ),
+        );
+      }
+    } catch (e) {
+      print(e);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     String _formattedate = new DateFormat.yMMMd().format(_currentDate);
-
     return Scaffold(
+        backgroundColor: bBackgroundColor,
         body: Builder(
             builder: (context) => ListView(
                   children: <Widget>[
@@ -177,6 +223,7 @@ class _GgPSignupScreenState extends State<GgPSignupScreen> {
                               keyboardType: TextInputType.phone,
                               inputFormatters: <TextInputFormatter>[
                                 WhitelistingTextInputFormatter.digitsOnly,
+                                LengthLimitingTextInputFormatter(10)
                               ],
                               controller: _telController,
                             ),
@@ -214,7 +261,8 @@ class _GgPSignupScreenState extends State<GgPSignupScreen> {
                           child: GestureDetector(
                             onTap: () {
                               if (_telController.text.isEmpty ||
-                                  _drugallergyController.text.isEmpty) {
+                                  _drugallergyController.text.isEmpty ||
+                                  _fullnameController.text.isEmpty) {
                                 showDialog<String>(
                                   context: context,
                                   builder: (BuildContext context) =>
@@ -248,6 +296,13 @@ class _GgPSignupScreenState extends State<GgPSignupScreen> {
                                     ],
                                   ),
                                 );
+                              } else {
+                                _signUpPatientWithGG(
+                                    context,
+                                    _fullnameController.text,
+                                    _telController.text,
+                                    _drugallergyController.text,
+                                    _currentDate.toString());
                               }
                             },
                             child: Container(

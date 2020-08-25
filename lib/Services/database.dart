@@ -13,13 +13,14 @@ class PatientDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientEmail)
+          .document(patient.patientTel)
           .setData({
         'fullName': patient.patientFullName,
         'eMail': patient.patientEmail,
         'birthDay': patient.patientBirthDate,
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
+        'case': null
       });
       retVal = 'success';
     } catch (e) {
@@ -41,7 +42,7 @@ class DentistDatabase {
           .collection('Account')
           .document('account')
           .collection('Dentists')
-          .document(dentist.dentistEmail)
+          .document(dentist.dentistTel)
           .setData({
         'fullName': dentist.dentistFullname,
         'eMail': dentist.dentistEmail,
@@ -69,16 +70,16 @@ class DentistWithFBAndGGDatabase {
           .collection('Account')
           .document('account')
           .collection('Dentists')
-          .document(dentist.dentistEmail)
+          .document(dentist.dentistTel)
           .setData({
         'fullName': dentist.dentistFullname,
-        'eMail': dentist.dentistEmail,
         'birthDay': dentist.dentistBirthDate,
         'tel': dentist.dentistTel,
         'citizenID': dentist.dentistCitizenID,
         'permission': dentist.dentistPermission,
         'workingTime': dentist.dentistWorkingTime
       });
+
       retVal = 'success';
     } catch (e) {
       print(e);
@@ -97,13 +98,13 @@ class PatientWithFBAndGGDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientEmail)
+          .document(patient.patientTel)
           .setData({
         'fullName': patient.patientFullName,
-        'eMail': patient.patientEmail,
         'birthDay': patient.patientBirthDate,
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
+        'case': null
       });
       retVal = 'success';
     } catch (e) {
@@ -117,11 +118,22 @@ class PatientWithFBAndGGDatabase {
 class Case {
   final Firestore _firestore = Firestore.instance;
 
-  Future<String> addCase(DentalCase cases) async {
+  Future<String> addCase(OurPatients cases) async {
     String retVal = 'error';
 
-    // try {
-    // await _firestore.collection('Account').document('account').collection('Patients').document(patient)
-    // }
+    try {
+      await _firestore
+          .collection('Account')
+          .document('account')
+          .collection('Patients')
+          .document('0892334868')
+          .collection('DentalCase')
+          .document('dentalCase')
+          .setData({'case': cases.patientCase});
+      retVal = 'success';
+    } catch (e) {
+      print(e);
+    }
+    return retVal;
   }
 }

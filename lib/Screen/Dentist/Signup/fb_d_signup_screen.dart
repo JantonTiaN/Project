@@ -354,6 +354,10 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                                   hintStyle: TextStyle(color: Colors.blueGrey)),
                               keyboardType: TextInputType.number,
                               controller: _citizenidController,
+                              inputFormatters: <TextInputFormatter>[
+                                WhitelistingTextInputFormatter.digitsOnly,
+                                LengthLimitingTextInputFormatter(13)
+                              ],
                             ),
                           )),
                         ],
@@ -382,6 +386,7 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                               keyboardType: TextInputType.phone,
                               inputFormatters: <TextInputFormatter>[
                                 WhitelistingTextInputFormatter.digitsOnly,
+                                LengthLimitingTextInputFormatter(10)
                               ],
                               controller: _telController,
                             ),

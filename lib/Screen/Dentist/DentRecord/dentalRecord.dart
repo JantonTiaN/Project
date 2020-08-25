@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/constants.dart';
 import 'dental_detail_screen.dart';
 import 'package:fundee/models/account_model.dart';
 import 'package:fundee/models/user_model.dart';
-
 
 class Tooth1 extends StatefulWidget {
   @override
@@ -22,7 +22,8 @@ class _Tooth1State extends State<Tooth1> {
 
   Future<void> readAllData() async {
     Firestore firestore = Firestore.instance;
-    CollectionReference collectionReference = firestore.collection('Account').document('account').collection('Users');
+    CollectionReference collectionReference =
+        firestore.collection('Account').document('account').collection('Users');
     collectionReference.snapshots().listen((response) {
       List<DocumentSnapshot> snapshots = response.documents;
       for (var snapshot in snapshots) {
@@ -36,30 +37,31 @@ class _Tooth1State extends State<Tooth1> {
 
   @override
   Widget build(BuildContext context) {
-    return 
-        Container(
-          padding: EdgeInsets.all(0.3),
-          color: Colors.grey[300],
-          width: MediaQuery.of(context).size.width * 0.5,
-          height: MediaQuery.of(context).size.height * 0.03,
-            child: ListView.builder(
-                itemCount: userModels.length,
-                itemBuilder: (BuildContext buildContext, int index) {
-                  return Container(
-                    child: Container(
-                      child: Text(' ' + userModels[6].firstName + ' ' +userModels[6].lastName, style: TextStyle(fontSize: 15, color: Colors.black))
-                      )
-                    );
-                }
-      ));
-      
-    
+    return Container(
+        padding: EdgeInsets.all(0.3),
+        // color: Colors.grey[300],
+        width: MediaQuery.of(context).size.width * 0.5,
+        height: MediaQuery.of(context).size.height * 0.03,
+        child: ListView.builder(
+            itemCount: userModels.length,
+            itemBuilder: (BuildContext buildContext, int index) {
+              return Container(
+                  child: Container(
+                      child: Text(
+                          ' ' +
+                              userModels[6].firstName +
+                              ' ' +
+                              userModels[6].lastName,
+                          style:
+                              TextStyle(fontSize: 15, color: Colors.black))));
+            }));
   }
 }
 
 class DentalRecord extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
+        // backgroundColor: bBackgroundColor,
         appBar: AppBar(title: Text('Dental Charting')),
         body: Center(
           child: Stack(
@@ -263,617 +265,843 @@ class DentalRecord extends StatelessWidget {
                   )),
               Center(
                 child: Container(
-                  width: MediaQuery.of(context).size.width * MediaQuery.of(context).devicePixelRatio* 0.32,
-                  height: MediaQuery.of(context).size.height * MediaQuery.of(context).devicePixelRatio* 0.32,
+                  width: MediaQuery.of(context).size.width *
+                      MediaQuery.of(context).devicePixelRatio *
+                      0.33,
+                  height: MediaQuery.of(context).size.height *
+                      MediaQuery.of(context).devicePixelRatio *
+                      0.33,
                   child: Image.asset('images/tooth/AllGum.png'),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.052,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.052,
-                  margin: EdgeInsets.fromLTRB(0, 0, 190, 70),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/1-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth1Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth1Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   color: Colors.yellow,
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.052,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.052,
+                  //   margin: EdgeInsets.fromLTRB(0, 0, 190, 77),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 190, 77),
+                    child: Image.asset(
+                      'images/tooth/1-lastest.png',
+                      scale: 25,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.048,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.048,
-                  margin: EdgeInsets.fromLTRB(0, 0, 190, 134),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/2-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth2Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth2Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.048,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.048,
+                  // margin: EdgeInsets.fromLTRB(0, 0, 190, 141),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 190, 141),
+                    child: Image.asset(
+                      'images/tooth/2-lastest.png',
+                      scale: 27,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.047,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.047,
-                  margin: EdgeInsets.fromLTRB(0, 0, 180, 191),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/3-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth3Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth3Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.047,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.047,
+                  //   margin: EdgeInsets.fromLTRB(0, 0, 180, 200),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 180, 202),
+                    child: Image.asset(
+                      'images/tooth/3-lastest.png',
+                      scale: 28,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.046,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.046,
-                  margin: EdgeInsets.fromLTRB(0, 0, 163, 238),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/4-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth4Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth4Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.046,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.046,
+                  // margin: EdgeInsets.fromLTRB(0, 0, 166, 249),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 166, 249),
+                    child: Image.asset(
+                      'images/tooth/4-lastest.png',
+                      scale: 29,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.044,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.044,
-                  margin: EdgeInsets.fromLTRB(0, 0, 136, 285),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/5-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth5Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth5Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.044,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.044,
+                  //   margin: EdgeInsets.fromLTRB(0, 0, 141, 297),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 141, 297),
+                    child: Image.asset(
+                      'images/tooth/5-lastest.png',
+                      scale: 31,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.039,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.039,
-                  margin: EdgeInsets.fromLTRB(0, 0, 110, 325),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/6-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth6Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth6Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.040,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.040,
+                  //   margin: EdgeInsets.fromLTRB(0, 0, 111, 335),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 111, 335),
+                    child: Image.asset(
+                      'images/tooth/6-lastest.png',
+                      scale: 34,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.039,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.039,
-                  margin: EdgeInsets.fromLTRB(0, 0, 81, 357),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/7-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth7Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth7Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.040,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.040,
+                  //   margin: EdgeInsets.fromLTRB(0, 0, 80, 368),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 80, 368),
+                    child: Image.asset('images/tooth/7-lastest.png', scale: 34),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.039,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.039,
-                  margin: EdgeInsets.fromLTRB(0, 0, 39, 372),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/8-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth8Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth8Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.040,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.040,
+                  //   margin: EdgeInsets.fromLTRB(0, 0, 35, 380),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 0, 35, 380),
+                    child: Image.asset(
+                      'images/tooth/8-lastest.png',
+                      scale: 34,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.039,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.039,
-                  margin: EdgeInsets.fromLTRB(9, 0, 0, 374),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/9-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth9Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth9Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.040,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.040,
+                  //   margin: EdgeInsets.fromLTRB(16, 0, 0, 380),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 0, 0, 380),
+                    child: Image.asset(
+                      'images/tooth/9-lastest.png',
+                      scale: 34,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.039,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.039,
-                  margin: EdgeInsets.fromLTRB(53, 0, 0, 365),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/10-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth10Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth10Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.040,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.040,
+                  //   margin: EdgeInsets.fromLTRB(59, 0, 0, 369),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(59, 0, 0, 369),
+                    child: Image.asset(
+                      'images/tooth/10-lastest.png',
+                      scale: 34,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.039,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.039,
-                  margin: EdgeInsets.fromLTRB(86, 0, 0, 335),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/11-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth11Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth11Detail(context)));
+                },
+                child: Center(
+                  child: Container(
+                    // width: MediaQuery.of(context).size.width *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.040,
+                    // height: MediaQuery.of(context).size.height *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.040,
+                    // margin: EdgeInsets.fromLTRB(90, 0, 0, 337),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(90, 0, 0, 337),
+                      child: Image.asset(
+                        'images/tooth/11-lastest.png',
+                        scale: 34,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.044,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.044,
-                  margin: EdgeInsets.fromLTRB(115, 0, 0, 300),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/12-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth12Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth12Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.044,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.044,
+                  //   margin: EdgeInsets.fromLTRB(117, 0, 0, 300),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(117, 0, 0, 300),
+                    child: Image.asset(
+                      'images/tooth/12-lastest.png',
+                      scale: 31,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.046,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.046,
-                  margin: EdgeInsets.fromLTRB(143, 0, 0, 253),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/13-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth13Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth13Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.046,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.046,
+                  //   margin: EdgeInsets.fromLTRB(146, 0, 0, 254),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(146, 0, 0, 254),
+                    child: Image.asset(
+                      'images/tooth/13-lastest.png',
+                      scale: 29,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.046,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.046,
-                  margin: EdgeInsets.fromLTRB(161, 0, 0, 203),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/14-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth14Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth14Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.047,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.047,
+                  //   margin: EdgeInsets.fromLTRB(163, 0, 0, 204),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(163, 0, 0, 204),
+                    child: Image.asset(
+                      'images/tooth/14-lastest.png',
+                      scale: 28,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.05,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.05,
-                  margin: EdgeInsets.fromLTRB(172, 0, 0, 144),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/15-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth15Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth15Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.048,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.048,
+                  //   margin: EdgeInsets.fromLTRB(174, 0, 0, 146),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(174, 0, 0, 146),
+                    child: Image.asset(
+                      'images/tooth/15-lastest.png',
+                      scale: 27,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.052,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.052,
-                  margin: EdgeInsets.fromLTRB(171, 0, 0, 77),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/16-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth16Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth16Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.052,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.052,
+                  //   margin: EdgeInsets.fromLTRB(175, 0, 0, 81),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(175, 0, 0, 81),
+                    child: Image.asset(
+                      'images/tooth/16-lastest.png',
+                      scale: 25,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.052,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.052,
-                  margin: EdgeInsets.fromLTRB(180, 90, 0, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/17-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth17Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth17Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.052,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.052,
+                  //   margin: EdgeInsets.fromLTRB(187, 90, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(187, 90, 0, 0),
+                    child: Image.asset(
+                      'images/tooth/17-lastest.png',
+                      scale: 25,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.049,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.049,
-                  margin: EdgeInsets.fromLTRB(180, 164, 00, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/18-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth18Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth18Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.049,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.049,
+                  //   margin: EdgeInsets.fromLTRB(183, 164, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(183, 164, 0, 0),
+                    child: Image.asset(
+                      'images/tooth/18-lastest.png',
+                      scale: 26,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.046,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.046,
-                  margin: EdgeInsets.fromLTRB(170, 228, 00, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/19-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth19Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth19Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.046,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.046,
+                  //   margin: EdgeInsets.fromLTRB(173, 228, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(173, 228, 0, 0),
+                    child: Image.asset(
+                      'images/tooth/19-lastest.png',
+                      scale: 29,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.044,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.044,
-                  margin: EdgeInsets.fromLTRB(152, 284, 00, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/20-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth20Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth20Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.044,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.044,
+                  //   margin: EdgeInsets.fromLTRB(154, 285, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(154, 285, 0, 0),
+                    child: Image.asset(
+                      'images/tooth/20-lastest.png',
+                      scale: 31,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.041,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.041,
-                  margin: EdgeInsets.fromLTRB(121, 330, 00, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/21-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth21Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth21Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  // width: MediaQuery.of(context).size.width *
+                  //     MediaQuery.of(context).devicePixelRatio *
+                  //     0.041,
+                  // height: MediaQuery.of(context).size.height *
+                  //     MediaQuery.of(context).devicePixelRatio *
+                  //     0.041,
+                  // margin: EdgeInsets.fromLTRB(123, 331, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(123, 331, 0, 0),
+                    child: Image.asset(
+                      'images/tooth/21-lastest.png',
+                      scale: 33,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.037,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.037,
-                  margin: EdgeInsets.fromLTRB(91, 359, 00, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/22-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth22Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth22Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.037,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.037,
+                  //   margin: EdgeInsets.fromLTRB(91, 359, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(91, 359, 0, 0),
+                    child: Image.asset(
+                      'images/tooth/22-lastest.png',
+                      scale: 39,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.037,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.037,
-                  margin: EdgeInsets.fromLTRB(59, 380, 00, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/23-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth23Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth23Detail(context)));
+                },
+                child: Center(
+                  // child: Container(
+                  //   width: MediaQuery.of(context).size.width *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.037,
+                  //   height: MediaQuery.of(context).size.height *
+                  //       MediaQuery.of(context).devicePixelRatio *
+                  //       0.037,
+                  //   margin: EdgeInsets.fromLTRB(91, 359, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(58, 381, 0, 0),
+                    child: Image.asset(
+                      'images/tooth/23-lastest.png',
+                      scale: 39,
+                    ),
+                  ),
+                  // ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.036,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.036,
-                  margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/24-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth24Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth24Detail(context)));
+                },
+                child: Center(
+                  child: Container(
+                    // width: MediaQuery.of(context).size.width *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // height: MediaQuery.of(context).size.height *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(12, 390, 00, 0),
+                      child: Image.asset(
+                        'images/tooth/24-lastest.png',
+                        scale: 40,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.036,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.036,
-                  margin: EdgeInsets.fromLTRB(0, 392, 27, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/25-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth25Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth25Detail(context)));
+                },
+                child: Center(
+                  child: Container(
+                    // width: MediaQuery.of(context).size.width *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // height: MediaQuery.of(context).size.height *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // margin: EdgeInsets.fromLTRB(16, 390, 0, 0),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 392, 34, 0),
+                      child: Image.asset(
+                        'images/tooth/25-lastest.png',
+                        scale: 40,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.036,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.036,
-                  margin: EdgeInsets.fromLTRB(0, 383, 69, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/26-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth26Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth26Detail(context)));
+                },
+                child: Center(
+                  child: Container(
+                    // width: MediaQuery.of(context).size.width *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // height: MediaQuery.of(context).size.height *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 382, 77, 0),
+                      child: Image.asset(
+                        'images/tooth/26-lastest.png',
+                        scale: 40,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.036,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.036,
-                  margin: EdgeInsets.fromLTRB(0, 360, 98, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/27-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth27Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth27Detail(context)));
+                },
+                child: Center(
+                  child: Container(
+                    // width: MediaQuery.of(context).size.width *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // height: MediaQuery.of(context).size.height *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 355, 107, 0),
+                      child: Image.asset(
+                        'images/tooth/27-lastest.png',
+                        scale: 40,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.042,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.042,
-                  margin: EdgeInsets.fromLTRB(0, 330, 130, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/28-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth28Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth28Detail(context)));
+                },
+                child: Center(
+                  child: Container(
+                    // width: MediaQuery.of(context).size.width *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // height: MediaQuery.of(context).size.height *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 323, 140, 0),
+                      child: Image.asset(
+                        'images/tooth/28-lastest.png',
+                        scale: 33,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.044,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.044,
-                  margin: EdgeInsets.fromLTRB(0, 276, 160, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/29-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth29Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth29Detail(context)));
+                },
+                child: Center(
+                  child: Container(
+                    // width: MediaQuery.of(context).size.width *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // height: MediaQuery.of(context).size.height *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 270, 167, 0),
+                      child: Image.asset(
+                        'images/tooth/29-lastest.png',
+                        scale: 31,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.046,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.046,
-                  margin: EdgeInsets.fromLTRB(0, 220, 180, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/30-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth30Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth30Detail(context)));
+                },
+                child: Center(
+                  child: Container(
+                    // width: MediaQuery.of(context).size.width *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // height: MediaQuery.of(context).size.height *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 215, 183, 0),
+                      child: Image.asset(
+                        'images/tooth/30-lastest.png',
+                        scale: 29,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.05,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.05,
-                  margin: EdgeInsets.fromLTRB(0, 160, 191, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/31-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth31Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth31Detail(context)));
+                },
+                child: Center(
+                  child: Container(
+                    // width: MediaQuery.of(context).size.width *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // height: MediaQuery.of(context).size.height *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 155, 193, 0),
+                      child: Image.asset(
+                        'images/tooth/31-lastest.png',
+                        scale: 27,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-              Center(
-                child: Container(
-                  width: MediaQuery.of(context).size.width *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.05,
-                  height: MediaQuery.of(context).size.height *
-                      MediaQuery.of(context).devicePixelRatio *
-                      0.05,
-                  margin: EdgeInsets.fromLTRB(0, 88, 190, 0),
-                  child: IconButton(
-                      icon: Image.asset('images/tooth/32-lastest.png'),
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => tooth32Detail(context)));
-                      }),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => tooth32Detail(context)));
+                },
+                child: Center(
+                  child: Container(
+                    // width: MediaQuery.of(context).size.width *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // height: MediaQuery.of(context).size.height *
+                    //     MediaQuery.of(context).devicePixelRatio *
+                    //     0.036,
+                    // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(0, 85, 190, 0),
+                      child: Image.asset(
+                        'images/tooth/32-lastest.png',
+                        scale: 25,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],
