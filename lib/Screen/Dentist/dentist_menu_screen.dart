@@ -32,7 +32,6 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
     DentAppointmentScreen(),
     PatientList(),
     DentProfileScreen(),
-    DentalRecord()
   ];
 
   @override
@@ -77,7 +76,7 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
                         //   width: 50,
                         // ),
                         Text("     "),
-                        Text("Hi, " + widget.user.displayName)
+                        Text("Hi, " + widget.user.uid)
                       ],
                     )
                   ],
@@ -133,7 +132,7 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
         },
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
         elevation: 8,
-        fabLocation: BubbleBottomBarFabLocation.end,
+        // fabLocation: BubbleBottomBarFabLocation.end,
         hasNotch: true,
         hasInk: true,
         inkColor: Colors.black12,
@@ -163,7 +162,7 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
               ),
               title: Text(
                 "Appointment",
-                style: TextStyle(fontSize: 10),
+                style: TextStyle(fontSize: 13),
               )),
           BubbleBottomBarItem(
               backgroundColor: Colors.blue[300],
