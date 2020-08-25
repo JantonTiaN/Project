@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class DentAppointmentScreen extends StatefulWidget {
+class DentSuggestion extends StatefulWidget {
   @override
-  _DentAppointmentScreenState createState() => _DentAppointmentScreenState();
+  _DentSuggestionState createState() => _DentSuggestionState();
 }
 
-class _DentAppointmentScreenState extends State<DentAppointmentScreen> {
+class _DentSuggestionState extends State<DentSuggestion> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

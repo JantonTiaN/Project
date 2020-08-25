@@ -1,10 +1,13 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/Screen/Dentist/Signup/fb_d_signup_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
+import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:fundee/Screen/SignupProcess/gg_select_role.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:provider/provider.dart';
 import 'SignupProcess/fb_select_role.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -277,9 +280,14 @@ class _SignInScreenState extends State<SignInScreen> {
     ]);
     GoogleSignInAccount user = await _googleSignIn.signIn();
     GoogleSignInAuthentication userAuth = await user.authentication;
-    await _auth.signInWithCredential(GoogleAuthProvider.getCredential(
-        idToken: null, accessToken: userAuth.accessToken));
-    checkAuthGoogle(context);
+    final AuthCredential credential = GoogleAuthProvider.getCredential(
+        idToken: null, accessToken: userAuth.accessToken);
+    AuthResult authResult = await _auth.signInWithCredential(credential);
+    if (authResult.additionalUserInfo.isNewUser) {
+      selectRoleGoogle(context);
+    } else {
+      checkAuthGoogle(context);
+    }
   }
 
   //Facebook SignIn
@@ -293,8 +301,13 @@ class _SignInScreenState extends State<SignInScreen> {
       AuthCredential credential =
           FacebookAuthProvider.getCredential(accessToken: token.token);
       print("Access Token = $token");
+      AuthResult authResult = await _auth.signInWithCredential(credential);
+      if (authResult.additionalUserInfo.isNewUser) {
+        selectRoleFacebook(context);
+      } else {
+        checkRole();
+      }
       var user = await FirebaseAuth.instance.signInWithCredential(credential);
-      checkAuthFacebook(context);
     }
   }
 
@@ -312,7 +325,7 @@ class _SignInScreenState extends State<SignInScreen> {
     if (user != null) {
       print("Already signin with Social media");
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => FbSelectRole(user)));
+          MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
     }
   }
 
@@ -321,7 +334,97 @@ class _SignInScreenState extends State<SignInScreen> {
     if (user != null) {
       print("Already signin with");
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => GgSelectRole(user)));
+          MaterialPageRoute(builder: (context) => PatientMenuScreen(user)));
+      //ตั้งให้ไปหน้า Patient ก่อน
     }
+  }
+
+  Future selectRoleFacebook(BuildContext context) async {
+    FirebaseUser user = await _auth.currentUser();
+    if (user != null) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => FbSelectRole(user)));
+    }
+  }
+
+  Future selectRoleGoogle(BuildContext context) async {
+    FirebaseUser user = await _auth.currentUser();
+    if (user != null) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => GgSelectRole(user)));
+    }
+  }
+
+  Future checkRole() {
+    StreamBuilder<FirebaseUser>(
+      stream: FirebaseAuth.instance.onAuthStateChanged,
+      builder: (BuildContext context, snapshot) {
+        // FirebaseAuth.instance.currentUser().then((user) {
+        //   if (user.phoneNumber ==
+        //       Firestore.instance
+        //           .collection('Account')
+        //           .document('account')
+        //           .collection('Dentists')
+        //           .document()
+        //           .documentID) {
+        //     Navigator.push(context,
+        //         MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
+        //   }
+        //   if (user.phoneNumber ==
+        //       Firestore.instance
+        //           .collection('Account')
+        //           .document('account')
+        //           .collection('Patients')
+        //           .document()
+        //           .documentID) {
+        //     Navigator.push(
+        //         context,
+        //         MaterialPageRoute(
+        //             builder: (context) => PatientMenuScreen(user)));
+        //   }
+        // });
+
+        // if (snapshot.hasData) {
+        //   Provider.of(context).curretUserId = snapshot.data.uid;
+        //   if (account.collection('').document().parent() == 'Dentists'){
+
+        //   }
+        //            {
+        //     //
+        //     // Navigator.push(context, MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
+        //   }
+        //   // Provider.of<UserData>(context).currentUserId = snapshot.data.uid;
+
+        // }
+      },
+    );
+
+    // FirebaseAuth.instance.currentUser().then((user) {
+    //   Firestore.instance
+    //       .collection('Account')
+    //       .document('account')
+    //       .collection('Dentists')
+    //       .where('uid', isEqualTo: user.uid)
+    //       .getDocuments()
+    //       .then((docs) {
+    //     if (docs.documents[0].exists) {
+    //       if (docs.documents[0].data['role'] == 'dentist') {
+    //         Navigator.push(
+    //             context,
+    //             new MaterialPageRoute(
+    //                 builder: (BuildContext context) => DentMenuScreen(user)));
+    //       } else {
+    //         print('Not Authorized');
+    //       }
+    //     }
+    //   });
+    // });
+
+    // return StreamBuilder(
+    //     stream: FirebaseAuth.instance.onAuthStateChanged,
+    //     builder: (BuildContext context, snapshot) {
+    //       if(!snapshot.hasData){
+    //       }
+    //     });
   }
 }

@@ -76,7 +76,7 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
                         //   width: 50,
                         // ),
                         Text("     "),
-                        Text("Hi, " + widget.user.displayName)
+                        Text("Hi, " + widget.user.uid)
                       ],
                     )
                   ],
