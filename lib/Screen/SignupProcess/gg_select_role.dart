@@ -1,11 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/Signup/gg_d_signup_screen.dart';
 import 'package:fundee/Screen/Patient/Signup/gg_p_signup_screen.dart';
 import 'package:fundee/Screen/constants.dart';
 
 class GgSelectRole extends StatefulWidget {
-  // final FirebaseUser user;
-  // FbPSignupScreen(this.user, {Key key}) : super(key: key);
+  final FirebaseUser user;
+  GgSelectRole(this.user, {Key key}) : super(key: key);
   @override
   _GgSelectRoleState createState() => _GgSelectRoleState();
 }

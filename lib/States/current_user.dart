@@ -220,4 +220,20 @@ class CurrentUser extends ChangeNotifier {
     }
     return returnVal;
   }
+
+  Future<String> docID(String docID) async {
+    String returnVal = 'error';
+    // OurPatients _patient = OurPatients();
+    try {
+      // _patient.patientTel = docID;
+      String _returnString = await Case().docID(docID);
+      if (_returnString == 'success') {
+        returnVal = 'success';
+      }
+      returnVal = 'success';
+    } catch (e) {
+      print(e);
+    }
+    return returnVal;
+  }
 }
