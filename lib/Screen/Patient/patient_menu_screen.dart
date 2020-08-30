@@ -51,7 +51,6 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
         },
         borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
         elevation: 8,
-        fabLocation: BubbleBottomBarFabLocation.end,
         hasNotch: true,
         hasInk: true,
         inkColor: Colors.black12,
@@ -81,16 +80,15 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
               ),
               title: Text(
                 "Appointment",
-                style: TextStyle(fontSize: 10),
               )),
           BubbleBottomBarItem(
               backgroundColor: Colors.blue[300],
               icon: Icon(
-                Icons.note,
+                Icons.library_books,
                 color: Colors.black,
               ),
               activeIcon: Icon(
-                Icons.note,
+                Icons.library_books,
                 color: Colors.blue[300],
               ),
               title: Text("Suggestion")),
