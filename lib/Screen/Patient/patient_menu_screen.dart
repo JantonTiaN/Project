@@ -39,7 +39,7 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      // floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       body: _pageOptions[_selectPage],
       bottomNavigationBar: BubbleBottomBar(
         opacity: .2,
