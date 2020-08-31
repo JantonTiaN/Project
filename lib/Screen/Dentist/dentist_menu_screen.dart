@@ -112,15 +112,15 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => PatientList()));
-        },
-        child: Icon(FontAwesomeIcons.tooth),
-        backgroundColor: Colors.blue[300],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {
+      //     Navigator.push(
+      //         context, MaterialPageRoute(builder: (context) => PatientList()));
+      //   },
+      //   child: Icon(FontAwesomeIcons.tooth),
+      //   backgroundColor: Colors.blue[300],
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       body: _pageOptions[_selectPage],
       bottomNavigationBar: BubbleBottomBar(
         opacity: .2,
