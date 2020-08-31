@@ -17,6 +17,7 @@ environment:
   sdk: ">=2.1.0 <3.0.0"
 
 dependencies:
+  characters: ^1.0.0
   logger: ^0.8.3
   cloud_firestore: ^0.13.5
   firebase_core: ^0.4.5

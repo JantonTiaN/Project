@@ -1,4 +1,3 @@
-
 class OurPatients {
   String patientId;
   String patientEmail;
@@ -6,15 +5,16 @@ class OurPatients {
   String patientTel;
   String patientDrugallergy;
   String patientBirthDate;
+  List patientCase;
 
-  OurPatients({
-    this.patientId,
-    this.patientEmail,
-    this.patientFullName,
-    this.patientTel,
-    this.patientDrugallergy,
-    this.patientBirthDate,
-  });
+  OurPatients(
+      {this.patientId,
+      this.patientEmail,
+      this.patientFullName,
+      this.patientTel,
+      this.patientDrugallergy,
+      this.patientBirthDate,
+      this.patientCase});
 }
 
 class OurDentists {
@@ -27,14 +27,13 @@ class OurDentists {
   String dentistBirthDate;
   List dentistWorkingTime;
 
-  OurDentists({
-    this.dentistID,
-    this.dentistFullname,
-    this.dentistEmail,
-    this.dentistCitizenID,
-    this.dentistTel,
-    this.dentistPermission,
-    this.dentistBirthDate,
-    this.dentistWorkingTime
-  });
+  OurDentists(
+      {this.dentistID,
+      this.dentistFullname,
+      this.dentistEmail,
+      this.dentistCitizenID,
+      this.dentistTel,
+      this.dentistPermission,
+      this.dentistBirthDate,
+      this.dentistWorkingTime});
 }

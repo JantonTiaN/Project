@@ -139,8 +139,11 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
-  Future<String> signUpPatientsWithFBAndGG(String patientFullName, String patientTel,
-      String patientDrugallergy, String patientBirthDate) async {
+  Future<String> signUpPatientsWithFBAndGG(
+      String patientFullName,
+      String patientTel,
+      String patientDrugallergy,
+      String patientBirthDate) async {
     String returnVal = 'error';
     OurPatients _patient = OurPatients();
     try {
@@ -148,7 +151,8 @@ class CurrentUser extends ChangeNotifier {
       _patient.patientTel = patientTel;
       _patient.patientDrugallergy = patientDrugallergy;
       _patient.patientBirthDate = patientBirthDate;
-      String _returnString = await PatientWithFBAndGGDatabase().createPatient(_patient);
+      String _returnString =
+          await PatientWithFBAndGGDatabase().createPatient(_patient);
       if (_returnString == 'success') {
         returnVal = 'success';
       }
@@ -197,6 +201,38 @@ class CurrentUser extends ChangeNotifier {
       returnVal = 'success';
     } catch (e) {
       returnVal = e.message;
+    }
+    return returnVal;
+  }
+
+  Future<String> addDentalCase(List dentalCase()) async {
+    String returnVal = 'error';
+    OurPatients _patient = OurPatients();
+    try {
+      _patient.patientCase = dentalCase();
+      String _returnString = await Case().addCase(_patient);
+      if (_returnString == 'success') {
+        returnVal = 'success';
+      }
+      returnVal = 'success';
+    } catch (e) {
+      print(e);
+    }
+    return returnVal;
+  }
+
+  Future<String> docID(String docID) async {
+    String returnVal = 'error';
+    // OurPatients _patient = OurPatients();
+    try {
+      // _patient.patientTel = docID;
+      String _returnString = await Case().docID(docID);
+      if (_returnString == 'success') {
+        returnVal = 'success';
+      }
+      returnVal = 'success';
+    } catch (e) {
+      print(e);
     }
     return returnVal;
   }

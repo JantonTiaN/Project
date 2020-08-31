@@ -324,6 +324,7 @@ class _SignInScreenState extends State<SignInScreen> {
     FirebaseUser user = await _auth.currentUser();
     if (user != null) {
       print("Already signin with Social media");
+      print(user.toString());
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
     }

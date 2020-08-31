@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:fundee/Screen/constants.dart';
+import 'package:fundee/States/current_user.dart';
+import 'package:provider/provider.dart';
 import 'dental_detail_screen.dart';
-import 'package:fundee/models/account_model.dart';
-import 'package:fundee/models/user_model.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
 
 // class Tooth1 extends StatefulWidget {
 //   @override
@@ -68,6 +68,18 @@ class DentalRecord extends StatefulWidget {
 }
 
 class _DentalRecordState extends State<DentalRecord> {
+  // void getDocID(BuildContext context, String docID) async {
+  //   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  //   try {
+  //     String _returnString = await _currentUser.docID(tel);
+  //     if (_returnString == 'seccess') {
+  //       print('Already get Doc ID.');
+  //     }
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
+
   @override
   void initState() {
     super.initState();
