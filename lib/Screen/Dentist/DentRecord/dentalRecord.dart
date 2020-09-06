@@ -331,8 +331,10 @@ class _DentalRecordState extends State<DentalRecord> {
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 243, 200, 0),
                     child: Center(
-                      child: Image.asset('images/tooth/1-lastest.png',
-                          scale: 25, color: Colors.red),
+                      child: Image.asset(
+                        'images/tooth/1-lastest.png',
+                        scale: 25,
+                      ),
                     ),
                   ),
                 ),
@@ -349,7 +351,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/2-lastest.png',
                         scale: 27,
-                        color: Colors.green,
                       ),
                     ),
                   ),
@@ -367,7 +368,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/3-lastest.png',
                         scale: 28,
-                        color: Colors.black,
                       ),
                     ),
                   ),
@@ -382,8 +382,10 @@ class _DentalRecordState extends State<DentalRecord> {
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 155, 175, 0),
                     child: Center(
-                      child: Image.asset('images/tooth/4-lastest.png',
-                          scale: 29, color: Colors.pink[900]),
+                      child: Image.asset(
+                        'images/tooth/4-lastest.png',
+                        scale: 29,
+                      ),
                     ),
                   ),
                 ),
@@ -400,7 +402,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/5-lastest.png',
                         scale: 31,
-                        color: Colors.amber,
                       ),
                     ),
                   ),
@@ -418,7 +419,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/6-lastest.png',
                         scale: 33,
-                        color: Colors.blue[100],
                       ),
                     ),
                   ),
@@ -436,7 +436,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/7-lastest.png',
                         scale: 33,
-                        color: Colors.brown,
                       ),
                     ),
                   ),
@@ -454,7 +453,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/8-lastest.png',
                         scale: 33,
-                        color: Colors.cyan,
                       ),
                     ),
                   ),
@@ -472,7 +470,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/9-lastest.png',
                         scale: 33,
-                        color: Colors.deepOrange,
                       ),
                     ),
                   ),
@@ -490,7 +487,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/10-lastest.png',
                         scale: 33,
-                        color: Colors.deepPurple,
                       ),
                     ),
                   ),
@@ -509,7 +505,6 @@ class _DentalRecordState extends State<DentalRecord> {
                         child: Image.asset(
                           'images/tooth/11-lastest.png',
                           scale: 34,
-                          color: Colors.blueGrey,
                         ),
                       ),
                     ),
@@ -528,7 +523,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/12-lastest.png',
                         scale: 31,
-                        color: Colors.cyanAccent,
                       ),
                     ),
                   ),
@@ -546,7 +540,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/13-lastest.png',
                         scale: 29,
-                        color: Colors.greenAccent,
                       ),
                     ),
                   ),
@@ -564,7 +557,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/14-lastest.png',
                         scale: 28,
-                        color: Colors.grey,
                       ),
                     ),
                   ),
@@ -582,7 +574,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/15-lastest.png',
                         scale: 27,
-                        color: Colors.indigo,
                       ),
                     ),
                   ),
@@ -600,7 +591,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/16-lastest.png',
                         scale: 25,
-                        color: Colors.lightBlue,
                       ),
                     ),
                   ),
@@ -618,7 +608,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/17-lastest.png',
                         scale: 25,
-                        color: Colors.greenAccent[100],
                       ),
                     ),
                   ),
@@ -636,7 +625,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/18-lastest.png',
                         scale: 26,
-                        color: Colors.deepPurpleAccent[100],
                       ),
                     ),
                   ),
@@ -654,7 +642,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/19-lastest.png',
                         scale: 29,
-                        color: Colors.redAccent[100],
                       ),
                     ),
                   ),
@@ -672,7 +659,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/20-lastest.png',
                         scale: 31,
-                        color: Colors.teal,
                       ),
                     ),
                   ),
@@ -690,7 +676,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/21-lastest.png',
                         scale: 33,
-                        color: Colors.lime,
                       ),
                     ),
                   ),
@@ -878,7 +863,6 @@ class _DentalRecordState extends State<DentalRecord> {
                       child: Image.asset(
                         'images/tooth/32-lastest.png',
                         scale: 25,
-                        color: Colors.orange,
                       ),
                     ),
                   ),
