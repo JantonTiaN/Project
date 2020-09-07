@@ -335,7 +335,7 @@ class _SignInScreenState extends State<SignInScreen> {
     if (user != null) {
       print("Already signin with");
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => PatientMenuScreen(user)));
+          MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
       //ตั้งให้ไปหน้า Patient ก่อน
     }
   }
