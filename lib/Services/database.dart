@@ -1,4 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
+import 'package:fundee/models/dental_case.dart';
 import 'package:fundee/models/users.dart';
 
 class PatientDatabase {
@@ -19,6 +22,8 @@ class PatientDatabase {
         'birthDay': patient.patientBirthDate,
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
+        'case': null,
+        'role': 'Pateint'
       });
       retVal = 'success';
     } catch (e) {
@@ -48,7 +53,8 @@ class DentistDatabase {
         'tel': dentist.dentistTel,
         'citizenID': dentist.dentistCitizenID,
         'permission': dentist.dentistPermission,
-        'workingTime': dentist.dentistWorkingTime
+        'workingTime': dentist.dentistWorkingTime,
+        'role': 'Dentist'
       });
       retVal = 'success';
     } catch (e) {
@@ -75,8 +81,10 @@ class DentistWithFBAndGGDatabase {
         'tel': dentist.dentistTel,
         'citizenID': dentist.dentistCitizenID,
         'permission': dentist.dentistPermission,
-        'workingTime': dentist.dentistWorkingTime
+        'workingTime': dentist.dentistWorkingTime,
+        'role': 'Dentist'
       });
+
       retVal = 'success';
     } catch (e) {
       print(e);
@@ -101,12 +109,44 @@ class PatientWithFBAndGGDatabase {
         'birthDay': patient.patientBirthDate,
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
+        'case': null,
+        'role': 'Patient'
       });
       retVal = 'success';
     } catch (e) {
       print(e);
     }
 
+    return retVal;
+  }
+}
+
+class Case {
+  final Firestore _firestore = Firestore.instance;
+  String id;
+  Future<String> docID(String docID) async {
+    id = docID;
+    print(id);
+    return id;
+  }
+
+  Future<String> addCase(OurPatients cases) async {
+    String retVal = 'error';
+
+    try {
+      await _firestore
+          .collection('Account')
+          .document('account')
+          .collection('Patients')
+          .document()
+          .collection('DentalCase')
+          .document('dentalCase')
+          .setData({'case': cases.patientCase});
+      print('aaaa');
+      retVal = 'success';
+    } catch (e) {
+      print(e);
+    }
     return retVal;
   }
 }

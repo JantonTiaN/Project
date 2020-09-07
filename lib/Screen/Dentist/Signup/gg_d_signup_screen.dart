@@ -831,7 +831,8 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
                                     ],
                                   ),
                                 );
-                              } else if (_telController.text.length != 10) {
+                              } else if (_telController.text.length != 10 &&
+                                  !_telController.text.startsWith('0')) {
                                 showDialog<String>(
                                   context: context,
                                   builder: (BuildContext context) =>

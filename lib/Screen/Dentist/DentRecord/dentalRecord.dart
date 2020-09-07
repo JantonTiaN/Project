@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:fundee/Screen/constants.dart';
+import 'package:fundee/States/current_user.dart';
+import 'package:provider/provider.dart';
 import 'dental_detail_screen.dart';
-import 'package:fundee/models/account_model.dart';
-import 'package:fundee/models/user_model.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
 
 // class Tooth1 extends StatefulWidget {
 //   @override
@@ -68,6 +68,18 @@ class DentalRecord extends StatefulWidget {
 }
 
 class _DentalRecordState extends State<DentalRecord> {
+  // void getDocID(BuildContext context, String docID) async {
+  //   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  //   try {
+  //     String _returnString = await _currentUser.docID(tel);
+  //     if (_returnString == 'seccess') {
+  //       print('Already get Doc ID.');
+  //     }
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
+
   @override
   void initState() {
     super.initState();
@@ -299,26 +311,15 @@ class _DentalRecordState extends State<DentalRecord> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[Text('25'), Text('24')],
                     )),
+
                 Padding(
-                  padding: const EdgeInsets.only(top: 50),
-                  // child: Container(
-                  //   width: MediaQuery.of(context).size.width *
-                  //       MediaQuery.of(context).devicePixelRatio *
-                  //       0.33,
-                  //   height: MediaQuery.of(context).size.height *
-                  //       MediaQuery.of(context).devicePixelRatio *
-                  //       0.33,
-                  child: Image.asset(
-                    'images/tooth/AllGum.png',
-                    scale: 1,
-                    // width: MediaQuery.of(context).size.width *
-                    //     MediaQuery.of(context).devicePixelRatio *
-                    //     0.33,
-                    // height: MediaQuery.of(context).size.height *
-                    //     MediaQuery.of(context).devicePixelRatio *
-                    //     0.33,
+                  padding: const EdgeInsets.fromLTRB(0, 70, 0, 0),
+                  child: Center(
+                    child: Image.asset(
+                      'images/tooth/AllGum-lastest.png',
+                      scale: 4.3,
+                    ),
                   ),
-                  // ),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -327,33 +328,13 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth1Detail(context)));
                   },
-                  child: Positioned(
-                    left: 20.0,
-                    top: 150.0,
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 243, 200, 0),
                     child: Center(
-                      // child: Container(
-                      //   color: Colors.blue,
-                      //   width: MediaQuery.of(context).size.width *
-                      //       MediaQuery.of(context).devicePixelRatio *
-                      //       0.052,
-                      //   height: MediaQuery.of(context).size.height *
-                      //       MediaQuery.of(context).devicePixelRatio *
-                      //       0.052,
-                      //   margin: EdgeInsets.fromLTRB(0, 0, 190, 77),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 212, 190, 0),
-                        child: Image.asset('images/tooth/1-lastest.png',
-                            scale: 25,
-                            // width: MediaQuery.of(context).size.width *
-                            //     MediaQuery.of(context).devicePixelRatio *
-                            //     0.050,
-                            // height: MediaQuery.of(context).size.height *
-                            //     MediaQuery.of(context).devicePixelRatio *
-                            //     0.050,
-                            alignment: Alignment.center,
-                            color: Colors.blue),
+                      child: Image.asset(
+                        'images/tooth/1-lastest.png',
+                        scale: 25,
                       ),
-                      // ),
                     ),
                   ),
                 ),
@@ -364,29 +345,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth2Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.048,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.048,
-                    // margin: EdgeInsets.fromLTRB(0, 0, 190, 141),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 178, 191, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 211, 200, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/2-lastest.png',
                         scale: 27,
-                        // width: MediaQuery.of(context).size.width *
-                        //     MediaQuery.of(context).devicePixelRatio *
-                        //     0.05,
-                        // height: MediaQuery.of(context).size.height *
-                        //     MediaQuery.of(context).devicePixelRatio *
-                        //     0.05,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -396,30 +362,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth3Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.047,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.047,
-                    //   margin: EdgeInsets.fromLTRB(0, 0, 180, 200),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 148, 178, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 180.5, 190, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/3-lastest.png',
                         scale: 28,
-                        width: MediaQuery.of(context).size.width *
-                            MediaQuery.of(context).devicePixelRatio *
-                            0.05,
-                        height: MediaQuery.of(context).size.height *
-                            MediaQuery.of(context).devicePixelRatio *
-                            0.05,
-                        color: Colors.black,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -429,23 +379,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth4Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.046,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.046,
-                    // margin: EdgeInsets.fromLTRB(0, 0, 166, 249),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 166, 249),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 155, 175, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/4-lastest.png',
                         scale: 29,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -455,23 +396,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth5Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.044,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.044,
-                    //   margin: EdgeInsets.fromLTRB(0, 0, 141, 297),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 141, 297),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 131, 153, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/5-lastest.png',
                         scale: 31,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -481,23 +413,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth6Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.040,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.040,
-                    //   margin: EdgeInsets.fromLTRB(0, 0, 111, 335),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 111, 335),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 111, 115, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/6-lastest.png',
-                        scale: 34,
+                        scale: 33,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -507,21 +430,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth7Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.040,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.040,
-                    //   margin: EdgeInsets.fromLTRB(0, 0, 80, 368),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 80, 368),
-                      child:
-                          Image.asset('images/tooth/7-lastest.png', scale: 34),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 91, 80, 0),
+                    child: Center(
+                      child: Image.asset(
+                        'images/tooth/7-lastest.png',
+                        scale: 33,
+                      ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -531,23 +447,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth8Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.040,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.040,
-                    //   margin: EdgeInsets.fromLTRB(0, 0, 35, 380),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(0, 0, 35, 380),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 84, 29, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/8-lastest.png',
-                        scale: 34,
+                        scale: 33,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -557,23 +464,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth9Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.040,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.040,
-                    //   margin: EdgeInsets.fromLTRB(16, 0, 0, 380),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(16, 0, 0, 380),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(27.5, 84, 0, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/9-lastest.png',
-                        scale: 34,
+                        scale: 33,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -583,23 +481,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth10Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.040,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.040,
-                    //   margin: EdgeInsets.fromLTRB(59, 0, 0, 369),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(59, 0, 0, 369),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(78, 92, 0, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/10-lastest.png',
-                        scale: 34,
+                        scale: 33,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -609,17 +498,10 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth11Detail(context)));
                   },
-                  child: Center(
-                    child: Container(
-                      // width: MediaQuery.of(context).size.width *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.040,
-                      // height: MediaQuery.of(context).size.height *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.040,
-                      // margin: EdgeInsets.fromLTRB(90, 0, 0, 337),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(90, 0, 0, 337),
+                  child: Container(
+                    child: Padding(
+                      padding: const EdgeInsets.fromLTRB(113, 110, 0, 0),
+                      child: Center(
                         child: Image.asset(
                           'images/tooth/11-lastest.png',
                           scale: 34,
@@ -635,23 +517,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth12Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.044,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.044,
-                    //   margin: EdgeInsets.fromLTRB(117, 0, 0, 300),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(117, 0, 0, 300),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(143, 128.5, 0, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/12-lastest.png',
                         scale: 31,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -661,23 +534,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth13Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.046,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.046,
-                    //   margin: EdgeInsets.fromLTRB(146, 0, 0, 254),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(146, 0, 0, 254),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(172, 151.5, 0, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/13-lastest.png',
                         scale: 29,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -687,23 +551,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth14Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.047,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.047,
-                    //   margin: EdgeInsets.fromLTRB(163, 0, 0, 204),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(163, 0, 0, 204),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(185, 178, 0, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/14-lastest.png',
                         scale: 28,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -713,23 +568,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth15Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.048,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.048,
-                    //   margin: EdgeInsets.fromLTRB(174, 0, 0, 146),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(174, 0, 0, 146),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(197, 207.5, 0, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/15-lastest.png',
                         scale: 27,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -739,23 +585,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth16Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.052,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.052,
-                    //   margin: EdgeInsets.fromLTRB(175, 0, 0, 81),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(175, 0, 0, 81),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(198, 239.5, 0, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/16-lastest.png',
                         scale: 25,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -765,23 +602,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth17Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.052,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.052,
-                    //   margin: EdgeInsets.fromLTRB(187, 90, 0, 0),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(187, 90, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(203, 330, 0, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/17-lastest.png',
                         scale: 25,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -791,23 +619,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth18Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.049,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.049,
-                    //   margin: EdgeInsets.fromLTRB(183, 164, 0, 0),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(183, 164, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(203, 370, 0, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/18-lastest.png',
                         scale: 26,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -817,23 +636,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth19Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.046,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.046,
-                    //   margin: EdgeInsets.fromLTRB(173, 228, 0, 0),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(173, 228, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(191, 405, 0, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/19-lastest.png',
                         scale: 29,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -843,23 +653,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth20Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.044,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.044,
-                    //   margin: EdgeInsets.fromLTRB(154, 285, 0, 0),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(154, 285, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(171, 435, 0, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/20-lastest.png',
                         scale: 31,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -869,23 +670,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth21Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    // width: MediaQuery.of(context).size.width *
-                    //     MediaQuery.of(context).devicePixelRatio *
-                    //     0.041,
-                    // height: MediaQuery.of(context).size.height *
-                    //     MediaQuery.of(context).devicePixelRatio *
-                    //     0.041,
-                    // margin: EdgeInsets.fromLTRB(123, 331, 0, 0),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(123, 331, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(140, 461, 0, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/21-lastest.png',
                         scale: 33,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -895,23 +687,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth22Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.037,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.037,
-                    //   margin: EdgeInsets.fromLTRB(91, 359, 0, 0),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(91, 359, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(104, 478, 0, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/22-lastest.png',
                         scale: 39,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -921,23 +704,14 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth23Detail(context)));
                   },
-                  child: Center(
-                    // child: Container(
-                    //   width: MediaQuery.of(context).size.width *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.037,
-                    //   height: MediaQuery.of(context).size.height *
-                    //       MediaQuery.of(context).devicePixelRatio *
-                    //       0.037,
-                    //   margin: EdgeInsets.fromLTRB(91, 359, 0, 0),
-                    child: Padding(
-                      padding: const EdgeInsets.fromLTRB(58, 381, 0, 0),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(74, 492, 0, 0),
+                    child: Center(
                       child: Image.asset(
                         'images/tooth/23-lastest.png',
                         scale: 39,
                       ),
                     ),
-                    // ),
                   ),
                 ),
                 GestureDetector(
@@ -947,21 +721,12 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth24Detail(context)));
                   },
-                  child: Center(
-                    child: Container(
-                      // width: MediaQuery.of(context).size.width *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // height: MediaQuery.of(context).size.height *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(12, 390, 00, 0),
-                        child: Image.asset(
-                          'images/tooth/24-lastest.png',
-                          scale: 40,
-                        ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(26, 498, 00, 0),
+                    child: Center(
+                      child: Image.asset(
+                        'images/tooth/24-lastest.png',
+                        scale: 40,
                       ),
                     ),
                   ),
@@ -973,21 +738,12 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth25Detail(context)));
                   },
-                  child: Center(
-                    child: Container(
-                      // width: MediaQuery.of(context).size.width *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // height: MediaQuery.of(context).size.height *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // margin: EdgeInsets.fromLTRB(16, 390, 0, 0),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 392, 34, 0),
-                        child: Image.asset(
-                          'images/tooth/25-lastest.png',
-                          scale: 40,
-                        ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 498, 22, 0),
+                    child: Center(
+                      child: Image.asset(
+                        'images/tooth/25-lastest.png',
+                        scale: 40,
                       ),
                     ),
                   ),
@@ -999,21 +755,12 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth26Detail(context)));
                   },
-                  child: Center(
-                    child: Container(
-                      // width: MediaQuery.of(context).size.width *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // height: MediaQuery.of(context).size.height *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 382, 77, 0),
-                        child: Image.asset(
-                          'images/tooth/26-lastest.png',
-                          scale: 40,
-                        ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 493, 69, 0),
+                    child: Center(
+                      child: Image.asset(
+                        'images/tooth/26-lastest.png',
+                        scale: 40,
                       ),
                     ),
                   ),
@@ -1025,21 +772,12 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth27Detail(context)));
                   },
-                  child: Center(
-                    child: Container(
-                      // width: MediaQuery.of(context).size.width *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // height: MediaQuery.of(context).size.height *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 355, 107, 0),
-                        child: Image.asset(
-                          'images/tooth/27-lastest.png',
-                          scale: 40,
-                        ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 480, 101, 0),
+                    child: Center(
+                      child: Image.asset(
+                        'images/tooth/27-lastest.png',
+                        scale: 40,
                       ),
                     ),
                   ),
@@ -1051,21 +789,12 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth28Detail(context)));
                   },
-                  child: Center(
-                    child: Container(
-                      // width: MediaQuery.of(context).size.width *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // height: MediaQuery.of(context).size.height *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 323, 140, 0),
-                        child: Image.asset(
-                          'images/tooth/28-lastest.png',
-                          scale: 33,
-                        ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 460, 134, 0),
+                    child: Center(
+                      child: Image.asset(
+                        'images/tooth/28-lastest.png',
+                        scale: 33,
                       ),
                     ),
                   ),
@@ -1077,21 +806,12 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth29Detail(context)));
                   },
-                  child: Center(
-                    child: Container(
-                      // width: MediaQuery.of(context).size.width *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // height: MediaQuery.of(context).size.height *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 270, 167, 0),
-                        child: Image.asset(
-                          'images/tooth/29-lastest.png',
-                          scale: 31,
-                        ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 431, 165, 0),
+                    child: Center(
+                      child: Image.asset(
+                        'images/tooth/29-lastest.png',
+                        scale: 31,
                       ),
                     ),
                   ),
@@ -1103,21 +823,12 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth30Detail(context)));
                   },
-                  child: Center(
-                    child: Container(
-                      // width: MediaQuery.of(context).size.width *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // height: MediaQuery.of(context).size.height *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 215, 183, 0),
-                        child: Image.asset(
-                          'images/tooth/30-lastest.png',
-                          scale: 29,
-                        ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 400.5, 185, 0),
+                    child: Center(
+                      child: Image.asset(
+                        'images/tooth/30-lastest.png',
+                        scale: 29,
                       ),
                     ),
                   ),
@@ -1129,21 +840,12 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth31Detail(context)));
                   },
-                  child: Center(
-                    child: Container(
-                      // width: MediaQuery.of(context).size.width *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // height: MediaQuery.of(context).size.height *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 155, 193, 0),
-                        child: Image.asset(
-                          'images/tooth/31-lastest.png',
-                          scale: 27,
-                        ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 369, 200, 0),
+                    child: Center(
+                      child: Image.asset(
+                        'images/tooth/31-lastest.png',
+                        scale: 27,
                       ),
                     ),
                   ),
@@ -1155,21 +857,12 @@ class _DentalRecordState extends State<DentalRecord> {
                         MaterialPageRoute(
                             builder: (context) => tooth32Detail(context)));
                   },
-                  child: Center(
-                    child: Container(
-                      // width: MediaQuery.of(context).size.width *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // height: MediaQuery.of(context).size.height *
-                      //     MediaQuery.of(context).devicePixelRatio *
-                      //     0.036,
-                      // margin: EdgeInsets.fromLTRB(16, 390, 00, 0),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(0, 85, 190, 0),
-                        child: Image.asset(
-                          'images/tooth/32-lastest.png',
-                          scale: 25,
-                        ),
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(0, 330, 200, 0),
+                    child: Center(
+                      child: Image.asset(
+                        'images/tooth/32-lastest.png',
+                        scale: 25,
                       ),
                     ),
                   ),

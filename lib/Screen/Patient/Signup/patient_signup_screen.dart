@@ -334,6 +334,22 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                               _telController.text,
                               _drugallergyController.text,
                               _currentDate.toString());
+                        } else if (_telController.text.length != 10 &&
+                            !_telController.text.startsWith('0')) {
+                          showDialog<String>(
+                            context: context,
+                            builder: (BuildContext context) => AlertDialog(
+                              content: Text(
+                                'Please make sure your Phone Number is correct',
+                              ),
+                              actions: <Widget>[
+                                FlatButton(
+                                  child: Text('OK'),
+                                  onPressed: () => Navigator.pop(context, 'OK'),
+                                )
+                              ],
+                            ),
+                          );
                         } else {
                           showDialog<String>(
                             context: context,
