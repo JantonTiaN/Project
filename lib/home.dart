@@ -2,9 +2,9 @@
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
+import 'package:fundee/Screen/Dentist/patientList.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:fundee/States/root.dart';
-import 'package:fundee/patientlist.dart';
 import 'package:provider/provider.dart';
 
 class Home extends StatelessWidget {

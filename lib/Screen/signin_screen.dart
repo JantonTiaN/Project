@@ -6,11 +6,7 @@ import 'package:fundee/Screen/Dentist/Signup/fb_d_signup_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:fundee/Screen/SignupProcess/gg_select_role.dart';
-import 'package:fundee/States/current_user.dart';
-import 'package:fundee/patientList.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:provider/provider.dart';
-import 'Dentist/dentist_home_screen.dart';
 import 'SignupProcess/fb_select_role.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -341,7 +337,7 @@ class _SignInScreenState extends State<SignInScreen> {
     if (user != null) {
       print("Already signin with");
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => PatientMenuScreen(user)));
+          MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
       //ตั้งให้ไปหน้า Patient ก่อน
     }
   }

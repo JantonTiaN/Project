@@ -19,7 +19,8 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
   void _addDentalCase(BuildContext context, List addCase) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
-      String _returnString = await _currentUser.addDentalCase(_dentalCase);
+      String _returnString =
+          await _currentUser.addDentalCase(_dentalCase, '', '');
       if (_returnString == 'success') {
         Navigator.pop(context, 'OK');
       }
@@ -39,7 +40,6 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
           children: <Widget>[
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Dental Carise');
                 _case.add('Dental Carise');
                 _addDentalCase(context, _dentalCase());
               },
