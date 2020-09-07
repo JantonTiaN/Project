@@ -134,7 +134,8 @@ class Case {
           .document(cases.patientTel)
           .collection('DentalCase')
           .document('dentalCase')
-          .setData({'tooth ' + cases.toothNo: cases.patientCase});
+          .updateData({'tooth ' + cases.toothNo: cases.patientCase});
+      // .setData({'tooth ' + cases.toothNo: cases.patientCase});
       retVal = 'success';
     } catch (e) {
       print(e);
