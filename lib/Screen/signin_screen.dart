@@ -10,6 +10,7 @@ import 'package:fundee/States/current_user.dart';
 import 'package:fundee/patientList.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
+import 'Dentist/dentist_home_screen.dart';
 import 'SignupProcess/fb_select_role.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -272,7 +273,7 @@ class _SignInScreenState extends State<SignInScreen> {
     _emailController.text.trim();
     password:
     _passwordController.text.trim();
-    checkAuth(context);
+    checkRole(context);
   }
 
   //Google SignIn
