@@ -10,7 +10,7 @@ import 'package:fundee/font_awesome_flutter.dart';
 import 'package:fundee/user.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'DentRecord/dentalRecord.dart';
-import '../../patientList.dart';
+import 'patientList.dart';
 import '../constants.dart';
 
 class DentMenuScreen extends StatefulWidget {

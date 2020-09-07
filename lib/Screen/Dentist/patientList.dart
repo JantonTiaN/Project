@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'package:provider/provider.dart';
 
-import 'States/current_user.dart';
+import '../../States/current_user.dart';
 
 class PatientList extends StatefulWidget {
   @override
