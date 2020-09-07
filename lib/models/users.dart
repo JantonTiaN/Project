@@ -5,6 +5,7 @@ class OurPatients {
   String patientTel;
   String patientDrugallergy;
   String patientBirthDate;
+  String toothNo;
   List patientCase;
 
   OurPatients(

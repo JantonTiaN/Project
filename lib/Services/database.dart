@@ -123,26 +123,18 @@ class PatientWithFBAndGGDatabase {
 
 class Case {
   final Firestore _firestore = Firestore.instance;
-  String id;
-  Future<String> docID(String docID) async {
-    id = docID;
-    print(id);
-    return id;
-  }
 
   Future<String> addCase(OurPatients cases) async {
     String retVal = 'error';
-
     try {
       await _firestore
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document()
+          .document(cases.patientTel)
           .collection('DentalCase')
           .document('dentalCase')
-          .setData({'case': cases.patientCase});
-      print('aaaa');
+          .setData({'tooth ' + cases.toothNo: cases.patientCase});
       retVal = 'success';
     } catch (e) {
       print(e);

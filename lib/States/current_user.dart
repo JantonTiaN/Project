@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'package:fundee/Services/database.dart';
 import 'package:fundee/models/users.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -205,28 +206,15 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
-  Future<String> addDentalCase(List dentalCase()) async {
+  Future<String> addDentalCase(
+      List dentalCase(), String docID, String toothNo) async {
     String returnVal = 'error';
     OurPatients _patient = OurPatients();
     try {
       _patient.patientCase = dentalCase();
+      _patient.patientTel = docID;
+      _patient.toothNo = toothNo;
       String _returnString = await Case().addCase(_patient);
-      if (_returnString == 'success') {
-        returnVal = 'success';
-      }
-      returnVal = 'success';
-    } catch (e) {
-      print(e);
-    }
-    return returnVal;
-  }
-
-  Future<String> docID(String docID) async {
-    String returnVal = 'error';
-    // OurPatients _patient = OurPatients();
-    try {
-      // _patient.patientTel = docID;
-      String _returnString = await Case().docID(docID);
       if (_returnString == 'success') {
         returnVal = 'success';
       }
