@@ -49,11 +49,14 @@ class _PatientListState extends State<PatientList> {
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
             return Center(
-              child: Column(
-                children: <Widget>[
-                  CircularProgressIndicator(),
-                  Text("Loading..."),
-                ],
+              child: Padding(
+                padding: const EdgeInsets.only(top: 100),
+                child: Column(
+                  children: <Widget>[
+                    CircularProgressIndicator(),
+                    Text("Loading..."),
+                  ],
+                ),
               ),
             );
           } else {
@@ -82,22 +85,22 @@ class _PatientListState extends State<PatientList> {
                                 //           .data.documents[index].documentID,
                                 //     )
                               ));
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => DentalRecord(
-                                        fullname: snapshot.data.documents[index]
-                                            .data["fullName"],
-                                        tel: snapshot
-                                            .data.documents[index].documentID,
-                                      )
-                                  // PatientInfo(
-                                  //       fullname: snapshot.data.documents[index]
-                                  //           .data["fullName"],
-                                  //       tel: snapshot
-                                  //           .data.documents[index].documentID,
-                                  //     )
-                                  ));
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => DentalRecord(
+                          //               fullname: snapshot.data.documents[index]
+                          //                   .data["fullName"],
+                          //               tel: snapshot
+                          //                   .data.documents[index].documentID,
+                          //             )
+                          //         // PatientInfo(
+                          //         //       fullname: snapshot.data.documents[index]
+                          //         //           .data["fullName"],
+                          //         //       tel: snapshot
+                          //         //           .data.documents[index].documentID,
+                          //         //     )
+                          //         ));
                         },
                         child: Column(
                           children: <Widget>[
