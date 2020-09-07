@@ -6,6 +6,8 @@ import 'package:fundee/Screen/Dentist/Signup/fb_d_signup_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:fundee/Screen/SignupProcess/gg_select_role.dart';
+import 'package:fundee/States/current_user.dart';
+import 'package:fundee/patientList.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:provider/provider.dart';
 import 'SignupProcess/fb_select_role.dart';
@@ -24,7 +26,7 @@ class _SignInScreenState extends State<SignInScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   void initState() {
     super.initState();
-    checkAuth(context);
+    // checkAuth(context);
   }
 
   TextEditingController _emailController = TextEditingController();
@@ -286,7 +288,9 @@ class _SignInScreenState extends State<SignInScreen> {
     if (authResult.additionalUserInfo.isNewUser) {
       selectRoleGoogle(context);
     } else {
-      checkAuthGoogle(context);
+      print('User Check');
+      checkUser();
+      checkRole(context);
     }
   }
 
@@ -305,7 +309,8 @@ class _SignInScreenState extends State<SignInScreen> {
       if (authResult.additionalUserInfo.isNewUser) {
         selectRoleFacebook(context);
       } else {
-        checkRole();
+        checkUser();
+        checkRole(context);
       }
       var user = await FirebaseAuth.instance.signInWithCredential(credential);
     }
@@ -316,7 +321,7 @@ class _SignInScreenState extends State<SignInScreen> {
     if (user != null) {
       print("Already signin with Email");
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
+          MaterialPageRoute(builder: (context) => PatientMenuScreen(user)));
     }
   }
 
@@ -356,76 +361,32 @@ class _SignInScreenState extends State<SignInScreen> {
     }
   }
 
-  Future checkRole() {
-    StreamBuilder<FirebaseUser>(
-      stream: FirebaseAuth.instance.onAuthStateChanged,
-      builder: (BuildContext context, snapshot) {
-        // FirebaseAuth.instance.currentUser().then((user) {
-        //   if (user.phoneNumber ==
-        //       Firestore.instance
-        //           .collection('Account')
-        //           .document('account')
-        //           .collection('Dentists')
-        //           .document()
-        //           .documentID) {
-        //     Navigator.push(context,
-        //         MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
-        //   }
-        //   if (user.phoneNumber ==
-        //       Firestore.instance
-        //           .collection('Account')
-        //           .document('account')
-        //           .collection('Patients')
-        //           .document()
-        //           .documentID) {
-        //     Navigator.push(
-        //         context,
-        //         MaterialPageRoute(
-        //             builder: (context) => PatientMenuScreen(user)));
-        //   }
-        // });
+  Future checkRole(BuildContext context) {
+    FirebaseAuth.instance.currentUser().then((user) {
+      Firestore.instance
+          .collection('Account')
+          .document('account')
+          .collection('Dentists')
+          .where('uid', isEqualTo: user.phoneNumber)
+          .getDocuments()
+          .then((docs) {
+        if (docs.documents[0].exists) {
+          if (docs.documents[0].data['role'] == 'Dentist') {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
+          } else {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => PatientMenuScreen(user)));
+          }
+        }
+      });
+    });
+  }
 
-        // if (snapshot.hasData) {
-        //   Provider.of(context).curretUserId = snapshot.data.uid;
-        //   if (account.collection('').document().parent() == 'Dentists'){
-
-        //   }
-        //            {
-        //     //
-        //     // Navigator.push(context, MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
-        //   }
-        //   // Provider.of<UserData>(context).currentUserId = snapshot.data.uid;
-
-        // }
-      },
-    );
-
-    // FirebaseAuth.instance.currentUser().then((user) {
-    //   Firestore.instance
-    //       .collection('Account')
-    //       .document('account')
-    //       .collection('Dentists')
-    //       .where('uid', isEqualTo: user.uid)
-    //       .getDocuments()
-    //       .then((docs) {
-    //     if (docs.documents[0].exists) {
-    //       if (docs.documents[0].data['role'] == 'dentist') {
-    //         Navigator.push(
-    //             context,
-    //             new MaterialPageRoute(
-    //                 builder: (BuildContext context) => DentMenuScreen(user)));
-    //       } else {
-    //         print('Not Authorized');
-    //       }
-    //     }
-    //   });
-    // });
-
-    // return StreamBuilder(
-    //     stream: FirebaseAuth.instance.onAuthStateChanged,
-    //     builder: (BuildContext context, snapshot) {
-    //       if(!snapshot.hasData){
-    //       }
-    //     });
+  checkUser() async {
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    print(user.uid);
   }
 }
