@@ -108,210 +108,302 @@ class _DentalRecordState extends State<DentalRecord> {
           child: Center(
             child: Stack(
               children: <Widget>[
-                // Container(
-                //   child: Tooth1(),
-                // ),
-                // Container(
-                //   width: MediaQuery.of(context).size.width *
-                //       MediaQuery.of(context).devicePixelRatio,
-                //   height: MediaQuery.of(context).size.height *
-                //       MediaQuery.of(context).devicePixelRatio,
                 Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.fromLTRB(0, 35, 0, 0),
                   child: Center(
-                    child: Container(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[Text('Upper'), Text('Lower')],
-                      ),
+                    child: Text(
+                      'Upper',
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
-                // ),
-                // Container(
-                //   width: MediaQuery.of(context).size.width *
-                //       MediaQuery.of(context).devicePixelRatio,
-                //   height: MediaQuery.of(context).size.height *
-                //       MediaQuery.of(context).devicePixelRatio,
                 Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: Container(
-                    child: Center(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[Text('Right'), Text('Left')],
-                      ),
-                    ),
-                    // ),
-                  ),
-                ),
-                // Container(
-                //     width: MediaQuery.of(context).size.width *
-                //         MediaQuery.of(context).devicePixelRatio,
-                //     height: MediaQuery.of(context).size.height *
-                //         MediaQuery.of(context).devicePixelRatio,
-                //     margin: EdgeInsets.fromLTRB(63, 0, 65, 80),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(42, 0, 39, 80),
+                  padding: const EdgeInsets.fromLTRB(0, 555, 0, 0),
                   child: Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('1'), Text('16')],
+                    child: Text(
+                      'Lower',
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
-                // ),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(65, 0, 68, 150),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('2'), Text('15')],
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(72, 0, 75, 220),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('3'), Text('14')],
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(82, 0, 85, 280),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('4'), Text('13')],
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(98, 0, 102, 335),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('5'), Text('12')],
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(118, 0, 121, 385),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('6'), Text('11')],
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(143, 0, 150, 430),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('7'), Text('10')],
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(177, 0, 194, 450),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('8'), Text('9')],
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(56, 100, 62, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('32'), Text('17')],
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(60, 180, 65, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('31'), Text('18')],
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(67, 250, 72, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('30'), Text('19')],
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(82, 320, 85, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('29'), Text('20')],
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(102, 380, 105, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('28'), Text('21')],
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(128, 425, 135, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('27'), Text('22')],
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(155, 448, 163, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('26'), Text('23')],
-                    )),
-                Container(
-                    width: MediaQuery.of(context).size.width *
-                        MediaQuery.of(context).devicePixelRatio,
-                    height: MediaQuery.of(context).size.height *
-                        MediaQuery.of(context).devicePixelRatio,
-                    margin: EdgeInsets.fromLTRB(182, 460, 188, 0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[Text('25'), Text('24')],
-                    )),
-
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 295, 280, 0),
+                  child: Center(
+                    child: Text(
+                      'Right',
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(280, 295, 0, 0),
+                  child: Center(
+                    child: Text(
+                      'Left',
+                      style:
+                          TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 255, 280, 0),
+                  child: Center(
+                    child: Text(
+                      '1',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 220, 280, 0),
+                  child: Center(
+                    child: Text(
+                      '2',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 185, 275, 0),
+                  child: Center(
+                    child: Text(
+                      '3',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 150, 255, 0),
+                  child: Center(
+                    child: Text(
+                      '4',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 123, 220, 0),
+                  child: Center(
+                    child: Text(
+                      '5',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 95, 185, 0),
+                  child: Center(
+                    child: Text(
+                      '6',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 68, 128, 0),
+                  child: Center(
+                    child: Text(
+                      '7',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 55, 40, 0),
+                  child: Center(
+                    child: Text(
+                      '8',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(35, 55, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '9',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(128, 68, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '10',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(185, 95, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '11',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(220, 123, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '12',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(255, 150, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '13',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(275, 185, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '14',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(280, 220, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '15',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(280, 255, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '16',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(290, 345, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '17',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(280, 385, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '18',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(270, 423, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '19',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(255, 455, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '20',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(220, 485, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '21',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(170, 510, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '22',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(110, 525, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '23',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(40, 535, 0, 0),
+                  child: Center(
+                    child: Text(
+                      '24',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 535, 35, 0),
+                  child: Center(
+                    child: Text(
+                      '25',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 525, 105, 0),
+                  child: Center(
+                    child: Text(
+                      '26',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 510, 170, 0),
+                  child: Center(
+                    child: Text(
+                      '27',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 485, 220, 0),
+                  child: Center(
+                    child: Text(
+                      '28',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 455, 255, 0),
+                  child: Center(
+                    child: Text(
+                      '29',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 420, 275, 0),
+                  child: Center(
+                    child: Text(
+                      '30',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 385, 280, 0),
+                  child: Center(
+                    child: Text(
+                      '31',
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 345, 290, 0),
+                  child: Center(
+                    child: Text(
+                      '32',
+                    ),
+                  ),
+                ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(0, 70, 0, 0),
                   child: Center(
