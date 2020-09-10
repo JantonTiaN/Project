@@ -268,7 +268,7 @@ class _SignInScreenState extends State<SignInScreen> {
     _emailController.text.trim();
     password:
     _passwordController.text.trim();
-    checkAuth(context);
+    checkRole(context);
   }
 
   //Google SignIn
