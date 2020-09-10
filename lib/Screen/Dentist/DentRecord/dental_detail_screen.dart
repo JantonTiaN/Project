@@ -75,23 +75,616 @@ void getid(String getid) {
   id = getid;
 }
 
-String toothNumber;
-void tooth(String no) {
-  toothNumber = no;
-}
-
 var _case = new List();
+var _case1 = new List();
+var _case2 = new List();
+var _case3 = new List();
+var _case4 = new List();
+var _case5 = new List();
+var _case6 = new List();
+var _case7 = new List();
+var _case8 = new List();
+var _case9 = new List();
+var _case10 = new List();
+var _case11 = new List();
+var _case12 = new List();
+var _case13 = new List();
+var _case14 = new List();
+var _case15 = new List();
+var _case16 = new List();
+var _case17 = new List();
+var _case18 = new List();
+var _case19 = new List();
+var _case20 = new List();
+var _case21 = new List();
+var _case22 = new List();
+var _case23 = new List();
+var _case24 = new List();
+var _case25 = new List();
+var _case26 = new List();
+var _case27 = new List();
+var _case28 = new List();
+var _case29 = new List();
+var _case30 = new List();
+var _case31 = new List();
+var _case32 = new List();
 
 List _dentalCase() {
   var dentalCase = _case;
   return dentalCase;
 }
 
+List _dentalCase1() {
+  var dentalCase1 = _case1;
+  return dentalCase1;
+}
+
+List _dentalCase2() {
+  var dentalCase2 = _case2;
+  return dentalCase2;
+}
+
+List _dentalCase3() {
+  var dentalCase3 = _case3;
+  return dentalCase3;
+}
+
+List _dentalCase4() {
+  var dentalCase4 = _case4;
+  return dentalCase4;
+}
+
+List _dentalCase5() {
+  var dentalCase5 = _case5;
+  return dentalCase5;
+}
+
+List _dentalCase6() {
+  var dentalCase6 = _case6;
+  return dentalCase6;
+}
+
+List _dentalCase7() {
+  var dentalCase7 = _case7;
+  return dentalCase7;
+}
+
+List _dentalCase8() {
+  var dentalCase8 = _case8;
+  return dentalCase8;
+}
+
+List _dentalCase9() {
+  var dentalCase9 = _case9;
+  return dentalCase9;
+}
+
+List _dentalCase10() {
+  var dentalCase10 = _case10;
+  return dentalCase10;
+}
+
+List _dentalCase11() {
+  var dentalCase11 = _case11;
+  return dentalCase11;
+}
+
+List _dentalCase12() {
+  var dentalCase12 = _case12;
+  return dentalCase12;
+}
+
+List _dentalCase13() {
+  var dentalCase13 = _case13;
+  return dentalCase13;
+}
+
+List _dentalCase14() {
+  var dentalCase14 = _case14;
+  return dentalCase14;
+}
+
+List _dentalCase15() {
+  var dentalCase15 = _case15;
+  return dentalCase15;
+}
+
+List _dentalCase16() {
+  var dentalCase16 = _case16;
+  return dentalCase16;
+}
+
+List _dentalCase17() {
+  var dentalCase17 = _case17;
+  return dentalCase17;
+}
+
+List _dentalCase18() {
+  var dentalCase18 = _case18;
+  return dentalCase18;
+}
+
+List _dentalCase19() {
+  var dentalCase19 = _case19;
+  return dentalCase19;
+}
+
+List _dentalCase20() {
+  var dentalCase20 = _case20;
+  return dentalCase20;
+}
+
+List _dentalCase21() {
+  var dentalCase21 = _case21;
+  return dentalCase21;
+}
+
+List _dentalCase22() {
+  var dentalCase22 = _case22;
+  return dentalCase22;
+}
+
+List _dentalCase23() {
+  var dentalCase23 = _case23;
+  return dentalCase23;
+}
+
+List _dentalCase24() {
+  var dentalCase24 = _case24;
+  return dentalCase24;
+}
+
+List _dentalCase25() {
+  var dentalCase25 = _case25;
+  return dentalCase25;
+}
+
+List _dentalCase26() {
+  var dentalCase26 = _case26;
+  return dentalCase26;
+}
+
+List _dentalCase27() {
+  var dentalCase27 = _case27;
+  return dentalCase27;
+}
+
+List _dentalCase28() {
+  var dentalCase28 = _case28;
+  return dentalCase28;
+}
+
+List _dentalCase29() {
+  var dentalCase29 = _case29;
+  return dentalCase29;
+}
+
+List _dentalCase30() {
+  var dentalCase30 = _case30;
+  return dentalCase30;
+}
+
+List _dentalCase31() {
+  var dentalCase31 = _case31;
+  return dentalCase31;
+}
+
+List _dentalCase32() {
+  var dentalCase32 = _case32;
+  return dentalCase32;
+}
+
+void _addDentalCase1(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString = await _currentUser.addDentalCase1(_dentalCase1, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
 void _addDentalCase(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
+    String _returnString = await _currentUser.addDentalCase(_dentalCase, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase2(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString = await _currentUser.addDentalCase2(_dentalCase2, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase3(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString = await _currentUser.addDentalCase3(_dentalCase3, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase4(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString = await _currentUser.addDentalCase4(_dentalCase4, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase5(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString = await _currentUser.addDentalCase5(_dentalCase5, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase6(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString = await _currentUser.addDentalCase6(_dentalCase6, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase7(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString = await _currentUser.addDentalCase7(_dentalCase7, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase8(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString = await _currentUser.addDentalCase8(_dentalCase8, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase9(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString = await _currentUser.addDentalCase9(_dentalCase9, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase10(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
     String _returnString =
-        await _currentUser.addDentalCase(_dentalCase, id, toothNumber);
+        await _currentUser.addDentalCase10(_dentalCase10, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase11(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase11(_dentalCase11, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase12(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase12(_dentalCase12, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase13(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase13(_dentalCase13, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase14(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase14(_dentalCase14, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase15(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase15(_dentalCase15, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase16(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase16(_dentalCase16, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase17(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase17(_dentalCase17, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase18(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase18(_dentalCase18, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase19(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase19(_dentalCase19, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase20(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase20(_dentalCase20, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase21(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase21(_dentalCase21, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase22(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase22(_dentalCase22, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase23(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase23(_dentalCase23, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase24(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase24(_dentalCase24, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase25(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase25(_dentalCase25, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase26(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase26(_dentalCase26, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase27(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase27(_dentalCase27, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase28(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase28(_dentalCase28, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase29(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase29(_dentalCase29, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase30(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase30(_dentalCase30, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase31(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase31(_dentalCase31, id);
+    if (_returnString == 'success') {
+      Navigator.pop(context, 'OK');
+    }
+  } catch (e) {
+    print(e);
+  }
+}
+
+void _addDentalCase32(BuildContext context, List addCase) async {
+  CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
+  try {
+    String _returnString =
+        await _currentUser.addDentalCase32(_dentalCase32, id);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -149,14 +742,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Dental Carise') {
-                                    _case.remove('Dental Carise');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Dental Carise') {
+                                    _case1.remove('Dental Carise');
                                   }
                                   i++;
                                 }
-                                _case.add('Dental Carise');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Dental Carise');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -168,15 +761,15 @@ Widget tooth1Detail(BuildContext context) {
                               onTap: () {
                                 int i = 0;
                                 while (i != _case.length) {
-                                  if (_case[i] ==
+                                  if (_case1[i] ==
                                       'Attrition, abrasion, abfraction') {
-                                    _case.remove(
+                                    _case1.remove(
                                         'Attrition, abrasion, abfraction');
                                   }
                                   i++;
                                 }
-                                _case.add('Attrition, abrasion, abfraction');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Attrition, abrasion, abfraction');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -187,14 +780,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Fractured tooth') {
-                                    _case.remove('Fractured tooth');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Fractured tooth') {
+                                    _case1.remove('Fractured tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('Fractured tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Fractured tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -205,14 +798,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Retained root') {
-                                    _case.remove('Retained root');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Retained root') {
+                                    _case1.remove('Retained root');
                                   }
                                   i++;
                                 }
-                                _case.add('Retained root');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Retained root');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -223,14 +816,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'RCT tooth') {
-                                    _case.remove('RCT tooth');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'RCT tooth') {
+                                    _case1.remove('RCT tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('RCT tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('RCT tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -241,14 +834,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Extracted tooth') {
-                                    _case.remove('Extracted tooth');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Extracted tooth') {
+                                    _case1.remove('Extracted tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('Extracted tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Extracted tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -260,13 +853,13 @@ Widget tooth1Detail(BuildContext context) {
                               onTap: () {
                                 int i = 0;
                                 while (i != _case.length) {
-                                  if (_case[i] == 'Missing tooth') {
-                                    _case.remove('Missing tooth');
+                                  if (_case1[i] == 'Missing tooth') {
+                                    _case1.remove('Missing tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('Missing tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Missing tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -277,14 +870,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Impacted tooth') {
-                                    _case.remove('Impacted tooth');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Impacted tooth') {
+                                    _case1.remove('Impacted tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('Impacted tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Impacted tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -295,14 +888,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Partial eruption') {
-                                    _case.remove('Partial eruption');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Partial eruption') {
+                                    _case1.remove('Partial eruption');
                                   }
                                   i++;
                                 }
-                                _case.add('Partial eruption');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Partial eruption');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -313,14 +906,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Tilting, drifting') {
-                                    _case.remove('Tilting, drifting');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Tilting, drifting') {
+                                    _case1.remove('Tilting, drifting');
                                   }
                                   i++;
                                 }
-                                _case.add('Tilting, drifting');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Tilting, drifting');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -331,14 +924,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Loss of contact') {
-                                    _case.remove('Loss of contact');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Loss of contact') {
+                                    _case1.remove('Loss of contact');
                                   }
                                   i++;
                                 }
-                                _case.add('Loss of contact');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Loss of contact');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -349,14 +942,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Poor contact point') {
-                                    _case.remove('Poor contact point');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Poor contact point') {
+                                    _case1.remove('Poor contact point');
                                   }
                                   i++;
                                 }
-                                _case.add('Poor contact point');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Poor contact point');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -367,14 +960,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Food impaction') {
-                                    _case.remove('Food impaction');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Food impaction') {
+                                    _case1.remove('Food impaction');
                                   }
                                   i++;
                                 }
-                                _case.add('Food impaction');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Food impaction');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -385,14 +978,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Supraclusion') {
-                                    _case.remove('Supraclusion');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Supraclusion') {
+                                    _case1.remove('Supraclusion');
                                   }
                                   i++;
                                 }
-                                _case.add('Supraclusion');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Supraclusion');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -403,14 +996,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Infraclusion') {
-                                    _case.remove('Infraclusion');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Infraclusion') {
+                                    _case1.remove('Infraclusion');
                                   }
                                   i++;
                                 }
-                                _case.add('Infraclusion');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Infraclusion');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -421,14 +1014,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Rotation') {
-                                    _case.remove('Rotation');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Rotation') {
+                                    _case1.remove('Rotation');
                                   }
                                   i++;
                                 }
-                                _case.add('Rotation');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Rotation');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -439,14 +1032,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Temporary') {
-                                    _case.remove('Temporary');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Temporary') {
+                                    _case1.remove('Temporary');
                                   }
                                   i++;
                                 }
-                                _case.add('Temporary');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Temporary');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -457,14 +1050,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Permanentrestoration') {
-                                    _case.remove('Permanentrestoration');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Permanentrestoration') {
+                                    _case1.remove('Permanentrestoration');
                                   }
                                   i++;
                                 }
-                                _case.add('Permanentrestoration');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Permanentrestoration');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -475,14 +1068,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Gold restoration') {
-                                    _case.remove('Gold restoration');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Gold restoration') {
+                                    _case1.remove('Gold restoration');
                                   }
                                   i++;
                                 }
-                                _case.add('Gold restoration');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Gold restoration');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -493,14 +1086,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Porcelain/metal crown') {
-                                    _case.remove('Porcelain/metal crown');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Porcelain/metal crown') {
+                                    _case1.remove('Porcelain/metal crown');
                                   }
                                   i++;
                                 }
-                                _case.add('Porcelain/metal crown');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Porcelain/metal crown');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -511,15 +1104,16 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] ==
+                                while (i != _case1.length) {
+                                  if (_case1[i] ==
                                       'Extract and have fix bridge') {
-                                    _case.remove('Extract and have fix bridge');
+                                    _case1
+                                        .remove('Extract and have fix bridge');
                                   }
                                   i++;
                                 }
-                                _case.add('Extract and have fix bridge');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Extract and have fix bridge');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -530,24 +1124,20 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Other') {
-                                    _case.remove('Other');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Other') {
+                                    _case1.remove('Other');
                                   }
                                   i++;
                                 }
-                                _case.add('Other');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Other');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                           ],
                         ),
                       );
                     });
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => DentalCaseScreen()));
               }),
         ),
         Container(
@@ -579,14 +1169,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Dental Carise') {
-                                    _case.remove('Dental Carise');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Dental Carise') {
+                                    _case1.remove('Dental Carise');
                                   }
                                   i++;
                                 }
-                                _case.add('Dental Carise');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Dental Carise');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -597,16 +1187,16 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] ==
+                                while (i != _case1.length) {
+                                  if (_case1[i] ==
                                       'Attrition, abrasion, abfraction') {
-                                    _case.remove(
+                                    _case1.remove(
                                         'Attrition, abrasion, abfraction');
                                   }
                                   i++;
                                 }
-                                _case.add('Attrition, abrasion, abfraction');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Attrition, abrasion, abfraction');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -617,14 +1207,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Fractured tooth') {
-                                    _case.remove('Fractured tooth');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Fractured tooth') {
+                                    _case1.remove('Fractured tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('Fractured tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Fractured tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -635,14 +1225,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Retained root') {
-                                    _case.remove('Retained root');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Retained root') {
+                                    _case1.remove('Retained root');
                                   }
                                   i++;
                                 }
-                                _case.add('Retained root');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Retained root');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -653,14 +1243,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'RCT tooth') {
-                                    _case.remove('RCT tooth');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'RCT tooth') {
+                                    _case1.remove('RCT tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('RCT tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('RCT tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -671,14 +1261,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Extracted tooth') {
-                                    _case.remove('Extracted tooth');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Extracted tooth') {
+                                    _case1.remove('Extracted tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('Extracted tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Extracted tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -690,13 +1280,13 @@ Widget tooth1Detail(BuildContext context) {
                               onTap: () {
                                 int i = 0;
                                 while (i != _case.length) {
-                                  if (_case[i] == 'Missing tooth') {
-                                    _case.remove('Missing tooth');
+                                  if (_case1[i] == 'Missing tooth') {
+                                    _case1.remove('Missing tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('Missing tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Missing tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -707,14 +1297,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Impacted tooth') {
-                                    _case.remove('Impacted tooth');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Impacted tooth') {
+                                    _case1.remove('Impacted tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('Impacted tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Impacted tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -725,14 +1315,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Partial eruption') {
-                                    _case.remove('Partial eruption');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Partial eruption') {
+                                    _case1.remove('Partial eruption');
                                   }
                                   i++;
                                 }
-                                _case.add('Partial eruption');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Partial eruption');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -743,14 +1333,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Tilting, drifting') {
-                                    _case.remove('Tilting, drifting');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Tilting, drifting') {
+                                    _case1.remove('Tilting, drifting');
                                   }
                                   i++;
                                 }
-                                _case.add('Tilting, drifting');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Tilting, drifting');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -761,14 +1351,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Loss of contact') {
-                                    _case.remove('Loss of contact');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Loss of contact') {
+                                    _case1.remove('Loss of contact');
                                   }
                                   i++;
                                 }
-                                _case.add('Loss of contact');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Loss of contact');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -779,14 +1369,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Poor contact point') {
-                                    _case.remove('Poor contact point');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Poor contact point') {
+                                    _case1.remove('Poor contact point');
                                   }
                                   i++;
                                 }
-                                _case.add('Poor contact point');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Poor contact point');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -797,14 +1387,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Food impaction') {
-                                    _case.remove('Food impaction');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Food impaction') {
+                                    _case1.remove('Food impaction');
                                   }
                                   i++;
                                 }
-                                _case.add('Food impaction');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Food impaction');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -815,14 +1405,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Supraclusion') {
-                                    _case.remove('Supraclusion');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Supraclusion') {
+                                    _case1.remove('Supraclusion');
                                   }
                                   i++;
                                 }
-                                _case.add('Supraclusion');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Supraclusion');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -833,14 +1423,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Infraclusion') {
-                                    _case.remove('Infraclusion');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Infraclusion') {
+                                    _case1.remove('Infraclusion');
                                   }
                                   i++;
                                 }
-                                _case.add('Infraclusion');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Infraclusion');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -851,14 +1441,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Rotation') {
-                                    _case.remove('Rotation');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Rotation') {
+                                    _case1.remove('Rotation');
                                   }
                                   i++;
                                 }
-                                _case.add('Rotation');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Rotation');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -869,14 +1459,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Temporary') {
-                                    _case.remove('Temporary');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Temporary') {
+                                    _case1.remove('Temporary');
                                   }
                                   i++;
                                 }
-                                _case.add('Temporary');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Temporary');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -887,14 +1477,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Permanentrestoration') {
-                                    _case.remove('Permanentrestoration');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Permanentrestoration') {
+                                    _case1.remove('Permanentrestoration');
                                   }
                                   i++;
                                 }
-                                _case.add('Permanentrestoration');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Permanentrestoration');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -905,14 +1495,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Gold restoration') {
-                                    _case.remove('Gold restoration');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Gold restoration') {
+                                    _case1.remove('Gold restoration');
                                   }
                                   i++;
                                 }
-                                _case.add('Gold restoration');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Gold restoration');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -923,14 +1513,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Porcelain/metal crown') {
-                                    _case.remove('Porcelain/metal crown');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Porcelain/metal crown') {
+                                    _case1.remove('Porcelain/metal crown');
                                   }
                                   i++;
                                 }
-                                _case.add('Porcelain/metal crown');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Porcelain/metal crown');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -941,15 +1531,16 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] ==
+                                while (i != _case1.length) {
+                                  if (_case1[i] ==
                                       'Extract and have fix bridge') {
-                                    _case.remove('Extract and have fix bridge');
+                                    _case1
+                                        .remove('Extract and have fix bridge');
                                   }
                                   i++;
                                 }
-                                _case.add('Extract and have fix bridge');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Extract and have fix bridge');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -960,24 +1551,20 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Other') {
-                                    _case.remove('Other');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Other') {
+                                    _case1.remove('Other');
                                   }
                                   i++;
                                 }
-                                _case.add('Other');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Other');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                           ],
                         ),
                       );
                     });
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => DentalCaseScreen()));
               }),
         ),
         Container(
@@ -1009,14 +1596,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Dental Carise') {
-                                    _case.remove('Dental Carise');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Dental Carise') {
+                                    _case1.remove('Dental Carise');
                                   }
                                   i++;
                                 }
-                                _case.add('Dental Carise');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Dental Carise');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1027,16 +1614,16 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] ==
+                                while (i != _case1.length) {
+                                  if (_case1[i] ==
                                       'Attrition, abrasion, abfraction') {
-                                    _case.remove(
+                                    _case1.remove(
                                         'Attrition, abrasion, abfraction');
                                   }
                                   i++;
                                 }
-                                _case.add('Attrition, abrasion, abfraction');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Attrition, abrasion, abfraction');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1047,14 +1634,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Fractured tooth') {
-                                    _case.remove('Fractured tooth');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Fractured tooth') {
+                                    _case1.remove('Fractured tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('Fractured tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Fractured tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1065,14 +1652,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Retained root') {
-                                    _case.remove('Retained root');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Retained root') {
+                                    _case1.remove('Retained root');
                                   }
                                   i++;
                                 }
-                                _case.add('Retained root');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Retained root');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1083,14 +1670,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'RCT tooth') {
-                                    _case.remove('RCT tooth');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'RCT tooth') {
+                                    _case1.remove('RCT tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('RCT tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('RCT tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1101,14 +1688,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Extracted tooth') {
-                                    _case.remove('Extracted tooth');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Extracted tooth') {
+                                    _case1.remove('Extracted tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('Extracted tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Extracted tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1119,14 +1706,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Missing tooth') {
-                                    _case.remove('Missing tooth');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Missing tooth') {
+                                    _case1.remove('Missing tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('Missing tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Missing tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1137,14 +1724,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Impacted tooth') {
-                                    _case.remove('Impacted tooth');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Impacted tooth') {
+                                    _case1.remove('Impacted tooth');
                                   }
                                   i++;
                                 }
-                                _case.add('Impacted tooth');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Impacted tooth');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1155,14 +1742,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Partial eruption') {
-                                    _case.remove('Partial eruption');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Partial eruption') {
+                                    _case1.remove('Partial eruption');
                                   }
                                   i++;
                                 }
-                                _case.add('Partial eruption');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Partial eruption');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1173,14 +1760,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Tilting, drifting') {
-                                    _case.remove('Tilting, drifting');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Tilting, drifting') {
+                                    _case1.remove('Tilting, drifting');
                                   }
                                   i++;
                                 }
-                                _case.add('Tilting, drifting');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Tilting, drifting');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1191,14 +1778,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Loss of contact') {
-                                    _case.remove('Loss of contact');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Loss of contact') {
+                                    _case1.remove('Loss of contact');
                                   }
                                   i++;
                                 }
-                                _case.add('Loss of contact');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Loss of contact');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1209,14 +1796,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Poor contact point') {
-                                    _case.remove('Poor contact point');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Poor contact point') {
+                                    _case1.remove('Poor contact point');
                                   }
                                   i++;
                                 }
-                                _case.add('Poor contact point');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Poor contact point');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1227,14 +1814,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Food impaction') {
-                                    _case.remove('Food impaction');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Food impaction') {
+                                    _case1.remove('Food impaction');
                                   }
                                   i++;
                                 }
-                                _case.add('Food impaction');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Food impaction');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1245,14 +1832,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Supraclusion') {
-                                    _case.remove('Supraclusion');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Supraclusion') {
+                                    _case1.remove('Supraclusion');
                                   }
                                   i++;
                                 }
-                                _case.add('Supraclusion');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Supraclusion');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1263,14 +1850,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Infraclusion') {
-                                    _case.remove('Infraclusion');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Infraclusion') {
+                                    _case1.remove('Infraclusion');
                                   }
                                   i++;
                                 }
-                                _case.add('Infraclusion');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Infraclusion');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1281,14 +1868,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Rotation') {
-                                    _case.remove('Rotation');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Rotation') {
+                                    _case1.remove('Rotation');
                                   }
                                   i++;
                                 }
-                                _case.add('Rotation');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Rotation');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1299,14 +1886,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Temporary') {
-                                    _case.remove('Temporary');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Temporary') {
+                                    _case1.remove('Temporary');
                                   }
                                   i++;
                                 }
-                                _case.add('Temporary');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Temporary');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1317,14 +1904,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Permanentrestoration') {
-                                    _case.remove('Permanentrestoration');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Permanentrestoration') {
+                                    _case1.remove('Permanentrestoration');
                                   }
                                   i++;
                                 }
-                                _case.add('Permanentrestoration');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Permanentrestoration');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1335,14 +1922,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Gold restoration') {
-                                    _case.remove('Gold restoration');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Gold restoration') {
+                                    _case1.remove('Gold restoration');
                                   }
                                   i++;
                                 }
-                                _case.add('Gold restoration');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Gold restoration');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1353,14 +1940,14 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Porcelain/metal crown') {
-                                    _case.remove('Porcelain/metal crown');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Porcelain/metal crown') {
+                                    _case1.remove('Porcelain/metal crown');
                                   }
                                   i++;
                                 }
-                                _case.add('Porcelain/metal crown');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Porcelain/metal crown');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1371,15 +1958,16 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] ==
+                                while (i != _case1.length) {
+                                  if (_case1[i] ==
                                       'Extract and have fix bridge') {
-                                    _case.remove('Extract and have fix bridge');
+                                    _case1
+                                        .remove('Extract and have fix bridge');
                                   }
                                   i++;
                                 }
-                                _case.add('Extract and have fix bridge');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Extract and have fix bridge');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                             ListTile(
@@ -1390,24 +1978,20 @@ Widget tooth1Detail(BuildContext context) {
                               ),
                               onTap: () {
                                 int i = 0;
-                                while (i != _case.length) {
-                                  if (_case[i] == 'Other') {
-                                    _case.remove('Other');
+                                while (i != _case1.length) {
+                                  if (_case1[i] == 'Other') {
+                                    _case1.remove('Other');
                                   }
                                   i++;
                                 }
-                                _case.add('Other');
-                                _addDentalCase(context, _dentalCase());
+                                _case1.add('Other');
+                                _addDentalCase1(context, _dentalCase1());
                               },
                             ),
                           ],
                         ),
                       );
                     });
-                // Navigator.push(
-                //     context,
-                //     MaterialPageRoute(
-                //         builder: (context) => DentalCaseScreen()));
               }),
         )
       ],
@@ -1457,15 +2041,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Dental Carise') {
-                                              _case.remove('Dental Carise');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Dental Carise') {
+                                              _case2.remove('Dental Carise');
                                             }
                                             i++;
                                           }
-                                          _case.add('Dental Carise');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Dental Carise');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1477,18 +2061,18 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Attrition, abrasion, abfraction') {
-                                              _case.remove(
+                                              _case2.remove(
                                                   'Attrition, abrasion, abfraction');
                                             }
                                             i++;
                                           }
-                                          _case.add(
+                                          _case2.add(
                                               'Attrition, abrasion, abfraction');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1499,15 +2083,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Fractured tooth') {
-                                              _case.remove('Fractured tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
+                                                'Fractured tooth') {
+                                              _case2.remove('Fractured tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('Fractured tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Fractured tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1518,15 +2103,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Retained root') {
-                                              _case.remove('Retained root');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Retained root') {
+                                              _case2.remove('Retained root');
                                             }
                                             i++;
                                           }
-                                          _case.add('Retained root');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Retained root');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1537,15 +2122,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'RCT tooth') {
-                                              _case.remove('RCT tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'RCT tooth') {
+                                              _case2.remove('RCT tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('RCT tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('RCT tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1556,15 +2141,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Extracted tooth') {
-                                              _case.remove('Extracted tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
+                                                'Extracted tooth') {
+                                              _case2.remove('Extracted tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('Extracted tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Extracted tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1575,15 +2161,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Missing tooth') {
-                                              _case.remove('Missing tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Missing tooth') {
+                                              _case2.remove('Missing tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('Missing tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Missing tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1594,15 +2180,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Impacted tooth') {
-                                              _case.remove('Impacted tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Impacted tooth') {
+                                              _case2.remove('Impacted tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('Impacted tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Impacted tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1613,16 +2199,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Partial eruption') {
-                                              _case.remove('Partial eruption');
+                                              _case2.remove('Partial eruption');
                                             }
                                             i++;
                                           }
-                                          _case.add('Partial eruption');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Partial eruption');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1633,16 +2219,17 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Tilting, drifting') {
-                                              _case.remove('Tilting, drifting');
+                                              _case2
+                                                  .remove('Tilting, drifting');
                                             }
                                             i++;
                                           }
-                                          _case.add('Tilting, drifting');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Tilting, drifting');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1653,15 +2240,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Loss of contact') {
-                                              _case.remove('Loss of contact');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
+                                                'Loss of contact') {
+                                              _case2.remove('Loss of contact');
                                             }
                                             i++;
                                           }
-                                          _case.add('Loss of contact');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Loss of contact');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1672,17 +2260,17 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Poor contact point') {
-                                              _case
+                                              _case2
                                                   .remove('Poor contact point');
                                             }
                                             i++;
                                           }
-                                          _case.add('Poor contact point');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Poor contact point');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1693,15 +2281,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Food impaction') {
-                                              _case.remove('Food impaction');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Food impaction') {
+                                              _case2.remove('Food impaction');
                                             }
                                             i++;
                                           }
-                                          _case.add('Food impaction');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Food impaction');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1712,15 +2300,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Supraclusion') {
-                                              _case.remove('Supraclusion');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Supraclusion') {
+                                              _case2.remove('Supraclusion');
                                             }
                                             i++;
                                           }
-                                          _case.add('Supraclusion');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Supraclusion');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1731,15 +2319,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Infraclusion') {
-                                              _case.remove('Infraclusion');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Infraclusion') {
+                                              _case2.remove('Infraclusion');
                                             }
                                             i++;
                                           }
-                                          _case.add('Infraclusion');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Infraclusion');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1750,15 +2338,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Rotation') {
-                                              _case.remove('Rotation');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Rotation') {
+                                              _case2.remove('Rotation');
                                             }
                                             i++;
                                           }
-                                          _case.add('Rotation');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Rotation');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1769,15 +2357,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Temporary') {
-                                              _case.remove('Temporary');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Temporary') {
+                                              _case2.remove('Temporary');
                                             }
                                             i++;
                                           }
-                                          _case.add('Temporary');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Temporary');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1788,17 +2376,17 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Permanentrestoration') {
-                                              _case.remove(
+                                              _case2.remove(
                                                   'Permanentrestoration');
                                             }
                                             i++;
                                           }
-                                          _case.add('Permanentrestoration');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Permanentrestoration');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1809,16 +2397,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Gold restoration') {
-                                              _case.remove('Gold restoration');
+                                              _case2.remove('Gold restoration');
                                             }
                                             i++;
                                           }
-                                          _case.add('Gold restoration');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Gold restoration');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1829,17 +2417,17 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Porcelain/metal crown') {
-                                              _case.remove(
+                                              _case2.remove(
                                                   'Porcelain/metal crown');
                                             }
                                             i++;
                                           }
-                                          _case.add('Porcelain/metal crown');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Porcelain/metal crown');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1851,18 +2439,18 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Extract and have fix bridge') {
-                                              _case.remove(
+                                              _case2.remove(
                                                   'Extract and have fix bridge');
                                             }
                                             i++;
                                           }
-                                          _case.add(
+                                          _case2.add(
                                               'Extract and have fix bridge');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1873,25 +2461,21 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Other') {
-                                              _case.remove('Other');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Other') {
+                                              _case2.remove('Other');
                                             }
                                             i++;
                                           }
-                                          _case.add('Other');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Other');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                     ],
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -1923,15 +2507,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Dental Carise') {
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Dental Carise') {
                                               _case.remove('Dental Carise');
                                             }
                                             i++;
                                           }
-                                          _case.add('Dental Carise');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Dental Carise');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1943,18 +2527,18 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Attrition, abrasion, abfraction') {
-                                              _case.remove(
+                                              _case2.remove(
                                                   'Attrition, abrasion, abfraction');
                                             }
                                             i++;
                                           }
-                                          _case.add(
+                                          _case2.add(
                                               'Attrition, abrasion, abfraction');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1965,15 +2549,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Fractured tooth') {
-                                              _case.remove('Fractured tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
+                                                'Fractured tooth') {
+                                              _case2.remove('Fractured tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('Fractured tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Fractured tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -1984,15 +2569,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Retained root') {
-                                              _case.remove('Retained root');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Retained root') {
+                                              _case2.remove('Retained root');
                                             }
                                             i++;
                                           }
-                                          _case.add('Retained root');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Retained root');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2003,15 +2588,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'RCT tooth') {
-                                              _case.remove('RCT tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'RCT tooth') {
+                                              _case2.remove('RCT tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('RCT tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('RCT tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2022,15 +2607,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Extracted tooth') {
-                                              _case.remove('Extracted tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
+                                                'Extracted tooth') {
+                                              _case2.remove('Extracted tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('Extracted tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Extracted tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2041,15 +2627,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Missing tooth') {
-                                              _case.remove('Missing tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Missing tooth') {
+                                              _case2.remove('Missing tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('Missing tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Missing tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2060,15 +2646,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Impacted tooth') {
-                                              _case.remove('Impacted tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Impacted tooth') {
+                                              _case2.remove('Impacted tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('Impacted tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Impacted tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2079,16 +2665,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Partial eruption') {
-                                              _case.remove('Partial eruption');
+                                              _case2.remove('Partial eruption');
                                             }
                                             i++;
                                           }
-                                          _case.add('Partial eruption');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Partial eruption');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2099,16 +2685,17 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Tilting, drifting') {
-                                              _case.remove('Tilting, drifting');
+                                              _case2
+                                                  .remove('Tilting, drifting');
                                             }
                                             i++;
                                           }
-                                          _case.add('Tilting, drifting');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Tilting, drifting');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2119,15 +2706,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Loss of contact') {
-                                              _case.remove('Loss of contact');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
+                                                'Loss of contact') {
+                                              _case2.remove('Loss of contact');
                                             }
                                             i++;
                                           }
-                                          _case.add('Loss of contact');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Loss of contact');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2138,17 +2726,17 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Poor contact point') {
-                                              _case
+                                              _case2
                                                   .remove('Poor contact point');
                                             }
                                             i++;
                                           }
-                                          _case.add('Poor contact point');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Poor contact point');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2159,15 +2747,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Food impaction') {
-                                              _case.remove('Food impaction');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Food impaction') {
+                                              _case2.remove('Food impaction');
                                             }
                                             i++;
                                           }
-                                          _case.add('Food impaction');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Food impaction');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2178,15 +2766,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Supraclusion') {
-                                              _case.remove('Supraclusion');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Supraclusion') {
+                                              _case2.remove('Supraclusion');
                                             }
                                             i++;
                                           }
-                                          _case.add('Supraclusion');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Supraclusion');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2197,15 +2785,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Infraclusion') {
-                                              _case.remove('Infraclusion');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Infraclusion') {
+                                              _case2.remove('Infraclusion');
                                             }
                                             i++;
                                           }
-                                          _case.add('Infraclusion');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Infraclusion');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2216,15 +2804,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Rotation') {
-                                              _case.remove('Rotation');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Rotation') {
+                                              _case2.remove('Rotation');
                                             }
                                             i++;
                                           }
-                                          _case.add('Rotation');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Rotation');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2235,15 +2823,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Temporary') {
-                                              _case.remove('Temporary');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Temporary') {
+                                              _case2.remove('Temporary');
                                             }
                                             i++;
                                           }
-                                          _case.add('Temporary');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Temporary');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2254,17 +2842,17 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Permanentrestoration') {
-                                              _case.remove(
+                                              _case2.remove(
                                                   'Permanentrestoration');
                                             }
                                             i++;
                                           }
-                                          _case.add('Permanentrestoration');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Permanentrestoration');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2275,16 +2863,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Gold restoration') {
-                                              _case.remove('Gold restoration');
+                                              _case2.remove('Gold restoration');
                                             }
                                             i++;
                                           }
-                                          _case.add('Gold restoration');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Gold restoration');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2295,17 +2883,17 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Porcelain/metal crown') {
-                                              _case.remove(
+                                              _case2.remove(
                                                   'Porcelain/metal crown');
                                             }
                                             i++;
                                           }
-                                          _case.add('Porcelain/metal crown');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Porcelain/metal crown');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2317,18 +2905,18 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Extract and have fix bridge') {
-                                              _case.remove(
+                                              _case2.remove(
                                                   'Extract and have fix bridge');
                                             }
                                             i++;
                                           }
-                                          _case.add(
+                                          _case2.add(
                                               'Extract and have fix bridge');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2339,25 +2927,21 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Other') {
-                                              _case.remove('Other');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Other') {
+                                              _case2.remove('Other');
                                             }
                                             i++;
                                           }
-                                          _case.add('Other');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Other');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                     ],
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -2389,15 +2973,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Dental Carise') {
-                                              _case.remove('Dental Carise');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Dental Carise') {
+                                              _case2.remove('Dental Carise');
                                             }
                                             i++;
                                           }
-                                          _case.add('Dental Carise');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Dental Carise');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2409,18 +2993,18 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Attrition, abrasion, abfraction') {
-                                              _case.remove(
+                                              _case2.remove(
                                                   'Attrition, abrasion, abfraction');
                                             }
                                             i++;
                                           }
-                                          _case.add(
+                                          _case2.add(
                                               'Attrition, abrasion, abfraction');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2431,15 +3015,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Fractured tooth') {
-                                              _case.remove('Fractured tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
+                                                'Fractured tooth') {
+                                              _case2.remove('Fractured tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('Fractured tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Fractured tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2450,15 +3035,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Retained root') {
-                                              _case.remove('Retained root');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Retained root') {
+                                              _case2.remove('Retained root');
                                             }
                                             i++;
                                           }
-                                          _case.add('Retained root');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Retained root');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2469,15 +3054,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'RCT tooth') {
-                                              _case.remove('RCT tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'RCT tooth') {
+                                              _case2.remove('RCT tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('RCT tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('RCT tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2488,15 +3073,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Extracted tooth') {
-                                              _case.remove('Extracted tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
+                                                'Extracted tooth') {
+                                              _case2.remove('Extracted tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('Extracted tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Extracted tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2507,15 +3093,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Missing tooth') {
-                                              _case.remove('Missing tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Missing tooth') {
+                                              _case2.remove('Missing tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('Missing tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Missing tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2526,15 +3112,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Impacted tooth') {
-                                              _case.remove('Impacted tooth');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Impacted tooth') {
+                                              _case2.remove('Impacted tooth');
                                             }
                                             i++;
                                           }
-                                          _case.add('Impacted tooth');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Impacted tooth');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2545,16 +3131,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Partial eruption') {
-                                              _case.remove('Partial eruption');
+                                              _case2.remove('Partial eruption');
                                             }
                                             i++;
                                           }
-                                          _case.add('Partial eruption');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Partial eruption');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2565,16 +3151,17 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Tilting, drifting') {
-                                              _case.remove('Tilting, drifting');
+                                              _case2
+                                                  .remove('Tilting, drifting');
                                             }
                                             i++;
                                           }
-                                          _case.add('Tilting, drifting');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Tilting, drifting');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2585,15 +3172,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Loss of contact') {
-                                              _case.remove('Loss of contact');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
+                                                'Loss of contact') {
+                                              _case2.remove('Loss of contact');
                                             }
                                             i++;
                                           }
-                                          _case.add('Loss of contact');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Loss of contact');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2604,17 +3192,17 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Poor contact point') {
-                                              _case
+                                              _case2
                                                   .remove('Poor contact point');
                                             }
                                             i++;
                                           }
-                                          _case.add('Poor contact point');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Poor contact point');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2625,15 +3213,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Food impaction') {
-                                              _case.remove('Food impaction');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Food impaction') {
+                                              _case2.remove('Food impaction');
                                             }
                                             i++;
                                           }
-                                          _case.add('Food impaction');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Food impaction');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2644,15 +3232,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Supraclusion') {
-                                              _case.remove('Supraclusion');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Supraclusion') {
+                                              _case2.remove('Supraclusion');
                                             }
                                             i++;
                                           }
-                                          _case.add('Supraclusion');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Supraclusion');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2663,15 +3251,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Infraclusion') {
-                                              _case.remove('Infraclusion');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Infraclusion') {
+                                              _case2.remove('Infraclusion');
                                             }
                                             i++;
                                           }
-                                          _case.add('Infraclusion');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Infraclusion');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2682,15 +3270,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Rotation') {
-                                              _case.remove('Rotation');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Rotation') {
+                                              _case2.remove('Rotation');
                                             }
                                             i++;
                                           }
-                                          _case.add('Rotation');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Rotation');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2701,15 +3289,15 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Temporary') {
-                                              _case.remove('Temporary');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Temporary') {
+                                              _case2.remove('Temporary');
                                             }
                                             i++;
                                           }
-                                          _case.add('Temporary');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Temporary');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2720,17 +3308,17 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Permanentrestoration') {
-                                              _case.remove(
+                                              _case2.remove(
                                                   'Permanentrestoration');
                                             }
                                             i++;
                                           }
-                                          _case.add('Permanentrestoration');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Permanentrestoration');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2741,16 +3329,16 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Gold restoration') {
-                                              _case.remove('Gold restoration');
+                                              _case2.remove('Gold restoration');
                                             }
                                             i++;
                                           }
-                                          _case.add('Gold restoration');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Gold restoration');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2761,17 +3349,17 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Porcelain/metal crown') {
-                                              _case.remove(
+                                              _case2.remove(
                                                   'Porcelain/metal crown');
                                             }
                                             i++;
                                           }
-                                          _case.add('Porcelain/metal crown');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Porcelain/metal crown');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2783,18 +3371,18 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] ==
+                                          while (i != _case2.length) {
+                                            if (_case2[i] ==
                                                 'Extract and have fix bridge') {
-                                              _case.remove(
+                                              _case2.remove(
                                                   'Extract and have fix bridge');
                                             }
                                             i++;
                                           }
-                                          _case.add(
+                                          _case2.add(
                                               'Extract and have fix bridge');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                       ListTile(
@@ -2805,25 +3393,21 @@ Widget tooth2Detail(BuildContext context) {
                                         ),
                                         onTap: () {
                                           int i = 0;
-                                          while (i != _case.length) {
-                                            if (_case[i] == 'Other') {
-                                              _case.remove('Other');
+                                          while (i != _case2.length) {
+                                            if (_case2[i] == 'Other') {
+                                              _case2.remove('Other');
                                             }
                                             i++;
                                           }
-                                          _case.add('Other');
-                                          _addDentalCase(
-                                              context, _dentalCase());
+                                          _case2.add('Other');
+                                          _addDentalCase2(
+                                              context, _dentalCase2());
                                         },
                                       ),
                                     ],
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -3303,10 +3887,6 @@ Widget tooth3Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -3786,10 +4366,6 @@ Widget tooth3Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -4269,10 +4845,6 @@ Widget tooth4Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -4735,10 +5307,6 @@ Widget tooth4Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -5201,10 +5769,6 @@ Widget tooth4Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -5684,10 +6248,6 @@ Widget tooth5Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -6150,10 +6710,6 @@ Widget tooth5Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -6616,10 +7172,6 @@ Widget tooth5Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -7099,10 +7651,6 @@ Widget tooth6Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -7565,10 +8113,6 @@ Widget tooth6Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -8031,10 +8575,6 @@ Widget tooth6Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -8514,10 +9054,6 @@ Widget tooth7Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -8980,10 +9516,6 @@ Widget tooth7Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -9446,10 +9978,6 @@ Widget tooth7Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -9929,10 +10457,6 @@ Widget tooth8Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -10395,10 +10919,6 @@ Widget tooth8Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -10861,10 +11381,6 @@ Widget tooth8Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -11344,10 +11860,6 @@ Widget tooth9Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -11810,10 +12322,6 @@ Widget tooth9Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -12276,10 +12784,6 @@ Widget tooth9Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -12759,10 +13263,6 @@ Widget tooth10Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -13225,10 +13725,6 @@ Widget tooth10Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -13691,10 +14187,6 @@ Widget tooth10Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -14174,10 +14666,6 @@ Widget tooth11Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -14640,10 +15128,6 @@ Widget tooth11Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -15106,10 +15590,6 @@ Widget tooth11Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -15589,10 +16069,6 @@ Widget tooth12Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -16055,10 +16531,6 @@ Widget tooth12Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -16521,10 +16993,6 @@ Widget tooth12Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -17004,10 +17472,6 @@ Widget tooth13Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -17470,10 +17934,6 @@ Widget tooth13Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -17970,10 +18430,6 @@ Widget tooth14Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -18436,10 +18892,6 @@ Widget tooth14Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -18902,10 +19354,6 @@ Widget tooth14Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -19385,10 +19833,6 @@ Widget tooth15Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -19851,10 +20295,6 @@ Widget tooth15Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -20317,10 +20757,6 @@ Widget tooth15Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],
@@ -20800,10 +21236,6 @@ Widget tooth16Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -21266,10 +21698,6 @@ Widget tooth16Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   ),
                   Container(
@@ -21732,10 +22160,6 @@ Widget tooth16Detail(BuildContext context) {
                                   ),
                                 );
                               });
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalCaseScreen()));
                         }),
                   )
                 ],

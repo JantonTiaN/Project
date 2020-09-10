@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:provider/provider.dart';
 
@@ -19,8 +18,7 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
   void _addDentalCase(BuildContext context, List addCase) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
-      String _returnString =
-          await _currentUser.addDentalCase(_dentalCase, '', '');
+      String _returnString = await _currentUser.addDentalCase(_dentalCase, '');
       if (_returnString == 'success') {
         Navigator.pop(context, 'OK');
       }

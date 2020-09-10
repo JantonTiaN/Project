@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
-import 'package:fundee/Screen/Dentist/Signup/fb_d_signup_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:fundee/Screen/SignupProcess/gg_select_role.dart';
