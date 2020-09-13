@@ -18,7 +18,6 @@ class PatientDatabase {
         'birthDay': patient.patientBirthDate,
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
-        'case': null,
         'role': 'Pateint'
       });
       await _firestore
