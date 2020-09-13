@@ -367,6 +367,14 @@ class _SignInScreenState extends State<SignInScreen> {
           .getDocuments()
           .then((docs) {
         if (docs.documents[0].exists) {
+          // print('testUser');
+          // print(Firestore.instance
+          //     .collection('Account')
+          //     .document('account')
+          //     .collection('Dentists')
+          //     .document()
+          //     .path);
+          // print('what is this ?');
           if (docs.documents[0].data['role'] == 'Dentist') {
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
