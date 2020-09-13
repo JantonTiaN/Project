@@ -32,7 +32,6 @@ class PatientDatabase {
     } catch (e) {
       print(e);
     }
-
     return retVal;
   }
 }
@@ -112,7 +111,6 @@ class PatientWithFBAndGGDatabase {
         'birthDay': patient.patientBirthDate,
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
-        'case': null,
         'role': 'Patient'
       });
       await _firestore
