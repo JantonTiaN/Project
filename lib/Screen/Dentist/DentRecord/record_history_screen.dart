@@ -15,7 +15,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
   @override
   final cases = OurPatients();
   Widget build(BuildContext context) {
-    getid();
+    // getid();
     return Scaffold(
       appBar: AppBar(
         title: Text('History'),
