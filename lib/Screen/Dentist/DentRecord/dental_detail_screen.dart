@@ -41,32 +41,15 @@ class _DentalDetailScreenState extends State<DentalDetailScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
+    return Scaffold(
+        body: Column(
       children: <Widget>[
-        Container(
-          child: tooth1Detail(context),
-        ),
-        Container(
-            padding: EdgeInsets.all(0.3),
-            width: MediaQuery.of(context).size.width * 0.5,
-            height: MediaQuery.of(context).size.height * 0.0,
-            margin: EdgeInsets.fromLTRB(20, 180, 0, 0),
-            child: ListView.builder(
-                itemCount: userModels.length,
-                itemBuilder: (BuildContext buildContext, int index) {
-                  return Container(
-                      child: Container(
-                          child: Text(widget.user.displayName
-                              // ' ' +
-                              //     userModels[index].firstName +
-                              //     ' ' +
-                              //     userModels[index].lastName,
-                              // style: TextStyle(
-                              //     fontSize: 15, color: Colors.black)
-                              )));
-                })),
+        Text(
+          'Hello',
+          style: TextStyle(color: Colors.amber, fontSize: 50),
+        )
       ],
-    );
+    ));
   }
 }
 

@@ -18,7 +18,7 @@ class PatientDatabase {
         'birthDay': patient.patientBirthDate,
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
-        'role': 'Pateint'
+        'role': 'Patient'
       });
       await _firestore
           .collection('Account')
