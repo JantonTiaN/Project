@@ -1,10 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/dental_case_screen.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:fundee/models/account_model.dart';
-import 'package:fundee/models/user_model.dart';
 import 'package:provider/provider.dart';
 
 class DentalDetailScreen extends StatefulWidget {
@@ -15,29 +12,7 @@ class DentalDetailScreen extends StatefulWidget {
 }
 
 class _DentalDetailScreenState extends State<DentalDetailScreen> {
-  List<UserModel> userModels = List();
   List<AccountModel> accountModels = List();
-
-  @override
-  void initState() {
-    super.initState();
-    readFirestore();
-  }
-
-  Future<void> readFirestore() async {
-    Firestore firestore = Firestore.instance;
-    CollectionReference collectionReference =
-        firestore.collection('Account').document('account').collection('Users');
-    collectionReference.snapshots().listen((response) {
-      List<DocumentSnapshot> snapshots = response.documents;
-      for (var snapshot in snapshots) {
-        UserModel userModel = UserModel.fromMap(snapshot.data);
-        setState(() {
-          userModels.add(userModel);
-        });
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -46,25 +21,25 @@ class _DentalDetailScreenState extends State<DentalDetailScreen> {
         Container(
           child: tooth1Detail(context),
         ),
-        Container(
-            padding: EdgeInsets.all(0.3),
-            width: MediaQuery.of(context).size.width * 0.5,
-            height: MediaQuery.of(context).size.height * 0.0,
-            margin: EdgeInsets.fromLTRB(20, 180, 0, 0),
-            child: ListView.builder(
-                itemCount: userModels.length,
-                itemBuilder: (BuildContext buildContext, int index) {
-                  return Container(
-                      child: Container(
-                          child: Text(widget.user.displayName
-                              // ' ' +
-                              //     userModels[index].firstName +
-                              //     ' ' +
-                              //     userModels[index].lastName,
-                              // style: TextStyle(
-                              //     fontSize: 15, color: Colors.black)
-                              )));
-                })),
+        // Container(
+        //     padding: EdgeInsets.all(0.3),
+        //     width: MediaQuery.of(context).size.width * 0.5,
+        //     height: MediaQuery.of(context).size.height * 0.0,
+        //     margin: EdgeInsets.fromLTRB(20, 180, 0, 0),
+        //     child: ListView.builder(
+        //         itemCount: userModels.length,
+        //         itemBuilder: (BuildContext buildContext, int index) {
+        //           return Container(
+        //               child: Container(
+        //                   child: Text(widget.user.displayName
+        //                       // ' ' +
+        //                       //     userModels[index].firstName +
+        //                       //     ' ' +
+        //                       //     userModels[index].lastName,
+        //                       // style: TextStyle(
+        //                       //     fontSize: 15, color: Colors.black)
+        //                       )));
+        //         })),
       ],
     );
   }
@@ -1111,7 +1086,7 @@ void _addDentalCase12Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase12Middle(_dentalCase12Back, id);
+        await _currentUser.addDentalCase12Middle(_dentalCase12Middle, id);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -18627,7 +18602,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Dental Carise');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18650,7 +18625,7 @@ Widget tooth12Detail(BuildContext context) {
                                           _case12Middle.add(
                                               'Attrition, abrasion, abfraction');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18671,7 +18646,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Fractured tooth');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18692,7 +18667,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Retained root');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18712,7 +18687,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('RCT tooth');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18733,7 +18708,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Extracted tooth');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18754,7 +18729,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Missing tooth');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18775,7 +18750,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Impacted tooth');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18796,7 +18771,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Partial eruption');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18818,7 +18793,7 @@ Widget tooth12Detail(BuildContext context) {
                                           _case12Middle
                                               .add('Tilting, drifting');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18839,7 +18814,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Loss of contact');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18861,7 +18836,7 @@ Widget tooth12Detail(BuildContext context) {
                                           _case12Middle
                                               .add('Poor contact point');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18882,7 +18857,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Food impaction');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18903,7 +18878,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Supraclusion');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18924,7 +18899,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Infraclusion');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18944,7 +18919,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Rotation');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18964,7 +18939,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Temporary');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -18986,7 +18961,7 @@ Widget tooth12Detail(BuildContext context) {
                                           _case12Middle
                                               .add('Permanentrestoration');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -19007,7 +18982,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Gold restoration');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -19029,7 +19004,7 @@ Widget tooth12Detail(BuildContext context) {
                                           _case12Middle
                                               .add('Porcelain/metal crown');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -19052,7 +19027,7 @@ Widget tooth12Detail(BuildContext context) {
                                           _case12Middle.add(
                                               'Extract and have fix bridge');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                       ListTile(
@@ -19071,7 +19046,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Middle.add('Other');
                                           _addDentalCase12Middle(
-                                              context, _dentalCase12Back());
+                                              context, _dentalCase12Middle());
                                         },
                                       ),
                                     ],
@@ -19118,7 +19093,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Dental Carise');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19141,7 +19116,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Back.add(
                                               'Attrition, abrasion, abfraction');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19162,7 +19137,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Fractured tooth');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19183,7 +19158,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Retained root');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19202,7 +19177,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('RCT tooth');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19223,7 +19198,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Extracted tooth');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19244,7 +19219,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Missing tooth');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19265,7 +19240,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Impacted tooth');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19286,7 +19261,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Partial eruption');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19307,7 +19282,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Tilting, drifting');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19328,7 +19303,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Loss of contact');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19349,7 +19324,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Poor contact point');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19370,7 +19345,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Food impaction');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19391,7 +19366,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Supraclusion');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19412,7 +19387,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Infraclusion');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19431,7 +19406,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Rotation');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19450,7 +19425,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Temporary');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19472,7 +19447,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Back
                                               .add('Permanentrestoration');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19493,7 +19468,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Gold restoration');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19515,7 +19490,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Back
                                               .add('Porcelain/metal crown');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19538,7 +19513,7 @@ Widget tooth12Detail(BuildContext context) {
                                           }
                                           _case12Back.add(
                                               'Extract and have fix bridge');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),
@@ -19557,7 +19532,7 @@ Widget tooth12Detail(BuildContext context) {
                                             i++;
                                           }
                                           _case12Back.add('Other');
-                                          _addDentalCase12Front(
+                                          _addDentalCase12Back(
                                               context, _dentalCase12Back());
                                         },
                                       ),

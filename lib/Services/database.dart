@@ -1,10 +1,15 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:fundee/models/users.dart';
 
 class PatientDatabase {
   final Firestore _firestore = Firestore.instance;
 
   Future<String> createPatient(OurPatients patient) async {
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
+    // AuthCredential credential =
+    //     PhoneAuthProvider.getCredential(verificationId: null, smsCode: null);
     String retVal = 'error';
     try {
       await _firestore
@@ -28,6 +33,9 @@ class PatientDatabase {
           .collection('DentalCase')
           .document('dentalCase')
           .setData({});
+      userUpdateInfo.displayName = patient.patientFullName;
+      // user.updatePhoneNumberCredential(credential);
+      user.updateProfile(userUpdateInfo);
       retVal = 'success';
     } catch (e) {
       print(e);
@@ -40,6 +48,8 @@ class DentistDatabase {
   final Firestore _firestore = Firestore.instance;
 
   Future<String> createDentists(OurDentists dentist) async {
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
     String retVal = 'error';
 
     try {
@@ -58,6 +68,8 @@ class DentistDatabase {
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist'
       });
+      userUpdateInfo.displayName = dentist.dentistFullname;
+      user.updateProfile(userUpdateInfo);
       retVal = 'success';
     } catch (e) {
       print(e);
@@ -69,6 +81,8 @@ class DentistWithFBAndGGDatabase {
   final Firestore _firestore = Firestore.instance;
 
   Future<String> createDentists(OurDentists dentist) async {
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
     String retVal = 'error';
 
     try {
@@ -86,7 +100,8 @@ class DentistWithFBAndGGDatabase {
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist'
       });
-
+      userUpdateInfo.displayName = dentist.dentistFullname;
+      user.updateProfile(userUpdateInfo);
       retVal = 'success';
     } catch (e) {
       print(e);
@@ -98,6 +113,8 @@ class PatientWithFBAndGGDatabase {
   final Firestore _firestore = Firestore.instance;
 
   Future<String> createPatient(OurPatients patient) async {
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
     String retVal = 'error';
 
     try {
@@ -121,6 +138,8 @@ class PatientWithFBAndGGDatabase {
           .collection('DentalCase')
           .document('dentalCase')
           .setData({});
+      userUpdateInfo.displayName = patient.patientFullName;
+      user.updateProfile(userUpdateInfo);
       retVal = 'success';
     } catch (e) {
       print(e);
@@ -134,34 +153,6 @@ class Case {
   final Firestore _firestore = Firestore.instance;
   Future<String> addCase(OurPatients cases) async {
     String retVal = 'error';
-    // final snapShot = await _firestore
-    //     .collection('Account')
-    //     .document('account')
-    //     .collection('Patients')
-    //     .document(cases.patientTel)
-    //     .collection('DentalCase')
-    //     .document('dentalCase')
-    //     .get();
-    // if (snapShot.exists) {
-    //   _firestore
-    //       .collection('Account')
-    //       .document('account')
-    //       .collection('Patients')
-    //       .document(cases.patientTel)
-    //       .collection('DentalCase')
-    //       .document('dentalCase')
-    //       .updateData({'tooth ' + cases.toothNo: cases.patientCase});
-    // } else {
-    //   _firestore
-    //       .collection('Account')
-    //       .document('account')
-    //       .collection('Patients')
-    //       .document(cases.patientTel)
-    //       .collection('DentalCase')
-    //       .document('dentalCase')
-    //       .setData({'tooth ' + cases.toothNo: cases.patientCase});
-    // }
-
     try {
       await _firestore
           .collection('Account')

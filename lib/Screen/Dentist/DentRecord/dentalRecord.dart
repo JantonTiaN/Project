@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/record_history_screen.dart';
-import 'package:fundee/States/current_user.dart';
-import 'package:provider/provider.dart';
 import 'dental_detail_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
 
