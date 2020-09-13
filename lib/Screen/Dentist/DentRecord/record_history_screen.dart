@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:fundee/models/users.dart';
 
 class RecordHistoryScreen extends StatefulWidget {
   @override
@@ -8,6 +9,7 @@ class RecordHistoryScreen extends StatefulWidget {
 
 class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
   @override
+  final cases = OurPatients();
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -16,10 +18,12 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
       ),
       body: StreamBuilder(
         stream: Firestore.instance
-            .collection("Account")
+            .collection('Account')
             .document('account')
             .collection('Patients')
-            .orderBy('fullName')
+            .document(cases.patientTel)
+            .collection('DentalCase')
+            .document('dentalCase')
             .snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
@@ -59,9 +63,9 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                           children: <Widget>[
                             ListTile(
                               title: Text(snapshot
-                                  .data.documents[index].data["fullName"]),
-                              subtitle: Text(
-                                  snapshot.data.documents[index].documentID),
+                                  .data.documents[index].data["dentalCase"]),
+                              // subtitle: Text(
+                              //     snapshot.data.documents[index].documentID),
                             ),
                           ],
                         ),

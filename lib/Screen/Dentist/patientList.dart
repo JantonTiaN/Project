@@ -32,9 +32,9 @@ class _PatientListState extends State<PatientList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Patients'),
-        backgroundColor: Colors.white,
-      ),
+          title: Text('Patients'),
+          backgroundColor: Colors.white,
+          automaticallyImplyLeading: false),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PatientForm())),
       //   child: Text("+"),
