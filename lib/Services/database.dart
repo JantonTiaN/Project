@@ -126,6 +126,34 @@ class Case {
 
   Future<String> addCase(OurPatients cases) async {
     String retVal = 'error';
+    // final snapShot = await _firestore
+    //     .collection('Account')
+    //     .document('account')
+    //     .collection('Patients')
+    //     .document(cases.patientTel)
+    //     .collection('DentalCase')
+    //     .document('dentalCase')
+    //     .get();
+    // if (snapShot.exists) {
+    //   _firestore
+    //       .collection('Account')
+    //       .document('account')
+    //       .collection('Patients')
+    //       .document(cases.patientTel)
+    //       .collection('DentalCase')
+    //       .document('dentalCase')
+    //       .updateData({'tooth ' + cases.toothNo: cases.patientCase});
+    // } else {
+    //   _firestore
+    //       .collection('Account')
+    //       .document('account')
+    //       .collection('Patients')
+    //       .document(cases.patientTel)
+    //       .collection('DentalCase')
+    //       .document('dentalCase')
+    //       .setData({'tooth ' + cases.toothNo: cases.patientCase});
+    // }
+
     try {
       await _firestore
           .collection('Account')
@@ -134,8 +162,8 @@ class Case {
           .document(cases.patientTel)
           .collection('DentalCase')
           .document('dentalCase')
-          .updateData({'tooth ' + cases.toothNo: cases.patientCase});
-      // .setData({'tooth ' + cases.toothNo: cases.patientCase});
+          .setData({'tooth ' + cases.toothNo: cases.patientCase});
+      // .updateData({'tooth ' + cases.toothNo: cases.patientCase});
       retVal = 'success';
     } catch (e) {
       print(e);

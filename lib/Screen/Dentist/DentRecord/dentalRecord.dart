@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/record_history_screen.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:provider/provider.dart';
 import 'dental_detail_screen.dart';
@@ -99,7 +100,6 @@ class _DentalRecordState extends State<DentalRecord> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // backgroundColor: bBackgroundColor,
         appBar: AppBar(
           title: Text(widget.fullname),
           backgroundColor: Colors.white,
@@ -145,6 +145,42 @@ class _DentalRecordState extends State<DentalRecord> {
                       'Left',
                       style:
                           TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(265, 10, 0, 0),
+                  child: FittedBox(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) {
+                            return RecordHistoryScreen();
+                          },
+                        ));
+                      },
+                      child: Container(
+                        margin: EdgeInsets.only(right: 30),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 18, vertical: 11),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(25),
+                          color: Colors.amber,
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Text(
+                              "History",
+                              style: TextStyle(fontSize: 14),
+                            ),
+                            SizedBox(width: 10),
+                            Icon(
+                              Icons.history,
+                              color: Colors.black,
+                            )
+                          ],
+                        ),
+                      ),
                     ),
                   ),
                 ),
