@@ -1,11 +1,16 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/Screen/Dentist/Signup/fb_d_signup_screen.dart';
+import 'package:fundee/Screen/Dentist/Signup/testDoc.dart';
+import 'package:fundee/Screen/Dentist/dentist_home_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:fundee/Screen/SignupProcess/gg_select_role.dart';
+import 'package:fundee/States/current_user.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'SignupProcess/fb_select_role.dart';
 import 'constants.dart';
@@ -13,6 +18,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fundee/Screen/SignupProcess/fb_select_role.dart';
 
 enum LoginType { email, google }
+enum authProblems { UserNotFound, PasswordNotValid, NetworkError }
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -21,9 +27,12 @@ class SignInScreen extends StatefulWidget {
 
 class _SignInScreenState extends State<SignInScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
+
+  GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
+
   void initState() {
     super.initState();
-    // checkAuth(context);
+    //checkAuth(context);
   }
 
   TextEditingController _emailController = TextEditingController();
@@ -73,6 +82,7 @@ class _SignInScreenState extends State<SignInScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: scaffoldKey,
       backgroundColor: bBackgroundColor,
       body: SingleChildScrollView(
         child: ConstrainedBox(
@@ -261,15 +271,50 @@ class _SignInScreenState extends State<SignInScreen> {
 
   //Email SignIn
   Future<FirebaseUser> signIn() async {
-    await _auth.signInWithEmailAndPassword(
-        email: _emailController.text.trim(),
-        password: _passwordController.text.trim());
-    // checkAuth(context);
-    email:
-    _emailController.text.trim();
-    password:
-    _passwordController.text.trim();
-    checkRole(context);
+    try {
+      await _auth.signInWithEmailAndPassword(
+          email: _emailController.text.trim(),
+          password: _passwordController.text.trim());
+      checkRole(context);
+    } catch (error) {
+      print(error.message);
+      scaffoldKey.currentState.showSnackBar(SnackBar(
+        content: Text(error.message, style: TextStyle(color: Colors.white)),
+        backgroundColor: Colors.red,
+      ));
+
+      // authProblems errorType;
+      // if (Platform.isAndroid) {
+      //   switch (e.message) {
+      //     case 'There is no user record corresponding to this identifier. The user may have been deleted.':
+      //       errorType = authProblems.UserNotFound;
+      //       break;
+      //     case 'The password is invalid or the user does not have a password.':
+      //       errorType = authProblems.PasswordNotValid;
+      //       break;
+      //     case 'A network error (such as timeout, interrupted connection or unreachable host) has occurred.':
+      //       errorType = authProblems.NetworkError;
+      //       break;
+      //     // ...
+      //     default:
+      //       print('Case is not yet implemented');
+      //   }
+      // }
+    }
+    // await _auth
+    //     .signInWithEmailAndPassword(
+    //   email: _emailController.text.trim(),
+    //   password: _passwordController.text.trim(),
+    // )
+    //     .then((user) {
+    //   checkRole(context);
+    // }).catchError((error) {
+    //   print(error.message);
+    //   scaffoldKey.currentState.showSnackBar(SnackBar(
+    //     content: Text(error.message, style: TextStyle(color: Colors.white)),
+    //     backgroundColor: Colors.red,
+    //   ));
+    // });
   }
 
   //Google SignIn
@@ -306,8 +351,7 @@ class _SignInScreenState extends State<SignInScreen> {
       if (authResult.additionalUserInfo.isNewUser) {
         selectRoleFacebook(context);
       } else {
-        checkUser();
-        checkRole(context);
+        checkAuthFacebook(context);
       }
       var user = await FirebaseAuth.instance.signInWithCredential(credential);
     }
@@ -315,10 +359,9 @@ class _SignInScreenState extends State<SignInScreen> {
 
   Future checkAuth(BuildContext context) async {
     FirebaseUser user = await _auth.currentUser();
-    if (user != null) {
-      print("Already signin with Email");
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => PatientMenuScreen(user)));
+    if (user = null) {
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => DentHomeScreen()));
     }
   }
 
@@ -326,7 +369,6 @@ class _SignInScreenState extends State<SignInScreen> {
     FirebaseUser user = await _auth.currentUser();
     if (user != null) {
       print("Already signin with Social media");
-      print(user.toString());
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
     }
