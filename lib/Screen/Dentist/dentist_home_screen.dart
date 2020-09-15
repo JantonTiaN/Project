@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:fundee/Screen/constants.dart';
 
 class DentHomeScreen extends StatefulWidget {
+  // final FirebaseUser user;
+  // DentHomeScreen(this.user, {Key key}) : super(key: key);
+
   @override
   _DentHomeScreenState createState() => _DentHomeScreenState();
 }
@@ -36,7 +39,7 @@ class _DentHomeScreenState extends State<DentHomeScreen> {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    'Nooooo',
+                    'Oh Nooo',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ],

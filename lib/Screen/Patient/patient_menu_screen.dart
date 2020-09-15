@@ -7,6 +7,7 @@ import 'package:fundee/Screen/Dentist/dentist_home_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_profile_screen.dart';
 import 'package:fundee/Screen/Patient/patient_sug_screen.dart';
 import 'package:fundee/Screen/signin_screen.dart';
+import 'package:fundee/user.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class PatientMenuScreen extends StatefulWidget {
