@@ -1,7 +1,5 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
-import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 
 class SingupImage extends StatefulWidget {
@@ -11,7 +9,7 @@ class SingupImage extends StatefulWidget {
 
 class _SingupImageState extends State<SingupImage> {
   int _imagePosition = 0;
- 
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,7 +58,8 @@ class _SingupImageState extends State<SingupImage> {
                       width: 184,
                       height: 180,
                       child: Card(
-                          child:  Icon(Icons.add_photo_alternate,size: 130, color: Colors.grey[700])),
+                          child: Icon(Icons.add_photo_alternate,
+                              size: 130, color: Colors.grey[700])),
                     ),
                   ),
                 ),
@@ -107,6 +106,6 @@ class _SingupImageState extends State<SingupImage> {
   //           lockAspectRatio: false),
   //       iosUiSettings: IOSUiSettings(
   //           title: 'Cropper',
-  //       ));    
+  //       ));
   // }
 }

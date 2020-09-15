@@ -1,9 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
-import 'package:provider/provider.dart';
-
-import '../../States/current_user.dart';
 
 class PatientList extends StatefulWidget {
   @override
@@ -32,16 +29,16 @@ class _PatientListState extends State<PatientList> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Patients'),
-        backgroundColor: Colors.white,
-      ),
+          title: Text('Patients'),
+          backgroundColor: Colors.white,
+          automaticallyImplyLeading: false),
       // floatingActionButton: FloatingActionButton(
       //   onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PatientForm())),
       //   child: Text("+"),
       // ),
       body: StreamBuilder(
         stream: Firestore.instance
-            .collection("Account")
+            .collection('Account')
             .document('account')
             .collection('Patients')
             .orderBy('fullName')

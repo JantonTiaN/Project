@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:fundee/Screen/SignupProcess/signupImage.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';

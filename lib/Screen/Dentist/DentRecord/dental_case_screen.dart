@@ -1,26 +1,26 @@
 import 'package:flutter/material.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:provider/provider.dart';
 
 class DentalCaseScreen extends StatefulWidget {
   @override
-  _DentalCaseScreenState createState() => _DentalCaseScreenState();
+  _dentalCase3MiddleScreenState createState() =>
+      _dentalCase3MiddleScreenState();
 }
 
-class _DentalCaseScreenState extends State<DentalCaseScreen> {
+class _dentalCase3MiddleScreenState extends State<DentalCaseScreen> {
   var _case = new List();
 
-  List _dentalCase() {
+  List _dentalCase3Middle() {
     var dentalCase = _case;
     return dentalCase;
   }
 
-  void _addDentalCase(BuildContext context, List addCase) async {
+  void _addDentalCase3Middle(BuildContext context, List addCase) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString =
-          await _currentUser.addDentalCase(_dentalCase, '', '');
+          await _currentUser.addDentalCase10Back(_dentalCase3Middle, '');
       if (_returnString == 'success') {
         Navigator.pop(context, 'OK');
       }
@@ -41,7 +41,7 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             FlatButton(
               onPressed: () {
                 _case.add('Dental Carise');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -68,9 +68,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Attrition');
+                // _dentalCase3Middle().add('Attrition');
                 _case.add('Attrition');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -87,9 +87,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Fractured tooth');
+                // _dentalCase3Middle().add('Fractured tooth');
                 _case.add('Fractured tooth');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -106,9 +106,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('retained root');
+                // _dentalCase3Middle().add('retained root');
                 _case.add('Retained root');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -125,9 +125,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('RCT tooth');
+                // _dentalCase3Middle().add('RCT tooth');
                 _case.add('RCT tooth');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -144,9 +144,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Extracted tooth');
+                // _dentalCase3Middle().add('Extracted tooth');
                 _case.add('Extracted tooth');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -163,9 +163,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Missing tooth');
+                // _dentalCase3Middle().add('Missing tooth');
                 _case.add('Missing tooth');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -182,9 +182,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Impacted tooth');
+                // _dentalCase3Middle().add('Impacted tooth');
                 _case.add('Impacted tooth');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -201,9 +201,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Partial eruption');
+                // _dentalCase3Middle().add('Partial eruption');
                 _case.add('Partial eruption');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -220,9 +220,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Tilting');
+                // _dentalCase3Middle().add('Tilting');
                 _case.add('Tilting');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -239,9 +239,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Loss of contact');
+                // _dentalCase3Middle().add('Loss of contact');
                 _case.add('Loss of contact');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -258,9 +258,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Poor contact point');
+                // _dentalCase3Middle().add('Poor contact point');
                 _case.add('Poor contact point');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -277,9 +277,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Food impaction');
+                // _dentalCase3Middle().add('Food impaction');
                 _case.add('Food impaction');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -296,9 +296,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Supraclusion');
+                // _dentalCase3Middle().add('Supraclusion');
                 _case.add('Supraclusion');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -315,9 +315,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Infraclusion');
+                // _dentalCase3Middle().add('Infraclusion');
                 _case.add('Infraclusion');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -334,9 +334,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add("Rotation");
+                // _dentalCase3Middle().add("Rotation");
                 _case.add('Rotation');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -353,9 +353,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Temporary');
+                // _dentalCase3Middle().add('Temporary');
                 _case.add('Temporary');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -372,9 +372,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Permanentrestoration');
+                // _dentalCase3Middle().add('Permanentrestoration');
                 _case.add('Permanentrestoration');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -391,9 +391,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Gold restoration');
+                // _dentalCase3Middle().add('Gold restoration');
                 _case.add('Gold restoration');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -410,9 +410,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Porcelain');
+                // _dentalCase3Middle().add('Porcelain');
                 _case.add('Porcelain');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],
@@ -429,9 +429,9 @@ class _DentalCaseScreenState extends State<DentalCaseScreen> {
             ),
             FlatButton(
               onPressed: () {
-                // _dentalCase().add('Extract');
+                // _dentalCase3Middle().add('Extract');
                 _case.add('Extract');
-                _addDentalCase(context, _dentalCase());
+                _addDentalCase3Middle(context, _dentalCase3Middle());
               },
               child: Card(
                 color: Colors.blue[100],

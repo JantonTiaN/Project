@@ -1,7 +1,6 @@
 // import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 // import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'package:fundee/Screen/Dentist/patientList.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:fundee/States/root.dart';

@@ -4,13 +4,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
-import 'package:fundee/Screen/Dentist/Signup/fb_d_signup_screen.dart';
-import 'package:fundee/Screen/Dentist/dentist_home_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:fundee/Screen/SignupProcess/gg_select_role.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'Dentist/dentist_home_screen.dart';
 import 'SignupProcess/fb_select_role.dart';
 import 'constants.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -409,6 +408,14 @@ class _SignInScreenState extends State<SignInScreen> {
           .getDocuments()
           .then((docs) {
         if (docs.documents[0].exists) {
+          // print('testUser');
+          // print(Firestore.instance
+          //     .collection('Account')
+          //     .document('account')
+          //     .collection('Dentists')
+          //     .document()
+          //     .path);
+          // print('what is this ?');
           if (docs.documents[0].data['role'] == 'Dentist') {
             Navigator.pushReplacement(context,
                 MaterialPageRoute(builder: (context) => DentMenuScreen(user)));

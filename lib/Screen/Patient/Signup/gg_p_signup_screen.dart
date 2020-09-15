@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fundee/Screen/constants.dart';
@@ -6,7 +5,6 @@ import 'package:fundee/States/current_user.dart';
 import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-
 import '../../signin_screen.dart';
 
 class GgPSignupScreen extends StatefulWidget {
