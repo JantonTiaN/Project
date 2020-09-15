@@ -38,7 +38,7 @@ class _PatientListState extends State<PatientList> {
       // ),
       body: StreamBuilder(
         stream: Firestore.instance
-            .collection("Account")
+            .collection('Account')
             .document('account')
             .collection('Patients')
             .orderBy('fullName')

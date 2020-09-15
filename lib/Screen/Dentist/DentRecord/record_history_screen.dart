@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
 import 'package:fundee/models/users.dart';
 
 class RecordHistoryScreen extends StatefulWidget {
@@ -8,9 +9,13 @@ class RecordHistoryScreen extends StatefulWidget {
 }
 
 class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
+  String id;
+
+  final Firestore _firestore = Firestore.instance;
   @override
   final cases = OurPatients();
   Widget build(BuildContext context) {
+    getid();
     return Scaffold(
       appBar: AppBar(
         title: Text('History'),
@@ -21,9 +26,9 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
             .collection('Account')
             .document('account')
             .collection('Patients')
-            .document(cases.patientTel)
+            .document()
             .collection('DentalCase')
-            .document('dentalCase')
+            // .document('dentalCase')
             .snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
@@ -46,29 +51,15 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
                     child: Container(
-                      child: InkWell(
-                        // onTap: () {
-                        //   Navigator.push(
-                        //       context,
-                        //       MaterialPageRoute(
-                        //         builder: (context) => DentalRecord(
-                        //           fullname: snapshot
-                        //               .data.documents[index].data["fullName"],
-                        //           tel:
-                        //               snapshot.data.documents[index].documentID,
-                        //         ),
-                        //       ));
-                        // },
-                        child: Column(
-                          children: <Widget>[
-                            ListTile(
-                              title: Text(snapshot
-                                  .data.documents[index].data["dentalCase"]),
-                              // subtitle: Text(
-                              //     snapshot.data.documents[index].documentID),
-                            ),
-                          ],
-                        ),
+                      child: Column(
+                        children: <Widget>[
+                          ListTile(
+                            title: Text(snapshot
+                                .data.documents[index].data['dentalCase']),
+                            // subtitle:t.data.documents[index].documentID),
+                          ),
+                          //     Text(snapsho
+                        ],
                       ),
                     ),
                   ),
