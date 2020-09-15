@@ -13,7 +13,6 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
 
   final Firestore _firestore = Firestore.instance;
   @override
-  final cases = OurPatients();
   Widget build(BuildContext context) {
     // getid();
     return Scaffold(
@@ -28,7 +27,6 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
             .collection('Patients')
             .document()
             .collection('DentalCase')
-            // .document('dentalCase')
             .snapshots(),
         builder: (context, snapshot) {
           if (!snapshot.hasData) {
