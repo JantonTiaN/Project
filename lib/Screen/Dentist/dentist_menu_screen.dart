@@ -110,14 +110,14 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
       ),
 
       //WE NOT GONNA USE THIS BUTTON ANY MORE !!!!!!!!!! BUT NOT DELETE YET
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () {
-      //     Navigator.push(
-      //         context, MaterialPageRoute(builder: (context) => PatientList()));
-      //   },
-      //   child: Icon(FontAwesomeIcons.tooth),
-      //   backgroundColor: Colors.blue[300],
-      // ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => PatientList()));
+        },
+        child: Icon(FontAwesomeIcons.tooth),
+        backgroundColor: Colors.blue[300],
+      ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       body: _pageOptions[_selectPage],
       bottomNavigationBar: BubbleBottomBar(
@@ -240,11 +240,5 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
         context,
         MaterialPageRoute(builder: (context) => SignInScreen()),
         (route) => false);
-
-    //  await _auth.signOut();
-    //  Navigator.pushAndRemoveUntil(
-    //     context,
-    //     MaterialPageRoute(builder: (context) => SignInScreen()),
-    //     ModalRoute.withName('/'));
   }
 }
