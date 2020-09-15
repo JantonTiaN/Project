@@ -84,10 +84,6 @@ class CurrentUser extends ChangeNotifier {
     String returnVal = 'error';
     OurDentists _dentist = OurDentists();
     try {
-      // AuthResult _authResulf = await _auth.createUserWithEmailAndPassword(
-      //     email: dentistEmail, password: dentistPassword);
-      // _dentist.dentistID = _authResulf.user.uid;
-      // _dentist.dentistEmail = _authResulf.user.email;
       _dentist.dentistFullname = dentistFullname;
       _dentist.dentistTel = dentistTel;
       _dentist.dentistCitizenID = dentistCitizenID;
