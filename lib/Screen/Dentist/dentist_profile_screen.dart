@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:fundee/Screen/signin_screen.dart';
+import 'package:fundee/profile_page.dart';
 
 class DentProfileScreen extends StatefulWidget {
   // final FirebaseUser user;
@@ -20,32 +21,61 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-      child: FittedBox(
-        child: GestureDetector(
-          onTap: () {
-            _signOut(context);
-          },
-          child: Container(
-            // margin: EdgeInsets.only(bottom: 20),
-            padding: EdgeInsets.symmetric(horizontal: 26, vertical: 16),
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(25),
-                border: Border.all(color: Colors.blueGrey)),
-            child: Row(
-              children: <Widget>[
-                Text(
-                  "SIGN OUT",
-                  style: Theme.of(context)
-                      .textTheme
-                      .button
-                      .copyWith(color: Colors.black),
-                ),
-              ],
+            child: Column(
+      children: [
+        FittedBox(
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ProfilePage()));
+            },
+            child: Container(
+              // margin: EdgeInsets.only(bottom: 20),
+              padding: EdgeInsets.symmetric(horizontal: 26, vertical: 16),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  border: Border.all(color: Colors.blueGrey)),
+              child: Row(
+                children: <Widget>[
+                  Text(
+                    "PROFILE",
+                    style: Theme.of(context)
+                        .textTheme
+                        .button
+                        .copyWith(color: Colors.black),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
-      ),
-    ));
+        FittedBox(
+          child: GestureDetector(
+            onTap: () {
+              _signOut(context);
+            },
+            child: Container(
+              // margin: EdgeInsets.only(bottom: 20),
+              padding: EdgeInsets.symmetric(horizontal: 26, vertical: 16),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(25),
+                  border: Border.all(color: Colors.blueGrey)),
+              child: Row(
+                children: <Widget>[
+                  Text(
+                    "SIGN OUT",
+                    style: Theme.of(context)
+                        .textTheme
+                        .button
+                        .copyWith(color: Colors.black),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
+    )));
   }
 
   Future _signOut(BuildContext context) async {
