@@ -1,3 +1,5 @@
+import 'package:flutter/cupertino.dart';
+
 class OurPatients {
   String patientId;
   String patientEmail;
@@ -5,8 +7,8 @@ class OurPatients {
   String patientTel;
   String patientDrugallergy;
   String patientBirthDate;
-  String toothNo;
   List patientCase;
+  Image patientImage;
 
   OurPatients(
       {this.patientId,
@@ -15,7 +17,8 @@ class OurPatients {
       this.patientTel,
       this.patientDrugallergy,
       this.patientBirthDate,
-      this.patientCase});
+      this.patientCase,
+      this.patientImage});
 }
 
 class OurDentists {
@@ -27,6 +30,7 @@ class OurDentists {
   String dentistPermission;
   String dentistBirthDate;
   List dentistWorkingTime;
+  Image dentistImage;
 
   OurDentists(
       {this.dentistID,
@@ -36,5 +40,6 @@ class OurDentists {
       this.dentistTel,
       this.dentistPermission,
       this.dentistBirthDate,
-      this.dentistWorkingTime});
+      this.dentistWorkingTime,
+      this.dentistImage});
 }

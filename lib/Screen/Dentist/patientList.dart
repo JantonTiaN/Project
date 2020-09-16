@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/record_history_screen.dart';
 
 class PatientList extends StatefulWidget {
   @override
