@@ -25,7 +25,6 @@ class PatientDatabase {
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
-        'image': Image.asset('assets/images/ToothLogo.png')
       });
       await _firestore
           .collection('Account')
@@ -36,7 +35,7 @@ class PatientDatabase {
           .document('dentalCase')
           .setData({});
       userUpdateInfo.displayName = patient.patientFullName;
-      // user.updatePhoneNumberCredential(credential);
+      userUpdateInfo.photoUrl = 'assets/images/ToothLogo.png';
       user.updateProfile(userUpdateInfo);
       retVal = 'success';
     } catch (e) {
@@ -69,9 +68,9 @@ class DentistDatabase {
         'permission': dentist.dentistPermission,
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist',
-        'image': Image.asset('assets/images/ToothLogo.png')
       });
       userUpdateInfo.displayName = dentist.dentistFullname;
+      userUpdateInfo.photoUrl = 'assets/images/ToothLogo.png';
       user.updateProfile(userUpdateInfo);
       retVal = 'success';
     } catch (e) {
@@ -102,9 +101,9 @@ class DentistWithFBAndGGDatabase {
         'permission': dentist.dentistPermission,
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist',
-        'image': Image.asset('assets/images/ToothLogo.png')
       });
       userUpdateInfo.displayName = dentist.dentistFullname;
+      userUpdateInfo.photoUrl = 'assets/images/ToothLogo.png';
       user.updateProfile(userUpdateInfo);
       retVal = 'success';
     } catch (e) {
@@ -133,7 +132,6 @@ class PatientWithFBAndGGDatabase {
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
-        'image': Image.asset('assets/images/ToothLogo.png')
       });
       await _firestore
           .collection('Account')
@@ -144,6 +142,7 @@ class PatientWithFBAndGGDatabase {
           .document('dentalCase')
           .setData({});
       userUpdateInfo.displayName = patient.patientFullName;
+      userUpdateInfo.photoUrl = 'assets/images/ToothLogo.png';
       user.updateProfile(userUpdateInfo);
       retVal = 'success';
     } catch (e) {
