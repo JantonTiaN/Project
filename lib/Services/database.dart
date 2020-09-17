@@ -34,6 +34,14 @@ class PatientDatabase {
           .collection('DentalCase')
           .document('dentalCase')
           .setData({});
+      await _firestore
+          .collection('Account')
+          .document('account')
+          .collection('Patients')
+          .document(patient.patientTel)
+          .collection('History')
+          .document('history')
+          .setData({});
       userUpdateInfo.displayName = patient.patientFullName;
       userUpdateInfo.photoUrl = 'assets/images/ToothLogo.png';
       user.updateProfile(userUpdateInfo);
@@ -140,6 +148,14 @@ class PatientWithFBAndGGDatabase {
           .document(patient.patientTel)
           .collection('DentalCase')
           .document('dentalCase')
+          .setData({});
+      await _firestore
+          .collection('Account')
+          .document('account')
+          .collection('Patients')
+          .document(patient.patientTel)
+          .collection('History')
+          .document('history')
           .setData({});
       userUpdateInfo.displayName = patient.patientFullName;
       userUpdateInfo.photoUrl = 'assets/images/ToothLogo.png';
