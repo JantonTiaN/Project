@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'top_bar_widget.dart';
 
 class StackContainer extends StatelessWidget {
@@ -51,13 +52,28 @@ class StackContainer extends StatelessWidget {
                     style:
                         TextStyle(fontSize: 21, fontWeight: FontWeight.bold)),
                 Text(
-                  'Dentist',
+                  'admin@fund.com',
                   style: TextStyle(fontSize: 14, color: Colors.grey[700]),
                 ),
               ],
             ),
           ),
           TopBarWidget(),
+          Align(
+            alignment: Alignment.centerRight,
+            child: Container(
+              width: 30,
+              height: 30,
+              decoration: BoxDecoration(
+                color: Colors.amber[400],
+                shape: BoxShape.circle,
+              ),
+              child: Icon(
+                LineAwesomeIcons.pen,
+                color: Colors.black,
+              ),
+            ),
+          ),
         ],
       ),
     );
