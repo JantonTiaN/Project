@@ -16,14 +16,7 @@ class TopBarWidget extends StatelessWidget {
             onPressed: () {},
             icon: Icon(
               Icons.arrow_back,
-              // color: Colors.white,
-            ),
-          ),
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              FontAwesomeIcons.edit,
-              // color: Colors.white,
+              color: Colors.white,
             ),
           ),
         ],

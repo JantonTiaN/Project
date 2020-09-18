@@ -9,6 +9,8 @@ import 'package:fundee/Screen/signin_screen.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:fundee/widget/stack_container.dart';
 
+import '../../font_awesome_flutter.dart';
+
 class DentProfileScreen extends StatefulWidget {
   // final FirebaseUser user;
   // DentProfileScreen(this.user, {Key key}) : super(key: key);
@@ -52,44 +54,124 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
           children: <Widget>[
             StackContainer(),
             Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.symmetric(horizontal: 16),
               child: Card(
-                child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.phone,
-                          color: Colors.indigoAccent,
-                        ),
-                      ),
-                      SizedBox(
-                        width: 14,
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 21),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Text(
-                            'Tel',
-                            style: TextStyle(
-                              fontSize: 18,
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              FontAwesomeIcons.edit,
+                              color: Colors.indigoAccent,
                             ),
                           ),
-                          SizedBox(height: 4),
-                          Text(
-                            '080000000',
-                            style: TextStyle(
-                                fontSize: 12, color: Colors.grey[700]),
+                          SizedBox(
+                            width: 14,
                           ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Text(
+                                'Edit Profile',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          )
                         ],
-                      )
-                    ],
-                  ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Card(
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 21),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          IconButton(
+                            onPressed: () {},
+                            icon: Icon(
+                              Icons.settings,
+                              color: Colors.indigoAccent,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 14,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Text(
+                                'Setting',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 16),
+              child: Card(
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 21),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          IconButton(
+                            onPressed: () {
+                              _signOut(context);
+                            },
+                            icon: Icon(
+                              Icons.exit_to_app,
+                              color: Colors.indigoAccent,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 14,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Text(
+                                'Sign Out',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),

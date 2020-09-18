@@ -9,7 +9,7 @@ class StackContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 450,
+      height: 300,
       child: Stack(
         children: <Widget>[
           Container(),
@@ -17,10 +17,16 @@ class StackContainer extends StatelessWidget {
             clipper: MyCustomClipper(),
             child: Container(
               height: 260,
-              color: Colors.blue[300],
+              decoration: BoxDecoration(
+                  gradient: LinearGradient(begin: Alignment.topCenter, colors: [
+                Colors.lightBlue[400],
+                Colors.blue,
+                Colors.indigo[300]
+              ])),
             ),
           ),
           Align(
+            alignment: Alignment(0, 1),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
