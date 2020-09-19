@@ -59,21 +59,25 @@ class StackContainer extends StatelessWidget {
             ),
           ),
           TopBarWidget(),
-          Align(
-            alignment: Alignment.centerRight,
-            child: Container(
-              width: 30,
-              height: 30,
-              decoration: BoxDecoration(
-                color: Colors.amber[400],
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                LineAwesomeIcons.pen,
-                color: Colors.black,
-              ),
-            ),
-          ),
+          // GestureDetector(
+          //   onTap: () {},
+          //   child: Padding(
+          //     padding: const EdgeInsets.fromLTRB(210, 210, 0, 0),
+          //     child: Container(
+          //       width: 30,
+          //       height: 30,
+          //       decoration: BoxDecoration(
+          //         color: Colors.amber[400],
+          //         shape: BoxShape.circle,
+          //       ),
+          //       child: Icon(
+          //         LineAwesomeIcons.pen,
+          //         color: Colors.black,
+          //         size: 20,
+          //       ),
+          //     ),
+          //   ),
+          // ),
         ],
       ),
     );

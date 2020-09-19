@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:fundee/Screen/constants.dart';
 import 'package:path/path.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -8,6 +9,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:fundee/widget/stack_container.dart';
+import 'package:fundee/Screen/Dentist/dentist_edit_profile.dart';
 
 import '../../font_awesome_flutter.dart';
 
@@ -53,6 +55,29 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
         body: Column(
           children: <Widget>[
             StackContainer(),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(
+                  builder: (context) {
+                    return DentEditProfile();
+                  },
+                ));
+              },
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  height: 20,
+                  width: 300,
+                  decoration: BoxDecoration(
+                    color: bPrimaryColor,
+                    borderRadius: BorderRadius.circular(25),
+                  ),
+                  child: Center(
+                    child: Text('Edit Profile'),
+                  ),
+                ),
+              ),
+            ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Card(
@@ -64,12 +89,9 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              FontAwesomeIcons.edit,
-                              color: Colors.indigoAccent,
-                            ),
+                          Icon(
+                            FontAwesomeIcons.edit,
+                            color: Colors.indigoAccent,
                           ),
                           SizedBox(
                             width: 14,
@@ -104,12 +126,9 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
                       child: Row(
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.settings,
-                              color: Colors.indigoAccent,
-                            ),
+                          Icon(
+                            Icons.settings,
+                            color: Colors.indigoAccent,
                           ),
                           SizedBox(
                             width: 14,
@@ -135,43 +154,43 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
             ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Card(
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 16, vertical: 21),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          IconButton(
-                            onPressed: () {
-                              _signOut(context);
-                            },
-                            icon: Icon(
+              child: GestureDetector(
+                onTap: () {
+                  _signOut(context);
+                },
+                child: Card(
+                  child: Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 16, vertical: 21),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Icon(
                               Icons.exit_to_app,
                               color: Colors.indigoAccent,
                             ),
-                          ),
-                          SizedBox(
-                            width: 14,
-                          ),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            mainAxisSize: MainAxisSize.min,
-                            children: <Widget>[
-                              Text(
-                                'Sign Out',
-                                style: TextStyle(
-                                  fontSize: 18,
+                            SizedBox(
+                              width: 14,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                Text(
+                                  'Sign Out',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          )
-                        ],
+                              ],
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
