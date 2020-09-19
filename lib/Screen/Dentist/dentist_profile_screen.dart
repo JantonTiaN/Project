@@ -64,13 +64,14 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
                 ));
               },
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(15.0),
                 child: Container(
-                  height: 20,
+                  height: 40,
                   width: 300,
                   decoration: BoxDecoration(
-                    color: bPrimaryColor,
+                    // color: bPrimaryColor,
                     borderRadius: BorderRadius.circular(25),
+                    border: Border.all(color: Colors.blueGrey),
                   ),
                   child: Center(
                     child: Text('Edit Profile'),
@@ -90,7 +91,7 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Icon(
-                            FontAwesomeIcons.edit,
+                            Icons.help,
                             color: Colors.indigoAccent,
                           ),
                           SizedBox(
@@ -101,7 +102,7 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                               Text(
-                                'Edit Profile',
+                                'Help & Support',
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
