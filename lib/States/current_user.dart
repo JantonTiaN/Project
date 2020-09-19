@@ -201,23 +201,6 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
-  // Future<String> addDentalCase(List dentalCase(), String docID) async {
-  //   String returnVal = 'error';
-  //   OurPatients _patient = OurPatients();
-  //   try {
-  //     _patient.patientCase = dentalCase();
-  //     _patient.patientTel = docID;
-  //     String _returnString = await Case().addCase(_patient);
-  //     if (_returnString == 'success') {
-  //       returnVal = 'success';
-  //     }
-  //     returnVal = 'success';
-  //   } catch (e) {
-  //     print(e);
-  //   }
-  //   return returnVal;
-  // }
-
   Future<String> addDentalCase1Front(List dentalCase(), String docID) async {
     String returnVal = 'error';
     OurPatients _patient = OurPatients();

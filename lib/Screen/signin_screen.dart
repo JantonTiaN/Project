@@ -7,7 +7,6 @@ import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:fundee/Screen/SignupProcess/gg_select_role.dart';
-import 'package:fundee/Screen/SignupProcess/login_role.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'Dentist/dentist_home_screen.dart';
@@ -327,7 +326,7 @@ class _SignInScreenState extends State<SignInScreen> {
     FirebaseUser user = await _auth.currentUser();
     if (user = null) {
       Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
+          MaterialPageRoute(builder: (context) => DentHomeScreen(user)));
     }
   }
 

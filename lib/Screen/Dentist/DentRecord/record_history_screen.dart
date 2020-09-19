@@ -7,7 +7,7 @@ class RecordHistoryScreen extends StatefulWidget {
 }
 
 class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
-  final Firestore _firestore = Firestore.instance;
+  final List<String> data = [];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,8 +47,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                       child: Column(
                         children: <Widget>[
                           ListTile(
-                            title: Text(snapshot
-                                .data.documents[index].data['dentalCase']),
+                            title: Text(snapshot.data.documents[List(0)]),
                             // subtitle:t.data.documents[index].documentID),
                           ),
                           //     Text(snapsho

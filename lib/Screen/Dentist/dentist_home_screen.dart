@@ -44,7 +44,7 @@ class _DentHomeScreenState extends State<DentHomeScreen> {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    'Hello ' + widget.user.displayName,
+                    widget.user.displayName,
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ],

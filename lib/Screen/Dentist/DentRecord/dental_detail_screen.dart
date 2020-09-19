@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:fundee/models/account_model.dart';
 import 'package:provider/provider.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/record_history_screen.dart';
 
 class DentalDetailScreen extends StatefulWidget {
   final FirebaseUser user;
