@@ -23,7 +23,6 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  final PageStorageBucket bucket = PageStorageBucket();
   int _selectPage = 0;
   // final List<Widget> _pageOptions = [
   //   DentHomeScreen(),
