@@ -17,7 +17,6 @@ class _ProfilePageState extends State<ProfilePage> {
   Widget build(BuildContext context) {
     Future getImage() async {
       var image = await ImagePicker.pickImage(source: ImageSource.gallery);
-
       setState(() {
         _image = image;
         print('Image Path $_image');
@@ -112,7 +111,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                           Align(
                             alignment: Alignment.centerLeft,
-                            child: Text('Michelle James',
+                            child: Text('Waiting session !',
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 20.0,
@@ -152,7 +151,7 @@ class _ProfilePageState extends State<ProfilePage> {
                           ),
                           Align(
                             alignment: Alignment.centerLeft,
-                            child: Text('1st April, 2000',
+                            child: Text('Waiting session !',
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 20.0,
@@ -186,13 +185,13 @@ class _ProfilePageState extends State<ProfilePage> {
                         children: <Widget>[
                           Align(
                             alignment: Alignment.centerLeft,
-                            child: Text('Location',
+                            child: Text('Drug Allergy',
                                 style: TextStyle(
                                     color: Colors.blueGrey, fontSize: 18.0)),
                           ),
                           Align(
                             alignment: Alignment.centerLeft,
-                            child: Text('Paris, France',
+                            child: Text('Waiting session !',
                                 style: TextStyle(
                                     color: Colors.black,
                                     fontSize: 20.0,
@@ -222,7 +221,7 @@ class _ProfilePageState extends State<ProfilePage> {
                         style:
                             TextStyle(color: Colors.blueGrey, fontSize: 18.0)),
                     SizedBox(width: 20.0),
-                    Text('michelle123@gmail.com',
+                    Text('Waiting session !',
                         style: TextStyle(
                             color: Colors.black,
                             fontSize: 20.0,
