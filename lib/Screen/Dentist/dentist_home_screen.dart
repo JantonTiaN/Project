@@ -1,8 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+import 'package:fundee/Screen/Dentist/patientList.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+
+import 'dentist_appointment_screen.dart';
+import 'dentist_profile_screen.dart';
 
 class DentHomeScreen extends StatefulWidget {
-  // final FirebaseUser user;
-  // DentHomeScreen(this.user, {Key key}) : super(key: key);
+  final FirebaseUser user;
+  DentHomeScreen(this.user, {Key key}) : super(key: key);
 
   @override
   _DentHomeScreenState createState() => _DentHomeScreenState();
@@ -37,7 +44,7 @@ class _DentHomeScreenState extends State<DentHomeScreen> {
                   ),
                   SizedBox(height: 5),
                   Text(
-                    'Oh Nooo',
+                    'Hello ' + widget.user.displayName,
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ],
