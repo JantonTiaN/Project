@@ -1,11 +1,11 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'top_bar_widget.dart';
 
 class StackContainer extends StatelessWidget {
-  const StackContainer({
-    Key key,
-  }) : super(key: key);
+  final FirebaseUser user;
+  StackContainer(this.user, {Key key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +48,7 @@ class StackContainer extends StatelessWidget {
                 SizedBox(
                   height: 4,
                 ),
-                Text('Steve Rogers',
+                Text(user.displayName,
                     style:
                         TextStyle(fontSize: 21, fontWeight: FontWeight.bold)),
                 Text(

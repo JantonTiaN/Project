@@ -25,12 +25,12 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
 
   final PageStorageBucket bucket = PageStorageBucket();
   int _selectPage = 0;
-  final List<Widget> _pageOptions = [
-    DentHomeScreen(),
-    DentAppointmentScreen(),
-    PatientList(),
-    DentProfileScreen(),
-  ];
+  // final List<Widget> _pageOptions = [
+  //   DentHomeScreen(),
+  //   DentAppointmentScreen(),
+  //   PatientList(),
+  //   DentProfileScreen(),
+  // ];
 
   @override
   void initState() {
@@ -39,6 +39,12 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final List<Widget> _pageOptions = [
+      DentHomeScreen(widget.user),
+      DentAppointmentScreen(),
+      PatientList(),
+      DentProfileScreen(widget.user),
+    ];
     return Scaffold(
       backgroundColor: Colors.white,
       // appBar: AppBar(

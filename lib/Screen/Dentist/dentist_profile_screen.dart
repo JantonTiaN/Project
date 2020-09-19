@@ -1,21 +1,14 @@
-import 'dart:io';
-import 'package:fundee/Screen/constants.dart';
-import 'package:path/path.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:fundee/Screen/signin_screen.dart';
-import 'package:image_picker/image_picker.dart';
 import 'package:fundee/widget/stack_container.dart';
 import 'package:fundee/Screen/Dentist/dentist_edit_profile.dart';
 
-import '../../font_awesome_flutter.dart';
-
 class DentProfileScreen extends StatefulWidget {
-  // final FirebaseUser user;
-  // DentProfileScreen(this.user, {Key key}) : super(key: key);
+  final FirebaseUser user;
+  DentProfileScreen(this.user, {Key key}) : super(key: key);
 
   @override
   _DentProfileScreenState createState() => _DentProfileScreenState();
@@ -25,41 +18,19 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
   final FacebookLogin _facebookLogin = FacebookLogin();
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  // File _image;
+
   @override
   Widget build(BuildContext context) {
-    // Future getImage() async {
-    //   var image = await ImagePicker.pickImage(source: ImageSource.gallery);
-
-    //   setState(() {
-    //     _image = image;
-    //     print('Image Path $_image');
-    //   });
-    // }
-
-    // Future uploadPic(BuildContext context) async {
-    //   String fileName = basename(_image.path);
-    //   StorageReference firebaseStorageRef =
-    //       FirebaseStorage.instance.ref().child(fileName);
-    //   StorageUploadTask uploadTask = firebaseStorageRef.putFile(_image);
-    //   StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
-    //   setState(() {
-    //     print("Profile Picture uploaded");
-    //     Scaffold.of(context)
-    //         .showSnackBar(SnackBar(content: Text('Profile Picture Uploaded')));
-    //   });
-    // }
-
     return Scaffold(
       body: Scaffold(
         body: Column(
           children: <Widget>[
-            StackContainer(),
+            StackContainer(widget.user),
             GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
                   builder: (context) {
-                    return DentEditProfile();
+                    return DentEditProfile(widget.user);
                   },
                 ));
               },

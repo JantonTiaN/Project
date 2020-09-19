@@ -358,8 +358,8 @@ class _SignInScreenState extends State<SignInScreen> {
   Future checkAuth(BuildContext context) async {
     FirebaseUser user = await _auth.currentUser();
     if (user = null) {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => DentHomeScreen()));
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => DentHomeScreen(user)));
     }
   }
 
