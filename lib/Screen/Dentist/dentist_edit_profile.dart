@@ -3,8 +3,6 @@ import 'package:path/path.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:fundee/widget/stack_container.dart';
-import 'package:fundee/widget/top_bar_widget.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
@@ -48,6 +46,27 @@ class _DentEditProfileState extends State<DentEditProfile> {
             height: 300,
             child: Stack(
               children: <Widget>[
+                SafeArea(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: Icon(
+                          Icons.close,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Icons.check,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 Container(),
                 ClipPath(
                   clipper: MyCustomClipper(),
@@ -100,7 +119,6 @@ class _DentEditProfileState extends State<DentEditProfile> {
                     ],
                   ),
                 ),
-                TopBarWidget(),
                 GestureDetector(
                   onTap: () {
                     getImage();
@@ -125,9 +143,24 @@ class _DentEditProfileState extends State<DentEditProfile> {
               ],
             ),
           ),
-          TopBarWidget(),
         ],
       ),
     );
+  }
+}
+
+class MyCustomClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path = Path();
+    path.lineTo(size.width, 0);
+    path.lineTo(size.width, size.height - 100);
+    path.lineTo(0, size.height);
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return true;
   }
 }

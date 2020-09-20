@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:fundee/Screen/signin_screen.dart';
-import 'package:fundee/widget/stack_container.dart';
 import 'package:fundee/Screen/Dentist/dentist_edit_profile.dart';
 
 class DentProfileScreen extends StatefulWidget {
@@ -70,7 +69,7 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
                             style: TextStyle(
                                 fontSize: 21, fontWeight: FontWeight.bold)),
                         Text(
-                          'admin@fund.com',
+                          widget.user.email,
                           style:
                               TextStyle(fontSize: 14, color: Colors.grey[700]),
                         ),
@@ -241,5 +240,21 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
     //     context,
     //     MaterialPageRoute(builder: (context) => SignInScreen()),
     //     ModalRoute.withName('/'));
+  }
+}
+
+class MyCustomClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    Path path = Path();
+    path.lineTo(size.width, 0);
+    path.lineTo(size.width, size.height - 100);
+    path.lineTo(0, size.height);
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    return true;
   }
 }
