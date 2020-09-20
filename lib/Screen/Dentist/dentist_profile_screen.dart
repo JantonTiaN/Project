@@ -25,7 +25,61 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
       body: Scaffold(
         body: Column(
           children: <Widget>[
-            StackContainer(widget.user),
+            Container(
+              height: 300,
+              child: Stack(
+                children: <Widget>[
+                  Container(),
+                  ClipPath(
+                    clipper: MyCustomClipper(),
+                    child: Container(
+                      height: 260,
+                      decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                              begin: Alignment.topCenter,
+                              colors: [
+                            Colors.lightBlue[400],
+                            Colors.blue,
+                            Colors.indigo[300]
+                          ])),
+                    ),
+                  ),
+                  Align(
+                    alignment: Alignment(0, 1),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        CircleAvatar(
+                          radius: 65,
+                          backgroundColor: Colors.white,
+                          child: ClipOval(
+                            child: new SizedBox(
+                              width: 120.0,
+                              height: 120.0,
+                              child: Image.asset(
+                                'assets/images/Logo/App-Icon-drop-shadow.jpg',
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 4,
+                        ),
+                        Text(widget.user.displayName,
+                            style: TextStyle(
+                                fontSize: 21, fontWeight: FontWeight.bold)),
+                        Text(
+                          'admin@fund.com',
+                          style:
+                              TextStyle(fontSize: 14, color: Colors.grey[700]),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
             GestureDetector(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(
