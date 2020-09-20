@@ -1,5 +1,5 @@
 import 'dart:io';
-
+import 'package:path/path.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
@@ -28,18 +28,18 @@ class _DentEditProfileState extends State<DentEditProfile> {
       });
     }
 
-    // Future uploadPic(BuildContext context) async {
-    //   String fileName = basename(_image.path);
-    //   StorageReference firebaseStorageRef =
-    //       FirebaseStorage.instance.ref().child(fileName);
-    //   StorageUploadTask uploadTask = firebaseStorageRef.putFile(_image);
-    //   StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
-    //   setState(() {
-    //     print("Profile Picture uploaded");
-    //     Scaffold.of(context)
-    //         .showSnackBar(SnackBar(content: Text('Profile Picture Uploaded')));
-    //   });
-    // }
+    Future uploadPic(BuildContext context) async {
+      String fileName = basename(_image.path);
+      StorageReference firebaseStorageRef =
+          FirebaseStorage.instance.ref().child(fileName);
+      StorageUploadTask uploadTask = firebaseStorageRef.putFile(_image);
+      StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
+      setState(() {
+        print("Profile Picture uploaded");
+        Scaffold.of(context)
+            .showSnackBar(SnackBar(content: Text('Profile Picture Uploaded')));
+      });
+    }
 
     return Scaffold(
       body: Column(
@@ -56,9 +56,14 @@ class _DentEditProfileState extends State<DentEditProfile> {
                     color: Colors.amber[400],
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(
-                    LineAwesomeIcons.pen,
-                    size: 25,
+                  child: GestureDetector(
+                    onTap: () {
+                      getImage();
+                    },
+                    child: Icon(
+                      LineAwesomeIcons.pen,
+                      size: 25,
+                    ),
                   ),
                   // color: Colors.black,
                 ),
