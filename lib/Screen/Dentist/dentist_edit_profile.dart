@@ -46,27 +46,6 @@ class _DentEditProfileState extends State<DentEditProfile> {
             height: 300,
             child: Stack(
               children: <Widget>[
-                SafeArea(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      IconButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        icon: Icon(
-                          Icons.close,
-                        ),
-                      ),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.check,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
                 Container(),
                 ClipPath(
                   clipper: MyCustomClipper(),
@@ -138,6 +117,29 @@ class _DentEditProfileState extends State<DentEditProfile> {
                         size: 20,
                       ),
                     ),
+                  ),
+                ),
+                SafeArea(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      IconButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        icon: Icon(
+                          Icons.close,
+                        ),
+                      ),
+                      IconButton(
+                        onPressed: () {
+                          uploadPic(context);
+                        },
+                        icon: Icon(
+                          Icons.check,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
