@@ -210,7 +210,8 @@ class _DentEditProfileState extends State<DentEditProfile> {
               child: TextFormField(
                 decoration: InputDecoration(
                     labelText: 'Name',
-                    labelStyle: TextStyle(color: Colors.grey[400])),
+                    labelStyle:
+                        TextStyle(color: Colors.grey[400], fontSize: 14)),
                 controller: displayNameController,
               ),
             ),
@@ -219,19 +220,20 @@ class _DentEditProfileState extends State<DentEditProfile> {
               child: TextFormField(
                 decoration: InputDecoration(
                     labelText: 'Permission',
-                    labelStyle: TextStyle(color: Colors.grey[400])),
+                    labelStyle:
+                        TextStyle(color: Colors.grey[400], fontSize: 14)),
               ),
             ),
             Divider(
               color: Colors.blueGrey[100],
             ),
             Padding(
-              padding: const EdgeInsets.only(left: 20),
+              padding: const EdgeInsets.only(left: 20, top: 10),
               child: Align(
                 alignment: Alignment.bottomLeft,
                 child: Text(
                   'Profile Information',
-                  style: TextStyle(fontSize: 14),
+                  style: TextStyle(fontSize: 16),
                 ),
               ),
             ),
@@ -240,7 +242,8 @@ class _DentEditProfileState extends State<DentEditProfile> {
               child: TextFormField(
                 decoration: InputDecoration(
                     labelText: 'E-mail Address',
-                    labelStyle: TextStyle(color: Colors.grey[400]),
+                    labelStyle:
+                        TextStyle(color: Colors.grey[400], fontSize: 14),
                     hintText: 'Enter your email'),
               ),
             ),
@@ -249,7 +252,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
               child: TextFormField(
                 decoration: InputDecoration(
                   labelText: 'Phone Number',
-                  labelStyle: TextStyle(color: Colors.grey[400]),
+                  labelStyle: TextStyle(color: Colors.grey[400], fontSize: 14),
                 ),
               ),
             ),
