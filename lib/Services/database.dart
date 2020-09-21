@@ -42,7 +42,7 @@ class PatientDatabase {
           .document('history')
           .setData({});
       userUpdateInfo.displayName = patient.patientFullName;
-      userUpdateInfo.photoUrl = 'assets/images/ToothLogo.png';
+      userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
       user.updateProfile(userUpdateInfo);
       retVal = 'success';
     } catch (e) {
@@ -77,7 +77,7 @@ class DentistDatabase {
         'role': 'Dentist',
       });
       userUpdateInfo.displayName = dentist.dentistFullname;
-      userUpdateInfo.photoUrl = 'assets/images/ToothLogo.png';
+      userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
       user.updateProfile(userUpdateInfo);
       retVal = 'success';
     } catch (e) {
@@ -111,7 +111,7 @@ class DentistWithFBAndGGDatabase {
         'role': 'Dentist',
       });
       userUpdateInfo.displayName = dentist.dentistFullname;
-      userUpdateInfo.photoUrl = 'assets/images/ToothLogo.png';
+      userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
       user.updateProfile(userUpdateInfo);
       retVal = 'success';
     } catch (e) {
@@ -159,13 +159,32 @@ class PatientWithFBAndGGDatabase {
           .document('history')
           .setData({});
       userUpdateInfo.displayName = patient.patientFullName;
-      userUpdateInfo.photoUrl = 'assets/images/ToothLogo.png';
+      userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
       user.updateProfile(userUpdateInfo);
       retVal = 'success';
     } catch (e) {
       print(e);
     }
 
+    return retVal;
+  }
+}
+
+class DentEditProfile {
+  final Firestore _firestore = Firestore.instance;
+  Future<String> UpdateDentName(OurDentists dentists) async {
+    String retVal = 'error';
+    try {
+      await _firestore
+          .collection('Account')
+          .document('account')
+          .collection('Dentist')
+          .getDocuments()
+          .then((value) => null);
+      retVal = 'success';
+    } catch (e) {
+      print(e);
+    }
     return retVal;
   }
 }

@@ -1,5 +1,7 @@
 import 'dart:io';
 import 'dart:ui';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fundee/Screen/constants.dart';
 import 'package:path/path.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -9,6 +11,7 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class DentEditProfile extends StatefulWidget {
   final FirebaseUser user;
+  // final String dentProfileId;
   DentEditProfile(this.user, {Key key}) : super(key: key);
   @override
   _DentEditProfileState createState() => _DentEditProfileState();
@@ -16,11 +19,12 @@ class DentEditProfile extends StatefulWidget {
 
 class _DentEditProfileState extends State<DentEditProfile> {
   File _image;
-  final nameController = TextEditingController();
+  final _picker = ImagePicker();
+  final displayNameController = TextEditingController();
   @override
   void dispose() {
     // Clean up the controller when the widget is disposed.
-    nameController.dispose();
+    displayNameController.dispose();
     super.dispose();
   }
 
@@ -32,6 +36,14 @@ class _DentEditProfileState extends State<DentEditProfile> {
       setState(() {
         _image = image;
         print('Image Path $_image');
+      });
+    }
+
+    Future _pickImageFromCamera() async {
+      final PickedFile pickedFile =
+          await _picker.getImage(source: ImageSource.camera);
+      setState(() {
+        this._image = File(pickedFile.path);
       });
     }
 
@@ -49,6 +61,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
     }
 
     return Scaffold(
+      // backgroundColor: bBackgroundColor,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -59,17 +72,17 @@ class _DentEditProfileState extends State<DentEditProfile> {
                   Container(),
                   ClipPath(
                     clipper: MyCustomClipper(),
-                    child: Container(
-                      height: 260,
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              colors: [
-                            Colors.lightBlue[400],
-                            Colors.blue,
-                            Colors.indigo[300]
-                          ])),
-                    ),
+                    // child: Container(
+                    //   height: 260,
+                    //   decoration: BoxDecoration(
+                    //       gradient: LinearGradient(
+                    //           begin: Alignment.topCenter,
+                    //           colors: [
+                    //         Colors.lightBlue[400],
+                    //         Colors.blue,
+                    //         Colors.indigo[300]
+                    //       ])),
+                    // ),
                   ),
                   Align(
                     alignment: Alignment(0, 1),
@@ -78,7 +91,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
                       children: <Widget>[
                         CircleAvatar(
                           radius: 65,
-                          backgroundColor: Colors.white,
+                          // backgroundColor: Colors.white,
                           child: ClipOval(
                             child: new SizedBox(
                               width: 120.0,
@@ -103,7 +116,44 @@ class _DentEditProfileState extends State<DentEditProfile> {
                   ),
                   GestureDetector(
                     onTap: () {
-                      getImage();
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return SimpleDialog(
+                            title: const Text('Change Profile Photo'),
+                            children: <Widget>[
+                              Divider(
+                                color: Colors.grey[300],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 8),
+                                child: SimpleDialogOption(
+                                  onPressed: () {
+                                    getImage();
+                                  },
+                                  child: const Text('Import From Gallery'),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 8),
+                                child: SimpleDialogOption(
+                                  onPressed: () {
+                                    _pickImageFromCamera();
+                                  },
+                                  child: const Text('Take Photo'),
+                                ),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 8),
+                                child: SimpleDialogOption(
+                                  onPressed: () {},
+                                  child: const Text('Remove Profile Photo'),
+                                ),
+                              ),
+                            ],
+                          );
+                        },
+                      );
                     },
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(210, 210, 0, 0),
@@ -141,19 +191,19 @@ class _DentEditProfileState extends State<DentEditProfile> {
                         ),
                         IconButton(
                           onPressed: () {
-                            Navigator.pop(context);
                             uploadPic(context);
+                            Navigator.pop(context);
                           },
                           icon: Icon(
                             Icons.check,
                           ),
+                          color: Colors.blue,
                         ),
                       ],
                     ),
                   ),
                 ],
               ),
-              color: Colors.red,
             ),
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
@@ -161,7 +211,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
                 decoration: InputDecoration(
                     labelText: 'Name',
                     labelStyle: TextStyle(color: Colors.grey[400])),
-                controller: nameController,
+                controller: displayNameController,
               ),
             ),
             Padding(
