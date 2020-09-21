@@ -16,6 +16,14 @@ class DentEditProfile extends StatefulWidget {
 
 class _DentEditProfileState extends State<DentEditProfile> {
   File _image;
+  final nameController = TextEditingController();
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    nameController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     Future getImage() async {
@@ -153,6 +161,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
                 decoration: InputDecoration(
                     labelText: 'Name',
                     labelStyle: TextStyle(color: Colors.grey[400])),
+                controller: nameController,
               ),
             ),
             Padding(
