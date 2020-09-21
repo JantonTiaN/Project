@@ -1874,12 +1874,10 @@ Widget tooth1Detail(BuildContext context) {
         Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
-            color: Colors.yellow,
             child: Text("Upper (R) Third Molar"),
           ),
         ),
         Container(
-          color: Colors.red,
           width: MediaQuery.of(context).size.width *
               MediaQuery.of(context).devicePixelRatio *
               0.1,
@@ -2331,7 +2329,6 @@ Widget tooth1Detail(BuildContext context) {
               }),
         ),
         Container(
-          color: Colors.blue,
           width: MediaQuery.of(context).size.width *
               MediaQuery.of(context).devicePixelRatio *
               0.07,
@@ -2784,7 +2781,6 @@ Widget tooth1Detail(BuildContext context) {
               }),
         ),
         Container(
-          color: Colors.green,
           width: MediaQuery.of(context).size.width *
               MediaQuery.of(context).devicePixelRatio *
               0.1,

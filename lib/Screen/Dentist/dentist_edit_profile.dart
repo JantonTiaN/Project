@@ -1,7 +1,6 @@
 import 'dart:io';
 import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fundee/Screen/constants.dart';
 import 'package:path/path.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -11,7 +10,6 @@ import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 
 class DentEditProfile extends StatefulWidget {
   final FirebaseUser user;
-  // final String dentProfileId;
   DentEditProfile(this.user, {Key key}) : super(key: key);
   @override
   _DentEditProfileState createState() => _DentEditProfileState();
@@ -20,12 +18,12 @@ class DentEditProfile extends StatefulWidget {
 class _DentEditProfileState extends State<DentEditProfile> {
   File _image;
   final _picker = ImagePicker();
-  final displayNameController = TextEditingController();
+  final _nameController = TextEditingController();
+
   @override
-  void dispose() {
-    // Clean up the controller when the widget is disposed.
-    displayNameController.dispose();
-    super.dispose();
+  void initState() {
+    super.initState();
+    // _nameController.text = widget.user.displayName.toString();
   }
 
   @override
@@ -60,8 +58,20 @@ class _DentEditProfileState extends State<DentEditProfile> {
       });
     }
 
+    // Future<void> deletePic(BuildContext context) async {
+    //   String fileName = basename(_image.path);
+    //   StorageReference firebaseStorageRef =
+    //       FirebaseStorage.instance.ref().child(fileName).delete(_image);
+    //       // StorageReference deleteTask = firebaseStorageRef.delete(_image);
+    //       // StorageTaskSnapshot taskSnapshot = await deleteTask.onComplete;
+    //       setState(() {
+    //     print("Profile Picture deleted");
+    //     Scaffold.of(context)
+    //         .showSnackBar(SnackBar(content: Text('Profile Picture deleted')));
+    //   });
+    // }
+
     return Scaffold(
-      // backgroundColor: bBackgroundColor,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -212,7 +222,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
                     labelText: 'Name',
                     labelStyle:
                         TextStyle(color: Colors.grey[400], fontSize: 14)),
-                controller: displayNameController,
+                controller: _nameController,
               ),
             ),
             Padding(
