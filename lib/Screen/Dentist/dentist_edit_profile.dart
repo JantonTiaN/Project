@@ -258,10 +258,16 @@ class _DentEditProfileState extends State<DentEditProfile> {
                           onPressed: () {
                             // uploadPic(context);
                             // Navigator.pop(context);
-                            if (name.isEmpty || eMail.isEmpty || tel.isEmpty) {
+                            if (name.isEmpty ||
+                                eMail.isEmpty ||
+                                tel.isEmpty ||
+                                name == null ||
+                                eMail == null ||
+                                tel == null) {
                               showAlert(
                                   'Have Space', 'Please Fill Every Blank');
                             } else {
+                              Navigator.pop(context);
                               uploadPic();
                               updateDataToFirestore();
                             }
