@@ -21,13 +21,14 @@ class DentEditProfile extends StatefulWidget {
 class _DentEditProfileState extends State<DentEditProfile> {
   File _image;
   final _picker = ImagePicker();
+  final _nameController = TextEditingController();
+
   final displayNameController = TextEditingController();
   String name, eMail, tel, urlPicture;
   @override
-  void dispose() {
-    // Clean up the controller when the widget is disposed.
-    displayNameController.dispose();
-    super.dispose();
+  void initState() {
+    super.initState();
+    // _nameController.text = widget.user.displayName.toString();
   }
 
   @override
@@ -98,8 +99,20 @@ class _DentEditProfileState extends State<DentEditProfile> {
       });
     }
 
+    // Future<void> deletePic(BuildContext context) async {
+    //   String fileName = basename(_image.path);
+    //   StorageReference firebaseStorageRef =
+    //       FirebaseStorage.instance.ref().child(fileName).delete(_image);
+    //       // StorageReference deleteTask = firebaseStorageRef.delete(_image);
+    //       // StorageTaskSnapshot taskSnapshot = await deleteTask.onComplete;
+    //       setState(() {
+    //     print("Profile Picture deleted");
+    //     Scaffold.of(context)
+    //         .showSnackBar(SnackBar(content: Text('Profile Picture deleted')));
+    //   });
+    // }
+
     return Scaffold(
-      // backgroundColor: bBackgroundColor,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -231,10 +244,16 @@ class _DentEditProfileState extends State<DentEditProfile> {
                           onPressed: () {
                             // uploadPic(context);
                             // Navigator.pop(context);
-                            if (name.isEmpty || eMail.isEmpty || tel.isEmpty) {
+                            if (name.isEmpty ||
+                                eMail.isEmpty ||
+                                tel.isEmpty ||
+                                name == null ||
+                                eMail == null ||
+                                tel == null) {
                               showAlert(
                                   'Have Space', 'Please Fill Every Blank');
                             } else {
+                              Navigator.pop(context);
                               uploadPic();
                               updateDataToFirestore();
                             }
@@ -263,13 +282,16 @@ class _DentEditProfileState extends State<DentEditProfile> {
                 controller: displayNameController,
               ),
             ),
+            Divider(
+              color: Colors.blueGrey[100],
+            ),
             Padding(
-              padding: const EdgeInsets.only(left: 20),
+              padding: const EdgeInsets.only(left: 20, top: 10),
               child: Align(
                 alignment: Alignment.bottomLeft,
                 child: Text(
                   'Profile Information',
-                  style: TextStyle(fontSize: 14),
+                  style: TextStyle(fontSize: 16),
                 ),
               ),
             ),
@@ -282,7 +304,8 @@ class _DentEditProfileState extends State<DentEditProfile> {
                 },
                 decoration: InputDecoration(
                     labelText: 'E-mail Address',
-                    labelStyle: TextStyle(color: Colors.grey[400]),
+                    labelStyle:
+                        TextStyle(color: Colors.grey[400], fontSize: 14),
                     hintText: 'Enter your email'),
               ),
             ),
@@ -295,7 +318,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
                 },
                 decoration: InputDecoration(
                   labelText: 'Phone Number',
-                  labelStyle: TextStyle(color: Colors.grey[400]),
+                  labelStyle: TextStyle(color: Colors.grey[400], fontSize: 14),
                 ),
               ),
             ),
