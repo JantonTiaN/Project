@@ -81,6 +81,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
 
     Future<void> updateDataToFirestore() async {
       Firestore firestore = Firestore.instance;
+      UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
       DocumentReference documentReference = firestore
           .collection('Account')
           .document('account')
@@ -90,7 +91,9 @@ class _DentEditProfileState extends State<DentEditProfile> {
       map['fullName'] = name;
       map['eMail'] = eMail;
       map['tel'] = tel;
-      map['pathImage'] = urlPicture.toString();
+      map['pathImage'] = urlPicture;
+      widget.user.updateEmail(eMail);
+      userUpdateInfo.displayName = name;
       documentReference.updateData(map).then((value) {
         print('Update Success');
         MaterialPageRoute route = MaterialPageRoute(
