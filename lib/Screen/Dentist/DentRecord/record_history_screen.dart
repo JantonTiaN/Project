@@ -8,6 +8,36 @@ class RecordHistoryScreen extends StatefulWidget {
 
 class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
   final List<String> data = [];
+
+  @override
+  void initState() {
+    super.initState();
+    readAllData();
+  }
+
+  Future<void> readAllData() async {
+    Firestore firestore = Firestore.instance;
+    CollectionReference collectionReference = firestore
+        .collection('Account')
+        .document('account')
+        .collection('Patients')
+        .document(id)
+        .collection('DentalCase');
+    collectionReference.snapshots().listen((response) {
+      List<DocumentSnapshot> snapshots = response.documents;
+      for (var snapshot in snapshots) {
+        List<String> read1 = List.from(snapshot['tooth 1 Front']);
+        // List<String> read2 = List.from(snapshot['tooth 7 Front']);
+        print(read1);
+        // print(read2);
+        print('tooth 1 Front = ${snapshot.data['tooth 1 Front']}');
+        print('tooth 1 Middle = ${snapshot.data['tooth 1 Middle']}');
+        print('tooth 1 Back = ${snapshot.data['tooth 1 Back']}');
+        print('tooth 2 Back = ${snapshot.data['tooth 2 Back']}');
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
