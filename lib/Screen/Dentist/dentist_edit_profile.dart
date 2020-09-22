@@ -67,25 +67,11 @@ class _DentEditProfileState extends State<DentEditProfile> {
           });
     }
 
-    // Future uploadPic(BuildContext context) async {
-    //   String fileName = basename(_image.path);
-    //   StorageReference firebaseStorageRef =
-    //       FirebaseStorage.instance.ref().child(fileName);
-    //   StorageUploadTask uploadTask = firebaseStorageRef.putFile(_image);
-    //   StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
-    //   setState(() {
-    //     print("Profile Picture uploaded");
-    //     Scaffold.of(context)
-    //         .showSnackBar(SnackBar(content: Text('Profile Picture Uploaded')));
-    //   });
-    // }
-
     Future<void> uploadPic() async {
-      Random random = Random();
-      int i = random.nextInt(10000);
+      String pic = widget.user.email;
       FirebaseStorage firebaseStorage = FirebaseStorage.instance;
       StorageReference storageReference =
-          firebaseStorage.ref().child('dentistProfile/Profile$i.jpg');
+          firebaseStorage.ref().child('dentistProfile/$pic.jpg');
       StorageUploadTask storageUploadTask = storageReference.putFile(_image);
       urlPicture =
           await (await storageUploadTask.onComplete).ref.getDownloadURL();
@@ -98,12 +84,12 @@ class _DentEditProfileState extends State<DentEditProfile> {
           .collection('Account')
           .document('account')
           .collection('Dentists')
-          .document(widget.user.phoneNumber);
+          .document(widget.user.email);
       Map<String, dynamic> map = Map();
       map['fullName'] = name;
       map['eMail'] = eMail;
       map['tel'] = tel;
-      map['pathImage'] = urlPicture;
+      map['pathImage'] = urlPicture.toString();
       documentReference.updateData(map).then((value) {
         print('Update Success');
         MaterialPageRoute route = MaterialPageRoute(
@@ -270,9 +256,10 @@ class _DentEditProfileState extends State<DentEditProfile> {
                 onChanged: (value) {
                   name = value.trim();
                 },
-                decoration: InputDecoration(
-                    labelText: 'Name',
-                    labelStyle: TextStyle(color: Colors.grey[400])),
+                decoration: new InputDecoration(
+                  labelText: 'Name',
+                  labelStyle: TextStyle(color: Colors.grey[400]),
+                ),
                 controller: displayNameController,
               ),
             ),
@@ -289,6 +276,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: TextFormField(
+                keyboardType: TextInputType.emailAddress,
                 onChanged: (value) {
                   eMail = value.trim();
                 },
@@ -301,6 +289,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: TextFormField(
+                keyboardType: TextInputType.phone,
                 onChanged: (value) {
                   tel = value.trim();
                 },

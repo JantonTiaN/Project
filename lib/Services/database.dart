@@ -16,7 +16,7 @@ class PatientDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientTel)
+          .document(patient.patientEmail)
           .setData({
         'fullName': patient.patientFullName,
         'eMail': patient.patientEmail,
@@ -24,13 +24,13 @@ class PatientDatabase {
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
-        'pathImage': null
+        'pathImage': ''
       });
       await _firestore
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientTel)
+          .document(patient.patientEmail)
           .collection('DentalCase')
           .document('dentalCase')
           .setData({});
@@ -38,13 +38,14 @@ class PatientDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientTel)
+          .document(patient.patientEmail)
           .collection('History')
           .document('history')
           .setData({});
       userUpdateInfo.displayName = patient.patientFullName;
-      userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
+      // userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
       user.updateProfile(userUpdateInfo);
+      user.updateEmail(patient.patientEmail);
       retVal = 'success';
     } catch (e) {
       print(e);
@@ -66,7 +67,7 @@ class DentistDatabase {
           .collection('Account')
           .document('account')
           .collection('Dentists')
-          .document(dentist.dentistTel)
+          .document(dentist.dentistEmail)
           .setData({
         'fullName': dentist.dentistFullname,
         'eMail': dentist.dentistEmail,
@@ -76,10 +77,11 @@ class DentistDatabase {
         'permission': dentist.dentistPermission,
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist',
-        'pathImage': null
+        'pathImage': 'imageUrl'
       });
       userUpdateInfo.displayName = dentist.dentistFullname;
-      userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
+      // userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
+      user.updateEmail(dentist.dentistEmail);
       user.updateProfile(userUpdateInfo);
       retVal = 'success';
     } catch (e) {
@@ -102,7 +104,7 @@ class DentistWithFBAndGGDatabase {
           .collection('Account')
           .document('account')
           .collection('Dentists')
-          .document(dentist.dentistTel)
+          .document(dentist.dentistEmail)
           .setData({
         'fullName': dentist.dentistFullname,
         'birthDay': dentist.dentistBirthDate,
@@ -111,11 +113,12 @@ class DentistWithFBAndGGDatabase {
         'permission': dentist.dentistPermission,
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist',
-        'pathImage': null
+        'pathImage': ''
       });
       userUpdateInfo.displayName = dentist.dentistFullname;
-      userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
+      // userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
       user.updateProfile(userUpdateInfo);
+      user.updateEmail(dentist.dentistEmail);
       retVal = 'success';
     } catch (e) {
       print(e);
@@ -140,17 +143,18 @@ class PatientWithFBAndGGDatabase {
           .document(patient.patientTel)
           .setData({
         'fullName': patient.patientFullName,
+        'eMail': patient.patientEmail,
         'birthDay': patient.patientBirthDate,
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
-        'pathImage': null
+        'pathImage': ''
       });
       await _firestore
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientTel)
+          .document(patient.patientEmail)
           .collection('DentalCase')
           .document('dentalCase')
           .setData({});
@@ -158,13 +162,14 @@ class PatientWithFBAndGGDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientTel)
+          .document(patient.patientEmail)
           .collection('History')
           .document('history')
           .setData({});
       userUpdateInfo.displayName = patient.patientFullName;
-      userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
+      // userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
       user.updateProfile(userUpdateInfo);
+      user.updateEmail(patient.patientEmail);
       retVal = 'success';
     } catch (e) {
       print(e);
