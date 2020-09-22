@@ -24,6 +24,7 @@ class PatientDatabase {
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
+        'pathImage': null
       });
       await _firestore
           .collection('Account')
@@ -75,6 +76,7 @@ class DentistDatabase {
         'permission': dentist.dentistPermission,
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist',
+        'pathImage': null
       });
       userUpdateInfo.displayName = dentist.dentistFullname;
       userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
@@ -109,6 +111,7 @@ class DentistWithFBAndGGDatabase {
         'permission': dentist.dentistPermission,
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist',
+        'pathImage': null
       });
       userUpdateInfo.displayName = dentist.dentistFullname;
       userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
@@ -141,6 +144,7 @@ class PatientWithFBAndGGDatabase {
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
+        'pathImage': null
       });
       await _firestore
           .collection('Account')

@@ -1,6 +1,9 @@
 import 'dart:io';
+import 'dart:math';
 import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:fundee/Screen/Dentist/dentist_profile_screen.dart';
+import 'package:fundee/Screen/constants.dart';
 import 'package:path/path.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -20,6 +23,8 @@ class _DentEditProfileState extends State<DentEditProfile> {
   final _picker = ImagePicker();
   final _nameController = TextEditingController();
 
+  final displayNameController = TextEditingController();
+  String name, eMail, tel, urlPicture;
   @override
   void initState() {
     super.initState();
@@ -28,7 +33,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
 
   @override
   Widget build(BuildContext context) {
-    Future getImage() async {
+    Future<void> getImage() async {
       var image = await ImagePicker.pickImage(source: ImageSource.gallery);
 
       setState(() {
@@ -45,16 +50,66 @@ class _DentEditProfileState extends State<DentEditProfile> {
       });
     }
 
-    Future uploadPic(BuildContext context) async {
-      String fileName = basename(_image.path);
-      StorageReference firebaseStorageRef =
-          FirebaseStorage.instance.ref().child(fileName);
-      StorageUploadTask uploadTask = firebaseStorageRef.putFile(_image);
-      StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
-      setState(() {
-        print("Profile Picture uploaded");
-        Scaffold.of(context)
-            .showSnackBar(SnackBar(content: Text('Profile Picture Uploaded')));
+    Future<void> showAlert(String title, String message) async {
+      showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+                title: Text(title),
+                content: Text(message),
+                actions: <Widget>[
+                  FlatButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('ok'),
+                  )
+                ]);
+          });
+    }
+
+    // Future uploadPic(BuildContext context) async {
+    //   String fileName = basename(_image.path);
+    //   StorageReference firebaseStorageRef =
+    //       FirebaseStorage.instance.ref().child(fileName);
+    //   StorageUploadTask uploadTask = firebaseStorageRef.putFile(_image);
+    //   StorageTaskSnapshot taskSnapshot = await uploadTask.onComplete;
+    //   setState(() {
+    //     print("Profile Picture uploaded");
+    //     Scaffold.of(context)
+    //         .showSnackBar(SnackBar(content: Text('Profile Picture Uploaded')));
+    //   });
+    // }
+
+    Future<void> uploadPic() async {
+      Random random = Random();
+      int i = random.nextInt(10000);
+      FirebaseStorage firebaseStorage = FirebaseStorage.instance;
+      StorageReference storageReference =
+          firebaseStorage.ref().child('dentistProfile/Profile$i.jpg');
+      StorageUploadTask storageUploadTask = storageReference.putFile(_image);
+      urlPicture =
+          await (await storageUploadTask.onComplete).ref.getDownloadURL();
+      print('urlPicture = $urlPicture');
+    }
+
+    Future<void> updateDataToFirestore() async {
+      Firestore firestore = Firestore.instance;
+      DocumentReference documentReference = firestore
+          .collection('Account')
+          .document('account')
+          .collection('Dentists')
+          .document(widget.user.phoneNumber);
+      Map<String, dynamic> map = Map();
+      map['fullName'] = name;
+      map['eMail'] = eMail;
+      map['tel'] = tel;
+      map['pathImage'] = urlPicture;
+      documentReference.updateData(map).then((value) {
+        print('Update Success');
+        MaterialPageRoute route = MaterialPageRoute(
+            builder: (value) => DentProfileScreen(widget.user));
+        Navigator.of(context).pushAndRemoveUntil(route, (value) => false);
       });
     }
 
@@ -201,8 +256,15 @@ class _DentEditProfileState extends State<DentEditProfile> {
                         ),
                         IconButton(
                           onPressed: () {
-                            uploadPic(context);
-                            Navigator.pop(context);
+                            // uploadPic(context);
+                            // Navigator.pop(context);
+                            if (name.isEmpty || eMail.isEmpty || tel.isEmpty) {
+                              showAlert(
+                                  'Have Space', 'Please Fill Every Blank');
+                            } else {
+                              uploadPic();
+                              updateDataToFirestore();
+                            }
                           },
                           icon: Icon(
                             Icons.check,
@@ -218,6 +280,9 @@ class _DentEditProfileState extends State<DentEditProfile> {
             Padding(
               padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
               child: TextFormField(
+                onChanged: (value) {
+                  name = value.trim();
+                },
                 decoration: InputDecoration(
                     labelText: 'Name',
                     labelStyle:
@@ -250,6 +315,9 @@ class _DentEditProfileState extends State<DentEditProfile> {
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: TextFormField(
+                onChanged: (value) {
+                  eMail = value.trim();
+                },
                 decoration: InputDecoration(
                     labelText: 'E-mail Address',
                     labelStyle:
@@ -260,6 +328,9 @@ class _DentEditProfileState extends State<DentEditProfile> {
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: TextFormField(
+                onChanged: (value) {
+                  tel = value.trim();
+                },
                 decoration: InputDecoration(
                   labelText: 'Phone Number',
                   labelStyle: TextStyle(color: Colors.grey[400], fontSize: 14),
