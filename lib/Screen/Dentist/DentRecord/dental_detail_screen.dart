@@ -1868,1525 +1868,1638 @@ Widget tooth1Detail(BuildContext context) {
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
-        child: Column(
-          children: <Widget>[
-            Center(
-              child: Container(
-                  margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
-                  padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                  color: Colors.grey[300],
-                  child: Stack(
-                    children: <Widget>[
-                      Container(
-                        child: Text("Upper (R) Third Molar"),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width *
-                            MediaQuery.of(context).devicePixelRatio *
-                            0.1,
-                        height: MediaQuery.of(context).size.height *
-                            MediaQuery.of(context).devicePixelRatio *
-                            0.1,
-                        margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
-                        child: IconButton(
-                            icon: Image.asset('images/tooth/detail/1-1.png'),
-                            onPressed: () {
-                              showModalBottomSheet(
-                                  context: context,
-                                  builder: (context) {
-                                    return SingleChildScrollView(
-                                      child: Wrap(
-                                        children: <Widget>[
-                                          ListTile(
-                                            title: Center(
-                                                child: Text(
-                                                    "Select Case Symptom")),
-                                          ),
-                                          ListTile(
-                                            title: Text("Dental Caries"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Dental Carise') {
+        child: Stack(
+          children: [
+            Column(
+              children: <Widget>[
+                Center(
+                  child: Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 220, 0),
+                      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                      color: Colors.grey[300],
+                      child: Stack(
+                        children: <Widget>[
+                          Container(
+                            child: Text("Upper (R) Third Molar"),
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width *
+                                MediaQuery.of(context).devicePixelRatio *
+                                0.1,
+                            height: MediaQuery.of(context).size.height *
+                                MediaQuery.of(context).devicePixelRatio *
+                                0.1,
+                            margin: EdgeInsets.fromLTRB(0, 0, 0, 250),
+                            child: IconButton(
+                                icon:
+                                    Image.asset('images/tooth/detail/1-1.png'),
+                                onPressed: () {
+                                  showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) {
+                                        return SingleChildScrollView(
+                                          child: Wrap(
+                                            children: <Widget>[
+                                              ListTile(
+                                                title: Center(
+                                                    child: Text(
+                                                        "Select Case Symptom")),
+                                              ),
+                                              ListTile(
+                                                title: Text("Dental Caries"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Dental Carise') {
+                                                      _case1Front.remove(
+                                                          'Dental Carise');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Front
-                                                      .remove('Dental Carise');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front.add('Dental Carise');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text(
-                                                "Attrition, abrasion, abfraction"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Attrition, abrasion, abfraction') {
-                                                  _case1Front.remove(
+                                                      .add('Dental Carise');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text(
+                                                    "Attrition, abrasion, abfraction"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Attrition, abrasion, abfraction') {
+                                                      _case1Front.remove(
+                                                          'Attrition, abrasion, abfraction');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Front.add(
                                                       'Attrition, abrasion, abfraction');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front.add(
-                                                  'Attrition, abrasion, abfraction');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Fractured tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Fractured tooth') {
-                                                  _case1Front.remove(
-                                                      'Fractured tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front
-                                                  .add('Fractured tooth');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Retained root"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Retained root') {
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Fractured tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Fractured tooth') {
+                                                      _case1Front.remove(
+                                                          'Fractured tooth');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Front
-                                                      .remove('Retained root');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front.add('Retained root');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("RCT tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/black.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'RCT tooth') {
+                                                      .add('Fractured tooth');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Retained root"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Retained root') {
+                                                      _case1Front.remove(
+                                                          'Retained root');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Front
-                                                      .remove('RCT tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front.add('RCT tooth');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Extracted tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/red-cross.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Extracted tooth') {
-                                                  _case1Front.remove(
-                                                      'Extracted tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front
-                                                  .add('Extracted tooth');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Missing tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/green-circle.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Missing tooth') {
+                                                      .add('Retained root');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("RCT tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/black.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'RCT tooth') {
+                                                      _case1Front
+                                                          .remove('RCT tooth');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Front.add('RCT tooth');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Extracted tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/red-cross.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Extracted tooth') {
+                                                      _case1Front.remove(
+                                                          'Extracted tooth');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Front
-                                                      .remove('Missing tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front.add('Missing tooth');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Impacted tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/imp.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Impacted tooth') {
+                                                      .add('Extracted tooth');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Missing tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/green-circle.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Missing tooth') {
+                                                      _case1Front.remove(
+                                                          'Missing tooth');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Front
-                                                      .remove('Impacted tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front.add('Impacted tooth');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Partial eruption"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/pe.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Partial eruption') {
-                                                  _case1Front.remove(
-                                                      'Partial eruption');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front
-                                                  .add('Partial eruption');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Tilting, drifting"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/arrow.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Tilting, drifting') {
-                                                  _case1Front.remove(
-                                                      'Tilting, drifting');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front
-                                                  .add('Tilting, drifting');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Loss of contact"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/loss-of-contact.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Loss of contact') {
-                                                  _case1Front.remove(
-                                                      'Loss of contact');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front
-                                                  .add('Loss of contact');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Poor contact point"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/poor-contact-point.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Poor contact point') {
-                                                  _case1Front.remove(
+                                                      .add('Missing tooth');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Impacted tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/imp.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Impacted tooth') {
+                                                      _case1Front.remove(
+                                                          'Impacted tooth');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Front
+                                                      .add('Impacted tooth');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Partial eruption"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/pe.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Partial eruption') {
+                                                      _case1Front.remove(
+                                                          'Partial eruption');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Front
+                                                      .add('Partial eruption');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title:
+                                                    Text("Tilting, drifting"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/arrow.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Tilting, drifting') {
+                                                      _case1Front.remove(
+                                                          'Tilting, drifting');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Front
+                                                      .add('Tilting, drifting');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Loss of contact"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/loss-of-contact.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Loss of contact') {
+                                                      _case1Front.remove(
+                                                          'Loss of contact');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Front
+                                                      .add('Loss of contact');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title:
+                                                    Text("Poor contact point"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/poor-contact-point.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Poor contact point') {
+                                                      _case1Front.remove(
+                                                          'Poor contact point');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Front.add(
                                                       'Poor contact point');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front
-                                                  .add('Poor contact point');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Food impaction"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/food-impaction.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Food impaction') {
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Food impaction"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/food-impaction.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Food impaction') {
+                                                      _case1Front.remove(
+                                                          'Food impaction');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Front
-                                                      .remove('Food impaction');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front.add('Food impaction');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Supraclusion"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/plus.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Supraclusion') {
+                                                      .add('Food impaction');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Supraclusion"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/plus.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Supraclusion') {
+                                                      _case1Front.remove(
+                                                          'Supraclusion');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Front
-                                                      .remove('Supraclusion');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front.add('Supraclusion');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Infraclusion"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/minus.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Infraclusion') {
+                                                      .add('Supraclusion');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Infraclusion"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/minus.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Infraclusion') {
+                                                      _case1Front.remove(
+                                                          'Infraclusion');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Front
-                                                      .remove('Infraclusion');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front.add('Infraclusion');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Rotation"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/rotation.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Rotation') {
-                                                  _case1Front
-                                                      .remove('Rotation');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front.add('Rotation');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Temporary"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Temporary') {
-                                                  _case1Front
-                                                      .remove('Temporary');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front.add('Temporary');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Permanentrestoration"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/black.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Permanentrestoration') {
-                                                  _case1Front.remove(
+                                                      .add('Infraclusion');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Rotation"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/rotation.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Rotation') {
+                                                      _case1Front
+                                                          .remove('Rotation');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Front.add('Rotation');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Temporary"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Temporary') {
+                                                      _case1Front
+                                                          .remove('Temporary');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Front.add('Temporary');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text(
+                                                    "Permanentrestoration"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/black.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Permanentrestoration') {
+                                                      _case1Front.remove(
+                                                          'Permanentrestoration');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Front.add(
                                                       'Permanentrestoration');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front
-                                                  .add('Permanentrestoration');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Gold restoration"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/yellow.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Gold restoration') {
-                                                  _case1Front.remove(
-                                                      'Gold restoration');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front
-                                                  .add('Gold restoration');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title:
-                                                Text("Porcelain/metal crown"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/black.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Porcelain/metal crown') {
-                                                  _case1Front.remove(
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Gold restoration"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/yellow.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Gold restoration') {
+                                                      _case1Front.remove(
+                                                          'Gold restoration');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Front
+                                                      .add('Gold restoration');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text(
+                                                    "Porcelain/metal crown"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/black.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Porcelain/metal crown') {
+                                                      _case1Front.remove(
+                                                          'Porcelain/metal crown');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Front.add(
                                                       'Porcelain/metal crown');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front
-                                                  .add('Porcelain/metal crown');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text(
-                                                "Extract and have fix bridge"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/red-cross.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] ==
-                                                    'Extract and have fix bridge') {
-                                                  _case1Front.remove(
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text(
+                                                    "Extract and have fix bridge"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/red-cross.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Extract and have fix bridge') {
+                                                      _case1Front.remove(
+                                                          'Extract and have fix bridge');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Front.add(
                                                       'Extract and have fix bridge');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front.add(
-                                                  'Extract and have fix bridge');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Other"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/other.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Front.length) {
+                                                    if (_case1Front[i] ==
+                                                        'Other') {
+                                                      _case1Front
+                                                          .remove('Other');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Front.add('Other');
+                                                  _addDentalCase1Front(context,
+                                                      _dentalCase1Front());
+                                                },
+                                              ),
+                                            ],
                                           ),
-                                          ListTile(
-                                            title: Text("Other"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/other.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Front.length) {
-                                                if (_case1Front[i] == 'Other') {
-                                                  _case1Front.remove('Other');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Front.add('Other');
-                                              _addDentalCase1Front(
-                                                  context, _dentalCase1Front());
-                                            },
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  });
-                            }),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width *
-                            MediaQuery.of(context).devicePixelRatio *
-                            0.07,
-                        height: MediaQuery.of(context).size.height *
-                            MediaQuery.of(context).devicePixelRatio *
-                            0.07,
-                        margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
-                        child: IconButton(
-                            icon: Image.asset('images/tooth/detail/1-2.png'),
-                            onPressed: () {
-                              showModalBottomSheet(
-                                  context: context,
-                                  builder: (context) {
-                                    return SingleChildScrollView(
-                                      child: Wrap(
-                                        children: <Widget>[
-                                          ListTile(
-                                            title: Center(
-                                                child: Text(
-                                                    "Select Case Symptom")),
-                                          ),
-                                          ListTile(
-                                            title: Text("Dental Caries"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Dental Carise') {
+                                        );
+                                      });
+                                }),
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width *
+                                MediaQuery.of(context).devicePixelRatio *
+                                0.07,
+                            height: MediaQuery.of(context).size.height *
+                                MediaQuery.of(context).devicePixelRatio *
+                                0.07,
+                            margin: EdgeInsets.fromLTRB(15, 130, 0, 0),
+                            child: IconButton(
+                                icon:
+                                    Image.asset('images/tooth/detail/1-2.png'),
+                                onPressed: () {
+                                  showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) {
+                                        return SingleChildScrollView(
+                                          child: Wrap(
+                                            children: <Widget>[
+                                              ListTile(
+                                                title: Center(
+                                                    child: Text(
+                                                        "Select Case Symptom")),
+                                              ),
+                                              ListTile(
+                                                title: Text("Dental Caries"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Dental Carise') {
+                                                      _case1Middle.remove(
+                                                          'Dental Carise');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Middle
-                                                      .remove('Dental Carise');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle.add('Dental Carise');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text(
-                                                "Attrition, abrasion, abfraction"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Attrition, abrasion, abfraction') {
-                                                  _case1Middle.remove(
+                                                      .add('Dental Carise');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text(
+                                                    "Attrition, abrasion, abfraction"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Attrition, abrasion, abfraction') {
+                                                      _case1Middle.remove(
+                                                          'Attrition, abrasion, abfraction');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Middle.add(
                                                       'Attrition, abrasion, abfraction');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle.add(
-                                                  'Attrition, abrasion, abfraction');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Fractured tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Fractured tooth') {
-                                                  _case1Middle.remove(
-                                                      'Fractured tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle
-                                                  .add('Fractured tooth');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Retained root"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Retained root') {
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Fractured tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Fractured tooth') {
+                                                      _case1Middle.remove(
+                                                          'Fractured tooth');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Middle
-                                                      .remove('Retained root');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle.add('Retained root');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("RCT tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/black.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'RCT tooth') {
+                                                      .add('Fractured tooth');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Retained root"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Retained root') {
+                                                      _case1Middle.remove(
+                                                          'Retained root');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Middle
-                                                      .remove('RCT tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle.add('RCT tooth');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Extracted tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/red-cross.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Extracted tooth') {
-                                                  _case1Middle.remove(
-                                                      'Extracted tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle
-                                                  .add('Extracted tooth');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Missing tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/green-circle.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Missing tooth') {
+                                                      .add('Retained root');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("RCT tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/black.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'RCT tooth') {
+                                                      _case1Middle
+                                                          .remove('RCT tooth');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Middle.add('RCT tooth');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Extracted tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/red-cross.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Extracted tooth') {
+                                                      _case1Middle.remove(
+                                                          'Extracted tooth');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Middle
-                                                      .remove('Missing tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle.add('Missing tooth');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Impacted tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/imp.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Impacted tooth') {
+                                                      .add('Extracted tooth');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Missing tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/green-circle.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Missing tooth') {
+                                                      _case1Middle.remove(
+                                                          'Missing tooth');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Middle
-                                                      .remove('Impacted tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle
-                                                  .add('Impacted tooth');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Partial eruption"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/pe.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Partial eruption') {
-                                                  _case1Middle.remove(
-                                                      'Partial eruption');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle
-                                                  .add('Partial eruption');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Tilting, drifting"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/arrow.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Tilting, drifting') {
-                                                  _case1Middle.remove(
-                                                      'Tilting, drifting');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle
-                                                  .add('Tilting, drifting');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Loss of contact"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/loss-of-contact.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Loss of contact') {
-                                                  _case1Middle.remove(
-                                                      'Loss of contact');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle
-                                                  .add('Loss of contact');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Poor contact point"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/poor-contact-point.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Poor contact point') {
-                                                  _case1Middle.remove(
+                                                      .add('Missing tooth');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Impacted tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/imp.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Impacted tooth') {
+                                                      _case1Middle.remove(
+                                                          'Impacted tooth');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Middle
+                                                      .add('Impacted tooth');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Partial eruption"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/pe.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Partial eruption') {
+                                                      _case1Middle.remove(
+                                                          'Partial eruption');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Middle
+                                                      .add('Partial eruption');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title:
+                                                    Text("Tilting, drifting"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/arrow.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Tilting, drifting') {
+                                                      _case1Middle.remove(
+                                                          'Tilting, drifting');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Middle
+                                                      .add('Tilting, drifting');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Loss of contact"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/loss-of-contact.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Loss of contact') {
+                                                      _case1Middle.remove(
+                                                          'Loss of contact');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Middle
+                                                      .add('Loss of contact');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title:
+                                                    Text("Poor contact point"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/poor-contact-point.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Poor contact point') {
+                                                      _case1Middle.remove(
+                                                          'Poor contact point');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Middle.add(
                                                       'Poor contact point');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle
-                                                  .add('Poor contact point');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Food impaction"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/food-impaction.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Food impaction') {
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Food impaction"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/food-impaction.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Food impaction') {
+                                                      _case1Middle.remove(
+                                                          'Food impaction');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Middle
-                                                      .remove('Food impaction');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle
-                                                  .add('Food impaction');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Supraclusion"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/plus.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Supraclusion') {
+                                                      .add('Food impaction');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Supraclusion"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/plus.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Supraclusion') {
+                                                      _case1Middle.remove(
+                                                          'Supraclusion');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Middle
-                                                      .remove('Supraclusion');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle.add('Supraclusion');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Infraclusion"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/minus.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Infraclusion') {
+                                                      .add('Supraclusion');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Infraclusion"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/minus.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Infraclusion') {
+                                                      _case1Middle.remove(
+                                                          'Infraclusion');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Middle
-                                                      .remove('Infraclusion');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle.add('Infraclusion');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Rotation"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/rotation.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Rotation') {
-                                                  _case1Middle
-                                                      .remove('Rotation');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle.add('Rotation');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Temporary"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Temporary') {
-                                                  _case1Middle
-                                                      .remove('Temporary');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle.add('Temporary');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Permanentrestoration"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/black.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Permanentrestoration') {
-                                                  _case1Middle.remove(
+                                                      .add('Infraclusion');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Rotation"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/rotation.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Rotation') {
+                                                      _case1Middle
+                                                          .remove('Rotation');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Middle.add('Rotation');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Temporary"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Temporary') {
+                                                      _case1Middle
+                                                          .remove('Temporary');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Middle.add('Temporary');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text(
+                                                    "Permanentrestoration"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/black.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Permanentrestoration') {
+                                                      _case1Middle.remove(
+                                                          'Permanentrestoration');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Middle.add(
                                                       'Permanentrestoration');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle
-                                                  .add('Permanentrestoration');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Gold restoration"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/yellow.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Gold restoration') {
-                                                  _case1Middle.remove(
-                                                      'Gold restoration');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle
-                                                  .add('Gold restoration');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title:
-                                                Text("Porcelain/metal crown"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/black.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Porcelain/metal crown') {
-                                                  _case1Middle.remove(
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Gold restoration"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/yellow.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Gold restoration') {
+                                                      _case1Middle.remove(
+                                                          'Gold restoration');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Middle
+                                                      .add('Gold restoration');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text(
+                                                    "Porcelain/metal crown"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/black.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Porcelain/metal crown') {
+                                                      _case1Middle.remove(
+                                                          'Porcelain/metal crown');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Middle.add(
                                                       'Porcelain/metal crown');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle
-                                                  .add('Porcelain/metal crown');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text(
-                                                "Extract and have fix bridge"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/red-cross.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Extract and have fix bridge') {
-                                                  _case1Middle.remove(
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text(
+                                                    "Extract and have fix bridge"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/red-cross.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Extract and have fix bridge') {
+                                                      _case1Middle.remove(
+                                                          'Extract and have fix bridge');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Middle.add(
                                                       'Extract and have fix bridge');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle.add(
-                                                  'Extract and have fix bridge');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Other"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/other.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (i !=
+                                                      _case1Middle.length) {
+                                                    if (_case1Middle[i] ==
+                                                        'Other') {
+                                                      _case1Middle
+                                                          .remove('Other');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Middle.add('Other');
+                                                  _addDentalCase1Middle(context,
+                                                      _dentalCase1Middle());
+                                                },
+                                              ),
+                                            ],
                                           ),
-                                          ListTile(
-                                            title: Text("Other"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/other.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Middle.length) {
-                                                if (_case1Middle[i] ==
-                                                    'Other') {
-                                                  _case1Middle.remove('Other');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Middle.add('Other');
-                                              _addDentalCase1Middle(context,
-                                                  _dentalCase1Middle());
-                                            },
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  });
-                            }),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width *
-                            MediaQuery.of(context).devicePixelRatio *
-                            0.1,
-                        height: MediaQuery.of(context).size.height *
-                            MediaQuery.of(context).devicePixelRatio *
-                            0.1,
-                        margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
-                        child: IconButton(
-                            icon: Image.asset('images/tooth/detail/1-3.png'),
-                            onPressed: () {
-                              showModalBottomSheet(
-                                  context: context,
-                                  builder: (context) {
-                                    return SingleChildScrollView(
-                                      child: Wrap(
-                                        children: <Widget>[
-                                          ListTile(
-                                            title: Center(
-                                                child: Text(
-                                                    "Select Case Symptom")),
-                                          ),
-                                          ListTile(
-                                            title: Text("Dental Caries"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Dental Carise') {
+                                        );
+                                      });
+                                }),
+                          ),
+                          Container(
+                            width: MediaQuery.of(context).size.width *
+                                MediaQuery.of(context).devicePixelRatio *
+                                0.1,
+                            height: MediaQuery.of(context).size.height *
+                                MediaQuery.of(context).devicePixelRatio *
+                                0.1,
+                            margin: EdgeInsets.fromLTRB(0, 210, 0, 0),
+                            child: IconButton(
+                                icon:
+                                    Image.asset('images/tooth/detail/1-3.png'),
+                                onPressed: () {
+                                  showModalBottomSheet(
+                                      context: context,
+                                      builder: (context) {
+                                        return SingleChildScrollView(
+                                          child: Wrap(
+                                            children: <Widget>[
+                                              ListTile(
+                                                title: Center(
+                                                    child: Text(
+                                                        "Select Case Symptom")),
+                                              ),
+                                              ListTile(
+                                                title: Text("Dental Caries"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Dental Carise') {
+                                                      _case1Back.remove(
+                                                          'Dental Carise');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Back
-                                                      .remove('Dental Carise');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add('Dental Carise');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text(
-                                                "Attrition, abrasion, abfraction"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Attrition, abrasion, abfraction') {
-                                                  _case1Back.remove(
+                                                      .add('Dental Carise');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text(
+                                                    "Attrition, abrasion, abfraction"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Attrition, abrasion, abfraction') {
+                                                      _case1Back.remove(
+                                                          'Attrition, abrasion, abfraction');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Back.add(
                                                       'Attrition, abrasion, abfraction');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add(
-                                                  'Attrition, abrasion, abfraction');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Fractured tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Fractured tooth') {
-                                                  _case1Back.remove(
-                                                      'Fractured tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add('Fractured tooth');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Retained root"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Retained root') {
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Fractured tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Fractured tooth') {
+                                                      _case1Back.remove(
+                                                          'Fractured tooth');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Back
-                                                      .remove('Retained root');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add('Retained root');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("RCT tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/black.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'RCT tooth') {
+                                                      .add('Fractured tooth');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Retained root"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Retained root') {
+                                                      _case1Back.remove(
+                                                          'Retained root');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Back
-                                                      .remove('RCT tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add('RCT tooth');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Extracted tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/red-cross.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Extracted tooth') {
-                                                  _case1Back.remove(
-                                                      'Extracted tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add('Extracted tooth');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Missing tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/green-circle.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Missing tooth') {
+                                                      .add('Retained root');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("RCT tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/black.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'RCT tooth') {
+                                                      _case1Back
+                                                          .remove('RCT tooth');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Back.add('RCT tooth');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Extracted tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/red-cross.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Extracted tooth') {
+                                                      _case1Back.remove(
+                                                          'Extracted tooth');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Back
-                                                      .remove('Missing tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add('Missing tooth');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Impacted tooth"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/imp.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Impacted tooth') {
+                                                      .add('Extracted tooth');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Missing tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/green-circle.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Missing tooth') {
+                                                      _case1Back.remove(
+                                                          'Missing tooth');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Back
-                                                      .remove('Impacted tooth');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add('Impacted tooth');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Partial eruption"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/pe.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Partial eruption') {
-                                                  _case1Back.remove(
-                                                      'Partial eruption');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back
-                                                  .add('Partial eruption');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Tilting, drifting"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/arrow.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Tilting, drifting') {
-                                                  _case1Back.remove(
-                                                      'Tilting, drifting');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back
-                                                  .add('Tilting, drifting');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Loss of contact"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/loss-of-contact.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Loss of contact') {
-                                                  _case1Back.remove(
-                                                      'Loss of contact');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add('Loss of contact');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Poor contact point"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/poor-contact-point.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Poor contact point') {
-                                                  _case1Back.remove(
+                                                      .add('Missing tooth');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Impacted tooth"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/imp.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Impacted tooth') {
+                                                      _case1Back.remove(
+                                                          'Impacted tooth');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Back
+                                                      .add('Impacted tooth');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Partial eruption"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/pe.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Partial eruption') {
+                                                      _case1Back.remove(
+                                                          'Partial eruption');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Back
+                                                      .add('Partial eruption');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title:
+                                                    Text("Tilting, drifting"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/arrow.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Tilting, drifting') {
+                                                      _case1Back.remove(
+                                                          'Tilting, drifting');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Back
+                                                      .add('Tilting, drifting');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Loss of contact"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/loss-of-contact.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Loss of contact') {
+                                                      _case1Back.remove(
+                                                          'Loss of contact');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Back
+                                                      .add('Loss of contact');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title:
+                                                    Text("Poor contact point"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/poor-contact-point.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Poor contact point') {
+                                                      _case1Back.remove(
+                                                          'Poor contact point');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Back.add(
                                                       'Poor contact point');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back
-                                                  .add('Poor contact point');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Food impaction"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/food-impaction.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Food impaction') {
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Food impaction"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/food-impaction.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Food impaction') {
+                                                      _case1Back.remove(
+                                                          'Food impaction');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Back
-                                                      .remove('Food impaction');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add('Food impaction');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Supraclusion"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/plus.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Supraclusion') {
+                                                      .add('Food impaction');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Supraclusion"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/plus.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Supraclusion') {
+                                                      _case1Back.remove(
+                                                          'Supraclusion');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Back
-                                                      .remove('Supraclusion');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add('Supraclusion');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Infraclusion"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/minus.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Infraclusion') {
+                                                      .add('Supraclusion');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Infraclusion"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/minus.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Infraclusion') {
+                                                      _case1Back.remove(
+                                                          'Infraclusion');
+                                                    }
+                                                    i++;
+                                                  }
                                                   _case1Back
-                                                      .remove('Infraclusion');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add('Infraclusion');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Rotation"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/rotation.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Rotation') {
-                                                  _case1Back.remove('Rotation');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add('Rotation');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Temporary"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/blue.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Temporary') {
-                                                  _case1Back
-                                                      .remove('Temporary');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add('Temporary');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Permanentrestoration"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/black.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Permanentrestoration') {
-                                                  _case1Back.remove(
+                                                      .add('Infraclusion');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Rotation"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/rotation.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Rotation') {
+                                                      _case1Back
+                                                          .remove('Rotation');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Back.add('Rotation');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Temporary"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/blue.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Temporary') {
+                                                      _case1Back
+                                                          .remove('Temporary');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Back.add('Temporary');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text(
+                                                    "Permanentrestoration"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/black.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Permanentrestoration') {
+                                                      _case1Back.remove(
+                                                          'Permanentrestoration');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Back.add(
                                                       'Permanentrestoration');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back
-                                                  .add('Permanentrestoration');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text("Gold restoration"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/yellow.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Gold restoration') {
-                                                  _case1Back.remove(
-                                                      'Gold restoration');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back
-                                                  .add('Gold restoration');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title:
-                                                Text("Porcelain/metal crown"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/black.png'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Porcelain/metal crown') {
-                                                  _case1Back.remove(
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Gold restoration"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/yellow.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Gold restoration') {
+                                                      _case1Back.remove(
+                                                          'Gold restoration');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Back
+                                                      .add('Gold restoration');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text(
+                                                    "Porcelain/metal crown"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/black.png'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Porcelain/metal crown') {
+                                                      _case1Back.remove(
+                                                          'Porcelain/metal crown');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Back.add(
                                                       'Porcelain/metal crown');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back
-                                                  .add('Porcelain/metal crown');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                          ListTile(
-                                            title: Text(
-                                                "Extract and have fix bridge"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/red-cross.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] ==
-                                                    'Extract and have fix bridge') {
-                                                  _case1Back.remove(
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text(
+                                                    "Extract and have fix bridge"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/red-cross.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Extract and have fix bridge') {
+                                                      _case1Back.remove(
+                                                          'Extract and have fix bridge');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Back.add(
                                                       'Extract and have fix bridge');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add(
-                                                  'Extract and have fix bridge');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                              ListTile(
+                                                title: Text("Other"),
+                                                leading: CircleAvatar(
+                                                  backgroundImage: AssetImage(
+                                                      'assets/images/dental_cases/other.jpg'),
+                                                ),
+                                                onTap: () {
+                                                  int i = 0;
+                                                  while (
+                                                      i != _case1Back.length) {
+                                                    if (_case1Back[i] ==
+                                                        'Other') {
+                                                      _case1Back
+                                                          .remove('Other');
+                                                    }
+                                                    i++;
+                                                  }
+                                                  _case1Back.add('Other');
+                                                  _addDentalCase1Back(context,
+                                                      _dentalCase1Back());
+                                                },
+                                              ),
+                                            ],
                                           ),
-                                          ListTile(
-                                            title: Text("Other"),
-                                            leading: CircleAvatar(
-                                              backgroundImage: AssetImage(
-                                                  'assets/images/dental_cases/other.jpg'),
-                                            ),
-                                            onTap: () {
-                                              int i = 0;
-                                              while (i != _case1Back.length) {
-                                                if (_case1Back[i] == 'Other') {
-                                                  _case1Back.remove('Other');
-                                                }
-                                                i++;
-                                              }
-                                              _case1Back.add('Other');
-                                              _addDentalCase1Back(
-                                                  context, _dentalCase1Back());
-                                            },
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  });
-                            }),
-                      )
-                    ],
-                  )),
+                                        );
+                                      });
+                                }),
+                          )
+                        ],
+                      )),
+                ),
+              ],
+            ),
+            Column(
+              children: <Widget>[Center(child: dentailHistoryCard())],
             ),
           ],
         ),
