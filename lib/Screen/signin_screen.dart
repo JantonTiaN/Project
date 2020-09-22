@@ -16,7 +16,6 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:fundee/Screen/SignupProcess/fb_select_role.dart';
 
 enum LoginType { email, google }
-enum authProblems { UserNotFound, PasswordNotValid, NetworkError }
 
 class SignInScreen extends StatefulWidget {
   @override
@@ -280,39 +279,7 @@ class _SignInScreenState extends State<SignInScreen> {
         content: Text(error.message, style: TextStyle(color: Colors.white)),
         backgroundColor: Colors.red,
       ));
-
-      // authProblems errorType;
-      // if (Platform.isAndroid) {
-      //   switch (e.message) {
-      //     case 'There is no user record corresponding to this identifier. The user may have been deleted.':
-      //       errorType = authProblems.UserNotFound;
-      //       break;
-      //     case 'The password is invalid or the user does not have a password.':
-      //       errorType = authProblems.PasswordNotValid;
-      //       break;
-      //     case 'A network error (such as timeout, interrupted connection or unreachable host) has occurred.':
-      //       errorType = authProblems.NetworkError;
-      //       break;
-      //     // ...
-      //     default:
-      //       print('Case is not yet implemented');
-      //   }
-      // }
     }
-    // await _auth
-    //     .signInWithEmailAndPassword(
-    //   email: _emailController.text.trim(),
-    //   password: _passwordController.text.trim(),
-    // )
-    //     .then((user) {
-    //   checkRole(context);
-    // }).catchError((error) {
-    //   print(error.message);
-    //   scaffoldKey.currentState.showSnackBar(SnackBar(
-    //     content: Text(error.message, style: TextStyle(color: Colors.white)),
-    //     backgroundColor: Colors.red,
-    //   ));
-    // });
   }
 
   //Google SignIn
@@ -358,8 +325,8 @@ class _SignInScreenState extends State<SignInScreen> {
   Future checkAuth(BuildContext context) async {
     FirebaseUser user = await _auth.currentUser();
     if (user = null) {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => DentHomeScreen()));
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => DentHomeScreen(user)));
     }
   }
 
@@ -367,6 +334,7 @@ class _SignInScreenState extends State<SignInScreen> {
     FirebaseUser user = await _auth.currentUser();
     if (user != null) {
       print("Already signin with Social media");
+
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
     }
@@ -424,6 +392,6 @@ class _SignInScreenState extends State<SignInScreen> {
 
   checkUser() async {
     FirebaseUser user = await FirebaseAuth.instance.currentUser();
-    print(user.uid);
+    setState(() {});
   }
 }

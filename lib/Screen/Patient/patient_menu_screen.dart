@@ -25,10 +25,10 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
 
   int _selectPage = 0;
   final _pageOptions = [
-    DentHomeScreen(),
+    DentHomeScreen,
     DentAppointmentScreen(),
     DentSuggestion(),
-    DentProfileScreen(),
+    DentProfileScreen,
   ];
 
   @override
