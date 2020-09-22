@@ -1865,7 +1865,6 @@ Widget tooth1Detail(BuildContext context) {
       backgroundColor: bBackgroundColor,
       appBar: AppBar(
         title: Text('Tooth 1 Detail'),
-        // backgroundColor: Colors.white,
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),

@@ -140,7 +140,7 @@ class PatientWithFBAndGGDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientTel)
+          .document(patient.patientEmail)
           .setData({
         'fullName': patient.patientFullName,
         'eMail': patient.patientEmail,
