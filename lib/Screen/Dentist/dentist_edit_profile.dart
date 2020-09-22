@@ -275,40 +275,17 @@ class _DentEditProfileState extends State<DentEditProfile> {
                 onChanged: (value) {
                   name = value.trim();
                 },
-<<<<<<< HEAD
                 decoration: new InputDecoration(
                   labelText: 'Name',
                   labelStyle: TextStyle(color: Colors.grey[400]),
                 ),
                 controller: displayNameController,
-=======
-                decoration: InputDecoration(
-                    labelText: 'Name',
-                    labelStyle:
-                        TextStyle(color: Colors.grey[400], fontSize: 14)),
-                controller: _nameController,
->>>>>>> e406bb39965034b1c01ca5cd1df4fa0227212e5c
               ),
             ),
             Divider(
               color: Colors.blueGrey[100],
             ),
             Padding(
-<<<<<<< HEAD
-=======
-              padding: const EdgeInsets.only(left: 20),
-              child: TextFormField(
-                decoration: InputDecoration(
-                    labelText: 'Permission',
-                    labelStyle:
-                        TextStyle(color: Colors.grey[400], fontSize: 14)),
-              ),
-            ),
-            Divider(
-              color: Colors.blueGrey[100],
-            ),
-            Padding(
->>>>>>> e406bb39965034b1c01ca5cd1df4fa0227212e5c
               padding: const EdgeInsets.only(left: 20, top: 10),
               child: Align(
                 alignment: Alignment.bottomLeft,
