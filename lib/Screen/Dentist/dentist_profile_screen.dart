@@ -54,13 +54,12 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
                           backgroundColor: Colors.white,
                           child: ClipOval(
                             child: new SizedBox(
-                              width: 120.0,
-                              height: 120.0,
-                              child: Image.asset(
-                                'assets/images/Logo/App-Icon-drop-shadow.jpg',
-                                fit: BoxFit.fill,
-                              ),
-                            ),
+                                width: 120.0,
+                                height: 120.0,
+                                child: Image.network(
+                                  widget.user.photoUrl,
+                                  fit: BoxFit.fill,
+                                )),
                           ),
                         ),
                         SizedBox(

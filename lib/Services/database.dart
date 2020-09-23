@@ -16,7 +16,7 @@ class PatientDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientEmail)
+          .document(user.uid)
           .setData({
         'fullName': patient.patientFullName,
         'eMail': patient.patientEmail,
@@ -30,7 +30,7 @@ class PatientDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientEmail)
+          .document(user.uid)
           .collection('DentalCase')
           .document('dentalCase')
           .setData({});
@@ -38,7 +38,7 @@ class PatientDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientEmail)
+          .document(user.uid)
           .collection('History')
           .document('history')
           .setData({});
@@ -67,7 +67,7 @@ class DentistDatabase {
           .collection('Account')
           .document('account')
           .collection('Dentists')
-          .document(dentist.dentistEmail)
+          .document(user.uid)
           .setData({
         'fullName': dentist.dentistFullname,
         'eMail': dentist.dentistEmail,
@@ -80,7 +80,6 @@ class DentistDatabase {
         'pathImage': 'imageUrl'
       });
       userUpdateInfo.displayName = dentist.dentistFullname;
-      // userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
       user.updateEmail(dentist.dentistEmail);
       user.updateProfile(userUpdateInfo);
       retVal = 'success';
@@ -96,7 +95,6 @@ class DentistWithFBAndGGDatabase {
 
   Future<String> createDentists(OurDentists dentist) async {
     FirebaseUser user = await FirebaseAuth.instance.currentUser();
-    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
     String retVal = 'error';
 
     try {
@@ -114,12 +112,9 @@ class DentistWithFBAndGGDatabase {
         'permission': dentist.dentistPermission,
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist',
-        'pathImage': ''
+        'pathImage': user.photoUrl,
+        'user id': user.uid
       });
-      userUpdateInfo.displayName = dentist.dentistFullname;
-      // userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
-      user.updateProfile(userUpdateInfo);
-      user.updateEmail(dentist.dentistEmail);
       retVal = 'success';
     } catch (e) {
       print(e);
@@ -133,7 +128,6 @@ class PatientWithFBAndGGDatabase {
 
   Future<String> createPatient(OurPatients patient) async {
     FirebaseUser user = await FirebaseAuth.instance.currentUser();
-    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
     String retVal = 'error';
 
     try {
@@ -141,21 +135,21 @@ class PatientWithFBAndGGDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientEmail)
+          .document(user.uid)
           .setData({
-        'fullName': patient.patientFullName,
-        'eMail': patient.patientEmail,
+        'fullName': user.displayName,
+        'eMail': user.email,
         'birthDay': patient.patientBirthDate,
-        'tel': patient.patientTel,
+        'tel': user.phoneNumber,
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
-        'pathImage': ''
+        'pathImage': user.photoUrl
       });
       await _firestore
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientEmail)
+          .document(user.uid)
           .collection('DentalCase')
           .document('dentalCase')
           .setData({});
@@ -163,38 +157,15 @@ class PatientWithFBAndGGDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientEmail)
+          .document(user.uid)
           .collection('History')
           .document('history')
           .setData({});
-      userUpdateInfo.displayName = patient.patientFullName;
-      // userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
-      user.updateProfile(userUpdateInfo);
-      user.updateEmail(patient.patientEmail);
       retVal = 'success';
     } catch (e) {
       print(e);
     }
 
-    return retVal;
-  }
-}
-
-class DentEditProfile {
-  final Firestore _firestore = Firestore.instance;
-  Future<String> UpdateDentName(OurDentists dentists) async {
-    String retVal = 'error';
-    try {
-      await _firestore
-          .collection('Account')
-          .document('account')
-          .collection('Dentist')
-          .getDocuments()
-          .then((value) => null);
-      retVal = 'success';
-    } catch (e) {
-      print(e);
-    }
     return retVal;
   }
 }

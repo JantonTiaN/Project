@@ -22,13 +22,56 @@ class _DentEditProfileState extends State<DentEditProfile> {
   File _image;
   final _picker = ImagePicker();
   final _nameController = TextEditingController();
-
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   final displayNameController = TextEditingController();
   String name, eMail, tel, urlPicture;
   @override
   void initState() {
     super.initState();
     // _nameController.text = widget.user.displayName.toString();
+  }
+
+  Future<void> uploadPic() async {
+    String pic = widget.user.email;
+    FirebaseStorage firebaseStorage = FirebaseStorage.instance;
+    StorageReference storageReference =
+        firebaseStorage.ref().child('dentistProfile/$pic.jpg');
+    StorageUploadTask storageUploadTask = storageReference.putFile(_image);
+    urlPicture =
+        await (await storageUploadTask.onComplete).ref.getDownloadURL();
+    print('urlPicture = $urlPicture');
+    updateDataToFirestore();
+  }
+
+  Future<void> updateDataToFirestore() async {
+    FirebaseUser user = await _auth.currentUser();
+    Firestore firestore = Firestore.instance;
+    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
+    DocumentReference documentReference = firestore
+        .collection('Account')
+        .document('account')
+        .collection('Dentists')
+        .document(widget.user.uid);
+    Map<String, dynamic> map = Map();
+    map['fullName'] = name;
+    map['tel'] = tel;
+    map['pathImage'] = urlPicture;
+    userUpdateInfo.displayName = name;
+    userUpdateInfo.photoUrl = urlPicture;
+    user.updateProfile(userUpdateInfo);
+    // await user.reload();
+    // print('Before');
+    // print(user.isEmailVerified);
+    // user = await _auth.currentUser();
+    // user.isEmailVerified;
+    // print('After');
+    // print(user.isEmailVerified);
+    // print(user.photoUrl);
+    // print(user.displayName);
+    documentReference.updateData(map).then((value) {
+      print('Update Success');
+      MaterialPageRoute(builder: (value) => DentProfileScreen(widget.user));
+    });
   }
 
   @override
@@ -68,53 +111,6 @@ class _DentEditProfileState extends State<DentEditProfile> {
           });
     }
 
-    Future<void> uploadPic() async {
-      String pic = widget.user.email;
-      FirebaseStorage firebaseStorage = FirebaseStorage.instance;
-      StorageReference storageReference =
-          firebaseStorage.ref().child('dentistProfile/$pic.jpg');
-      StorageUploadTask storageUploadTask = storageReference.putFile(_image);
-      urlPicture =
-          await (await storageUploadTask.onComplete).ref.getDownloadURL();
-      print('urlPicture = $urlPicture');
-    }
-
-    Future<void> updateDataToFirestore() async {
-      Firestore firestore = Firestore.instance;
-      UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
-      DocumentReference documentReference = firestore
-          .collection('Account')
-          .document('account')
-          .collection('Dentists')
-          .document(widget.user.email);
-      Map<String, dynamic> map = Map();
-      map['fullName'] = name;
-      map['eMail'] = eMail;
-      map['tel'] = tel;
-      map['pathImage'] = urlPicture;
-      widget.user.updateEmail(eMail);
-      userUpdateInfo.displayName = name;
-      documentReference.updateData(map).then((value) {
-        print('Update Success');
-        MaterialPageRoute route = MaterialPageRoute(
-            builder: (value) => DentProfileScreen(widget.user));
-        Navigator.of(context).pushAndRemoveUntil(route, (value) => false);
-      });
-    }
-
-    // Future<void> deletePic(BuildContext context) async {
-    //   String fileName = basename(_image.path);
-    //   StorageReference firebaseStorageRef =
-    //       FirebaseStorage.instance.ref().child(fileName).delete(_image);
-    //       // StorageReference deleteTask = firebaseStorageRef.delete(_image);
-    //       // StorageTaskSnapshot taskSnapshot = await deleteTask.onComplete;
-    //       setState(() {
-    //     print("Profile Picture deleted");
-    //     Scaffold.of(context)
-    //         .showSnackBar(SnackBar(content: Text('Profile Picture deleted')));
-    //   });
-    // }
-
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -126,17 +122,6 @@ class _DentEditProfileState extends State<DentEditProfile> {
                   Container(),
                   ClipPath(
                     clipper: MyCustomClipper(),
-                    // child: Container(
-                    //   height: 260,
-                    //   decoration: BoxDecoration(
-                    //       gradient: LinearGradient(
-                    //           begin: Alignment.topCenter,
-                    //           colors: [
-                    //         Colors.lightBlue[400],
-                    //         Colors.blue,
-                    //         Colors.indigo[300]
-                    //       ])),
-                    // ),
                   ),
                   Align(
                     alignment: Alignment(0, 1),
@@ -148,18 +133,17 @@ class _DentEditProfileState extends State<DentEditProfile> {
                           // backgroundColor: Colors.white,
                           child: ClipOval(
                             child: new SizedBox(
-                              width: 120.0,
-                              height: 120.0,
-                              child: (_image != null)
-                                  ? Image.file(
-                                      _image,
-                                      fit: BoxFit.fill,
-                                    )
-                                  : Image.asset(
-                                      'assets/images/Logo/App-Icon-drop-shadow.jpg',
-                                      fit: BoxFit.fill,
-                                    ),
-                            ),
+                                width: 120.0,
+                                height: 120.0,
+                                child: (_image != null)
+                                    ? Image.file(
+                                        _image,
+                                        fit: BoxFit.fill,
+                                      )
+                                    : Image.network(
+                                        widget.user.photoUrl,
+                                        fit: BoxFit.fill,
+                                      )),
                           ),
                         ),
                         SizedBox(
@@ -260,17 +244,14 @@ class _DentEditProfileState extends State<DentEditProfile> {
                             // uploadPic(context);
                             // Navigator.pop(context);
                             if (name.isEmpty ||
-                                eMail.isEmpty ||
                                 tel.isEmpty ||
                                 name == null ||
-                                eMail == null ||
                                 tel == null) {
                               showAlert(
                                   'Have Space', 'Please Fill Every Blank');
                             } else {
                               Navigator.pop(context);
                               uploadPic();
-                              updateDataToFirestore();
                             }
                           },
                           icon: Icon(
@@ -308,20 +289,6 @@ class _DentEditProfileState extends State<DentEditProfile> {
                   'Profile Information',
                   style: TextStyle(fontSize: 16),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20),
-              child: TextFormField(
-                keyboardType: TextInputType.emailAddress,
-                onChanged: (value) {
-                  eMail = value.trim();
-                },
-                decoration: InputDecoration(
-                    labelText: 'E-mail Address',
-                    labelStyle:
-                        TextStyle(color: Colors.grey[400], fontSize: 14),
-                    hintText: 'Enter your email'),
               ),
             ),
             Padding(
