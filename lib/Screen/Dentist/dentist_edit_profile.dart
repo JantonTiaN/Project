@@ -43,6 +43,27 @@ class _DentEditProfileState extends State<DentEditProfile> {
     updateDataToFirestore();
   }
 
+  Future<void> deletePic() async {
+    String pic = widget.user.email;
+    FirebaseStorage.instance.ref().child('dentistProfile/$pic.jpg').delete();
+    var image = Image.network(
+        'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208');
+    // setState(() {
+    //   _image = image as File;
+    //   print('Image Path $_image');
+    // });
+    Firestore.instance
+      ..collection('Account')
+          .document('account')
+          .collection('Dentists')
+          .document(widget.user.uid)
+          .updateData({'pathImage': image});
+    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
+    userUpdateInfo.photoUrl = image.toString();
+    widget.user.updateProfile(userUpdateInfo);
+    print(image.toString());
+  }
+
   Future<void> updateDataToFirestore() async {
     FirebaseUser user = await _auth.currentUser();
     Firestore firestore = Firestore.instance;
@@ -54,7 +75,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
         .document(widget.user.uid);
     Map<String, dynamic> map = Map();
     map['fullName'] = name;
-    map['tel'] = tel;
+    map['eMail'] = eMail;
     map['pathImage'] = urlPicture;
     userUpdateInfo.displayName = name;
     userUpdateInfo.photoUrl = urlPicture;
@@ -169,6 +190,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
                                 child: SimpleDialogOption(
                                   onPressed: () {
                                     getImage();
+                                    Navigator.pop(context);
                                   },
                                   child: const Text('Import From Gallery'),
                                 ),
@@ -178,6 +200,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
                                 child: SimpleDialogOption(
                                   onPressed: () {
                                     _pickImageFromCamera();
+                                    Navigator.pop(context);
                                   },
                                   child: const Text('Take Photo'),
                                 ),
@@ -185,7 +208,13 @@ class _DentEditProfileState extends State<DentEditProfile> {
                               Padding(
                                 padding: const EdgeInsets.only(top: 8),
                                 child: SimpleDialogOption(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pop(context);
+                                    UserUpdateInfo userUpdateInfo =
+                                        new UserUpdateInfo();
+                                    userUpdateInfo.photoUrl = null;
+                                    widget.user.updateProfile(userUpdateInfo);
+                                  },
                                   child: const Text('Remove Profile Photo'),
                                 ),
                               ),
@@ -241,18 +270,15 @@ class _DentEditProfileState extends State<DentEditProfile> {
                         ),
                         IconButton(
                           onPressed: () {
-                            // uploadPic(context);
-                            // Navigator.pop(context);
-                            if (name.isEmpty ||
-                                tel.isEmpty ||
-                                name == null ||
-                                tel == null) {
-                              showAlert(
-                                  'Have Space', 'Please Fill Every Blank');
-                            } else {
-                              Navigator.pop(context);
-                              uploadPic();
-                            }
+                            Navigator.pop(context);
+                            uploadPic();
+                            Firestore.instance
+                                .collection('Account')
+                                .document('account')
+                                .collection('Dentists')
+                                .document(widget.user.uid)
+                                .updateData({'pathImage': null});
+                            deletePic();
                           },
                           icon: Icon(
                             Icons.check,
@@ -294,12 +320,12 @@ class _DentEditProfileState extends State<DentEditProfile> {
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: TextFormField(
-                keyboardType: TextInputType.phone,
+                keyboardType: TextInputType.emailAddress,
                 onChanged: (value) {
-                  tel = value.trim();
+                  eMail = value.trim();
                 },
                 decoration: InputDecoration(
-                  labelText: 'Phone Number',
+                  labelText: 'E-Mail',
                   labelStyle: TextStyle(color: Colors.grey[400], fontSize: 14),
                 ),
               ),

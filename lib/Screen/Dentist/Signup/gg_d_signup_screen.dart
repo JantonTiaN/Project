@@ -160,12 +160,12 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
     }
   }
 
-  void _signUpDentistWithGG(String fullName, BuildContext context, String tel,
-      String citizenID, String permission, String birthDate) async {
+  void _signUpDentistWithGG(BuildContext context, String tel, String citizenID,
+      String permission, String birthDate) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString = await _currentUser.signUpDentistsWithFBAndGG(
-          fullName, tel, citizenID, permission, birthDate, _workingTime);
+          tel, citizenID, permission, birthDate, _workingTime);
       if (_returnString == 'success') {
         showDialog<String>(
             context: context,
@@ -811,7 +811,6 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
                           child: GestureDetector(
                             onTap: () {
                               if (_telController.text.isEmpty ||
-                                  _fullnameController.text.isEmpty ||
                                   _permissionController.text.isEmpty ||
                                   _citizenidController.text.isEmpty) {
                                 showDialog<String>(
@@ -868,7 +867,6 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
                                         ));
                               } else {
                                 _signUpDentistWithGG(
-                                    _fullnameController.text,
                                     context,
                                     _telController.text,
                                     _citizenidController.text,

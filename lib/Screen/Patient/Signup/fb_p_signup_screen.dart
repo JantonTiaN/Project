@@ -17,7 +17,6 @@ class FbPSignupScreen extends StatefulWidget {
 
 class _FbPSignupScreenState extends State<FbPSignupScreen> {
   DateTime _currentDate = new DateTime.now();
-  TextEditingController _fullnameController = TextEditingController();
   TextEditingController _drugallergyController = TextEditingController();
   TextEditingController _telController = TextEditingController();
 
@@ -39,12 +38,12 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
     }
   }
 
-  void _signUpPatientWithFB(BuildContext context, String fullName, String tel,
+  void _signUpPatientWithFB(BuildContext context, String tel,
       String drugallergy, String brithDate) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
-      String _returnString = await _currentUser.signUpPatientsWithFBAndGG(
-          fullName, tel, drugallergy, brithDate);
+      String _returnString = await _currentUser.socialSignUpPatientsWithFBAndGG(
+          tel, drugallergy, brithDate);
       if (_returnString == 'success') {
         showDialog<String>(
             context: context,
@@ -260,8 +259,7 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
                           child: GestureDetector(
                             onTap: () {
                               if (_telController.text.isEmpty ||
-                                  _drugallergyController.text.isEmpty ||
-                                  _fullnameController.text.isEmpty) {
+                                  _drugallergyController.text.isEmpty) {
                                 showDialog<String>(
                                   context: context,
                                   builder: (BuildContext context) =>
@@ -299,7 +297,6 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
                               } else {
                                 _signUpPatientWithFB(
                                     context,
-                                    _fullnameController.text,
                                     _telController.text,
                                     _drugallergyController.text,
                                     _currentDate.toString());

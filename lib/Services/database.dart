@@ -107,7 +107,7 @@ class DentistWithFBAndGGDatabase {
         'fullName': user.displayName,
         'eMail': user.email,
         'birthDay': dentist.dentistBirthDate,
-        'tel': user.phoneNumber,
+        'tel': dentist.dentistTel,
         'citizenID': dentist.dentistCitizenID,
         'permission': dentist.dentistPermission,
         'workingTime': dentist.dentistWorkingTime,
@@ -140,7 +140,7 @@ class PatientWithFBAndGGDatabase {
         'fullName': user.displayName,
         'eMail': user.email,
         'birthDay': patient.patientBirthDate,
-        'tel': user.phoneNumber,
+        'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
         'pathImage': user.photoUrl

@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fundee/Screen/Dentist/dentist_home_screen.dart';
+import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Screen/constants.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:fundee/font_awesome_flutter.dart';
@@ -165,12 +168,12 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
     }
   }
 
-  void _signUpDentistWithFB(String fullName, BuildContext context, String tel,
-      String citizenID, String permission, String birthDate) async {
+  void _signUpDentistWithFB(BuildContext context, String tel, String citizenID,
+      String permission, String birthDate) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString = await _currentUser.signUpDentistsWithFBAndGG(
-          fullName, tel, citizenID, permission, birthDate, _workingTime);
+          tel, citizenID, permission, birthDate, _workingTime);
       if (_returnString == 'success') {
         showDialog<String>(
             context: context,
@@ -208,6 +211,11 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
       }
     } catch (e) {
       print(e);
+    }
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    if (user != null) {
+      Navigator.push(context,
+          MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
     }
   }
 
@@ -816,8 +824,7 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                         FittedBox(
                           child: GestureDetector(
                             onTap: () {
-                              if (_fullnameController.text.isEmpty ||
-                                  _telController.text.isEmpty ||
+                              if (_telController.text.isEmpty ||
                                   _citizenidController.text.isEmpty ||
                                   _permissionController.text.isEmpty) {
                                 showDialog<String>(
@@ -874,7 +881,6 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                                         ));
                               } else {
                                 _signUpDentistWithFB(
-                                    _fullnameController.text,
                                     context,
                                     _telController.text,
                                     _citizenidController.text,
