@@ -1862,9 +1862,13 @@ void _addDentalCase32Middle(BuildContext context, List addCase) async {
 
 Widget tooth1Detail(BuildContext context) {
   return Scaffold(
-      backgroundColor: bBackgroundColor,
+      // backgroundColor: bBackgroundColor,
       appBar: AppBar(
-        title: Text('Tooth 1 Detail'),
+        title: Text(
+          'Tooth 1 Detail',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.blue[300],
       ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),

@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/constants.dart';
 
 class DentailHistoryCard extends StatefulWidget {
   @override
@@ -17,6 +18,7 @@ class _DentailHistoryCardState extends State<DentailHistoryCard> {
             width: 200,
             decoration: BoxDecoration(
               color: Colors.black,
+              border: Border.all(color: Colors.blueGrey),
               // image: DecorationImage(
               //   image:
               //       AssetImage("assets/images/Logo/App-Icon-drop-shadow.jpg"),
@@ -74,7 +76,8 @@ Widget dentailHistoryCard() {
     height: 80,
     width: 200,
     decoration: BoxDecoration(
-      color: Colors.black,
+      color: Colors.grey[300],
+      // border: Border.all(color: Colors.blueGrey, width: 2),
       // image: DecorationImage(
       //   image:
       //       AssetImage("assets/images/Logo/App-Icon-drop-shadow.jpg"),
