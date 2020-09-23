@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+// const bBackgroundColor = Color(0xFFc4e6f9);
 const bBackgroundColor = Color(0xFFafd3ed);
 // const bBackgroundColor = Color(0xff498eaf);
 const bPrimaryColor = Color(0xFFf7998b);
+const bAppbarColor = Color(0xFF65c8f2);
+const bCardColor = Color(0xFF236696);
 
 const bgColor = Color(0xffF9F9F9);
 const path1Color = Color(0xffE4E2FF);

@@ -155,6 +155,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
                   GestureDetector(
                     onTap: () {
                       showDialog(
+                        // bool sa
                         context: context,
                         builder: (BuildContext context) {
                           return SimpleDialog(
@@ -194,21 +195,32 @@ class _DentEditProfileState extends State<DentEditProfile> {
                       );
                     },
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(210, 210, 0, 0),
-                      child: Container(
-                        width: 30,
-                        height: 30,
-                        decoration: BoxDecoration(
-                          color: Colors.amber[400],
-                          shape: BoxShape.circle,
-                        ),
-                        child: Icon(
-                          LineAwesomeIcons.pen,
-                          color: Colors.black,
-                          size: 20,
+                      padding: const EdgeInsets.only(top: 250),
+                      child: Center(
+                        child: Text(
+                          'Change Profile Photo',
+                          style: TextStyle(
+                            color: Colors.blue,
+                          ),
                         ),
                       ),
                     ),
+                    // Padding(
+                    //   padding: const EdgeInsets.fromLTRB(210, 210, 0, 0),
+                    //   child: Container(
+                    //     width: 30,
+                    //     height: 30,
+                    //     decoration: BoxDecoration(
+                    //       color: Colors.amber[400],
+                    //       shape: BoxShape.circle,
+                    //     ),
+                    //     child: Icon(
+                    //       LineAwesomeIcons.pen,
+                    //       color: Colors.black,
+                    //       size: 20,
+                    //     ),
+                    //   ),
+                    // ),
                   ),
                   SafeArea(
                     child: Row(
@@ -261,7 +273,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
                 },
                 decoration: new InputDecoration(
                   labelText: 'Name',
-                  labelStyle: TextStyle(color: Colors.grey[400]),
+                  labelStyle: TextStyle(color: Colors.grey[400], fontSize: 14),
                 ),
                 controller: displayNameController,
               ),

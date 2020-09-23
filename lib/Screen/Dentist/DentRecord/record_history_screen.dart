@@ -43,7 +43,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text('History'),
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blue[300],
       ),
       body: StreamBuilder(
         stream: Firestore.instance

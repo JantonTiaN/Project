@@ -267,31 +267,31 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
                         ],
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, right: 20),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(right: 16),
-                            child: Icon(
-                              Icons.person,
-                              color: Colors.blue,
-                            ),
-                          ),
-                          Expanded(
-                              child: Container(
-                            margin: EdgeInsets.only(right: 20, left: 10),
-                            child: TextFormField(
-                              decoration: InputDecoration(
-                                  hintText: "Fullname",
-                                  hintStyle: TextStyle(color: Colors.blueGrey)),
-                              controller: _fullnameController,
-                            ),
-                          )),
-                        ],
-                      ),
-                    ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(left: 20, right: 20),
+                    //   child: Row(
+                    //     crossAxisAlignment: CrossAxisAlignment.center,
+                    //     children: <Widget>[
+                    //       Padding(
+                    //         padding: const EdgeInsets.only(right: 16),
+                    //         child: Icon(
+                    //           Icons.person,
+                    //           color: Colors.blue,
+                    //         ),
+                    //       ),
+                    //       Expanded(
+                    //           child: Container(
+                    //         margin: EdgeInsets.only(right: 20, left: 10),
+                    //         child: TextFormField(
+                    //           decoration: InputDecoration(
+                    //               hintText: "Fullname",
+                    //               hintStyle: TextStyle(color: Colors.blueGrey)),
+                    //           controller: _fullnameController,
+                    //         ),
+                    //       )),
+                    //     ],
+                    //   ),
+                    // ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Column(
