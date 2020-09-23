@@ -35,47 +35,6 @@ class _SignInScreenState extends State<SignInScreen> {
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
 
-  // void _loginUser(
-  //     {@required LoginType type,
-  //     String email,
-  //     String password,
-  //     BuildContext context}) async {
-  //   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
-
-  //   try {
-  //     String _returnString;
-
-  //     switch (type) {
-  //       case LoginType.email:
-  //         _returnString =
-  //             await _currentUser.loginUserWithEmail(email, password);
-  //         break;
-  //       case LoginType.google:
-  //         _returnString = await _currentUser.loginUserWithGoogle();
-  //         break;
-  //       default:
-  //     }
-
-  //     if (_returnString == 'success') {
-  //       Navigator.pushAndRemoveUntil(
-  //           context,
-  //           MaterialPageRoute(
-  //             builder: (context) => Home(),
-  //           ),
-  //           (route) => false);
-  //     } else {
-  //       Scaffold.of(context).showSnackBar(
-  //         SnackBar(
-  //           content: Text(_returnString),
-  //           duration: Duration(seconds: 3),
-  //         ),
-  //       );
-  //     }
-  //   } catch (e) {
-  //     print(e);
-  //   }
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -295,9 +254,7 @@ class _SignInScreenState extends State<SignInScreen> {
     if (authResult.additionalUserInfo.isNewUser) {
       selectRoleGoogle(context);
     } else {
-      print('User Check');
-      checkUser();
-      checkRole(context);
+      checkAuthGoogle(context);
     }
   }
 

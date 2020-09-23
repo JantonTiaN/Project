@@ -51,10 +51,10 @@ class StackContainer extends StatelessWidget {
                 Text(user.displayName,
                     style:
                         TextStyle(fontSize: 21, fontWeight: FontWeight.bold)),
-                Text(
-                  'admin@fund.com',
-                  style: TextStyle(fontSize: 14, color: Colors.grey[700]),
-                ),
+                // Text(
+                //   user.email,
+                //   style: TextStyle(fontSize: 14, color: Colors.grey[700]),
+                // ),
               ],
             ),
           ),

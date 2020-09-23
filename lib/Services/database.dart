@@ -100,11 +100,12 @@ class DentistWithFBAndGGDatabase {
           .collection('Account')
           .document('account')
           .collection('Dentists')
-          .document(dentist.dentistTel)
+          .document(user.uid)
           .setData({
-        'fullName': dentist.dentistFullname,
+        'fullName': user.displayName,
+        'eMail': user.email,
         'birthDay': dentist.dentistBirthDate,
-        'tel': dentist.dentistTel,
+        'tel': user.phoneNumber,
         'citizenID': dentist.dentistCitizenID,
         'permission': dentist.dentistPermission,
         'workingTime': dentist.dentistWorkingTime,

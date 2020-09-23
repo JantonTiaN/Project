@@ -24,12 +24,12 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   int _selectPage = 0;
-  final _pageOptions = [
-    DentHomeScreen,
-    DentAppointmentScreen(),
-    DentSuggestion(),
-    DentProfileScreen,
-  ];
+  // final _pageOptions = [
+  //   DentHomeScreen(),
+  //   DentAppointmentScreen(),
+  //   DentSuggestion(),
+  //   DentProfileScreen(),
+  // ];
 
   @override
   void initState() {
@@ -38,6 +38,12 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final _pageOptions = [
+    DentHomeScreen(widget.user),
+    DentAppointmentScreen(),
+    DentSuggestion(),
+    DentProfileScreen(widget.user),
+  ];
     return Scaffold(
       backgroundColor: Colors.white,
       // floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
