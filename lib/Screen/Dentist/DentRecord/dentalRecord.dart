@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/record_history_screen.dart';
+import 'package:fundee/Screen/constants.dart';
 import 'dental_detail_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
 
@@ -36,8 +37,9 @@ class _DentalRecordState extends State<DentalRecord> {
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.fullname),
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.blue[300],
         ),
+        // backgroundColor: bBackgroundColor,
         body: SingleChildScrollView(
           child: Center(
             child: Stack(
@@ -105,7 +107,7 @@ class _DentalRecordState extends State<DentalRecord> {
                           children: <Widget>[
                             Text(
                               "History",
-                              style: TextStyle(fontSize: 14),
+                              style: TextStyle(fontSize: 16),
                             ),
                             SizedBox(width: 10),
                             Icon(

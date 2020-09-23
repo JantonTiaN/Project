@@ -29,15 +29,12 @@ class _PatientListState extends State<PatientList> {
 
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bBackgroundColor,
+      // backgroundColor: bBackgroundColor,
       appBar: AppBar(
-          title: Text('Patients'),
-          backgroundColor: Colors.white,
-          automaticallyImplyLeading: false),
-      // floatingActionButton: FloatingActionButton(
-      //   onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context) => PatientForm())),
-      //   child: Text("+"),
-      // ),
+        title: Text('Patients'),
+        backgroundColor: Colors.blue[300],
+        automaticallyImplyLeading: false,
+      ),
       body: StreamBuilder(
         stream: Firestore.instance
             .collection('Account')

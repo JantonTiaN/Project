@@ -76,7 +76,7 @@ Widget dentailHistoryCard() {
     height: 80,
     width: 200,
     decoration: BoxDecoration(
-      color: Colors.grey[300],
+      color: bCardColor.withOpacity(0.6),
       // border: Border.all(color: Colors.blueGrey, width: 2),
       // image: DecorationImage(
       //   image:

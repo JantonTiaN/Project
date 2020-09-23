@@ -1866,7 +1866,7 @@ Widget tooth1Detail(BuildContext context) {
       appBar: AppBar(
         title: Text(
           'Tooth 1 Detail',
-          style: TextStyle(color: Colors.white),
+          // style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.blue[300],
       ),
@@ -3537,7 +3537,10 @@ Widget tooth1Detail(BuildContext context) {
 
 Widget tooth2Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 2 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 2 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(children: [
@@ -5202,7 +5205,10 @@ Widget tooth2Detail(BuildContext context) {
 
 Widget tooth3Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 3 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 3 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -6933,7 +6939,10 @@ Widget tooth3Detail(BuildContext context) {
 
 Widget tooth4Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 4 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 4 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -8601,7 +8610,10 @@ Widget tooth4Detail(BuildContext context) {
 
 Widget tooth5Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 5 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 5 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -10269,7 +10281,10 @@ Widget tooth5Detail(BuildContext context) {
 
 Widget tooth6Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 6 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 6 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -11937,7 +11952,10 @@ Widget tooth6Detail(BuildContext context) {
 
 Widget tooth7Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 7 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 7 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -13605,7 +13623,10 @@ Widget tooth7Detail(BuildContext context) {
 
 Widget tooth8Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 8 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 8 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -15273,7 +15294,10 @@ Widget tooth8Detail(BuildContext context) {
 
 Widget tooth9Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 9 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 9 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -16941,7 +16965,10 @@ Widget tooth9Detail(BuildContext context) {
 
 Widget tooth10Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 10 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 10 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -18633,7 +18660,10 @@ Widget tooth10Detail(BuildContext context) {
 
 Widget tooth11Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 11 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 11 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -20325,7 +20355,10 @@ Widget tooth11Detail(BuildContext context) {
 
 Widget tooth12Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 12 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 12 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -22017,7 +22050,10 @@ Widget tooth12Detail(BuildContext context) {
 
 Widget tooth13Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 13 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 13 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -23709,7 +23745,10 @@ Widget tooth13Detail(BuildContext context) {
 
 Widget tooth14Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 14 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 14 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -25401,7 +25440,10 @@ Widget tooth14Detail(BuildContext context) {
 
 Widget tooth15Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 15 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 15 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -27093,7 +27135,10 @@ Widget tooth15Detail(BuildContext context) {
 
 Widget tooth16Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 16 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 16 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -28785,7 +28830,10 @@ Widget tooth16Detail(BuildContext context) {
 
 Widget tooth17Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 17 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 17 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -30477,7 +30525,10 @@ Widget tooth17Detail(BuildContext context) {
 
 Widget tooth18Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 18 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 18 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -32169,7 +32220,10 @@ Widget tooth18Detail(BuildContext context) {
 
 Widget tooth19Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 19 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 19 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -33861,7 +33915,10 @@ Widget tooth19Detail(BuildContext context) {
 
 Widget tooth20Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 20 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 20 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -35553,7 +35610,10 @@ Widget tooth20Detail(BuildContext context) {
 
 Widget tooth21Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 21 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 21 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -37245,7 +37305,10 @@ Widget tooth21Detail(BuildContext context) {
 
 Widget tooth22Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 22 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 22 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -38937,7 +39000,10 @@ Widget tooth22Detail(BuildContext context) {
 
 Widget tooth23Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 23 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 23 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -40629,7 +40695,10 @@ Widget tooth23Detail(BuildContext context) {
 
 Widget tooth24Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 24 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 24 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -42321,7 +42390,10 @@ Widget tooth24Detail(BuildContext context) {
 
 Widget tooth25Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 25 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 25 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -44013,7 +44085,10 @@ Widget tooth25Detail(BuildContext context) {
 
 Widget tooth26Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 26 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 26 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -45705,7 +45780,10 @@ Widget tooth26Detail(BuildContext context) {
 
 Widget tooth27Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 27 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 27 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -47397,7 +47475,10 @@ Widget tooth27Detail(BuildContext context) {
 
 Widget tooth28Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 28 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 28 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -49089,7 +49170,10 @@ Widget tooth28Detail(BuildContext context) {
 
 Widget tooth29Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 29 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 29 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -50781,7 +50865,10 @@ Widget tooth29Detail(BuildContext context) {
 
 Widget tooth30Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 30 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 30 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -52473,7 +52560,10 @@ Widget tooth30Detail(BuildContext context) {
 
 Widget tooth31Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 31 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 31 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
@@ -54165,7 +54255,10 @@ Widget tooth31Detail(BuildContext context) {
 
 Widget tooth32Detail(BuildContext context) {
   return Scaffold(
-      appBar: AppBar(title: Text('Tooth 32 Detail')),
+      appBar: AppBar(
+        title: Text('Tooth 32 Detail'),
+        backgroundColor: bAppbarColor,
+      ),
       body: Padding(
         padding: const EdgeInsets.only(top: 85),
         child: Stack(
