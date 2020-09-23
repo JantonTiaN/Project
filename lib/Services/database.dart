@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:fundee/models/users.dart';
 
 class PatientDatabase {
@@ -17,7 +16,7 @@ class PatientDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientTel)
+          .document(patient.patientEmail)
           .setData({
         'fullName': patient.patientFullName,
         'eMail': patient.patientEmail,
@@ -25,12 +24,13 @@ class PatientDatabase {
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
+        'pathImage': ''
       });
       await _firestore
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientTel)
+          .document(patient.patientEmail)
           .collection('DentalCase')
           .document('dentalCase')
           .setData({});
@@ -38,13 +38,14 @@ class PatientDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientTel)
+          .document(patient.patientEmail)
           .collection('History')
           .document('history')
           .setData({});
       userUpdateInfo.displayName = patient.patientFullName;
-      userUpdateInfo.photoUrl = 'assets/images/ToothLogo.png';
+      // userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
       user.updateProfile(userUpdateInfo);
+      user.updateEmail(patient.patientEmail);
       retVal = 'success';
     } catch (e) {
       print(e);
@@ -66,7 +67,7 @@ class DentistDatabase {
           .collection('Account')
           .document('account')
           .collection('Dentists')
-          .document(dentist.dentistTel)
+          .document(dentist.dentistEmail)
           .setData({
         'fullName': dentist.dentistFullname,
         'eMail': dentist.dentistEmail,
@@ -76,14 +77,17 @@ class DentistDatabase {
         'permission': dentist.dentistPermission,
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist',
+        'pathImage': 'imageUrl'
       });
       userUpdateInfo.displayName = dentist.dentistFullname;
-      userUpdateInfo.photoUrl = 'assets/images/ToothLogo.png';
+      // userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
+      user.updateEmail(dentist.dentistEmail);
       user.updateProfile(userUpdateInfo);
       retVal = 'success';
     } catch (e) {
       print(e);
     }
+    return retVal;
   }
 }
 
@@ -110,14 +114,17 @@ class DentistWithFBAndGGDatabase {
         'permission': dentist.dentistPermission,
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist',
+        'pathImage': ''
       });
       userUpdateInfo.displayName = dentist.dentistFullname;
-      userUpdateInfo.photoUrl = 'assets/images/ToothLogo.png';
+      // userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
       user.updateProfile(userUpdateInfo);
+      user.updateEmail(dentist.dentistEmail);
       retVal = 'success';
     } catch (e) {
       print(e);
     }
+    return retVal;
   }
 }
 
@@ -134,19 +141,21 @@ class PatientWithFBAndGGDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientTel)
+          .document(patient.patientEmail)
           .setData({
         'fullName': patient.patientFullName,
+        'eMail': patient.patientEmail,
         'birthDay': patient.patientBirthDate,
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
+        'pathImage': ''
       });
       await _firestore
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientTel)
+          .document(patient.patientEmail)
           .collection('DentalCase')
           .document('dentalCase')
           .setData({});
@@ -154,18 +163,38 @@ class PatientWithFBAndGGDatabase {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(patient.patientTel)
+          .document(patient.patientEmail)
           .collection('History')
           .document('history')
           .setData({});
       userUpdateInfo.displayName = patient.patientFullName;
-      userUpdateInfo.photoUrl = 'assets/images/ToothLogo.png';
+      // userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
       user.updateProfile(userUpdateInfo);
+      user.updateEmail(patient.patientEmail);
       retVal = 'success';
     } catch (e) {
       print(e);
     }
 
+    return retVal;
+  }
+}
+
+class DentEditProfile {
+  final Firestore _firestore = Firestore.instance;
+  Future<String> UpdateDentName(OurDentists dentists) async {
+    String retVal = 'error';
+    try {
+      await _firestore
+          .collection('Account')
+          .document('account')
+          .collection('Dentist')
+          .getDocuments()
+          .then((value) => null);
+      retVal = 'success';
+    } catch (e) {
+      print(e);
+    }
     return retVal;
   }
 }

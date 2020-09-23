@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
+import 'package:fundee/Screen/constants.dart';
 
 class PatientList extends StatefulWidget {
   @override
@@ -28,6 +29,7 @@ class _PatientListState extends State<PatientList> {
 
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bBackgroundColor,
       appBar: AppBar(
           title: Text('Patients'),
           backgroundColor: Colors.white,
