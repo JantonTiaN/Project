@@ -71,8 +71,8 @@ class _PatientListState extends State<PatientList> {
                                 builder: (context) => DentalRecord(
                                   fullname: snapshot
                                       .data.documents[index].data["fullName"],
-                                  tel:
-                                      snapshot.data.documents[index].documentID,
+                                  drugAllergy: snapshot.data.documents[index]
+                                      .data['drugAllergy'],
                                 ),
                                 // PatientInfo(
                                 //       fullname: snapshot.data.documents[index]
@@ -101,11 +101,12 @@ class _PatientListState extends State<PatientList> {
                         child: Column(
                           children: <Widget>[
                             ListTile(
-                              title: Text(snapshot
-                                  .data.documents[index].data["fullName"]),
-                              subtitle: Text(
-                                  snapshot.data.documents[index].documentID),
-                            ),
+                                title: Text(snapshot
+                                    .data.documents[index].data["fullName"]),
+                                subtitle: Text(
+                                  snapshot.data.documents[index]
+                                      .data['drugAllergy'],
+                                )),
                           ],
                         ),
                       ),
