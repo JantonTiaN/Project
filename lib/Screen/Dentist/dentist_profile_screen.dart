@@ -22,134 +22,95 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Scaffold(
-        body: Column(
-          children: <Widget>[
-            Container(
-              height: 300,
-              child: Stack(
-                children: <Widget>[
-                  Container(),
-                  ClipPath(
-                    clipper: MyCustomClipper(),
-                    child: Container(
-                      height: 260,
-                      decoration: BoxDecoration(
-                          gradient: LinearGradient(
-                              begin: Alignment.topCenter,
-                              colors: [
-                            Colors.lightBlue[400],
-                            Colors.blue,
-                            Colors.indigo[300]
-                          ])),
-                    ),
-                  ),
-                  Align(
-                    alignment: Alignment(0, 1),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        CircleAvatar(
-                          radius: 65,
-                          backgroundColor: Colors.white,
-                          child: ClipOval(
-                            child: new SizedBox(
-                                width: 120.0,
-                                height: 120.0,
-                                child: Image.network(
-                                  widget.user.photoUrl,
-                                  fit: BoxFit.fill,
-                                )),
-                          ),
-                        ),
-                        SizedBox(
-                          height: 4,
-                        ),
-                        Text(widget.user.displayName,
-                            style: TextStyle(
-                                fontSize: 21, fontWeight: FontWeight.bold)),
-                        // Text(
-                        //   widget.user.email,
-                        //   style:
-                        //       TextStyle(fontSize: 14, color: Colors.grey[700]),
-                        // ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return DentEditProfile(widget.user);
-                  },
-                ));
-              },
-              child: Padding(
-                padding: const EdgeInsets.all(15.0),
-                child: Container(
-                  height: 40,
-                  width: 300,
-                  decoration: BoxDecoration(
-                    // color: bPrimaryColor,
-                    borderRadius: BorderRadius.circular(25),
-                    border: Border.all(color: Colors.blueGrey),
-                  ),
-                  child: Center(
-                    child: Text('Edit Profile'),
+      body: Column(
+        children: <Widget>[
+          Container(
+            height: 300,
+            child: Stack(
+              children: <Widget>[
+                Container(),
+                ClipPath(
+                  clipper: MyCustomClipper(),
+                  child: Container(
+                    height: 260,
+                    decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                            begin: Alignment.topCenter,
+                            colors: [
+                          Colors.lightBlue[400],
+                          Colors.blue,
+                          Colors.indigo[300]
+                        ])),
                   ),
                 ),
-              ),
-            ),
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(
-                  builder: (context) {
-                    return DentailHistoryCard();
-                  },
-                ));
-              },
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                child: Card(
+                Align(
+                  alignment: Alignment(0, 1),
                   child: Column(
+                    mainAxisSize: MainAxisSize.min,
                     children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 21),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Icon(
-                              Icons.help,
-                              color: Colors.indigoAccent,
-                            ),
-                            SizedBox(
-                              width: 14,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                Text(
-                                  'Help & Support',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
+                      CircleAvatar(
+                        radius: 65,
+                        backgroundColor: Colors.white,
+                        child: ClipOval(
+                          child: new SizedBox(
+                              width: 120.0,
+                              height: 120.0,
+                              child: Image.network(
+                                widget.user.photoUrl,
+                                fit: BoxFit.fill,
+                              )),
                         ),
                       ),
+                      SizedBox(
+                        height: 4,
+                      ),
+                      Text(widget.user.displayName,
+                          style: TextStyle(
+                              fontSize: 21, fontWeight: FontWeight.bold)),
+                      // Text(
+                      //   widget.user.email,
+                      //   style:
+                      //       TextStyle(fontSize: 14, color: Colors.grey[700]),
+                      // ),
                     ],
                   ),
                 ),
+              ],
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return DentEditProfile(widget.user);
+                },
+              ));
+            },
+            child: Padding(
+              padding: const EdgeInsets.all(15.0),
+              child: Container(
+                height: 40,
+                width: 300,
+                decoration: BoxDecoration(
+                  // color: bPrimaryColor,
+                  borderRadius: BorderRadius.circular(25),
+                  border: Border.all(color: Colors.blueGrey),
+                ),
+                child: Center(
+                  child: Text('Edit Profile'),
+                ),
               ),
             ),
-            Padding(
+          ),
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) {
+                  return DentailHistoryCard();
+                },
+              ));
+            },
+            child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               child: Card(
                 child: Column(
@@ -161,7 +122,7 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
                           Icon(
-                            Icons.settings,
+                            Icons.help,
                             color: Colors.indigoAccent,
                           ),
                           SizedBox(
@@ -172,7 +133,7 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
                             mainAxisSize: MainAxisSize.min,
                             children: <Widget>[
                               Text(
-                                'Setting',
+                                'Help & Support',
                                 style: TextStyle(
                                   fontSize: 18,
                                 ),
@@ -186,50 +147,87 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: GestureDetector(
-                onTap: () {
-                  _signOut(context);
-                },
-                child: Card(
-                  child: Column(
-                    children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 16, vertical: 21),
-                        child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: <Widget>[
-                            Icon(
-                              Icons.exit_to_app,
-                              color: Colors.indigoAccent,
-                            ),
-                            SizedBox(
-                              width: 14,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.min,
-                              children: <Widget>[
-                                Text(
-                                  'Sign Out',
-                                  style: TextStyle(
-                                    fontSize: 18,
-                                  ),
-                                ),
-                              ],
-                            )
-                          ],
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: Card(
+              child: Column(
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 21),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(
+                          Icons.settings,
+                          color: Colors.indigoAccent,
                         ),
-                      ),
-                    ],
+                        SizedBox(
+                          width: 14,
+                        ),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Text(
+                              'Setting',
+                              style: TextStyle(
+                                fontSize: 18,
+                              ),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 16),
+            child: GestureDetector(
+              onTap: () {
+                _signOut(context);
+              },
+              child: Card(
+                child: Column(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16, vertical: 21),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Icon(
+                            Icons.exit_to_app,
+                            color: Colors.indigoAccent,
+                          ),
+                          SizedBox(
+                            width: 14,
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Text(
+                                'Sign Out',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

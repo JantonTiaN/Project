@@ -1,7 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/record_history_screen.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/widgets/dentist_suggestion_screen.dart';
+import 'package:fundee/Screen/Patient/patient_sug_screen.dart';
 import 'package:fundee/Screen/constants.dart';
+import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'dental_detail_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
 
@@ -85,7 +88,7 @@ class _DentalRecordState extends State<DentalRecord> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(265, 10, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(290, 540, 0, 0),
                   child: FittedBox(
                     child: GestureDetector(
                       onTap: () {
@@ -96,22 +99,58 @@ class _DentalRecordState extends State<DentalRecord> {
                         ));
                       },
                       child: Container(
-                        margin: EdgeInsets.only(right: 30),
+                        // margin: EdgeInsets.
                         padding:
                             EdgeInsets.symmetric(horizontal: 18, vertical: 11),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          color: Colors.amber,
-                        ),
+                            // borderRadius: BorderRadius.circular(25),
+                            color: Colors.amber,
+                            shape: BoxShape.circle),
                         child: Row(
                           children: <Widget>[
-                            Text(
-                              "History",
-                              style: TextStyle(fontSize: 16),
-                            ),
-                            SizedBox(width: 10),
+                            // Text(
+                            //   'History',
+                            //   style: TextStyle(fontSize: 20),
+                            // ),
+                            // SizedBox(width: 10),
                             Icon(
                               Icons.history,
+                              color: Colors.black,
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(240, 540, 0, 0),
+                  child: FittedBox(
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(
+                          builder: (context) {
+                            return DentSuggestionScreen();
+                          },
+                        ));
+                      },
+                      child: Container(
+                        // margin: EdgeInsets.
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 18, vertical: 11),
+                        decoration: BoxDecoration(
+                            // borderRadius: BorderRadius.circular(25),
+                            color: Colors.amber,
+                            shape: BoxShape.circle),
+                        child: Row(
+                          children: <Widget>[
+                            // Text(
+                            //   'History',
+                            //   style: TextStyle(fontSize: 20),
+                            // ),
+                            // SizedBox(width: 10),
+                            Icon(
+                              LineAwesomeIcons.medical_notes,
                               color: Colors.black,
                             )
                           ],
