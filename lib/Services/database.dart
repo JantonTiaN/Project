@@ -8,8 +8,6 @@ class PatientDatabase {
   Future<String> createPatient(OurPatients patient) async {
     FirebaseUser user = await FirebaseAuth.instance.currentUser();
     UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
-    // AuthCredential credential =
-    //     PhoneAuthProvider.getCredential(verificationId: null, smsCode: null);
     String retVal = 'error';
     try {
       await _firestore
@@ -24,7 +22,7 @@ class PatientDatabase {
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
-        'pathImage': ''
+        'pathImage': patient.patientImage
       });
       await _firestore
           .collection('Account')
@@ -43,9 +41,11 @@ class PatientDatabase {
           .document('history')
           .setData({});
       userUpdateInfo.displayName = patient.patientFullName;
-      // userUpdateInfo.photoUrl = 'assets/images/Logo/App-Icon-drop-shadow.jpg';
+      userUpdateInfo.photoUrl = patient.patientImage.toString();
       user.updateProfile(userUpdateInfo);
       user.updateEmail(patient.patientEmail);
+      print(patient.patientImage);
+      print(user.displayName);
       retVal = 'success';
     } catch (e) {
       print(e);
@@ -77,8 +77,11 @@ class DentistDatabase {
         'permission': dentist.dentistPermission,
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist',
-        'pathImage': 'imageUrl'
+        'pathImage':
+            'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208'
       });
+      userUpdateInfo.photoUrl =
+          'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208';
       userUpdateInfo.displayName = dentist.dentistFullname;
       user.updateEmail(dentist.dentistEmail);
       user.updateProfile(userUpdateInfo);

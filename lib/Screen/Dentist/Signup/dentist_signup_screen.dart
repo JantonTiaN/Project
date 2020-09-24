@@ -123,10 +123,6 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
       time = 'Saturday Afternoon';
       workingTime.add(time);
     }
-    // if(satAfternoon == true){
-    //   time = 'Saturday Evening';
-    //   _workingTime.add(time);
-    // }
     if (sunMorning == true) {
       time = 'Sunday Morning';
       workingTime.add(time);
@@ -135,10 +131,6 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
       time = 'Sunday Afternoon';
       workingTime.add(time);
     }
-    // if(sunAfternoon == true){
-    //   time = 'Sunday Evening';
-    //   _workingTime.add(time);
-    // }
     return workingTime;
   }
 
@@ -221,34 +213,34 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
         body: Builder(
           builder: (context) => ListView(
             children: <Widget>[
-              Container(
-                height: 200,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image:
-                        AssetImage("assets/images/dentist-signup-screen.png"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Positioned(
-                  child: Stack(
-                    children: <Widget>[
-                      Positioned(
-                          bottom: -10,
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Text(
-                              'Create New Account',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20),
-                            ),
-                          ))
-                    ],
-                  ),
-                ),
-              ),
+              // Container(
+              //   height: 200,
+              //   decoration: BoxDecoration(
+              //     image: DecorationImage(
+              //       image:
+              //           AssetImage("assets/images/dentist-signup-screen.png"),
+              //       fit: BoxFit.cover,
+              //     ),
+              //   ),
+              //   child: Positioned(
+              //     child: Stack(
+              //       children: <Widget>[
+              //         Positioned(
+              //             bottom: -10,
+              //             child: Padding(
+              //               padding: const EdgeInsets.all(10.0),
+              //               child: Text(
+              //                 'Create New Account',
+              //                 style: TextStyle(
+              //                     color: Colors.white,
+              //                     fontWeight: FontWeight.bold,
+              //                     fontSize: 20),
+              //               ),
+              //             ))
+              //       ],
+              //     ),
+              //   ),
+              // ),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Row(

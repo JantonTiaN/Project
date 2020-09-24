@@ -120,6 +120,8 @@ class CurrentUser extends ChangeNotifier {
       _patient.patientTel = patientTel;
       _patient.patientDrugallergy = patientDrugallergy;
       _patient.patientBirthDate = patientBirthDate;
+      _patient.patientImage = Image.network(
+          'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208');
       String _returnString = await PatientDatabase().createPatient(_patient);
       if (_returnString == 'success') {
         returnVal = 'success';
