@@ -68,6 +68,7 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
                           style: TextStyle(
                               fontSize: 21, fontWeight: FontWeight.bold)),
                       // Text(
+                      //   widget.user.email,
                       //   widget.user.photoUrl,
                       //   style:
                       //       TextStyle(fontSize: 14, color: Colors.grey[700]),
