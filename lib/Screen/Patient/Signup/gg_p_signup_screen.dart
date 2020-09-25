@@ -1,5 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:fundee/Screen/constants.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:fundee/font_awesome_flutter.dart';
@@ -51,10 +53,9 @@ class _GgPSignupScreenState extends State<GgPSignupScreen> {
                   actions: <Widget>[
                     FlatButton(
                       child: Text('OK'),
-                      onPressed: () => Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return SignInScreen();
-                      })),
+                      onPressed: () {
+                        signupComplete();
+                      },
                     )
                   ],
                 ));
@@ -327,5 +328,11 @@ class _GgPSignupScreenState extends State<GgPSignupScreen> {
                     )
                   ],
                 )));
+  }
+
+  signupComplete() async {
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => PatientMenuScreen(user)));
   }
 }

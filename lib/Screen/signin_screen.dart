@@ -29,7 +29,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   void initState() {
     super.initState();
-    //checkAuth(context);
+    
   }
 
   TextEditingController _emailController = TextEditingController();
@@ -326,8 +326,6 @@ class _SignInScreenState extends State<SignInScreen> {
 
     var doc = await collectionDent.document(docId).get();
     return doc.exists;
-
-   
   }
 
   checkUser() async {

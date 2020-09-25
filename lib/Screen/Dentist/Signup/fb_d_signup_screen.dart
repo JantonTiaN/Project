@@ -181,10 +181,9 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                   actions: <Widget>[
                     FlatButton(
                       child: Text('OK'),
-                      onPressed: () => Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return SignInScreen();
-                      })),
+                      onPressed: () {
+                        signupComplete();
+                      },
                     )
                   ],
                 ));
@@ -908,5 +907,11 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                     )
                   ],
                 )));
+  }
+
+  signupComplete() async {
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
   }
 }

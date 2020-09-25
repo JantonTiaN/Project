@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fundee/States/current_user.dart';
@@ -6,6 +7,7 @@ import 'package:provider/provider.dart';
 import '../../../font_awesome_flutter.dart';
 import '../../constants.dart';
 import '../../signin_screen.dart';
+import '../patient_menu_screen.dart';
 
 class PatientSignUpScreen extends StatefulWidget {
   @override
@@ -53,10 +55,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   actions: <Widget>[
                     FlatButton(
                       child: Text('OK'),
-                      onPressed: () => Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return SignInScreen();
-                      })),
+                      onPressed: signupComplete(),
                     )
                   ],
                 ));
@@ -389,5 +388,14 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
             ],
           ),
         ));
+  }
+
+  signupComplete() async {
+    FirebaseAuth auth = FirebaseAuth.instance;
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    await user.reload();
+    user = await auth.currentUser();
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => PatientMenuScreen(user)));
   }
 }

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fundee/Screen/constants.dart';
@@ -7,6 +8,7 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
 import '../../signin_screen.dart';
+import '../dentist_menu_screen.dart';
 
 class GgDSignupScreen extends StatefulWidget {
   // final FirebaseUser user;
@@ -174,10 +176,9 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
                   actions: <Widget>[
                     FlatButton(
                       child: Text('OK'),
-                      onPressed: () => Navigator.push(context,
-                          MaterialPageRoute(builder: (context) {
-                        return SignInScreen();
-                      })),
+                      onPressed: () {
+                        signupComplete();
+                      },
                     )
                   ],
                 ));
@@ -900,5 +901,11 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
                     )
                   ],
                 )));
+  }
+
+  signupComplete() async {
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
   }
 }
