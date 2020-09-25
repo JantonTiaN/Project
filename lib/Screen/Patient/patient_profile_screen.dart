@@ -4,15 +4,14 @@ import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 
-class DentProfileScreen extends StatefulWidget {
-  // final FirebaseUser user;
-  // DentProfileScreen(this.user, {Key key}) : super(key: key);
-
+class PatientProfileScreen extends StatefulWidget {
+  final FirebaseUser user;
+  PatientProfileScreen(this.user, {Key key}) : super(key: key);
   @override
-  _DentProfileScreenState createState() => _DentProfileScreenState();
+  _PatientProfileScreenState createState() => _PatientProfileScreenState();
 }
 
-class _DentProfileScreenState extends State<DentProfileScreen> {
+class _PatientProfileScreenState extends State<PatientProfileScreen> {
   final FacebookLogin _facebookLogin = FacebookLogin();
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
