@@ -55,6 +55,8 @@ class _PatientListState extends State<PatientList> {
                                       .data.documents[index].data["fullName"],
                                   drugAllergy: snapshot.data.documents[index]
                                       .data['drugAllergy'],
+                                  uid: snapshot
+                                      .data.documents[index].data['uid'],
                                 ),
                                 // PatientInfo(
                                 //       fullname: snapshot.data.documents[index]

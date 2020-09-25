@@ -1,9 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/record_history_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/widgets/dentist_suggestion_screen.dart';
-import 'package:fundee/Screen/Patient/patient_sug_screen.dart';
-import 'package:fundee/Screen/constants.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'dental_detail_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
@@ -11,7 +8,12 @@ import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
 class DentalRecord extends StatefulWidget {
   final String fullname;
   final String drugAllergy;
-  DentalRecord({Key key, @required this.fullname, @required this.drugAllergy})
+  final String uid;
+  DentalRecord(
+      {Key key,
+      @required this.fullname,
+      @required this.drugAllergy,
+      @required this.uid})
       : super(key: key);
   @override
   _DentalRecordState createState() => _DentalRecordState();
