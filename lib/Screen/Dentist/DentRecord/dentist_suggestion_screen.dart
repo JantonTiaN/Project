@@ -26,7 +26,7 @@ class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
                         fillColor: Colors.black,
                         border: OutlineInputBorder(
                             borderSide: BorderSide(color: Colors.blue)),
-                        hintText: 'Suggestion to patient',
+                        hintText: 'Add Suggestion to patient',
                         labelText: 'Suggestion'),
                     maxLines: 10,
                   ),
