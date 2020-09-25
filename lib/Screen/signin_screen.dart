@@ -231,7 +231,7 @@ class _SignInScreenState extends State<SignInScreen> {
       await _auth.signInWithEmailAndPassword(
           email: _emailController.text.trim(),
           password: _passwordController.text.trim());
-      checkRole(context);
+      checkRole();
     } catch (error) {
       print(error.message);
       scaffoldKey.currentState.showSnackBar(SnackBar(
@@ -254,7 +254,7 @@ class _SignInScreenState extends State<SignInScreen> {
     if (authResult.additionalUserInfo.isNewUser) {
       selectRoleGoogle(context);
     } else {
-      checkAuthGoogle(context);
+      checkRole();
     }
   }
 
@@ -273,7 +273,7 @@ class _SignInScreenState extends State<SignInScreen> {
       if (authResult.additionalUserInfo.isNewUser) {
         selectRoleFacebook(context);
       } else {
-        checkAuthFacebook(context);
+        checkRole();
       }
       var user = await FirebaseAuth.instance.signInWithCredential(credential);
     }
@@ -284,26 +284,6 @@ class _SignInScreenState extends State<SignInScreen> {
     if (user = null) {
       Navigator.pushReplacement(context,
           MaterialPageRoute(builder: (context) => DentHomeScreen(user)));
-    }
-  }
-
-  Future checkAuthFacebook(BuildContext context) async {
-    FirebaseUser user = await _auth.currentUser();
-    if (user != null) {
-      print("Already signin with Social media");
-
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
-    }
-  }
-
-  Future checkAuthGoogle(BuildContext context) async {
-    FirebaseUser user = await _auth.currentUser();
-    if (user != null) {
-      print("Already signin with");
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
-      //ตั้งให้ไปหน้า Patient ก่อน
     }
   }
 
@@ -323,28 +303,31 @@ class _SignInScreenState extends State<SignInScreen> {
     }
   }
 
-  Future checkRole(BuildContext context) {
-    FirebaseAuth.instance.currentUser().then((user) {
-      Firestore.instance
-          .collection('Account')
-          .document('account')
-          .collection('Dentists')
-          .where('uid', isEqualTo: user.phoneNumber)
-          .getDocuments()
-          .then((docs) {
-        if (docs.documents[0].exists) {
-          if (docs.documents[0].data['role'] == 'Dentist') {
-            Navigator.pushReplacement(context,
-                MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
-          } else {
-            Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => PatientMenuScreen(user)));
-          }
-        }
-      });
-    });
+  checkRole() async {
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    bool docExist = await checkIfDocExists(user.uid);
+    print('Doccccccccccc');
+    print(docExist);
+    if (docExist == true) {
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
+    } else {
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => PatientMenuScreen(user)));
+    }
+  }
+
+  Future<bool> checkIfDocExists(String docId) async {
+    // Get reference to Firestore collection
+    var collectionDent = Firestore.instance
+        .collection('Account')
+        .document('account')
+        .collection('Dentists');
+
+    var doc = await collectionDent.document(docId).get();
+    return doc.exists;
+
+   
   }
 
   checkUser() async {

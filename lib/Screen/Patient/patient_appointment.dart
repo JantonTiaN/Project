@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 
-class DentAppointmentScreen extends StatefulWidget {
+class PatientAppointmentScreen extends StatefulWidget {
   @override
-  _DentAppointmentScreenState createState() => _DentAppointmentScreenState();
+  _PatientAppointmentScreenState createState() =>
+      _PatientAppointmentScreenState();
 }
 
-class _DentAppointmentScreenState extends State<DentAppointmentScreen> {
+class _PatientAppointmentScreenState extends State<PatientAppointmentScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        child: Text("Patient Appointmemt Page"),
-      ),
+    return Center(
+      child: Text('Appointment'),
     );
   }
 }

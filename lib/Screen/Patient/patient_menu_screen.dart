@@ -5,6 +5,9 @@ import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/Screen/Dentist/dentist_appointment_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_home_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_profile_screen.dart';
+import 'package:fundee/Screen/Patient/patient_appointment.dart';
+import 'package:fundee/Screen/Patient/patient_home_screen.dart';
+import 'package:fundee/Screen/Patient/patient_profile_screen.dart';
 import 'package:fundee/Screen/Patient/patient_sug_screen.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 // import 'package:fundee/user.dart';
@@ -24,12 +27,6 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
   int _selectPage = 0;
-  // final _pageOptions = [
-  //   DentHomeScreen(),
-  //   DentAppointmentScreen(),
-  //   DentSuggestion(),
-  //   DentProfileScreen(),
-  // ];
 
   @override
   void initState() {
@@ -39,11 +36,11 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
   @override
   Widget build(BuildContext context) {
     final _pageOptions = [
-    DentHomeScreen(widget.user),
-    DentAppointmentScreen(),
-    DentSuggestion(),
-    DentProfileScreen(widget.user),
-  ];
+      PatientHomeScreen(widget.user),
+      PatientAppointmentScreen(),
+      DentSuggestion(),
+      PatientProfileScreen(widget.user),
+    ];
     return Scaffold(
       backgroundColor: Colors.white,
       // floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
