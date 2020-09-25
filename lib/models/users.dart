@@ -9,6 +9,7 @@ class OurPatients {
   String patientBirthDate;
   List patientCase;
   Image patientImage;
+  String patientSuggestion;
 
   OurPatients(
       {this.patientId,
@@ -18,7 +19,8 @@ class OurPatients {
       this.patientDrugallergy,
       this.patientBirthDate,
       this.patientCase,
-      this.patientImage});
+      this.patientImage,
+      this.patientSuggestion});
 }
 
 class OurDentists {

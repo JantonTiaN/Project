@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/record_history_screen.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/widgets/dentist_suggestion_screen.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dentist_suggestion_screen.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'dental_detail_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dentist_suggestion_screen.dart';
 
 class DentalRecord extends StatefulWidget {
   final String fullname;
@@ -20,23 +21,6 @@ class DentalRecord extends StatefulWidget {
 }
 
 class _DentalRecordState extends State<DentalRecord> {
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   Firestore.instance
-  //       .collection("Account")
-  //       .document('account')
-  //       .collection('Patients')
-  //       .document(widget.fullname)
-  //       .get()
-  //       .then((value) {
-  //     // setState(() {
-  //     //   pnumber = value.data['tel'];
-  //     // });
-  //   });
-  //   getDocId(widget.drugAllergy);
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -427,6 +411,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -444,6 +430,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -461,6 +449,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -478,6 +468,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -495,6 +487,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -512,6 +506,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -529,6 +525,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -546,6 +544,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -563,6 +563,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -580,6 +582,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -597,6 +601,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -616,6 +622,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -633,6 +641,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -650,6 +660,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -667,6 +679,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -684,6 +698,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -701,6 +717,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -718,6 +736,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -735,6 +755,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -752,6 +774,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -769,6 +793,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -786,6 +812,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -803,6 +831,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -820,6 +850,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -837,6 +869,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -854,6 +888,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -871,6 +907,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -888,6 +926,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -905,6 +945,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -922,6 +964,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -939,6 +983,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -956,6 +1002,8 @@ class _DentalRecordState extends State<DentalRecord> {
                 ),
                 GestureDetector(
                   onTap: () {
+                    getuid(widget.uid);
+                    getuserid(widget.uid);
                     Navigator.push(
                         context,
                         MaterialPageRoute(

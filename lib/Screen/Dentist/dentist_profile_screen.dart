@@ -105,11 +105,11 @@ class _DentProfileScreenState extends State<DentProfileScreen> {
           ),
           GestureDetector(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(
-                builder: (context) {
-                  return DentailHistoryCard();
-                },
-              ));
+              // Navigator.push(context, MaterialPageRoute(
+              //   builder: (context) {
+              //     return DentailHistoryCard();
+              //   },
+              // ));
             },
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 16),
