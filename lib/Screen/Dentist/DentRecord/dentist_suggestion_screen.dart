@@ -8,6 +8,11 @@ class DentSuggestionScreen extends StatefulWidget {
 class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Column());
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('Suggestion'),
+          backgroundColor: Colors.blue[300],
+        ),
+        body: Column());
   }
 }

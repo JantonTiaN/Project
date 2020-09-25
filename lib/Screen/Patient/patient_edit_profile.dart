@@ -1,20 +1,20 @@
 import 'dart:io';
 import 'dart:ui';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:fundee/Screen/Dentist/dentist_profile_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/Patient/patient_profile_screen.dart';
 import 'package:image_picker/image_picker.dart';
 
-class DentEditProfile extends StatefulWidget {
+class PatientEditProfile extends StatefulWidget {
   final FirebaseUser user;
-  DentEditProfile(this.user, {Key key}) : super(key: key);
+  PatientEditProfile(this.user, {Key key}) : super(key: key);
   @override
-  _DentEditProfileState createState() => _DentEditProfileState();
+  _PatientEditProfileState createState() => _PatientEditProfileState();
 }
 
-class _DentEditProfileState extends State<DentEditProfile> {
+class _PatientEditProfileState extends State<PatientEditProfile> {
   File _image;
   final _picker = ImagePicker();
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -23,14 +23,13 @@ class _DentEditProfileState extends State<DentEditProfile> {
   @override
   void initState() {
     super.initState();
-    // _nameController.text = widget.user.displayName.toString();
   }
 
   Future<void> uploadPic(String _name, String _email, String _url) async {
     String pic = widget.user.uid;
     FirebaseStorage firebaseStorage = FirebaseStorage.instance;
     StorageReference storageReference =
-        firebaseStorage.ref().child('dentistProfile/$pic.jpg');
+        firebaseStorage.ref().child('patientProfile/$pic.jpg');
     StorageUploadTask storageUploadTask = storageReference.putFile(_image);
     urlPicture =
         await (await storageUploadTask.onComplete).ref.getDownloadURL();
@@ -46,7 +45,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
     DocumentReference documentReference = firestore
         .collection('Account')
         .document('account')
-        .collection('Dentists')
+        .collection('Patient')
         .document(widget.user.uid);
     Map<String, dynamic> map = Map();
     if (_name != null) {
@@ -76,7 +75,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
     // print(user.displayName);
     documentReference.updateData(map).then((value) {
       print('Update Success');
-      MaterialPageRoute(builder: (value) => DentProfileScreen(widget.user));
+      MaterialPageRoute(builder: (value) => PatientProfileScreen(widget.user));
     });
   }
 
@@ -143,7 +142,6 @@ class _DentEditProfileState extends State<DentEditProfile> {
                   GestureDetector(
                     onTap: () {
                       showDialog(
-                        // bool sa
                         context: context,
                         builder: (BuildContext context) {
                           return SimpleDialog(
@@ -185,7 +183,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
                                     Firestore.instance
                                         .collection('Account')
                                         .document('account')
-                                        .collection('Dentists')
+                                        .collection('Patient')
                                         .document(widget.user.uid)
                                         .updateData({
                                       'pathImage':
@@ -288,21 +286,5 @@ class _DentEditProfileState extends State<DentEditProfile> {
         ),
       ),
     );
-  }
-}
-
-class MyCustomClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path = Path();
-    path.lineTo(size.width, 0);
-    path.lineTo(size.width, size.height - 100);
-    path.lineTo(0, size.height);
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) {
-    return true;
   }
 }
