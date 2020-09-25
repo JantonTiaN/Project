@@ -180,8 +180,8 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
         body: Column(
           children: [
             ListTile(
-              title: Text(tooth1Front.substring(6, tooth1Front.length - 2)),
-            )
+                // title: Text(tooth1Front.substring(6, tooth1Front.length - 2)),
+                )
           ],
         )
         // body: StreamBuilder(
