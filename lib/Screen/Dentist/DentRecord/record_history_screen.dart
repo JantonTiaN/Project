@@ -40,6 +40,11 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
 
   @override
   Widget build(BuildContext context) {
+    //   Firestore.instance.collection("users").getDocuments().then((querySnapshot) {
+    //   querySnapshot.documents.forEach((result) {
+    //     print(result.data);
+    //   });
+    // });
     return Scaffold(
       appBar: AppBar(
         title: Text('History'),

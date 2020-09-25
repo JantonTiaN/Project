@@ -21,7 +21,6 @@ class FbDSignupScreen extends StatefulWidget {
 
 class _FbDSignupScreenState extends State<FbDSignupScreen> {
   DateTime _currentDate = new DateTime.now();
-  TextEditingController _fullnameController = TextEditingController();
   TextEditingController _telController = TextEditingController();
   TextEditingController _citizenidController = TextEditingController();
   TextEditingController _permissionController = TextEditingController();
@@ -211,11 +210,6 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
       }
     } catch (e) {
       print(e);
-    }
-    FirebaseUser user = await FirebaseAuth.instance.currentUser();
-    if (user != null) {
-      Navigator.push(context,
-          MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
     }
   }
 

@@ -10,23 +10,6 @@ class PatientList extends StatefulWidget {
 
 class _PatientListState extends State<PatientList> {
   @override
-
-//   List<UserModel> userModels = List();
-
-// Future<void> readAllData() async {
-//     Firestore firestore = Firestore.instance;
-//     CollectionReference collectionReference = firestore.collection('Account').document('account').collection('Users');
-//     collectionReference.snapshots().listen((response) {
-//       List<DocumentSnapshot> snapshots = response.documents;
-//       for (var snapshot in snapshots) {
-//         UserModel userModel = UserModel.fromMap(snapshot.data);
-//         setState(() {
-//           userModels.add(userModel);
-//         });
-//       }
-//     });
-//   }
-
   Widget build(BuildContext context) {
     return Scaffold(
       // backgroundColor: bBackgroundColor,

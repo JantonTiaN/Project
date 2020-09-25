@@ -31,8 +31,8 @@ class _DentEditProfileState extends State<DentEditProfile> {
     // _nameController.text = widget.user.displayName.toString();
   }
 
-  Future<void> uploadPic() async {
-    String pic = widget.user.email;
+  Future<void> uploadPic(String _name, String _email, String _url) async {
+    String pic = widget.user.uid;
     FirebaseStorage firebaseStorage = FirebaseStorage.instance;
     StorageReference storageReference =
         firebaseStorage.ref().child('dentistProfile/$pic.jpg');
@@ -40,31 +40,11 @@ class _DentEditProfileState extends State<DentEditProfile> {
     urlPicture =
         await (await storageUploadTask.onComplete).ref.getDownloadURL();
     print('urlPicture = $urlPicture');
-    updateDataToFirestore();
+    updateDataToFirestore(_name, _email, _url);
   }
 
-  Future<void> deletePic() async {
-    String pic = widget.user.email;
-    FirebaseStorage.instance.ref().child('dentistProfile/$pic.jpg').delete();
-    var image = Image.network(
-        'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208');
-    // setState(() {
-    //   _image = image as File;
-    //   print('Image Path $_image');
-    // });
-    Firestore.instance
-      ..collection('Account')
-          .document('account')
-          .collection('Dentists')
-          .document(widget.user.uid)
-          .updateData({'pathImage': image});
-    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
-    userUpdateInfo.photoUrl = image.toString();
-    widget.user.updateProfile(userUpdateInfo);
-    print(image.toString());
-  }
-
-  Future<void> updateDataToFirestore() async {
+  Future<void> updateDataToFirestore(
+      String _name, String _email, String _url) async {
     FirebaseUser user = await _auth.currentUser();
     Firestore firestore = Firestore.instance;
     UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
@@ -74,10 +54,20 @@ class _DentEditProfileState extends State<DentEditProfile> {
         .collection('Dentists')
         .document(widget.user.uid);
     Map<String, dynamic> map = Map();
-    map['fullName'] = name;
-    map['eMail'] = eMail;
-    map['pathImage'] = urlPicture;
-    userUpdateInfo.displayName = name;
+    if (_name != null) {
+      map['fullName'] = _name;
+    } else {
+      map['fullName'] = widget.user.displayName;
+    }
+    if (_email != null) {
+      map['eMail'] = _email;
+    } else {
+      map['eMail'] = widget.user.email;
+    }
+    if (urlPicture != null) {
+      map['pathImage'] = urlPicture;
+    }
+    userUpdateInfo.displayName = _name;
     userUpdateInfo.photoUrl = urlPicture;
     user.updateProfile(userUpdateInfo);
     // await user.reload();
@@ -212,8 +202,18 @@ class _DentEditProfileState extends State<DentEditProfile> {
                                     Navigator.pop(context);
                                     UserUpdateInfo userUpdateInfo =
                                         new UserUpdateInfo();
-                                    userUpdateInfo.photoUrl = null;
+                                    userUpdateInfo.photoUrl =
+                                        'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208';
                                     widget.user.updateProfile(userUpdateInfo);
+                                    Firestore.instance
+                                        .collection('Account')
+                                        .document('account')
+                                        .collection('Dentists')
+                                        .document(widget.user.uid)
+                                        .updateData({
+                                      'pathImage':
+                                          'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208',
+                                    });
                                   },
                                   child: const Text('Remove Profile Photo'),
                                 ),
@@ -271,14 +271,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
                         IconButton(
                           onPressed: () {
                             Navigator.pop(context);
-                            uploadPic();
-                            Firestore.instance
-                                .collection('Account')
-                                .document('account')
-                                .collection('Dentists')
-                                .document(widget.user.uid)
-                                .updateData({'pathImage': null});
-                            deletePic();
+                            uploadPic(name, eMail, urlPicture);
                           },
                           icon: Icon(
                             Icons.check,

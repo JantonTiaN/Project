@@ -39,8 +39,8 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
     }
   }
 
-  void _signUpPatient(String email, String password, BuildContext context,
-      String fullName, String tel, String drugallergy, String brithDate) async {
+  void _signUpPatient(String email, String password, String fullName,
+      String tel, String drugallergy, String brithDate) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString = await _currentUser.signUpPatients(
@@ -89,34 +89,34 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
         body: Builder(
           builder: (context) => ListView(
             children: <Widget>[
-              Container(
-                height: 200,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image:
-                        AssetImage("assets/images/patient-signup-screen2.png"),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-                child: Positioned(
-                  child: Stack(
-                    children: <Widget>[
-                      Positioned(
-                          bottom: -10,
-                          child: Padding(
-                            padding: const EdgeInsets.all(10.0),
-                            child: Text(
-                              'Create New Account',
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 20),
-                            ),
-                          ))
-                    ],
-                  ),
-                ),
-              ),
+              // Container(
+              //   height: 200,
+              //   decoration: BoxDecoration(
+              //     image: DecorationImage(
+              //       image:
+              //           AssetImage("assets/images/patient-signup-screen2.png"),
+              //       fit: BoxFit.cover,
+              //     ),
+              //   ),
+              //   child: Positioned(
+              //     child: Stack(
+              //       children: <Widget>[
+              //         Positioned(
+              //             bottom: -10,
+              //             child: Padding(
+              //               padding: const EdgeInsets.all(10.0),
+              //               child: Text(
+              //                 'Create New Account',
+              //                 style: TextStyle(
+              //                     color: Colors.white,
+              //                     fontWeight: FontWeight.bold,
+              //                     fontSize: 20),
+              //               ),
+              //             ))
+              //       ],
+              //     ),
+              //   ),
+              // ),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Row(
@@ -329,7 +329,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                           _signUpPatient(
                               _emailController.text,
                               _passwordController.text,
-                              context,
                               _fullNameController.text,
                               _telController.text,
                               _drugallergyController.text,
