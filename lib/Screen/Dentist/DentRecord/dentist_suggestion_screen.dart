@@ -13,6 +13,10 @@ class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
           title: Text('Suggestion'),
           backgroundColor: Colors.blue[300],
         ),
-        body: Column());
+        body: Center(
+          child: Column(
+            children: <Widget>[],
+          ),
+        ));
   }
 }
