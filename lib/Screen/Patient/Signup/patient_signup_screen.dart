@@ -89,34 +89,34 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
         body: Builder(
           builder: (context) => ListView(
             children: <Widget>[
-              // Container(
-              //   height: 200,
-              //   decoration: BoxDecoration(
-              //     image: DecorationImage(
-              //       image:
-              //           AssetImage("assets/images/patient-signup-screen2.png"),
-              //       fit: BoxFit.cover,
-              //     ),
-              //   ),
-              //   child: Positioned(
-              //     child: Stack(
-              //       children: <Widget>[
-              //         Positioned(
-              //             bottom: -10,
-              //             child: Padding(
-              //               padding: const EdgeInsets.all(10.0),
-              //               child: Text(
-              //                 'Create New Account',
-              //                 style: TextStyle(
-              //                     color: Colors.white,
-              //                     fontWeight: FontWeight.bold,
-              //                     fontSize: 20),
-              //               ),
-              //             ))
-              //       ],
-              //     ),
-              //   ),
-              // ),
+              Container(
+                height: 200,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image:
+                        AssetImage("assets/images/patient-signup-screen2.png"),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                // child: Positioned(
+                //   child: Stack(
+                //     children: <Widget>[
+                //       Positioned(
+                //           bottom: -10,
+                //           child: Padding(
+                //             padding: const EdgeInsets.all(10.0),
+                //             child: Text(
+                //               'Create New Account',
+                //               style: TextStyle(
+                //                   color: Colors.white,
+                //                   fontWeight: FontWeight.bold,
+                //                   fontSize: 20),
+                //             ),
+                //           ))
+                //     ],
+                //   ),
+                // ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Row(

@@ -197,12 +197,13 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
-  Future<String> addDentalCase1Front(List dentalCase(), String docID) async {
+  Future<String> addDentalCase1Front(List dentalCase(), String uid) async {
     String returnVal = 'error';
     OurPatients _patient = OurPatients();
     try {
       _patient.patientCase = dentalCase();
-      _patient.patientTel = docID;
+      _patient.patientId = uid;
+
       String _returnString = await Case().addCasetooth1Front(_patient);
       if (_returnString == 'success') {
         returnVal = 'success';
@@ -214,12 +215,12 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
-  Future<String> addDentalCase1Back(List dentalCase(), String docID) async {
+  Future<String> addDentalCase1Back(List dentalCase(), String uid) async {
     String returnVal = 'error';
     OurPatients _patient = OurPatients();
     try {
       _patient.patientCase = dentalCase();
-      _patient.patientTel = docID;
+      _patient.patientId = uid;
       String _returnString = await Case().addCasetooth1Back(_patient);
       if (_returnString == 'success') {
         returnVal = 'success';
@@ -231,12 +232,12 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
-  Future<String> addDentalCase1Middle(List dentalCase(), String docID) async {
+  Future<String> addDentalCase1Middle(List dentalCase(), String uid) async {
     String returnVal = 'error';
     OurPatients _patient = OurPatients();
     try {
       _patient.patientCase = dentalCase();
-      _patient.patientTel = docID;
+      _patient.patientId = uid;
       String _returnString = await Case().addCasetooth1Middle(_patient);
       if (_returnString == 'success') {
         returnVal = 'success';

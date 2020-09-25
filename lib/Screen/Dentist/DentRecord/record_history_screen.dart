@@ -21,7 +21,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
         .collection('Account')
         .document('account')
         .collection('Patients')
-        .document(id)
+        .document(uid)
         .collection('DentalCase');
     collectionReference.snapshots().listen((response) {
       List<DocumentSnapshot> snapshots = response.documents;
@@ -35,6 +35,14 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
         print('tooth 1 Back = ${snapshot.data['tooth 1 Back']}');
         print('tooth 2 Back = ${snapshot.data['tooth 2 Back']}');
       }
+      Firestore.instance
+          .collection("users")
+          .getDocuments()
+          .then((querySnapshot) {
+        querySnapshot.documents.forEach((result) {
+          print(result.data);
+        });
+      });
     });
   }
 
@@ -55,7 +63,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
             .collection('Account')
             .document('account')
             .collection('Patients')
-            .document(id)
+            .document(uid)
             .collection('DentalCase')
             .snapshots(),
         builder: (context, snapshot) {
@@ -100,7 +108,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
   }
 }
 
-String id;
-void getDocId(String getid) {
-  id = getid;
+String uid;
+void getuserid(String getuserid) {
+  uid = getuserid;
 }
