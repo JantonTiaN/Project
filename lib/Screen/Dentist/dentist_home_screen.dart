@@ -22,12 +22,12 @@ class _DentHomeScreenState extends State<DentHomeScreen> {
     final _selectedDay = DateTime.now();
   }
 
-  @override
-  void dispose() {
-    _animationController.dispose();
-    _calendarController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   _animationController.dispose();
+  //   _calendarController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {

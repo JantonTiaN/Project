@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// This is a custom stateful widget that expands and shows the children 
+// This is a custom stateful widget that expands and shows the children
 //More like an advanced accordion with custom actions and elements.
 
 class ExpandedSection extends StatefulWidget {
@@ -48,11 +48,11 @@ class _ExpandedSectionState extends State<ExpandedSection>
     }
   }
 
-  @override
-  void dispose() {
-    expandController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   expandController.dispose();
+  //   super.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {

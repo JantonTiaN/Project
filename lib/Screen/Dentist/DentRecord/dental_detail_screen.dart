@@ -33,6 +33,7 @@ class _DentalDetailScreenState extends State<DentalDetailScreen> {
 String uid;
 void getuid(String getuid) {
   uid = getuid;
+  getidtohis(uid);
 }
 
 var _case1Front = new List();
