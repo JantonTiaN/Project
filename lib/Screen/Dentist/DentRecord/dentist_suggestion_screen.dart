@@ -53,7 +53,6 @@ class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
                           EdgeInsets.symmetric(horizontal: 26, vertical: 16),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(25),
-                        // color: bPrimaryColor,
                         border: Border.all(color: Colors.blueGrey),
                       ),
                       child: Row(

@@ -4,7 +4,6 @@ import 'package:fundee/Screen/Dentist/DentRecord/dentist_suggestion_screen.dart'
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'dental_detail_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/dentist_suggestion_screen.dart';
 
 class DentalRecord extends StatefulWidget {
   final String fullname;
