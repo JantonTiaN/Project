@@ -86,6 +86,7 @@ flutter:
    - assets/images/patient-signup-screen.png
    - assets/images/patient-signup-screen2.png
    - assets/images/Logo/App-Icon-drop-shadow.jpg
+   - assets/images/Logo/No-data.png
 
   #  dental cases
    - assets/images/dental_cases/blue.png
