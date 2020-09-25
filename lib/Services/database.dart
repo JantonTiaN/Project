@@ -42,6 +42,14 @@ class PatientDatabase {
           .collection('History')
           .document('history')
           .setData({});
+      await _firestore
+          .collection('Account')
+          .document('account')
+          .collection('Patients')
+          .document(user.uid)
+          .collection('Suggestion')
+          .document('suggesion')
+          .setData({});
       userUpdateInfo.displayName = patient.patientFullName;
       userUpdateInfo.photoUrl =
           'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208';
@@ -122,6 +130,7 @@ class DentistWithFBAndGGDatabase {
         'pathImage': user.photoUrl,
         'uid': user.uid
       });
+      print(user.photoUrl);
       retVal = 'success';
     } catch (e) {
       print(e);
@@ -168,6 +177,14 @@ class PatientWithFBAndGGDatabase {
           .document(user.uid)
           .collection('History')
           .document('history')
+          .setData({});
+      await _firestore
+          .collection('Account')
+          .document('account')
+          .collection('Patients')
+          .document(user.uid)
+          .collection('Suggestion')
+          .document('suggesion')
           .setData({});
       retVal = 'success';
     } catch (e) {

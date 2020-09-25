@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dentist_suggestion_screen.dart';
 
 class PatientList extends StatefulWidget {
   @override
@@ -47,6 +48,8 @@ class _PatientListState extends State<PatientList> {
                     child: Container(
                       child: InkWell(
                         onTap: () {
+                          suggestionuid(
+                              snapshot.data.documents[index].data['uid']);
                           Navigator.push(
                               context,
                               MaterialPageRoute(
