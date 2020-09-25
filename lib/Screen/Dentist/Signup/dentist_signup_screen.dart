@@ -222,24 +222,20 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                // child: Positioned(
-                //   child: Stack(
-                //     children: <Widget>[
-                //       Positioned(
-                //           bottom: -10,
-                //           child: Padding(
-                //             padding: const EdgeInsets.all(10.0),
-                //             child: Text(
-                //               'Create New Account',
-                //               style: TextStyle(
-                //                   color: Colors.white,
-                //                   fontWeight: FontWeight.bold,
-                //                   fontSize: 20),
-                //             ),
-                //           ))
-                //     ],
-                //   ),
-                // ),
+                child: Stack(
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.only(top: 150),
+                      child: Text(
+                        'Create New Account',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20),
+                      ),
+                    )
+                  ],
+                ),
               ),
               Padding(
                 padding: const EdgeInsets.all(20.0),
