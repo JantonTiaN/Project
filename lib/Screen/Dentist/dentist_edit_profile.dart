@@ -297,19 +297,19 @@ class _DentEditProfileState extends State<DentEditProfile> {
                 controller: displayNameController,
               ),
             ),
-            Divider(
-              color: Colors.blueGrey[100],
-            ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20, top: 10),
-              child: Align(
-                alignment: Alignment.bottomLeft,
-                child: Text(
-                  'Profile Information',
-                  style: TextStyle(fontSize: 16),
-                ),
-              ),
-            ),
+            // Divider(
+            //   color: Colors.blueGrey[100],
+            // ),
+            // Padding(
+            //   padding: const EdgeInsets.only(left: 20, top: 10),
+            //   child: Align(
+            //     alignment: Alignment.bottomLeft,
+            //     child: Text(
+            //       'Profile Information',
+            //       style: TextStyle(fontSize: 16),
+            //     ),
+            //   ),
+            // ),
             Padding(
               padding: const EdgeInsets.only(left: 20),
               child: TextFormField(

@@ -1,5 +1,5 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 class DentAppointmentScreen extends StatefulWidget {
   // final FirebaseUser user;
@@ -10,11 +10,24 @@ class DentAppointmentScreen extends StatefulWidget {
 }
 
 class _DentAppointmentScreenState extends State<DentAppointmentScreen> {
+  CalendarController _calendarController = CalendarController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        child: Text("Dentist Appointmemt Page"),
+      appBar: AppBar(
+        title: Text('Appointment'),
+        backgroundColor: Colors.blue[300],
+        automaticallyImplyLeading: false,
+      ),
+      body: Column(
+        children: <Widget>[
+          TableCalendar(
+            calendarController: _calendarController,
+            availableGestures: AvailableGestures.horizontalSwipe,
+            headerStyle: HeaderStyle(formatButtonVisible: false),
+          )
+        ],
       ),
     );
   }

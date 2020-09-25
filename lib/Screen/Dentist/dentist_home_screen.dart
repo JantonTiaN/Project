@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 class DentHomeScreen extends StatefulWidget {
   final FirebaseUser user;
@@ -10,6 +11,24 @@ class DentHomeScreen extends StatefulWidget {
 }
 
 class _DentHomeScreenState extends State<DentHomeScreen> {
+  Map<DateTime, List> _events;
+  List _selectedEvents;
+  CalendarController _calendarController;
+  AnimationController _animationController;
+
+  @override
+  void initState() {
+    super.initState();
+    final _selectedDay = DateTime.now();
+  }
+
+  @override
+  void dispose() {
+    _animationController.dispose();
+    _calendarController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
