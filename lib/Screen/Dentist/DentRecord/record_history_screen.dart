@@ -141,20 +141,19 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
       for (var snapshot in snapshots) {
         List<String> read1 = List.from(snapshot['tooth 1 Front']);
         print(read1);
-        if (tooth1Front != null) {
-          tooth1Front =
-              Text('Tooth 1 Front = ${snapshot.data['tooth 1 Front']}')
-                  .toString();
-        }
-        if (tooth1Middle != null) {
-          tooth1Middle =
-              Text('Tooth 1 Middle = ${snapshot.data['tooth 1 Middle']}')
-                  .toString();
-        }
-        if (tooth1Back != null) {
-          tooth1Back = Text('Tooth 1 Back = ${snapshot.data['tooth 1 Back']}')
-              .toString();
-        }
+        // if (snapshot.data['tooth 1 Front'] != null) {
+        tooth1Front = Text('Tooth 1 Front = ${snapshot.data['tooth 1 Front']}')
+            .toString();
+        // }
+        // if (snapshot.data['tooth 1 Middle'] != null) {
+        tooth1Middle =
+            Text('Tooth 1 Middle = ${snapshot.data['tooth 1 Middle']}')
+                .toString();
+        // }
+        // if (snapshot.data['tooth 1 Back'] != null) {
+        tooth1Back =
+            Text('Tooth 1 Back = ${snapshot.data['tooth 1 Back']}').toString();
+        // }
       }
       Firestore.instance
           .collection("Account")

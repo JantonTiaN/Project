@@ -22,7 +22,8 @@ class PatientDatabase {
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
-        'pathImage': patient.patientImage,
+        'pathImage':
+            'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208',
         'uid': user.uid
       });
       await _firestore
@@ -42,7 +43,8 @@ class PatientDatabase {
           .document('history')
           .setData({});
       userUpdateInfo.displayName = patient.patientFullName;
-      userUpdateInfo.photoUrl = patient.patientImage.toString();
+      userUpdateInfo.photoUrl =
+          'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208';
       user.updateProfile(userUpdateInfo);
       user.updateEmail(patient.patientEmail);
       print(patient.patientImage);
