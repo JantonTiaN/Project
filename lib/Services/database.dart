@@ -22,7 +22,8 @@ class PatientDatabase {
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
-        'pathImage': patient.patientImage
+        'pathImage': patient.patientImage,
+        'uid': user.uid
       });
       await _firestore
           .collection('Account')
@@ -77,6 +78,7 @@ class DentistDatabase {
         'permission': dentist.dentistPermission,
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist',
+        'uid': user.uid,
         'pathImage':
             'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208'
       });
@@ -116,7 +118,7 @@ class DentistWithFBAndGGDatabase {
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist',
         'pathImage': user.photoUrl,
-        'user id': user.uid
+        'uid': user.uid
       });
       retVal = 'success';
     } catch (e) {
@@ -146,7 +148,8 @@ class PatientWithFBAndGGDatabase {
         'tel': patient.patientTel,
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
-        'pathImage': user.photoUrl
+        'pathImage': user.photoUrl,
+        'uid': user.uid
       });
       await _firestore
           .collection('Account')
@@ -182,7 +185,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 1 Front': cases.patientCase});
@@ -200,7 +203,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 1 Back': cases.patientCase});
@@ -218,7 +221,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 1 Middle': cases.patientCase});
@@ -236,7 +239,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 2 Front': cases.patientCase});
@@ -254,7 +257,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 2 Back': cases.patientCase});
@@ -272,7 +275,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 2 Middle': cases.patientCase});
@@ -290,7 +293,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 3 Front': cases.patientCase});
@@ -308,7 +311,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 3 Back': cases.patientCase});
@@ -326,7 +329,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 3 Middle': cases.patientCase});
@@ -344,7 +347,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 4 Front': cases.patientCase});
@@ -362,7 +365,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 4 Back': cases.patientCase});
@@ -380,7 +383,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 4 Middle': cases.patientCase});
@@ -398,7 +401,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 5 Front': cases.patientCase});
@@ -416,7 +419,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 5 Back': cases.patientCase});
@@ -434,7 +437,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 5 Middle': cases.patientCase});
@@ -452,7 +455,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 6 Front': cases.patientCase});
@@ -470,7 +473,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 6 Back': cases.patientCase});
@@ -488,7 +491,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 6 Middle': cases.patientCase});
@@ -506,7 +509,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 7 Front': cases.patientCase});
@@ -524,7 +527,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 7 Back': cases.patientCase});
@@ -542,7 +545,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 7 Middle': cases.patientCase});
@@ -560,7 +563,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 8 Front': cases.patientCase});
@@ -578,7 +581,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 8 Back': cases.patientCase});
@@ -596,7 +599,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 8 Middle': cases.patientCase});
@@ -614,7 +617,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 9 Front': cases.patientCase});
@@ -632,7 +635,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 9 Back': cases.patientCase});
@@ -650,7 +653,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 9 Middle': cases.patientCase});
@@ -668,7 +671,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 10 Front': cases.patientCase});
@@ -686,7 +689,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 10 Back': cases.patientCase});
@@ -704,7 +707,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 10 Middle': cases.patientCase});
@@ -722,7 +725,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 11 Front': cases.patientCase});
@@ -740,7 +743,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 11 Back': cases.patientCase});
@@ -758,7 +761,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 11 Middle': cases.patientCase});
@@ -776,7 +779,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 12 Front': cases.patientCase});
@@ -794,7 +797,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 12 Back': cases.patientCase});
@@ -812,7 +815,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 12 Middle': cases.patientCase});
@@ -830,7 +833,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 13 Front': cases.patientCase});
@@ -848,7 +851,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 13 Back': cases.patientCase});
@@ -866,7 +869,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 13 Middle': cases.patientCase});
@@ -884,7 +887,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 14 Front': cases.patientCase});
@@ -902,7 +905,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 14 Back': cases.patientCase});
@@ -920,7 +923,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 14 Middle': cases.patientCase});
@@ -938,7 +941,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 15 Front': cases.patientCase});
@@ -956,7 +959,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 15 Back': cases.patientCase});
@@ -974,7 +977,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 15 Middle': cases.patientCase});
@@ -992,7 +995,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 16 Front': cases.patientCase});
@@ -1010,7 +1013,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 16 Back': cases.patientCase});
@@ -1028,7 +1031,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 16 Middle': cases.patientCase});
@@ -1046,7 +1049,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 17 Front': cases.patientCase});
@@ -1064,7 +1067,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 17 Back': cases.patientCase});
@@ -1082,7 +1085,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 17 Middle': cases.patientCase});
@@ -1100,7 +1103,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 18 Front': cases.patientCase});
@@ -1118,7 +1121,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 18 Back': cases.patientCase});
@@ -1136,7 +1139,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 18 Middle': cases.patientCase});
@@ -1154,7 +1157,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 19 Front': cases.patientCase});
@@ -1172,7 +1175,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 19 Back': cases.patientCase});
@@ -1190,7 +1193,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 19 Middle': cases.patientCase});
@@ -1208,7 +1211,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 20 Front': cases.patientCase});
@@ -1226,7 +1229,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 20 Back': cases.patientCase});
@@ -1244,7 +1247,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 20 Middle': cases.patientCase});
@@ -1262,7 +1265,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 21 Front': cases.patientCase});
@@ -1280,7 +1283,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 21 Back': cases.patientCase});
@@ -1298,7 +1301,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 21 Middle': cases.patientCase});
@@ -1316,7 +1319,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 22 Front': cases.patientCase});
@@ -1334,7 +1337,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 22 Back': cases.patientCase});
@@ -1352,7 +1355,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 22 Middle': cases.patientCase});
@@ -1370,7 +1373,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 23 Front': cases.patientCase});
@@ -1388,7 +1391,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 23 Back': cases.patientCase});
@@ -1406,7 +1409,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 23 Middle': cases.patientCase});
@@ -1424,7 +1427,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 24 Front': cases.patientCase});
@@ -1442,7 +1445,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 24 Back': cases.patientCase});
@@ -1460,7 +1463,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 24 Middle': cases.patientCase});
@@ -1478,7 +1481,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 25 Front': cases.patientCase});
@@ -1496,7 +1499,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 25 Back': cases.patientCase});
@@ -1514,7 +1517,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 25 Middle': cases.patientCase});
@@ -1532,7 +1535,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 26 Front': cases.patientCase});
@@ -1550,7 +1553,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 26 Back': cases.patientCase});
@@ -1568,7 +1571,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 26 Middle': cases.patientCase});
@@ -1586,7 +1589,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 27 Front': cases.patientCase});
@@ -1604,7 +1607,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 27 Back': cases.patientCase});
@@ -1622,7 +1625,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 27 Middle': cases.patientCase});
@@ -1640,7 +1643,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 28 Front': cases.patientCase});
@@ -1658,7 +1661,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 28 Back': cases.patientCase});
@@ -1676,7 +1679,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 28 Middle': cases.patientCase});
@@ -1694,7 +1697,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 29 Front': cases.patientCase});
@@ -1712,7 +1715,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 29 Back': cases.patientCase});
@@ -1730,7 +1733,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 29 Middle': cases.patientCase});
@@ -1748,7 +1751,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 30 Front': cases.patientCase});
@@ -1766,7 +1769,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 30 Back': cases.patientCase});
@@ -1784,7 +1787,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 30 Middle': cases.patientCase});
@@ -1802,7 +1805,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 31 Front': cases.patientCase});
@@ -1820,7 +1823,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 31 Back': cases.patientCase});
@@ -1838,7 +1841,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 31 Middle': cases.patientCase});
@@ -1856,7 +1859,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 32 Front': cases.patientCase});
@@ -1874,7 +1877,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 32 Back': cases.patientCase});
@@ -1892,7 +1895,7 @@ class Case {
           .collection('Account')
           .document('account')
           .collection('Patients')
-          .document(cases.patientTel)
+          .document(cases.patientId)
           .collection('DentalCase')
           .document('dentalCase')
           .updateData({'tooth 32 Middle': cases.patientCase});
