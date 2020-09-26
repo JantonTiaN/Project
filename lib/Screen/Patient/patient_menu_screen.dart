@@ -38,7 +38,7 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
     final _pageOptions = [
       PatientHomeScreen(widget.user),
       PatientAppointmentScreen(),
-      PatientSuggestion(),
+      PatientSuggestion(widget.user),
       PatientProfileScreen(widget.user),
     ];
     return Scaffold(

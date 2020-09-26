@@ -1,8 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class PatientSuggestion extends StatefulWidget {
-  PatientSuggestion({Key key}) : super(key: key);
+  final FirebaseUser user;
+  PatientSuggestion(this.user, {Key key}) : super(key: key);
   @override
   _PatientSuggestionState createState() => _PatientSuggestionState();
 }
@@ -22,7 +24,7 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
             .collection('Account')
             .document('account')
             .collection('Patients')
-            .document(uid)
+            .document(widget.user.uid)
             .collection('Suggestion')
             // .document('suggesion')
             .snapshots(),
@@ -97,9 +99,4 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
       // )
     );
   }
-}
-
-String uid;
-void suggestionuid(String suggestionuid) {
-  uid = suggestionuid;
 }
