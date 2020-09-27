@@ -25409,13 +25409,13 @@ Widget tooth14Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -27104,13 +27104,13 @@ Widget tooth15Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -28799,13 +28799,13 @@ Widget tooth16Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -30494,13 +30494,13 @@ Widget tooth17Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -32189,13 +32189,13 @@ Widget tooth18Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -33884,13 +33884,13 @@ Widget tooth19Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -35579,13 +35579,13 @@ Widget tooth20Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -37274,13 +37274,13 @@ Widget tooth21Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -38969,13 +38969,13 @@ Widget tooth22Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -40664,13 +40664,13 @@ Widget tooth23Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -42359,13 +42359,13 @@ Widget tooth24Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -44054,13 +44054,13 @@ Widget tooth25Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -45749,13 +45749,13 @@ Widget tooth26Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -47444,13 +47444,13 @@ Widget tooth27Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -49139,13 +49139,13 @@ Widget tooth28Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -50834,13 +50834,13 @@ Widget tooth29Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -52529,7 +52529,7 @@ Widget tooth30Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
                 Padding(
@@ -54224,13 +54224,13 @@ Widget tooth31Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
