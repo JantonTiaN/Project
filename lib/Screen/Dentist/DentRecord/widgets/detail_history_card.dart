@@ -258,34 +258,69 @@ Widget dentailHistoryCard() {
     // });
   });
 
-  return Container(
-    height: 80,
-    width: 200,
-    decoration: BoxDecoration(
-      color: bCardColor.withOpacity(0.6),
-      borderRadius: BorderRadius.circular(12),
-    ),
-    child: Container(
-      margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Text(
-            tooth1Front.toString().substring(1, tooth1Front.length - 1),
-            style: TextStyle(
-                color: Colors.white, fontSize: 16, fontWeight: FontWeight.w600),
-          ),
-          Text(
-            "Date: 22/09/20",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 14,
-            ),
-          ),
-        ],
+  if (tooth1Front != null) {
+    return Container(
+      height: 80,
+      width: 200,
+      decoration: BoxDecoration(
+        color: bCardColor.withOpacity(0.6),
+        borderRadius: BorderRadius.circular(12),
       ),
-    ),
-  );
+      child: Container(
+        margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              tooth1Front.toString().substring(1, tooth1Front.length - 1),
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600),
+            ),
+            Text(
+              "Date: 22/09/20",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 14,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  } else {
+    return Container(
+      height: 80,
+      width: 200,
+      decoration: BoxDecoration(
+        color: bCardColor.withOpacity(0.6),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Container(
+        margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              'No Case',
+              style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w600),
+            ),
+            Text(
+              "Date: 22/09/20",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 14,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
 
 String uid;
