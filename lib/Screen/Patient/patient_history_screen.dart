@@ -15,7 +15,7 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('You Dental History'),
+        title: Text('Your Dental History'),
         backgroundColor: Colors.blue[300],
         automaticallyImplyLeading: false,
       ),
