@@ -32,6 +32,7 @@ dependencies:
   firebase_storage: ^3.0.0
   circular_profile_avatar: ^1.0.6
   line_awesome_flutter: ^1.0.1
+  flutter_spinkit: ^4.1.2
 
   intl:   
   provider:

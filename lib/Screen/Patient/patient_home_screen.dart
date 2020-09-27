@@ -11,6 +11,55 @@ class PatientHomeScreen extends StatefulWidget {
 class _PatientHomeScreenState extends State<PatientHomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Center(child: Text('This is Patient Home Screen')));
+    return Scaffold(
+      body: Container(
+        // padding: EdgeInsets.symmetric(vertical: 30),
+        width: double.infinity,
+        // color: bBackgroundColor,
+        decoration: BoxDecoration(
+            gradient: LinearGradient(begin: Alignment.topCenter, colors: [
+          Colors.blue[800],
+          Colors.blue[400],
+          Colors.blue[300]
+        ])),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          // mainAxisAlignment: MainAxisAlignment.start,
+          children: <Widget>[
+            SizedBox(height: 60),
+            Padding(
+              padding: EdgeInsets.all(30),
+              child: Column(
+                children: <Widget>[
+                  Text(
+                    "Welcome, ",
+                    style: TextStyle(color: Colors.white60, fontSize: 16),
+                    textAlign: TextAlign.left,
+                  ),
+                  SizedBox(height: 5),
+                  Text(
+                    widget.user.displayName,
+                    style: TextStyle(color: Colors.white, fontSize: 20),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Flexible(
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(50),
+                      topRight: Radius.circular(50)),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

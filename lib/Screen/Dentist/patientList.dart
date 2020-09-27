@@ -68,22 +68,6 @@ class _PatientListState extends State<PatientList> {
                                 //           .data.documents[index].documentID,
                                 //     )
                               ));
-                          // Navigator.push(
-                          //     context,
-                          //     MaterialPageRoute(
-                          //         builder: (context) => DentalRecord(
-                          //               fullname: snapshot.data.documents[index]
-                          //                   .data["fullName"],
-                          //               tel: snapshot
-                          //                   .data.documents[index].documentID,
-                          //             )
-                          //         // PatientInfo(
-                          //         //       fullname: snapshot.data.documents[index]
-                          //         //           .data["fullName"],
-                          //         //       tel: snapshot
-                          //         //           .data.documents[index].documentID,
-                          //         //     )
-                          //         ));
                         },
                         child: Column(
                           children: <Widget>[

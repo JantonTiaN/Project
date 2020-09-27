@@ -5,7 +5,7 @@ import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:fundee/Screen/Dentist/dentist_appointment_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_home_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_profile_screen.dart';
-import 'package:fundee/Screen/Patient/patient_appointment.dart';
+import 'package:fundee/Screen/Patient/patient_history_screen.dart';
 import 'package:fundee/Screen/Patient/patient_home_screen.dart';
 import 'package:fundee/Screen/Patient/patient_profile_screen.dart';
 import 'package:fundee/Screen/Patient/patient_sug_screen.dart';
@@ -37,8 +37,8 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
   Widget build(BuildContext context) {
     final _pageOptions = [
       PatientHomeScreen(widget.user),
-      PatientAppointmentScreen(),
-      PatientSuggestion(),
+      PatientHistoryScreen(widget.user),
+      PatientSuggestion(widget.user),
       PatientProfileScreen(widget.user),
     ];
     return Scaffold(
@@ -73,17 +73,17 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
           BubbleBottomBarItem(
               backgroundColor: Colors.blue[300],
               icon: Icon(
-                Icons.calendar_today,
+                Icons.history,
                 color: Colors.black,
-                size: 20,
+                size: 23,
               ),
               activeIcon: Icon(
-                Icons.calendar_today,
+                Icons.history,
                 color: Colors.blue[300],
-                size: 20,
+                size: 23,
               ),
               title: Text(
-                "Appointment",
+                "History",
               )),
           BubbleBottomBarItem(
               backgroundColor: Colors.blue[300],
