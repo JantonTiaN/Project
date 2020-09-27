@@ -37,7 +37,7 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
   Widget build(BuildContext context) {
     final _pageOptions = [
       PatientHomeScreen(widget.user),
-      PatientHistoryScreen(widget.user),
+      PatientHistoryScreen,
       PatientSuggestion(widget.user),
       PatientProfileScreen(widget.user),
     ];

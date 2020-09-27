@@ -26,7 +26,7 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
         stream: Firestore.instance
             .collection('Account')
             .document('account')
-            .collection('Patient')
+            .collection('Patients')
             .document(widget.user.uid)
             .collection('Suggestion')
             // .document('suggesion')
@@ -102,9 +102,4 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
       // )
     );
   }
-}
-
-String uid;
-void suggestionuid(String suggestionuid) {
-  uid = suggestionuid;
 }
