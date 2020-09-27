@@ -33,7 +33,7 @@ class _DentalDetailScreenState extends State<DentalDetailScreen> {
 String uid;
 void getuid(String getuid) {
   uid = getuid;
-  getidtohis(uid);
+  toothid(uid);
 }
 
 var _case1Front = new List();
@@ -3511,7 +3511,7 @@ Widget tooth1Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth1Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -5180,7 +5180,7 @@ Widget tooth2Detail(BuildContext context) {
               ),
               Padding(
                 padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                child: Center(child: dentailHistoryCard()),
+                child: Center(child: dentailHistoryTooth2Card()),
               ),
               // Padding(
               //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -6913,7 +6913,7 @@ Widget tooth3Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth3Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -8584,7 +8584,7 @@ Widget tooth4Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth4Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -10255,7 +10255,7 @@ Widget tooth5Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth5Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -11926,7 +11926,7 @@ Widget tooth6Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth6Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -13597,7 +13597,7 @@ Widget tooth7Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth7Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -15268,7 +15268,7 @@ Widget tooth8Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth8Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -16939,7 +16939,7 @@ Widget tooth9Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth9Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -18634,7 +18634,7 @@ Widget tooth10Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth10Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -20329,7 +20329,7 @@ Widget tooth11Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth11Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -22024,7 +22024,7 @@ Widget tooth12Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth12Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -23719,7 +23719,7 @@ Widget tooth13Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth13Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -25414,7 +25414,7 @@ Widget tooth14Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth14Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -27109,7 +27109,7 @@ Widget tooth15Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth15Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -28804,7 +28804,7 @@ Widget tooth16Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth16Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -30499,7 +30499,7 @@ Widget tooth17Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth17Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -32194,7 +32194,7 @@ Widget tooth18Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth18Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -33889,7 +33889,7 @@ Widget tooth19Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth19Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -35584,7 +35584,7 @@ Widget tooth20Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth20Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -37279,7 +37279,7 @@ Widget tooth21Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth21Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -38974,7 +38974,7 @@ Widget tooth22Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth22Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -40669,7 +40669,7 @@ Widget tooth23Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth23Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -42364,7 +42364,7 @@ Widget tooth24Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth24Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -44059,7 +44059,7 @@ Widget tooth25Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth25Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -45754,7 +45754,7 @@ Widget tooth26Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth26Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -47449,7 +47449,7 @@ Widget tooth27Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth27Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -49144,7 +49144,7 @@ Widget tooth28Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth28Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -50839,7 +50839,7 @@ Widget tooth29Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth29Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -52534,7 +52534,7 @@ Widget tooth30Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth30Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -54229,7 +54229,7 @@ Widget tooth31Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth31Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
@@ -55924,7 +55924,7 @@ Widget tooth32Detail(BuildContext context) {
                 ),
                 Padding(
                   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                  child: Center(child: dentailHistoryCard()),
+                  child: Center(child: dentailHistoryTooth32Card()),
                 ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
