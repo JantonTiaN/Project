@@ -244,18 +244,6 @@ Widget dentailHistoryCard() {
             Text('Tooth 1 Back = ${snapshot.data['tooth 1 Back']}').toString();
       }
     }
-    // Firestore.instance
-    //     .collection("Account")
-    //     .document('account')
-    //     .collection('Patients')
-    //     .document(uid)
-    //     .collection('DentalCase')
-    //     .getDocuments()
-    //     .then((querySnapshot) {
-    //   querySnapshot.documents.forEach((result) {
-    //     print(result.data);
-    //   });
-    // });
   });
 
   return Container(
