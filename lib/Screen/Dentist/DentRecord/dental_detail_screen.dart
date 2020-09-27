@@ -3506,13 +3506,13 @@ Widget tooth1Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
@@ -11921,13 +11921,13 @@ Widget tooth6Detail(BuildContext context) {
             Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.fromLTRB(120, 0, 0, 0),
+                  padding: const EdgeInsets.fromLTRB(200, 0, 0, 0),
                   child: Text('Clinical Finding'),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
-                //   child: Center(child: dentailHistoryCard()),
-                // ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
+                  child: Center(child: dentailHistoryCard()),
+                ),
                 // Padding(
                 //   padding: const EdgeInsets.fromLTRB(130, 10, 0, 0),
                 //   child: Center(child: dentailHistoryCard()),
