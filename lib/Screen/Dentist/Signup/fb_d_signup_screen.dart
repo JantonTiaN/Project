@@ -24,6 +24,7 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
   TextEditingController _telController = TextEditingController();
   TextEditingController _citizenidController = TextEditingController();
   TextEditingController _permissionController = TextEditingController();
+  String dropdownValue = 'คลินิก 1';
   @override
   void initState() {
     super.initState();
@@ -421,17 +422,409 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                         ],
                       ),
                     ),
+                    // Divider(
+                    //   color: Colors.blueGrey,
+                    //   indent: 20,
+                    //   endIndent: 20,
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(left: 20, right: 20),
+                    //   child: Text(
+                    //     "Availiable Working Timetable",
+                    //     style: TextStyle(
+                    //         color: Colors.white,
+                    //         fontSize: 16,
+                    //         fontWeight: FontWeight.bold),
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(
+                    //       left: 20, right: 20, bottom: 20),
+                    //   child: Text(
+                    //     "*(Morning means 9.00-12.00, Afternoon means 13.00-16.00, and Evening means 16.30-20.00)*",
+                    //     style: TextStyle(color: Colors.blueGrey, fontSize: 10),
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(left: 20, right: 20),
+                    //   child: Text(
+                    //     "Monday",
+                    //     style: TextStyle(
+                    //         color: Colors.white,
+                    //         fontSize: 14,
+                    //         fontWeight: FontWeight.normal),
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(
+                    //       left: 20, right: 20, bottom: 20),
+                    //   child: Row(
+                    //     children: <Widget>[
+                    //       Checkbox(
+                    //           value: monMorning,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               monMorning = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Morning",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //       Checkbox(
+                    //           value: monAfternoon,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               monAfternoon = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Afternoon",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //       Checkbox(
+                    //           value: monEvening,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               monEvening = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Evening",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(left: 20, right: 20),
+                    //   child: Text(
+                    //     "Tuesday",
+                    //     style: TextStyle(
+                    //         color: Colors.white,
+                    //         fontSize: 14,
+                    //         fontWeight: FontWeight.normal),
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(
+                    //       left: 20, right: 20, bottom: 20),
+                    //   child: Row(
+                    //     children: <Widget>[
+                    //       Checkbox(
+                    //           value: tueMorning,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               tueMorning = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Morning",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //       Checkbox(
+                    //           value: tueAfternoon,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               tueAfternoon = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Afternoon",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //       Checkbox(
+                    //           value: tueEvening,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               tueEvening = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Evening",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(left: 20, right: 20),
+                    //   child: Text(
+                    //     "Wednesday",
+                    //     style: TextStyle(
+                    //         color: Colors.white,
+                    //         fontSize: 14,
+                    //         fontWeight: FontWeight.normal),
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(
+                    //       left: 20, right: 20, bottom: 20),
+                    //   child: Row(
+                    //     children: <Widget>[
+                    //       Checkbox(
+                    //           value: wedMorning,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               wedMorning = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Morning",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //       Checkbox(
+                    //           value: wedAfternoon,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               wedAfternoon = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Afternoon",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //       Checkbox(
+                    //           value: wedEvening,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               wedEvening = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Evening",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(left: 20, right: 20),
+                    //   child: Text(
+                    //     "Thursday",
+                    //     style: TextStyle(
+                    //         color: Colors.white,
+                    //         fontSize: 14,
+                    //         fontWeight: FontWeight.normal),
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(
+                    //       left: 20, right: 20, bottom: 20),
+                    //   child: Row(
+                    //     children: <Widget>[
+                    //       Checkbox(
+                    //           value: thuMorning,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               thuMorning = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Morning",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //       Checkbox(
+                    //           value: thuAfternoon,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               thuAfternoon = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Afternoon",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //       Checkbox(
+                    //           value: thuEvening,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               thuEvening = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Evening",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(left: 20, right: 20),
+                    //   child: Text(
+                    //     "Friday",
+                    //     style: TextStyle(
+                    //         color: Colors.white,
+                    //         fontSize: 14,
+                    //         fontWeight: FontWeight.normal),
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(
+                    //       left: 20, right: 20, bottom: 20),
+                    //   child: Row(
+                    //     children: <Widget>[
+                    //       Checkbox(
+                    //           value: friMorning,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               friMorning = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Morning",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //       Checkbox(
+                    //           value: friAfternoon,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               friAfternoon = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Afternoon",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //       Checkbox(
+                    //           value: friEvening,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               friEvening = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Evening",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(left: 20, right: 20),
+                    //   child: Text(
+                    //     "Saturday",
+                    //     style: TextStyle(
+                    //         color: Colors.white,
+                    //         fontSize: 14,
+                    //         fontWeight: FontWeight.normal),
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(
+                    //       left: 20, right: 20, bottom: 20),
+                    //   child: Row(
+                    //     children: <Widget>[
+                    //       Checkbox(
+                    //           value: satMorning,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               satMorning = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Morning",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //       Checkbox(
+                    //           value: satAfternoon,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               satAfternoon = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Afternoon",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //       Checkbox(
+                    //           tristate: true, value: null, onChanged: null),
+                    //       Text(
+                    //         "Evening",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(left: 20, right: 20),
+                    //   child: Text(
+                    //     "Sunday",
+                    //     style: TextStyle(
+                    //         color: Colors.white,
+                    //         fontSize: 14,
+                    //         fontWeight: FontWeight.normal),
+                    //   ),
+                    // ),
+                    // Padding(
+                    //   padding: const EdgeInsets.only(
+                    //       left: 20, right: 20, bottom: 20),
+                    //   child: Row(
+                    //     children: <Widget>[
+                    //       Checkbox(
+                    //           value: sunMorning,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               sunMorning = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Morning",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //       Checkbox(
+                    //           value: sunAfternoon,
+                    //           onChanged: (bool value) {
+                    //             setState(() {
+                    //               sunAfternoon = value;
+                    //             });
+                    //           }),
+                    //       Text(
+                    //         "Afternoon",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //       Checkbox(
+                    //           tristate: true, value: null, onChanged: null),
+                    //       Text(
+                    //         "Evening",
+                    //         style:
+                    //             TextStyle(fontSize: 12, color: Colors.black54),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
                     Divider(
                       color: Colors.blueGrey,
                       indent: 20,
                       endIndent: 20,
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 20, right: 20),
+                      padding: const EdgeInsets.all(20.0),
                       child: Text(
-                        "Availiable Working Timetable",
+                        "คลินิกที่ทำงานประจำ",
                         style: TextStyle(
                             color: Colors.white,
+                            fontFamily: 'kanit',
                             fontSize: 16,
                             fontWeight: FontWeight.bold),
                       ),
@@ -439,375 +832,44 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                     Padding(
                       padding: const EdgeInsets.only(
                           left: 20, right: 20, bottom: 20),
-                      child: Text(
-                        "*(Morning means 9.00-12.00, Afternoon means 13.00-16.00, and Evening means 16.30-20.00)*",
-                        style: TextStyle(color: Colors.blueGrey, fontSize: 10),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, right: 20),
-                      child: Text(
-                        "Monday",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, bottom: 20),
                       child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: <Widget>[
-                          Checkbox(
-                              value: monMorning,
-                              onChanged: (bool value) {
+                          Padding(
+                            padding: const EdgeInsets.only(right: 16),
+                            child: Icon(
+                              FontAwesomeIcons.clinicMedical,
+                              color: bPrimaryColor,
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(right: 20, left: 10),
+                            child: DropdownButton<String>(
+                              value: dropdownValue,
+                              // icon: Icon(Icons.arrow_downward),
+                              iconSize: 24,
+                              elevation: 16,
+                              style: TextStyle(
+                                  color: Colors.black54, fontFamily: 'kanit'),
+                              // underline: Container(color: Colors.grey),
+                              onChanged: (String newValue) {
                                 setState(() {
-                                  monMorning = value;
+                                  dropdownValue = newValue;
                                 });
-                              }),
-                          Text(
-                            "Morning",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                          Checkbox(
-                              value: monAfternoon,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  monAfternoon = value;
-                                });
-                              }),
-                          Text(
-                            "Afternoon",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                          Checkbox(
-                              value: monEvening,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  monEvening = value;
-                                });
-                              }),
-                          Text(
-                            "Evening",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, right: 20),
-                      child: Text(
-                        "Tuesday",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, bottom: 20),
-                      child: Row(
-                        children: <Widget>[
-                          Checkbox(
-                              value: tueMorning,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  tueMorning = value;
-                                });
-                              }),
-                          Text(
-                            "Morning",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                          Checkbox(
-                              value: tueAfternoon,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  tueAfternoon = value;
-                                });
-                              }),
-                          Text(
-                            "Afternoon",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                          Checkbox(
-                              value: tueEvening,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  tueEvening = value;
-                                });
-                              }),
-                          Text(
-                            "Evening",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, right: 20),
-                      child: Text(
-                        "Wednesday",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, bottom: 20),
-                      child: Row(
-                        children: <Widget>[
-                          Checkbox(
-                              value: wedMorning,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  wedMorning = value;
-                                });
-                              }),
-                          Text(
-                            "Morning",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                          Checkbox(
-                              value: wedAfternoon,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  wedAfternoon = value;
-                                });
-                              }),
-                          Text(
-                            "Afternoon",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                          Checkbox(
-                              value: wedEvening,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  wedEvening = value;
-                                });
-                              }),
-                          Text(
-                            "Evening",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, right: 20),
-                      child: Text(
-                        "Thursday",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, bottom: 20),
-                      child: Row(
-                        children: <Widget>[
-                          Checkbox(
-                              value: thuMorning,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  thuMorning = value;
-                                });
-                              }),
-                          Text(
-                            "Morning",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                          Checkbox(
-                              value: thuAfternoon,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  thuAfternoon = value;
-                                });
-                              }),
-                          Text(
-                            "Afternoon",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                          Checkbox(
-                              value: thuEvening,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  thuEvening = value;
-                                });
-                              }),
-                          Text(
-                            "Evening",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, right: 20),
-                      child: Text(
-                        "Friday",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, bottom: 20),
-                      child: Row(
-                        children: <Widget>[
-                          Checkbox(
-                              value: friMorning,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  friMorning = value;
-                                });
-                              }),
-                          Text(
-                            "Morning",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                          Checkbox(
-                              value: friAfternoon,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  friAfternoon = value;
-                                });
-                              }),
-                          Text(
-                            "Afternoon",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                          Checkbox(
-                              value: friEvening,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  friEvening = value;
-                                });
-                              }),
-                          Text(
-                            "Evening",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, right: 20),
-                      child: Text(
-                        "Saturday",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, bottom: 20),
-                      child: Row(
-                        children: <Widget>[
-                          Checkbox(
-                              value: satMorning,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  satMorning = value;
-                                });
-                              }),
-                          Text(
-                            "Morning",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                          Checkbox(
-                              value: satAfternoon,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  satAfternoon = value;
-                                });
-                              }),
-                          Text(
-                            "Afternoon",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                          Checkbox(
-                              tristate: true, value: null, onChanged: null),
-                          Text(
-                            "Evening",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20, right: 20),
-                      child: Text(
-                        "Sunday",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.normal),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 20, right: 20, bottom: 20),
-                      child: Row(
-                        children: <Widget>[
-                          Checkbox(
-                              value: sunMorning,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  sunMorning = value;
-                                });
-                              }),
-                          Text(
-                            "Morning",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                          Checkbox(
-                              value: sunAfternoon,
-                              onChanged: (bool value) {
-                                setState(() {
-                                  sunAfternoon = value;
-                                });
-                              }),
-                          Text(
-                            "Afternoon",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
-                          ),
-                          Checkbox(
-                              tristate: true, value: null, onChanged: null),
-                          Text(
-                            "Evening",
-                            style:
-                                TextStyle(fontSize: 12, color: Colors.black54),
+                              },
+                              items: <String>[
+                                'คลินิก 1',
+                                'คลินิก 2',
+                                'คลินิก 3',
+                                'คลินิก 4',
+                                'คลินิก 5',
+                              ].map<DropdownMenuItem<String>>((String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value),
+                                );
+                              }).toList(),
+                            ),
                           ),
                         ],
                       ),

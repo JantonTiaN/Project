@@ -21,6 +21,7 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
   DateTime _currentDate = new DateTime.now();
   TextEditingController _drugallergyController = TextEditingController();
   TextEditingController _telController = TextEditingController();
+  String dropdownValue = 'คลินิก 1';
 
   Future<Null> _selectdate(BuildContext context) async {
     final DateTime _seldate = await showDatePicker(
@@ -252,6 +253,22 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
                             ),
                           )),
                         ],
+                      ),
+                    ),
+                    Divider(
+                      color: Colors.blueGrey,
+                      indent: 20,
+                      endIndent: 20,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(20.0),
+                      child: Text(
+                        "คลินิกที่เข้ารักษา",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontFamily: 'kanit',
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold),
                       ),
                     ),
                     Column(

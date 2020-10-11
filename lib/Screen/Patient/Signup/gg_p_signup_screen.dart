@@ -20,6 +20,7 @@ class _GgPSignupScreenState extends State<GgPSignupScreen> {
   DateTime _currentDate = new DateTime.now();
   TextEditingController _drugallergyController = TextEditingController();
   TextEditingController _telController = TextEditingController();
+  String dropdownValue = 'คลินิก 1';
 
   Future<Null> _selectdate(BuildContext context) async {
     final DateTime _seldate = await showDatePicker(
@@ -250,6 +251,51 @@ class _GgPSignupScreenState extends State<GgPSignupScreen> {
                               controller: _drugallergyController,
                             ),
                           )),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 20, right: 20, bottom: 20),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 16),
+                            child: Icon(
+                              FontAwesomeIcons.clinicMedical,
+                              color: bPrimaryColor,
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(right: 20, left: 10),
+                            child: DropdownButton<String>(
+                              value: dropdownValue,
+                              // icon: Icon(Icons.arrow_downward),
+                              iconSize: 24,
+                              elevation: 16,
+                              style: TextStyle(
+                                  color: Colors.black54, fontFamily: 'kanit'),
+                              // underline: Container(color: Colors.grey),
+                              onChanged: (String newValue) {
+                                setState(() {
+                                  dropdownValue = newValue;
+                                });
+                              },
+                              items: <String>[
+                                'คลินิก 1',
+                                'คลินิก 2',
+                                'คลินิก 3',
+                                'คลินิก 4',
+                                'คลินิก 5',
+                              ].map<DropdownMenuItem<String>>((String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value),
+                                );
+                              }).toList(),
+                            ),
+                          ),
                         ],
                       ),
                     ),
