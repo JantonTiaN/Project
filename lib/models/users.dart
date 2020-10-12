@@ -10,6 +10,7 @@ class OurPatients {
   List patientCase;
   Image patientImage;
   String patientSuggestion;
+  String patientClinic;
 
   OurPatients(
       {this.patientId,
@@ -20,7 +21,8 @@ class OurPatients {
       this.patientBirthDate,
       this.patientCase,
       this.patientImage,
-      this.patientSuggestion});
+      this.patientSuggestion,
+      this.patientClinic});
 }
 
 class OurDentists {
@@ -33,6 +35,7 @@ class OurDentists {
   String dentistBirthDate;
   List dentistWorkingTime;
   Image dentistImage;
+  String dentistClinic;
 
   OurDentists(
       {this.dentistID,
@@ -43,5 +46,6 @@ class OurDentists {
       this.dentistPermission,
       this.dentistBirthDate,
       this.dentistWorkingTime,
-      this.dentistImage});
+      this.dentistImage,
+      this.dentistClinic});
 }

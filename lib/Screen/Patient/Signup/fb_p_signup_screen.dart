@@ -21,7 +21,7 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
   DateTime _currentDate = new DateTime.now();
   TextEditingController _drugallergyController = TextEditingController();
   TextEditingController _telController = TextEditingController();
-  String dropdownValue = 'คลินิก 1';
+  String dropdownValue = 'Clinic 1';
 
   Future<Null> _selectdate(BuildContext context) async {
     final DateTime _seldate = await showDatePicker(
@@ -42,11 +42,11 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
   }
 
   void _signUpPatientWithFB(BuildContext context, String tel,
-      String drugallergy, String brithDate) async {
+      String drugallergy, String brithDate, String clinic) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString = await _currentUser.socialSignUpPatientsWithFBAndGG(
-          tel, drugallergy, brithDate);
+          tel, drugallergy, brithDate, clinic);
       if (_returnString == 'success') {
         showDialog<String>(
             context: context,
@@ -317,7 +317,8 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
                                     context,
                                     _telController.text,
                                     _drugallergyController.text,
-                                    _currentDate.toString());
+                                    _currentDate.toString(),
+                                    dropdownValue);
                               }
                             },
                             child: Container(
