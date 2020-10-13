@@ -25,6 +25,10 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
   TextEditingController _permissionController = TextEditingController();
   String dropdownValue = 'คลินิก 1';
 
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  bool _autoValidate = false;
+  String _fullname;
+
   //value for checkbox timetable
   //mon
   bool monMorning = false;
@@ -255,9 +259,19 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                         child: Container(
                       margin: EdgeInsets.only(right: 20, left: 10),
                       child: TextFormField(
-                        controller: _fullNameController,
-                        decoration: InputDecoration(hintText: "Fullname"),
-                      ),
+                          key: _formKey,
+                          autovalidate: _autoValidate,
+                          controller: _fullNameController,
+                          decoration: InputDecoration(hintText: "Fullname"),
+                          validator: (value) {
+                            if (value.isEmpty) {
+                              return 'Please enter some text';
+                            }
+                            return null;
+                          },
+                          onSaved: (String val) {
+                            _fullname = val;
+                          }),
                     )),
                   ],
                 ),
