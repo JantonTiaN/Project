@@ -47,7 +47,7 @@ class CurrentUser extends ChangeNotifier {
       String dentistCitizenID,
       String dentistPermission,
       String dentistBirthDate,
-      List workingTime()) async {
+      String dentistClinic) async {
     String returnVal = 'error';
     OurDentists _dentist = OurDentists();
     try {
@@ -60,7 +60,7 @@ class CurrentUser extends ChangeNotifier {
       _dentist.dentistCitizenID = dentistCitizenID;
       _dentist.dentistPermission = dentistPermission;
       _dentist.dentistBirthDate = dentistBirthDate;
-      _dentist.dentistWorkingTime = workingTime();
+      _dentist.dentistClinic = dentistClinic;
       String _returnString = await DentistDatabase().createDentists(_dentist);
       if (_returnString == 'success') {
         returnVal = 'success';
@@ -79,7 +79,7 @@ class CurrentUser extends ChangeNotifier {
       String dentistCitizenID,
       String dentistPermission,
       String dentistBirthDate,
-      List workingTime()) async {
+      String dentistClinic) async {
     String returnVal = 'error';
     OurDentists _dentist = OurDentists();
     try {
@@ -87,7 +87,7 @@ class CurrentUser extends ChangeNotifier {
       _dentist.dentistCitizenID = dentistCitizenID;
       _dentist.dentistPermission = dentistPermission;
       _dentist.dentistBirthDate = dentistBirthDate;
-      _dentist.dentistWorkingTime = workingTime();
+      _dentist.dentistClinic = dentistClinic;
       String _returnString =
           await DentistWithFBAndGGDatabase().createDentists(_dentist);
       if (_returnString == 'success') {
@@ -108,7 +108,8 @@ class CurrentUser extends ChangeNotifier {
       String patientFullName,
       String patientTel,
       String patientDrugallergy,
-      String patientBirthDate) async {
+      String patientBirthDate,
+      String patientClinic) async {
     String returnVal = 'error';
     OurPatients _patient = OurPatients();
     try {
@@ -120,6 +121,7 @@ class CurrentUser extends ChangeNotifier {
       _patient.patientTel = patientTel;
       _patient.patientDrugallergy = patientDrugallergy;
       _patient.patientBirthDate = patientBirthDate;
+      _patient.patientClinic = patientClinic;
       _patient.patientImage = Image.network(
           'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208');
       String _returnString = await PatientDatabase().createPatient(_patient);
@@ -135,14 +137,18 @@ class CurrentUser extends ChangeNotifier {
     return returnVal;
   }
 
-  Future<String> socialSignUpPatientsWithFBAndGG(String patientTel,
-      String patientDrugallergy, String patientBirthDate) async {
+  Future<String> socialSignUpPatientsWithFBAndGG(
+      String patientTel,
+      String patientDrugallergy,
+      String patientBirthDate,
+      String patientClinic) async {
     String returnVal = 'error';
     OurPatients _patient = OurPatients();
     try {
       _patient.patientTel = patientTel;
       _patient.patientDrugallergy = patientDrugallergy;
       _patient.patientBirthDate = patientBirthDate;
+      _patient.patientClinic = patientClinic;
       String _returnString =
           await PatientWithFBAndGGDatabase().createPatient(_patient);
       if (_returnString == 'success') {

@@ -11,8 +11,12 @@ class PatientDatabase {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(patient.patientClinic)
+          .document(patient.patientClinic)
           .collection('Patients')
           .document(user.uid)
           .setData({
@@ -24,27 +28,59 @@ class PatientDatabase {
         'role': 'Patient',
         'pathImage':
             'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208',
-        'uid': user.uid
+        'uid': user.uid,
+        'clinic': patient.patientClinic
       });
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('AllUsers')
+          .document('allUsers')
+          .collection('Patients')
+          .document(user.uid)
+          .setData({
+        'fullName': patient.patientFullName,
+        'eMail': patient.patientEmail,
+        'birthDay': patient.patientBirthDate,
+        'tel': patient.patientTel,
+        'drugAllergy': patient.patientDrugallergy,
+        'role': 'Patient',
+        'pathImage':
+            'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208',
+        'uid': user.uid,
+        'clinic': patient.patientClinic
+      });
+      await _firestore
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(patient.patientClinic)
+          .document(patient.patientClinic)
           .collection('Patients')
           .document(user.uid)
           .collection('DentalCase')
           .document('dentalCase')
           .setData({});
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(patient.patientClinic)
+          .document(patient.patientClinic)
           .collection('Patients')
           .document(user.uid)
           .collection('History')
           .document('history')
           .setData({});
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(patient.patientClinic)
+          .document(patient.patientClinic)
           .collection('Patients')
           .document(user.uid)
           .collection('Suggestion')
@@ -75,8 +111,12 @@ class DentistDatabase {
 
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(dentist.dentistClinic)
+          .document(dentist.dentistClinic)
           .collection('Dentists')
           .document(user.uid)
           .setData({
@@ -89,6 +129,28 @@ class DentistDatabase {
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist',
         'uid': user.uid,
+        'clinic': dentist.dentistClinic,
+        'pathImage':
+            'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208'
+      });
+      await _firestore
+          .collection('FunD')
+          .document('funD')
+          .collection('AllUsers')
+          .document('allUsers')
+          .collection('Dentists')
+          .document(user.uid)
+          .setData({
+        'fullName': dentist.dentistFullname,
+        'eMail': dentist.dentistEmail,
+        'birthDay': dentist.dentistBirthDate,
+        'tel': dentist.dentistTel,
+        'citizenID': dentist.dentistCitizenID,
+        'permission': dentist.dentistPermission,
+        'workingTime': dentist.dentistWorkingTime,
+        'role': 'Dentist',
+        'uid': user.uid,
+        'clinic': dentist.dentistClinic,
         'pathImage':
             'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208'
       });
@@ -114,8 +176,12 @@ class DentistWithFBAndGGDatabase {
 
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(dentist.dentistClinic)
+          .document(dentist.dentistClinic)
           .collection('Dentists')
           .document(user.uid)
           .setData({
@@ -128,7 +194,28 @@ class DentistWithFBAndGGDatabase {
         'workingTime': dentist.dentistWorkingTime,
         'role': 'Dentist',
         'pathImage': user.photoUrl,
-        'uid': user.uid
+        'uid': user.uid,
+        'clinic': dentist.dentistClinic,
+      });
+      await _firestore
+          .collection('FunD')
+          .document('funD')
+          .collection('AllUsers')
+          .document('allusers')
+          .collection('Dentists')
+          .document(user.uid)
+          .setData({
+        'fullName': user.displayName,
+        'eMail': user.email,
+        'birthDay': dentist.dentistBirthDate,
+        'tel': dentist.dentistTel,
+        'citizenID': dentist.dentistCitizenID,
+        'permission': dentist.dentistPermission,
+        'workingTime': dentist.dentistWorkingTime,
+        'role': 'Dentist',
+        'pathImage': user.photoUrl,
+        'uid': user.uid,
+        'clinic': dentist.dentistClinic,
       });
       print(user.photoUrl);
       retVal = 'success';
@@ -148,8 +235,12 @@ class PatientWithFBAndGGDatabase {
 
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(patient.patientClinic)
+          .document(patient.patientClinic)
           .collection('Patients')
           .document(user.uid)
           .setData({
@@ -160,27 +251,58 @@ class PatientWithFBAndGGDatabase {
         'drugAllergy': patient.patientDrugallergy,
         'role': 'Patient',
         'pathImage': user.photoUrl,
-        'uid': user.uid
+        'uid': user.uid,
+        'clinic': patient.patientClinic
       });
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('AllUsers')
+          .document('allUsers')
+          .collection('Patients')
+          .document(user.uid)
+          .setData({
+        'fullName': user.displayName,
+        'eMail': user.email,
+        'birthDay': patient.patientBirthDate,
+        'tel': patient.patientTel,
+        'drugAllergy': patient.patientDrugallergy,
+        'role': 'Patient',
+        'pathImage': user.photoUrl,
+        'uid': user.uid,
+        'clinic': patient.patientClinic
+      });
+      await _firestore
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(patient.patientClinic)
+          .document(patient.patientClinic)
           .collection('Patients')
           .document(user.uid)
           .collection('DentalCase')
           .document('dentalCase')
           .setData({});
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(patient.patientClinic)
+          .document(patient.patientClinic)
           .collection('Patients')
           .document(user.uid)
           .collection('History')
           .document('history')
           .setData({});
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(patient.patientClinic)
+          .document(patient.patientClinic)
           .collection('Patients')
           .document(user.uid)
           .collection('Suggestion')

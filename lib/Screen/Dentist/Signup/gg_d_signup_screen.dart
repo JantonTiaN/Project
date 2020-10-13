@@ -23,7 +23,7 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
   TextEditingController _telController = TextEditingController();
   TextEditingController _citizenidController = TextEditingController();
   TextEditingController _permissionController = TextEditingController();
-  String dropdownValue = 'คลินิก 1';
+  String dropdownValue = 'Clinic 1';
 
   //value for checkbox timetable
   //mon
@@ -164,11 +164,11 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
   }
 
   void _signUpDentistWithGG(BuildContext context, String tel, String citizenID,
-      String permission, String birthDate) async {
+      String permission, String birthDate, String clinic) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString = await _currentUser.signUpDentistsWithFBAndGG(
-          tel, citizenID, permission, birthDate, _workingTime);
+          tel, citizenID, permission, birthDate, clinic);
       if (_returnString == 'success') {
         showDialog<String>(
             context: context,
@@ -852,11 +852,11 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
                                 });
                               },
                               items: <String>[
-                                'คลินิก 1',
-                                'คลินิก 2',
-                                'คลินิก 3',
-                                'คลินิก 4',
-                                'คลินิก 5',
+                                'Clinic 1',
+                                'Clinic 2',
+                                'Clinic 3',
+                                'Clinic 4',
+                                'Clinic 5',
                               ].map<DropdownMenuItem<String>>((String value) {
                                 return DropdownMenuItem<String>(
                                   value: value,
@@ -928,13 +928,32 @@ class _GgDSignupScreenState extends State<GgDSignupScreen> {
                                             )
                                           ],
                                         ));
+                              } else if (_permissionController.text.length !=
+                                  5) {
+                                showDialog<String>(
+                                    context: context,
+                                    builder: (BuildContext context) =>
+                                        AlertDialog(
+                                          title: const Text('Error'),
+                                          content: Text(
+                                            'Invalid Permission',
+                                          ),
+                                          actions: <Widget>[
+                                            FlatButton(
+                                              child: Text('OK'),
+                                              onPressed: () =>
+                                                  Navigator.pop(context, 'OK'),
+                                            )
+                                          ],
+                                        ));
                               } else {
                                 _signUpDentistWithGG(
                                     context,
                                     _telController.text,
                                     _citizenidController.text,
                                     _permissionController.text,
-                                    _currentDate.toString());
+                                    _currentDate.toString(),
+                                    dropdownValue);
                               }
                             },
                             child: Container(

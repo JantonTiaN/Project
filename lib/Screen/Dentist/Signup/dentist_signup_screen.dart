@@ -23,123 +23,121 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
   TextEditingController _citizenidController = TextEditingController();
   TextEditingController _telController = TextEditingController();
   TextEditingController _permissionController = TextEditingController();
-  String dropdownValue = 'คลินิก 1';
-
+  String dropdownValue = 'Clinic 1';
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   bool _autoValidate = false;
-  String _fullname;
 
-  //value for checkbox timetable
-  //mon
-  bool monMorning = false;
-  bool monAfternoon = false;
-  bool monEvening = false;
-  //tue
-  bool tueMorning = false;
-  bool tueAfternoon = false;
-  bool tueEvening = false;
-  //wed
-  bool wedMorning = false;
-  bool wedAfternoon = false;
-  bool wedEvening = false;
-  //thu
-  bool thuMorning = false;
-  bool thuAfternoon = false;
-  bool thuEvening = false;
-  //fri
-  bool friMorning = false;
-  bool friAfternoon = false;
-  bool friEvening = false;
-  //sat
-  bool satMorning = false;
-  bool satAfternoon = false;
-  bool satEvening = false;
-  //sun
-  bool sunMorning = false;
-  bool sunAfternoon = false;
-  bool sunEvening = false;
+  // //value for checkbox timetable
+  // //mon
+  // bool monMorning = false;
+  // bool monAfternoon = false;
+  // bool monEvening = false;
+  // //tue
+  // bool tueMorning = false;
+  // bool tueAfternoon = false;
+  // bool tueEvening = false;
+  // //wed
+  // bool wedMorning = false;
+  // bool wedAfternoon = false;
+  // bool wedEvening = false;
+  // //thu
+  // bool thuMorning = false;
+  // bool thuAfternoon = false;
+  // bool thuEvening = false;
+  // //fri
+  // bool friMorning = false;
+  // bool friAfternoon = false;
+  // bool friEvening = false;
+  // //sat
+  // bool satMorning = false;
+  // bool satAfternoon = false;
+  // bool satEvening = false;
+  // //sun
+  // bool sunMorning = false;
+  // bool sunAfternoon = false;
+  // bool sunEvening = false;
 
-  List _workingTime() {
-    String time = '';
-    var workingTime = new List();
-    if (monMorning == true) {
-      time = 'Monday Morning';
-      workingTime.add(time);
-    }
-    if (monAfternoon == true) {
-      time = 'Monday Afternoon';
-      workingTime.add(time);
-    }
-    if (monEvening == true) {
-      time = 'Monday Evening';
-      workingTime.add(time);
-    }
-    if (tueMorning == true) {
-      time = 'Tuesday Morning';
-      workingTime.add(time);
-    }
-    if (tueAfternoon == true) {
-      time = 'Tuesday Afternoon';
-      workingTime.add(time);
-    }
-    if (tueEvening == true) {
-      time = 'Tuesday Evening';
-      workingTime.add(time);
-    }
-    if (wedMorning == true) {
-      time = 'Wednesday Morning';
-      workingTime.add(time);
-    }
-    if (wedAfternoon == true) {
-      time = 'Wednesday Afternoon';
-      workingTime.add(time);
-    }
-    if (wedEvening == true) {
-      time = 'Wednesday Evening';
-      workingTime.add(time);
-    }
-    if (thuMorning == true) {
-      time = 'Thursday Morning';
-      workingTime.add(time);
-    }
-    if (thuAfternoon == true) {
-      time = 'Thursday Afternoon';
-      workingTime.add(time);
-    }
-    if (thuEvening == true) {
-      time = 'Thursday Evening';
-      workingTime.add(time);
-    }
-    if (friMorning == true) {
-      time = 'Friday Morning';
-      workingTime.add(time);
-    }
-    if (friAfternoon == true) {
-      time = 'Friday Afternoon';
-      workingTime.add(time);
-    }
-    if (friEvening == true) {
-      time = 'Friday Evening';
-      workingTime.add(time);
-    }
-    if (satMorning == true) {
-      time = 'Saturday Morning';
-      workingTime.add(time);
-    }
-    if (satAfternoon == true) {
-      time = 'Saturday Afternoon';
-      workingTime.add(time);
-    }
-    if (sunMorning == true) {
-      time = 'Sunday Morning';
-      workingTime.add(time);
-    }
-    if (sunAfternoon == true) {
-      time = 'Sunday Afternoon';
-      workingTime.add(time);
-    }
-    return workingTime;
-  }
+  // List _workingTime() {
+  //   String time = '';
+  //   var workingTime = new List();
+  //   if (monMorning == true) {
+  //     time = 'Monday Morning';
+  //     workingTime.add(time);
+  //   }
+  //   if (monAfternoon == true) {
+  //     time = 'Monday Afternoon';
+  //     workingTime.add(time);
+  //   }
+  //   if (monEvening == true) {
+  //     time = 'Monday Evening';
+  //     workingTime.add(time);
+  //   }
+  //   if (tueMorning == true) {
+  //     time = 'Tuesday Morning';
+  //     workingTime.add(time);
+  //   }
+  //   if (tueAfternoon == true) {
+  //     time = 'Tuesday Afternoon';
+  //     workingTime.add(time);
+  //   }
+  //   if (tueEvening == true) {
+  //     time = 'Tuesday Evening';
+  //     workingTime.add(time);
+  //   }
+  //   if (wedMorning == true) {
+  //     time = 'Wednesday Morning';
+  //     workingTime.add(time);
+  //   }
+  //   if (wedAfternoon == true) {
+  //     time = 'Wednesday Afternoon';
+  //     workingTime.add(time);
+  //   }
+  //   if (wedEvening == true) {
+  //     time = 'Wednesday Evening';
+  //     workingTime.add(time);
+  //   }
+  //   if (thuMorning == true) {
+  //     time = 'Thursday Morning';
+  //     workingTime.add(time);
+  //   }
+  //   if (thuAfternoon == true) {
+  //     time = 'Thursday Afternoon';
+  //     workingTime.add(time);
+  //   }
+  //   if (thuEvening == true) {
+  //     time = 'Thursday Evening';
+  //     workingTime.add(time);
+  //   }
+  //   if (friMorning == true) {
+  //     time = 'Friday Morning';
+  //     workingTime.add(time);
+  //   }
+  //   if (friAfternoon == true) {
+  //     time = 'Friday Afternoon';
+  //     workingTime.add(time);
+  //   }
+  //   if (friEvening == true) {
+  //     time = 'Friday Evening';
+  //     workingTime.add(time);
+  //   }
+  //   if (satMorning == true) {
+  //     time = 'Saturday Morning';
+  //     workingTime.add(time);
+  //   }
+  //   if (satAfternoon == true) {
+  //     time = 'Saturday Afternoon';
+  //     workingTime.add(time);
+  //   }
+  //   if (sunMorning == true) {
+  //     time = 'Sunday Morning';
+  //     workingTime.add(time);
+  //   }
+  //   if (sunAfternoon == true) {
+  //     time = 'Sunday Afternoon';
+  //     workingTime.add(time);
+  //   }
+  //   return workingTime;
+  // }
 
   Future<Null> _selectdate(BuildContext context) async {
     final DateTime _seldate = await showDatePicker(
@@ -167,11 +165,12 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
       String tel,
       String citizenID,
       String permission,
-      String birthDate) async {
+      String birthDate,
+      String clinic) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString = await _currentUser.signUpDentists(email, password,
-          fullName, tel, citizenID, permission, birthDate, _workingTime);
+          fullName, tel, citizenID, permission, birthDate, clinic);
       if (_returnString == 'success') {
         showDialog<String>(
             context: context,
@@ -270,7 +269,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                             return null;
                           },
                           onSaved: (String val) {
-                            _fullname = val;
+                            // _fullname = val;
                           }),
                     )),
                   ],
@@ -869,11 +868,11 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                           });
                         },
                         items: <String>[
-                          'คลินิก 1',
-                          'คลินิก 2',
-                          'คลินิก 3',
-                          'คลินิก 4',
-                          'คลินิก 5',
+                          'Clinic 1',
+                          'Clinic 2',
+                          'Clinic 3',
+                          'Clinic 4',
+                          'Clinic 5',
                         ].map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
@@ -947,6 +946,22 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                                         )
                                       ],
                                     ));
+                          } else if (_permissionController.text.length != 5) {
+                            showDialog<String>(
+                                context: context,
+                                builder: (BuildContext context) => AlertDialog(
+                                      title: const Text('Error'),
+                                      content: Text(
+                                        'Invalid Permission',
+                                      ),
+                                      actions: <Widget>[
+                                        FlatButton(
+                                          child: Text('OK'),
+                                          onPressed: () =>
+                                              Navigator.pop(context, 'OK'),
+                                        )
+                                      ],
+                                    ));
                           } else {
                             _signUpDentist(
                                 _emailController.text,
@@ -956,8 +971,8 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                                 _telController.text,
                                 _citizenidController.text,
                                 _permissionController.text,
-                                _currentDate.toString());
-                            _workingTime();
+                                _currentDate.toString(),
+                                dropdownValue);
                           }
                         } else {
                           showDialog<String>(

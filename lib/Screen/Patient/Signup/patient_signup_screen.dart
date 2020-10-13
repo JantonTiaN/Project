@@ -22,7 +22,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
   DateTime _currentDate = new DateTime.now();
   TextEditingController _drugallergyController = TextEditingController();
   TextEditingController _telController = TextEditingController();
-  String dropdownValue = 'คลินิก 1';
+  String dropdownValue = 'Clinic 1';
 
   Future<Null> _selectdate(BuildContext context) async {
     final DateTime _seldate = await showDatePicker(
@@ -43,11 +43,11 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
   }
 
   void _signUpPatient(String email, String password, String fullName,
-      String tel, String drugallergy, String brithDate) async {
+      String tel, String drugallergy, String brithDate, String clinic) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString = await _currentUser.signUpPatients(
-          email, password, fullName, tel, drugallergy, brithDate);
+          email, password, fullName, tel, drugallergy, brithDate, clinic);
       if (_returnString == 'success') {
         showDialog<String>(
             context: context,
@@ -339,11 +339,11 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                           });
                         },
                         items: <String>[
-                          'คลินิก 1',
-                          'คลินิก 2',
-                          'คลินิก 3',
-                          'คลินิก 4',
-                          'คลินิก 5',
+                          'Clinic 1',
+                          'Clinic 2',
+                          'Clinic 3',
+                          'Clinic 4',
+                          'Clinic 5',
                         ].map<DropdownMenuItem<String>>((String value) {
                           return DropdownMenuItem<String>(
                             value: value,
@@ -388,7 +388,8 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                               _fullNameController.text,
                               _telController.text,
                               _drugallergyController.text,
-                              _currentDate.toString());
+                              _currentDate.toString(),
+                              dropdownValue);
                         } else if (_telController.text.length != 10 &&
                             !_telController.text.startsWith('0')) {
                           showDialog<String>(
