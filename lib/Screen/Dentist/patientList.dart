@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Services/database.dart';
@@ -12,13 +11,12 @@ class PatientList extends StatefulWidget {
 }
 
 class _PatientListState extends State<PatientList> {
-  Firestore _firestore = Firestore.instance;
   // List<PatientSnapshot> _patient = [];
   PatientDatabase _patientdb = new PatientDatabase();
   Stream patientStream;
   OurPatients patient;
 
-  Widget _PatientList() {
+  Widget patientList() {
     return Container(
       child: patientStream != null
           ? Column(
@@ -75,7 +73,7 @@ class _PatientListState extends State<PatientList> {
         backgroundColor: Colors.blue[300],
         automaticallyImplyLeading: false,
       ),
-      body: _PatientList(),
+      body: patientList(),
       // StreamBuilder(
       //   stream: Firestore.instance
       //       .collection('FunD')
@@ -150,7 +148,9 @@ class _PatientListState extends State<PatientList> {
 }
 
 class PatientTile extends StatelessWidget {
-  String fullname, tel, pathImage;
+  final String fullname;
+  final String tel;
+  final String pathImage;
   PatientTile(
       {@required this.fullname, @required this.tel, @required this.pathImage});
 
