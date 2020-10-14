@@ -40,7 +40,7 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
     final _pageOptions = [
       DentHomeScreen(widget.user),
       DentAppointmentScreen(),
-      PatientList(),
+      PatientList(widget.user),
       DentProfileScreen(widget.user),
     ];
     return Scaffold(

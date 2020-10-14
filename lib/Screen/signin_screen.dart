@@ -29,7 +29,6 @@ class _SignInScreenState extends State<SignInScreen> {
 
   void initState() {
     super.initState();
-    
   }
 
   TextEditingController _emailController = TextEditingController();
@@ -320,8 +319,10 @@ class _SignInScreenState extends State<SignInScreen> {
   Future<bool> checkIfDocExists(String docId) async {
     // Get reference to Firestore collection
     var collectionDent = Firestore.instance
-        .collection('Account')
-        .document('account')
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
         .collection('Dentists');
 
     var doc = await collectionDent.document(docId).get();
