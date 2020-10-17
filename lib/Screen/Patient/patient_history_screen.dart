@@ -34,7 +34,7 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
               //   padding: const EdgeInsets.only(top: 100),
               // child:
               Text(
-                'Soory',
+                'Sorry',
                 style: TextStyle(
                     fontFamily: 'Kanit', color: Colors.blue[300], fontSize: 25),
               ),
