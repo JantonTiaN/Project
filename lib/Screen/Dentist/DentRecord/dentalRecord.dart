@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/record_history_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentist_suggestion_screen.dart';
@@ -20,6 +21,26 @@ class DentalRecord extends StatefulWidget {
 }
 
 class _DentalRecordState extends State<DentalRecord> {
+  void initState() {
+    super.initState();
+  }
+
+  String clinic;
+  getClinic() async {
+    Firestore firestore = Firestore.instance;
+    return await firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        .collection('Patients')
+        .document(widget.uid)
+        .get()
+        .then((value) {
+      clinic = value.data['clinic'];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

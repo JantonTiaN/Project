@@ -14,6 +14,11 @@ class DentEditProfile extends StatefulWidget {
   _DentEditProfileState createState() => _DentEditProfileState();
 }
 
+String dentistClinic;
+void editeDentist(String clinic) {
+  dentistClinic = clinic;
+}
+
 class _DentEditProfileState extends State<DentEditProfile> {
   File _image;
   final _picker = ImagePicker();
@@ -44,8 +49,12 @@ class _DentEditProfileState extends State<DentEditProfile> {
     Firestore firestore = Firestore.instance;
     UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
     DocumentReference documentReference = firestore
-        .collection('Account')
-        .document('account')
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(dentistClinic)
+        .document(dentistClinic)
         .collection('Dentists')
         .document(widget.user.uid);
     Map<String, dynamic> map = Map();
@@ -65,15 +74,6 @@ class _DentEditProfileState extends State<DentEditProfile> {
     userUpdateInfo.displayName = _name;
     userUpdateInfo.photoUrl = urlPicture;
     user.updateProfile(userUpdateInfo);
-    // await user.reload();
-    // print('Before');
-    // print(user.isEmailVerified);
-    // user = await _auth.currentUser();
-    // user.isEmailVerified;
-    // print('After');
-    // print(user.isEmailVerified);
-    // print(user.photoUrl);
-    // print(user.displayName);
     documentReference.updateData(map).then((value) {
       print('Update Success');
       MaterialPageRoute(builder: (value) => DentProfileScreen(widget.user));

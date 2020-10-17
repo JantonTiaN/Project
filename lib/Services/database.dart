@@ -336,8 +336,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -354,8 +358,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -372,8 +380,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -390,8 +402,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -408,8 +424,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -426,8 +446,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -444,8 +468,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -462,8 +490,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -480,8 +512,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -498,8 +534,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -516,8 +556,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -534,8 +578,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -552,8 +600,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -570,8 +622,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -588,8 +644,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -606,8 +666,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -624,8 +688,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -642,8 +710,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -660,8 +732,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -678,8 +754,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -696,8 +776,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -714,8 +798,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -732,8 +820,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -750,8 +842,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -768,8 +864,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -786,8 +886,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -804,8 +908,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -822,8 +930,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -840,8 +952,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -858,8 +974,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -876,8 +996,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -894,8 +1018,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -912,8 +1040,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -930,8 +1062,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -948,8 +1084,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -966,8 +1106,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -984,8 +1128,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1002,8 +1150,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1020,8 +1172,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1038,8 +1194,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1056,8 +1216,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1074,8 +1238,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1092,8 +1260,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1110,8 +1282,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1128,8 +1304,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1146,8 +1326,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1164,8 +1348,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1182,8 +1370,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1200,8 +1392,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1218,8 +1414,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1236,8 +1436,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1254,8 +1458,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1272,8 +1480,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1290,8 +1502,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1308,8 +1524,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1326,8 +1546,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1344,8 +1568,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1362,8 +1590,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1380,8 +1612,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1398,8 +1634,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1416,8 +1656,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1434,8 +1678,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1452,8 +1700,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1470,8 +1722,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1488,8 +1744,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1506,8 +1766,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1524,8 +1788,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1542,8 +1810,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1560,8 +1832,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1578,8 +1854,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1596,8 +1876,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1614,8 +1898,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1632,8 +1920,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1650,8 +1942,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1668,8 +1964,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1686,8 +1986,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1704,8 +2008,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1722,8 +2030,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1740,8 +2052,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1758,8 +2074,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1776,8 +2096,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1794,8 +2118,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1812,8 +2140,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1830,8 +2162,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1848,8 +2184,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1866,8 +2206,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1884,8 +2228,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1902,8 +2250,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1920,8 +2272,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1938,8 +2294,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1956,8 +2316,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1974,8 +2338,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -1992,8 +2360,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -2010,8 +2382,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -2028,8 +2404,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')
@@ -2046,8 +2426,12 @@ class Case {
     String retVal = 'error';
     try {
       await _firestore
-          .collection('Account')
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(cases.patientClinic)
+          .document(cases.patientClinic)
           .collection('Patients')
           .document(cases.patientId)
           .collection('DentalCase')

@@ -11,6 +11,11 @@ class PatientList extends StatefulWidget {
   _PatientListState createState() => _PatientListState();
 }
 
+String clinic;
+void patientClinic(String listClinic) {
+  clinic = listClinic;
+}
+
 class _PatientListState extends State<PatientList> {
   Firestore _firestore = Firestore.instance;
   // List<PatientSnapshot> _patient = [];

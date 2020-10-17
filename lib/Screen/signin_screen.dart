@@ -32,7 +32,7 @@ class _SignInScreenState extends State<SignInScreen> {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController(); 
+  TextEditingController _passwordController = TextEditingController();
 
   @override
   void initState() {

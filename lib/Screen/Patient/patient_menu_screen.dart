@@ -1,4 +1,5 @@
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
@@ -25,12 +26,33 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
   final FacebookLogin _facebookLogin = FacebookLogin();
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  String patientClinic;
 
   int _selectPage = 0;
 
   @override
   void initState() {
     super.initState();
+    getClinic();
+  }
+
+  getClinic() async {
+    Firestore firestore = Firestore.instance;
+    return await firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        .collection('Patients')
+        .getDocuments()
+        .then((value) {
+      if (value.documents.length > 0) {
+        patientClinic = value.documents[0].data['clinic'];
+        print(patientClinic);
+      } else {
+        print("Not Found Clinic !!");
+      }
+    });
   }
 
   @override
