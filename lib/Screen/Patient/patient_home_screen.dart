@@ -12,6 +12,9 @@ class PatientHomeScreen extends StatefulWidget {
 class _PatientHomeScreenState extends State<PatientHomeScreen> {
   CalendarController _calendarController = CalendarController();
   CalendarFormat _calendarFormat = CalendarFormat.week;
+  Map<DateTime, List> _events;
+  List _selectedEvents;
+  AnimationController _animationController;
 
   @override
   Widget build(BuildContext context) {
@@ -63,11 +66,12 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                   children: [
                     TableCalendar(
                       calendarController: _calendarController,
+                      events: _events,
                       availableGestures: AvailableGestures.horizontalSwipe,
                       headerStyle: HeaderStyle(formatButtonVisible: false),
                       initialCalendarFormat: _calendarFormat,
                       calendarStyle: CalendarStyle(
-                          todayColor: Colors.orange[400],
+                          todayColor: Colors.blue[200],
                           selectedColor: Colors.blue[600]),
                     )
                   ],

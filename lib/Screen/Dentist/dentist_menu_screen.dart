@@ -8,7 +8,6 @@ import 'package:fundee/Screen/Dentist/dentist_home_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_profile_screen.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'patientList.dart';
 import 'package:fundee/Screen/Dentist/dentist_edit_profile.dart';
 import 'package:fundee/Screen/Dentist/patientList.dart';
