@@ -201,7 +201,7 @@ class DentistWithFBAndGGDatabase {
           .collection('FunD')
           .document('funD')
           .collection('AllUsers')
-          .document('allusers')
+          .document('allUsers')
           .collection('Dentists')
           .document(user.uid)
           .setData({

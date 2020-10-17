@@ -7,6 +7,7 @@ import 'package:fundee/Screen/Dentist/dentist_home_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_profile_screen.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'patientList.dart';
 
 class DentMenuScreen extends StatefulWidget {
@@ -18,22 +19,18 @@ class DentMenuScreen extends StatefulWidget {
 }
 
 class _DentMenuScreenState extends State<DentMenuScreen> {
+  bool isLoggedIn = false;
+  String email = '';
   final FacebookLogin _facebookLogin = FacebookLogin();
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
-  int _selectPage = 0;
-  // final _pageOptions = [
-  //   DentHomeScreen(),
-  //   DentAppointmentScreen(),
-  //   PatientList(),
-  //   DentProfileScreen(),
-  // ];
-
-  @override
   void initState() {
     super.initState();
+    // autoLogIn();    
   }
+
+  int _selectPage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -247,4 +244,17 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
         MaterialPageRoute(builder: (context) => SignInScreen()),
         (route) => false);
   }
+
+  // void autoLogIn() async {
+  //   final SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   final String userEmail = prefs.getString('email');
+
+  //   if (userEmail != null) {
+  //     setState(() {
+  //       isLoggedIn = true;
+  //       email = userEmail;
+  //     });
+  //     return;
+  //   }
+  // }
 }
