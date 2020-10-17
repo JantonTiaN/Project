@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Services/database.dart';
@@ -11,57 +12,78 @@ class PatientList extends StatefulWidget {
 }
 
 class _PatientListState extends State<PatientList> {
-  // List<PatientSnapshot> _patient = [];
+  Firestore _firestore = Firestore.instance;
+  List<DocumentSnapshot> _patient = [];
+  bool _loadingPatient = true;
   PatientDatabase _patientdb = new PatientDatabase();
   Stream patientStream;
   OurPatients patient;
 
-  Widget patientList() {
-    return Container(
-      child: patientStream != null
-          ? Column(
-              children: <Widget>[
-                StreamBuilder(
-                  stream: patientStream,
-                  builder: (context, snapshot) {
-                    return ListView.builder(
-                        itemCount: snapshot.data.documents.length,
-                        shrinkWrap: true,
-                        itemBuilder: (context, index) {
-                          return PatientTile(
-                            fullname:
-                                snapshot.data.documents[index].data['fullName'],
-                            tel: snapshot.data.documents[index].data['tel'],
-                            pathImage: snapshot
-                                .data.documents[index].data['pathImage'],
-                          );
-                        });
-                  },
-                ),
-              ],
-            )
-          : Center(
-              child: Column(
-                children: <Widget>[
-                  CircularProgressIndicator(),
-                  Text(
-                    'รอสักครู่...',
-                    style: TextStyle(fontFamily: 'Kanit'),
-                  )
-                ],
-              ),
-            ),
-    );
+  _getPatient() async {
+    Query q = _firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        // .collection('Patients')
+        // .document(patient.patientClinic)
+        .collection('Patients')
+        .orderBy('fullName');
+
+    setState(() {
+      _loadingPatient = true;
+    });
+
+    QuerySnapshot querySnapshot = await q.getDocuments();
+    _patient = querySnapshot.documents;
+
+    setState(() {
+      _loadingPatient = false;
+    });
   }
+
+  // Widget patientList() {
+  //   return Container(
+  //     child: patientStream != null
+  //         ? Column(
+  //             children: <Widget>[
+  //               StreamBuilder(
+  //                 stream: patientStream,
+  //                 builder: (context, snapshot) {
+  //                   return ListView.builder(
+  //                       itemCount: snapshot.data.documents.length,
+  //                       shrinkWrap: true,
+  //                       itemBuilder: (context, index) {
+  //                         return PatientTile(
+  //                           fullname:
+  //                               snapshot.data.documents[index].data['fullName'],
+  //                           tel: snapshot.data.documents[index].data['tel'],
+  //                           pathImage: snapshot
+  //                               .data.documents[index].data['pathImage'],
+  //                         );
+  //                       });
+  //                 },
+  //               ),
+  //             ],
+  //           )
+  //         : Center(
+  //             child: Column(
+  //               children: <Widget>[
+  //                 CircularProgressIndicator(),
+  //                 Text(
+  //                   'รอสักครู่...',
+  //                   style: TextStyle(fontFamily: 'Kanit'),
+  //                 )
+  //               ],
+  //             ),
+  //           ),
+  //   );
+  // }
 
   @override
   void initState() {
-    _patientdb.getPatient().then((result) {
-      setState(() {
-        patientStream = result;
-      });
-    });
     super.initState();
+    _getPatient();
   }
 
   @override
@@ -73,7 +95,30 @@ class _PatientListState extends State<PatientList> {
         backgroundColor: Colors.blue[300],
         automaticallyImplyLeading: false,
       ),
-      body: patientList(),
+      body: _loadingPatient == true
+          ? Container(
+              child: Center(
+              child: Text('Loading...'),
+            ))
+          : Container(
+              child: _patient.length == 0
+                  ? Center(
+                      child: Text('No Patient'),
+                    )
+                  : ListView.builder(
+                      itemCount: _patient.length,
+                      itemBuilder: (BuildContext ctx, int index) {
+                        return ListTile(
+                          leading: CircleAvatar(
+                              child: ClipOval(
+                            child: Image.network(
+                                _patient[index].data['pathImage']),
+                          )),
+                          title: Text(_patient[index].data['fullName']),
+                        );
+                      }),
+            ),
+      // body: patientList(),
       // StreamBuilder(
       //   stream: Firestore.instance
       //       .collection('FunD')

@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 class PatientHomeScreen extends StatefulWidget {
   final FirebaseUser user;
@@ -9,6 +10,9 @@ class PatientHomeScreen extends StatefulWidget {
 }
 
 class _PatientHomeScreenState extends State<PatientHomeScreen> {
+  CalendarController _calendarController = CalendarController();
+  CalendarFormat _calendarFormat = CalendarFormat.week;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,6 +58,16 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(50),
                       topRight: Radius.circular(50)),
+                ),
+                child: Column(
+                  children: [
+                    TableCalendar(
+                      calendarController: _calendarController,
+                      availableGestures: AvailableGestures.horizontalSwipe,
+                      headerStyle: HeaderStyle(formatButtonVisible: false),
+                      initialCalendarFormat: _calendarFormat,
+                    )
+                  ],
                 ),
               ),
             ),
