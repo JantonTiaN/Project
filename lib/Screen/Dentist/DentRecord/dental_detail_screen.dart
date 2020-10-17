@@ -36,6 +36,11 @@ void getuid(String getuid) {
   toothid(uid);
 }
 
+String clinic;
+void getCkinic(String getClinic) {
+  clinic = getClinic;
+}
+
 var _case1Front = new List();
 var _case2Front = new List();
 var _case3Front = new List();
@@ -617,7 +622,7 @@ void _addDentalCase1Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase1Front(_dentalCase1Front, uid);
+        await _currentUser.addDentalCase1Front(_dentalCase1Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -630,7 +635,7 @@ void _addDentalCase1Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase1Back(_dentalCase1Back, uid);
+        await _currentUser.addDentalCase1Back(_dentalCase1Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -642,8 +647,8 @@ void _addDentalCase1Back(BuildContext context, List addCase) async {
 void _addDentalCase1Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase1Middle(_dentalCase1Middle, uid);
+    String _returnString = await _currentUser.addDentalCase1Middle(
+        _dentalCase1Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -656,7 +661,7 @@ void _addDentalCase2Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase2Front(_dentalCase2Front, uid);
+        await _currentUser.addDentalCase2Front(_dentalCase2Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -669,7 +674,7 @@ void _addDentalCase2Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase2Back(_dentalCase2Back, uid);
+        await _currentUser.addDentalCase2Back(_dentalCase2Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -681,8 +686,8 @@ void _addDentalCase2Back(BuildContext context, List addCase) async {
 void _addDentalCase2Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase2Middle(_dentalCase2Middle, uid);
+    String _returnString = await _currentUser.addDentalCase2Middle(
+        _dentalCase2Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -695,7 +700,7 @@ void _addDentalCase3Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase3Front(_dentalCase3Front, uid);
+        await _currentUser.addDentalCase3Front(_dentalCase3Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -708,7 +713,7 @@ void _addDentalCase3Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase3Back(_dentalCase3Back, uid);
+        await _currentUser.addDentalCase3Back(_dentalCase3Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -720,8 +725,8 @@ void _addDentalCase3Back(BuildContext context, List addCase) async {
 void _addDentalCase3Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase3Middle(_dentalCase3Middle, uid);
+    String _returnString = await _currentUser.addDentalCase3Middle(
+        _dentalCase3Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -734,7 +739,7 @@ void _addDentalCase4Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase4Front(_dentalCase4Front, uid);
+        await _currentUser.addDentalCase4Front(_dentalCase4Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -747,7 +752,7 @@ void _addDentalCase4Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase4Back(_dentalCase4Back, uid);
+        await _currentUser.addDentalCase4Back(_dentalCase4Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -759,8 +764,8 @@ void _addDentalCase4Back(BuildContext context, List addCase) async {
 void _addDentalCase4Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase4Middle(_dentalCase4Middle, uid);
+    String _returnString = await _currentUser.addDentalCase4Middle(
+        _dentalCase4Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -773,7 +778,7 @@ void _addDentalCase5Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase5Front(_dentalCase5Front, uid);
+        await _currentUser.addDentalCase5Front(_dentalCase5Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -786,7 +791,7 @@ void _addDentalCase5Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase5Back(_dentalCase5Back, uid);
+        await _currentUser.addDentalCase5Back(_dentalCase5Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -798,8 +803,8 @@ void _addDentalCase5Back(BuildContext context, List addCase) async {
 void _addDentalCase5Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase5Middle(_dentalCase5Middle, uid);
+    String _returnString = await _currentUser.addDentalCase5Middle(
+        _dentalCase5Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -812,7 +817,7 @@ void _addDentalCase6Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase6Front(_dentalCase6Front, uid);
+        await _currentUser.addDentalCase6Front(_dentalCase6Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -825,7 +830,7 @@ void _addDentalCase6Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase6Back(_dentalCase6Back, uid);
+        await _currentUser.addDentalCase6Back(_dentalCase6Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -837,8 +842,8 @@ void _addDentalCase6Back(BuildContext context, List addCase) async {
 void _addDentalCase6Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase6Middle(_dentalCase6Middle, uid);
+    String _returnString = await _currentUser.addDentalCase6Middle(
+        _dentalCase6Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -851,7 +856,7 @@ void _addDentalCase7Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase7Front(_dentalCase7Front, uid);
+        await _currentUser.addDentalCase7Front(_dentalCase7Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -864,7 +869,7 @@ void _addDentalCase7Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase7Back(_dentalCase7Back, uid);
+        await _currentUser.addDentalCase7Back(_dentalCase7Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -876,8 +881,8 @@ void _addDentalCase7Back(BuildContext context, List addCase) async {
 void _addDentalCase7Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase7Middle(_dentalCase7Middle, uid);
+    String _returnString = await _currentUser.addDentalCase7Middle(
+        _dentalCase7Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -890,7 +895,7 @@ void _addDentalCase8Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase8Front(_dentalCase8Front, uid);
+        await _currentUser.addDentalCase8Front(_dentalCase8Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -903,7 +908,7 @@ void _addDentalCase8Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase8Back(_dentalCase8Back, uid);
+        await _currentUser.addDentalCase8Back(_dentalCase8Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -915,8 +920,8 @@ void _addDentalCase8Back(BuildContext context, List addCase) async {
 void _addDentalCase8Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase8Middle(_dentalCase8Middle, uid);
+    String _returnString = await _currentUser.addDentalCase8Middle(
+        _dentalCase8Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -929,7 +934,7 @@ void _addDentalCase9Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase9Front(_dentalCase9Front, uid);
+        await _currentUser.addDentalCase9Front(_dentalCase9Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -942,7 +947,7 @@ void _addDentalCase9Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase9Back(_dentalCase9Back, uid);
+        await _currentUser.addDentalCase9Back(_dentalCase9Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -954,8 +959,8 @@ void _addDentalCase9Back(BuildContext context, List addCase) async {
 void _addDentalCase9Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase9Middle(_dentalCase9Middle, uid);
+    String _returnString = await _currentUser.addDentalCase9Middle(
+        _dentalCase9Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -967,8 +972,8 @@ void _addDentalCase9Middle(BuildContext context, List addCase) async {
 void _addDentalCase10Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase10Front(_dentalCase10Front, uid);
+    String _returnString = await _currentUser.addDentalCase10Front(
+        _dentalCase10Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -981,7 +986,7 @@ void _addDentalCase10Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase10Back(_dentalCase10Back, uid);
+        await _currentUser.addDentalCase10Back(_dentalCase10Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -993,8 +998,8 @@ void _addDentalCase10Back(BuildContext context, List addCase) async {
 void _addDentalCase10Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase10Middle(_dentalCase10Middle, uid);
+    String _returnString = await _currentUser.addDentalCase10Middle(
+        _dentalCase10Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1006,8 +1011,8 @@ void _addDentalCase10Middle(BuildContext context, List addCase) async {
 void _addDentalCase11Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase11Front(_dentalCase11Front, uid);
+    String _returnString = await _currentUser.addDentalCase11Front(
+        _dentalCase11Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1020,7 +1025,7 @@ void _addDentalCase11Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase11Back(_dentalCase11Back, uid);
+        await _currentUser.addDentalCase11Back(_dentalCase11Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1032,8 +1037,8 @@ void _addDentalCase11Back(BuildContext context, List addCase) async {
 void _addDentalCase11Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase11Middle(_dentalCase11Middle, uid);
+    String _returnString = await _currentUser.addDentalCase11Middle(
+        _dentalCase11Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1045,8 +1050,8 @@ void _addDentalCase11Middle(BuildContext context, List addCase) async {
 void _addDentalCase12Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase12Front(_dentalCase12Front, uid);
+    String _returnString = await _currentUser.addDentalCase12Front(
+        _dentalCase12Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1059,7 +1064,7 @@ void _addDentalCase12Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase12Back(_dentalCase12Back, uid);
+        await _currentUser.addDentalCase12Back(_dentalCase12Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1071,8 +1076,8 @@ void _addDentalCase12Back(BuildContext context, List addCase) async {
 void _addDentalCase12Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase12Middle(_dentalCase12Middle, uid);
+    String _returnString = await _currentUser.addDentalCase12Middle(
+        _dentalCase12Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1084,8 +1089,8 @@ void _addDentalCase12Middle(BuildContext context, List addCase) async {
 void _addDentalCase13Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase13Front(_dentalCase13Front, uid);
+    String _returnString = await _currentUser.addDentalCase13Front(
+        _dentalCase13Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1098,7 +1103,7 @@ void _addDentalCase13Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase13Back(_dentalCase13Back, uid);
+        await _currentUser.addDentalCase13Back(_dentalCase13Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1110,8 +1115,8 @@ void _addDentalCase13Back(BuildContext context, List addCase) async {
 void _addDentalCase13Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase13Middle(_dentalCase13Middle, uid);
+    String _returnString = await _currentUser.addDentalCase13Middle(
+        _dentalCase13Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1123,8 +1128,8 @@ void _addDentalCase13Middle(BuildContext context, List addCase) async {
 void _addDentalCase14Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase14Front(_dentalCase14Front, uid);
+    String _returnString = await _currentUser.addDentalCase14Front(
+        _dentalCase14Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1137,7 +1142,7 @@ void _addDentalCase14Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase14Back(_dentalCase14Back, uid);
+        await _currentUser.addDentalCase14Back(_dentalCase14Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1149,8 +1154,8 @@ void _addDentalCase14Back(BuildContext context, List addCase) async {
 void _addDentalCase14Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase14Middle(_dentalCase14Middle, uid);
+    String _returnString = await _currentUser.addDentalCase14Middle(
+        _dentalCase14Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1162,8 +1167,8 @@ void _addDentalCase14Middle(BuildContext context, List addCase) async {
 void _addDentalCase15Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase15Front(_dentalCase15Front, uid);
+    String _returnString = await _currentUser.addDentalCase15Front(
+        _dentalCase15Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1176,7 +1181,7 @@ void _addDentalCase15Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase15Back(_dentalCase15Back, uid);
+        await _currentUser.addDentalCase15Back(_dentalCase15Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1188,8 +1193,8 @@ void _addDentalCase15Back(BuildContext context, List addCase) async {
 void _addDentalCase15Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase15Middle(_dentalCase15Middle, uid);
+    String _returnString = await _currentUser.addDentalCase15Middle(
+        _dentalCase15Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1201,8 +1206,8 @@ void _addDentalCase15Middle(BuildContext context, List addCase) async {
 void _addDentalCase16Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase16Front(_dentalCase16Front, uid);
+    String _returnString = await _currentUser.addDentalCase16Front(
+        _dentalCase16Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1215,7 +1220,7 @@ void _addDentalCase16Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase16Back(_dentalCase16Back, uid);
+        await _currentUser.addDentalCase16Back(_dentalCase16Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1227,8 +1232,8 @@ void _addDentalCase16Back(BuildContext context, List addCase) async {
 void _addDentalCase16Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase16Middle(_dentalCase16Middle, uid);
+    String _returnString = await _currentUser.addDentalCase16Middle(
+        _dentalCase16Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1240,8 +1245,8 @@ void _addDentalCase16Middle(BuildContext context, List addCase) async {
 void _addDentalCase17Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase17Front(_dentalCase17Front, uid);
+    String _returnString = await _currentUser.addDentalCase17Front(
+        _dentalCase17Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1254,7 +1259,7 @@ void _addDentalCase17Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase17Back(_dentalCase17Back, uid);
+        await _currentUser.addDentalCase17Back(_dentalCase17Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1266,8 +1271,8 @@ void _addDentalCase17Back(BuildContext context, List addCase) async {
 void _addDentalCase17Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase17Middle(_dentalCase17Middle, uid);
+    String _returnString = await _currentUser.addDentalCase17Middle(
+        _dentalCase17Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1279,8 +1284,8 @@ void _addDentalCase17Middle(BuildContext context, List addCase) async {
 void _addDentalCase18Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase18Front(_dentalCase18Front, uid);
+    String _returnString = await _currentUser.addDentalCase18Front(
+        _dentalCase18Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1293,7 +1298,7 @@ void _addDentalCase18Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase18Back(_dentalCase18Back, uid);
+        await _currentUser.addDentalCase18Back(_dentalCase18Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1305,8 +1310,8 @@ void _addDentalCase18Back(BuildContext context, List addCase) async {
 void _addDentalCase18Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase18Middle(_dentalCase18Middle, uid);
+    String _returnString = await _currentUser.addDentalCase18Middle(
+        _dentalCase18Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1318,8 +1323,8 @@ void _addDentalCase18Middle(BuildContext context, List addCase) async {
 void _addDentalCase19Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase19Front(_dentalCase19Front, uid);
+    String _returnString = await _currentUser.addDentalCase19Front(
+        _dentalCase19Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1332,7 +1337,7 @@ void _addDentalCase19Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase19Back(_dentalCase19Back, uid);
+        await _currentUser.addDentalCase19Back(_dentalCase19Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1344,8 +1349,8 @@ void _addDentalCase19Back(BuildContext context, List addCase) async {
 void _addDentalCase19Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase19Middle(_dentalCase19Middle, uid);
+    String _returnString = await _currentUser.addDentalCase19Middle(
+        _dentalCase19Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1357,8 +1362,8 @@ void _addDentalCase19Middle(BuildContext context, List addCase) async {
 void _addDentalCase20Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase20Front(_dentalCase20Front, uid);
+    String _returnString = await _currentUser.addDentalCase20Front(
+        _dentalCase20Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1371,7 +1376,7 @@ void _addDentalCase20Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase20Back(_dentalCase20Back, uid);
+        await _currentUser.addDentalCase20Back(_dentalCase20Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1383,8 +1388,8 @@ void _addDentalCase20Back(BuildContext context, List addCase) async {
 void _addDentalCase20Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase20Middle(_dentalCase20Middle, uid);
+    String _returnString = await _currentUser.addDentalCase20Middle(
+        _dentalCase20Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1396,8 +1401,8 @@ void _addDentalCase20Middle(BuildContext context, List addCase) async {
 void _addDentalCase21Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase21Front(_dentalCase21Front, uid);
+    String _returnString = await _currentUser.addDentalCase21Front(
+        _dentalCase21Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1410,7 +1415,7 @@ void _addDentalCase21Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase21Back(_dentalCase21Back, uid);
+        await _currentUser.addDentalCase21Back(_dentalCase21Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1422,8 +1427,8 @@ void _addDentalCase21Back(BuildContext context, List addCase) async {
 void _addDentalCase21Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase21Middle(_dentalCase21Middle, uid);
+    String _returnString = await _currentUser.addDentalCase21Middle(
+        _dentalCase21Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1435,8 +1440,8 @@ void _addDentalCase21Middle(BuildContext context, List addCase) async {
 void _addDentalCase22Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase22Front(_dentalCase22Front, uid);
+    String _returnString = await _currentUser.addDentalCase22Front(
+        _dentalCase22Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1449,7 +1454,7 @@ void _addDentalCase22Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase22Back(_dentalCase22Back, uid);
+        await _currentUser.addDentalCase22Back(_dentalCase22Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1461,8 +1466,8 @@ void _addDentalCase22Back(BuildContext context, List addCase) async {
 void _addDentalCase22Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase22Middle(_dentalCase22Middle, uid);
+    String _returnString = await _currentUser.addDentalCase22Middle(
+        _dentalCase22Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1474,8 +1479,8 @@ void _addDentalCase22Middle(BuildContext context, List addCase) async {
 void _addDentalCase23Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase23Front(_dentalCase23Front, uid);
+    String _returnString = await _currentUser.addDentalCase23Front(
+        _dentalCase23Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1488,7 +1493,7 @@ void _addDentalCase23Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase23Back(_dentalCase23Back, uid);
+        await _currentUser.addDentalCase23Back(_dentalCase23Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1500,8 +1505,8 @@ void _addDentalCase23Back(BuildContext context, List addCase) async {
 void _addDentalCase23Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase23Middle(_dentalCase23Middle, uid);
+    String _returnString = await _currentUser.addDentalCase23Middle(
+        _dentalCase23Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1513,8 +1518,8 @@ void _addDentalCase23Middle(BuildContext context, List addCase) async {
 void _addDentalCase24Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase24Front(_dentalCase24Front, uid);
+    String _returnString = await _currentUser.addDentalCase24Front(
+        _dentalCase24Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1527,7 +1532,7 @@ void _addDentalCase24Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase24Back(_dentalCase24Back, uid);
+        await _currentUser.addDentalCase24Back(_dentalCase24Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1539,8 +1544,8 @@ void _addDentalCase24Back(BuildContext context, List addCase) async {
 void _addDentalCase24Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase24Middle(_dentalCase24Middle, uid);
+    String _returnString = await _currentUser.addDentalCase24Middle(
+        _dentalCase24Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1552,8 +1557,8 @@ void _addDentalCase24Middle(BuildContext context, List addCase) async {
 void _addDentalCase25Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase25Front(_dentalCase25Front, uid);
+    String _returnString = await _currentUser.addDentalCase25Front(
+        _dentalCase25Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1566,7 +1571,7 @@ void _addDentalCase25Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase25Back(_dentalCase25Back, uid);
+        await _currentUser.addDentalCase25Back(_dentalCase25Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1578,8 +1583,8 @@ void _addDentalCase25Back(BuildContext context, List addCase) async {
 void _addDentalCase25Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase25Middle(_dentalCase25Middle, uid);
+    String _returnString = await _currentUser.addDentalCase25Middle(
+        _dentalCase25Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1591,8 +1596,8 @@ void _addDentalCase25Middle(BuildContext context, List addCase) async {
 void _addDentalCase26Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase26Front(_dentalCase26Front, uid);
+    String _returnString = await _currentUser.addDentalCase26Front(
+        _dentalCase26Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1605,7 +1610,7 @@ void _addDentalCase26Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase26Back(_dentalCase26Back, uid);
+        await _currentUser.addDentalCase26Back(_dentalCase26Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1617,8 +1622,8 @@ void _addDentalCase26Back(BuildContext context, List addCase) async {
 void _addDentalCase26Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase26Middle(_dentalCase26Middle, uid);
+    String _returnString = await _currentUser.addDentalCase26Middle(
+        _dentalCase26Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1630,8 +1635,8 @@ void _addDentalCase26Middle(BuildContext context, List addCase) async {
 void _addDentalCase27Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase27Front(_dentalCase27Front, uid);
+    String _returnString = await _currentUser.addDentalCase27Front(
+        _dentalCase27Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1644,7 +1649,7 @@ void _addDentalCase27Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase27Back(_dentalCase27Back, uid);
+        await _currentUser.addDentalCase27Back(_dentalCase27Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1656,8 +1661,8 @@ void _addDentalCase27Back(BuildContext context, List addCase) async {
 void _addDentalCase27Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase27Middle(_dentalCase27Middle, uid);
+    String _returnString = await _currentUser.addDentalCase27Middle(
+        _dentalCase27Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1669,8 +1674,8 @@ void _addDentalCase27Middle(BuildContext context, List addCase) async {
 void _addDentalCase28Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase28Front(_dentalCase28Front, uid);
+    String _returnString = await _currentUser.addDentalCase28Front(
+        _dentalCase28Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1683,7 +1688,7 @@ void _addDentalCase28Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase28Back(_dentalCase28Back, uid);
+        await _currentUser.addDentalCase28Back(_dentalCase28Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1695,8 +1700,8 @@ void _addDentalCase28Back(BuildContext context, List addCase) async {
 void _addDentalCase28Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase28Middle(_dentalCase28Middle, uid);
+    String _returnString = await _currentUser.addDentalCase28Middle(
+        _dentalCase28Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1708,8 +1713,8 @@ void _addDentalCase28Middle(BuildContext context, List addCase) async {
 void _addDentalCase29Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase29Front(_dentalCase29Front, uid);
+    String _returnString = await _currentUser.addDentalCase29Front(
+        _dentalCase29Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1722,7 +1727,7 @@ void _addDentalCase29Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase29Back(_dentalCase29Back, uid);
+        await _currentUser.addDentalCase29Back(_dentalCase29Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1734,8 +1739,8 @@ void _addDentalCase29Back(BuildContext context, List addCase) async {
 void _addDentalCase29Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase29Middle(_dentalCase29Middle, uid);
+    String _returnString = await _currentUser.addDentalCase29Middle(
+        _dentalCase29Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1747,8 +1752,8 @@ void _addDentalCase29Middle(BuildContext context, List addCase) async {
 void _addDentalCase30Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase30Front(_dentalCase30Front, uid);
+    String _returnString = await _currentUser.addDentalCase30Front(
+        _dentalCase30Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1761,7 +1766,7 @@ void _addDentalCase30Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase30Back(_dentalCase30Back, uid);
+        await _currentUser.addDentalCase30Back(_dentalCase30Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1773,8 +1778,8 @@ void _addDentalCase30Back(BuildContext context, List addCase) async {
 void _addDentalCase30Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase30Middle(_dentalCase30Middle, uid);
+    String _returnString = await _currentUser.addDentalCase30Middle(
+        _dentalCase30Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1786,8 +1791,8 @@ void _addDentalCase30Middle(BuildContext context, List addCase) async {
 void _addDentalCase31Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase31Front(_dentalCase31Front, uid);
+    String _returnString = await _currentUser.addDentalCase31Front(
+        _dentalCase31Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1800,7 +1805,7 @@ void _addDentalCase31Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase31Back(_dentalCase31Back, uid);
+        await _currentUser.addDentalCase31Back(_dentalCase31Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1812,8 +1817,8 @@ void _addDentalCase31Back(BuildContext context, List addCase) async {
 void _addDentalCase31Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase31Middle(_dentalCase31Middle, uid);
+    String _returnString = await _currentUser.addDentalCase31Middle(
+        _dentalCase31Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1825,8 +1830,8 @@ void _addDentalCase31Middle(BuildContext context, List addCase) async {
 void _addDentalCase32Front(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase32Front(_dentalCase32Front, uid);
+    String _returnString = await _currentUser.addDentalCase32Front(
+        _dentalCase32Front, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1839,7 +1844,7 @@ void _addDentalCase32Back(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
     String _returnString =
-        await _currentUser.addDentalCase32Back(_dentalCase32Back, uid);
+        await _currentUser.addDentalCase32Back(_dentalCase32Back, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }
@@ -1851,8 +1856,8 @@ void _addDentalCase32Back(BuildContext context, List addCase) async {
 void _addDentalCase32Middle(BuildContext context, List addCase) async {
   CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
   try {
-    String _returnString =
-        await _currentUser.addDentalCase32Middle(_dentalCase32Middle, uid);
+    String _returnString = await _currentUser.addDentalCase32Middle(
+        _dentalCase32Middle, uid, clinic);
     if (_returnString == 'success') {
       Navigator.pop(context, 'OK');
     }

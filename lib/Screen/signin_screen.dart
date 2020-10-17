@@ -9,6 +9,7 @@ import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:fundee/Screen/SignupProcess/gg_select_role.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'Dentist/dentist_home_screen.dart';
 import 'SignupProcess/fb_select_role.dart';
 import 'constants.dart';
@@ -23,16 +24,22 @@ class SignInScreen extends StatefulWidget {
 }
 
 class _SignInScreenState extends State<SignInScreen> {
+  bool isLoggedIn = false;
+  String email = '';
   final FirebaseAuth _auth = FirebaseAuth.instance;
-
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
-
-  void initState() {
-    super.initState();
-  }
+  final FacebookLogin _facebookLogin = FacebookLogin();
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    // autologin();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -209,6 +216,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 ),
                                 onTap: () {
                                   signIn();
+                                  // isLoggedIn ? logout() : signIn();
                                 },
                               )
                             ],
@@ -226,10 +234,19 @@ class _SignInScreenState extends State<SignInScreen> {
 
   //Email SignIn
   Future<FirebaseUser> signIn() async {
+    bool isLoggedIn = false;
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
     try {
       await _auth.signInWithEmailAndPassword(
           email: _emailController.text.trim(),
           password: _passwordController.text.trim());
+      prefs.setString('email', _emailController.text);
+      setState(() {
+        email = _emailController.text;
+        isLoggedIn = true;
+        print(isLoggedIn);
+      });
+      _emailController.clear();
       checkRole();
     } catch (error) {
       print(error.message);
@@ -245,6 +262,7 @@ class _SignInScreenState extends State<SignInScreen> {
     GoogleSignIn _googleSignIn = GoogleSignIn(scopes: [
       'https://www.googleapis.com/auth/cloud-platform.read-only',
     ]);
+
     GoogleSignInAccount user = await _googleSignIn.signIn();
     GoogleSignInAuthentication userAuth = await user.authentication;
     final AuthCredential credential = GoogleAuthProvider.getCredential(
@@ -329,8 +347,36 @@ class _SignInScreenState extends State<SignInScreen> {
     return doc.exists;
   }
 
-  checkUser() async {
-    FirebaseUser user = await FirebaseAuth.instance.currentUser();
-    setState(() {});
+  void autologin() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final String userEmail = prefs.getString('email');
+    if (userEmail != null) {
+      print('Not Nullllllllllllllllllllllllll');
+      setState(() {
+        isLoggedIn = true;
+        email = userEmail;
+      });
+      return;
+    }
   }
+
+  Future<Null> logout() async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    prefs.setString('email', null);
+    setState(() {
+      email = '';
+      isLoggedIn = false;
+    });
+  }
+  // Future _signOut(BuildContext context) async {
+  //   await _facebookLogin.logOut();
+  //   await _auth.signOut();
+  //   FirebaseAuth.instance.signOut();
+  //   await _googleSignIn.signOut();
+  //   Navigator.pushAndRemoveUntil(
+  //       context,
+  //       MaterialPageRoute(builder: (context) => SignInScreen()),
+  //       (route) => false);
+  // }
+
 }

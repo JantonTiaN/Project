@@ -1,4 +1,5 @@
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
@@ -7,7 +8,10 @@ import 'package:fundee/Screen/Dentist/dentist_home_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_profile_screen.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'patientList.dart';
+import 'package:fundee/Screen/Dentist/dentist_edit_profile.dart';
+import 'package:fundee/Screen/Dentist/patientList.dart';
 
 class DentMenuScreen extends StatefulWidget {
   final FirebaseUser user;
@@ -18,22 +22,54 @@ class DentMenuScreen extends StatefulWidget {
 }
 
 class _DentMenuScreenState extends State<DentMenuScreen> {
+  bool isLoggedIn = false;
+  String email = '';
   final FacebookLogin _facebookLogin = FacebookLogin();
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
+  String dentistClinic;
 
-  int _selectPage = 0;
-  // final _pageOptions = [
-  //   DentHomeScreen(),
-  //   DentAppointmentScreen(),
-  //   PatientList(),
-  //   DentProfileScreen(),
-  // ];
-
-  @override
   void initState() {
     super.initState();
+    // autoLogIn();
+    getClinic();
+    // testData();
   }
+
+  // testData() async {
+  //   Firestore firestore = Firestore.instance;
+  //   print('test data');
+  //   return await firestore
+  //       .collection('FunD')
+  //       .document('funD')
+  //       .collection('AllUsers')
+  //       .document('allUsers')
+  //       .collection('Dentists')
+  //       .document(widget.user.uid)
+  //       .get()
+  //       .then((value) {
+  //     print(value.data['fullName']);
+  //   });
+  // }
+
+  getClinic() async {
+    Firestore firestore = Firestore.instance;
+    return await firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        .collection('Dentists')
+        .document(widget.user.uid)
+        .get()
+        .then((value) {
+      dentistClinic = value.data['clinic'];
+      editeDentist(dentistClinic);
+      patientClinic(dentistClinic);
+    });
+  }
+
+  int _selectPage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -247,4 +283,17 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
         MaterialPageRoute(builder: (context) => SignInScreen()),
         (route) => false);
   }
+
+  // void autoLogIn() async {
+  //   final SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   final String userEmail = prefs.getString('email');
+
+  //   if (userEmail != null) {
+  //     setState(() {
+  //       isLoggedIn = true;
+  //       email = userEmail;
+  //     });
+  //     return;
+  //   }
+  // }
 }
