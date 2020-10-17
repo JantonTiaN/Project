@@ -66,6 +66,9 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                       availableGestures: AvailableGestures.horizontalSwipe,
                       headerStyle: HeaderStyle(formatButtonVisible: false),
                       initialCalendarFormat: _calendarFormat,
+                      calendarStyle: CalendarStyle(
+                          todayColor: Colors.orange[400],
+                          selectedColor: Colors.blue[600]),
                     )
                   ],
                 ),
