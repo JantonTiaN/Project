@@ -71,8 +71,7 @@ class _PatientListState extends State<PatientList> {
                   ),
                   Text(
                     'Loading',
-                    style: TextStyle(
-                        fontFamily: 'kanit', fontSize: 15, color: Colors.black),
+                    style: TextStyle(fontSize: 15, color: Colors.black),
                   )
                 ],
               ),
