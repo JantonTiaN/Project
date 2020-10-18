@@ -2,10 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:fundee/Screen/SignupProcess/gg_select_role.dart';
-import 'package:fundee/States/current_user.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'Dentist/dentist_home_screen.dart';
@@ -31,6 +31,7 @@ class _SignInScreenState extends State<SignInScreen> {
 
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+  bool _isLoading = false;
 
   @override
   void initState() {
@@ -213,6 +214,23 @@ class _SignInScreenState extends State<SignInScreen> {
                                   ),
                                 ),
                                 onTap: () {
+                                  showDialog(
+                                    context: context,
+                                    barrierDismissible: false,
+                                    builder: (BuildContext context) {
+                                      return Dialog(
+                                        child: new Row(
+                                          mainAxisSize: MainAxisSize.min,
+                                          children: [
+                                            new SpinKitFadingFour(
+                                              color: Colors.blue[900],
+                                            ),
+                                            new Text("Signing in"),
+                                          ],
+                                        ),
+                                      );
+                                    },
+                                  );
                                   signIn();
                                   // isLoggedIn ? logout() : signIn();
                                 },
