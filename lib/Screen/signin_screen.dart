@@ -233,7 +233,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                               "Signing in",
                                               style: TextStyle(
                                                   fontSize: 20,
-                                                  color: Colors.white,
+                                                  color: Colors.black,
                                                   fontFamily: 'kanit',
                                                   fontWeight: FontWeight.normal,
                                                   decoration:
