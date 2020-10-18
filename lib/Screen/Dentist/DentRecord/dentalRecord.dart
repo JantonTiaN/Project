@@ -8,13 +8,8 @@ import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
 
 class DentalRecord extends StatefulWidget {
   final String fullname;
-  final String drugAllergy;
   final String uid;
-  DentalRecord(
-      {Key key,
-      @required this.fullname,
-      @required this.drugAllergy,
-      @required this.uid})
+  DentalRecord({Key key, @required this.fullname, @required this.uid})
       : super(key: key);
   @override
   _DentalRecordState createState() => _DentalRecordState();

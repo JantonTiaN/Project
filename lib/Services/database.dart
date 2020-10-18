@@ -99,19 +99,6 @@ class PatientDatabase {
     }
     return retVal;
   }
-
-  OurPatients patient;
-  getPatient() async {
-    return await _firestore
-        .collection('FunD')
-        .document('funD')
-        .collection('Clinic')
-        .document('clinic')
-        .collection(patient.patientClinic)
-        .document(patient.patientClinic)
-        .collection('Patients')
-        .snapshots();
-  }
 }
 
 class DentistDatabase {
