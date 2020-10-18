@@ -218,14 +218,27 @@ class _SignInScreenState extends State<SignInScreen> {
                                     context: context,
                                     barrierDismissible: false,
                                     builder: (BuildContext context) {
-                                      return Dialog(
-                                        child: new Row(
+                                      return Container(
+                                        color: Colors.black.withOpacity(0.5),
+                                        child: Column(
                                           mainAxisSize: MainAxisSize.min,
-                                          children: [
-                                            new SpinKitFadingFour(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          children: <Widget>[
+                                            SpinKitFadingFour(
                                               color: Colors.blue[900],
+                                              size: 50,
                                             ),
-                                            new Text("Signing in"),
+                                            Text(
+                                              "Signing in",
+                                              style: TextStyle(
+                                                  fontSize: 20,
+                                                  color: Colors.white,
+                                                  fontFamily: 'kanit',
+                                                  fontWeight: FontWeight.normal,
+                                                  decoration:
+                                                      TextDecoration.none),
+                                            )
                                           ],
                                         ),
                                       );
