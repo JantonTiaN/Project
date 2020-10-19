@@ -9,6 +9,11 @@ class DentailHistoryTooth1Card extends StatefulWidget {
       _DentailHistoryTooth1CardState();
 }
 
+String clinic;
+void getClinicFromDetail(String detailClinic) {
+  clinic = detailClinic;
+}
+
 String tooth1Front,
     tooth2Front,
     tooth3Front,
@@ -208,11 +213,15 @@ class _DentailHistoryTooth1CardState extends State<DentailHistoryTooth1Card> {
   }
 }
 
-Widget dentailHistoryTooth1Card() {
+dentailHistoryTooth1Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -552,11 +561,15 @@ Widget dentailHistoryTooth1Card() {
   }
 }
 
-Widget dentailHistoryTooth2Card() {
+dentailHistoryTooth2Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -896,11 +909,15 @@ Widget dentailHistoryTooth2Card() {
   }
 }
 
-Widget dentailHistoryTooth3Card() {
+dentailHistoryTooth3Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -1240,11 +1257,15 @@ Widget dentailHistoryTooth3Card() {
   }
 }
 
-Widget dentailHistoryTooth4Card() {
+dentailHistoryTooth4Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -1584,11 +1605,15 @@ Widget dentailHistoryTooth4Card() {
   }
 }
 
-Widget dentailHistoryTooth5Card() {
+dentailHistoryTooth5Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -1928,11 +1953,15 @@ Widget dentailHistoryTooth5Card() {
   }
 }
 
-Widget dentailHistoryTooth6Card() {
+dentailHistoryTooth6Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -2272,11 +2301,15 @@ Widget dentailHistoryTooth6Card() {
   }
 }
 
-Widget dentailHistoryTooth7Card() {
+dentailHistoryTooth7Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -2616,11 +2649,15 @@ Widget dentailHistoryTooth7Card() {
   }
 }
 
-Widget dentailHistoryTooth8Card() {
+dentailHistoryTooth8Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -2960,11 +2997,15 @@ Widget dentailHistoryTooth8Card() {
   }
 }
 
-Widget dentailHistoryTooth9Card() {
+dentailHistoryTooth9Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -3304,11 +3345,15 @@ Widget dentailHistoryTooth9Card() {
   }
 }
 
-Widget dentailHistoryTooth10Card() {
+dentailHistoryTooth10Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -3656,11 +3701,15 @@ Widget dentailHistoryTooth10Card() {
   }
 }
 
-Widget dentailHistoryTooth11Card() {
+dentailHistoryTooth11Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -4008,11 +4057,15 @@ Widget dentailHistoryTooth11Card() {
   }
 }
 
-Widget dentailHistoryTooth12Card() {
+dentailHistoryTooth12Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -4360,11 +4413,15 @@ Widget dentailHistoryTooth12Card() {
   }
 }
 
-Widget dentailHistoryTooth13Card() {
+dentailHistoryTooth13Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -4712,11 +4769,15 @@ Widget dentailHistoryTooth13Card() {
   }
 }
 
-Widget dentailHistoryTooth14Card() {
+dentailHistoryTooth14Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -5064,11 +5125,15 @@ Widget dentailHistoryTooth14Card() {
   }
 }
 
-Widget dentailHistoryTooth15Card() {
+dentailHistoryTooth15Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -5416,11 +5481,15 @@ Widget dentailHistoryTooth15Card() {
   }
 }
 
-Widget dentailHistoryTooth16Card() {
+dentailHistoryTooth16Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -5768,11 +5837,15 @@ Widget dentailHistoryTooth16Card() {
   }
 }
 
-Widget dentailHistoryTooth17Card() {
+dentailHistoryTooth17Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -6120,11 +6193,15 @@ Widget dentailHistoryTooth17Card() {
   }
 }
 
-Widget dentailHistoryTooth18Card() {
+dentailHistoryTooth18Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -6472,11 +6549,15 @@ Widget dentailHistoryTooth18Card() {
   }
 }
 
-Widget dentailHistoryTooth19Card() {
+dentailHistoryTooth19Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -6824,11 +6905,15 @@ Widget dentailHistoryTooth19Card() {
   }
 }
 
-Widget dentailHistoryTooth20Card() {
+dentailHistoryTooth20Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -7176,11 +7261,15 @@ Widget dentailHistoryTooth20Card() {
   }
 }
 
-Widget dentailHistoryTooth21Card() {
+dentailHistoryTooth21Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -7528,11 +7617,15 @@ Widget dentailHistoryTooth21Card() {
   }
 }
 
-Widget dentailHistoryTooth22Card() {
+dentailHistoryTooth22Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -7880,11 +7973,15 @@ Widget dentailHistoryTooth22Card() {
   }
 }
 
-Widget dentailHistoryTooth23Card() {
+dentailHistoryTooth23Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -8232,11 +8329,15 @@ Widget dentailHistoryTooth23Card() {
   }
 }
 
-Widget dentailHistoryTooth24Card() {
+dentailHistoryTooth24Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -8584,11 +8685,15 @@ Widget dentailHistoryTooth24Card() {
   }
 }
 
-Widget dentailHistoryTooth25Card() {
+dentailHistoryTooth25Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -8936,11 +9041,15 @@ Widget dentailHistoryTooth25Card() {
   }
 }
 
-Widget dentailHistoryTooth26Card() {
+dentailHistoryTooth26Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -9288,11 +9397,15 @@ Widget dentailHistoryTooth26Card() {
   }
 }
 
-Widget dentailHistoryTooth27Card() {
+dentailHistoryTooth27Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -9640,11 +9753,15 @@ Widget dentailHistoryTooth27Card() {
   }
 }
 
-Widget dentailHistoryTooth28Card() {
+dentailHistoryTooth28Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -9992,11 +10109,15 @@ Widget dentailHistoryTooth28Card() {
   }
 }
 
-Widget dentailHistoryTooth29Card() {
+dentailHistoryTooth29Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -10344,11 +10465,15 @@ Widget dentailHistoryTooth29Card() {
   }
 }
 
-Widget dentailHistoryTooth30Card() {
+dentailHistoryTooth30Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -10696,11 +10821,15 @@ Widget dentailHistoryTooth30Card() {
   }
 }
 
-Widget dentailHistoryTooth31Card() {
+dentailHistoryTooth31Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
@@ -11048,11 +11177,15 @@ Widget dentailHistoryTooth31Card() {
   }
 }
 
-Widget dentailHistoryTooth32Card() {
+dentailHistoryTooth32Card() {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
-      .collection('Account')
-      .document('account')
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');

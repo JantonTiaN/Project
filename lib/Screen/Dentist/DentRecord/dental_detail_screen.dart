@@ -16,6 +16,10 @@ class DentalDetailScreen extends StatefulWidget {
 class _DentalDetailScreenState extends State<DentalDetailScreen> {
   List<AccountModel> accountModels = List();
 
+  void initState() {
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,10 +38,11 @@ String uid;
 void getuid(String getuid) {
   uid = getuid;
   toothid(uid);
+  getClinicFromDetail(clinic);
 }
 
 String clinic;
-void getCkinic(String getClinic) {
+void getClinicFromRecord(String getClinic) {
   clinic = getClinic;
 }
 
