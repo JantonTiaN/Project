@@ -27,20 +27,20 @@ class _DentalRecordState extends State<DentalRecord> {
     suggestionuid(widget.uid);
   }
 
-  // getClinic() async {
-  //   Firestore firestore = Firestore.instance;
-  //   await firestore
-  //       .collection('FunD')
-  //       .document('funD')
-  //       .collection('AllUsers')
-  //       .document('allUsers')
-  //       .collection('Patients')
-  //       .document(widget.uid)
-  //       .get()
-  //       .then((value) {
-  //     clinic = value.data['clinic'];
-  //   });
-  // }
+  getClinic() async {
+    Firestore firestore = Firestore.instance;
+    await firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        .collection('Patients')
+        .document(widget.uid)
+        .get()
+        .then((value) {
+      clinic = value.data['clinic'];
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

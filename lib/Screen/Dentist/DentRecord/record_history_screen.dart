@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
+import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 
 class RecordHistoryScreen extends StatefulWidget {
   @override
@@ -109,6 +111,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
   void initState() {
     super.initState();
     readAllData();
+    getClinic();
   }
 
   // tooth1Data() async {
@@ -131,33 +134,40 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
   Future<void> readAllData() async {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
-        .collection('Account')
-        .document('account')
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(clinic)
+        .document(clinic)
         .collection('Patients')
         .document(uid)
-        .collection('DentalCase');
+        .collection('History');
     collectionReference.snapshots().listen((response) {
       List<DocumentSnapshot> snapshots = response.documents;
       for (var snapshot in snapshots) {
-        List<String> read1 = List.from(snapshot['tooth 1 Front']);
+        List<String> read1 = List.from(snapshot['history']);
         print(read1);
         // if (snapshot.data['tooth 1 Front'] != null) {
-        tooth1Front = Text('Tooth 1 Front = ${snapshot.data['tooth 1 Front']}')
-            .toString();
+        tooth1Front = Text('history = ${snapshot.data['history']}').toString();
         // }
         // if (snapshot.data['tooth 1 Middle'] != null) {
-        tooth1Middle =
-            Text('Tooth 1 Middle = ${snapshot.data['tooth 1 Middle']}')
-                .toString();
+        // tooth1Middle =
+        //     Text('Tooth 1 Middle = ${snapshot.data['tooth 1 Middle']}')
+        //         .toString();
         // }
         // if (snapshot.data['tooth 1 Back'] != null) {
-        tooth1Back =
-            Text('Tooth 1 Back = ${snapshot.data['tooth 1 Back']}').toString();
+        // tooth1Back =
+        //     Text('Tooth 1 Back = ${snapshot.data['tooth 1 Back']}').toString();
         // }
       }
       Firestore.instance
-          .collection("Account")
-          .document('account')
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(clinic)
+          .document(clinic)
           .collection('Patients')
           .document(uid)
           .collection('DentalCase')
@@ -178,11 +188,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
           backgroundColor: Colors.blue[300],
         ),
         body: Column(
-          children: [
-            ListTile(
-                // title: Text(tooth1Front.substring(6, tooth1Front.length - 2)),
-                )
-          ],
+          children: [],
         )
         // body: StreamBuilder(
         //   stream: Firestore.instance

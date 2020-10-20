@@ -20,6 +20,24 @@ class DentMenuScreen extends StatefulWidget {
   _DentMenuScreenState createState() => _DentMenuScreenState();
 }
 
+getClinic() async {
+  FirebaseUser user = await FirebaseAuth.instance.currentUser();
+  Firestore firestore = Firestore.instance;
+  return await firestore
+      .collection('FunD')
+      .document('funD')
+      .collection('AllUsers')
+      .document('allUsers')
+      .collection('Dentists')
+      .document(user.uid)
+      .get()
+      .then((value) {
+    clinic = value.data['clinic'];
+    editeDentist(clinic);
+    patientClinic(clinic);
+  });
+}
+
 class _DentMenuScreenState extends State<DentMenuScreen> {
   bool isLoggedIn = false;
   String email = '';
@@ -32,7 +50,6 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
     super.initState();
     // autoLogIn();
     getClinic();
-    // testData();
   }
 
   // testData() async {
@@ -50,23 +67,6 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
   //     print(value.data['fullName']);
   //   });
   // }
-
-  getClinic() async {
-    Firestore firestore = Firestore.instance;
-    return await firestore
-        .collection('FunD')
-        .document('funD')
-        .collection('AllUsers')
-        .document('allUsers')
-        .collection('Dentists')
-        .document(widget.user.uid)
-        .get()
-        .then((value) {
-      dentistClinic = value.data['clinic'];
-      editeDentist(dentistClinic);
-      patientClinic(dentistClinic);
-    });
-  }
 
   int _selectPage = 0;
 

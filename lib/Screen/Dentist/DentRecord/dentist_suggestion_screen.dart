@@ -48,7 +48,7 @@ class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
                           .collection('Patients')
                           .document(uid)
                           .collection('Suggestion')
-                          .document('suggesion')
+                          .document('suggestion')
                           .updateData({'suggestion': suggestion.text});
                     },
                     child: Container(

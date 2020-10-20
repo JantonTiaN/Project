@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/constants.dart';
@@ -40,6 +41,26 @@ void getuid(String getuid) {
   toothid(uid);
   getClinicFromDetail(clinic);
 }
+
+String caseDetail;
+DateTime _currentDate = new DateTime.now();
+Firestore firestore = Firestore.instance;
+DocumentReference documentReference = firestore
+    .collection('FunD')
+    .document('funD')
+    .collection('Clinic')
+    .document('clinic')
+    .collection(clinic)
+    .document(clinic)
+    .collection('Patients')
+    .document(uid)
+    .collection('History')
+    .document('history');
+
+// recordHis(String his) {
+//   recordHistory.add(his);
+//   documentReference.updateData({'history': recordHistory});
+// }
 
 String clinic;
 void getClinicFromRecord(String getClinic) {
@@ -142,6 +163,8 @@ var _case29Middle = new List();
 var _case30Middle = new List();
 var _case31Middle = new List();
 var _case32Middle = new List();
+var recordHistory = new List();
+Map<String, String> map;
 
 List _dentalCase1Front() {
   var dentalCase1Front = _case1Front;
@@ -1941,6 +1964,20 @@ Widget tooth1Detail(BuildContext context) {
                                                       .add('Dental Carise');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  recordHistory.add(map = {
+                                                    _currentDate
+                                                            .toString()
+                                                            .substring(
+                                                                0,
+                                                                _currentDate
+                                                                        .toString()
+                                                                        .length -
+                                                                    7):
+                                                        'Tooth 1 Front : Dental Carise'
+                                                  });
+                                                  documentReference.updateData({
+                                                    'history': recordHistory
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -1965,6 +2002,20 @@ Widget tooth1Detail(BuildContext context) {
                                                       'Attrition, abrasion, abfraction');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  recordHistory.add(map = {
+                                                    _currentDate
+                                                            .toString()
+                                                            .substring(
+                                                                0,
+                                                                _currentDate
+                                                                        .toString()
+                                                                        .length -
+                                                                    7):
+                                                        'Tooth 1 Front : Attrition, abrasion, abfraction'
+                                                  });
+                                                  documentReference.updateData({
+                                                    'history': recordHistory
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -1988,6 +2039,20 @@ Widget tooth1Detail(BuildContext context) {
                                                       .add('Fractured tooth');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  recordHistory.add(map = {
+                                                    _currentDate
+                                                            .toString()
+                                                            .substring(
+                                                                0,
+                                                                _currentDate
+                                                                        .toString()
+                                                                        .length -
+                                                                    7):
+                                                        'Tooth 1 Front : Fractured tooth'
+                                                  });
+                                                  documentReference.updateData({
+                                                    'history': recordHistory
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2011,6 +2076,20 @@ Widget tooth1Detail(BuildContext context) {
                                                       .add('Retained root');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  recordHistory.add(map = {
+                                                    _currentDate
+                                                            .toString()
+                                                            .substring(
+                                                                0,
+                                                                _currentDate
+                                                                        .toString()
+                                                                        .length -
+                                                                    7):
+                                                        'Tooth 1 Front : Retained root'
+                                                  });
+                                                  documentReference.updateData({
+                                                    'history': recordHistory
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2033,6 +2112,16 @@ Widget tooth1Detail(BuildContext context) {
                                                   _case1Front.add('RCT tooth');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                        .toString()
+                                                        .substring(
+                                                            0,
+                                                            _currentDate
+                                                                    .toString()
+                                                                    .length -
+                                                                7): 'RCT tooth'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2056,6 +2145,17 @@ Widget tooth1Detail(BuildContext context) {
                                                       .add('Extracted tooth');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                            .toString()
+                                                            .substring(
+                                                                0,
+                                                                _currentDate
+                                                                        .toString()
+                                                                        .length -
+                                                                    7):
+                                                        'Extracted tooth'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2079,6 +2179,16 @@ Widget tooth1Detail(BuildContext context) {
                                                       .add('Missing tooth');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                        .toString()
+                                                        .substring(
+                                                            0,
+                                                            _currentDate
+                                                                    .toString()
+                                                                    .length -
+                                                                7): 'Missing tooth'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2102,6 +2212,16 @@ Widget tooth1Detail(BuildContext context) {
                                                       .add('Impacted tooth');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                        .toString()
+                                                        .substring(
+                                                            0,
+                                                            _currentDate
+                                                                    .toString()
+                                                                    .length -
+                                                                7): 'Impacted tooth'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2125,6 +2245,17 @@ Widget tooth1Detail(BuildContext context) {
                                                       .add('Partial eruption');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                            .toString()
+                                                            .substring(
+                                                                0,
+                                                                _currentDate
+                                                                        .toString()
+                                                                        .length -
+                                                                    7):
+                                                        'Partial eruption'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2149,6 +2280,17 @@ Widget tooth1Detail(BuildContext context) {
                                                       .add('Tilting, drifting');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                            .toString()
+                                                            .substring(
+                                                                0,
+                                                                _currentDate
+                                                                        .toString()
+                                                                        .length -
+                                                                    7):
+                                                        'Tilting, drifting'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2172,6 +2314,17 @@ Widget tooth1Detail(BuildContext context) {
                                                       .add('Loss of contact');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                            .toString()
+                                                            .substring(
+                                                                0,
+                                                                _currentDate
+                                                                        .toString()
+                                                                        .length -
+                                                                    7):
+                                                        'Loss of contact'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2196,6 +2349,17 @@ Widget tooth1Detail(BuildContext context) {
                                                       'Poor contact point');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                            .toString()
+                                                            .substring(
+                                                                0,
+                                                                _currentDate
+                                                                        .toString()
+                                                                        .length -
+                                                                    7):
+                                                        'Poor contact point'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2219,6 +2383,16 @@ Widget tooth1Detail(BuildContext context) {
                                                       .add('Food impaction');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                        .toString()
+                                                        .substring(
+                                                            0,
+                                                            _currentDate
+                                                                    .toString()
+                                                                    .length -
+                                                                7): 'Food impaction'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2242,6 +2416,16 @@ Widget tooth1Detail(BuildContext context) {
                                                       .add('Supraclusion');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                        .toString()
+                                                        .substring(
+                                                            0,
+                                                            _currentDate
+                                                                    .toString()
+                                                                    .length -
+                                                                7): 'Supraclusion'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2265,6 +2449,16 @@ Widget tooth1Detail(BuildContext context) {
                                                       .add('Infraclusion');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                        .toString()
+                                                        .substring(
+                                                            0,
+                                                            _currentDate
+                                                                    .toString()
+                                                                    .length -
+                                                                7): 'Infraclusion'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2287,6 +2481,16 @@ Widget tooth1Detail(BuildContext context) {
                                                   _case1Front.add('Rotation');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                        .toString()
+                                                        .substring(
+                                                            0,
+                                                            _currentDate
+                                                                    .toString()
+                                                                    .length -
+                                                                7): 'Rotation'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2309,6 +2513,16 @@ Widget tooth1Detail(BuildContext context) {
                                                   _case1Front.add('Temporary');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                        .toString()
+                                                        .substring(
+                                                            0,
+                                                            _currentDate
+                                                                    .toString()
+                                                                    .length -
+                                                                7): 'Temporary'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2333,6 +2547,17 @@ Widget tooth1Detail(BuildContext context) {
                                                       'Permanentrestoration');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                            .toString()
+                                                            .substring(
+                                                                0,
+                                                                _currentDate
+                                                                        .toString()
+                                                                        .length -
+                                                                    7):
+                                                        'Permanentrestoration'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2356,6 +2581,17 @@ Widget tooth1Detail(BuildContext context) {
                                                       .add('Gold restoration');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                            .toString()
+                                                            .substring(
+                                                                0,
+                                                                _currentDate
+                                                                        .toString()
+                                                                        .length -
+                                                                    7):
+                                                        'Gold restoration'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2380,6 +2616,17 @@ Widget tooth1Detail(BuildContext context) {
                                                       'Porcelain/metal crown');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                            .toString()
+                                                            .substring(
+                                                                0,
+                                                                _currentDate
+                                                                        .toString()
+                                                                        .length -
+                                                                    7):
+                                                        'Porcelain/metal crown'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2404,6 +2651,17 @@ Widget tooth1Detail(BuildContext context) {
                                                       'Extract and have fix bridge');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                            .toString()
+                                                            .substring(
+                                                                0,
+                                                                _currentDate
+                                                                        .toString()
+                                                                        .length -
+                                                                    7):
+                                                        'Extract and have fix bridge'
+                                                  });
                                                 },
                                               ),
                                               ListTile(
@@ -2426,6 +2684,16 @@ Widget tooth1Detail(BuildContext context) {
                                                   _case1Front.add('Other');
                                                   _addDentalCase1Front(context,
                                                       _dentalCase1Front());
+                                                  documentReference.updateData({
+                                                    _currentDate
+                                                        .toString()
+                                                        .substring(
+                                                            0,
+                                                            _currentDate
+                                                                    .toString()
+                                                                    .length -
+                                                                7): 'Other'
+                                                  });
                                                 },
                                               ),
                                             ],

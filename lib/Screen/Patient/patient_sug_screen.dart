@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentist_suggestion_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/widgets/detail_history_card.dart';
@@ -14,6 +15,36 @@ class PatientSuggestion extends StatefulWidget {
 
 class _PatientSuggestionState extends State<PatientSuggestion> {
   // FirebaseUser user = FirebaseAuth.instance.currentUser();
+
+  @override
+  void initState() {
+    super.initState();
+    getClinic();
+  }
+
+  String suggestion;
+  suggestions() {
+    Firestore firestore = Firestore.instance;
+    firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(patientClinic)
+        .document(patientClinic)
+        .collection('Patients')
+        .document(widget.user.uid)
+        .collection('Suggestion')
+        .document('suggestion')
+        .get()
+        .then((value) => {
+              if (value.data['suggestion'] == null)
+                {suggestion = value.data['suggestion']}
+              else
+                {suggestion = 'No suggestion !'}
+            });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
