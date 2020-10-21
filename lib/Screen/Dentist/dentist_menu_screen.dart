@@ -23,6 +23,7 @@ class DentMenuScreen extends StatefulWidget {
 getClinic() async {
   FirebaseUser user = await FirebaseAuth.instance.currentUser();
   Firestore firestore = Firestore.instance;
+  String dentistName = user.displayName;
   return await firestore
       .collection('FunD')
       .document('funD')

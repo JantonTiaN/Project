@@ -1894,7 +1894,8 @@ void _addDentalCase32Middle(BuildContext context, List addCase) async {
   }
 }
 
-Widget tooth1Detail(BuildContext context) {
+tooth1Detail(BuildContext context) async {
+  FirebaseUser user = await FirebaseAuth.instance.currentUser();
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -1975,6 +1976,9 @@ Widget tooth1Detail(BuildContext context) {
                                                                     7):
                                                         'Tooth 1 Front : Dental Carise'
                                                   });
+                                                  recordHistory.add(map = {
+                                                    'Dentist': user.displayName
+                                                  });
                                                   documentReference.updateData({
                                                     'history': recordHistory
                                                   });
@@ -2013,6 +2017,9 @@ Widget tooth1Detail(BuildContext context) {
                                                                     7):
                                                         'Tooth 1 Front : Attrition, abrasion, abfraction'
                                                   });
+                                                  recordHistory.add(map = {
+                                                    'Dentist': user.displayName
+                                                  });
                                                   documentReference.updateData({
                                                     'history': recordHistory
                                                   });
@@ -2050,6 +2057,9 @@ Widget tooth1Detail(BuildContext context) {
                                                                     7):
                                                         'Tooth 1 Front : Fractured tooth'
                                                   });
+                                                  recordHistory.add(map = {
+                                                    'Dentist': user.displayName
+                                                  });
                                                   documentReference.updateData({
                                                     'history': recordHistory
                                                   });
@@ -2086,6 +2096,9 @@ Widget tooth1Detail(BuildContext context) {
                                                                         .length -
                                                                     7):
                                                         'Tooth 1 Front : Retained root'
+                                                  });
+                                                  recordHistory.add(map = {
+                                                    'Dentist': user.displayName
                                                   });
                                                   documentReference.updateData({
                                                     'history': recordHistory

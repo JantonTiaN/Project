@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
+import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 
 class DentSuggestionScreen extends StatefulWidget {
   @override
@@ -9,6 +11,18 @@ class DentSuggestionScreen extends StatefulWidget {
 
 class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
   TextEditingController suggestion = TextEditingController();
+  void initState() {
+    super.initState();
+    getDentistName();
+  }
+
+  String dentistName;
+  DateTime _dateTime = DateTime.now();
+  getDentistName() async {
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    return dentistName = user.displayName;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,7 +63,11 @@ class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
                           .document(uid)
                           .collection('Suggestion')
                           .document('suggestion')
-                          .updateData({'suggestion': suggestion.text});
+                          .updateData({
+                        'suggestion': suggestion.text,
+                        'dentists': dentistName,
+                        'date': _dateTime
+                      });
                     },
                     child: Container(
                       margin: EdgeInsets.only(bottom: 55),
