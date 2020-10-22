@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 
 class DentSuggestionScreen extends StatefulWidget {
@@ -65,7 +64,7 @@ class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
                           .document('suggestion')
                           .updateData({
                         'suggestion': suggestion.text,
-                        'dentists': dentistName,
+                        'dentist': dentistName,
                         'date': _dateTime
                       });
                     },

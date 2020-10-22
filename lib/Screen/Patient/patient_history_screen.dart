@@ -16,7 +16,7 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
   void initState() {
     super.initState();
     getClinic();
-    getData();
+    // getData();
   }
 
   Future<dynamic> getData() async {

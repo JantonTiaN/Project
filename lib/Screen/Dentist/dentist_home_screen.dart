@@ -19,7 +19,6 @@ class _DentHomeScreenState extends State<DentHomeScreen> {
   @override
   void initState() {
     super.initState();
-    final _selectedDay = DateTime.now();
   }
 
   // @override

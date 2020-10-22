@@ -2,19 +2,15 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
+import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
+
+import 'DentRecord/dentalRecord.dart';
 
 class PatientList extends StatefulWidget {
   final FirebaseUser user;
   PatientList(this.user, {Key key}) : super(key: key);
   @override
   _PatientListState createState() => _PatientListState();
-}
-
-String clinic;
-void patientClinic(String listClinic) {
-  clinic = listClinic;
-  getClinicFromList(clinic);
 }
 
 class _PatientListState extends State<PatientList> {
@@ -49,6 +45,7 @@ class _PatientListState extends State<PatientList> {
   void initState() {
     super.initState();
     _getPatient();
+    getClinic();
   }
 
   @override

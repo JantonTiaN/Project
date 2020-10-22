@@ -2,16 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/constants.dart';
+import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 
 class DentailHistoryTooth1Card extends StatefulWidget {
   @override
   _DentailHistoryTooth1CardState createState() =>
       _DentailHistoryTooth1CardState();
-}
-
-String clinic;
-void getClinicFromDetail(String detailClinic) {
-  clinic = detailClinic;
 }
 
 String tooth1Front,
@@ -148,6 +144,7 @@ class _DentailHistoryTooth1CardState extends State<DentailHistoryTooth1Card> {
     dentailHistoryTooth30Card();
     dentailHistoryTooth31Card();
     dentailHistoryTooth32Card();
+    getClinic();
   }
 
   @override
