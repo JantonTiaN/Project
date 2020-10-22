@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
+import 'package:fundee/Screen/Patient/suggestion_detail_screen.dart';
 
 class PatientSuggestion extends StatefulWidget {
   final FirebaseUser user;
@@ -101,28 +102,27 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                         ],
                       ),
                     )
-                  : Text('data')
-              // ListView.builder(
-              //     itemCount: _suggestion.length,
-              //     itemBuilder: (BuildContext ctx, int index) {
-              //       return GestureDetector(
-              //         onTap: () {
-              //           Navigator.push(
-              //               context,
-              //               MaterialPageRoute(
-              //                   builder: (context) =>
-              //                       SuggestionDetailScreen(
-              //                         suggestion: _suggestion[index]
-              //                             .data['suggestion'],
-              //                       )));
-              //         },
-              //         child: ListTile(
-              //           title: Text(_suggestion[index].data['date']),
-              //           subtitle: Text(_suggestion[index].data['dentists']),
-              //         ),
-              //       );
-              //     }),
-              ),
+                  : ListView.builder(
+                      itemCount: _suggestion.length,
+                      itemBuilder: (BuildContext ctx, int index) {
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        SuggestionDetailScreen(
+                                          suggestion: _suggestion[index]
+                                              .data['suggestion'],
+                                        )));
+                          },
+                          child: ListTile(
+                            title: Text(_suggestion[index].data['suggestion']),
+                            subtitle: Text(_suggestion[index].data['dentist']),
+                          ),
+                        );
+                      }),
+            ),
     );
   }
 
