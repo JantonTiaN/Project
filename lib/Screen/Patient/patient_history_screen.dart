@@ -40,7 +40,6 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // documentReference.get().then((value) => {data = value.data['history']});
     if (data == null) {
       return Scaffold(
           appBar: AppBar(
