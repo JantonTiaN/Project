@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 
 class PatientSuggestion extends StatefulWidget {
@@ -10,27 +11,120 @@ class PatientSuggestion extends StatefulWidget {
   _PatientSuggestionState createState() => _PatientSuggestionState();
 }
 
-String suggestion;
-String dentistName;
-Timestamp date;
-
 class _PatientSuggestionState extends State<PatientSuggestion> {
+  Firestore _firestore = Firestore.instance;
+  List<DocumentSnapshot> _suggestion = [];
+  bool _loadingSuggestion = true;
+
+  _getSuggestion() async {
+    Query q = _firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(clinic)
+        .document(clinic)
+        .collection('Patients')
+        .document(widget.user.uid)
+        .collection('Suggestion')
+        .orderBy('date');
+
+    setState(() {
+      _loadingSuggestion = true;
+    });
+
+    QuerySnapshot querySnapshot = await q.getDocuments();
+    _suggestion = querySnapshot.documents;
+
+    setState(() {
+      _loadingSuggestion = false;
+    });
+  }
+
   @override
   void initState() {
     super.initState();
+    _getSuggestion();
   }
-  // FirebaseUser user = FirebaseAuth.instance.currentUser();
 
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   getClinic();
-  //   suggestions();
-  //   print(clinic);
-  //   print(suggestion);
-  //   print(date);
-  //   print(dentistName);
-  // }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Suggestion'),
+        backgroundColor: Colors.blue[300],
+        automaticallyImplyLeading: false,
+      ),
+      body: _loadingSuggestion == true
+          ? Container(
+              child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SpinKitChasingDots(
+                    color: Colors.blue[100],
+                    size: 50,
+                  ),
+                  Text(
+                    'Loading',
+                    style: TextStyle(fontSize: 15, color: Colors.black),
+                  )
+                ],
+              ),
+            ))
+          : Container(
+              child: _suggestion.length == 0
+                  ? Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Image.asset(
+                            'assets/images/Logo/No-data.png',
+                            width: 150,
+                            height: 150,
+                          ),
+                          Text(
+                            'Sorry',
+                            style: TextStyle(
+                                fontFamily: 'Kanit',
+                                color: Colors.blue[300],
+                                fontSize: 25),
+                          ),
+                          Text(
+                            'You don\'t have any suggestion',
+                            style: TextStyle(
+                                fontFamily: 'Kanit',
+                                color: Colors.blue[300],
+                                fontSize: 16),
+                          ),
+                          // )
+                        ],
+                      ),
+                    )
+                  : Text('data')
+              // ListView.builder(
+              //     itemCount: _suggestion.length,
+              //     itemBuilder: (BuildContext ctx, int index) {
+              //       return GestureDetector(
+              //         onTap: () {
+              //           Navigator.push(
+              //               context,
+              //               MaterialPageRoute(
+              //                   builder: (context) =>
+              //                       SuggestionDetailScreen(
+              //                         suggestion: _suggestion[index]
+              //                             .data['suggestion'],
+              //                       )));
+              //         },
+              //         child: ListTile(
+              //           title: Text(_suggestion[index].data['date']),
+              //           subtitle: Text(_suggestion[index].data['dentists']),
+              //         ),
+              //       );
+              //     }),
+              ),
+    );
+  }
 
   // suggestions() {
   //   Firestore firestore = Firestore.instance;
@@ -51,117 +145,8 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
   //             dentistName = value.data['dentist'],
   //             date = value.data['date']
   //           });
+  //   print(suggestion);
+  //   print(dentistName);
+  //   print(date);
   // }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text('Suggestion'),
-          backgroundColor: Colors.blue[300],
-          automaticallyImplyLeading: false,
-        ),
-        body:
-            // StreamBuilder(
-            //   stream: Firestore.instance
-            //       .collection('Account')
-            //       .document('account')
-            //       .collection('Patients')
-            //       .document(widget.user.uid)
-            //       .collection('Suggestion')
-            //       // .document('suggesion')
-            //       .snapshots(),
-            //   builder: (context, snapshot) {
-            //     if (!snapshot.hasData) {
-            //       return Center(
-            //         child: Padding(
-            //           padding: const EdgeInsets.only(top: 100),
-            //           child: Column(
-            //             children: <Widget>[
-            //               CircularProgressIndicator(),
-            //               Text('Loading...'),
-            //             ],
-            //           ),
-            //         ),
-            //       );
-            //     } else {
-            //       return ListView.builder(
-            //         itemCount: snapshot.data.documents.length,
-            //         itemBuilder: (context, index) {
-            //           return Padding(
-            //             padding: const EdgeInsets.all(8.0),
-            //             child: Card(
-            //               child: Container(
-            //                 child: InkWell(
-            //                   onTap: () {},
-            //                   child: Column(
-            //                     children: <Widget>[
-            //                       ListTile(
-            //                         title: Text(snapshot
-            //                             .data.documents[index].data["suggestion"]),
-            //                       ),
-            //                     ],
-            //                   ),
-            //                 ),
-            //               ),
-            //             ),
-            //           );
-            //         },
-            //       );
-            //     }
-            //   },
-            // ),
-            //PREPARING FOR ADD IF FUNCTION !!!
-            Center(
-          child: Column(
-            children: <Widget>[
-              Padding(
-                padding: const EdgeInsets.only(top: 120),
-                child: Image.asset(
-                  'assets/images/Logo/No-data.png',
-                  width: 150,
-                  height: 150,
-                ),
-              ),
-              // Padding(
-              //   padding: const EdgeInsets.only(top: 100),
-              // child:
-              Text(
-                'Oops',
-                style: TextStyle(
-                    fontFamily: 'Kanit', color: Colors.blue[300], fontSize: 25),
-              ),
-              Text(
-                'You don\'t have suggestion',
-                style: TextStyle(
-                    fontFamily: 'Kanit', color: Colors.blue[300], fontSize: 16),
-              ),
-            ],
-          ),
-        ));
-  }
-
-  suggestions() {
-    Firestore firestore = Firestore.instance;
-    firestore
-        .collection('FunD')
-        .document('funD')
-        .collection('Clinic')
-        .document('clinic')
-        .collection(clinic)
-        .document(clinic)
-        .collection('Patients')
-        .document(widget.user.uid)
-        .collection('Suggestion')
-        .document('suggestion')
-        .get()
-        .then((value) => {
-              suggestion = value.data['suggestion'],
-              dentistName = value.data['dentist'],
-              date = value.data['date']
-            });
-    print(suggestion);
-    print(dentistName);
-    print(date);
-  }
 }
