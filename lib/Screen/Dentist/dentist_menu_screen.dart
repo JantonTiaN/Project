@@ -9,7 +9,6 @@ import 'package:fundee/Screen/Dentist/dentist_profile_screen.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'patientList.dart';
-import 'package:fundee/Screen/Dentist/dentist_edit_profile.dart';
 import 'package:fundee/Screen/Dentist/patientList.dart';
 
 class DentMenuScreen extends StatefulWidget {
@@ -20,10 +19,12 @@ class DentMenuScreen extends StatefulWidget {
   _DentMenuScreenState createState() => _DentMenuScreenState();
 }
 
+String clinic;
+String dentistName;
+
 getClinic() async {
   FirebaseUser user = await FirebaseAuth.instance.currentUser();
   Firestore firestore = Firestore.instance;
-  String dentistName = user.displayName;
   return await firestore
       .collection('FunD')
       .document('funD')
@@ -34,8 +35,7 @@ getClinic() async {
       .get()
       .then((value) {
     clinic = value.data['clinic'];
-    editeDentist(clinic);
-    patientClinic(clinic);
+    dentistName = value.data['fullName'];
   });
 }
 

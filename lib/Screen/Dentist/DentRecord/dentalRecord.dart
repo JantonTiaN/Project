@@ -15,31 +15,10 @@ class DentalRecord extends StatefulWidget {
   _DentalRecordState createState() => _DentalRecordState();
 }
 
-String clinic;
-void getClinicFromList(String getClinic) {
-  clinic = getClinic;
-}
-
 class _DentalRecordState extends State<DentalRecord> {
   void initState() {
     super.initState();
-    getClinicFromRecord(clinic);
     suggestionuid(widget.uid);
-  }
-
-  getClinic() async {
-    Firestore firestore = Firestore.instance;
-    await firestore
-        .collection('FunD')
-        .document('funD')
-        .collection('AllUsers')
-        .document('allUsers')
-        .collection('Patients')
-        .document(widget.uid)
-        .get()
-        .then((value) {
-      clinic = value.data['clinic'];
-    });
   }
 
   @override

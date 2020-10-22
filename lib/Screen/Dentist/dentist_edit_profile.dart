@@ -6,17 +6,13 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 
 class DentEditProfile extends StatefulWidget {
   final FirebaseUser user;
   DentEditProfile(this.user, {Key key}) : super(key: key);
   @override
   _DentEditProfileState createState() => _DentEditProfileState();
-}
-
-String dentistClinic;
-void editeDentist(String clinic) {
-  dentistClinic = clinic;
 }
 
 class _DentEditProfileState extends State<DentEditProfile> {
@@ -28,7 +24,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
   @override
   void initState() {
     super.initState();
-    // _nameController.text = widget.user.displayName.toString();
+    getClinic();
   }
 
   Future<void> uploadPic(String _name, String _email, String _url) async {
@@ -53,8 +49,8 @@ class _DentEditProfileState extends State<DentEditProfile> {
         .document('funD')
         .collection('Clinic')
         .document('clinic')
-        .collection(dentistClinic)
-        .document(dentistClinic)
+        .collection(clinic)
+        .document(clinic)
         .collection('Dentists')
         .document(widget.user.uid);
     Map<String, dynamic> map = Map();

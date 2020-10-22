@@ -2,9 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/dentist_suggestion_screen.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/widgets/detail_history_card.dart';
 
 class PatientSuggestion extends StatefulWidget {
   final FirebaseUser user;
@@ -13,37 +10,48 @@ class PatientSuggestion extends StatefulWidget {
   _PatientSuggestionState createState() => _PatientSuggestionState();
 }
 
-class _PatientSuggestionState extends State<PatientSuggestion> {
-  // FirebaseUser user = FirebaseAuth.instance.currentUser();
+String suggestion;
+String dentistName;
+Timestamp date;
 
+class _PatientSuggestionState extends State<PatientSuggestion> {
   @override
   void initState() {
     super.initState();
-    getClinic();
   }
+  // FirebaseUser user = FirebaseAuth.instance.currentUser();
 
-  String suggestion;
-  suggestions() {
-    Firestore firestore = Firestore.instance;
-    firestore
-        .collection('FunD')
-        .document('funD')
-        .collection('Clinic')
-        .document('clinic')
-        .collection(patientClinic)
-        .document(patientClinic)
-        .collection('Patients')
-        .document(widget.user.uid)
-        .collection('Suggestion')
-        .document('suggestion')
-        .get()
-        .then((value) => {
-              if (value.data['suggestion'] == null)
-                {suggestion = value.data['suggestion']}
-              else
-                {suggestion = 'No suggestion !'}
-            });
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   getClinic();
+  //   suggestions();
+  //   print(clinic);
+  //   print(suggestion);
+  //   print(date);
+  //   print(dentistName);
+  // }
+
+  // suggestions() {
+  //   Firestore firestore = Firestore.instance;
+  //   firestore
+  //       .collection('FunD')
+  //       .document('funD')
+  //       .collection('Clinic')
+  //       .document('clinic')
+  //       .collection(clinic)
+  //       .document(clinic)
+  //       .collection('Patients')
+  //       .document(widget.user.uid)
+  //       .collection('Suggestion')
+  //       .document('suggestion')
+  //       .get()
+  //       .then((value) => {
+  //             suggestion = value.data['suggestion'],
+  //             dentistName = value.data['dentist'],
+  //             date = value.data['date']
+  //           });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -128,9 +136,32 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                 style: TextStyle(
                     fontFamily: 'Kanit', color: Colors.blue[300], fontSize: 16),
               ),
-              // )
             ],
           ),
         ));
+  }
+
+  suggestions() {
+    Firestore firestore = Firestore.instance;
+    firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(clinic)
+        .document(clinic)
+        .collection('Patients')
+        .document(widget.user.uid)
+        .collection('Suggestion')
+        .document('suggestion')
+        .get()
+        .then((value) => {
+              suggestion = value.data['suggestion'],
+              dentistName = value.data['dentist'],
+              date = value.data['date']
+            });
+    print(suggestion);
+    print(dentistName);
+    print(date);
   }
 }

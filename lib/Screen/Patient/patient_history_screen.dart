@@ -16,42 +16,30 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
   void initState() {
     super.initState();
     getClinic();
-    getData();
+    // getData();
   }
 
-  Future<dynamic> getData() async {
-    final DocumentReference document = Firestore.instance
-        .collection('FunD')
-        .document('funD')
-        .collection('Clinic')
-        .document('clinic')
-        .collection(patientClinic)
-        .document(patientClinic)
-        .collection('Patients')
-        .document(widget.user.uid)
-        .collection('History')
-        .document('history');
-    await document.get().then<dynamic>((DocumentSnapshot snapshot) async {
-      setState(() {
-        data = snapshot.data;
-      });
-    });
-  }
+  // Future<dynamic> getData() async {
+  //   final DocumentReference document = Firestore.instance
+  //       .collection('FunD')
+  //       .document('funD')
+  //       .collection('Clinic')
+  //       .document('clinic')
+  //       .collection(clinic)
+  //       .document(clinic)
+  //       .collection('Patients')
+  //       .document(widget.user.uid)
+  //       .collection('History')
+  //       .document('history');
+  //   await document.get().then<dynamic>((DocumentSnapshot snapshot) async {
+  //     setState(() {
+  //       data = snapshot.data;
+  //     });
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
-    Firestore firestore = Firestore.instance;
-    DocumentReference documentReference = firestore
-        .collection('FunD')
-        .document('funD')
-        .collection('Clinic')
-        .document('clinic')
-        .collection(patientClinic)
-        .document(patientClinic)
-        .collection('Patients')
-        .document(widget.user.uid)
-        .collection('History')
-        .document('history');
     // documentReference.get().then((value) => {data = value.data['history']});
     if (data == null) {
       return Scaffold(
@@ -108,8 +96,8 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
                       .document('funD')
                       .collection('Clinic')
                       .document('clinic')
-                      .collection(patientClinic)
-                      .document(patientClinic)
+                      .collection(clinic)
+                      .document(clinic)
                       .collection('Patients')
                       .document(widget.user.uid)
                       .collection('History')
