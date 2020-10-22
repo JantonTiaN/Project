@@ -11,6 +11,6 @@ class SuggestionDetailScreen extends StatefulWidget {
 class _SuggestionDetailScreenState extends State<SuggestionDetailScreen> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold();
   }
 }
