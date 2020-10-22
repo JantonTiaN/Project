@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'package:fundee/Screen/Patient/patient_show_sug.dart';
 
 class PatientSuggestion extends StatefulWidget {
@@ -14,6 +15,7 @@ class PatientSuggestion extends StatefulWidget {
 String clinic;
 void patientClinic(String listClinic) {
   clinic = listClinic;
+  getClinicFromList(clinic);
 }
 
 class _PatientSuggestionState extends State<PatientSuggestion> {
@@ -118,11 +120,6 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                                         SuggestionDetailScreen()));
                           },
                           child: ListTile(
-                            // leading: CircleAvatar(
-                            //     child: ClipOval(
-                            //   child: Image.network(
-                            //       _patient[index].data['pathImage']),
-                            // )),
                             title: Text(_suggestion[index].data['suggestion']),
                             // subtitle: Text(_patient[index].data['date']),
                           ),

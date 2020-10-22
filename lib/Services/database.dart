@@ -84,7 +84,7 @@ class PatientDatabase {
           .collection('Patients')
           .document(user.uid)
           .collection('Suggestion')
-          .document('suggesion')
+          .document('suggestion')
           .setData({});
       userUpdateInfo.displayName = patient.patientFullName;
       userUpdateInfo.photoUrl =
@@ -306,7 +306,7 @@ class PatientWithFBAndGGDatabase {
           .collection('Patients')
           .document(user.uid)
           .collection('Suggestion')
-          .document('suggesion')
+          .document('suggestion')
           .setData({});
       retVal = 'success';
     } catch (e) {

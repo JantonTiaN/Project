@@ -39,12 +39,16 @@ class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
                       Navigator.pop(context);
                       Firestore firestore = Firestore.instance;
                       firestore
-                          .collection('Account')
-                          .document('account')
+                          .collection('FunD')
+                          .document('funD')
+                          .collection('Clinic')
+                          .document('clinic')
+                          .collection(clinic)
+                          .document(clinic)
                           .collection('Patients')
                           .document(uid)
                           .collection('Suggestion')
-                          .document('suggesion')
+                          .document('suggestion')
                           .updateData({'suggestion': suggestion.text});
                     },
                     child: Container(

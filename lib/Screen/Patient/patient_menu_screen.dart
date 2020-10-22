@@ -22,11 +22,27 @@ class PatientMenuScreen extends StatefulWidget {
   _PatientMenuScreenState createState() => _PatientMenuScreenState();
 }
 
+String patientClinic;
+getClinic() async {
+  Firestore firestore = Firestore.instance;
+  FirebaseUser user = await FirebaseAuth.instance.currentUser();
+  return await firestore
+      .collection('FunD')
+      .document('funD')
+      .collection('AllUsers')
+      .document('allUsers')
+      .collection('Patients')
+      .document(user.uid)
+      .get()
+      .then((value) {
+    patientClinic = value.data['clinic'];
+  });
+}
+
 class _PatientMenuScreenState extends State<PatientMenuScreen> {
   final FacebookLogin _facebookLogin = FacebookLogin();
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  String patientClinic;
 
   int _selectPage = 0;
 
@@ -34,25 +50,6 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
   void initState() {
     super.initState();
     getClinic();
-  }
-
-  getClinic() async {
-    Firestore firestore = Firestore.instance;
-    return await firestore
-        .collection('FunD')
-        .document('funD')
-        .collection('AllUsers')
-        .document('allUsers')
-        .collection('Patients')
-        .getDocuments()
-        .then((value) {
-      if (value.documents.length > 0) {
-        patientClinic = value.documents[0].data['clinic'];
-        print(patientClinic);
-      } else {
-        print("Not Found Clinic !!");
-      }
-    });
   }
 
   @override
@@ -105,7 +102,7 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
                 size: 23,
               ),
               title: Text(
-                "History",
+                'History',
               )),
           BubbleBottomBarItem(
               backgroundColor: Colors.blue[300],

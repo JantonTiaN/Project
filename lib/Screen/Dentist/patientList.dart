@@ -15,6 +15,7 @@ class PatientList extends StatefulWidget {
 String clinic;
 void patientClinic(String listClinic) {
   clinic = listClinic;
+  getClinicFromList(clinic);
 }
 
 class _PatientListState extends State<PatientList> {
@@ -114,7 +115,7 @@ class _PatientListState extends State<PatientList> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => DentalRecord(
-                                          uid: uid,
+                                          uid: _patient[index].data['uid'],
                                           fullname:
                                               _patient[index].data['fullName'],
                                         )));
