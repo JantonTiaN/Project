@@ -12,9 +12,13 @@ class PatientHomeScreen extends StatefulWidget {
 class _PatientHomeScreenState extends State<PatientHomeScreen> {
   CalendarController _calendarController = CalendarController();
   CalendarFormat _calendarFormat = CalendarFormat.week;
-  Map<DateTime, List> _events;
-  List _selectedEvents;
-  AnimationController _animationController;
+  Map<DateTime, List<dynamic>> _events;
+
+  @override
+  void initState() {
+    super.initState();
+    _events = {};
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,6 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
       body: Container(
         // padding: EdgeInsets.symmetric(vertical: 30),
         width: double.infinity,
-        // color: bBackgroundColor,
         decoration: BoxDecoration(
             gradient: LinearGradient(begin: Alignment.topCenter, colors: [
           Colors.blue[800],
@@ -73,7 +76,7 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                       calendarStyle: CalendarStyle(
                           todayColor: Colors.blue[200],
                           selectedColor: Colors.blue[600]),
-                    )
+                    ),
                   ],
                 ),
               ),
@@ -81,6 +84,12 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
           ],
         ),
       ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {},
+      ),
     );
   }
 }
+
+showAddDialog() {}

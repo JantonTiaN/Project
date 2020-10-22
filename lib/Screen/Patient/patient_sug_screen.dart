@@ -2,20 +2,14 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
+import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
+import 'package:fundee/Screen/Patient/suggestion_detail_screen.dart';
 
 class PatientSuggestion extends StatefulWidget {
   final FirebaseUser user;
   PatientSuggestion(this.user, {Key key}) : super(key: key);
   @override
   _PatientSuggestionState createState() => _PatientSuggestionState();
-}
-
-String clinic;
-void patientClinic(String listClinic) {
-  clinic = listClinic;
-  getClinicFromList(clinic);
 }
 
 class _PatientSuggestionState extends State<PatientSuggestion> {
@@ -108,28 +102,51 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                         ],
                       ),
                     )
-                  : Text('data')
-              // ListView.builder(
-              //     itemCount: _suggestion.length,
-              //     itemBuilder: (BuildContext ctx, int index) {
-              //       return GestureDetector(
-              //         onTap: () {
-              //           Navigator.push(
-              //               context,
-              //               MaterialPageRoute(
-              //                   builder: (context) =>
-              //                       SuggestionDetailScreen(
-              //                         suggestion: _suggestion[index]
-              //                             .data['suggestion'],
-              //                       )));
-              //         },
-              //         child: ListTile(
-              //           title: Text(_suggestion[index].data['date']),
-              //           subtitle: Text(_suggestion[index].data['dentists']),
-              //         ),
-              //       );
-              //     }),
-              ),
+                  : ListView.builder(
+                      itemCount: _suggestion.length,
+                      itemBuilder: (BuildContext ctx, int index) {
+                        return GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        SuggestionDetailScreen(
+                                          suggestion: _suggestion[index]
+                                              .data['suggestion'],
+                                        )));
+                          },
+                          child: ListTile(
+                            title: Text(_suggestion[index].data['suggestion']),
+                            subtitle: Text(_suggestion[index].data['dentist']),
+                          ),
+                        );
+                      }),
+            ),
     );
   }
+
+  // suggestions() {
+  //   Firestore firestore = Firestore.instance;
+  //   firestore
+  //       .collection('FunD')
+  //       .document('funD')
+  //       .collection('Clinic')
+  //       .document('clinic')
+  //       .collection(clinic)
+  //       .document(clinic)
+  //       .collection('Patients')
+  //       .document(widget.user.uid)
+  //       .collection('Suggestion')
+  //       .document('suggestion')
+  //       .get()
+  //       .then((value) => {
+  //             suggestion = value.data['suggestion'],
+  //             dentistName = value.data['dentist'],
+  //             date = value.data['date']
+  //           });
+  //   print(suggestion);
+  //   print(dentistName);
+  //   print(date);
+  // }
 }
