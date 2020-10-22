@@ -3,7 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
-import 'package:fundee/Screen/Patient/patient_show_sug.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
 
 class PatientSuggestion extends StatefulWidget {
   final FirebaseUser user;
@@ -33,8 +33,8 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
         .document(clinic)
         .collection('Patients')
         .document(widget.user.uid)
-        .collection('Suggestion');
-    // .orderBy('date');
+        .collection('Suggestion')
+        .orderBy('date');
 
     setState(() {
       _loadingSuggestion = true;
@@ -108,24 +108,28 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                         ],
                       ),
                     )
-                  : ListView.builder(
-                      itemCount: _suggestion.length,
-                      itemBuilder: (BuildContext ctx, int index) {
-                        return GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        SuggestionDetailScreen()));
-                          },
-                          child: ListTile(
-                            title: Text(_suggestion[index].data['suggestion']),
-                            // subtitle: Text(_patient[index].data['date']),
-                          ),
-                        );
-                      }),
-            ),
+                  : Text('data')
+              // ListView.builder(
+              //     itemCount: _suggestion.length,
+              //     itemBuilder: (BuildContext ctx, int index) {
+              //       return GestureDetector(
+              //         onTap: () {
+              //           Navigator.push(
+              //               context,
+              //               MaterialPageRoute(
+              //                   builder: (context) =>
+              //                       SuggestionDetailScreen(
+              //                         suggestion: _suggestion[index]
+              //                             .data['suggestion'],
+              //                       )));
+              //         },
+              //         child: ListTile(
+              //           title: Text(_suggestion[index].data['date']),
+              //           subtitle: Text(_suggestion[index].data['dentists']),
+              //         ),
+              //       );
+              //     }),
+              ),
     );
   }
 }

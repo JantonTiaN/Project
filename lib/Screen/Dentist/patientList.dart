@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/dental_detail_screen.dart';
 
 class PatientList extends StatefulWidget {
   final FirebaseUser user;

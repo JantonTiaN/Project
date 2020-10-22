@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 class SuggestionDetailScreen extends StatefulWidget {
+  final String suggestion;
+  SuggestionDetailScreen({Key key, @required this.suggestion})
+      : super(key: key);
   @override
   _SuggestionDetailScreenState createState() => _SuggestionDetailScreenState();
 }
