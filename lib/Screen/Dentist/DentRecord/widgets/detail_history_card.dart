@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/card_detail_screen.dart';
 import 'package:fundee/Screen/constants.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 
@@ -242,56 +243,61 @@ dentailHistoryTooth1Card() {
   if (tooth1Front != null) {
     if (tooth1Middle != null) {
       if (tooth1Back != null) {
-        return Container(
-          height: 300,
-          width: 200,
-          decoration: BoxDecoration(
-            color: bCardColor.withOpacity(0.6),
-            borderRadius: BorderRadius.circular(12),
-          ),
+        return GestureDetector(
+          onTap: () {},
           child: Container(
-            margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(
-                  'Front : ' +
-                      tooth1Front
-                          .toString()
-                          .substring(1, tooth1Front.length - 1),
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600),
-                ),
-                Text('                            '),
-                Text(
-                  'Middle : ' +
-                      tooth1Middle
-                          .toString()
-                          .substring(1, tooth1Middle.length - 1),
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600),
-                ),
-                Text('                            '),
-                Text(
-                  'Back : ' +
-                      tooth1Back.toString().substring(1, tooth1Back.length - 1),
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w600),
-                ),
-                // Text(
-                //   "Date: 22/09/20",
-                //   style: TextStyle(
-                //     color: Colors.white,
-                //     fontSize: 14,
-                //   ),
-                // ),
-              ],
+            height: 300,
+            width: 200,
+            decoration: BoxDecoration(
+              color: bCardColor.withOpacity(0.6),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Container(
+              margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    'Front : ' +
+                        tooth1Front
+                            .toString()
+                            .substring(1, tooth1Front.length - 1),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  Text('                            '),
+                  Text(
+                    'Middle : ' +
+                        tooth1Middle
+                            .toString()
+                            .substring(1, tooth1Middle.length - 1),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  Text('                            '),
+                  Text(
+                    'Back : ' +
+                        tooth1Back
+                            .toString()
+                            .substring(1, tooth1Back.length - 1),
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w600),
+                  ),
+                  // Text(
+                  //   "Date: 22/09/20",
+                  //   style: TextStyle(
+                  //     color: Colors.white,
+                  //     fontSize: 14,
+                  //   ),
+                  // ),
+                ],
+              ),
             ),
           ),
         );

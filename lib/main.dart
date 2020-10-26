@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/card_detail_screen.dart';
 import 'package:fundee/Screen/Dentist/Signup/dentist_signup_screen.dart';
 import 'package:fundee/Screen/welcome_screen.dart';
 import 'package:fundee/States/current_user.dart';
@@ -37,8 +38,8 @@ class MyApp extends StatelessWidget {
             color: Colors.white.withOpacity(.2),
           ))),
         ),
-        // home: FbDSignupScreen(),
-        initialRoute: "OurRoot",
+        home: CardDetailScreen(),
+        // initialRoute: "OurRoot",
         routes: {
           'SignIn': (context) => SignInScreen(),
           'PSignUp': (context) => PatientSignUpScreen(),
