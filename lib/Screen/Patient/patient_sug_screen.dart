@@ -125,28 +125,4 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
             ),
     );
   }
-
-  // suggestions() {
-  //   Firestore firestore = Firestore.instance;
-  //   firestore
-  //       .collection('FunD')
-  //       .document('funD')
-  //       .collection('Clinic')
-  //       .document('clinic')
-  //       .collection(clinic)
-  //       .document(clinic)
-  //       .collection('Patients')
-  //       .document(widget.user.uid)
-  //       .collection('Suggestion')
-  //       .document('suggestion')
-  //       .get()
-  //       .then((value) => {
-  //             suggestion = value.data['suggestion'],
-  //             dentistName = value.data['dentist'],
-  //             date = value.data['date']
-  //           });
-  //   print(suggestion);
-  //   print(dentistName);
-  //   print(date);
-  // }
 }

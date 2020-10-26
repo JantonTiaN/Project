@@ -150,9 +150,9 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
         // if (snapshot.data['tooth 1 Front'] != null) {
         tooth1Front = Text('history = ${snapshot.data['history']}').toString();
         // }
-        // if (snapshot.data['tooth 1 Middle'] != null) {
+        // if (snapshot.data['tooth 1 Back'] != null) {
         // tooth1Middle =
-        //     Text('Tooth 1 Middle = ${snapshot.data['tooth 1 Middle']}')
+        //     Text('Tooth 1 Back = ${snapshot.data['tooth 1 Back']}')
         //         .toString();
         // }
         // if (snapshot.data['tooth 1 Back'] != null) {
