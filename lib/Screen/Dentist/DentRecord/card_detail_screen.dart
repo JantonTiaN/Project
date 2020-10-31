@@ -46,11 +46,32 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
           actionExtentRatio: 0.25,
           child: Container(
             color: Colors.white,
-            child: ListTile(
-              title: Text('Front'),
-              subtitle: Text('Case'),
-              isThreeLine: true,
+            child: Card(
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('Front: (ใส่ชื่ออาการ)'),
+                        Text('Date: '),
+                        Text('Dentist: ')
+                      ],
+                    ),
+                  )
+                  // Text('Front: Case name'
+                  //     '\nDate: 01/11/63'
+                  //     '\nDentist name'),
+                ],
+              ),
             ),
+            // child: ListTile(
+            //   title: Text('Front: Case name'),
+            //   subtitle: Text('Date: 01/11/63'),
+            //   isThreeLine: true,
+            // ),
           ),
           actions: <Widget>[
             IconSlideAction(
