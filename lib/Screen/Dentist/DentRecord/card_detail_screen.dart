@@ -49,13 +49,18 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
             child: Card(
               child: Row(
                 children: [
+                  Text(
+                    'Front',
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.blue),
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Front: (ใส่ชื่ออาการ)'),
+                        Text('Case Name'),
                         Text('Date: '),
                         Text('Dentist: ')
                       ],
