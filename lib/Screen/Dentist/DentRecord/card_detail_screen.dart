@@ -49,6 +49,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
             child: ListTile(
               title: Text('Front'),
               subtitle: Text('Case'),
+              isThreeLine: true,
             ),
           ),
           actions: <Widget>[
