@@ -359,7 +359,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Text(
-                  "คลินิกที่ทำงานประจำ",
+                  "Clinic",
                   style: TextStyle(
                       color: Colors.white,
                       fontFamily: 'kanit',
