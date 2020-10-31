@@ -38,8 +38,8 @@ class MyApp extends StatelessWidget {
             color: Colors.white.withOpacity(.2),
           ))),
         ),
-        home: CardDetailScreen(),
-        // initialRoute: "OurRoot",
+        // home: CardDetailScreen(),
+        initialRoute: "OurRoot",
         routes: {
           'SignIn': (context) => SignInScreen(),
           'PSignUp': (context) => PatientSignUpScreen(),
