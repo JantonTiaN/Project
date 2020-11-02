@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/card_detail_screen.dart';
 import 'package:fundee/Screen/constants.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 
 class DentailHistoryTooth1Card extends StatefulWidget {
   @override
@@ -113,38 +114,38 @@ class _DentailHistoryTooth1CardState extends State<DentailHistoryTooth1Card> {
   void initState() {
     super.initState();
     // readAllData();
-    dentailHistoryTooth1Card();
-    dentailHistoryTooth2Card();
-    dentailHistoryTooth3Card();
-    dentailHistoryTooth4Card();
-    dentailHistoryTooth5Card();
-    dentailHistoryTooth6Card();
-    dentailHistoryTooth7Card();
-    dentailHistoryTooth8Card();
-    dentailHistoryTooth9Card();
-    dentailHistoryTooth10Card();
-    dentailHistoryTooth11Card();
-    dentailHistoryTooth12Card();
-    dentailHistoryTooth13Card();
-    dentailHistoryTooth14Card();
-    dentailHistoryTooth15Card();
-    dentailHistoryTooth16Card();
-    dentailHistoryTooth17Card();
-    dentailHistoryTooth18Card();
-    dentailHistoryTooth19Card();
-    dentailHistoryTooth20Card();
-    dentailHistoryTooth21Card();
-    dentailHistoryTooth22Card();
-    dentailHistoryTooth23Card();
-    dentailHistoryTooth24Card();
-    dentailHistoryTooth25Card();
-    dentailHistoryTooth26Card();
-    dentailHistoryTooth27Card();
-    dentailHistoryTooth28Card();
-    dentailHistoryTooth29Card();
-    dentailHistoryTooth30Card();
-    dentailHistoryTooth31Card();
-    dentailHistoryTooth32Card();
+    dentailHistoryTooth1Card(context);
+    dentailHistoryTooth2Card(context);
+    dentailHistoryTooth3Card(context);
+    dentailHistoryTooth4Card(context);
+    dentailHistoryTooth5Card(context);
+    dentailHistoryTooth6Card(context);
+    dentailHistoryTooth7Card(context);
+    dentailHistoryTooth8Card(context);
+    dentailHistoryTooth9Card(context);
+    dentailHistoryTooth10Card(context);
+    dentailHistoryTooth11Card(context);
+    dentailHistoryTooth12Card(context);
+    dentailHistoryTooth13Card(context);
+    dentailHistoryTooth14Card(context);
+    dentailHistoryTooth15Card(context);
+    dentailHistoryTooth16Card(context);
+    dentailHistoryTooth17Card(context);
+    dentailHistoryTooth18Card(context);
+    dentailHistoryTooth19Card(context);
+    dentailHistoryTooth20Card(context);
+    dentailHistoryTooth21Card(context);
+    dentailHistoryTooth22Card(context);
+    dentailHistoryTooth23Card(context);
+    dentailHistoryTooth24Card(context);
+    dentailHistoryTooth25Card(context);
+    dentailHistoryTooth26Card(context);
+    dentailHistoryTooth27Card(context);
+    dentailHistoryTooth28Card(context);
+    dentailHistoryTooth29Card(context);
+    dentailHistoryTooth30Card(context);
+    dentailHistoryTooth31Card(context);
+    dentailHistoryTooth32Card(context);
     getClinic();
   }
 
@@ -211,7 +212,7 @@ class _DentailHistoryTooth1CardState extends State<DentailHistoryTooth1Card> {
   }
 }
 
-dentailHistoryTooth1Card() {
+dentailHistoryTooth1Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -244,7 +245,6 @@ dentailHistoryTooth1Card() {
     if (tooth1Middle != null) {
       if (tooth1Back != null) {
         return GestureDetector(
-          onTap: () {},
           child: Container(
             height: 300,
             width: 200,
@@ -300,127 +300,246 @@ dentailHistoryTooth1Card() {
               ),
             ),
           ),
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+          },
         );
       }
-      return Container(
-        height: 300,
-        width: 200,
-        decoration: BoxDecoration(
-          color: bCardColor.withOpacity(0.6),
-          borderRadius: BorderRadius.circular(12),
-        ),
+      return GestureDetector(
         child: Container(
-          margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                'Front : ' +
-                    tooth1Front.toString().substring(1, tooth1Front.length - 1),
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-              ),
-              Text('                            '),
-              Text(
-                'Middle : ' +
-                    tooth1Middle
-                        .toString()
-                        .substring(1, tooth1Middle.length - 1),
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-              ),
-              // Text(
-              //   "Date: 22/09/20",
-              //   style: TextStyle(
-              //     color: Colors.white,
-              //     fontSize: 14,
-              //   ),
-              // ),
-            ],
+          height: 300,
+          width: 200,
+          decoration: BoxDecoration(
+            color: bCardColor.withOpacity(0.6),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Container(
+            margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Front : ' +
+                      tooth1Front
+                          .toString()
+                          .substring(1, tooth1Front.length - 1),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
+                ),
+                Text('                            '),
+                Text(
+                  'Middle : ' +
+                      tooth1Middle
+                          .toString()
+                          .substring(1, tooth1Middle.length - 1),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
+                ),
+                // Text(
+                //   "Date: 22/09/20",
+                //   style: TextStyle(
+                //     color: Colors.white,
+                //     fontSize: 14,
+                //   ),
+                // ),
+              ],
+            ),
           ),
         ),
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+        },
       );
     } else if (tooth1Back != null) {
-      return Container(
-        height: 300,
-        width: 200,
-        decoration: BoxDecoration(
-          color: bCardColor.withOpacity(0.6),
-          borderRadius: BorderRadius.circular(12),
-        ),
+      return GestureDetector(
         child: Container(
-          margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                'Front : ' +
-                    tooth1Front.toString().substring(1, tooth1Front.length - 1),
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-              ),
-              Text('                            '),
-              Text(
-                'Back : ' +
-                    tooth1Back.toString().substring(1, tooth1Back.length - 1),
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-              ),
-              // Text(
-              //   "Date: 22/09/20",
-              //   style: TextStyle(
-              //     color: Colors.white,
-              //     fontSize: 14,
-              //   ),
-              // ),
-            ],
+          height: 300,
+          width: 200,
+          decoration: BoxDecoration(
+            color: bCardColor.withOpacity(0.6),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Container(
+            margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Front : ' +
+                      tooth1Front
+                          .toString()
+                          .substring(1, tooth1Front.length - 1),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
+                ),
+                Text('                            '),
+                Text(
+                  'Back : ' +
+                      tooth1Back.toString().substring(1, tooth1Back.length - 1),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
+                ),
+                // Text(
+                //   "Date: 22/09/20",
+                //   style: TextStyle(
+                //     color: Colors.white,
+                //     fontSize: 14,
+                //   ),
+                // ),
+              ],
+            ),
           ),
         ),
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+        },
       );
     } else {
-      return Container(
-        height: 300,
-        width: 200,
-        decoration: BoxDecoration(
-          color: bCardColor.withOpacity(0.6),
-          borderRadius: BorderRadius.circular(12),
-        ),
+      return GestureDetector(
         child: Container(
-          margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                'Front : ' +
-                    tooth1Front.toString().substring(1, tooth1Front.length - 1),
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-              ),
-              // Text(
-              //   "Date: 22/09/20",
-              //   style: TextStyle(
-              //     color: Colors.white,
-              //     fontSize: 14,
-              //   ),
-              // ),
-            ],
+          height: 300,
+          width: 200,
+          decoration: BoxDecoration(
+            color: bCardColor.withOpacity(0.6),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Container(
+            margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Front : ' +
+                      tooth1Front
+                          .toString()
+                          .substring(1, tooth1Front.length - 1),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
+                ),
+                // Text(
+                //   "Date: 22/09/20",
+                //   style: TextStyle(
+                //     color: Colors.white,
+                //     fontSize: 14,
+                //   ),
+                // ),
+              ],
+            ),
           ),
         ),
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+        },
       );
     }
   } else if (tooth1Middle != null) {
     if (tooth1Back != null) {
-      return Container(
+      return GestureDetector(
+        child: Container(
+          height: 300,
+          width: 200,
+          decoration: BoxDecoration(
+            color: bCardColor.withOpacity(0.6),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Container(
+            margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Middle : ' +
+                      tooth1Middle
+                          .toString()
+                          .substring(1, tooth1Middle.length - 1),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
+                ),
+                Text('                            '),
+                Text(
+                  'Back : ' +
+                      tooth1Back.toString().substring(1, tooth1Back.length - 1),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
+                ),
+                // Text(
+                //   "Date: 22/09/20",
+                //   style: TextStyle(
+                //     color: Colors.white,
+                //     fontSize: 14,
+                //   ),
+                // ),
+              ],
+            ),
+          ),
+        ),
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+        },
+      );
+    } else {
+      return GestureDetector(
+        child: Container(
+          height: 300,
+          width: 200,
+          decoration: BoxDecoration(
+            color: bCardColor.withOpacity(0.6),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Container(
+            margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                Text(
+                  'Middle : ' +
+                      tooth1Middle
+                          .toString()
+                          .substring(1, tooth1Middle.length - 1),
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
+                ),
+                // Text(
+                //   "Date: 22/09/20",
+                //   style: TextStyle(
+                //     color: Colors.white,
+                //     fontSize: 14,
+                //   ),
+                // ),
+              ],
+            ),
+          ),
+        ),
+        onTap: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+        },
+      );
+    }
+  } else if (tooth1Back != null) {
+    return GestureDetector(
+      child: Container(
         height: 300,
         width: 200,
         decoration: BoxDecoration(
@@ -432,17 +551,6 @@ dentailHistoryTooth1Card() {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Text(
-                'Middle : ' +
-                    tooth1Middle
-                        .toString()
-                        .substring(1, tooth1Middle.length - 1),
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-              ),
-              Text('                            '),
               Text(
                 'Back : ' +
                     tooth1Back.toString().substring(1, tooth1Back.length - 1),
@@ -461,73 +569,11 @@ dentailHistoryTooth1Card() {
             ],
           ),
         ),
-      );
-    } else {
-      return Container(
-        height: 300,
-        width: 200,
-        decoration: BoxDecoration(
-          color: bCardColor.withOpacity(0.6),
-          borderRadius: BorderRadius.circular(12),
-        ),
-        child: Container(
-          margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                'Middle : ' +
-                    tooth1Middle
-                        .toString()
-                        .substring(1, tooth1Middle.length - 1),
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w600),
-              ),
-              // Text(
-              //   "Date: 22/09/20",
-              //   style: TextStyle(
-              //     color: Colors.white,
-              //     fontSize: 14,
-              //   ),
-              // ),
-            ],
-          ),
-        ),
-      );
-    }
-  } else if (tooth1Back != null) {
-    return Container(
-      height: 300,
-      width: 200,
-      decoration: BoxDecoration(
-        color: bCardColor.withOpacity(0.6),
-        borderRadius: BorderRadius.circular(12),
       ),
-      child: Container(
-        margin: EdgeInsets.fromLTRB(15, 15, 0, 0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              'Back : ' +
-                  tooth1Back.toString().substring(1, tooth1Back.length - 1),
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 16,
-                  fontWeight: FontWeight.w600),
-            ),
-            // Text(
-            //   "Date: 22/09/20",
-            //   style: TextStyle(
-            //     color: Colors.white,
-            //     fontSize: 14,
-            //   ),
-            // ),
-          ],
-        ),
-      ),
+      onTap: () {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+      },
     );
   }
   if (tooth1Front == null || tooth1Middle == null || tooth1Back == null) {
@@ -564,7 +610,7 @@ dentailHistoryTooth1Card() {
   }
 }
 
-dentailHistoryTooth2Card() {
+dentailHistoryTooth2Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -912,7 +958,7 @@ dentailHistoryTooth2Card() {
   }
 }
 
-dentailHistoryTooth3Card() {
+dentailHistoryTooth3Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -1260,7 +1306,7 @@ dentailHistoryTooth3Card() {
   }
 }
 
-dentailHistoryTooth4Card() {
+dentailHistoryTooth4Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -1608,7 +1654,7 @@ dentailHistoryTooth4Card() {
   }
 }
 
-dentailHistoryTooth5Card() {
+dentailHistoryTooth5Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -1956,7 +2002,7 @@ dentailHistoryTooth5Card() {
   }
 }
 
-dentailHistoryTooth6Card() {
+dentailHistoryTooth6Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -2304,7 +2350,7 @@ dentailHistoryTooth6Card() {
   }
 }
 
-dentailHistoryTooth7Card() {
+dentailHistoryTooth7Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -2652,7 +2698,7 @@ dentailHistoryTooth7Card() {
   }
 }
 
-dentailHistoryTooth8Card() {
+dentailHistoryTooth8Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -3000,7 +3046,7 @@ dentailHistoryTooth8Card() {
   }
 }
 
-dentailHistoryTooth9Card() {
+dentailHistoryTooth9Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -3348,7 +3394,7 @@ dentailHistoryTooth9Card() {
   }
 }
 
-dentailHistoryTooth10Card() {
+dentailHistoryTooth10Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -3704,7 +3750,7 @@ dentailHistoryTooth10Card() {
   }
 }
 
-dentailHistoryTooth11Card() {
+dentailHistoryTooth11Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -4060,7 +4106,7 @@ dentailHistoryTooth11Card() {
   }
 }
 
-dentailHistoryTooth12Card() {
+dentailHistoryTooth12Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -4416,7 +4462,7 @@ dentailHistoryTooth12Card() {
   }
 }
 
-dentailHistoryTooth13Card() {
+dentailHistoryTooth13Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -4772,7 +4818,7 @@ dentailHistoryTooth13Card() {
   }
 }
 
-dentailHistoryTooth14Card() {
+dentailHistoryTooth14Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -5128,7 +5174,7 @@ dentailHistoryTooth14Card() {
   }
 }
 
-dentailHistoryTooth15Card() {
+dentailHistoryTooth15Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -5484,7 +5530,7 @@ dentailHistoryTooth15Card() {
   }
 }
 
-dentailHistoryTooth16Card() {
+dentailHistoryTooth16Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -5840,7 +5886,7 @@ dentailHistoryTooth16Card() {
   }
 }
 
-dentailHistoryTooth17Card() {
+dentailHistoryTooth17Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -6196,7 +6242,7 @@ dentailHistoryTooth17Card() {
   }
 }
 
-dentailHistoryTooth18Card() {
+dentailHistoryTooth18Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -6552,7 +6598,7 @@ dentailHistoryTooth18Card() {
   }
 }
 
-dentailHistoryTooth19Card() {
+dentailHistoryTooth19Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -6908,7 +6954,7 @@ dentailHistoryTooth19Card() {
   }
 }
 
-dentailHistoryTooth20Card() {
+dentailHistoryTooth20Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -7264,7 +7310,7 @@ dentailHistoryTooth20Card() {
   }
 }
 
-dentailHistoryTooth21Card() {
+dentailHistoryTooth21Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -7620,7 +7666,7 @@ dentailHistoryTooth21Card() {
   }
 }
 
-dentailHistoryTooth22Card() {
+dentailHistoryTooth22Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -7976,7 +8022,7 @@ dentailHistoryTooth22Card() {
   }
 }
 
-dentailHistoryTooth23Card() {
+dentailHistoryTooth23Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -8332,7 +8378,7 @@ dentailHistoryTooth23Card() {
   }
 }
 
-dentailHistoryTooth24Card() {
+dentailHistoryTooth24Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -8688,7 +8734,7 @@ dentailHistoryTooth24Card() {
   }
 }
 
-dentailHistoryTooth25Card() {
+dentailHistoryTooth25Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -9044,7 +9090,7 @@ dentailHistoryTooth25Card() {
   }
 }
 
-dentailHistoryTooth26Card() {
+dentailHistoryTooth26Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -9400,7 +9446,7 @@ dentailHistoryTooth26Card() {
   }
 }
 
-dentailHistoryTooth27Card() {
+dentailHistoryTooth27Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -9756,7 +9802,7 @@ dentailHistoryTooth27Card() {
   }
 }
 
-dentailHistoryTooth28Card() {
+dentailHistoryTooth28Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -10112,7 +10158,7 @@ dentailHistoryTooth28Card() {
   }
 }
 
-dentailHistoryTooth29Card() {
+dentailHistoryTooth29Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -10468,7 +10514,7 @@ dentailHistoryTooth29Card() {
   }
 }
 
-dentailHistoryTooth30Card() {
+dentailHistoryTooth30Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -10824,7 +10870,7 @@ dentailHistoryTooth30Card() {
   }
 }
 
-dentailHistoryTooth31Card() {
+dentailHistoryTooth31Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
@@ -11180,7 +11226,7 @@ dentailHistoryTooth31Card() {
   }
 }
 
-dentailHistoryTooth32Card() {
+dentailHistoryTooth32Card(BuildContext context) {
   Firestore firestore = Firestore.instance;
   CollectionReference collectionReference = firestore
       .collection('FunD')
