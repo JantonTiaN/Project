@@ -105,6 +105,7 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                   : ListView.builder(
                       itemCount: _suggestion.length,
                       itemBuilder: (BuildContext ctx, int index) {
+                        print(_suggestion[index].data['suggestion']);
                         return GestureDetector(
                           onTap: () {
                             Navigator.push(
