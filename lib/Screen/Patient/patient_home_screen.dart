@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -10,14 +11,16 @@ class PatientHomeScreen extends StatefulWidget {
 }
 
 class _PatientHomeScreenState extends State<PatientHomeScreen> {
+  Firestore _firebase = Firestore.instance;
   CalendarController _calendarController = CalendarController();
   CalendarFormat _calendarFormat = CalendarFormat.week;
-  Map<DateTime, List<dynamic>> _events;
+  Map<DateTime, List<dynamic>> _events = {};
+  List<dynamic> _selectedEvents = [];
+  TextEditingController _eventController = TextEditingController();
 
   @override
   void initState() {
     super.initState();
-    _events = {};
   }
 
   @override
@@ -76,7 +79,15 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                       calendarStyle: CalendarStyle(
                           todayColor: Colors.blue[200],
                           selectedColor: Colors.blue[600]),
+                      onDaySelected: (date, events) {
+                        setState(() {
+                          _selectedEvents = events;
+                        });
+                      },
                     ),
+                    ..._selectedEvents.map((event) => ListTile(
+                          title: Text(event),
+                        ))
                   ],
                 ),
               ),
@@ -86,10 +97,37 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: () {},
+        onPressed: showAddDialog,
       ),
     );
   }
-}
 
-showAddDialog() {}
+  showAddDialog() {
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              content: TextField(
+                controller: _eventController,
+              ),
+              actions: <Widget>[
+                FlatButton(
+                    onPressed: () {
+                      if (_eventController.text.isEmpty) return;
+                      setState(() {
+                        if (_events[_calendarController.selectedDay] != null) {
+                          _events[_calendarController.selectedDay]
+                              .add(_eventController.text);
+                        } else {
+                          _events[_calendarController.selectedDay] = [
+                            _eventController.text
+                          ];
+                        }
+                        _eventController.clear();
+                        Navigator.pop(context);
+                      });
+                    },
+                    child: Text('Save'))
+              ],
+            ));
+  }
+}
