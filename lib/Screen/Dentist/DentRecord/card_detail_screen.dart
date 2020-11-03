@@ -1,5 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 
 class CardDetailScreen extends StatefulWidget {
   // final FirebaseUser user;
@@ -10,7 +12,26 @@ class CardDetailScreen extends StatefulWidget {
 
 class _CardDetailScreenState extends State<CardDetailScreen> {
   @override
+  void initState() {
+    super.initState();
+    getClinic();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    Firestore firestore = Firestore.instance;
+    DocumentReference documentReference = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(clinic)
+        .document(clinic)
+        .collection('Patients')
+        .document(uid)
+        .collection('DentalCase')
+        .document('dentalCase');
+    documentReference.get().then((value) => print(value.data));
     return Scaffold(
         appBar: AppBar(
           title: Text('Case Detail'),
@@ -96,4 +117,9 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
           ],
         ));
   }
+}
+
+String uid;
+void patientUid(String patientUid) {
+  uid = patientUid;
 }
