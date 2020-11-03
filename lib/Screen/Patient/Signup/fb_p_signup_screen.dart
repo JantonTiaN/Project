@@ -255,20 +255,49 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
                         ],
                       ),
                     ),
-                    Divider(
-                      color: Colors.blueGrey,
-                      indent: 20,
-                      endIndent: 20,
-                    ),
                     Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Text(
-                        "คลินิกที่เข้ารักษา",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'kanit',
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold),
+                      padding: const EdgeInsets.only(
+                          left: 20, right: 20, bottom: 20),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(right: 16),
+                            child: Icon(
+                              FontAwesomeIcons.clinicMedical,
+                              color: Colors.blue,
+                            ),
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(right: 20, left: 10),
+                            child: DropdownButton<String>(
+                              value: dropdownValue,
+                              // icon: Icon(Icons.arrow_downward),
+                              iconSize: 24,
+                              elevation: 16,
+                              style: TextStyle(
+                                  color: Colors.black54, fontFamily: 'kanit'),
+                              // underline: Container(color: Colors.grey),
+                              onChanged: (String newValue) {
+                                setState(() {
+                                  dropdownValue = newValue;
+                                });
+                              },
+                              items: <String>[
+                                'Clinic 1',
+                                'Clinic 2',
+                                'Clinic 3',
+                                'Clinic 4',
+                                'Clinic 5',
+                              ].map<DropdownMenuItem<String>>((String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value),
+                                );
+                              }).toList(),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                     Column(

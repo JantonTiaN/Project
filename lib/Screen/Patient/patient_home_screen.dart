@@ -108,6 +108,7 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
         builder: (context) => AlertDialog(
               content: TextField(
                 controller: _eventController,
+                decoration: InputDecoration(),
               ),
               actions: <Widget>[
                 FlatButton(

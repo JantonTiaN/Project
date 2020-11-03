@@ -264,7 +264,7 @@ class _GgPSignupScreenState extends State<GgPSignupScreen> {
                             padding: const EdgeInsets.only(right: 16),
                             child: Icon(
                               FontAwesomeIcons.clinicMedical,
-                              color: bPrimaryColor,
+                              color: Colors.blue,
                             ),
                           ),
                           Container(
