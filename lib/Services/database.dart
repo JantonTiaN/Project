@@ -71,6 +71,18 @@ class PatientDatabase {
           .document(patient.patientClinic)
           .collection('Patients')
           .document(user.uid)
+          .collection('Appointment')
+          .document('appointment')
+          .setData({});
+      await _firestore
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(patient.patientClinic)
+          .document(patient.patientClinic)
+          .collection('Patients')
+          .document(user.uid)
           .collection('History')
           .document('history')
           .setData({});
@@ -154,6 +166,18 @@ class DentistDatabase {
         'pathImage':
             'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208'
       });
+      await _firestore
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(dentist.dentistClinic)
+          .document(dentist.dentistClinic)
+          .collection('Dentists')
+          .document(user.uid)
+          .collection('Appointment')
+          .document('appointment')
+          .setData({});
       userUpdateInfo.photoUrl =
           'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208';
       userUpdateInfo.displayName = dentist.dentistFullname;
@@ -197,6 +221,18 @@ class DentistWithFBAndGGDatabase {
         'uid': user.uid,
         'clinic': dentist.dentistClinic,
       });
+      await _firestore
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(dentist.dentistClinic)
+          .document(dentist.dentistClinic)
+          .collection('Dentists')
+          .document(user.uid)
+          .collection('Appointment')
+          .document('appointment')
+          .setData({});
       await _firestore
           .collection('FunD')
           .document('funD')
@@ -283,6 +319,18 @@ class PatientWithFBAndGGDatabase {
           .document(user.uid)
           .collection('DentalCase')
           .document('dentalCase')
+          .setData({});
+      await _firestore
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(patient.patientClinic)
+          .document(patient.patientClinic)
+          .collection('Patients')
+          .document(user.uid)
+          .collection('Appointment')
+          .document('appointment')
           .setData({});
       await _firestore
           .collection('FunD')
