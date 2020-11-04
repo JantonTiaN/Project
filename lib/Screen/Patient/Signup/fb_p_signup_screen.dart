@@ -6,8 +6,6 @@ import 'package:fundee/States/current_user.dart';
 import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-
-import '../../signin_screen.dart';
 import '../patient_menu_screen.dart';
 
 class FbPSignupScreen extends StatefulWidget {

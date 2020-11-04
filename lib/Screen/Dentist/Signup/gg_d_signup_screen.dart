@@ -17,7 +17,6 @@ class GgDSignupScreen extends StatefulWidget {
 
 class _GgDSignupScreenState extends State<GgDSignupScreen> {
   DateTime _currentDate = new DateTime.now();
-  TextEditingController _fullnameController = TextEditingController();
   TextEditingController _telController = TextEditingController();
   TextEditingController _citizenidController = TextEditingController();
   TextEditingController _permissionController = TextEditingController();

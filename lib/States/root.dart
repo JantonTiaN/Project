@@ -19,7 +19,6 @@ class _OurRootState extends State<OurRoot> {
 
   @override
   void didChangeDependencies() async {
-    // TODO: implement didChangeDependencies
     super.didChangeDependencies();
 
     //get the state, check currentUser, set AuthStatus base on state

@@ -31,7 +31,13 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
         .document(uid)
         .collection('DentalCase')
         .document('dentalCase');
-    documentReference.get().then((value) => print(value.data));
+    documentReference.get().then((value) {
+      for (var i = 0; i < value.data['tooth 1 Front'].length; i++) {
+        print(value.data['tooth 1 Front'][i]['Case'].toString());
+        print(value.data['tooth 1 Front'][i]['Date'].toString());
+        print(value.data['tooth 1 Front'][i]['Dentist'].toString());
+      }
+    });
     return Scaffold(
         appBar: AppBar(
           title: Text('Case Detail'),
@@ -81,7 +87,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                       mainAxisSize: MainAxisSize.min,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('Case Name'),
+                        Text('Case Name: '),
                         Text('Date: '),
                         Text('Dentist: ')
                       ],

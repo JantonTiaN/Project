@@ -26,18 +26,16 @@ class _SignInScreenState extends State<SignInScreen> {
   String email = '';
   final FirebaseAuth _auth = FirebaseAuth.instance;
   GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
-  final FacebookLogin _facebookLogin = FacebookLogin();
-  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  // final FacebookLogin _facebookLogin = FacebookLogin();
+  // final GoogleSignIn _googleSignIn = GoogleSignIn();
 
   TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
-  bool _isLoading = false;
+  // bool _isLoading = false;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
-    // autologin();
   }
 
   @override

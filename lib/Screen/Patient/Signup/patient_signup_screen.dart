@@ -6,7 +6,6 @@ import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../../../font_awesome_flutter.dart';
 import '../../constants.dart';
-import '../../signin_screen.dart';
 import '../patient_menu_screen.dart';
 
 class PatientSignUpScreen extends StatefulWidget {

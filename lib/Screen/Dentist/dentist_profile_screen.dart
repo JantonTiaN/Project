@@ -1,7 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/widgets/detail_history_card.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_edit_profile.dart';

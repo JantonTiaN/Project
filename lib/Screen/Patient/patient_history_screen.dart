@@ -13,7 +13,6 @@ class PatientHistoryScreen extends StatefulWidget {
 }
 
 class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
-  Firestore _firestore = Firestore.instance;
   bool _loadingHistory = true;
 
   // Stream<History> _getHistory() {
