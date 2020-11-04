@@ -342,10 +342,11 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                         child: Container(
                       margin: EdgeInsets.only(right: 20, left: 10),
                       child: TextFormField(
-                        decoration: InputDecoration(
-                            hintText: "ใบอนุญาตประกอบวิชาชีพเลขที่"),
+                        decoration:
+                            InputDecoration(hintText: "Permission Number"),
                         keyboardType: TextInputType.number,
                         controller: _permissionController,
+                        inputFormatters: [LengthLimitingTextInputFormatter(5)],
                       ),
                     )),
                   ],
@@ -473,7 +474,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                                         )
                                       ],
                                     ));
-                          } else if (_permissionController.text.length != 5) {
+                          } else if (_permissionController.text.length > 5) {
                             showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(

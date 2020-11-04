@@ -42,11 +42,11 @@ class _DentHomeScreenState extends State<DentHomeScreen> {
             Padding(
               padding: EdgeInsets.all(30),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
                     "Your Plans Today",
                     style: TextStyle(color: Colors.white60, fontSize: 16),
-                    textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 5),
                   Text(
