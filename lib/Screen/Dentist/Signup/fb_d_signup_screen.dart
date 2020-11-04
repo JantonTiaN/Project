@@ -242,10 +242,13 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                             margin: EdgeInsets.only(right: 20, left: 10),
                             child: TextFormField(
                               decoration: InputDecoration(
-                                  hintText: "ใบอนุญาตประกอบวิชาชีพเลขที่",
+                                  hintText: "Permission Number",
                                   hintStyle: TextStyle(color: Colors.blueGrey)),
                               keyboardType: TextInputType.number,
                               controller: _permissionController,
+                              inputFormatters: [
+                                LengthLimitingTextInputFormatter(5)
+                              ],
                             ),
                           )),
                         ],
@@ -372,7 +375,7 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                                             )
                                           ],
                                         ));
-                              } else if (_permissionController.text.length !=
+                              } else if (_permissionController.text.length >
                                   5) {
                                 showDialog<String>(
                                     context: context,

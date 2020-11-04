@@ -75,7 +75,6 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
   Widget build(BuildContext context) {
     final _pageOptions = [
       DentHomeScreen(widget.user),
-      DentAppointmentScreen(),
       PatientList(widget.user),
       DentProfileScreen(widget.user),
     ];
@@ -188,22 +187,22 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
                 color: Colors.blue[300],
               ),
               title: Text("Home")),
-          BubbleBottomBarItem(
-              backgroundColor: Colors.blue[300],
-              icon: Icon(
-                Icons.calendar_today,
-                color: Colors.black,
-                size: 20,
-              ),
-              activeIcon: Icon(
-                Icons.calendar_today,
-                color: Colors.blue[300],
-                size: 20,
-              ),
-              title: Text(
-                "Appointment",
-                style: TextStyle(fontSize: 13),
-              )),
+          // BubbleBottomBarItem(
+          //     backgroundColor: Colors.blue[300],
+          //     icon: Icon(
+          //       Icons.calendar_today,
+          //       color: Colors.black,
+          //       size: 20,
+          //     ),
+          //     activeIcon: Icon(
+          //       Icons.calendar_today,
+          //       color: Colors.blue[300],
+          //       size: 20,
+          //     ),
+          //     title: Text(
+          //       "Appointment",
+          //       style: TextStyle(fontSize: 13),
+          //     )),
           BubbleBottomBarItem(
               backgroundColor: Colors.blue[300],
               icon: Icon(

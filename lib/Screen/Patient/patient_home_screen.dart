@@ -43,11 +43,11 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
             Padding(
               padding: EdgeInsets.all(30),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
                     "Welcome, ",
                     style: TextStyle(color: Colors.white60, fontSize: 16),
-                    textAlign: TextAlign.left,
                   ),
                   SizedBox(height: 5),
                   Text(
@@ -85,9 +85,14 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                         });
                       },
                     ),
-                    ..._selectedEvents.map((event) => ListTile(
-                          title: Text(event),
-                        ))
+                    ..._selectedEvents.map((event) => FittedBox(
+                          child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                color: Colors.blueGrey),
+                            child: Text(event),
+                          ),
+                        )),
                   ],
                 ),
               ),
@@ -108,6 +113,7 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
         builder: (context) => AlertDialog(
               content: TextField(
                 controller: _eventController,
+                decoration: InputDecoration(),
               ),
               actions: <Widget>[
                 FlatButton(
