@@ -67,7 +67,7 @@ class _PatientListState extends State<PatientList> {
                     size: 50,
                   ),
                   Text(
-                    'Loading',
+                    'Loading...',
                     style: TextStyle(fontSize: 15, color: Colors.black),
                   )
                 ],
