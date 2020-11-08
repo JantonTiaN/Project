@@ -100,10 +100,10 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
-        onPressed: showAddDialog,
-      ),
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon(Icons.add),
+      //   onPressed: showAddDialog,
+      // ),
     );
   }
 
