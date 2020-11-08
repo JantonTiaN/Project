@@ -365,6 +365,36 @@ class PatientWithFBAndGGDatabase {
   }
 }
 
+Future<String> dentistWorkingTime(
+    List workingTime, String clinic, String uid) async {
+  final Firestore _firestore = Firestore.instance;
+  String retVal = 'error';
+  try {
+    await _firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(clinic)
+        .document(clinic)
+        .collection('Dentists')
+        .document(uid)
+        .updateData({'workingTime': workingTime});
+    await _firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        .collection('Dentists')
+        .document(uid)
+        .updateData({'workingTime': workingTime});
+    retVal = 'success';
+  } catch (e) {
+    print(e);
+  }
+  return retVal;
+}
+
 class Case {
   final Firestore _firestore = Firestore.instance;
   Future<String> addCasetooth1Front(OurPatients cases) async {

@@ -17,6 +17,9 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
     getClinic();
   }
 
+  List tooth1FrontCases, tooth1FrontDate, tooth1FrontDentist;
+  int countOfCases;
+
   @override
   Widget build(BuildContext context) {
     Firestore firestore = Firestore.instance;
@@ -32,11 +35,26 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
         .collection('DentalCase')
         .document('dentalCase');
     documentReference.get().then((value) {
-      for (var i = 0; i < value.data['tooth 1 Front'].length; i++) {
-        print(value.data['tooth 1 Front'][i]['Case'].toString());
-        print(value.data['tooth 1 Front'][i]['Date'].toString());
-        print(value.data['tooth 1 Front'][i]['Dentist'].toString());
+      if (value.data['tooth 1 Front'] != null) {
+        countOfCases = value.data['tooth 1 Front'].length;
+        for (var i = 0; i < countOfCases; i++) {
+          tooth1FrontCases.addAll(value.data['tooth 1 Front'][i]['Case']);
+          tooth1FrontDate.addAll(value.data['tooth 1 Front'][i]['Date']);
+          tooth1FrontDentist.addAll(value.data['tooth 1 Front'][i]['Dentist']);
+        }
       }
+      if (value.data['tooth 1 Middle'] != null) {
+        countOfCases += value.data['tooth 1 Middle'].length;
+        for (var i = 0; i < value.data['tooth 1 Middle'].length; i++) {}
+      }
+      if (value.data['tooth 1 Back'] != null) {
+        countOfCases += value.data['tooth 1 Back'].length;
+        for (var i = 0; i < value.data['tooth 1 Back'].length; i++) {}
+      }
+      print(countOfCases);
+      print(tooth1FrontCases);
+      print(tooth1FrontDate);
+      print(tooth1FrontDentist);
     });
     return Scaffold(
         appBar: AppBar(

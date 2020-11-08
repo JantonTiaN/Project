@@ -83,9 +83,6 @@ var _case29Middle = new List();
 var _case30Middle = new List();
 var _case31Middle = new List();
 var _case32Middle = new List();
-var recordHistory = new List();
-Map<String, String> map;
-Map<String, String> addCase;
 
 List _dentalCase17Front() {
   var dentalCase17Front = _case17Front;
