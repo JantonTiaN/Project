@@ -8,7 +8,7 @@ class RecordHistoryScreen extends StatefulWidget {
 }
 
 class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
-  final List<String> data = [];
+  List alldata = [];
 
   @override
   void initState() {
@@ -18,8 +18,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
   }
 
   // Future<void> readAllData() async {
-  //   Firestore firestore = Firestore.instance;
-  //   CollectionReference collectionReference = firestore
+  //   Firestore.instance
   //       .collection('FunD')
   //       .document('funD')
   //       .collection('Clinic')
@@ -28,31 +27,16 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
   //       .document(clinic)
   //       .collection('Patients')
   //       .document(uid)
-  //       .collection('History');
-  //   collectionReference.snapshots().listen((response) {
-  //     List<DocumentSnapshot> snapshots = response.documents;
-  //     for (var snapshot in snapshots) {
-  //       List<String> read1 = List.from(snapshot['history']);
-  //       print(read1);
-  //       tooth1Front = Text('history = ${snapshot.data['history']}').toString();
-  //     }
-  //     Firestore.instance
-  //         .collection('FunD')
-  //         .document('funD')
-  //         .collection('Clinic')
-  //         .document('clinic')
-  //         .collection(clinic)
-  //         .document(clinic)
-  //         .collection('Patients')
-  //         .document(uid)
-  //         .collection('DentalCase')
-  //         .getDocuments()
-  //         .then((querySnapshot) {
-  //       querySnapshot.documents.forEach((result) {
-  //         print(result.data);
-  //       });
-  //     });
-  //   });
+  //       .collection('History')
+  //       .getDocuments()
+  //       .then((value) => {
+  //             value.documents.forEach((element) {
+  //               for (var i = 0; i < element.data['history'].length; i++) {
+  //                 data.add(element.data['history']);
+  //               }
+  //               print(data);
+  //             })
+  //           });
   // }
 
   @override
@@ -74,7 +58,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
             .document(uid)
             .collection('History')
             .snapshots(),
-        builder: (context, snapshot) {
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
             return Center(
               child: Padding(
@@ -88,9 +72,8 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
               ),
             );
           } else {
-            // print(snapshot.data.runtimeType);
             return ListView.builder(
-              itemCount: snapshot.data.documents.length,
+              itemCount: snapshot.data.documents[0].data['history'].length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -99,10 +82,11 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                       child: Column(
                         children: <Widget>[
                           ListTile(
-                            title: Text(snapshot.data.documents[List(0)]),
-                            // subtitle:t.data.documents[index].documentID),
+                            title: Text(snapshot.data.documents[0]
+                                .data['history'][index]['date']),
+                            subtitle: Text(snapshot.data.documents[0]
+                                .data['history'][index]['detail']),
                           ),
-                          //     Text(snapsho
                         ],
                       ),
                     ),

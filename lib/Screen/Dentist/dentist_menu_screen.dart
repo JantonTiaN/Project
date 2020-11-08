@@ -49,7 +49,6 @@ class _DentMenuScreenState extends State<DentMenuScreen> {
 
   void initState() {
     super.initState();
-    // autoLogIn();
     getClinic();
   }
 
