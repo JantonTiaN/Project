@@ -1,8 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/card_detail_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail2_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/record_history_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentist_suggestion_screen.dart';
+import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'dental_detail1_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail1_screen.dart';

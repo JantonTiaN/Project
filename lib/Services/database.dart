@@ -395,6 +395,29 @@ Future<String> dentistWorkingTime(
   return retVal;
 }
 
+Future<String> suggestion(List sug, String clinic, String uid) async {
+  final Firestore _firestore = Firestore.instance;
+  String retVal = 'error';
+  try {
+    await _firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(clinic)
+        .document(clinic)
+        .collection('Patients')
+        .document(uid)
+        .collection('Suggestion')
+        .document('suggestion')
+        .updateData({'suggestion': sug});
+    retVal = 'success';
+  } catch (e) {
+    print(e);
+  }
+  return retVal;
+}
+
 class Case {
   final Firestore _firestore = Firestore.instance;
   Future<String> addCasetooth1Front(OurPatients cases) async {
