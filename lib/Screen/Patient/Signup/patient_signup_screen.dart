@@ -100,7 +100,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                 child: Stack(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(top: 150),
+                      padding: const EdgeInsets.only(top: 150, left: 10),
                       child: Text(
                         'Create New Account',
                         style: TextStyle(
@@ -302,10 +302,9 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Text(
-                  "คลินิกที่เข้ารักษา",
+                  "Clinic",
                   style: TextStyle(
                       color: Colors.white,
-                      fontFamily: 'kanit',
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
@@ -330,7 +329,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                         iconSize: 24,
                         elevation: 16,
                         style: TextStyle(
-                            color: Colors.black54, fontFamily: 'kanit'),
+                            color: Colors.black54),
                         // underline: Container(color: Colors.grey),
                         onChanged: (String newValue) {
                           setState(() {

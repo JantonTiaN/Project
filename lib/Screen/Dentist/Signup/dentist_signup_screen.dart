@@ -117,7 +117,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                 child: Stack(
                   children: <Widget>[
                     Padding(
-                      padding: const EdgeInsets.only(top: 150),
+                      padding: const EdgeInsets.only(top: 150, left: 10),
                       child: Text(
                         'Create New Account',
                         style: TextStyle(
@@ -363,7 +363,6 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                   "Clinic",
                   style: TextStyle(
                       color: Colors.white,
-                      fontFamily: 'kanit',
                       fontSize: 16,
                       fontWeight: FontWeight.bold),
                 ),
@@ -388,7 +387,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                         iconSize: 24,
                         elevation: 16,
                         style: TextStyle(
-                            color: Colors.black54, fontFamily: 'kanit'),
+                            color: Colors.black54),
                         // underline: Container(color: Colors.grey),
                         onChanged: (String newValue) {
                           setState(() {
