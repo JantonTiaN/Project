@@ -67,7 +67,7 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                     size: 50,
                   ),
                   Text(
-                    'Loading',
+                    'Loading...',
                     style: TextStyle(fontSize: 15, color: Colors.black),
                   )
                 ],
