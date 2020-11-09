@@ -453,7 +453,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
                   ),
                   SafeArea(
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         IconButton(
                           onPressed: () {
@@ -463,51 +463,13 @@ class _DentEditProfileState extends State<DentEditProfile> {
                             Icons.close,
                           ),
                         ),
+                        SizedBox(width: 90),
                         Text(
                           'Edit Profile',
                           style: TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold),
                         ),
-                        IconButton(
-                          onPressed: () {
-                            if (name != null) {
-                              if (eMail != null) {
-                                if (urlPicture != null) {
-                                  uploadPic(urlPicture);
-                                  updateDataToFirestore(
-                                      name, eMail, urlPicture);
-                                }
-                                updateNameAndEmail(name, eMail);
-                              }
-                              updateName(name);
-                            }
-                            if (eMail != null) {
-                              if (urlPicture != null) {
-                                uploadPic(urlPicture);
-                                updateEmailAndPic(eMail, urlPicture);
-                              }
-                              updateEmail(eMail);
-                            }
-                            if (urlPicture != null) {
-                              updatePic(urlPicture);
-                              uploadPic(urlPicture);
-                            }
-                            if (name == null ||
-                                eMail == null ||
-                                urlPicture == null) {
-                              Navigator.pop(context);
-                            }
-                            _workingTime();
-                            if (workingTime.isNotEmpty) {
-                              dentistWorkingTime(
-                                  workingTime, clinic, widget.user.uid);
-                            }
-                          },
-                          icon: Icon(
-                            Icons.check,
-                          ),
-                          color: Colors.blue,
-                        ),
+                        // Icon(Icons.ac_unit, color: Colors.white),
                       ],
                     ),
                   ),
@@ -936,6 +898,59 @@ class _DentEditProfileState extends State<DentEditProfile> {
                 ],
               ),
             ),
+            FittedBox(
+              child: GestureDetector(
+                onTap: () {
+                  if (name != null) {
+                    if (eMail != null) {
+                      if (urlPicture != null) {
+                        uploadPic(urlPicture);
+                        updateDataToFirestore(name, eMail, urlPicture);
+                      }
+                      updateNameAndEmail(name, eMail);
+                    }
+                    updateName(name);
+                  }
+                  if (eMail != null) {
+                    if (urlPicture != null) {
+                      uploadPic(urlPicture);
+                      updateEmailAndPic(eMail, urlPicture);
+                    }
+                    updateEmail(eMail);
+                  }
+                  if (urlPicture != null) {
+                    updatePic(urlPicture);
+                    uploadPic(urlPicture);
+                  }
+                  if (name == null || eMail == null || urlPicture == null) {
+                    Navigator.pop(context);
+                  }
+                  _workingTime();
+                  if (workingTime.isNotEmpty) {
+                    dentistWorkingTime(workingTime, clinic, widget.user.uid);
+                  }
+                },
+                child: Container(
+                  margin: EdgeInsets.only(bottom: 55),
+                  padding: EdgeInsets.symmetric(horizontal: 26, vertical: 16),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(25),
+                    color: Colors.blue[200],
+                  ),
+                  child: Row(
+                    children: <Widget>[
+                      Text(
+                        "Save",
+                        style: Theme.of(context)
+                            .textTheme
+                            .button
+                            .copyWith(color: Colors.black),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
