@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/Signup/dentist_signup_screen.dart';
-import 'package:fundee/Screen/Patient/History/HistoryNotifier.dart';
 import 'package:fundee/Screen/welcome_screen.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:provider/provider.dart';
@@ -9,14 +8,7 @@ import 'Screen/constants.dart';
 import 'Screen/signin_screen.dart';
 import 'States/root.dart';
 
-void main() => runApp(MultiProvider(
-      providers: [
-        ChangeNotifierProvider(
-          create: (context) => HistoryNotifier(),
-        )
-      ],
-      child: MyApp(),
-    ));
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override

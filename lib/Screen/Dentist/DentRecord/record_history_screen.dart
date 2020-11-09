@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 
 class RecordHistoryScreen extends StatefulWidget {
@@ -61,14 +62,18 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
             return Center(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 100),
-                child: Column(
-                  children: <Widget>[
-                    CircularProgressIndicator(),
-                    Text("Loading..."),
-                  ],
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  SpinKitChasingDots(
+                    color: Colors.blue[100],
+                    size: 50,
+                  ),
+                  Text(
+                    'Loading...',
+                    style: TextStyle(fontSize: 15, color: Colors.black),
+                  )
+                ],
               ),
             );
           } else {
