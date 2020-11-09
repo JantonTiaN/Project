@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
+import 'package:fundee/font_awesome_flutter.dart';
 
 import 'DentRecord/dentalRecord.dart';
 
@@ -122,6 +123,7 @@ class _PatientListState extends State<PatientList> {
                               child: Image.network(
                                   _patient[index].data['pathImage']),
                             )),
+                            trailing: Icon(FontAwesomeIcons.angleRight),
                             title: Text(_patient[index].data['fullName']),
                             subtitle: Text(_patient[index].data['tel']),
                           ),
