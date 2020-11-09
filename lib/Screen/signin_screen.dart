@@ -76,7 +76,6 @@ class _SignInScreenState extends State<SignInScreen> {
                               "SIGN IN",
                               style: Theme.of(context).textTheme.display1,
                             ),
-                            
                           ],
                         ),
                         Spacer(),
@@ -206,60 +205,56 @@ class _SignInScreenState extends State<SignInScreen> {
                                   // isLoggedIn ? logout() : signIn();
                                 },
                               ),
-                              
                             ],
                           ),
                         ),
                         Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text('Don\'t have any account?'),  
-                        PopupMenuButton(
-                              child: Text(" Sign Up",
-                                  style: TextStyle(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text('Don\'t have any account?'),
+                              PopupMenuButton(
+                                child: Text(" Sign Up",
+                                    style: TextStyle(
                                       color: Colors.blue,
                                       fontSize: 14,
                                       fontWeight: FontWeight.w600,
-                                      
-                                      )),
-                              onSelected: (result) {
-                                if (result == 0) {
-                                  Navigator.pushNamed(context, 'DSignUp');
-                                }
-                                if (result == 1) {
-                                  Navigator.pushNamed(context, 'PSignUp');
-                                }
-                              },
-                              itemBuilder: (context) => [
-                                PopupMenuItem(
-                                  child: Row(
-                                    children: <Widget>[
-                                      // Icon(Icons.local_hospital),
-                                      SizedBox(width: 10.0),
-                                      Text("Dentist",
-                                          style:
-                                              TextStyle(color: Colors.black)),
-                                    ],
+                                    )),
+                                onSelected: (result) {
+                                  if (result == 0) {
+                                    Navigator.pushNamed(context, 'DSignUp');
+                                  }
+                                  if (result == 1) {
+                                    Navigator.pushNamed(context, 'PSignUp');
+                                  }
+                                },
+                                itemBuilder: (context) => [
+                                  PopupMenuItem(
+                                    child: Row(
+                                      children: <Widget>[
+                                        // Icon(Icons.local_hospital),
+                                        SizedBox(width: 10.0),
+                                        Text("Dentist",
+                                            style:
+                                                TextStyle(color: Colors.black)),
+                                      ],
+                                    ),
+                                    value: 0,
                                   ),
-                                  value: 0,
-                                ),
-                                PopupMenuItem(
-                                  child: Row(
-                                    children: <Widget>[
-                                      // Icon(Icons.person),
-                                      SizedBox(width: 10.0),
-                                      Text("Patient",
-                                          style:
-                                              TextStyle(color: Colors.black)),
-                                    ],
+                                  PopupMenuItem(
+                                    child: Row(
+                                      children: <Widget>[
+                                        // Icon(Icons.person),
+                                        SizedBox(width: 10.0),
+                                        Text("Patient",
+                                            style:
+                                                TextStyle(color: Colors.black)),
+                                      ],
+                                    ),
+                                    value: 1,
                                   ),
-                                  value: 1,
-                                ),
-                              ],
-                            ),
-                          ]
-                        )
-                        
+                                ],
+                              ),
+                            ])
                       ],
                     ),
                   ))

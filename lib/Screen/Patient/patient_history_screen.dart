@@ -41,20 +41,47 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
           if (!snapshot.hasData) {
             return Center(
+                child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  SpinKitChasingDots(
-                    color: Colors.blue[100],
-                    size: 50,
+                  Image.asset(
+                    'assets/images/Logo/No-data.png',
+                    width: 150,
+                    height: 150,
                   ),
                   Text(
-                    'Loading...',
-                    style: TextStyle(fontSize: 15, color: Colors.black),
-                  )
+                    'Oh...',
+                    style: TextStyle(
+                        fontFamily: 'Kanit',
+                        color: Colors.blue[300],
+                        fontSize: 25),
+                  ),
+                  Text(
+                    'You don\'t have any history',
+                    style: TextStyle(
+                        fontFamily: 'Kanit',
+                        color: Colors.blue[300],
+                        fontSize: 16),
+                  ),
+                  // )
                 ],
               ),
-            );
+            )
+                // Column(
+                //   mainAxisAlignment: MainAxisAlignment.center,
+                //   children: <Widget>[
+                //     SpinKitChasingDots(
+                //       color: Colors.blue[100],
+                //       size: 50,
+                //     ),
+                //     Text(
+                //       'Loading...',
+                //       style: TextStyle(fontSize: 15, color: Colors.black),
+                //     )
+                //   ],
+                // ),
+                );
           } else {
             return ListView.builder(
               itemCount: snapshot.data.documents[0].data['history'].length,

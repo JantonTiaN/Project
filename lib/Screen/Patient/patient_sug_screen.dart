@@ -13,39 +13,12 @@ class PatientSuggestion extends StatefulWidget {
 }
 
 class _PatientSuggestionState extends State<PatientSuggestion> {
-  Firestore _firestore = Firestore.instance;
-  List<DocumentSnapshot> _suggestion = [];
   bool _loadingSuggestion = true;
-
-  _getSuggestion() async {
-    Query q = _firestore
-        .collection('FunD')
-        .document('funD')
-        .collection('Clinic')
-        .document('clinic')
-        .collection(clinic)
-        .document(clinic)
-        .collection('Patients')
-        .document(widget.user.uid)
-        .collection('Suggestion')
-        .orderBy('date');
-
-    setState(() {
-      _loadingSuggestion = true;
-    });
-
-    QuerySnapshot querySnapshot = await q.getDocuments();
-    _suggestion = querySnapshot.documents;
-
-    setState(() {
-      _loadingSuggestion = false;
-    });
-  }
 
   @override
   void initState() {
     super.initState();
-    _getSuggestion();
+    getClinic();
   }
 
   @override
@@ -56,12 +29,24 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
         backgroundColor: Colors.blue[300],
         automaticallyImplyLeading: false,
       ),
-      body: _loadingSuggestion == true
-          ? Container(
-              child: Center(
+      body: StreamBuilder(
+        stream: Firestore.instance
+            .collection('FunD')
+            .document('funD')
+            .collection('Clinic')
+            .document('clinic')
+            .collection(clinic)
+            .document(clinic)
+            .collection('Patients')
+            .document(widget.user.uid)
+            .collection('Suggestion')
+            .snapshots(),
+        builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+          if (!snapshot.hasData) {
+            return Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
+                children: <Widget>[
                   SpinKitChasingDots(
                     color: Colors.blue[100],
                     size: 50,
@@ -72,58 +57,42 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                   )
                 ],
               ),
-            ))
-          : Container(
-              child: _suggestion.length == 0
-                  ? Center(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: <Widget>[
-                          Image.asset(
-                            'assets/images/Logo/No-data.png',
-                            width: 150,
-                            height: 150,
-                          ),
-                          Text(
-                            'Sorry',
-                            style: TextStyle(
-                                fontFamily: 'Kanit',
-                                color: Colors.blue[300],
-                                fontSize: 25),
-                          ),
-                          Text(
-                            'You don\'t have any suggestion',
-                            style: TextStyle(
-                                fontFamily: 'Kanit',
-                                color: Colors.blue[300],
-                                fontSize: 16),
-                          ),
-                          // )
-                        ],
+            );
+          } else {
+            return ListView.builder(
+              itemCount: snapshot.data.documents[0].data['suggestion'].length,
+              itemBuilder: (context, index) {
+                return Column(
+                  children: <Widget>[
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => SuggestionDetailScreen(
+                                      suggestion: snapshot.data.documents[0]
+                                              .data['suggestion'][index]
+                                          ['suggestion'],
+                                    )));
+                      },
+                      child: ListTile(
+                        leading: Text('$index'),
+                        title: Text(snapshot.data.documents[0]
+                            .data['suggestion'][index]['date']),
+                        subtitle: Text(snapshot.data.documents[0]
+                            .data['suggestion'][index]['dentist']),
                       ),
+                    ),
+                    Divider(
+                      color: Colors.blueGrey,
                     )
-                  : ListView.builder(
-                      itemCount: _suggestion.length,
-                      itemBuilder: (BuildContext ctx, int index) {
-                        print(_suggestion[index].data['suggestion']);
-                        return GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) =>
-                                        SuggestionDetailScreen(
-                                          suggestion: _suggestion[index]
-                                              .data['suggestion'],
-                                        )));
-                          },
-                          child: ListTile(
-                            title: Text(_suggestion[index].data['suggestion']),
-                            subtitle: Text(_suggestion[index].data['dentist']),
-                          ),
-                        );
-                      }),
-            ),
+                  ],
+                );
+              },
+            );
+          }
+        },
+      ),
     );
   }
 }
