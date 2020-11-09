@@ -123,7 +123,7 @@ class _PatientListState extends State<PatientList> {
                               child: Image.network(
                                   _patient[index].data['pathImage']),
                             )),
-                            trailing: Icon(FontAwesomeIcons.angleRight),
+                            trailing: Icon(FontAwesomeIcons.chevronRight),
                             title: Text(_patient[index].data['fullName']),
                             subtitle: Text(_patient[index].data['tel']),
                           ),
