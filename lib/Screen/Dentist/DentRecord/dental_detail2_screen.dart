@@ -949,6 +949,14 @@ void _addDentalCase32Middle(BuildContext context, List addCase) async {
 }
 
 Widget tooth17Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 17 Front'] != null)
+          {_case17Front = value.data['tooth 17 Front']},
+        if (value.data['tooth 17 Middle'] != null)
+          {_case17Middle = value.data['tooth 17 Middle']},
+        if (value.data['tooth 17 Back'] != null)
+          {_case17Back = value.data['tooth 17 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -4505,6 +4513,14 @@ Widget tooth17Detail(BuildContext context) {
 }
 
 Widget tooth18Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 18 Front'] != null)
+          {_case18Front = value.data['tooth 18 Front']},
+        if (value.data['tooth 18 Middle'] != null)
+          {_case18Middle = value.data['tooth 18 Middle']},
+        if (value.data['tooth 18 Back'] != null)
+          {_case18Back = value.data['tooth 18 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -8061,6 +8077,14 @@ Widget tooth18Detail(BuildContext context) {
 }
 
 Widget tooth19Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 19 Front'] != null)
+          {_case19Front = value.data['tooth 19 Front']},
+        if (value.data['tooth 19 Middle'] != null)
+          {_case19Middle = value.data['tooth 19 Middle']},
+        if (value.data['tooth 19 Back'] != null)
+          {_case19Back = value.data['tooth 19 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -11617,6 +11641,14 @@ Widget tooth19Detail(BuildContext context) {
 }
 
 Widget tooth20Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 20 Front'] != null)
+          {_case20Front = value.data['tooth 20 Front']},
+        if (value.data['tooth 20 Middle'] != null)
+          {_case20Middle = value.data['tooth 20 Middle']},
+        if (value.data['tooth 20 Back'] != null)
+          {_case20Back = value.data['tooth 20 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -15173,6 +15205,14 @@ Widget tooth20Detail(BuildContext context) {
 }
 
 Widget tooth21Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 21 Front'] != null)
+          {_case21Front = value.data['tooth 21 Front']},
+        if (value.data['tooth 21 Middle'] != null)
+          {_case21Middle = value.data['tooth 21 Middle']},
+        if (value.data['tooth 21 Back'] != null)
+          {_case21Back = value.data['tooth 21 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -18729,6 +18769,14 @@ Widget tooth21Detail(BuildContext context) {
 }
 
 Widget tooth22Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 22 Front'] != null)
+          {_case22Front = value.data['tooth 22 Front']},
+        if (value.data['tooth 22 Middle'] != null)
+          {_case22Middle = value.data['tooth 22 Middle']},
+        if (value.data['tooth 22 Back'] != null)
+          {_case22Back = value.data['tooth 22 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -22285,6 +22333,14 @@ Widget tooth22Detail(BuildContext context) {
 }
 
 Widget tooth23Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 23 Front'] != null)
+          {_case23Front = value.data['tooth 23 Front']},
+        if (value.data['tooth 23 Middle'] != null)
+          {_case23Middle = value.data['tooth 23 Middle']},
+        if (value.data['tooth 23 Back'] != null)
+          {_case23Back = value.data['tooth 23 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -25841,6 +25897,14 @@ Widget tooth23Detail(BuildContext context) {
 }
 
 Widget tooth24Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 24 Front'] != null)
+          {_case24Front = value.data['tooth 24 Front']},
+        if (value.data['tooth 24 Middle'] != null)
+          {_case24Middle = value.data['tooth 24 Middle']},
+        if (value.data['tooth 24 Back'] != null)
+          {_case24Back = value.data['tooth 24 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -29397,6 +29461,14 @@ Widget tooth24Detail(BuildContext context) {
 }
 
 Widget tooth25Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 25 Front'] != null)
+          {_case25Front = value.data['tooth 25 Front']},
+        if (value.data['tooth 25 Middle'] != null)
+          {_case25Middle = value.data['tooth 25 Middle']},
+        if (value.data['tooth 25 Back'] != null)
+          {_case25Back = value.data['tooth 25 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -32953,6 +33025,14 @@ Widget tooth25Detail(BuildContext context) {
 }
 
 Widget tooth26Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 26 Front'] != null)
+          {_case26Front = value.data['tooth 26 Front']},
+        if (value.data['tooth 26 Middle'] != null)
+          {_case26Middle = value.data['tooth 26 Middle']},
+        if (value.data['tooth 26 Back'] != null)
+          {_case26Back = value.data['tooth 26 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -36509,6 +36589,14 @@ Widget tooth26Detail(BuildContext context) {
 }
 
 Widget tooth27Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 27 Front'] != null)
+          {_case27Front = value.data['tooth 27 Front']},
+        if (value.data['tooth 27 Middle'] != null)
+          {_case27Middle = value.data['tooth 27 Middle']},
+        if (value.data['tooth 27 Back'] != null)
+          {_case27Back = value.data['tooth 27 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -40065,6 +40153,14 @@ Widget tooth27Detail(BuildContext context) {
 }
 
 Widget tooth28Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 28 Front'] != null)
+          {_case28Front = value.data['tooth 28 Front']},
+        if (value.data['tooth 28 Middle'] != null)
+          {_case28Middle = value.data['tooth 28 Middle']},
+        if (value.data['tooth 28 Back'] != null)
+          {_case28Back = value.data['tooth 28 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -43621,6 +43717,14 @@ Widget tooth28Detail(BuildContext context) {
 }
 
 Widget tooth29Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 29 Front'] != null)
+          {_case29Front = value.data['tooth 29 Front']},
+        if (value.data['tooth 29 Middle'] != null)
+          {_case29Middle = value.data['tooth 29 Middle']},
+        if (value.data['tooth 29 Back'] != null)
+          {_case29Back = value.data['tooth 29 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -47177,6 +47281,14 @@ Widget tooth29Detail(BuildContext context) {
 }
 
 Widget tooth30Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 30 Front'] != null)
+          {_case30Front = value.data['tooth 30 Front']},
+        if (value.data['tooth 30 Middle'] != null)
+          {_case30Middle = value.data['tooth 30 Middle']},
+        if (value.data['tooth 30 Back'] != null)
+          {_case30Back = value.data['tooth 30 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -50733,6 +50845,14 @@ Widget tooth30Detail(BuildContext context) {
 }
 
 Widget tooth31Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 31 Front'] != null)
+          {_case31Front = value.data['tooth 31 Front']},
+        if (value.data['tooth 31 Middle'] != null)
+          {_case31Middle = value.data['tooth 31 Middle']},
+        if (value.data['tooth 31 Back'] != null)
+          {_case31Back = value.data['tooth 31 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
@@ -54289,6 +54409,14 @@ Widget tooth31Detail(BuildContext context) {
 }
 
 Widget tooth32Detail(BuildContext context) {
+  caseDocumentReference.get().then((value) => {
+        if (value.data['tooth 32 Front'] != null)
+          {_case32Front = value.data['tooth 32 Front']},
+        if (value.data['tooth 32 Middle'] != null)
+          {_case32Middle = value.data['tooth 32 Middle']},
+        if (value.data['tooth 32 Back'] != null)
+          {_case32Back = value.data['tooth 32 Back']}
+      });
   return Scaffold(
       // backgroundColor: bBackgroundColor,
       appBar: AppBar(
