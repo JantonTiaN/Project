@@ -60,7 +60,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
             .collection('History')
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (!snapshot.hasData) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -76,9 +76,37 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                 ],
               ),
             );
+          } else if (snapshot.data.documents[0].data.length == 0) {
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Image.asset(
+                    'assets/images/Logo/No-data.png',
+                    width: 150,
+                    height: 150,
+                  ),
+                  Text(
+                    'Seems like',
+                    style: TextStyle(
+                        fontFamily: 'Kanit',
+                        color: Colors.blue[300],
+                        fontSize: 25),
+                  ),
+                  Text(
+                    'Patient don\'t have any record',
+                    style: TextStyle(
+                        fontFamily: 'Kanit',
+                        color: Colors.blue[300],
+                        fontSize: 16),
+                  ),
+                  // )
+                ],
+              ),
+            );
           } else {
             return ListView.builder(
-              itemCount: snapshot.data.documents[0].data['history'].length,
+              itemCount: snapshot.data.documents[0].data.length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),

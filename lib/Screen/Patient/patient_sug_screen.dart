@@ -13,8 +13,6 @@ class PatientSuggestion extends StatefulWidget {
 }
 
 class _PatientSuggestionState extends State<PatientSuggestion> {
-  bool _loadingSuggestion = true;
-
   @override
   void initState() {
     super.initState();
@@ -42,7 +40,7 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
             .collection('Suggestion')
             .snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
-          if (!snapshot.hasData) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
             return Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -58,34 +56,66 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                 ],
               ),
             );
+          } else if (snapshot.data.documents[0].data.length == 0) {
+            return Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Image.asset(
+                    'assets/images/Logo/No-data.png',
+                    width: 150,
+                    height: 150,
+                  ),
+                  Text(
+                    'Oh...',
+                    style: TextStyle(
+                        fontFamily: 'Kanit',
+                        color: Colors.blue[300],
+                        fontSize: 25),
+                  ),
+                  Text(
+                    'You don\'t have any suggestion',
+                    style: TextStyle(
+                        fontFamily: 'Kanit',
+                        color: Colors.blue[300],
+                        fontSize: 16),
+                  ),
+                  // )
+                ],
+              ),
+            );
           } else {
             return ListView.builder(
-              itemCount: snapshot.data.documents[0].data['suggestion'].length,
+              itemCount: snapshot.data.documents[0].data.length,
               itemBuilder: (context, index) {
                 return Column(
                   children: <Widget>[
-                    GestureDetector(
-                      onTap: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => SuggestionDetailScreen(
-                                      suggestion: snapshot.data.documents[0]
-                                              .data['suggestion'][index]
-                                          ['suggestion'],
-                                    )));
-                      },
-                      child: ListTile(
-                        leading: Text('$index'),
-                        title: Text(snapshot.data.documents[0]
-                            .data['suggestion'][index]['date']),
-                        subtitle: Text(snapshot.data.documents[0]
-                            .data['suggestion'][index]['dentist']),
-                      ),
+                    // GestureDetector(
+                    //   onTap: () {
+                    //     Navigator.push(
+                    //         context,
+                    //         MaterialPageRoute(
+                    //             builder: (context) => SuggestionDetailScreen(
+                    //                   suggestion: snapshot.data.documents[0]
+                    //                           .data['suggestion'][index]
+                    //                       ['suggestion'],
+                    //                 )));
+                    //   },
+                    // child:
+
+                    ListTile(
+                      leading: Text('$index'),
+                      title: Text(snapshot.data.documents[0].data['suggestion']
+                          [index]['date']),
+                      subtitle: Text(snapshot.data.documents[0]
+                          .data['suggestion'][index]['suggestion']),
                     ),
+                    Text('Recorded by: ' +
+                        snapshot.data.documents[0].data['suggestion'][index]
+                            ['dentist']),
                     Divider(
                       color: Colors.blueGrey,
-                    )
+                    ),
                   ],
                 );
               },

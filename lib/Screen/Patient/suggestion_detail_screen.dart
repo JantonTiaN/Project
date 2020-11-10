@@ -11,6 +11,14 @@ class SuggestionDetailScreen extends StatefulWidget {
 class _SuggestionDetailScreenState extends State<SuggestionDetailScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Suggestion Detail'),
+        backgroundColor: Colors.blue[300],
+      ),
+      body: Column(
+        children: [Text(widget.suggestion)],
+      ),
+    );
   }
 }

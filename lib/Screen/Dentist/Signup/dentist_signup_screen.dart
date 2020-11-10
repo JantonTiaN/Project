@@ -386,8 +386,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                         // icon: Icon(Icons.arrow_downward),
                         iconSize: 24,
                         elevation: 16,
-                        style: TextStyle(
-                            color: Colors.black54),
+                        style: TextStyle(color: Colors.black54),
                         // underline: Container(color: Colors.grey),
                         onChanged: (String newValue) {
                           setState(() {
