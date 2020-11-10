@@ -87,7 +87,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                     height: 150,
                   ),
                   Text(
-                    'Seems like',
+                    'Oh...',
                     style: TextStyle(
                         fontFamily: 'Kanit',
                         color: Colors.blue[300],

@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 
 class PatientHomeScreen extends StatefulWidget {
   final FirebaseUser user;
@@ -21,6 +23,7 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
   @override
   void initState() {
     super.initState();
+    getClinic();
   }
 
   @override
@@ -85,14 +88,90 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                         });
                       },
                     ),
-                    ..._selectedEvents.map((event) => FittedBox(
-                          child: Container(
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(25),
-                                color: Colors.blueGrey),
-                            child: Text(event),
-                          ),
-                        )),
+                    StreamBuilder(
+                      stream: Firestore.instance
+                          .collection('FunD')
+                          .document('funD')
+                          .collection('Clinic')
+                          .document('clinic')
+                          .collection(clinic)
+                          .document(clinic)
+                          .collection('Patients')
+                          .document(widget.user.uid)
+                          .collection('Appointment')
+                          .snapshots(),
+                      builder: (BuildContext context,
+                          AsyncSnapshot<QuerySnapshot> snapshot) {
+                        if (snapshot.connectionState ==
+                            ConnectionState.waiting) {
+                          return Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                SpinKitChasingDots(
+                                  color: Colors.blue[100],
+                                  size: 50,
+                                ),
+                                Text(
+                                  'Loading...',
+                                  style: TextStyle(
+                                      fontSize: 15, color: Colors.black),
+                                )
+                              ],
+                            ),
+                          );
+                        } else if (snapshot.data.documents[0].data.length ==
+                            0) {
+                          return Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                // Image.asset(
+                                //   'assets/images/Logo/No-data.png',
+                                //   width: 150,
+                                //   height: 150,
+                                // ),
+                                // Text(
+                                //   'Oh...',
+                                //   style: TextStyle(
+                                //       fontFamily: 'Kanit',
+                                //       color: Colors.blue[300],
+                                //       fontSize: 25),
+                                // ),
+                                Text(
+                                  'Nothing planned',
+                                  style: TextStyle(
+                                      fontFamily: 'Kanit',
+                                      color: Colors.blue[300],
+                                      fontSize: 16),
+                                ),
+                                // )
+                              ],
+                            ),
+                          );
+                        } else {
+                          return ListView.builder(
+                            itemCount: snapshot.data.documents[0].data.length,
+                            itemBuilder: (context, index) {
+                              return Column(
+                                children: <Widget>[
+                                  ListTile(
+                                    leading: Text('$index'),
+                                    title: Text(snapshot.data.documents[0]
+                                        .data['history'][index]['detail']),
+                                    // subtitle: Text(snapshot.data.documents[0]
+                                    //     .data['history'][index]['detail']),
+                                  ),
+                                  Text('Responsible by: ' +
+                                      snapshot.data.documents[0].data['history']
+                                          [index]['dentist']),
+                                ],
+                              );
+                            },
+                          );
+                        }
+                      },
+                    ),
                   ],
                 ),
               ),
