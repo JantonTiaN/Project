@@ -40,6 +40,37 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
+    _signingIn() {
+      showDialog(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return Container(
+            color: Colors.black.withOpacity(0.5),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SpinKitFadingFour(
+                  color: Colors.blue[300],
+                  size: 50,
+                ),
+                Text(
+                  "Signing in...",
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.white,
+                      fontFamily: 'kanit',
+                      fontWeight: FontWeight.normal,
+                      decoration: TextDecoration.none),
+                )
+              ],
+            ),
+          );
+        },
+      );
+    }
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: bBackgroundColor,
@@ -140,7 +171,9 @@ class _SignInScreenState extends State<SignInScreen> {
                                     child: Icon(FontAwesomeIcons.facebookF,
                                         color: Colors.white.withOpacity(.5)),
                                   ),
-                                  onTap: () => loginWithFacebook(context)),
+                                  onTap: () {
+                                    loginWithFacebook(context);
+                                  }),
                               SizedBox(width: 20),
                               InkWell(
                                 child: Container(
@@ -155,6 +188,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                 ),
                                 onTap: () {
                                   loginWithGoogle(context);
+                                  _signingIn();
                                 },
                               ),
                               Spacer(),
@@ -171,36 +205,7 @@ class _SignInScreenState extends State<SignInScreen> {
                                   ),
                                 ),
                                 onTap: () {
-                                  showDialog(
-                                    context: context,
-                                    barrierDismissible: false,
-                                    builder: (BuildContext context) {
-                                      return Container(
-                                        color: Colors.black.withOpacity(0.5),
-                                        child: Column(
-                                          mainAxisSize: MainAxisSize.min,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.center,
-                                          children: <Widget>[
-                                            SpinKitFadingFour(
-                                              color: Colors.blue[900],
-                                              size: 50,
-                                            ),
-                                            Text(
-                                              "Signing in...",
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  color: Colors.black,
-                                                  fontFamily: 'kanit',
-                                                  fontWeight: FontWeight.normal,
-                                                  decoration:
-                                                      TextDecoration.none),
-                                            )
-                                          ],
-                                        ),
-                                      );
-                                    },
-                                  );
+                                  _signingIn();
                                   signIn();
                                   // isLoggedIn ? logout() : signIn();
                                 },
@@ -356,7 +361,7 @@ class _SignInScreenState extends State<SignInScreen> {
   checkRole() async {
     FirebaseUser user = await FirebaseAuth.instance.currentUser();
     bool docExist = await checkIfDocExists(user.uid);
-    print('Doccccccccccc');
+    print('-----DENTIST-----');
     print(docExist);
     if (docExist == true) {
       Navigator.pushReplacement(context,
@@ -384,7 +389,7 @@ class _SignInScreenState extends State<SignInScreen> {
     final SharedPreferences prefs = await SharedPreferences.getInstance();
     final String userEmail = prefs.getString('email');
     if (userEmail != null) {
-      print('Not Nullllllllllllllllllllllllll');
+      print('-----Not Null------');
       setState(() {
         isLoggedIn = true;
         email = userEmail;
