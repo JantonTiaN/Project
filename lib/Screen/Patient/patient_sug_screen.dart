@@ -86,7 +86,7 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
             );
           } else {
             return ListView.builder(
-              itemCount: snapshot.data.documents[0].data.length,
+              itemCount: snapshot.data.documents[0].data['suggestion'].length,
               itemBuilder: (context, index) {
                 return Column(
                   children: <Widget>[

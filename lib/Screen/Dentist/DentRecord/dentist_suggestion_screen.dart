@@ -54,15 +54,18 @@ class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
               children: <Widget>[
                 SizedBox(height: 24.0),
                 Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding:
+                      const EdgeInsets.only(left: 10, right: 10, bottom: 10),
                   child: TextFormField(
                       decoration: const InputDecoration(
                           fillColor: Colors.black,
-                          border: OutlineInputBorder(
+                          focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.blue)),
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(color: Colors.amber)),
                           hintText: 'Suggestion to patient',
-                          labelText: 'Suggestion'),
-                      maxLines: 10,
+                          labelText: 'Type Suggestion Here'),
+                      maxLines: 15,
                       controller: _suggestion),
                 ),
                 FittedBox(

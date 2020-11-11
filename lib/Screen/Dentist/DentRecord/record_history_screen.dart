@@ -106,7 +106,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
             );
           } else {
             return ListView.builder(
-              itemCount: snapshot.data.documents[0].data.length,
+              itemCount: snapshot.data.documents[0].data['history'].length,
               itemBuilder: (context, index) {
                 return Padding(
                   padding: const EdgeInsets.all(8.0),
