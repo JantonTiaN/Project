@@ -88,10 +88,11 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
             return ListView.builder(
               itemCount: snapshot.data.documents[0].data['history'].length,
               itemBuilder: (context, index) {
+                final idx = index + 1;
                 return Column(
                   children: <Widget>[
                     ListTile(
-                      leading: Text('$index'),
+                      leading: Text('$idx'),
                       title: Text(snapshot.data.documents[0].data['history']
                           [index]['date']),
                       subtitle: Text(snapshot.data.documents[0].data['history']

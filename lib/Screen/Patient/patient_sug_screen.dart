@@ -88,6 +88,7 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
             return ListView.builder(
               itemCount: snapshot.data.documents[0].data['suggestion'].length,
               itemBuilder: (context, index) {
+                final idx = index + 1;
                 return Column(
                   children: <Widget>[
                     // GestureDetector(
@@ -102,9 +103,8 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                     //                 )));
                     //   },
                     // child:
-
                     ListTile(
-                      leading: Text('$index'),
+                      leading: Text('$idx'),
                       title: Text(snapshot.data.documents[0].data['suggestion']
                           [index]['date']),
                       subtitle: Text(snapshot.data.documents[0]
