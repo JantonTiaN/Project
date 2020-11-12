@@ -21,13 +21,17 @@ class _DentEditProfileState extends State<DentEditProfile> {
   File _image;
   final _picker = ImagePicker();
   final FirebaseAuth _auth = FirebaseAuth.instance;
-  final displayNameController = TextEditingController();
-  final eMailController = TextEditingController();
+  TextEditingController displayNameController = TextEditingController();
+  TextEditingController eMailController = TextEditingController();
   String name, eMail, tel, urlPicture;
   @override
   void initState() {
     super.initState();
     getClinic();
+    displayNameController = TextEditingController(
+        text: widget.user != null ? widget.user.displayName : '');
+    eMailController = TextEditingController(
+        text: widget.user != null ? widget.user.email : '');
   }
 
   //value for checkbox timetable
@@ -422,8 +426,12 @@ class _DentEditProfileState extends State<DentEditProfile> {
                                         'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208';
                                     widget.user.updateProfile(userUpdateInfo);
                                     Firestore.instance
-                                        .collection('Account')
-                                        .document('account')
+                                        .collection('FunD')
+                                        .document('funD')
+                                        .collection('Clinic')
+                                        .document('clinic')
+                                        .collection(clinic)
+                                        .document(clinic)
                                         .collection('Dentists')
                                         .document(widget.user.uid)
                                         .updateData({
@@ -516,6 +524,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
                   labelText: 'E-Mail Address',
                   labelStyle: TextStyle(color: Colors.grey[400], fontSize: 14),
                 ),
+                controller: eMailController,
               ),
             ),
             Divider(
