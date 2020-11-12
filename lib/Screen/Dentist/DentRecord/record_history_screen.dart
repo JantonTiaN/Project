@@ -14,31 +14,8 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
   @override
   void initState() {
     super.initState();
-    // readAllData();
     getClinic();
   }
-
-  // Future<void> readAllData() async {
-  //   Firestore.instance
-  //       .collection('FunD')
-  //       .document('funD')
-  //       .collection('Clinic')
-  //       .document('clinic')
-  //       .collection(clinic)
-  //       .document(clinic)
-  //       .collection('Patients')
-  //       .document(uid)
-  //       .collection('History')
-  //       .getDocuments()
-  //       .then((value) => {
-  //             value.documents.forEach((element) {
-  //               for (var i = 0; i < element.data['history'].length; i++) {
-  //                 data.add(element.data['history']);
-  //               }
-  //               print(data);
-  //             })
-  //           });
-  // }
 
   @override
   Widget build(BuildContext context) {

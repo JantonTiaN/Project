@@ -6,6 +6,7 @@ import 'package:fundee/models/account_model.dart';
 import 'package:provider/provider.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/widgets/detail_history_card.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 
 class DentalDetailScreen extends StatefulWidget {
   final FirebaseUser user;
@@ -116,7 +117,7 @@ var _case13Middle = new List();
 var _case14Middle = new List();
 var _case15Middle = new List();
 var _case16Middle = new List();
-var recordHistory = new List();
+// var recordHistory = new List();
 Map<String, String> map;
 Map<String, String> addCase;
 
@@ -1081,7 +1082,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Dental Carise'
@@ -1134,7 +1135,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Attrition, abrasion, abfraction'
@@ -1185,7 +1186,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Fractured tooth'
@@ -1236,7 +1237,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Retained root'
@@ -1287,7 +1288,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : RCT tooth'
@@ -1338,7 +1339,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Extracted tooth'
@@ -1389,7 +1390,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Missing tooth'
@@ -1440,7 +1441,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Impacted tooth'
@@ -1491,7 +1492,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Partial eruption'
@@ -1543,7 +1544,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Tilting, drifting'
@@ -1594,7 +1595,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Loss of contact'
@@ -1647,7 +1648,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Poor contact point'
@@ -1698,7 +1699,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Food impaction'
@@ -1749,7 +1750,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Supraclusion'
@@ -1800,7 +1801,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Infraclusion'
@@ -1851,7 +1852,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Rotation'
@@ -1902,7 +1903,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Temporary'
@@ -1955,7 +1956,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Permanentrestoration'
@@ -2006,7 +2007,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Gold restoration'
@@ -2059,7 +2060,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Porcelain/metal crown'
@@ -2112,7 +2113,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Extract and have fix bridge'
@@ -2163,7 +2164,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Front : Other'
@@ -2243,7 +2244,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Dental Carise'
@@ -2296,7 +2297,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Attrition, abrasion, abfraction'
@@ -2347,7 +2348,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Fractured tooth'
@@ -2398,7 +2399,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Retained root'
@@ -2449,7 +2450,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : RCT tooth'
@@ -2500,7 +2501,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Extracted tooth'
@@ -2551,7 +2552,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Missing tooth'
@@ -2602,7 +2603,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Impacted tooth'
@@ -2653,7 +2654,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Partial eruption'
@@ -2705,7 +2706,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Tilting, drifting'
@@ -2756,7 +2757,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Loss of contact'
@@ -2809,7 +2810,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Poor contact point'
@@ -2860,7 +2861,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Food impaction'
@@ -2911,7 +2912,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Supraclusion'
@@ -2962,7 +2963,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Infraclusion'
@@ -3013,7 +3014,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Rotation'
@@ -3064,7 +3065,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Temporary'
@@ -3117,7 +3118,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Permanentrestoration'
@@ -3168,7 +3169,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Gold restoration'
@@ -3221,7 +3222,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Porcelain/metal crown'
@@ -3274,7 +3275,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Extract and have fix bridge'
@@ -3325,7 +3326,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Middle : Other'
@@ -3404,7 +3405,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Dental Carise'
@@ -3456,7 +3457,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Attrition, abrasion, abfraction'
@@ -3506,7 +3507,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Fractured tooth'
@@ -3556,7 +3557,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Retained root'
@@ -3606,7 +3607,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : RCT tooth'
@@ -3656,7 +3657,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Extracted tooth'
@@ -3706,7 +3707,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Missing tooth'
@@ -3756,7 +3757,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Impacted tooth'
@@ -3806,7 +3807,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Partial eruption'
@@ -3857,7 +3858,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Tilting, drifting'
@@ -3907,7 +3908,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Loss of contact'
@@ -3959,7 +3960,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Poor contact point'
@@ -4009,7 +4010,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Food impaction'
@@ -4059,7 +4060,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Supraclusion'
@@ -4109,7 +4110,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Infraclusion'
@@ -4159,7 +4160,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Rotation'
@@ -4209,7 +4210,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Temporary'
@@ -4261,7 +4262,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Permanentrestoration'
@@ -4311,7 +4312,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Gold restoration'
@@ -4363,7 +4364,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Porcelain/metal crown'
@@ -4415,7 +4416,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Extract and have fix bridge'
@@ -4465,7 +4466,7 @@ Widget tooth1Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 1 Back : Other'
@@ -4601,7 +4602,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Dental Carise'
@@ -4654,7 +4655,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Attrition, abrasion, abfraction'
@@ -4705,7 +4706,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Fractured tooth'
@@ -4756,7 +4757,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Retained root'
@@ -4807,7 +4808,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : RCT tooth'
@@ -4858,7 +4859,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Extracted tooth'
@@ -4909,7 +4910,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Missing tooth'
@@ -4960,7 +4961,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Impacted tooth'
@@ -5011,7 +5012,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Partial eruption'
@@ -5063,7 +5064,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Tilting, drifting'
@@ -5114,7 +5115,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Loss of contact'
@@ -5167,7 +5168,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Poor contact point'
@@ -5218,7 +5219,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Food impaction'
@@ -5269,7 +5270,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Supraclusion'
@@ -5320,7 +5321,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Infraclusion'
@@ -5371,7 +5372,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Rotation'
@@ -5422,7 +5423,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Temporary'
@@ -5475,7 +5476,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Permanentrestoration'
@@ -5526,7 +5527,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Gold restoration'
@@ -5579,7 +5580,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Porcelain/metal crown'
@@ -5632,7 +5633,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Extract and have fix bridge'
@@ -5683,7 +5684,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Front : Other'
@@ -5763,7 +5764,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Dental Carise'
@@ -5816,7 +5817,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Attrition, abrasion, abfraction'
@@ -5867,7 +5868,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Fractured tooth'
@@ -5918,7 +5919,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Retained root'
@@ -5969,7 +5970,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : RCT tooth'
@@ -6020,7 +6021,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Extracted tooth'
@@ -6071,7 +6072,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Missing tooth'
@@ -6122,7 +6123,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Impacted tooth'
@@ -6173,7 +6174,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Partial eruption'
@@ -6225,7 +6226,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Tilting, drifting'
@@ -6276,7 +6277,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Loss of contact'
@@ -6329,7 +6330,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Poor contact point'
@@ -6380,7 +6381,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Food impaction'
@@ -6431,7 +6432,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Supraclusion'
@@ -6482,7 +6483,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Infraclusion'
@@ -6533,7 +6534,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Rotation'
@@ -6584,7 +6585,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Temporary'
@@ -6637,7 +6638,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Permanentrestoration'
@@ -6688,7 +6689,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Gold restoration'
@@ -6741,7 +6742,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Porcelain/metal crown'
@@ -6794,7 +6795,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Extract and have fix bridge'
@@ -6845,7 +6846,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Middle : Other'
@@ -6924,7 +6925,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Dental Carise'
@@ -6976,7 +6977,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Attrition, abrasion, abfraction'
@@ -7026,7 +7027,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Fractured tooth'
@@ -7076,7 +7077,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Retained root'
@@ -7126,7 +7127,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : RCT tooth'
@@ -7176,7 +7177,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Extracted tooth'
@@ -7226,7 +7227,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Missing tooth'
@@ -7276,7 +7277,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Impacted tooth'
@@ -7326,7 +7327,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Partial eruption'
@@ -7377,7 +7378,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Tilting, drifting'
@@ -7427,7 +7428,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Loss of contact'
@@ -7479,7 +7480,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Poor contact point'
@@ -7529,7 +7530,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Food impaction'
@@ -7579,7 +7580,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Supraclusion'
@@ -7629,7 +7630,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Infraclusion'
@@ -7679,7 +7680,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Rotation'
@@ -7729,7 +7730,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Temporary'
@@ -7781,7 +7782,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Permanentrestoration'
@@ -7831,7 +7832,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Gold restoration'
@@ -7883,7 +7884,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Porcelain/metal crown'
@@ -7935,7 +7936,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Extract and have fix bridge'
@@ -7985,7 +7986,7 @@ Widget tooth2Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 2 Back : Other'
@@ -8121,7 +8122,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Dental Carise'
@@ -8174,7 +8175,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Attrition, abrasion, abfraction'
@@ -8225,7 +8226,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Fractured tooth'
@@ -8276,7 +8277,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Retained root'
@@ -8327,7 +8328,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : RCT tooth'
@@ -8378,7 +8379,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Extracted tooth'
@@ -8429,7 +8430,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Missing tooth'
@@ -8480,7 +8481,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Impacted tooth'
@@ -8531,7 +8532,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Partial eruption'
@@ -8583,7 +8584,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Tilting, drifting'
@@ -8634,7 +8635,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Loss of contact'
@@ -8687,7 +8688,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Poor contact point'
@@ -8738,7 +8739,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Food impaction'
@@ -8789,7 +8790,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Supraclusion'
@@ -8840,7 +8841,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Infraclusion'
@@ -8891,7 +8892,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Rotation'
@@ -8942,7 +8943,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Temporary'
@@ -8995,7 +8996,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Permanentrestoration'
@@ -9046,7 +9047,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Gold restoration'
@@ -9099,7 +9100,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Porcelain/metal crown'
@@ -9152,7 +9153,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Extract and have fix bridge'
@@ -9203,7 +9204,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Front : Other'
@@ -9283,7 +9284,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Dental Carise'
@@ -9336,7 +9337,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Attrition, abrasion, abfraction'
@@ -9387,7 +9388,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Fractured tooth'
@@ -9438,7 +9439,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Retained root'
@@ -9489,7 +9490,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : RCT tooth'
@@ -9540,7 +9541,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Extracted tooth'
@@ -9591,7 +9592,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Missing tooth'
@@ -9642,7 +9643,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Impacted tooth'
@@ -9693,7 +9694,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Partial eruption'
@@ -9745,7 +9746,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Tilting, drifting'
@@ -9796,7 +9797,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Loss of contact'
@@ -9849,7 +9850,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Poor contact point'
@@ -9900,7 +9901,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Food impaction'
@@ -9951,7 +9952,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Supraclusion'
@@ -10002,7 +10003,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Infraclusion'
@@ -10053,7 +10054,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Rotation'
@@ -10104,7 +10105,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Temporary'
@@ -10157,7 +10158,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Permanentrestoration'
@@ -10208,7 +10209,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Gold restoration'
@@ -10261,7 +10262,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Porcelain/metal crown'
@@ -10314,7 +10315,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Extract and have fix bridge'
@@ -10365,7 +10366,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Middle : Other'
@@ -10444,7 +10445,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Dental Carise'
@@ -10496,7 +10497,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Attrition, abrasion, abfraction'
@@ -10546,7 +10547,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Fractured tooth'
@@ -10596,7 +10597,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Retained root'
@@ -10646,7 +10647,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : RCT tooth'
@@ -10696,7 +10697,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Extracted tooth'
@@ -10746,7 +10747,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Missing tooth'
@@ -10796,7 +10797,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Impacted tooth'
@@ -10846,7 +10847,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Partial eruption'
@@ -10897,7 +10898,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Tilting, drifting'
@@ -10947,7 +10948,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Loss of contact'
@@ -10999,7 +11000,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Poor contact point'
@@ -11049,7 +11050,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Food impaction'
@@ -11099,7 +11100,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Supraclusion'
@@ -11149,7 +11150,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Infraclusion'
@@ -11199,7 +11200,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Rotation'
@@ -11249,7 +11250,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Temporary'
@@ -11301,7 +11302,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Permanentrestoration'
@@ -11351,7 +11352,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Gold restoration'
@@ -11403,7 +11404,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Porcelain/metal crown'
@@ -11455,7 +11456,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Extract and have fix bridge'
@@ -11505,7 +11506,7 @@ Widget tooth3Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 3 Back : Other'
@@ -11641,7 +11642,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Dental Carise'
@@ -11694,7 +11695,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Attrition, abrasion, abfraction'
@@ -11745,7 +11746,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Fractured tooth'
@@ -11796,7 +11797,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Retained root'
@@ -11847,7 +11848,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : RCT tooth'
@@ -11898,7 +11899,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Extracted tooth'
@@ -11949,7 +11950,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Missing tooth'
@@ -12000,7 +12001,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Impacted tooth'
@@ -12051,7 +12052,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Partial eruption'
@@ -12103,7 +12104,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Tilting, drifting'
@@ -12154,7 +12155,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Loss of contact'
@@ -12207,7 +12208,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Poor contact point'
@@ -12258,7 +12259,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Food impaction'
@@ -12309,7 +12310,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Supraclusion'
@@ -12360,7 +12361,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Infraclusion'
@@ -12411,7 +12412,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Rotation'
@@ -12462,7 +12463,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Temporary'
@@ -12515,7 +12516,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Permanentrestoration'
@@ -12566,7 +12567,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Gold restoration'
@@ -12619,7 +12620,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Porcelain/metal crown'
@@ -12672,7 +12673,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Extract and have fix bridge'
@@ -12723,7 +12724,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Front : Other'
@@ -12803,7 +12804,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Dental Carise'
@@ -12856,7 +12857,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Attrition, abrasion, abfraction'
@@ -12907,7 +12908,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Fractured tooth'
@@ -12958,7 +12959,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Retained root'
@@ -13009,7 +13010,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : RCT tooth'
@@ -13060,7 +13061,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Extracted tooth'
@@ -13111,7 +13112,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Missing tooth'
@@ -13162,7 +13163,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Impacted tooth'
@@ -13213,7 +13214,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Partial eruption'
@@ -13265,7 +13266,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Tilting, drifting'
@@ -13316,7 +13317,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Loss of contact'
@@ -13369,7 +13370,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Poor contact point'
@@ -13420,7 +13421,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Food impaction'
@@ -13471,7 +13472,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Supraclusion'
@@ -13522,7 +13523,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Infraclusion'
@@ -13573,7 +13574,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Rotation'
@@ -13624,7 +13625,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Temporary'
@@ -13677,7 +13678,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Permanentrestoration'
@@ -13728,7 +13729,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Gold restoration'
@@ -13781,7 +13782,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Porcelain/metal crown'
@@ -13834,7 +13835,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Extract and have fix bridge'
@@ -13885,7 +13886,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Middle : Other'
@@ -13964,7 +13965,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Dental Carise'
@@ -14016,7 +14017,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Attrition, abrasion, abfraction'
@@ -14066,7 +14067,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Fractured tooth'
@@ -14116,7 +14117,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Retained root'
@@ -14166,7 +14167,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : RCT tooth'
@@ -14216,7 +14217,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Extracted tooth'
@@ -14266,7 +14267,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Missing tooth'
@@ -14316,7 +14317,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Impacted tooth'
@@ -14366,7 +14367,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Partial eruption'
@@ -14417,7 +14418,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Tilting, drifting'
@@ -14467,7 +14468,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Loss of contact'
@@ -14519,7 +14520,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Poor contact point'
@@ -14569,7 +14570,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Food impaction'
@@ -14619,7 +14620,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Supraclusion'
@@ -14669,7 +14670,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Infraclusion'
@@ -14719,7 +14720,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Rotation'
@@ -14769,7 +14770,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Temporary'
@@ -14821,7 +14822,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Permanentrestoration'
@@ -14871,7 +14872,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Gold restoration'
@@ -14923,7 +14924,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Porcelain/metal crown'
@@ -14975,7 +14976,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Extract and have fix bridge'
@@ -15025,7 +15026,7 @@ Widget tooth4Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 4 Back : Other'
@@ -15161,7 +15162,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Dental Carise'
@@ -15214,7 +15215,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Attrition, abrasion, abfraction'
@@ -15265,7 +15266,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Fractured tooth'
@@ -15316,7 +15317,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Retained root'
@@ -15367,7 +15368,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : RCT tooth'
@@ -15418,7 +15419,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Extracted tooth'
@@ -15469,7 +15470,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Missing tooth'
@@ -15520,7 +15521,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Impacted tooth'
@@ -15571,7 +15572,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Partial eruption'
@@ -15623,7 +15624,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Tilting, drifting'
@@ -15674,7 +15675,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Loss of contact'
@@ -15727,7 +15728,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Poor contact point'
@@ -15778,7 +15779,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Food impaction'
@@ -15829,7 +15830,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Supraclusion'
@@ -15880,7 +15881,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Infraclusion'
@@ -15931,7 +15932,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Rotation'
@@ -15982,7 +15983,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Temporary'
@@ -16035,7 +16036,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Permanentrestoration'
@@ -16086,7 +16087,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Gold restoration'
@@ -16139,7 +16140,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Porcelain/metal crown'
@@ -16192,7 +16193,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Extract and have fix bridge'
@@ -16243,7 +16244,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Front : Other'
@@ -16323,7 +16324,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Dental Carise'
@@ -16376,7 +16377,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Attrition, abrasion, abfraction'
@@ -16427,7 +16428,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Fractured tooth'
@@ -16478,7 +16479,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Retained root'
@@ -16529,7 +16530,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : RCT tooth'
@@ -16580,7 +16581,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Extracted tooth'
@@ -16631,7 +16632,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Missing tooth'
@@ -16682,7 +16683,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Impacted tooth'
@@ -16733,7 +16734,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Partial eruption'
@@ -16785,7 +16786,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Tilting, drifting'
@@ -16836,7 +16837,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Loss of contact'
@@ -16889,7 +16890,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Poor contact point'
@@ -16940,7 +16941,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Food impaction'
@@ -16991,7 +16992,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Supraclusion'
@@ -17042,7 +17043,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Infraclusion'
@@ -17093,7 +17094,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Rotation'
@@ -17144,7 +17145,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Temporary'
@@ -17197,7 +17198,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Permanentrestoration'
@@ -17248,7 +17249,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Gold restoration'
@@ -17301,7 +17302,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Porcelain/metal crown'
@@ -17354,7 +17355,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Extract and have fix bridge'
@@ -17405,7 +17406,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Middle : Other'
@@ -17484,7 +17485,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Dental Carise'
@@ -17536,7 +17537,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Attrition, abrasion, abfraction'
@@ -17586,7 +17587,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Fractured tooth'
@@ -17636,7 +17637,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Retained root'
@@ -17686,7 +17687,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : RCT tooth'
@@ -17736,7 +17737,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Extracted tooth'
@@ -17786,7 +17787,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Missing tooth'
@@ -17836,7 +17837,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Impacted tooth'
@@ -17886,7 +17887,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Partial eruption'
@@ -17937,7 +17938,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Tilting, drifting'
@@ -17987,7 +17988,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Loss of contact'
@@ -18039,7 +18040,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Poor contact point'
@@ -18089,7 +18090,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Food impaction'
@@ -18139,7 +18140,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Supraclusion'
@@ -18189,7 +18190,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Infraclusion'
@@ -18239,7 +18240,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Rotation'
@@ -18289,7 +18290,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Temporary'
@@ -18341,7 +18342,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Permanentrestoration'
@@ -18391,7 +18392,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Gold restoration'
@@ -18443,7 +18444,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Porcelain/metal crown'
@@ -18495,7 +18496,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Extract and have fix bridge'
@@ -18545,7 +18546,7 @@ Widget tooth5Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 5 Back : Other'
@@ -18681,7 +18682,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Dental Carise'
@@ -18734,7 +18735,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Attrition, abrasion, abfraction'
@@ -18785,7 +18786,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Fractured tooth'
@@ -18836,7 +18837,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Retained root'
@@ -18887,7 +18888,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : RCT tooth'
@@ -18938,7 +18939,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Extracted tooth'
@@ -18989,7 +18990,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Missing tooth'
@@ -19040,7 +19041,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Impacted tooth'
@@ -19091,7 +19092,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Partial eruption'
@@ -19143,7 +19144,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Tilting, drifting'
@@ -19194,7 +19195,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Loss of contact'
@@ -19247,7 +19248,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Poor contact point'
@@ -19298,7 +19299,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Food impaction'
@@ -19349,7 +19350,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Supraclusion'
@@ -19400,7 +19401,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Infraclusion'
@@ -19451,7 +19452,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Rotation'
@@ -19502,7 +19503,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Temporary'
@@ -19555,7 +19556,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Permanentrestoration'
@@ -19606,7 +19607,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Gold restoration'
@@ -19659,7 +19660,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Porcelain/metal crown'
@@ -19712,7 +19713,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Extract and have fix bridge'
@@ -19763,7 +19764,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Front : Other'
@@ -19843,7 +19844,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Dental Carise'
@@ -19896,7 +19897,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Attrition, abrasion, abfraction'
@@ -19947,7 +19948,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Fractured tooth'
@@ -19998,7 +19999,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Retained root'
@@ -20049,7 +20050,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : RCT tooth'
@@ -20100,7 +20101,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Extracted tooth'
@@ -20151,7 +20152,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Missing tooth'
@@ -20202,7 +20203,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Impacted tooth'
@@ -20253,7 +20254,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Partial eruption'
@@ -20305,7 +20306,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Tilting, drifting'
@@ -20356,7 +20357,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Loss of contact'
@@ -20409,7 +20410,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Poor contact point'
@@ -20460,7 +20461,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Food impaction'
@@ -20511,7 +20512,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Supraclusion'
@@ -20562,7 +20563,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Infraclusion'
@@ -20613,7 +20614,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Rotation'
@@ -20664,7 +20665,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Temporary'
@@ -20717,7 +20718,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Permanentrestoration'
@@ -20768,7 +20769,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Gold restoration'
@@ -20821,7 +20822,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Porcelain/metal crown'
@@ -20874,7 +20875,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Extract and have fix bridge'
@@ -20925,7 +20926,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Middle : Other'
@@ -21004,7 +21005,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Dental Carise'
@@ -21056,7 +21057,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Attrition, abrasion, abfraction'
@@ -21106,7 +21107,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Fractured tooth'
@@ -21156,7 +21157,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Retained root'
@@ -21206,7 +21207,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : RCT tooth'
@@ -21256,7 +21257,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Extracted tooth'
@@ -21306,7 +21307,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Missing tooth'
@@ -21356,7 +21357,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Impacted tooth'
@@ -21406,7 +21407,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Partial eruption'
@@ -21457,7 +21458,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Tilting, drifting'
@@ -21507,7 +21508,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Loss of contact'
@@ -21559,7 +21560,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Poor contact point'
@@ -21609,7 +21610,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Food impaction'
@@ -21659,7 +21660,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Supraclusion'
@@ -21709,7 +21710,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Infraclusion'
@@ -21759,7 +21760,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Rotation'
@@ -21809,7 +21810,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Temporary'
@@ -21861,7 +21862,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Permanentrestoration'
@@ -21911,7 +21912,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Gold restoration'
@@ -21963,7 +21964,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Porcelain/metal crown'
@@ -22015,7 +22016,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Extract and have fix bridge'
@@ -22065,7 +22066,7 @@ Widget tooth6Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 6 Back : Other'
@@ -22201,7 +22202,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Dental Carise'
@@ -22254,7 +22255,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Attrition, abrasion, abfraction'
@@ -22305,7 +22306,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Fractured tooth'
@@ -22356,7 +22357,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Retained root'
@@ -22407,7 +22408,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : RCT tooth'
@@ -22458,7 +22459,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Extracted tooth'
@@ -22509,7 +22510,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Missing tooth'
@@ -22560,7 +22561,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Impacted tooth'
@@ -22611,7 +22612,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Partial eruption'
@@ -22663,7 +22664,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Tilting, drifting'
@@ -22714,7 +22715,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Loss of contact'
@@ -22767,7 +22768,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Poor contact point'
@@ -22818,7 +22819,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Food impaction'
@@ -22869,7 +22870,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Supraclusion'
@@ -22920,7 +22921,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Infraclusion'
@@ -22971,7 +22972,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Rotation'
@@ -23022,7 +23023,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Temporary'
@@ -23075,7 +23076,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Permanentrestoration'
@@ -23126,7 +23127,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Gold restoration'
@@ -23179,7 +23180,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Porcelain/metal crown'
@@ -23232,7 +23233,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Extract and have fix bridge'
@@ -23283,7 +23284,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Front : Other'
@@ -23363,7 +23364,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Dental Carise'
@@ -23416,7 +23417,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Attrition, abrasion, abfraction'
@@ -23467,7 +23468,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Fractured tooth'
@@ -23518,7 +23519,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Retained root'
@@ -23569,7 +23570,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : RCT tooth'
@@ -23620,7 +23621,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Extracted tooth'
@@ -23671,7 +23672,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Missing tooth'
@@ -23722,7 +23723,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Impacted tooth'
@@ -23773,7 +23774,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Partial eruption'
@@ -23825,7 +23826,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Tilting, drifting'
@@ -23876,7 +23877,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Loss of contact'
@@ -23929,7 +23930,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Poor contact point'
@@ -23980,7 +23981,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Food impaction'
@@ -24031,7 +24032,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Supraclusion'
@@ -24082,7 +24083,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Infraclusion'
@@ -24133,7 +24134,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Rotation'
@@ -24184,7 +24185,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Temporary'
@@ -24237,7 +24238,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Permanentrestoration'
@@ -24288,7 +24289,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Gold restoration'
@@ -24341,7 +24342,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Porcelain/metal crown'
@@ -24394,7 +24395,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Extract and have fix bridge'
@@ -24445,7 +24446,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Middle : Other'
@@ -24524,7 +24525,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Dental Carise'
@@ -24576,7 +24577,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Attrition, abrasion, abfraction'
@@ -24626,7 +24627,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Fractured tooth'
@@ -24676,7 +24677,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Retained root'
@@ -24726,7 +24727,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : RCT tooth'
@@ -24776,7 +24777,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Extracted tooth'
@@ -24826,7 +24827,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Missing tooth'
@@ -24876,7 +24877,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Impacted tooth'
@@ -24926,7 +24927,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Partial eruption'
@@ -24977,7 +24978,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Tilting, drifting'
@@ -25027,7 +25028,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Loss of contact'
@@ -25079,7 +25080,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Poor contact point'
@@ -25129,7 +25130,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Food impaction'
@@ -25179,7 +25180,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Supraclusion'
@@ -25229,7 +25230,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Infraclusion'
@@ -25279,7 +25280,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Rotation'
@@ -25329,7 +25330,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Temporary'
@@ -25381,7 +25382,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Permanentrestoration'
@@ -25431,7 +25432,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Gold restoration'
@@ -25483,7 +25484,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Porcelain/metal crown'
@@ -25535,7 +25536,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Extract and have fix bridge'
@@ -25585,7 +25586,7 @@ Widget tooth7Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 7 Back : Other'
@@ -25721,7 +25722,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Dental Carise'
@@ -25774,7 +25775,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Attrition, abrasion, abfraction'
@@ -25825,7 +25826,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Fractured tooth'
@@ -25876,7 +25877,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Retained root'
@@ -25927,7 +25928,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : RCT tooth'
@@ -25978,7 +25979,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Extracted tooth'
@@ -26029,7 +26030,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Missing tooth'
@@ -26080,7 +26081,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Impacted tooth'
@@ -26131,7 +26132,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Partial eruption'
@@ -26183,7 +26184,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Tilting, drifting'
@@ -26234,7 +26235,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Loss of contact'
@@ -26287,7 +26288,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Poor contact point'
@@ -26338,7 +26339,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Food impaction'
@@ -26389,7 +26390,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Supraclusion'
@@ -26440,7 +26441,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Infraclusion'
@@ -26491,7 +26492,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Rotation'
@@ -26542,7 +26543,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Temporary'
@@ -26595,7 +26596,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Permanentrestoration'
@@ -26646,7 +26647,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Gold restoration'
@@ -26699,7 +26700,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Porcelain/metal crown'
@@ -26752,7 +26753,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Extract and have fix bridge'
@@ -26803,7 +26804,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Front : Other'
@@ -26883,7 +26884,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Dental Carise'
@@ -26936,7 +26937,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Attrition, abrasion, abfraction'
@@ -26987,7 +26988,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Fractured tooth'
@@ -27038,7 +27039,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Retained root'
@@ -27089,7 +27090,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : RCT tooth'
@@ -27140,7 +27141,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Extracted tooth'
@@ -27191,7 +27192,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Missing tooth'
@@ -27242,7 +27243,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Impacted tooth'
@@ -27293,7 +27294,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Partial eruption'
@@ -27345,7 +27346,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Tilting, drifting'
@@ -27396,7 +27397,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Loss of contact'
@@ -27449,7 +27450,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Poor contact point'
@@ -27500,7 +27501,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Food impaction'
@@ -27551,7 +27552,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Supraclusion'
@@ -27602,7 +27603,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Infraclusion'
@@ -27653,7 +27654,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Rotation'
@@ -27704,7 +27705,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Temporary'
@@ -27757,7 +27758,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Permanentrestoration'
@@ -27808,7 +27809,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Gold restoration'
@@ -27861,7 +27862,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Porcelain/metal crown'
@@ -27914,7 +27915,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Extract and have fix bridge'
@@ -27965,7 +27966,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Middle : Other'
@@ -28044,7 +28045,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Dental Carise'
@@ -28096,7 +28097,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Attrition, abrasion, abfraction'
@@ -28146,7 +28147,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Fractured tooth'
@@ -28196,7 +28197,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Retained root'
@@ -28246,7 +28247,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : RCT tooth'
@@ -28296,7 +28297,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Extracted tooth'
@@ -28346,7 +28347,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Missing tooth'
@@ -28396,7 +28397,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Impacted tooth'
@@ -28446,7 +28447,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Partial eruption'
@@ -28497,7 +28498,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Tilting, drifting'
@@ -28547,7 +28548,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Loss of contact'
@@ -28599,7 +28600,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Poor contact point'
@@ -28649,7 +28650,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Food impaction'
@@ -28699,7 +28700,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Supraclusion'
@@ -28749,7 +28750,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Infraclusion'
@@ -28799,7 +28800,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Rotation'
@@ -28849,7 +28850,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Temporary'
@@ -28901,7 +28902,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Permanentrestoration'
@@ -28951,7 +28952,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Gold restoration'
@@ -29003,7 +29004,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Porcelain/metal crown'
@@ -29055,7 +29056,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Extract and have fix bridge'
@@ -29105,7 +29106,7 @@ Widget tooth8Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 8 Back : Other'
@@ -29241,7 +29242,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Dental Carise'
@@ -29294,7 +29295,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Attrition, abrasion, abfraction'
@@ -29345,7 +29346,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Fractured tooth'
@@ -29396,7 +29397,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Retained root'
@@ -29447,7 +29448,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : RCT tooth'
@@ -29498,7 +29499,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Extracted tooth'
@@ -29549,7 +29550,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Missing tooth'
@@ -29600,7 +29601,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Impacted tooth'
@@ -29651,7 +29652,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Partial eruption'
@@ -29703,7 +29704,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Tilting, drifting'
@@ -29754,7 +29755,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Loss of contact'
@@ -29807,7 +29808,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Poor contact point'
@@ -29858,7 +29859,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Food impaction'
@@ -29909,7 +29910,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Supraclusion'
@@ -29960,7 +29961,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Infraclusion'
@@ -30011,7 +30012,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Rotation'
@@ -30062,7 +30063,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Temporary'
@@ -30115,7 +30116,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Permanentrestoration'
@@ -30166,7 +30167,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Gold restoration'
@@ -30219,7 +30220,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Porcelain/metal crown'
@@ -30272,7 +30273,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Extract and have fix bridge'
@@ -30323,7 +30324,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Front : Other'
@@ -30403,7 +30404,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Dental Carise'
@@ -30456,7 +30457,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Attrition, abrasion, abfraction'
@@ -30507,7 +30508,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Fractured tooth'
@@ -30558,7 +30559,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Retained root'
@@ -30609,7 +30610,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : RCT tooth'
@@ -30660,7 +30661,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Extracted tooth'
@@ -30711,7 +30712,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Missing tooth'
@@ -30762,7 +30763,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Impacted tooth'
@@ -30813,7 +30814,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Partial eruption'
@@ -30865,7 +30866,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Tilting, drifting'
@@ -30916,7 +30917,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Loss of contact'
@@ -30969,7 +30970,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Poor contact point'
@@ -31020,7 +31021,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Food impaction'
@@ -31071,7 +31072,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Supraclusion'
@@ -31122,7 +31123,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Infraclusion'
@@ -31173,7 +31174,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Rotation'
@@ -31224,7 +31225,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Temporary'
@@ -31277,7 +31278,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Permanentrestoration'
@@ -31328,7 +31329,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Gold restoration'
@@ -31381,7 +31382,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Porcelain/metal crown'
@@ -31434,7 +31435,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Extract and have fix bridge'
@@ -31485,7 +31486,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Middle : Other'
@@ -31564,7 +31565,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Dental Carise'
@@ -31616,7 +31617,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Attrition, abrasion, abfraction'
@@ -31666,7 +31667,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Fractured tooth'
@@ -31716,7 +31717,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Retained root'
@@ -31766,7 +31767,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : RCT tooth'
@@ -31816,7 +31817,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Extracted tooth'
@@ -31866,7 +31867,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Missing tooth'
@@ -31916,7 +31917,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Impacted tooth'
@@ -31966,7 +31967,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Partial eruption'
@@ -32017,7 +32018,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Tilting, drifting'
@@ -32067,7 +32068,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Loss of contact'
@@ -32119,7 +32120,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Poor contact point'
@@ -32169,7 +32170,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Food impaction'
@@ -32219,7 +32220,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Supraclusion'
@@ -32269,7 +32270,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Infraclusion'
@@ -32319,7 +32320,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Rotation'
@@ -32369,7 +32370,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Temporary'
@@ -32421,7 +32422,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Permanentrestoration'
@@ -32471,7 +32472,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Gold restoration'
@@ -32523,7 +32524,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Porcelain/metal crown'
@@ -32575,7 +32576,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Extract and have fix bridge'
@@ -32625,7 +32626,7 @@ Widget tooth9Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 9 Back : Other'
@@ -32761,7 +32762,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Dental Carise'
@@ -32814,7 +32815,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Attrition, abrasion, abfraction'
@@ -32865,7 +32866,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Fractured tooth'
@@ -32916,7 +32917,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Retained root'
@@ -32967,7 +32968,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : RCT tooth'
@@ -33018,7 +33019,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Extracted tooth'
@@ -33069,7 +33070,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Missing tooth'
@@ -33120,7 +33121,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Impacted tooth'
@@ -33171,7 +33172,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Partial eruption'
@@ -33223,7 +33224,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Tilting, drifting'
@@ -33274,7 +33275,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Loss of contact'
@@ -33327,7 +33328,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Poor contact point'
@@ -33378,7 +33379,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Food impaction'
@@ -33429,7 +33430,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Supraclusion'
@@ -33480,7 +33481,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Infraclusion'
@@ -33531,7 +33532,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Rotation'
@@ -33582,7 +33583,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Temporary'
@@ -33635,7 +33636,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Permanentrestoration'
@@ -33686,7 +33687,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Gold restoration'
@@ -33739,7 +33740,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Porcelain/metal crown'
@@ -33792,7 +33793,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Extract and have fix bridge'
@@ -33843,7 +33844,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Front : Other'
@@ -33924,7 +33925,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Dental Carise'
@@ -33978,7 +33979,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Attrition, abrasion, abfraction'
@@ -34030,7 +34031,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Fractured tooth'
@@ -34082,7 +34083,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Retained root'
@@ -34134,7 +34135,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : RCT tooth'
@@ -34186,7 +34187,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Extracted tooth'
@@ -34238,7 +34239,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Missing tooth'
@@ -34290,7 +34291,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Impacted tooth'
@@ -34342,7 +34343,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Partial eruption'
@@ -34395,7 +34396,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Tilting, drifting'
@@ -34447,7 +34448,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Loss of contact'
@@ -34501,7 +34502,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Poor contact point'
@@ -34553,7 +34554,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Food impaction'
@@ -34605,7 +34606,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Supraclusion'
@@ -34657,7 +34658,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Infraclusion'
@@ -34709,7 +34710,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Rotation'
@@ -34761,7 +34762,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Temporary'
@@ -34815,7 +34816,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Permanentrestoration'
@@ -34867,7 +34868,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Gold restoration'
@@ -34921,7 +34922,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Porcelain/metal crown'
@@ -34975,7 +34976,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Extract and have fix bridge'
@@ -35027,7 +35028,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Middle : Other'
@@ -35107,7 +35108,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Dental Carise'
@@ -35160,7 +35161,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Attrition, abrasion, abfraction'
@@ -35211,7 +35212,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Fractured tooth'
@@ -35262,7 +35263,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Retained root'
@@ -35313,7 +35314,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : RCT tooth'
@@ -35364,7 +35365,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Extracted tooth'
@@ -35415,7 +35416,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Missing tooth'
@@ -35466,7 +35467,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Impacted tooth'
@@ -35517,7 +35518,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Partial eruption'
@@ -35569,7 +35570,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Tilting, drifting'
@@ -35620,7 +35621,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Loss of contact'
@@ -35673,7 +35674,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Poor contact point'
@@ -35724,7 +35725,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Food impaction'
@@ -35775,7 +35776,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Supraclusion'
@@ -35826,7 +35827,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Infraclusion'
@@ -35877,7 +35878,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Rotation'
@@ -35928,7 +35929,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Temporary'
@@ -35981,7 +35982,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Permanentrestoration'
@@ -36032,7 +36033,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Gold restoration'
@@ -36085,7 +36086,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Porcelain/metal crown'
@@ -36138,7 +36139,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Extract and have fix bridge'
@@ -36189,7 +36190,7 @@ Widget tooth10Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 10 Back : Other'
@@ -36325,7 +36326,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Dental Carise'
@@ -36378,7 +36379,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Attrition, abrasion, abfraction'
@@ -36429,7 +36430,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Fractured tooth'
@@ -36480,7 +36481,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Retained root'
@@ -36531,7 +36532,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : RCT tooth'
@@ -36582,7 +36583,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Extracted tooth'
@@ -36633,7 +36634,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Missing tooth'
@@ -36684,7 +36685,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Impacted tooth'
@@ -36735,7 +36736,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Partial eruption'
@@ -36787,7 +36788,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Tilting, drifting'
@@ -36838,7 +36839,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Loss of contact'
@@ -36891,7 +36892,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Poor contact point'
@@ -36942,7 +36943,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Food impaction'
@@ -36993,7 +36994,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Supraclusion'
@@ -37044,7 +37045,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Infraclusion'
@@ -37095,7 +37096,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Rotation'
@@ -37146,7 +37147,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Temporary'
@@ -37199,7 +37200,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Permanentrestoration'
@@ -37250,7 +37251,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Gold restoration'
@@ -37303,7 +37304,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Porcelain/metal crown'
@@ -37356,7 +37357,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Extract and have fix bridge'
@@ -37407,7 +37408,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Front : Other'
@@ -37488,7 +37489,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Dental Carise'
@@ -37542,7 +37543,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Attrition, abrasion, abfraction'
@@ -37594,7 +37595,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Fractured tooth'
@@ -37646,7 +37647,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Retained root'
@@ -37698,7 +37699,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : RCT tooth'
@@ -37750,7 +37751,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Extracted tooth'
@@ -37802,7 +37803,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Missing tooth'
@@ -37854,7 +37855,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Impacted tooth'
@@ -37906,7 +37907,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Partial eruption'
@@ -37959,7 +37960,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Tilting, drifting'
@@ -38011,7 +38012,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Loss of contact'
@@ -38065,7 +38066,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Poor contact point'
@@ -38117,7 +38118,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Food impaction'
@@ -38169,7 +38170,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Supraclusion'
@@ -38221,7 +38222,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Infraclusion'
@@ -38273,7 +38274,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Rotation'
@@ -38325,7 +38326,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Temporary'
@@ -38379,7 +38380,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Permanentrestoration'
@@ -38431,7 +38432,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Gold restoration'
@@ -38485,7 +38486,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Porcelain/metal crown'
@@ -38539,7 +38540,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Extract and have fix bridge'
@@ -38591,7 +38592,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Middle : Other'
@@ -38671,7 +38672,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Dental Carise'
@@ -38724,7 +38725,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Attrition, abrasion, abfraction'
@@ -38775,7 +38776,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Fractured tooth'
@@ -38826,7 +38827,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Retained root'
@@ -38877,7 +38878,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : RCT tooth'
@@ -38928,7 +38929,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Extracted tooth'
@@ -38979,7 +38980,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Missing tooth'
@@ -39030,7 +39031,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Impacted tooth'
@@ -39081,7 +39082,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Partial eruption'
@@ -39133,7 +39134,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Tilting, drifting'
@@ -39184,7 +39185,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Loss of contact'
@@ -39237,7 +39238,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Poor contact point'
@@ -39288,7 +39289,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Food impaction'
@@ -39339,7 +39340,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Supraclusion'
@@ -39390,7 +39391,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Infraclusion'
@@ -39441,7 +39442,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Rotation'
@@ -39492,7 +39493,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Temporary'
@@ -39545,7 +39546,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Permanentrestoration'
@@ -39596,7 +39597,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Gold restoration'
@@ -39649,7 +39650,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Porcelain/metal crown'
@@ -39702,7 +39703,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Extract and have fix bridge'
@@ -39753,7 +39754,7 @@ Widget tooth11Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 11 Back : Other'
@@ -39889,7 +39890,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Dental Carise'
@@ -39942,7 +39943,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Attrition, abrasion, abfraction'
@@ -39993,7 +39994,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Fractured tooth'
@@ -40044,7 +40045,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Retained root'
@@ -40095,7 +40096,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : RCT tooth'
@@ -40146,7 +40147,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Extracted tooth'
@@ -40197,7 +40198,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Missing tooth'
@@ -40248,7 +40249,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Impacted tooth'
@@ -40299,7 +40300,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Partial eruption'
@@ -40351,7 +40352,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Tilting, drifting'
@@ -40402,7 +40403,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Loss of contact'
@@ -40455,7 +40456,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Poor contact point'
@@ -40506,7 +40507,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Food impaction'
@@ -40557,7 +40558,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Supraclusion'
@@ -40608,7 +40609,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Infraclusion'
@@ -40659,7 +40660,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Rotation'
@@ -40710,7 +40711,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Temporary'
@@ -40763,7 +40764,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Permanentrestoration'
@@ -40814,7 +40815,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Gold restoration'
@@ -40867,7 +40868,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Porcelain/metal crown'
@@ -40920,7 +40921,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Extract and have fix bridge'
@@ -40971,7 +40972,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Front : Other'
@@ -41052,7 +41053,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Dental Carise'
@@ -41106,7 +41107,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Attrition, abrasion, abfraction'
@@ -41158,7 +41159,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Fractured tooth'
@@ -41210,7 +41211,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Retained root'
@@ -41262,7 +41263,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : RCT tooth'
@@ -41314,7 +41315,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Extracted tooth'
@@ -41366,7 +41367,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Missing tooth'
@@ -41418,7 +41419,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Impacted tooth'
@@ -41470,7 +41471,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Partial eruption'
@@ -41523,7 +41524,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Tilting, drifting'
@@ -41575,7 +41576,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Loss of contact'
@@ -41629,7 +41630,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Poor contact point'
@@ -41681,7 +41682,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Food impaction'
@@ -41733,7 +41734,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Supraclusion'
@@ -41785,7 +41786,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Infraclusion'
@@ -41837,7 +41838,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Rotation'
@@ -41889,7 +41890,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Temporary'
@@ -41943,7 +41944,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Permanentrestoration'
@@ -41995,7 +41996,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Gold restoration'
@@ -42049,7 +42050,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Porcelain/metal crown'
@@ -42103,7 +42104,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Extract and have fix bridge'
@@ -42155,7 +42156,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Middle : Other'
@@ -42235,7 +42236,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Dental Carise'
@@ -42288,7 +42289,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Attrition, abrasion, abfraction'
@@ -42339,7 +42340,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Fractured tooth'
@@ -42390,7 +42391,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Retained root'
@@ -42441,7 +42442,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : RCT tooth'
@@ -42492,7 +42493,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Extracted tooth'
@@ -42543,7 +42544,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Missing tooth'
@@ -42594,7 +42595,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Impacted tooth'
@@ -42645,7 +42646,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Partial eruption'
@@ -42697,7 +42698,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Tilting, drifting'
@@ -42748,7 +42749,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Loss of contact'
@@ -42801,7 +42802,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Poor contact point'
@@ -42852,7 +42853,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Food impaction'
@@ -42903,7 +42904,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Supraclusion'
@@ -42954,7 +42955,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Infraclusion'
@@ -43005,7 +43006,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Rotation'
@@ -43056,7 +43057,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Temporary'
@@ -43109,7 +43110,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Permanentrestoration'
@@ -43160,7 +43161,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Gold restoration'
@@ -43213,7 +43214,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Porcelain/metal crown'
@@ -43266,7 +43267,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Extract and have fix bridge'
@@ -43317,7 +43318,7 @@ Widget tooth12Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 12 Back : Other'
@@ -43453,7 +43454,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Dental Carise'
@@ -43506,7 +43507,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Attrition, abrasion, abfraction'
@@ -43557,7 +43558,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Fractured tooth'
@@ -43608,7 +43609,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Retained root'
@@ -43659,7 +43660,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : RCT tooth'
@@ -43710,7 +43711,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Extracted tooth'
@@ -43761,7 +43762,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Missing tooth'
@@ -43812,7 +43813,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Impacted tooth'
@@ -43863,7 +43864,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Partial eruption'
@@ -43915,7 +43916,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Tilting, drifting'
@@ -43966,7 +43967,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Loss of contact'
@@ -44019,7 +44020,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Poor contact point'
@@ -44070,7 +44071,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Food impaction'
@@ -44121,7 +44122,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Supraclusion'
@@ -44172,7 +44173,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Infraclusion'
@@ -44223,7 +44224,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Rotation'
@@ -44274,7 +44275,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Temporary'
@@ -44327,7 +44328,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Permanentrestoration'
@@ -44378,7 +44379,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Gold restoration'
@@ -44431,7 +44432,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Porcelain/metal crown'
@@ -44484,7 +44485,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Extract and have fix bridge'
@@ -44535,7 +44536,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Front : Other'
@@ -44616,7 +44617,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Dental Carise'
@@ -44670,7 +44671,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Attrition, abrasion, abfraction'
@@ -44722,7 +44723,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Fractured tooth'
@@ -44774,7 +44775,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Retained root'
@@ -44826,7 +44827,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : RCT tooth'
@@ -44878,7 +44879,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Extracted tooth'
@@ -44930,7 +44931,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Missing tooth'
@@ -44982,7 +44983,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Impacted tooth'
@@ -45034,7 +45035,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Partial eruption'
@@ -45087,7 +45088,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Tilting, drifting'
@@ -45139,7 +45140,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Loss of contact'
@@ -45193,7 +45194,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Poor contact point'
@@ -45245,7 +45246,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Food impaction'
@@ -45297,7 +45298,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Supraclusion'
@@ -45349,7 +45350,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Infraclusion'
@@ -45401,7 +45402,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Rotation'
@@ -45453,7 +45454,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Temporary'
@@ -45507,7 +45508,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Permanentrestoration'
@@ -45559,7 +45560,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Gold restoration'
@@ -45613,7 +45614,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Porcelain/metal crown'
@@ -45667,7 +45668,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Extract and have fix bridge'
@@ -45719,7 +45720,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Middle : Other'
@@ -45799,7 +45800,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Dental Carise'
@@ -45852,7 +45853,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Attrition, abrasion, abfraction'
@@ -45903,7 +45904,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Fractured tooth'
@@ -45954,7 +45955,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Retained root'
@@ -46005,7 +46006,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : RCT tooth'
@@ -46056,7 +46057,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Extracted tooth'
@@ -46107,7 +46108,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Missing tooth'
@@ -46158,7 +46159,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Impacted tooth'
@@ -46209,7 +46210,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Partial eruption'
@@ -46261,7 +46262,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Tilting, drifting'
@@ -46312,7 +46313,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Loss of contact'
@@ -46365,7 +46366,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Poor contact point'
@@ -46416,7 +46417,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Food impaction'
@@ -46467,7 +46468,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Supraclusion'
@@ -46518,7 +46519,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Infraclusion'
@@ -46569,7 +46570,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Rotation'
@@ -46620,7 +46621,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Temporary'
@@ -46673,7 +46674,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Permanentrestoration'
@@ -46724,7 +46725,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Gold restoration'
@@ -46777,7 +46778,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Porcelain/metal crown'
@@ -46830,7 +46831,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Extract and have fix bridge'
@@ -46881,7 +46882,7 @@ Widget tooth13Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 13 Back : Other'
@@ -47017,7 +47018,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Dental Carise'
@@ -47070,7 +47071,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Attrition, abrasion, abfraction'
@@ -47121,7 +47122,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Fractured tooth'
@@ -47172,7 +47173,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Retained root'
@@ -47223,7 +47224,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : RCT tooth'
@@ -47274,7 +47275,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Extracted tooth'
@@ -47325,7 +47326,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Missing tooth'
@@ -47376,7 +47377,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Impacted tooth'
@@ -47427,7 +47428,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Partial eruption'
@@ -47479,7 +47480,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Tilting, drifting'
@@ -47530,7 +47531,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Loss of contact'
@@ -47583,7 +47584,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Poor contact point'
@@ -47634,7 +47635,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Food impaction'
@@ -47685,7 +47686,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Supraclusion'
@@ -47736,7 +47737,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Infraclusion'
@@ -47787,7 +47788,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Rotation'
@@ -47838,7 +47839,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Temporary'
@@ -47891,7 +47892,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Permanentrestoration'
@@ -47942,7 +47943,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Gold restoration'
@@ -47995,7 +47996,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Porcelain/metal crown'
@@ -48048,7 +48049,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Extract and have fix bridge'
@@ -48099,7 +48100,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Front : Other'
@@ -48180,7 +48181,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Dental Carise'
@@ -48234,7 +48235,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Attrition, abrasion, abfraction'
@@ -48286,7 +48287,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Fractured tooth'
@@ -48338,7 +48339,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Retained root'
@@ -48390,7 +48391,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : RCT tooth'
@@ -48442,7 +48443,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Extracted tooth'
@@ -48494,7 +48495,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Missing tooth'
@@ -48546,7 +48547,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Impacted tooth'
@@ -48598,7 +48599,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Partial eruption'
@@ -48651,7 +48652,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Tilting, drifting'
@@ -48703,7 +48704,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Loss of contact'
@@ -48757,7 +48758,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Poor contact point'
@@ -48809,7 +48810,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Food impaction'
@@ -48861,7 +48862,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Supraclusion'
@@ -48913,7 +48914,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Infraclusion'
@@ -48965,7 +48966,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Rotation'
@@ -49017,7 +49018,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Temporary'
@@ -49071,7 +49072,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Permanentrestoration'
@@ -49123,7 +49124,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Gold restoration'
@@ -49177,7 +49178,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Porcelain/metal crown'
@@ -49231,7 +49232,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Extract and have fix bridge'
@@ -49283,7 +49284,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Middle : Other'
@@ -49363,7 +49364,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Dental Carise'
@@ -49416,7 +49417,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Attrition, abrasion, abfraction'
@@ -49467,7 +49468,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Fractured tooth'
@@ -49518,7 +49519,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Retained root'
@@ -49569,7 +49570,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : RCT tooth'
@@ -49620,7 +49621,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Extracted tooth'
@@ -49671,7 +49672,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Missing tooth'
@@ -49722,7 +49723,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Impacted tooth'
@@ -49773,7 +49774,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Partial eruption'
@@ -49825,7 +49826,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Tilting, drifting'
@@ -49876,7 +49877,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Loss of contact'
@@ -49929,7 +49930,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Poor contact point'
@@ -49980,7 +49981,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Food impaction'
@@ -50031,7 +50032,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Supraclusion'
@@ -50082,7 +50083,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Infraclusion'
@@ -50133,7 +50134,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Rotation'
@@ -50184,7 +50185,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Temporary'
@@ -50237,7 +50238,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Permanentrestoration'
@@ -50288,7 +50289,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Gold restoration'
@@ -50341,7 +50342,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Porcelain/metal crown'
@@ -50394,7 +50395,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Extract and have fix bridge'
@@ -50445,7 +50446,7 @@ Widget tooth14Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 14 Back : Other'
@@ -50581,7 +50582,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Dental Carise'
@@ -50634,7 +50635,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Attrition, abrasion, abfraction'
@@ -50685,7 +50686,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Fractured tooth'
@@ -50736,7 +50737,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Retained root'
@@ -50787,7 +50788,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : RCT tooth'
@@ -50838,7 +50839,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Extracted tooth'
@@ -50889,7 +50890,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Missing tooth'
@@ -50940,7 +50941,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Impacted tooth'
@@ -50991,7 +50992,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Partial eruption'
@@ -51043,7 +51044,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Tilting, drifting'
@@ -51094,7 +51095,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Loss of contact'
@@ -51147,7 +51148,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Poor contact point'
@@ -51198,7 +51199,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Food impaction'
@@ -51249,7 +51250,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Supraclusion'
@@ -51300,7 +51301,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Infraclusion'
@@ -51351,7 +51352,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Rotation'
@@ -51402,7 +51403,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Temporary'
@@ -51455,7 +51456,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Permanentrestoration'
@@ -51506,7 +51507,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Gold restoration'
@@ -51559,7 +51560,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Porcelain/metal crown'
@@ -51612,7 +51613,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Extract and have fix bridge'
@@ -51663,7 +51664,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Front : Other'
@@ -51744,7 +51745,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Dental Carise'
@@ -51798,7 +51799,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Attrition, abrasion, abfraction'
@@ -51850,7 +51851,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Fractured tooth'
@@ -51902,7 +51903,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Retained root'
@@ -51954,7 +51955,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : RCT tooth'
@@ -52006,7 +52007,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Extracted tooth'
@@ -52058,7 +52059,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Missing tooth'
@@ -52110,7 +52111,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Impacted tooth'
@@ -52162,7 +52163,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Partial eruption'
@@ -52215,7 +52216,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Tilting, drifting'
@@ -52267,7 +52268,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Loss of contact'
@@ -52321,7 +52322,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Poor contact point'
@@ -52373,7 +52374,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Food impaction'
@@ -52425,7 +52426,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Supraclusion'
@@ -52477,7 +52478,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Infraclusion'
@@ -52529,7 +52530,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Rotation'
@@ -52581,7 +52582,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Temporary'
@@ -52635,7 +52636,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Permanentrestoration'
@@ -52687,7 +52688,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Gold restoration'
@@ -52741,7 +52742,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Porcelain/metal crown'
@@ -52795,7 +52796,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Extract and have fix bridge'
@@ -52847,7 +52848,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Middle : Other'
@@ -52927,7 +52928,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Dental Carise'
@@ -52980,7 +52981,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Attrition, abrasion, abfraction'
@@ -53031,7 +53032,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Fractured tooth'
@@ -53082,7 +53083,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Retained root'
@@ -53133,7 +53134,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : RCT tooth'
@@ -53184,7 +53185,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Extracted tooth'
@@ -53235,7 +53236,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Missing tooth'
@@ -53286,7 +53287,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Impacted tooth'
@@ -53337,7 +53338,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Partial eruption'
@@ -53389,7 +53390,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Tilting, drifting'
@@ -53440,7 +53441,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Loss of contact'
@@ -53493,7 +53494,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Poor contact point'
@@ -53544,7 +53545,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Food impaction'
@@ -53595,7 +53596,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Supraclusion'
@@ -53646,7 +53647,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Infraclusion'
@@ -53697,7 +53698,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Rotation'
@@ -53748,7 +53749,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Temporary'
@@ -53801,7 +53802,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Permanentrestoration'
@@ -53852,7 +53853,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Gold restoration'
@@ -53905,7 +53906,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Porcelain/metal crown'
@@ -53958,7 +53959,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Extract and have fix bridge'
@@ -54009,7 +54010,7 @@ Widget tooth15Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 15 Back : Other'
@@ -54145,7 +54146,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Dental Carise'
@@ -54198,7 +54199,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Attrition, abrasion, abfraction'
@@ -54249,7 +54250,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Fractured tooth'
@@ -54300,7 +54301,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Retained root'
@@ -54351,7 +54352,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : RCT tooth'
@@ -54402,7 +54403,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Extracted tooth'
@@ -54453,7 +54454,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Missing tooth'
@@ -54504,7 +54505,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Impacted tooth'
@@ -54555,7 +54556,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Partial eruption'
@@ -54607,7 +54608,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Tilting, drifting'
@@ -54658,7 +54659,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Loss of contact'
@@ -54711,7 +54712,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Poor contact point'
@@ -54762,7 +54763,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Food impaction'
@@ -54813,7 +54814,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Supraclusion'
@@ -54864,7 +54865,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Infraclusion'
@@ -54915,7 +54916,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Rotation'
@@ -54966,7 +54967,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Temporary'
@@ -55019,7 +55020,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Permanentrestoration'
@@ -55070,7 +55071,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Gold restoration'
@@ -55123,7 +55124,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Porcelain/metal crown'
@@ -55176,7 +55177,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Extract and have fix bridge'
@@ -55227,7 +55228,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Front : Other'
@@ -55308,7 +55309,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Dental Carise'
@@ -55362,7 +55363,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Attrition, abrasion, abfraction'
@@ -55414,7 +55415,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Fractured tooth'
@@ -55466,7 +55467,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Retained root'
@@ -55518,7 +55519,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : RCT tooth'
@@ -55570,7 +55571,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Extracted tooth'
@@ -55622,7 +55623,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Missing tooth'
@@ -55674,7 +55675,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Impacted tooth'
@@ -55726,7 +55727,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Partial eruption'
@@ -55779,7 +55780,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Tilting, drifting'
@@ -55831,7 +55832,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Loss of contact'
@@ -55885,7 +55886,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Poor contact point'
@@ -55937,7 +55938,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Food impaction'
@@ -55989,7 +55990,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Supraclusion'
@@ -56041,7 +56042,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Infraclusion'
@@ -56093,7 +56094,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Rotation'
@@ -56145,7 +56146,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Temporary'
@@ -56199,7 +56200,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Permanentrestoration'
@@ -56251,7 +56252,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Gold restoration'
@@ -56305,7 +56306,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Porcelain/metal crown'
@@ -56359,7 +56360,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Extract and have fix bridge'
@@ -56411,7 +56412,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Middle : Other'
@@ -56491,7 +56492,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Dental Carise'
@@ -56544,7 +56545,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Attrition, abrasion, abfraction'
@@ -56595,7 +56596,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Fractured tooth'
@@ -56646,7 +56647,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Retained root'
@@ -56697,7 +56698,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : RCT tooth'
@@ -56748,7 +56749,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Extracted tooth'
@@ -56799,7 +56800,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Missing tooth'
@@ -56850,7 +56851,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Impacted tooth'
@@ -56901,7 +56902,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Partial eruption'
@@ -56953,7 +56954,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Tilting, drifting'
@@ -57004,7 +57005,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Loss of contact'
@@ -57057,7 +57058,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Poor contact point'
@@ -57108,7 +57109,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Food impaction'
@@ -57159,7 +57160,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Supraclusion'
@@ -57210,7 +57211,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Infraclusion'
@@ -57261,7 +57262,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Rotation'
@@ -57312,7 +57313,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Temporary'
@@ -57365,7 +57366,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Permanentrestoration'
@@ -57416,7 +57417,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Gold restoration'
@@ -57469,7 +57470,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Porcelain/metal crown'
@@ -57522,7 +57523,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Extract and have fix bridge'
@@ -57573,7 +57574,7 @@ Widget tooth16Detail(BuildContext context) {
                                                             _currentDate
                                                                     .toString()
                                                                     .length -
-                                                                7),
+                                                                16),
                                                     'dentist': dentistName,
                                                     'detail':
                                                         'Tooth 16 Back : Other'

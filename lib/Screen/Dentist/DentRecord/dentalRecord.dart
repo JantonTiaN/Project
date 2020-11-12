@@ -18,6 +18,8 @@ class DentalRecord extends StatefulWidget {
   _DentalRecordState createState() => _DentalRecordState();
 }
 
+var recordHistory = new List();
+
 class _DentalRecordState extends State<DentalRecord> {
   void initState() {
     super.initState();
@@ -25,6 +27,27 @@ class _DentalRecordState extends State<DentalRecord> {
     patientUid(widget.uid);
     detail2Uid(widget.uid);
     getuserid(widget.uid);
+    getHis();
+  }
+
+  getHis() async {
+    Firestore firestore = Firestore.instance;
+    DocumentReference hisDocumentReference = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(clinic)
+        .document(clinic)
+        .collection('Patients')
+        .document(widget.uid)
+        .collection('History')
+        .document('history');
+    hisDocumentReference.get().then((value) => {
+          if (value.data['history'] != null)
+            {recordHistory = value.data['history']}
+        });
+    return recordHistory;
   }
 
   @override

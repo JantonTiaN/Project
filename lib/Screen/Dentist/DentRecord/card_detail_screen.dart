@@ -51,10 +51,6 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
         countOfCases += value.data['tooth 1 Back'].length;
         for (var i = 0; i < value.data['tooth 1 Back'].length; i++) {}
       }
-      print(countOfCases);
-      print(tooth1FrontCases);
-      print(tooth1FrontDate);
-      print(tooth1FrontDentist);
     });
     return Scaffold(
         appBar: AppBar(
