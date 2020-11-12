@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Services/database.dart';
+import 'package:rich_alert/rich_alert.dart';
 
 class DentSuggestionScreen extends StatefulWidget {
   @override
@@ -62,10 +63,12 @@ class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
                           focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(color: Colors.blue)),
                           enabledBorder: OutlineInputBorder(
-                              borderSide: BorderSide(color: Colors.amber)),
-                          hintText: 'Suggestion to patient',
-                          labelText: 'Type Suggestion Here'),
-                      maxLines: 15,
+                              borderSide: BorderSide(color: Colors.blueGrey)),
+                          // hintText:
+                          //     'e.g. Try to brush your teeth at least 2 times a day',
+                          labelText: 'Tap to add Suggestion',
+                          labelStyle: TextStyle(color: Colors.blue)),
+                      maxLines: 10,
                       controller: _suggestion),
                 ),
                 FittedBox(
@@ -87,9 +90,9 @@ class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
                       padding:
                           EdgeInsets.symmetric(horizontal: 26, vertical: 16),
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(25),
-                        border: Border.all(color: Colors.blueGrey),
-                      ),
+                          borderRadius: BorderRadius.circular(25),
+                          // border: Border.all(color: Colors.blueGrey),
+                          color: Colors.blue[300]),
                       child: Row(
                         children: <Widget>[
                           Text(
@@ -97,7 +100,7 @@ class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
                             style: Theme.of(context)
                                 .textTheme
                                 .button
-                                .copyWith(color: Colors.black),
+                                .copyWith(color: Colors.white),
                           ),
                         ],
                       ),

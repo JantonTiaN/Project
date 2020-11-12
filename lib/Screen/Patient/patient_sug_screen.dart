@@ -90,6 +90,7 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
               itemBuilder: (context, index) {
                 final idx = index + 1;
                 return Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
                     // GestureDetector(
                     //   onTap: () {
@@ -110,9 +111,12 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                       subtitle: Text(snapshot.data.documents[0]
                           .data['suggestion'][index]['suggestion']),
                     ),
-                    Text('Recorded by: ' +
-                        snapshot.data.documents[0].data['suggestion'][index]
-                            ['dentist']),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: Text('Recorded by: ' +
+                          snapshot.data.documents[0].data['suggestion'][index]
+                              ['dentist']),
+                    ),
                     Divider(
                       color: Colors.blueGrey,
                     ),

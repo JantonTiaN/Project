@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 
 class CardDetailScreen extends StatefulWidget {
@@ -53,89 +54,157 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
       }
     });
     return Scaffold(
-        appBar: AppBar(
-          title: Text('Case Detail'),
-          backgroundColor: Colors.blue[300],
-        ),
-        body: Slidable(
-          //   key: _key,
-          //   dismissal: SlidableDismissal(
-          //     child: SlidableDrawerDismissal(),
-          //     onWillDismiss: (actionType) {
-          //       return showDialog<bool>(
-          //         context: context,
-          //         builder: (context) {
-          //           return AlertDialog(
-          //             title: Text('Delete'),
-          //             content: Text('Item will be deleted'),
-          //             actions: <Widget>[
-          //               FlatButton(
-          //                 child: Text('Cancel'),
-          //                 onPressed: () => Navigator.of(context).pop(false),
-          //               ),
-          //               FlatButton(
-          //                 child: Text('Ok'),
-          //                 onPressed: () => Navigator.of(context).pop(true),
-          //               ),
-          //             ],
-          //           );
-          //         },
-          //       );
-          //     },
-          //   ),
-          actionPane: SlidableDrawerActionPane(),
-          actionExtentRatio: 0.25,
-          child: Container(
-            color: Colors.white,
-            child: Card(
-              child: Row(
-                children: [
-                  Text(
-                    'Front',
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold, color: Colors.blue),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Case Name: '),
-                        Text('Date: '),
-                        Text('Dentist: ')
-                      ],
+      appBar: AppBar(
+        title: Text('Case Detail'),
+        backgroundColor: Colors.blue[300],
+      ),
+      body: StreamBuilder(
+          stream: Firestore.instance
+              .collection('FunD')
+              .document('funD')
+              .collection('Clinic')
+              .document('clinic')
+              .collection(clinic)
+              .document(clinic)
+              .collection('Patients')
+              .document(uid)
+              .collection('DentalCase')
+              .snapshots(),
+          builder:
+              (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    SpinKitChasingDots(
+                      color: Colors.blue[100],
+                      size: 50,
                     ),
-                  )
-                  // Text('Front: Case name'
-                  //     '\nDate: 01/11/63'
-                  //     '\nDentist name'),
-                ],
-              ),
-            ),
-            // child: ListTile(
-            //   title: Text('Front: Case name'),
-            //   subtitle: Text('Date: 01/11/63'),
-            //   isThreeLine: true,
-            // ),
-          ),
-          actions: <Widget>[
-            IconSlideAction(
-              caption: 'Done',
-              color: Colors.green,
-              icon: Icons.check,
-              // onTap: () => _showSnackBar('Saved'),
-            ),
-          ],
-          secondaryActions: <Widget>[
-            IconSlideAction(
-              caption: 'Delete',
-              color: Colors.red,
-              icon: Icons.delete,
-              // onTap: () => _showSnackBar('Delete'),
-            ),
-          ],
-        ));
+                    Text(
+                      'Loading...',
+                      style: TextStyle(fontSize: 15, color: Colors.black),
+                    )
+                  ],
+                ),
+              );
+            } else if (snapshot.data.documents[0].data.length == 0) {
+              return Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Image.asset(
+                      'assets/images/Logo/No-data.png',
+                      width: 150,
+                      height: 150,
+                    ),
+                    Text(
+                      'Oh...',
+                      style: TextStyle(
+                          fontFamily: 'Kanit',
+                          color: Colors.blue[300],
+                          fontSize: 25),
+                    ),
+                    Text(
+                      'Patient don\'t have any record',
+                      style: TextStyle(
+                          fontFamily: 'Kanit',
+                          color: Colors.blue[300],
+                          fontSize: 16),
+                    ),
+                    // )
+                  ],
+                ),
+              );
+            } else {
+              return ListView.builder(
+                  itemCount:
+                      snapshot.data.documents[0].data['dentalCase'].length,
+                  itemBuilder: (context, index) {
+                    return Slidable(
+                      //   key: _key,
+                      //   dismissal: SlidableDismissal(
+                      //     child: SlidableDrawerDismissal(),
+                      //     onWillDismiss: (actionType) {
+                      //       return showDialog<bool>(
+                      //         context: context,
+                      //         builder: (context) {
+                      //           return AlertDialog(
+                      //             title: Text('Delete'),
+                      //             content: Text('Item will be deleted'),
+                      //             actions: <Widget>[
+                      //               FlatButton(
+                      //                 child: Text('Cancel'),
+                      //                 onPressed: () => Navigator.of(context).pop(false),
+                      //               ),
+                      //               FlatButton(
+                      //                 child: Text('Ok'),
+                      //                 onPressed: () => Navigator.of(context).pop(true),
+                      //               ),
+                      //             ],
+                      //           );
+                      //         },
+                      //       );
+                      //     },
+                      //   ),
+                      actionPane: SlidableDrawerActionPane(),
+                      actionExtentRatio: 0.25,
+                      child: Container(
+                        color: Colors.white,
+                        child: Card(
+                          child: Row(
+                            children: [
+                              Text(
+                                'Front',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blue),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text('Case Name: '),
+                                    Text('Date: '),
+                                    Text('Dentist: '),
+                                  ],
+                                ),
+                              )
+                              // Text('Front: Case name'
+                              //     '\nDate: 01/11/63'
+                              //     '\nDentist name'),
+                            ],
+                          ),
+                        ),
+                        // child: ListTile(
+                        //   title: Text('Front: Case name'),
+                        //   subtitle: Text('Date: 01/11/63'),
+                        //   isThreeLine: true,
+                        // ),
+                      ),
+                      actions: <Widget>[
+                        IconSlideAction(
+                          caption: 'Done',
+                          color: Colors.green,
+                          icon: Icons.check,
+                          // onTap: () => _showSnackBar('Saved'),
+                        ),
+                      ],
+                      secondaryActions: <Widget>[
+                        IconSlideAction(
+                          caption: 'Delete',
+                          color: Colors.red,
+                          icon: Icons.delete,
+                          // onTap: () => _showSnackBar('Delete'),
+                        ),
+                      ],
+                    );
+                  });
+            }
+          }),
+    );
   }
 }
 

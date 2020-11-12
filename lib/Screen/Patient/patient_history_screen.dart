@@ -90,6 +90,7 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
               itemBuilder: (context, index) {
                 final idx = index + 1;
                 return Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
                     ListTile(
                       leading: Text('$idx'),
@@ -98,9 +99,12 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
                       subtitle: Text(snapshot.data.documents[0].data['history']
                           [index]['detail']),
                     ),
-                    Text('Responsible by: ' +
-                        snapshot.data.documents[0].data['history'][index]
-                            ['dentist']),
+                    Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: Text('Responsible by: ' +
+                          snapshot.data.documents[0].data['history'][index]
+                              ['dentist']),
+                    ),
                     Divider(
                       color: Colors.blueGrey,
                     )
