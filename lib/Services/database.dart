@@ -71,6 +71,20 @@ class PatientDatabase {
           .document(patient.patientClinic)
           .collection('Patients')
           .document(user.uid)
+          .collection('DentalCase')
+          .document('dentalCase')
+          .collection('CaseDetail')
+          .document('caseDetail')
+          .setData({});
+      await _firestore
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(patient.patientClinic)
+          .document(patient.patientClinic)
+          .collection('Patients')
+          .document(user.uid)
           .collection('Appointment')
           .document('appointment')
           .setData({});
@@ -319,6 +333,20 @@ class PatientWithFBAndGGDatabase {
           .document(user.uid)
           .collection('DentalCase')
           .document('dentalCase')
+          .setData({});
+      await _firestore
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(patient.patientClinic)
+          .document(patient.patientClinic)
+          .collection('Patients')
+          .document(user.uid)
+          .collection('DentalCase')
+          .document('dentalCase')
+          .collection('CaseDetail')
+          .document('caseDetail')
           .setData({});
       await _firestore
           .collection('FunD')

@@ -19,6 +19,124 @@ class DentalRecord extends StatefulWidget {
 }
 
 var recordHistory = new List();
+String uid;
+
+List<String> tooth1Front = new List();
+List<String> tooth1Middle = new List();
+List<String> tooth1Back = new List();
+List<String> tooth2Front = new List();
+List<String> tooth2Middle = new List();
+List<String> tooth2Back = new List();
+List<String> tooth3Front = new List();
+List<String> tooth3Middle = new List();
+List<String> tooth3Back = new List();
+List<String> tooth4Front = new List();
+List<String> tooth4Middle = new List();
+List<String> tooth4Back = new List();
+List<String> tooth5Front = new List();
+List<String> tooth5Middle = new List();
+List<String> tooth5Back = new List();
+List<String> tooth6Front = new List();
+List<String> tooth6Middle = new List();
+List<String> tooth6Back = new List();
+List<String> tooth7Front = new List();
+List<String> tooth7Middle = new List();
+List<String> tooth7Back = new List();
+List<String> tooth8Front = new List();
+List<String> tooth8Middle = new List();
+List<String> tooth8Back = new List();
+List<String> tooth9Front = new List();
+List<String> tooth9Middle = new List();
+List<String> tooth9Back = new List();
+List<String> tooth10Front = new List();
+List<String> tooth10Middle = new List();
+List<String> tooth10Back = new List();
+List<String> tooth11Front = new List();
+List<String> tooth11Middle = new List();
+List<String> tooth11Back = new List();
+List<String> tooth12Front = new List();
+List<String> tooth12Middle = new List();
+List<String> tooth12Back = new List();
+List<String> tooth13Front = new List();
+List<String> tooth13Middle = new List();
+List<String> tooth13Back = new List();
+List<String> tooth14Front = new List();
+List<String> tooth14Middle = new List();
+List<String> tooth14Back = new List();
+List<String> tooth15Front = new List();
+List<String> tooth15Middle = new List();
+List<String> tooth15Back = new List();
+List<String> tooth16Front = new List();
+List<String> tooth16Middle = new List();
+List<String> tooth16Back = new List();
+List<String> tooth17Front = new List();
+List<String> tooth17Middle = new List();
+List<String> tooth17Back = new List();
+List<String> tooth18Front = new List();
+List<String> tooth18Middle = new List();
+List<String> tooth18Back = new List();
+List<String> tooth19Front = new List();
+List<String> tooth19Middle = new List();
+List<String> tooth19Back = new List();
+List<String> tooth20Front = new List();
+List<String> tooth20Middle = new List();
+List<String> tooth20Back = new List();
+List<String> tooth21Front = new List();
+List<String> tooth21Middle = new List();
+List<String> tooth21Back = new List();
+List<String> tooth22Front = new List();
+List<String> tooth22Middle = new List();
+List<String> tooth22Back = new List();
+List<String> tooth23Front = new List();
+List<String> tooth23Middle = new List();
+List<String> tooth23Back = new List();
+List<String> tooth24Front = new List();
+List<String> tooth24Middle = new List();
+List<String> tooth24Back = new List();
+List<String> tooth25Front = new List();
+List<String> tooth25Middle = new List();
+List<String> tooth25Back = new List();
+List<String> tooth26Front = new List();
+List<String> tooth26Middle = new List();
+List<String> tooth26Back = new List();
+List<String> tooth27Front = new List();
+List<String> tooth27Middle = new List();
+List<String> tooth27Back = new List();
+List<String> tooth28Front = new List();
+List<String> tooth28Middle = new List();
+List<String> tooth28Back = new List();
+List<String> tooth29Front = new List();
+List<String> tooth29Middle = new List();
+List<String> tooth29Back = new List();
+List<String> tooth30Front = new List();
+List<String> tooth30Middle = new List();
+List<String> tooth30Back = new List();
+List<String> tooth31Front = new List();
+List<String> tooth31Middle = new List();
+List<String> tooth31Back = new List();
+List<String> tooth32Front = new List();
+List<String> tooth32Middle = new List();
+List<String> tooth32Back = new List();
+
+getHis() async {
+  Firestore firestore = Firestore.instance;
+  DocumentReference hisDocumentReference = firestore
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
+      .collection('Patients')
+      .document(uid)
+      .collection('History')
+      .document('history');
+  hisDocumentReference.get().then((value) => {
+        if (value.data['history'] != null)
+          {recordHistory = value.data['history']}
+      });
+  return recordHistory;
+}
 
 class _DentalRecordState extends State<DentalRecord> {
   void initState() {
@@ -27,12 +145,18 @@ class _DentalRecordState extends State<DentalRecord> {
     patientUid(widget.uid);
     detail2Uid(widget.uid);
     getuserid(widget.uid);
+    getUid();
     getHis();
+    dentailHistory();
   }
 
-  getHis() async {
+  getUid() {
+    uid = widget.uid;
+  }
+
+  dentailHistory() {
     Firestore firestore = Firestore.instance;
-    DocumentReference hisDocumentReference = firestore
+    CollectionReference collectionReference = firestore
         .collection('FunD')
         .document('funD')
         .collection('Clinic')
@@ -41,13 +165,800 @@ class _DentalRecordState extends State<DentalRecord> {
         .document(clinic)
         .collection('Patients')
         .document(widget.uid)
-        .collection('History')
-        .document('history');
-    hisDocumentReference.get().then((value) => {
-          if (value.data['history'] != null)
-            {recordHistory = value.data['history']}
-        });
-    return recordHistory;
+        .collection('DentalCase');
+    collectionReference.document('dentalCase').get().then((value) {
+      if (value.data['tooth 1 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 1 Front'].length; i++) {
+          if (tooth1Front.contains(value.data['tooth 1 Front'][i]['Case']) ==
+              false) {
+            tooth1Front.add(value.data['tooth 1 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 1 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 1 Middle'].length; i++) {
+          if (tooth1Middle.contains(value.data['tooth 1 Middle'][i]['Case']) ==
+              false) {
+            tooth1Middle.add(value.data['tooth 1 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 1 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 1 Back'].length; i++) {
+          if (tooth1Back.contains(value.data['tooth 1 Back'][i]['Case']) ==
+              false) {
+            tooth1Back.add(value.data['tooth 1 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 2 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 2 Front'].length; i++) {
+          if (tooth2Front.contains(value.data['tooth 2 Front'][i]['Case']) ==
+              false) {
+            tooth2Front.add(value.data['tooth 2 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 2 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 2 Middle'].length; i++) {
+          if (tooth2Middle.contains(value.data['tooth 2 Middle'][i]['Case']) ==
+              false) {
+            tooth2Middle.add(value.data['tooth 2 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 2 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 2 Back'].length; i++) {
+          if (tooth2Back.contains(value.data['tooth 2 Back'][i]['Case']) ==
+              false) {
+            tooth2Back.add(value.data['tooth 2 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 3 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 3 Front'].length; i++) {
+          if (tooth3Front.contains(value.data['tooth 3 Front'][i]['Case']) ==
+              false) {
+            tooth3Front.add(value.data['tooth 3 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 3 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 3 Middle'].length; i++) {
+          if (tooth3Middle.contains(value.data['tooth 3 Middle'][i]['Case']) ==
+              false) {
+            tooth3Middle.add(value.data['tooth 3 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 3 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 3 Back'].length; i++) {
+          if (tooth3Back.contains(value.data['tooth 3 Back'][i]['Case']) ==
+              false) {
+            tooth3Back.add(value.data['tooth 3 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 4 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 4 Front'].length; i++) {
+          if (tooth4Front.contains(value.data['tooth 4 Front'][i]['Case']) ==
+              false) {
+            tooth4Front.add(value.data['tooth 4 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 4 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 4 Middle'].length; i++) {
+          if (tooth4Middle.contains(value.data['tooth 4 Middle'][i]['Case']) ==
+              false) {
+            tooth4Middle.add(value.data['tooth 4 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 4 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 4 Back'].length; i++) {
+          if (tooth4Back.contains(value.data['tooth 4 Back'][i]['Case']) ==
+              false) {
+            tooth4Back.add(value.data['tooth 4 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 5 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 5 Front'].length; i++) {
+          if (tooth5Front.contains(value.data['tooth 5 Front'][i]['Case']) ==
+              false) {
+            tooth5Front.add(value.data['tooth 5 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 5 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 5 Middle'].length; i++) {
+          if (tooth5Middle.contains(value.data['tooth 5 Middle'][i]['Case']) ==
+              false) {
+            tooth5Middle.add(value.data['tooth 5 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 5 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 5 Back'].length; i++) {
+          if (tooth5Back.contains(value.data['tooth 5 Back'][i]['Case']) ==
+              false) {
+            tooth5Back.add(value.data['tooth 5 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 6 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 6 Front'].length; i++) {
+          if (tooth6Front.contains(value.data['tooth 6 Front'][i]['Case']) ==
+              false) {
+            tooth6Front.add(value.data['tooth 6 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 6 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 6 Middle'].length; i++) {
+          if (tooth6Middle.contains(value.data['tooth 6 Middle'][i]['Case']) ==
+              false) {
+            tooth6Middle.add(value.data['tooth 6 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 6 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 6 Back'].length; i++) {
+          if (tooth6Back.contains(value.data['tooth 6 Back'][i]['Case']) ==
+              false) {
+            tooth6Back.add(value.data['tooth 6 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 7 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 7 Front'].length; i++) {
+          if (tooth7Front.contains(value.data['tooth 7 Front'][i]['Case']) ==
+              false) {
+            tooth7Front.add(value.data['tooth 7 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 7 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 7 Middle'].length; i++) {
+          if (tooth7Middle.contains(value.data['tooth 7 Middle'][i]['Case']) ==
+              false) {
+            tooth7Middle.add(value.data['tooth 7 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 7 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 7 Back'].length; i++) {
+          if (tooth7Back.contains(value.data['tooth 7 Back'][i]['Case']) ==
+              false) {
+            tooth7Back.add(value.data['tooth 7 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 8 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 8 Front'].length; i++) {
+          if (tooth8Front.contains(value.data['tooth 8 Front'][i]['Case']) ==
+              false) {
+            tooth8Front.add(value.data['tooth 8 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 8 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 8 Middle'].length; i++) {
+          if (tooth8Middle.contains(value.data['tooth 8 Middle'][i]['Case']) ==
+              false) {
+            tooth8Middle.add(value.data['tooth 8 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 8 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 8 Back'].length; i++) {
+          if (tooth8Back.contains(value.data['tooth 8 Back'][i]['Case']) ==
+              false) {
+            tooth8Back.add(value.data['tooth 8 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 9 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 9 Front'].length; i++) {
+          if (tooth9Front.contains(value.data['tooth 9 Front'][i]['Case']) ==
+              false) {
+            tooth9Front.add(value.data['tooth 9 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 9 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 9 Middle'].length; i++) {
+          if (tooth9Middle.contains(value.data['tooth 9 Middle'][i]['Case']) ==
+              false) {
+            tooth9Middle.add(value.data['tooth 9 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 9 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 9 Back'].length; i++) {
+          if (tooth9Back.contains(value.data['tooth 9 Back'][i]['Case']) ==
+              false) {
+            tooth9Back.add(value.data['tooth 9 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 10 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 10 Front'].length; i++) {
+          if (tooth10Front.contains(value.data['tooth 10 Front'][i]['Case']) ==
+              false) {
+            tooth10Front.add(value.data['tooth 10 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 10 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 10 Middle'].length; i++) {
+          if (tooth10Middle
+                  .contains(value.data['tooth 10 Middle'][i]['Case']) ==
+              false) {
+            tooth10Middle.add(value.data['tooth 10 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 10 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 10 Back'].length; i++) {
+          if (tooth10Back.contains(value.data['tooth 10 Back'][i]['Case']) ==
+              false) {
+            tooth10Back.add(value.data['tooth 10 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 11 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 11 Front'].length; i++) {
+          if (tooth11Front.contains(value.data['tooth 11 Front'][i]['Case']) ==
+              false) {
+            tooth11Front.add(value.data['tooth 11 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 11 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 11 Middle'].length; i++) {
+          if (tooth11Middle
+                  .contains(value.data['tooth 11 Middle'][i]['Case']) ==
+              false) {
+            tooth11Middle.add(value.data['tooth 11 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 11 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 11 Back'].length; i++) {
+          if (tooth11Back.contains(value.data['tooth 11 Back'][i]['Case']) ==
+              false) {
+            tooth11Back.add(value.data['tooth 11 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 12 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 12 Front'].length; i++) {
+          if (tooth12Front.contains(value.data['tooth 12 Front'][i]['Case']) ==
+              false) {
+            tooth12Front.add(value.data['tooth 12 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 12 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 12 Middle'].length; i++) {
+          if (tooth12Middle
+                  .contains(value.data['tooth 12 Middle'][i]['Case']) ==
+              false) {
+            tooth12Middle.add(value.data['tooth 12 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 12 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 12 Back'].length; i++) {
+          if (tooth12Back.contains(value.data['tooth 12 Back'][i]['Case']) ==
+              false) {
+            tooth12Back.add(value.data['tooth 12 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 13 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 13 Front'].length; i++) {
+          if (tooth13Front.contains(value.data['tooth 13 Front'][i]['Case']) ==
+              false) {
+            tooth13Front.add(value.data['tooth 13 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 13 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 13 Middle'].length; i++) {
+          if (tooth13Middle
+                  .contains(value.data['tooth 13 Middle'][i]['Case']) ==
+              false) {
+            tooth13Middle.add(value.data['tooth 13 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 13 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 13 Back'].length; i++) {
+          if (tooth13Back.contains(value.data['tooth 13 Back'][i]['Case']) ==
+              false) {
+            tooth13Back.add(value.data['tooth 13 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 14 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 14 Front'].length; i++) {
+          if (tooth14Front.contains(value.data['tooth 14 Front'][i]['Case']) ==
+              false) {
+            tooth14Front.add(value.data['tooth 14 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 14 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 14 Middle'].length; i++) {
+          if (tooth14Middle
+                  .contains(value.data['tooth 14 Middle'][i]['Case']) ==
+              false) {
+            tooth14Middle.add(value.data['tooth 14 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 14 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 14 Back'].length; i++) {
+          if (tooth14Back.contains(value.data['tooth 14 Back'][i]['Case']) ==
+              false) {
+            tooth14Back.add(value.data['tooth 14 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 15 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 15 Front'].length; i++) {
+          if (tooth15Front.contains(value.data['tooth 15 Front'][i]['Case']) ==
+              false) {
+            tooth15Front.add(value.data['tooth 15 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 15 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 15 Middle'].length; i++) {
+          if (tooth15Middle
+                  .contains(value.data['tooth 15 Middle'][i]['Case']) ==
+              false) {
+            tooth15Middle.add(value.data['tooth 15 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 15 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 15 Back'].length; i++) {
+          if (tooth15Back.contains(value.data['tooth 15 Back'][i]['Case']) ==
+              false) {
+            tooth15Back.add(value.data['tooth 15 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 16 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 16 Front'].length; i++) {
+          if (tooth16Front.contains(value.data['tooth 16 Front'][i]['Case']) ==
+              false) {
+            tooth16Front.add(value.data['tooth 16 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 16 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 16 Middle'].length; i++) {
+          if (tooth16Middle
+                  .contains(value.data['tooth 16 Middle'][i]['Case']) ==
+              false) {
+            tooth16Middle.add(value.data['tooth 16 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 16 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 16 Back'].length; i++) {
+          if (tooth16Back.contains(value.data['tooth 16 Back'][i]['Case']) ==
+              false) {
+            tooth16Back.add(value.data['tooth 16 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 17 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 17 Front'].length; i++) {
+          if (tooth17Front.contains(value.data['tooth 17 Front'][i]['Case']) ==
+              false) {
+            tooth17Front.add(value.data['tooth 17 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 17 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 17 Middle'].length; i++) {
+          if (tooth17Middle
+                  .contains(value.data['tooth 17 Middle'][i]['Case']) ==
+              false) {
+            tooth17Middle.add(value.data['tooth 17 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 17 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 17 Back'].length; i++) {
+          if (tooth17Back.contains(value.data['tooth 17 Back'][i]['Case']) ==
+              false) {
+            tooth17Back.add(value.data['tooth 17 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 18 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 18 Front'].length; i++) {
+          if (tooth18Front.contains(value.data['tooth 18 Front'][i]['Case']) ==
+              false) {
+            tooth18Front.add(value.data['tooth 18 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 18 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 18 Middle'].length; i++) {
+          if (tooth18Middle
+                  .contains(value.data['tooth 18 Middle'][i]['Case']) ==
+              false) {
+            tooth18Middle.add(value.data['tooth 18 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 18 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 18 Back'].length; i++) {
+          if (tooth18Back.contains(value.data['tooth 18 Back'][i]['Case']) ==
+              false) {
+            tooth18Back.add(value.data['tooth 18 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 19 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 19 Front'].length; i++) {
+          if (tooth19Front.contains(value.data['tooth 19 Front'][i]['Case']) ==
+              false) {
+            tooth19Front.add(value.data['tooth 19 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 19 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 19 Middle'].length; i++) {
+          if (tooth19Middle
+                  .contains(value.data['tooth 19 Middle'][i]['Case']) ==
+              false) {
+            tooth19Middle.add(value.data['tooth 19 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 19 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 19 Back'].length; i++) {
+          if (tooth19Back.contains(value.data['tooth 19 Back'][i]['Case']) ==
+              false) {
+            tooth19Back.add(value.data['tooth 19 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 20 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 20 Front'].length; i++) {
+          if (tooth20Front.contains(value.data['tooth 20 Front'][i]['Case']) ==
+              false) {
+            tooth20Front.add(value.data['tooth 20 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 20 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 20 Middle'].length; i++) {
+          if (tooth20Middle
+                  .contains(value.data['tooth 20 Middle'][i]['Case']) ==
+              false) {
+            tooth20Middle.add(value.data['tooth 20 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 20 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 20 Back'].length; i++) {
+          if (tooth20Back.contains(value.data['tooth 20 Back'][i]['Case']) ==
+              false) {
+            tooth20Back.add(value.data['tooth 20 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 21 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 21 Front'].length; i++) {
+          if (tooth21Front.contains(value.data['tooth 21 Front'][i]['Case']) ==
+              false) {
+            tooth21Front.add(value.data['tooth 21 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 21 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 21 Middle'].length; i++) {
+          if (tooth21Middle
+                  .contains(value.data['tooth 21 Middle'][i]['Case']) ==
+              false) {
+            tooth21Middle.add(value.data['tooth 21 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 21 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 21 Back'].length; i++) {
+          if (tooth21Back.contains(value.data['tooth 21 Back'][i]['Case']) ==
+              false) {
+            tooth21Back.add(value.data['tooth 21 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 22 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 22 Front'].length; i++) {
+          if (tooth22Front.contains(value.data['tooth 22 Front'][i]['Case']) ==
+              false) {
+            tooth22Front.add(value.data['tooth 22 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 22 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 22 Middle'].length; i++) {
+          if (tooth22Middle
+                  .contains(value.data['tooth 22 Middle'][i]['Case']) ==
+              false) {
+            tooth22Middle.add(value.data['tooth 22 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 22 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 22 Back'].length; i++) {
+          if (tooth22Back.contains(value.data['tooth 22 Back'][i]['Case']) ==
+              false) {
+            tooth22Back.add(value.data['tooth 22 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 23 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 23 Front'].length; i++) {
+          if (tooth23Front.contains(value.data['tooth 23 Front'][i]['Case']) ==
+              false) {
+            tooth23Front.add(value.data['tooth 23 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 23 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 23 Middle'].length; i++) {
+          if (tooth23Middle
+                  .contains(value.data['tooth 23 Middle'][i]['Case']) ==
+              false) {
+            tooth23Middle.add(value.data['tooth 23 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 23 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 23 Back'].length; i++) {
+          if (tooth23Back.contains(value.data['tooth 23 Back'][i]['Case']) ==
+              false) {
+            tooth23Back.add(value.data['tooth 23 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 24 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 24 Front'].length; i++) {
+          if (tooth24Front.contains(value.data['tooth 24 Front'][i]['Case']) ==
+              false) {
+            tooth24Front.add(value.data['tooth 24 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 24 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 24 Middle'].length; i++) {
+          if (tooth24Middle
+                  .contains(value.data['tooth 24 Middle'][i]['Case']) ==
+              false) {
+            tooth24Middle.add(value.data['tooth 24 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 24 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 24 Back'].length; i++) {
+          if (tooth24Back.contains(value.data['tooth 24 Back'][i]['Case']) ==
+              false) {
+            tooth24Back.add(value.data['tooth 24 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 25 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 25 Front'].length; i++) {
+          if (tooth25Front.contains(value.data['tooth 25 Front'][i]['Case']) ==
+              false) {
+            tooth25Front.add(value.data['tooth 25 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 25 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 25 Middle'].length; i++) {
+          if (tooth25Middle
+                  .contains(value.data['tooth 25 Middle'][i]['Case']) ==
+              false) {
+            tooth25Middle.add(value.data['tooth 25 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 25 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 25 Back'].length; i++) {
+          if (tooth25Back.contains(value.data['tooth 25 Back'][i]['Case']) ==
+              false) {
+            tooth25Back.add(value.data['tooth 25 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 26 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 26 Front'].length; i++) {
+          if (tooth26Front.contains(value.data['tooth 26 Front'][i]['Case']) ==
+              false) {
+            tooth26Front.add(value.data['tooth 26 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 26 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 26 Middle'].length; i++) {
+          if (tooth26Middle
+                  .contains(value.data['tooth 26 Middle'][i]['Case']) ==
+              false) {
+            tooth26Middle.add(value.data['tooth 26 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 26 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 26 Back'].length; i++) {
+          if (tooth26Back.contains(value.data['tooth 26 Back'][i]['Case']) ==
+              false) {
+            tooth26Back.add(value.data['tooth 26 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 27 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 27 Front'].length; i++) {
+          if (tooth27Front.contains(value.data['tooth 27 Front'][i]['Case']) ==
+              false) {
+            tooth27Front.add(value.data['tooth 27 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 27 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 27 Middle'].length; i++) {
+          if (tooth27Middle
+                  .contains(value.data['tooth 27 Middle'][i]['Case']) ==
+              false) {
+            tooth27Middle.add(value.data['tooth 27 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 27 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 27 Back'].length; i++) {
+          if (tooth27Back.contains(value.data['tooth 27 Back'][i]['Case']) ==
+              false) {
+            tooth27Back.add(value.data['tooth 27 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 28 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 28 Front'].length; i++) {
+          if (tooth28Front.contains(value.data['tooth 28 Front'][i]['Case']) ==
+              false) {
+            tooth28Front.add(value.data['tooth 28 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 28 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 28 Middle'].length; i++) {
+          if (tooth28Middle
+                  .contains(value.data['tooth 28 Middle'][i]['Case']) ==
+              false) {
+            tooth28Middle.add(value.data['tooth 28 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 28 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 28 Back'].length; i++) {
+          if (tooth28Back.contains(value.data['tooth 28 Back'][i]['Case']) ==
+              false) {
+            tooth28Back.add(value.data['tooth 28 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 29 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 29 Front'].length; i++) {
+          if (tooth29Front.contains(value.data['tooth 29 Front'][i]['Case']) ==
+              false) {
+            tooth29Front.add(value.data['tooth 29 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 29 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 29 Middle'].length; i++) {
+          if (tooth29Middle
+                  .contains(value.data['tooth 29 Middle'][i]['Case']) ==
+              false) {
+            tooth29Middle.add(value.data['tooth 29 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 29 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 29 Back'].length; i++) {
+          if (tooth29Back.contains(value.data['tooth 29 Back'][i]['Case']) ==
+              false) {
+            tooth29Back.add(value.data['tooth 29 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 30 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 30 Front'].length; i++) {
+          if (tooth30Front.contains(value.data['tooth 30 Front'][i]['Case']) ==
+              false) {
+            tooth30Front.add(value.data['tooth 30 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 30 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 30 Middle'].length; i++) {
+          if (tooth30Middle
+                  .contains(value.data['tooth 30 Middle'][i]['Case']) ==
+              false) {
+            tooth30Middle.add(value.data['tooth 30 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 30 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 30 Back'].length; i++) {
+          if (tooth30Back.contains(value.data['tooth 30 Back'][i]['Case']) ==
+              false) {
+            tooth30Back.add(value.data['tooth 30 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 31 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 31 Front'].length; i++) {
+          if (tooth31Front.contains(value.data['tooth 31 Front'][i]['Case']) ==
+              false) {
+            tooth31Front.add(value.data['tooth 31 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 31 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 31 Middle'].length; i++) {
+          if (tooth31Middle
+                  .contains(value.data['tooth 31 Middle'][i]['Case']) ==
+              false) {
+            tooth31Middle.add(value.data['tooth 31 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 31 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 31 Back'].length; i++) {
+          if (tooth31Back.contains(value.data['tooth 31 Back'][i]['Case']) ==
+              false) {
+            tooth31Back.add(value.data['tooth 31 Back'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 32 Front'] != null) {
+        for (var i = 0; i < value.data['tooth 32 Front'].length; i++) {
+          if (tooth32Front.contains(value.data['tooth 32 Front'][i]['Case']) ==
+              false) {
+            tooth32Front.add(value.data['tooth 32 Front'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 32 Middle'] != null) {
+        for (var i = 0; i < value.data['tooth 32 Middle'].length; i++) {
+          if (tooth32Middle
+                  .contains(value.data['tooth 32 Middle'][i]['Case']) ==
+              false) {
+            tooth32Middle.add(value.data['tooth 32 Middle'][i]['Case']);
+          }
+        }
+      }
+      if (value.data['tooth 32 Back'] != null) {
+        for (var i = 0; i < value.data['tooth 32 Back'].length; i++) {
+          if (tooth32Back.contains(value.data['tooth 32 Back'][i]['Case']) ==
+              false) {
+            tooth32Back.add(value.data['tooth 32 Back'][i]['Case']);
+          }
+        }
+      }
+    });
   }
 
   @override

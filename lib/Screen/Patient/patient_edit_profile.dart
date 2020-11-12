@@ -39,7 +39,6 @@ class _PatientEditProfileState extends State<PatientEditProfile> {
   }
 
   Future _signOut(BuildContext context) async {
-    await _facebookLogin.logOut();
     await _auth.signOut();
     FirebaseAuth.instance.signOut();
     await _googleSignIn.signOut();

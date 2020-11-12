@@ -9,6 +9,9 @@ import 'package:fundee/Screen/signin_screen.dart';
 import 'package:fundee/Services/database.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:fundee/Screen/signin_screen.dart';
 
 class DentEditProfile extends StatefulWidget {
   final FirebaseUser user;
@@ -24,6 +27,8 @@ class _DentEditProfileState extends State<DentEditProfile> {
   TextEditingController displayNameController = TextEditingController();
   TextEditingController eMailController = TextEditingController();
   String name, eMail, tel, urlPicture;
+  final FacebookLogin _facebookLogin = FacebookLogin();
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
   @override
   void initState() {
     super.initState();
@@ -146,6 +151,17 @@ class _DentEditProfileState extends State<DentEditProfile> {
     return workingTime;
   }
 
+  Future _signOut(BuildContext context) async {
+    await _facebookLogin.logOut();
+    await _auth.signOut();
+    FirebaseAuth.instance.signOut();
+    await _googleSignIn.signOut();
+    Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => SignInScreen()),
+        (route) => false);
+  }
+
   Future<void> uploadPic(String _url) async {
     String pic = widget.user.uid;
     FirebaseStorage firebaseStorage = FirebaseStorage.instance;
@@ -206,8 +222,8 @@ class _DentEditProfileState extends State<DentEditProfile> {
     user.updateEmail(_eMail);
     clinicDentist.updateData({'eMail': _eMail});
     allUser.updateData({'eMail': _eMail});
-    MaterialPageRoute(builder: (value) => SignInScreen());
     print('Update Success');
+    _signOut(context);
   }
 
   Future<void> updatePic(String pic) async {
@@ -263,8 +279,8 @@ class _DentEditProfileState extends State<DentEditProfile> {
     user.updateProfile(userUpdateInfo);
     clinicDentist.updateData({'fullName': _name, 'eMail': _eMail});
     allUser.updateData({'fullName': _name, 'eMail': _eMail});
-    MaterialPageRoute(builder: (value) => SignInScreen());
     print('Update Success');
+    _signOut(context);
   }
 
   Future<void> updateEmailAndPic(String _eMail, String pic) async {
@@ -292,7 +308,36 @@ class _DentEditProfileState extends State<DentEditProfile> {
     user.updateProfile(userUpdateInfo);
     clinicDentist.updateData({'eMail': _eMail, 'pathImage': pic});
     allUser.updateData({'_eMail': _eMail, 'pathImage': pic});
-    MaterialPageRoute(builder: (value) => SignInScreen());
+    print('Update Success');
+    _signOut(context);
+  }
+
+  Future<void> updateNameAndPic(String name, String pic) async {
+    FirebaseUser user = await _auth.currentUser();
+    Firestore firestore = Firestore.instance;
+    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
+    DocumentReference clinicDentist = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(clinic)
+        .document(clinic)
+        .collection('Dentists')
+        .document(widget.user.uid);
+    DocumentReference allUser = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        .collection('Dentists')
+        .document(widget.user.uid);
+    userUpdateInfo.photoUrl = pic;
+    userUpdateInfo.displayName = name;
+    user.updateProfile(userUpdateInfo);
+    clinicDentist.updateData({'fullName': name, 'pathImage': pic});
+    allUser.updateData({'fullName': name, 'pathImage': pic});
+    MaterialPageRoute(builder: (value) => DentProfileScreen(widget.user));
     print('Update Success');
   }
 
@@ -319,7 +364,7 @@ class _DentEditProfileState extends State<DentEditProfile> {
     user.updateProfile(userUpdateInfo);
     documentReference.updateData(map).then((value) {
       print('Update Success');
-      MaterialPageRoute(builder: (value) => SignInScreen());
+      _signOut(context);
     });
   }
 
@@ -917,6 +962,10 @@ class _DentEditProfileState extends State<DentEditProfile> {
                         updateDataToFirestore(name, eMail, urlPicture);
                       }
                       updateNameAndEmail(name, eMail);
+                    }
+                    if (urlPicture != null) {
+                      uploadPic(urlPicture);
+                      updateNameAndPic(name, urlPicture);
                     }
                     updateName(name);
                   }
