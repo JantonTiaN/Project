@@ -4,112 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/card_detail_screen.dart';
 import 'package:fundee/Screen/constants.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 
 class DentailHistoryTooth1Card extends StatefulWidget {
   @override
   _DentailHistoryTooth1CardState createState() =>
       _DentailHistoryTooth1CardState();
 }
-
-List<String> tooth1Front = new List();
-List<String> tooth1Middle = new List();
-List<String> tooth1Back = new List();
-List<String> tooth2Front = new List();
-List<String> tooth2Middle = new List();
-List<String> tooth2Back = new List();
-List<String> tooth3Front = new List();
-List<String> tooth3Middle = new List();
-List<String> tooth3Back = new List();
-List<String> tooth4Front = new List();
-List<String> tooth4Middle = new List();
-List<String> tooth4Back = new List();
-List<String> tooth5Front = new List();
-List<String> tooth5Middle = new List();
-List<String> tooth5Back = new List();
-List<String> tooth6Front = new List();
-List<String> tooth6Middle = new List();
-List<String> tooth6Back = new List();
-List<String> tooth7Front = new List();
-List<String> tooth7Middle = new List();
-List<String> tooth7Back = new List();
-List<String> tooth8Front = new List();
-List<String> tooth8Middle = new List();
-List<String> tooth8Back = new List();
-List<String> tooth9Front = new List();
-List<String> tooth9Middle = new List();
-List<String> tooth9Back = new List();
-List<String> tooth10Front = new List();
-List<String> tooth10Middle = new List();
-List<String> tooth10Back = new List();
-List<String> tooth11Front = new List();
-List<String> tooth11Middle = new List();
-List<String> tooth11Back = new List();
-List<String> tooth12Front = new List();
-List<String> tooth12Middle = new List();
-List<String> tooth12Back = new List();
-List<String> tooth13Front = new List();
-List<String> tooth13Middle = new List();
-List<String> tooth13Back = new List();
-List<String> tooth14Front = new List();
-List<String> tooth14Middle = new List();
-List<String> tooth14Back = new List();
-List<String> tooth15Front = new List();
-List<String> tooth15Middle = new List();
-List<String> tooth15Back = new List();
-List<String> tooth16Front = new List();
-List<String> tooth16Middle = new List();
-List<String> tooth16Back = new List();
-List<String> tooth17Front = new List();
-List<String> tooth17Middle = new List();
-List<String> tooth17Back = new List();
-List<String> tooth18Front = new List();
-List<String> tooth18Middle = new List();
-List<String> tooth18Back = new List();
-List<String> tooth19Front = new List();
-List<String> tooth19Middle = new List();
-List<String> tooth19Back = new List();
-List<String> tooth20Front = new List();
-List<String> tooth20Middle = new List();
-List<String> tooth20Back = new List();
-List<String> tooth21Front = new List();
-List<String> tooth21Middle = new List();
-List<String> tooth21Back = new List();
-List<String> tooth22Front = new List();
-List<String> tooth22Middle = new List();
-List<String> tooth22Back = new List();
-List<String> tooth23Front = new List();
-List<String> tooth23Middle = new List();
-List<String> tooth23Back = new List();
-List<String> tooth24Front = new List();
-List<String> tooth24Middle = new List();
-List<String> tooth24Back = new List();
-List<String> tooth25Front = new List();
-List<String> tooth25Middle = new List();
-List<String> tooth25Back = new List();
-List<String> tooth26Front = new List();
-List<String> tooth26Middle = new List();
-List<String> tooth26Back = new List();
-List<String> tooth27Front = new List();
-List<String> tooth27Middle = new List();
-List<String> tooth27Back = new List();
-List<String> tooth28Front = new List();
-List<String> tooth28Middle = new List();
-List<String> tooth28Back = new List();
-List<String> tooth29Front = new List();
-List<String> tooth29Middle = new List();
-List<String> tooth29Back = new List();
-List<String> tooth30Front = new List();
-List<String> tooth30Middle = new List();
-List<String> tooth30Back = new List();
-List<String> tooth31Front = new List();
-List<String> tooth31Middle = new List();
-List<String> tooth31Back = new List();
-List<String> tooth32Front = new List();
-List<String> tooth32Middle = new List();
-List<String> tooth32Back = new List();
-List<String> toothFront = new List();
-List<String> toothMiddle = new List();
-List<String> toothBack = new List();
 
 class _DentailHistoryTooth1CardState extends State<DentailHistoryTooth1Card> {
   @override
@@ -297,7 +198,7 @@ dentailHistoryTooth1Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth1CardDetail()));
           },
         );
       }
@@ -335,7 +236,7 @@ dentailHistoryTooth1Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth1CardDetail()));
         },
       );
     } else if (tooth1Back.isNotEmpty) {
@@ -373,7 +274,7 @@ dentailHistoryTooth1Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth1CardDetail()));
         },
       );
     } else {
@@ -403,7 +304,7 @@ dentailHistoryTooth1Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth1CardDetail()));
         },
       );
     }
@@ -443,7 +344,7 @@ dentailHistoryTooth1Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth1CardDetail()));
         },
       );
     } else {
@@ -473,7 +374,7 @@ dentailHistoryTooth1Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth1CardDetail()));
         },
       );
     }
@@ -504,7 +405,7 @@ dentailHistoryTooth1Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth1CardDetail()));
       },
     );
   }
@@ -619,7 +520,7 @@ dentailHistoryTooth2Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth2CardDetail()));
           },
         );
       }
@@ -657,7 +558,7 @@ dentailHistoryTooth2Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth2CardDetail()));
         },
       );
     } else if (tooth2Back.isNotEmpty) {
@@ -695,7 +596,7 @@ dentailHistoryTooth2Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth2CardDetail()));
         },
       );
     } else {
@@ -725,7 +626,7 @@ dentailHistoryTooth2Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth2CardDetail()));
         },
       );
     }
@@ -765,7 +666,7 @@ dentailHistoryTooth2Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth2CardDetail()));
         },
       );
     } else {
@@ -795,7 +696,7 @@ dentailHistoryTooth2Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth2CardDetail()));
         },
       );
     }
@@ -826,7 +727,7 @@ dentailHistoryTooth2Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth2CardDetail()));
       },
     );
   }
@@ -941,7 +842,7 @@ dentailHistoryTooth3Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth3CardDetail()));
           },
         );
       }
@@ -979,7 +880,7 @@ dentailHistoryTooth3Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth3CardDetail()));
         },
       );
     } else if (tooth3Back.isNotEmpty) {
@@ -1017,7 +918,7 @@ dentailHistoryTooth3Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth3CardDetail()));
         },
       );
     } else {
@@ -1047,7 +948,7 @@ dentailHistoryTooth3Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth3CardDetail()));
         },
       );
     }
@@ -1087,7 +988,7 @@ dentailHistoryTooth3Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth3CardDetail()));
         },
       );
     } else {
@@ -1117,7 +1018,7 @@ dentailHistoryTooth3Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth3CardDetail()));
         },
       );
     }
@@ -1148,7 +1049,7 @@ dentailHistoryTooth3Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth3CardDetail()));
       },
     );
   }

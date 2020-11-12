@@ -4,8 +4,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:fundee/Screen/Patient/patient_profile_screen.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_facebook_login/flutter_facebook_login.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:fundee/Screen/signin_screen.dart';
 
 class PatientEditProfile extends StatefulWidget {
   final FirebaseUser user;
@@ -17,15 +22,29 @@ class PatientEditProfile extends StatefulWidget {
 class _PatientEditProfileState extends State<PatientEditProfile> {
   File _image;
   final _picker = ImagePicker();
-  final FirebaseAuth _auth = FirebaseAuth.instance;
   final displayNameController = TextEditingController();
   String name, eMail, tel, urlPicture;
+  final FacebookLogin _facebookLogin = FacebookLogin();
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
   @override
   void initState() {
     super.initState();
+    getClinic();
   }
 
-  Future<void> uploadPic(String _name, String _email, String _url) async {
+  Future _signOut(BuildContext context) async {
+    await _facebookLogin.logOut();
+    await _auth.signOut();
+    FirebaseAuth.instance.signOut();
+    await _googleSignIn.signOut();
+    Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(builder: (context) => SignInScreen()),
+        (route) => false);
+  }
+
+  Future<void> uploadPic(String _url) async {
     String pic = widget.user.uid;
     FirebaseStorage firebaseStorage = FirebaseStorage.instance;
     StorageReference storageReference =
@@ -34,7 +53,175 @@ class _PatientEditProfileState extends State<PatientEditProfile> {
     urlPicture =
         await (await storageUploadTask.onComplete).ref.getDownloadURL();
     print('urlPicture = $urlPicture');
-    updateDataToFirestore(_name, _email, _url);
+  }
+
+  Future<void> updateName(String _name) async {
+    FirebaseUser user = await _auth.currentUser();
+    Firestore firestore = Firestore.instance;
+    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
+    DocumentReference clinicDentist = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(clinic)
+        .document(clinic)
+        .collection('Patients')
+        .document(widget.user.uid);
+    DocumentReference allUser = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        .collection('Patients')
+        .document(widget.user.uid);
+    userUpdateInfo.displayName = _name;
+    user.updateProfile(userUpdateInfo);
+    clinicDentist.updateData({'fullName': _name});
+    allUser.updateData({'fullName': _name}).then((value) => MaterialPageRoute(
+        builder: (value) => PatientProfileScreen(widget.user)));
+    print('Update Success');
+  }
+
+  Future<void> updateEmail(String _eMail) async {
+    FirebaseUser user = await _auth.currentUser();
+    Firestore firestore = Firestore.instance;
+    DocumentReference clinicDentist = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(clinic)
+        .document(clinic)
+        .collection('Patients')
+        .document(widget.user.uid);
+    DocumentReference allUser = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        .collection('Patients')
+        .document(widget.user.uid);
+    user.updateEmail(_eMail);
+    clinicDentist.updateData({'eMail': _eMail});
+    allUser.updateData({'eMail': _eMail});
+    print('Update Success');
+    _signOut(context);
+  }
+
+  Future<void> updatePic(String pic) async {
+    FirebaseUser user = await _auth.currentUser();
+    Firestore firestore = Firestore.instance;
+    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
+    DocumentReference clinicDentist = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(clinic)
+        .document(clinic)
+        .collection('Patients')
+        .document(widget.user.uid);
+    DocumentReference allUser = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        .collection('Patients')
+        .document(widget.user.uid);
+    userUpdateInfo.photoUrl = pic;
+    user.updateProfile(userUpdateInfo);
+    clinicDentist.updateData({'pathImage': pic});
+    allUser.updateData({'pathImage': pic});
+    MaterialPageRoute(builder: (value) => PatientProfileScreen(widget.user));
+    print('Update Success');
+  }
+
+  Future<void> updateNameAndEmail(String _name, String _eMail) async {
+    FirebaseUser user = await _auth.currentUser();
+    Firestore firestore = Firestore.instance;
+    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
+    DocumentReference clinicDentist = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(clinic)
+        .document(clinic)
+        .collection('Patients')
+        .document(widget.user.uid);
+    DocumentReference allUser = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        .collection('Patients')
+        .document(widget.user.uid);
+    userUpdateInfo.displayName = _name;
+    user.updateEmail(_eMail);
+    user.updateProfile(userUpdateInfo);
+    clinicDentist.updateData({'fullName': _name, 'eMail': _eMail});
+    allUser.updateData({'fullName': _name, 'eMail': _eMail});
+    print('Update Success');
+    _signOut(context);
+  }
+
+  Future<void> updateEmailAndPic(String _eMail, String pic) async {
+    FirebaseUser user = await _auth.currentUser();
+    Firestore firestore = Firestore.instance;
+    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
+    DocumentReference clinicDentist = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(clinic)
+        .document(clinic)
+        .collection('Patients')
+        .document(widget.user.uid);
+    DocumentReference allUser = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        .collection('Patients')
+        .document(widget.user.uid);
+    user.updateEmail(_eMail);
+    userUpdateInfo.photoUrl = pic;
+    user.updateProfile(userUpdateInfo);
+    clinicDentist.updateData({'eMail': _eMail, 'pathImage': pic});
+    allUser.updateData({'_eMail': _eMail, 'pathImage': pic});
+    print('Update Success');
+    _signOut(context);
+  }
+
+  Future<void> updateNameAndPic(String name, String pic) async {
+    FirebaseUser user = await _auth.currentUser();
+    Firestore firestore = Firestore.instance;
+    UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
+    DocumentReference clinicDentist = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('Clinic')
+        .document('clinic')
+        .collection(clinic)
+        .document(clinic)
+        .collection('Patients')
+        .document(widget.user.uid);
+    DocumentReference allUser = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        .collection('Patients')
+        .document(widget.user.uid);
+    userUpdateInfo.photoUrl = pic;
+    userUpdateInfo.displayName = name;
+    user.updateProfile(userUpdateInfo);
+    clinicDentist.updateData({'fullName': name, 'pathImage': pic});
+    allUser.updateData({'fullName': name, 'pathImage': pic});
+    MaterialPageRoute(builder: (value) => PatientProfileScreen(widget.user));
+    print('Update Success');
   }
 
   Future<void> updateDataToFirestore(
@@ -64,18 +251,9 @@ class _PatientEditProfileState extends State<PatientEditProfile> {
     userUpdateInfo.displayName = _name;
     userUpdateInfo.photoUrl = urlPicture;
     user.updateProfile(userUpdateInfo);
-    // await user.reload();
-    // print('Before');
-    // print(user.isEmailVerified);
-    // user = await _auth.currentUser();
-    // user.isEmailVerified;
-    // print('After');
-    // print(user.isEmailVerified);
-    // print(user.photoUrl);
-    // print(user.displayName);
     documentReference.updateData(map).then((value) {
       print('Update Success');
-      MaterialPageRoute(builder: (value) => PatientProfileScreen(widget.user));
+      return _signOut(context);
     });
   }
 
@@ -229,8 +407,37 @@ class _PatientEditProfileState extends State<PatientEditProfile> {
                         ),
                         IconButton(
                           onPressed: () {
-                            Navigator.pop(context);
-                            uploadPic(name, eMail, urlPicture);
+                            if (name != null) {
+                              if (eMail != null) {
+                                if (urlPicture != null) {
+                                  uploadPic(urlPicture);
+                                  updateDataToFirestore(
+                                      name, eMail, urlPicture);
+                                }
+                                updateNameAndEmail(name, eMail);
+                              }
+                              if (urlPicture != null) {
+                                uploadPic(urlPicture);
+                                updateNameAndPic(name, urlPicture);
+                              }
+                              updateName(name);
+                            }
+                            if (eMail != null) {
+                              if (urlPicture != null) {
+                                uploadPic(urlPicture);
+                                updateEmailAndPic(eMail, urlPicture);
+                              }
+                              updateEmail(eMail);
+                            }
+                            if (urlPicture != null) {
+                              updatePic(urlPicture);
+                              uploadPic(urlPicture);
+                            }
+                            if (name == null ||
+                                eMail == null ||
+                                urlPicture == null) {
+                              Navigator.pop(context);
+                            }
                           },
                           icon: Icon(
                             Icons.check,
