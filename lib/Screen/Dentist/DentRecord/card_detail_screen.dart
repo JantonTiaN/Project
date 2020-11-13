@@ -4,6 +4,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail1_screen.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dental_detail2_screen.dart';
 
 class CardDetailScreen extends StatefulWidget {
   // final FirebaseUser user;
@@ -18,8 +19,6 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
     super.initState();
     getClinic();
   }
-
-  List tooth1FrontCases, tooth1FrontDate, tooth1FrontDentist;
 
   @override
   Widget build(BuildContext context) {
@@ -96,40 +95,14 @@ tooth1CardDetail() {
                         color: Colors.blue[300],
                         fontSize: 16),
                   ),
-                  // )
                 ],
               ),
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
-                    //   key: _key,
-                    //   dismissal: SlidableDismissal(
-                    //     child: SlidableDrawerDismissal(),
-                    //     onWillDismiss: (actionType) {
-                    //       return showDialog<bool>(
-                    //         context: context,
-                    //         builder: (context) {
-                    //           return AlertDialog(
-                    //             title: Text('Delete'),
-                    //             content: Text('Item will be deleted'),
-                    //             actions: <Widget>[
-                    //               FlatButton(
-                    //                 child: Text('Cancel'),
-                    //                 onPressed: () => Navigator.of(context).pop(false),
-                    //               ),
-                    //               FlatButton(
-                    //                 child: Text('Ok'),
-                    //                 onPressed: () => Navigator.of(context).pop(true),
-                    //               ),
-                    //             ],
-                    //           );
-                    //         },
-                    //       );
-                    //     },
-                    //   ),
                     actionPane: SlidableDrawerActionPane(),
                     actionExtentRatio: 0.25,
                     child: Column(
@@ -166,41 +139,110 @@ tooth1CardDetail() {
                                     ],
                                   ),
                                 )
-                                // Text('Front: Case name'
-                                //     '\nDate: 01/11/63'
-                                //     '\nDentist name'),
                               ],
                             ),
                           ),
-                          // child: ListTile(
-                          //   title: Text('Front: Case name'),
-                          //   subtitle: Text('Date: 01/11/63'),
-                          //   isThreeLine: true,
-                          // ),
                         ),
                       ],
                     ),
                     actions: <Widget>[
                       IconSlideAction(
-                        caption: 'Done',
-                        color: Colors.green,
-                        icon: Icons.check,
-                        // onTap: () => _showSnackBar('Saved'),
-                      ),
+                          caption: 'Done',
+                          color: Colors.green,
+                          icon: Icons.check,
+                          onTap: () {}),
                     ],
                     secondaryActions: <Widget>[
                       IconSlideAction(
-                        caption: 'Delete',
-                        color: Colors.red,
-                        icon: Icons.delete,
-                        // onTap: () => _showSnackBar('Delete'),
-                      ),
+                          caption: 'Delete',
+                          color: Colors.red,
+                          icon: Icons.delete,
+                          onTap: () {
+                            String date = snapshot.data.documents[0]
+                                .data['tooth 1'][index]['Date']
+                                .toString();
+                            showDialog<String>(
+                              context: context,
+                              builder: (BuildContext context) => AlertDialog(
+                                title: const Text('Warning'),
+                                content: Text(
+                                  'จะลบจริงหราจ๊ะ',
+                                ),
+                                actions: <Widget>[
+                                  FlatButton(
+                                    child: Text('No'),
+                                    onPressed: () =>
+                                        Navigator.pop(context, 'OK'),
+                                  ),
+                                  FlatButton(
+                                      child: Text('OK'),
+                                      onPressed: () {
+                                        delete(date);
+                                        case1(date);
+                                        tooth1Count--;
+                                        if (tooth1Count == 0) {
+                                          return Center(
+                                            child: Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.center,
+                                              children: <Widget>[
+                                                Image.asset(
+                                                  'assets/images/Logo/No-data.png',
+                                                  width: 150,
+                                                  height: 150,
+                                                ),
+                                                Text(
+                                                  'Oh...',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Kanit',
+                                                      color: Colors.blue[300],
+                                                      fontSize: 25),
+                                                ),
+                                                Text(
+                                                  'Patient don\'t have any record',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Kanit',
+                                                      color: Colors.blue[300],
+                                                      fontSize: 16),
+                                                ),
+                                              ],
+                                            ),
+                                          );
+                                        }
+                                        Navigator.pop(context);
+                                      })
+                                ],
+                              ),
+                            );
+                          }),
                     ],
                   );
                 });
           }
         }),
   );
+}
+
+delete(String date) {
+  DocumentReference documentReference = Firestore.instance
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
+      .collection('Patients')
+      .document(uid)
+      .collection('DentalCase')
+      .document('dentalCase')
+      .collection('CaseDetail')
+      .document('caseDetail');
+  for (var i = 0; i < tooth1.length; i++) {
+    if (tooth1[i]['Date'] == date) {
+      tooth1.removeAt(i);
+    }
+  }
+  documentReference.updateData({'tooth 1': tooth1});
 }
 
 tooth2CardDetail() {
@@ -264,40 +306,14 @@ tooth2CardDetail() {
                         color: Colors.blue[300],
                         fontSize: 16),
                   ),
-                  // )
                 ],
               ),
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth2Count,
                 itemBuilder: (context, index) {
                   return Slidable(
-                    //   key: _key,
-                    //   dismissal: SlidableDismissal(
-                    //     child: SlidableDrawerDismissal(),
-                    //     onWillDismiss: (actionType) {
-                    //       return showDialog<bool>(
-                    //         context: context,
-                    //         builder: (context) {
-                    //           return AlertDialog(
-                    //             title: Text('Delete'),
-                    //             content: Text('Item will be deleted'),
-                    //             actions: <Widget>[
-                    //               FlatButton(
-                    //                 child: Text('Cancel'),
-                    //                 onPressed: () => Navigator.of(context).pop(false),
-                    //               ),
-                    //               FlatButton(
-                    //                 child: Text('Ok'),
-                    //                 onPressed: () => Navigator.of(context).pop(true),
-                    //               ),
-                    //             ],
-                    //           );
-                    //         },
-                    //       );
-                    //     },
-                    //   ),
                     actionPane: SlidableDrawerActionPane(),
                     actionExtentRatio: 0.25,
                     child: Column(
@@ -430,7 +446,7 @@ tooth3CardDetail() {
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
                     //   key: _key,
@@ -598,7 +614,7 @@ tooth4CardDetail() {
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
                     //   key: _key,
@@ -766,7 +782,7 @@ tooth5CardDetail() {
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
                     //   key: _key,
@@ -934,7 +950,7 @@ tooth6CardDetail() {
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
                     //   key: _key,
@@ -1102,7 +1118,7 @@ tooth7CardDetail() {
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
                     //   key: _key,
@@ -1270,7 +1286,7 @@ tooth8CardDetail() {
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
                     //   key: _key,
@@ -1438,7 +1454,7 @@ tooth9CardDetail() {
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
                     //   key: _key,
@@ -1606,7 +1622,7 @@ tooth10CardDetail() {
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
                     //   key: _key,
@@ -1774,7 +1790,7 @@ tooth11CardDetail() {
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
                     //   key: _key,
@@ -1942,7 +1958,7 @@ tooth12CardDetail() {
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
                     //   key: _key,
@@ -2110,7 +2126,7 @@ tooth13CardDetail() {
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
                     //   key: _key,
@@ -2278,7 +2294,7 @@ tooth14CardDetail() {
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
                     //   key: _key,
@@ -2446,7 +2462,7 @@ tooth15CardDetail() {
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
                     //   key: _key,
@@ -2614,7 +2630,7 @@ tooth16CardDetail() {
             );
           } else {
             return ListView.builder(
-                itemCount: countOfCases,
+                itemCount: tooth1Count,
                 itemBuilder: (context, index) {
                   return Slidable(
                     //   key: _key,
