@@ -355,13 +355,22 @@ class _DentEditProfileState extends State<DentEditProfile> {
         .document(clinic)
         .collection('Dentists')
         .document(widget.user.uid);
+    DocumentReference allUser = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        .collection('Dentists')
+        .document(widget.user.uid);
     Map<String, dynamic> map = Map();
     map['fullName'] = _name;
     map['eMail'] = _email;
     map['pathImage'] = urlPicture;
     userUpdateInfo.displayName = _name;
     userUpdateInfo.photoUrl = urlPicture;
+    user.updateEmail(_email);
     user.updateProfile(userUpdateInfo);
+    allUser.updateData(map).then((value) => print('Update all user success'));
     documentReference.updateData(map).then((value) {
       print('Update Success');
       _signOut(context);
@@ -477,6 +486,17 @@ class _DentEditProfileState extends State<DentEditProfile> {
                                         .document('clinic')
                                         .collection(clinic)
                                         .document(clinic)
+                                        .collection('Dentists')
+                                        .document(widget.user.uid)
+                                        .updateData({
+                                      'pathImage':
+                                          'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208',
+                                    });
+                                    Firestore.instance
+                                        .collection('Fund')
+                                        .document('funD')
+                                        .collection('AllUsers')
+                                        .document('allUsers')
                                         .collection('Dentists')
                                         .document(widget.user.uid)
                                         .updateData({

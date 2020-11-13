@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:fundee/Screen/Patient/patient_profile_screen.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:fundee/Screen/signin_screen.dart';
@@ -242,23 +241,22 @@ class _PatientEditProfileState extends State<PatientEditProfile> {
         .document(clinic)
         .collection('Patients')
         .document(widget.user.uid);
+    DocumentReference allUser = firestore
+        .collection('FunD')
+        .document('funD')
+        .collection('AllUsers')
+        .document('allUsers')
+        .collection('Patients')
+        .document(widget.user.uid);
     Map<String, dynamic> map = Map();
-    if (_name != null) {
-      map['fullName'] = _name;
-    } else {
-      map['fullName'] = widget.user.displayName;
-    }
-    if (_email != null) {
-      map['eMail'] = _email;
-    } else {
-      map['eMail'] = widget.user.email;
-    }
-    if (urlPicture != null) {
-      map['pathImage'] = urlPicture;
-    }
+    map['fullName'] = _name;
+    map['eMail'] = _email;
+    map['pathImage'] = urlPicture;
     userUpdateInfo.displayName = _name;
     userUpdateInfo.photoUrl = urlPicture;
+    user.updateEmail(_email);
     user.updateProfile(userUpdateInfo);
+    allUser.updateData(map).then((value) => print('Update all user success'));
     documentReference.updateData(map).then((value) {
       print('Update Success');
       return _signOut(context);
@@ -373,6 +371,17 @@ class _PatientEditProfileState extends State<PatientEditProfile> {
                                         .document('clinic')
                                         .collection(clinic)
                                         .document(clinic)
+                                        .collection('Patients')
+                                        .document(widget.user.uid)
+                                        .updateData({
+                                      'pathImage':
+                                          'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208',
+                                    });
+                                    Firestore.instance
+                                        .collection('FunD')
+                                        .document('funD')
+                                        .collection('AllUsers')
+                                        .document('allUsers')
                                         .collection('Patients')
                                         .document(widget.user.uid)
                                         .updateData({
