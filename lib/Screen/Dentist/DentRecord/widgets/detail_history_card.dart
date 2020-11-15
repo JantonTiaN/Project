@@ -6,13 +6,13 @@ import 'package:fundee/Screen/constants.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 
-class DentailHistoryTooth1Card extends StatefulWidget {
+class DentailHistoryToothCard extends StatefulWidget {
   @override
-  _DentailHistoryTooth1CardState createState() =>
-      _DentailHistoryTooth1CardState();
+  _DentailHistoryToothCardState createState() =>
+      _DentailHistoryToothCardState();
 }
 
-class _DentailHistoryTooth1CardState extends State<DentailHistoryTooth1Card> {
+class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
   @override
   void initState() {
     super.initState();

@@ -41,8 +41,15 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
     }
   }
 
-  void _signUpPatient(String email, String password, String fullName,
-      String tel, String drugallergy, String brithDate, String clinic) async {
+  _signUpPatient(
+      BuildContext context,
+      String email,
+      String password,
+      String fullName,
+      String tel,
+      String drugallergy,
+      String brithDate,
+      String clinic) async {
     CurrentUser _currentUser = Provider.of<CurrentUser>(context, listen: false);
     try {
       String _returnString = await _currentUser.signUpPatients(
@@ -55,7 +62,9 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                   actions: <Widget>[
                     FlatButton(
                       child: Text('OK'),
-                      onPressed: signupComplete(),
+                      onPressed: () {
+                        signupComplete();
+                      },
                     )
                   ],
                 ));
@@ -328,8 +337,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                         // icon: Icon(Icons.arrow_downward),
                         iconSize: 24,
                         elevation: 16,
-                        style: TextStyle(
-                            color: Colors.black54),
+                        style: TextStyle(color: Colors.black54),
                         // underline: Container(color: Colors.grey),
                         onChanged: (String newValue) {
                           setState(() {
@@ -381,6 +389,7 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
                         } else if (_passwordController.text ==
                             _confirmpasswordController.text) {
                           _signUpPatient(
+                              context,
                               _emailController.text,
                               _passwordController.text,
                               _fullNameController.text,
