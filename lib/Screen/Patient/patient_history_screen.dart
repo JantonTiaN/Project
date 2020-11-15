@@ -80,7 +80,6 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
                         color: Colors.blue[300],
                         fontSize: 16),
                   ),
-                  // )
                 ],
               ),
             );
@@ -92,18 +91,43 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
-                    ListTile(
-                      leading: Text('$idx'),
-                      title: Text(snapshot.data.documents[0].data['history']
-                          [index]['date']),
-                      subtitle: Text(snapshot.data.documents[0].data['history']
-                          [index]['detail']),
+                    Row(
+                      children: <Widget>[
+                        Text(
+                          '   $idx ',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, color: Colors.blue),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text('Case: ' +
+                                  snapshot.data.documents[0].data['history']
+                                      [index]['Detail']),
+                              Text('Date: ' +
+                                  snapshot.data.documents[0].data['history']
+                                      [index]['Date']),
+                              Text(
+                                'Status: ' +
+                                    snapshot.data.documents[0].data['history']
+                                        [index]['Status'],
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.blue),
+                              )
+                            ],
+                          ),
+                        )
+                      ],
                     ),
                     Padding(
                       padding: const EdgeInsets.only(right: 8.0),
                       child: Text('Responsible by: ' +
                           snapshot.data.documents[0].data['history'][index]
-                              ['dentist']),
+                              ['Dentist']),
                     ),
                     Divider(
                       color: Colors.blueGrey,
