@@ -90,15 +90,40 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                   padding: const EdgeInsets.all(8.0),
                   child: Card(
                     child: Container(
-                      child: Column(
+                      child: Row(
                         children: <Widget>[
-                          ListTile(
-                            leading: Text('$idx'),
-                            title: Text(snapshot.data.documents[0]
-                                .data['history'][index]['date']),
-                            subtitle: Text(snapshot.data.documents[0]
-                                .data['history'][index]['detail']),
+                          Text(
+                            '  $idx  ',
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue),
                           ),
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text('Case: ' +
+                                    snapshot.data.documents[0].data['history']
+                                        [index]['Detail']),
+                                Text('Date: ' +
+                                    snapshot.data.documents[0].data['history']
+                                        [index]['Date']),
+                                Text('Dentist: ' +
+                                    snapshot.data.documents[0].data['history']
+                                        [index]['Dentist']),
+                                Text(
+                                  'Status: ' +
+                                      snapshot.data.documents[0].data['history']
+                                          [index]['Status'],
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      color: Colors.blue),
+                                )
+                              ],
+                            ),
+                          )
                         ],
                       ),
                     ),

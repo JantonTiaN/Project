@@ -19,6 +19,12 @@ class PatientMenuScreen extends StatefulWidget {
   _PatientMenuScreenState createState() => _PatientMenuScreenState();
 }
 
+String uid;
+getUid() async {
+  FirebaseUser user = await FirebaseAuth.instance.currentUser();
+  uid = user.uid;
+}
+
 String clinic;
 getClinic() async {
   Firestore firestore = Firestore.instance;
@@ -47,6 +53,7 @@ class _PatientMenuScreenState extends State<PatientMenuScreen> {
   void initState() {
     super.initState();
     getClinic();
+    getUid();
   }
 
   @override

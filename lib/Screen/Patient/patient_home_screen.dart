@@ -26,6 +26,7 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
   void initState() {
     super.initState();
     getClinic();
+    getUid();
   }
 
   Map<DateTime, List<dynamic>> _groupEvents(List<EventModel> events) {
@@ -164,7 +165,7 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
   }
 
   DatabaseService<EventModel> eventDBS = DatabaseService<EventModel>(
-    "FunD/funD/Clinic/clinic/${clinic}/${clinic}/Patients/${widget.user.uid}/Appointment",
+    "FunD/funD/Clinic/clinic/${clinic}/${clinic}/Patients/${uid}/Appointment",
     fromDS: (id, data) => EventModel.fromDS(id, data),
     toMap: (event) => event.toMap(),
   );

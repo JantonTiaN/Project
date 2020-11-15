@@ -1720,7 +1720,7 @@ class _DentalRecordState extends State<DentalRecord> {
                             builder: (context) => tooth21Detail(context)));
                   },
                   child: Padding(
-                    padding: const EdgeInsets.fromLTRB(140, 461, 0, 0),
+                    padding: const EdgeInsets.fromLTRB(130, 461, 0, 0),
                     child: Center(
                       child: Image.asset(
                         'images/tooth/21-lastest.png',
