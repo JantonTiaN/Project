@@ -93,7 +93,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                       child: Row(
                         children: <Widget>[
                           Text(
-                            '  $idx  ',
+                            '   $idx ',
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Colors.blue),

@@ -1164,7 +1164,7 @@ dentailHistoryTooth4Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth4CardDetail()));
           },
         );
       }
@@ -1202,7 +1202,7 @@ dentailHistoryTooth4Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth4CardDetail()));
         },
       );
     } else if (tooth4Back.isNotEmpty) {
@@ -1240,7 +1240,7 @@ dentailHistoryTooth4Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth4CardDetail()));
         },
       );
     } else {
@@ -1270,7 +1270,7 @@ dentailHistoryTooth4Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth4CardDetail()));
         },
       );
     }
@@ -1310,7 +1310,7 @@ dentailHistoryTooth4Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth4CardDetail()));
         },
       );
     } else {
@@ -1340,7 +1340,7 @@ dentailHistoryTooth4Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth4CardDetail()));
         },
       );
     }
@@ -1371,7 +1371,7 @@ dentailHistoryTooth4Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth4CardDetail()));
       },
     );
   }
@@ -1486,7 +1486,7 @@ dentailHistoryTooth5Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth5CardDetail()));
           },
         );
       }
@@ -1524,7 +1524,7 @@ dentailHistoryTooth5Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth5CardDetail()));
         },
       );
     } else if (tooth5Back.isNotEmpty) {
@@ -1562,7 +1562,7 @@ dentailHistoryTooth5Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth5CardDetail()));
         },
       );
     } else {
@@ -1592,7 +1592,7 @@ dentailHistoryTooth5Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth5CardDetail()));
         },
       );
     }
@@ -1632,7 +1632,7 @@ dentailHistoryTooth5Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth5CardDetail()));
         },
       );
     } else {
@@ -1662,7 +1662,7 @@ dentailHistoryTooth5Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth5CardDetail()));
         },
       );
     }
@@ -1693,7 +1693,7 @@ dentailHistoryTooth5Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth5CardDetail()));
       },
     );
   }
@@ -1808,7 +1808,7 @@ dentailHistoryTooth6Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth6CardDetail()));
           },
         );
       }
@@ -1846,7 +1846,7 @@ dentailHistoryTooth6Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth6CardDetail()));
         },
       );
     } else if (tooth6Back.isNotEmpty) {
@@ -1884,7 +1884,7 @@ dentailHistoryTooth6Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth6CardDetail()));
         },
       );
     } else {
@@ -1914,7 +1914,7 @@ dentailHistoryTooth6Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth6CardDetail()));
         },
       );
     }
@@ -1954,7 +1954,7 @@ dentailHistoryTooth6Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth6CardDetail()));
         },
       );
     } else {
@@ -1984,7 +1984,7 @@ dentailHistoryTooth6Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth6CardDetail()));
         },
       );
     }
@@ -2015,7 +2015,7 @@ dentailHistoryTooth6Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth6CardDetail()));
       },
     );
   }
@@ -2130,7 +2130,7 @@ dentailHistoryTooth7Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth7CardDetail()));
           },
         );
       }
@@ -2168,7 +2168,7 @@ dentailHistoryTooth7Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth7CardDetail()));
         },
       );
     } else if (tooth7Back.isNotEmpty) {
@@ -2206,7 +2206,7 @@ dentailHistoryTooth7Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth7CardDetail()));
         },
       );
     } else {
@@ -2236,7 +2236,7 @@ dentailHistoryTooth7Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth7CardDetail()));
         },
       );
     }
@@ -2276,7 +2276,7 @@ dentailHistoryTooth7Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth7CardDetail()));
         },
       );
     } else {
@@ -2306,7 +2306,7 @@ dentailHistoryTooth7Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth7CardDetail()));
         },
       );
     }
@@ -2337,7 +2337,7 @@ dentailHistoryTooth7Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth7CardDetail()));
       },
     );
   }
@@ -2452,7 +2452,7 @@ dentailHistoryTooth8Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth8CardDetail()));
           },
         );
       }
@@ -2490,7 +2490,7 @@ dentailHistoryTooth8Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth8CardDetail()));
         },
       );
     } else if (tooth8Back.isNotEmpty) {
@@ -2528,7 +2528,7 @@ dentailHistoryTooth8Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth8CardDetail()));
         },
       );
     } else {
@@ -2558,7 +2558,7 @@ dentailHistoryTooth8Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth8CardDetail()));
         },
       );
     }
@@ -2598,7 +2598,7 @@ dentailHistoryTooth8Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth8CardDetail()));
         },
       );
     } else {
@@ -2628,7 +2628,7 @@ dentailHistoryTooth8Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth8CardDetail()));
         },
       );
     }
@@ -2659,7 +2659,7 @@ dentailHistoryTooth8Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth8CardDetail()));
       },
     );
   }
@@ -2774,7 +2774,7 @@ dentailHistoryTooth9Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth9CardDetail()));
           },
         );
       }
@@ -2812,7 +2812,7 @@ dentailHistoryTooth9Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth9CardDetail()));
         },
       );
     } else if (tooth9Back.isNotEmpty) {
@@ -2850,7 +2850,7 @@ dentailHistoryTooth9Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth9CardDetail()));
         },
       );
     } else {
@@ -2880,7 +2880,7 @@ dentailHistoryTooth9Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth9CardDetail()));
         },
       );
     }
@@ -2920,7 +2920,7 @@ dentailHistoryTooth9Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth9CardDetail()));
         },
       );
     } else {
@@ -2950,7 +2950,7 @@ dentailHistoryTooth9Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth9CardDetail()));
         },
       );
     }
@@ -2981,7 +2981,7 @@ dentailHistoryTooth9Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth9CardDetail()));
       },
     );
   }
@@ -3096,7 +3096,7 @@ dentailHistoryTooth10Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth10CardDetail()));
           },
         );
       }
@@ -3134,7 +3134,7 @@ dentailHistoryTooth10Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth10CardDetail()));
         },
       );
     } else if (tooth10Back.isNotEmpty) {
@@ -3172,7 +3172,7 @@ dentailHistoryTooth10Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth10CardDetail()));
         },
       );
     } else {
@@ -3202,7 +3202,7 @@ dentailHistoryTooth10Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth10CardDetail()));
         },
       );
     }
@@ -3242,7 +3242,7 @@ dentailHistoryTooth10Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth10CardDetail()));
         },
       );
     } else {
@@ -3272,7 +3272,7 @@ dentailHistoryTooth10Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth10CardDetail()));
         },
       );
     }
@@ -3303,7 +3303,7 @@ dentailHistoryTooth10Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth10CardDetail()));
       },
     );
   }
@@ -3418,7 +3418,7 @@ dentailHistoryTooth11Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth11CardDetail()));
           },
         );
       }
@@ -3456,7 +3456,7 @@ dentailHistoryTooth11Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth11CardDetail()));
         },
       );
     } else if (tooth11Back.isNotEmpty) {
@@ -3494,7 +3494,7 @@ dentailHistoryTooth11Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth11CardDetail()));
         },
       );
     } else {
@@ -3524,7 +3524,7 @@ dentailHistoryTooth11Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth11CardDetail()));
         },
       );
     }
@@ -3564,7 +3564,7 @@ dentailHistoryTooth11Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth11CardDetail()));
         },
       );
     } else {
@@ -3594,7 +3594,7 @@ dentailHistoryTooth11Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth11CardDetail()));
         },
       );
     }
@@ -3625,7 +3625,7 @@ dentailHistoryTooth11Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth11CardDetail()));
       },
     );
   }
@@ -3740,7 +3740,7 @@ dentailHistoryTooth12Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth12CardDetail()));
           },
         );
       }
@@ -3778,7 +3778,7 @@ dentailHistoryTooth12Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth12CardDetail()));
         },
       );
     } else if (tooth12Back.isNotEmpty) {
@@ -3816,7 +3816,7 @@ dentailHistoryTooth12Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth12CardDetail()));
         },
       );
     } else {
@@ -3846,7 +3846,7 @@ dentailHistoryTooth12Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth12CardDetail()));
         },
       );
     }
@@ -3886,7 +3886,7 @@ dentailHistoryTooth12Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth12CardDetail()));
         },
       );
     } else {
@@ -3916,7 +3916,7 @@ dentailHistoryTooth12Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth12CardDetail()));
         },
       );
     }
@@ -3947,7 +3947,7 @@ dentailHistoryTooth12Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth12CardDetail()));
       },
     );
   }
@@ -4062,7 +4062,7 @@ dentailHistoryTooth13Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth13CardDetail()));
           },
         );
       }
@@ -4100,7 +4100,7 @@ dentailHistoryTooth13Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth13CardDetail()));
         },
       );
     } else if (tooth13Back.isNotEmpty) {
@@ -4138,7 +4138,7 @@ dentailHistoryTooth13Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth13CardDetail()));
         },
       );
     } else {
@@ -4168,7 +4168,7 @@ dentailHistoryTooth13Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth13CardDetail()));
         },
       );
     }
@@ -4208,7 +4208,7 @@ dentailHistoryTooth13Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth13CardDetail()));
         },
       );
     } else {
@@ -4238,7 +4238,7 @@ dentailHistoryTooth13Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth13CardDetail()));
         },
       );
     }
@@ -4269,7 +4269,7 @@ dentailHistoryTooth13Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth13CardDetail()));
       },
     );
   }
@@ -4384,7 +4384,7 @@ dentailHistoryTooth14Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth14CardDetail()));
           },
         );
       }
@@ -4422,7 +4422,7 @@ dentailHistoryTooth14Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth14CardDetail()));
         },
       );
     } else if (tooth14Back.isNotEmpty) {
@@ -4460,7 +4460,7 @@ dentailHistoryTooth14Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth14CardDetail()));
         },
       );
     } else {
@@ -4490,7 +4490,7 @@ dentailHistoryTooth14Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth14CardDetail()));
         },
       );
     }
@@ -4530,7 +4530,7 @@ dentailHistoryTooth14Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth14CardDetail()));
         },
       );
     } else {
@@ -4560,7 +4560,7 @@ dentailHistoryTooth14Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth14CardDetail()));
         },
       );
     }
@@ -4591,7 +4591,7 @@ dentailHistoryTooth14Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth14CardDetail()));
       },
     );
   }
@@ -4706,7 +4706,7 @@ dentailHistoryTooth15Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth15CardDetail()));
           },
         );
       }
@@ -4744,7 +4744,7 @@ dentailHistoryTooth15Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth15CardDetail()));
         },
       );
     } else if (tooth15Back.isNotEmpty) {
@@ -4782,7 +4782,7 @@ dentailHistoryTooth15Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth15CardDetail()));
         },
       );
     } else {
@@ -4812,7 +4812,7 @@ dentailHistoryTooth15Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth15CardDetail()));
         },
       );
     }
@@ -4852,7 +4852,7 @@ dentailHistoryTooth15Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth15CardDetail()));
         },
       );
     } else {
@@ -4882,7 +4882,7 @@ dentailHistoryTooth15Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth15CardDetail()));
         },
       );
     }
@@ -4913,7 +4913,7 @@ dentailHistoryTooth15Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth15CardDetail()));
       },
     );
   }
@@ -5028,7 +5028,7 @@ dentailHistoryTooth16Card(BuildContext context) {
           ),
           onTap: () {
             Navigator.push(context,
-                MaterialPageRoute(builder: (context) => CardDetailScreen()));
+                MaterialPageRoute(builder: (context) => tooth16CardDetail()));
           },
         );
       }
@@ -5066,7 +5066,7 @@ dentailHistoryTooth16Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth16CardDetail()));
         },
       );
     } else if (tooth16Back.isNotEmpty) {
@@ -5104,7 +5104,7 @@ dentailHistoryTooth16Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth16CardDetail()));
         },
       );
     } else {
@@ -5134,7 +5134,7 @@ dentailHistoryTooth16Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth16CardDetail()));
         },
       );
     }
@@ -5174,7 +5174,7 @@ dentailHistoryTooth16Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth16CardDetail()));
         },
       );
     } else {
@@ -5204,7 +5204,7 @@ dentailHistoryTooth16Card(BuildContext context) {
         ),
         onTap: () {
           Navigator.push(context,
-              MaterialPageRoute(builder: (context) => CardDetailScreen()));
+              MaterialPageRoute(builder: (context) => tooth16CardDetail()));
         },
       );
     }
@@ -5235,7 +5235,7 @@ dentailHistoryTooth16Card(BuildContext context) {
       ),
       onTap: () {
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => CardDetailScreen()));
+            MaterialPageRoute(builder: (context) => tooth16CardDetail()));
       },
     );
   }
