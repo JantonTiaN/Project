@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_helpers/firebase_helpers.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 
@@ -37,12 +36,3 @@ class EventModel extends DatabaseItem {
     };
   }
 }
-
-final Firestore _db = Firestore.instance;
-Firestore get db => _db;
-
-DatabaseService<EventModel> eventDBS = DatabaseService<EventModel>(
-  "events",
-  fromDS: (id, data) => EventModel.fromDS(id, data),
-  toMap: (event) => event.toMap(),
-);

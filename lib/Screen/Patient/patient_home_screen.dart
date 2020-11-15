@@ -5,6 +5,7 @@ import 'package:fundee/Services/event.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
+import 'package:firebase_helpers/firebase_helpers.dart';
 
 class PatientHomeScreen extends StatefulWidget {
   final FirebaseUser user;
@@ -14,7 +15,7 @@ class PatientHomeScreen extends StatefulWidget {
 }
 
 class _PatientHomeScreenState extends State<PatientHomeScreen> {
-  Firestore _firebase = Firestore.instance;
+  final Firestore _firebase = Firestore.instance;
   CalendarController _calendarController = CalendarController();
   CalendarFormat _calendarFormat = CalendarFormat.week;
   Map<DateTime, List<dynamic>> _events = {};
@@ -102,8 +103,8 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                             events: _events,
                             availableGestures:
                                 AvailableGestures.horizontalSwipe,
-                            headerStyle:
-                                HeaderStyle(formatButtonVisible: false),
+                            // headerStyle:
+                            //     HeaderStyle(formatButtonVisible: false),
                             initialCalendarFormat: _calendarFormat,
                             calendarStyle: CalendarStyle(
                                 todayColor: Colors.blue[200],
@@ -161,4 +162,10 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
               ],
             ));
   }
+
+  DatabaseService<EventModel> eventDBS = DatabaseService<EventModel>(
+    "FunD/funD/Clinic/clinic/${clinic}/${clinic}/Patients/${widget.user.uid}/Appointment",
+    fromDS: (id, data) => EventModel.fromDS(id, data),
+    toMap: (event) => event.toMap(),
+  );
 }
