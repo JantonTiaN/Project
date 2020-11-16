@@ -7,6 +7,7 @@ import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import '../patient_menu_screen.dart';
+import 'package:fundee/Screen/signin_screen.dart';
 
 class FbPSignupScreen extends StatefulWidget {
   // final FirebaseUser user;
@@ -54,7 +55,7 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
                     FlatButton(
                       child: Text('OK'),
                       onPressed: () {
-                        signupComplete();
+                        helloPatient(context);
                       },
                     )
                   ],
@@ -374,11 +375,5 @@ class _FbPSignupScreenState extends State<FbPSignupScreen> {
                     )
                   ],
                 )));
-  }
-
-  signupComplete() async {
-    FirebaseUser user = await FirebaseAuth.instance.currentUser();
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => PatientMenuScreen(user)));
   }
 }

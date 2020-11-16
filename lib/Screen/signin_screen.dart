@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
+import 'package:fundee/Screen/Patient/patient_home_screen.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:fundee/Screen/SignupProcess/gg_select_role.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -285,7 +286,7 @@ class _SignInScreenState extends State<SignInScreen> {
         print(isLoggedIn);
       });
       _emailController.clear();
-      checkRole();
+      checkRole(context);
     } catch (error) {
       print(error.message);
       scaffoldKey.currentState.showSnackBar(SnackBar(
@@ -309,7 +310,7 @@ class _SignInScreenState extends State<SignInScreen> {
     if (authResult.additionalUserInfo.isNewUser) {
       selectRoleGoogle(context);
     } else {
-      checkRole();
+      checkRole(context);
     }
   }
 
@@ -328,7 +329,7 @@ class _SignInScreenState extends State<SignInScreen> {
       if (authResult.additionalUserInfo.isNewUser) {
         selectRoleFacebook(context);
       } else {
-        checkRole();
+        checkRole(context);
       }
       var user = await FirebaseAuth.instance.signInWithCredential(credential);
     }
@@ -358,17 +359,15 @@ class _SignInScreenState extends State<SignInScreen> {
     }
   }
 
-  checkRole() async {
+  checkRole(BuildContext context) async {
     FirebaseUser user = await FirebaseAuth.instance.currentUser();
     bool docExist = await checkIfDocExists(user.uid);
     print('-----DENTIST-----');
     print(docExist);
     if (docExist == true) {
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
+      helloDentist(context);
     } else {
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => PatientMenuScreen(user)));
+      helloPatient(context);
     }
   }
 
@@ -406,15 +405,106 @@ class _SignInScreenState extends State<SignInScreen> {
       isLoggedIn = false;
     });
   }
-  // Future _signOut(BuildContext context) async {
-  //   await _facebookLogin.logOut();
-  //   await _auth.signOut();
-  //   FirebaseAuth.instance.signOut();
-  //   await _googleSignIn.signOut();
-  //   Navigator.pushAndRemoveUntil(
-  //       context,
-  //       MaterialPageRoute(builder: (context) => SignInScreen()),
-  //       (route) => false);
-  // }
+}
 
+String patientClinic;
+String patientUid;
+getPatientClinic() async {
+  FirebaseUser user = await FirebaseAuth.instance.currentUser();
+  Firestore.instance
+      .collection('FunD')
+      .document('funD')
+      .collection('AllUsers')
+      .document('allUsers')
+      .collection('Patients')
+      .document(user.uid)
+      .get()
+      .then((value) => {
+            if (value.data['clinic'] != null)
+              {
+                patientClinic = value.data['clinic'],
+                patientUid = value.data['uid']
+              }
+          });
+}
+
+helloPatient(BuildContext context) async {
+  getPatientClinic();
+  FirebaseUser user = await FirebaseAuth.instance.currentUser();
+  String name = user.displayName;
+  showDialog<String>(
+      context: context,
+      builder: (BuildContext context) => AlertDialog(
+            content: Text('สวัสดีคุณ $name'),
+            actions: <Widget>[
+              FlatButton(
+                child: Text('OK'),
+                onPressed: () {
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => PatientMenuScreen(user)));
+                },
+              )
+            ],
+          ));
+}
+
+helloDentist(BuildContext context) async {
+  FirebaseUser user = await FirebaseAuth.instance.currentUser();
+  Firestore firestore = Firestore.instance;
+  String message;
+  String name = user.displayName;
+  DocumentReference documentReference = firestore
+      .collection('FunD')
+      .document('funD')
+      .collection('AllUsers')
+      .document('allUsers')
+      .collection('Dentists')
+      .document(user.uid);
+  documentReference.get().then((value) => {
+        if (value.data['workingTime'] != null)
+          {
+            message = 'สวัสดีคุณ $name',
+            showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                      content: Text(message),
+                      actions: <Widget>[
+                        FlatButton(
+                          child: Text('OK'),
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        DentMenuScreen(user)));
+                          },
+                        )
+                      ],
+                    ))
+          }
+        else
+          {
+            message =
+                'สวัสดีคุณ $name กรุณากรอกเวลาทำงานใน Edit profile ด้วยค่ะ',
+            showDialog<String>(
+                context: context,
+                builder: (BuildContext context) => AlertDialog(
+                      content: Text(message),
+                      actions: <Widget>[
+                        FlatButton(
+                          child: Text('OK'),
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        DentMenuScreen(user)));
+                          },
+                        )
+                      ],
+                    ))
+          }
+      });
 }

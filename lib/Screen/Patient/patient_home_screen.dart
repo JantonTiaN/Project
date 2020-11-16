@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/signin_screen.dart';
 import 'package:fundee/Services/event.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -24,10 +25,9 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
   @override
   void initState() {
     super.initState();
+    getPatientClinic();
     getClinic();
     getUid();
-    print(clinic);
-    print(uid);
   }
 
   Map<DateTime, List<dynamic>> _groupEvents(List<EventModel> events) {
@@ -166,7 +166,7 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
   }
 
   DatabaseService<EventModel> eventDBS = DatabaseService<EventModel>(
-    "FunD/funD/Clinic/clinic/$clinic/$clinic/Patients/$uid/Appointment",
+    "FunD/funD/Clinic/clinic/$patientClinic/$patientClinic/Patients/$patientUid/Appointment",
     fromDS: (id, data) => EventModel.fromDS(id, data),
     toMap: (event) => event.toMap(),
   );

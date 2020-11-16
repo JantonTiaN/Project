@@ -7,6 +7,7 @@ import 'package:fundee/States/current_user.dart';
 import 'package:fundee/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
+import 'package:fundee/Screen/signin_screen.dart';
 
 class FbDSignupScreen extends StatefulWidget {
   // final FirebaseUser user;
@@ -60,7 +61,7 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                     FlatButton(
                       child: Text('OK'),
                       onPressed: () {
-                        signupComplete();
+                        helloDentist(context);
                       },
                     )
                   ],
@@ -429,11 +430,5 @@ class _FbDSignupScreenState extends State<FbDSignupScreen> {
                     )
                   ],
                 )));
-  }
-
-  signupComplete() async {
-    FirebaseUser user = await FirebaseAuth.instance.currentUser();
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => DentMenuScreen(user)));
   }
 }
