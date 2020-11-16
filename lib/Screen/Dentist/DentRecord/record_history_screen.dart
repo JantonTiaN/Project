@@ -97,9 +97,19 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                       ),
                     );
                   } else {
+                    int y = 0;
+                    for (var i = 0;
+                        i < snapshot.data.documents[0].data['history'].length;
+                        i++) {
+                      if (snapshot.data.documents[0].data['history'][i]
+                              ['Status'] ==
+                          'On Progress') {
+                        y++;
+                      }
+                    }
+                    print(y);
                     return ListView.builder(
-                      itemCount:
-                          snapshot.data.documents[0].data['history'].length,
+                      itemCount: y,
                       itemBuilder: (context, index) {
                         final idx = index + 1;
                         return Padding(
@@ -214,9 +224,19 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                       ),
                     );
                   } else {
+                    int x = 0;
+                    for (var i = 0;
+                        i < snapshot.data.documents[0].data['history'].length;
+                        i++) {
+                      if (snapshot.data.documents[0].data['history'][i]
+                              ['Status'] ==
+                          'Finised') {
+                        x++;
+                      }
+                    }
+                    print(x);
                     return ListView.builder(
-                      itemCount:
-                          snapshot.data.documents[0].data['history'].length,
+                      itemCount: x,
                       itemBuilder: (context, index) {
                         final idx = index + 1;
                         return Padding(
