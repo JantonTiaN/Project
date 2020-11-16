@@ -32,15 +32,22 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
       length: 2,
       child: Scaffold(
           appBar: AppBar(
-            title: Text('History'),
-            backgroundColor: Colors.blue[300],
-            bottom: TabBar(tabs: <Widget>[
-              Tab(text: 'On Progress'),
-              Tab(
-                text: 'Finished',
-              )
-            ]),
-          ),
+              title: Text('History'),
+              backgroundColor: Colors.blue[300],
+              bottom: TabBar(
+                tabs: <Widget>[
+                  Tab(text: 'On Progress'),
+                  Tab(
+                    text: 'Finished',
+                  )
+                ],
+                indicatorColor: Colors.blue[800],
+                indicatorWeight: 4,
+                // labelColor: Colors.white,
+                unselectedLabelColor: Colors.black,
+                labelStyle: TextStyle(fontWeight: FontWeight.bold),
+                unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
+              )),
           body: TabBarView(
             children: [
               StreamBuilder(
@@ -78,20 +85,8 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Image.asset(
-                            'assets/images/Logo/No-data.png',
-                            width: 150,
-                            height: 150,
-                          ),
                           Text(
-                            'Oh...',
-                            style: TextStyle(
-                                fontFamily: 'Kanit',
-                                color: Colors.blue[300],
-                                fontSize: 25),
-                          ),
-                          Text(
-                            'Patient don\'t have any record',
+                            '0 history record(s) found',
                             style: TextStyle(
                                 fontFamily: 'Kanit',
                                 color: Colors.blue[300],
