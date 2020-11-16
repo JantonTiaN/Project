@@ -202,7 +202,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -431,7 +431,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -660,7 +660,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -889,7 +889,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -1118,7 +1118,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -1347,7 +1347,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -1576,7 +1576,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -1805,7 +1805,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -2034,7 +2034,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -2265,7 +2265,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -2496,7 +2496,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -2727,7 +2727,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -2958,7 +2958,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -3189,7 +3189,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -3420,7 +3420,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -3651,7 +3651,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -3882,7 +3882,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -4113,7 +4113,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -4344,7 +4344,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -4575,7 +4575,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -4806,7 +4806,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -5037,7 +5037,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -5268,7 +5268,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -5499,7 +5499,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -5730,7 +5730,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -5961,7 +5961,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -6192,7 +6192,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -6423,7 +6423,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -6654,7 +6654,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -6885,7 +6885,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -7116,7 +7116,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -7347,7 +7347,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                                     _currentDate
                                                             .toString()
                                                             .length -
-                                                        16),
+                                                        7),
                                             'Dentist': dentist,
                                             'Position': position,
                                             'Status': status,
@@ -7757,7 +7757,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
         tooth16.removeAt(i);
       }
     }
-    documentReference.updateData({'tooth 16': tooth16});
+    documentReference.updateData({'tooth 7': tooth16});
   }
 
   tooth17delete(String date) {
