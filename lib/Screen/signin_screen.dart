@@ -435,7 +435,7 @@ helloPatient(BuildContext context) async {
   showDialog<String>(
       context: context,
       builder: (BuildContext context) => AlertDialog(
-            content: Text('สวัสดีคุณ $name'),
+            content: Text('Hello, $name'),
             actions: <Widget>[
               FlatButton(
                 child: Text('OK'),
@@ -465,7 +465,7 @@ helloDentist(BuildContext context) async {
   documentReference.get().then((value) => {
         if (value.data['workingTime'] != null)
           {
-            message = 'สวัสดีคุณ $name',
+            message = 'Hello, $name',
             showDialog<String>(
                 context: context,
                 builder: (BuildContext context) => AlertDialog(
@@ -486,8 +486,7 @@ helloDentist(BuildContext context) async {
           }
         else
           {
-            message =
-                'สวัสดีคุณ $name กรุณากรอกเวลาทำงานใน Edit profile ด้วยค่ะ',
+            message = 'Hello, $name กรุณากรอกเวลาทำงานใน Edit profile ด้วยค่ะ',
             showDialog<String>(
                 context: context,
                 builder: (BuildContext context) => AlertDialog(
