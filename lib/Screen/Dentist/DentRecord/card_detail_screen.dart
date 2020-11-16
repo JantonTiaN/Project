@@ -157,7 +157,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -193,7 +193,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 1'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -386,7 +386,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -422,7 +422,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 2'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -615,7 +615,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -651,7 +651,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 3'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -844,7 +844,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -880,7 +880,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 4'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -1073,7 +1073,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -1109,7 +1109,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 5'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -1302,7 +1302,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -1338,7 +1338,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 6'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -1531,7 +1531,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -1567,7 +1567,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 7'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -1760,7 +1760,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -1796,7 +1796,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 8'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -1989,7 +1989,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -2025,7 +2025,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 9'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -2219,7 +2219,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -2256,7 +2256,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 10'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -2450,7 +2450,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -2487,7 +2487,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 11'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -2681,7 +2681,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -2718,7 +2718,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 12'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -2912,7 +2912,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -2949,7 +2949,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 13'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -3143,7 +3143,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -3180,7 +3180,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 14'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -3374,7 +3374,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -3411,7 +3411,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 15'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -3605,7 +3605,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -3642,7 +3642,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 16'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -3836,7 +3836,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -3873,7 +3873,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 17'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -4067,7 +4067,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -4104,7 +4104,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 18'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -4298,7 +4298,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -4335,7 +4335,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 19'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -4529,7 +4529,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -4566,7 +4566,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 20'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -4760,7 +4760,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -4797,7 +4797,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 21'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -4991,7 +4991,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -5028,7 +5028,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 22'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -5222,7 +5222,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -5259,7 +5259,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 23'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -5453,7 +5453,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -5490,7 +5490,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 24'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -5684,7 +5684,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -5721,7 +5721,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 25'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -5915,7 +5915,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -5952,7 +5952,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 26'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -6146,7 +6146,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -6183,7 +6183,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 27'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -6377,7 +6377,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -6414,7 +6414,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 28'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -6608,7 +6608,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -6645,7 +6645,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 29'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -6839,7 +6839,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -6876,7 +6876,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 30'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -7070,7 +7070,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -7107,7 +7107,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 31'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -7301,7 +7301,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -7338,7 +7338,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 32'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
