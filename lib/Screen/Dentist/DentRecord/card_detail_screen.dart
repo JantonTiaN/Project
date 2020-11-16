@@ -157,13 +157,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -193,7 +194,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 1'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -238,12 +239,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth1delete(date);
                                           case1(date);
@@ -386,13 +390,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -422,7 +427,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 2'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -467,12 +472,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth2delete(date);
                                           case2(date);
@@ -615,13 +623,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -651,7 +660,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 3'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -696,12 +705,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth3delete(date);
                                           case3(date);
@@ -844,13 +856,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -880,7 +893,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 4'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -925,12 +938,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth4delete(date);
                                           case4(date);
@@ -1073,13 +1089,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -1109,7 +1126,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 5'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -1154,12 +1171,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth5delete(date);
                                           case5(date);
@@ -1302,13 +1322,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -1338,7 +1359,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 6'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -1383,12 +1404,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth6delete(date);
                                           case6(date);
@@ -1531,13 +1555,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -1567,7 +1592,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 7'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -1612,12 +1637,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth7delete(date);
                                           case7(date);
@@ -1760,13 +1788,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -1796,7 +1825,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 8'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -1841,12 +1870,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth8delete(date);
                                           case8(date);
@@ -1989,13 +2021,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -2025,7 +2058,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 9'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -2070,12 +2103,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth9delete(date);
                                           case9(date);
@@ -2219,13 +2255,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -2256,7 +2293,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 10'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -2301,12 +2338,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth10delete(date);
                                           case10(date);
@@ -2450,13 +2490,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -2487,7 +2528,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 11'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -2532,12 +2573,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth11delete(date);
                                           case11(date);
@@ -2681,13 +2725,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -2718,7 +2763,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 12'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -2763,12 +2808,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth12delete(date);
                                           case12(date);
@@ -2912,13 +2960,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -2949,7 +2998,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 13'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -2994,12 +3043,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth13delete(date);
                                           case13(date);
@@ -3143,13 +3195,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -3180,7 +3233,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 14'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -3225,12 +3278,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth14delete(date);
                                           case14(date);
@@ -3374,13 +3430,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -3411,7 +3468,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 15'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -3456,12 +3513,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth15delete(date);
                                           case15(date);
@@ -3605,13 +3665,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -3642,7 +3703,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 16'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -3687,12 +3748,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth16delete(date);
                                           case16(date);
@@ -3836,13 +3900,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -3873,7 +3938,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 17'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -3918,12 +3983,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth17delete(date);
                                           case17(date);
@@ -4067,13 +4135,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -4104,7 +4173,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 18'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -4149,12 +4218,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth18delete(date);
                                           case18(date);
@@ -4298,13 +4370,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -4335,7 +4408,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 19'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -4380,12 +4453,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth19delete(date);
                                           case19(date);
@@ -4529,13 +4605,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -4566,7 +4643,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 20'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -4611,12 +4688,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth20delete(date);
                                           case20(date);
@@ -4760,13 +4840,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -4797,7 +4878,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 21'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -4842,12 +4923,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth21delete(date);
                                           case21(date);
@@ -4991,13 +5075,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -5028,7 +5113,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 22'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -5073,12 +5158,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth22delete(date);
                                           case22(date);
@@ -5222,13 +5310,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -5259,7 +5348,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 23'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -5304,12 +5393,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth23delete(date);
                                           case23(date);
@@ -5453,13 +5545,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -5490,7 +5583,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 24'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -5535,12 +5628,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth24delete(date);
                                           case24(date);
@@ -5684,13 +5780,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -5721,7 +5818,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 25'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -5766,12 +5863,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth25delete(date);
                                           case25(date);
@@ -5915,13 +6015,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -5952,7 +6053,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 26'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -5997,12 +6098,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth26delete(date);
                                           case26(date);
@@ -6146,13 +6250,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -6183,7 +6288,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 27'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -6228,12 +6333,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth27delete(date);
                                           case27(date);
@@ -6377,13 +6485,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -6414,7 +6523,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 28'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -6459,12 +6568,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth28delete(date);
                                           case28(date);
@@ -6608,13 +6720,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -6645,7 +6758,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 29'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -6690,12 +6803,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth29delete(date);
                                           case29(date);
@@ -6839,13 +6955,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -6876,7 +6993,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 30'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -6921,12 +7038,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth30delete(date);
                                           case30(date);
@@ -7070,13 +7190,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -7107,7 +7228,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 31'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -7152,12 +7273,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth31delete(date);
                                           case31(date);
@@ -7301,13 +7425,14 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Confirm Delete'),
+                                  title: const Text('Confirmation'),
                                   content: Text(
-                                    'Do you finish this case?',
+                                    'Do you want to finish this case?',
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
@@ -7338,7 +7463,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 32'][index]['Detail']
                                               .toString();
-                                          String status = 'Finish';
+                                          String status = 'Finised';
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -7383,12 +7508,15 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                   ),
                                   actions: <Widget>[
                                     FlatButton(
-                                      child: Text('No'),
+                                      child: Text('No',
+                                          style: TextStyle(color: Colors.grey)),
                                       onPressed: () =>
                                           Navigator.pop(context, 'OK'),
                                     ),
                                     FlatButton(
-                                        child: Text('OK'),
+                                        child: Text('Delete',
+                                            style:
+                                                TextStyle(color: Colors.red)),
                                         onPressed: () {
                                           tooth32delete(date);
                                           case32(date);
