@@ -157,7 +157,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -232,7 +232,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -386,7 +386,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -461,7 +461,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -615,7 +615,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -690,7 +690,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -844,7 +844,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -919,7 +919,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -1073,7 +1073,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -1148,7 +1148,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -1302,7 +1302,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -1377,7 +1377,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -1531,7 +1531,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -1606,7 +1606,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -1760,7 +1760,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -1835,7 +1835,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -1989,7 +1989,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -2064,7 +2064,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -2219,7 +2219,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -2295,7 +2295,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -2450,7 +2450,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -2526,7 +2526,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -2681,7 +2681,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -2757,7 +2757,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -2912,7 +2912,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -2988,7 +2988,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -3143,7 +3143,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -3219,7 +3219,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -3374,7 +3374,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -3450,7 +3450,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -3605,7 +3605,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -3681,7 +3681,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -3836,7 +3836,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -3912,7 +3912,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -4067,7 +4067,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -4143,7 +4143,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -4298,7 +4298,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -4374,7 +4374,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -4529,7 +4529,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -4605,7 +4605,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -4760,7 +4760,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -4836,7 +4836,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -4991,7 +4991,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -5067,7 +5067,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -5222,7 +5222,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -5298,7 +5298,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -5453,7 +5453,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -5529,7 +5529,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -5684,7 +5684,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -5760,7 +5760,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -5915,7 +5915,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -5991,7 +5991,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -6146,7 +6146,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -6222,7 +6222,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -6377,7 +6377,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -6453,7 +6453,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -6608,7 +6608,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -6684,7 +6684,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -6839,7 +6839,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -6915,7 +6915,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -7070,7 +7070,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -7146,7 +7146,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),
@@ -7301,7 +7301,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Do you finish this case?',
                                   ),
@@ -7377,7 +7377,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                               showDialog<String>(
                                 context: context,
                                 builder: (BuildContext context) => AlertDialog(
-                                  title: const Text('Warning'),
+                                  title: const Text('Confirm Delete'),
                                   content: Text(
                                     'Are you sure you want to delete this dental case?',
                                   ),

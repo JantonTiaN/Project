@@ -21,12 +21,13 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
   Map<DateTime, List<dynamic>> _events = {};
   List<dynamic> _selectedEvents = [];
   TextEditingController _eventController = TextEditingController();
-
   @override
   void initState() {
     super.initState();
     getClinic();
     getUid();
+    print(clinic);
+    print(uid);
   }
 
   Map<DateTime, List<dynamic>> _groupEvents(List<EventModel> events) {
@@ -165,7 +166,7 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
   }
 
   DatabaseService<EventModel> eventDBS = DatabaseService<EventModel>(
-    "FunD/funD/Clinic/clinic/${clinic}/${clinic}/Patients/${uid}/Appointment",
+    "FunD/funD/Clinic/clinic/$clinic/$clinic/Patients/$uid/Appointment",
     fromDS: (id, data) => EventModel.fromDS(id, data),
     toMap: (event) => event.toMap(),
   );

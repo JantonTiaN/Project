@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_helpers/firebase_helpers.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 
@@ -36,3 +37,4 @@ class EventModel extends DatabaseItem {
     };
   }
 }
+  
