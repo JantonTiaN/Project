@@ -214,6 +214,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           tooth1delete(date);
                                           case1(date);
                                           tooth1Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
