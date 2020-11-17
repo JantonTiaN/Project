@@ -8,6 +8,7 @@ import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'dental_detail1_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail1_screen.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/widgets/detail_history_card.dart';
 
 class DentalRecord extends StatefulWidget {
   final String fullname;
@@ -121,19 +122,6 @@ List<String> tooth32Back = new List();
 
 getHis() async {
   Firestore firestore = Firestore.instance;
-  DocumentReference onProgressDocumentReference = firestore
-      .collection('FunD')
-      .document('funD')
-      .collection('Clinic')
-      .document('clinic')
-      .collection(clinic)
-      .document(clinic)
-      .collection('Patients')
-      .document(uid)
-      .collection('History')
-      .document('history')
-      .collection('OnProgress')
-      .document('onProgress');
   DocumentReference finishedDocumentReference = firestore
       .collection('FunD')
       .document('funD')
@@ -145,11 +133,28 @@ getHis() async {
       .document(uid)
       .collection('History')
       .document('history')
-      .collection('OnProgress')
-      .document('onProgress');
+      .collection('Finished')
+      .document('finished');
   finishedDocumentReference.get().then((value) => {
         if (value.data['history'] != null)
           {finishedHistory = value.data['history']}
+      });
+  DocumentReference onProgressDocumentReference = firestore
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
+      .collection('Patients')
+      .document(uid)
+      .collection('History')
+      .document('history')
+      .collection('Finished')
+      .document('finished');
+  onProgressDocumentReference.get().then((value) => {
+        if (value.data['history'] != null)
+          {onProgressHistory = value.data['history']}
       });
 }
 

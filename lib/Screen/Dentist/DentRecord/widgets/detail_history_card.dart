@@ -13,43 +13,6 @@ class DentailHistoryToothCard extends StatefulWidget {
 }
 
 class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
-  void rebuild() {
-    setState(() {
-      dentailHistoryTooth1Card(context);
-      dentailHistoryTooth2Card(context);
-      dentailHistoryTooth3Card(context);
-      dentailHistoryTooth4Card(context);
-      dentailHistoryTooth5Card(context);
-      dentailHistoryTooth6Card(context);
-      dentailHistoryTooth7Card(context);
-      dentailHistoryTooth8Card(context);
-      dentailHistoryTooth9Card(context);
-      dentailHistoryTooth10Card(context);
-      dentailHistoryTooth11Card(context);
-      dentailHistoryTooth12Card(context);
-      dentailHistoryTooth13Card(context);
-      dentailHistoryTooth14Card(context);
-      dentailHistoryTooth15Card(context);
-      dentailHistoryTooth16Card(context);
-      dentailHistoryTooth17Card(context);
-      dentailHistoryTooth18Card(context);
-      dentailHistoryTooth19Card(context);
-      dentailHistoryTooth20Card(context);
-      dentailHistoryTooth21Card(context);
-      dentailHistoryTooth22Card(context);
-      dentailHistoryTooth23Card(context);
-      dentailHistoryTooth24Card(context);
-      dentailHistoryTooth25Card(context);
-      dentailHistoryTooth26Card(context);
-      dentailHistoryTooth27Card(context);
-      dentailHistoryTooth28Card(context);
-      dentailHistoryTooth29Card(context);
-      dentailHistoryTooth30Card(context);
-      dentailHistoryTooth31Card(context);
-      dentailHistoryTooth32Card(context);
-    });
-  }
-
   @override
   void initState() {
     super.initState();
@@ -86,6 +49,12 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     dentailHistoryTooth31Card(context);
     dentailHistoryTooth32Card(context);
     getClinic();
+  }
+
+  @override
+  void setState(fn) {
+    super.setState(fn);
+    dentailHistoryTooth1Card(context);
   }
 
   @override
@@ -150,17 +119,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     );
   }
 
-  void rebuildAllChildren(BuildContext context) {
-    void rebuild(Element el) {
-      el.markNeedsBuild();
-      el.visitChildren(rebuild);
-    }
-
-    (context as Element).visitChildren(rebuild);
-  }
-
   dentailHistoryTooth1Card(BuildContext context) {
-    rebuildAllChildren(context);
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
