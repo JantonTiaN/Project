@@ -83,8 +83,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                         ],
                       ),
                     );
-                  } else if (snapshot.data.documents[0].data['history'] ==
-                      null) {
+                  } else if (snapshot.data.documents[0].data.isEmpty) {
                     return Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -190,8 +189,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                         ],
                       ),
                     );
-                  } else if (snapshot.data.documents[0].data['history'] ==
-                      null) {
+                  } else if (snapshot.data.documents[0].data.length == 0) {
                     return Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,

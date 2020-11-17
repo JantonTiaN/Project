@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/card_detail_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail2_screen.dart';
@@ -8,7 +9,6 @@ import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:line_awesome_flutter/line_awesome_flutter.dart';
 import 'dental_detail1_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail1_screen.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/widgets/detail_history_card.dart';
 
 class DentalRecord extends StatefulWidget {
   final String fullname;
@@ -17,6 +17,12 @@ class DentalRecord extends StatefulWidget {
       : super(key: key);
   @override
   _DentalRecordState createState() => _DentalRecordState();
+}
+
+FirebaseUser user;
+getUser() async {
+  FirebaseUser users = await FirebaseAuth.instance.currentUser();
+  user = users;
 }
 
 var onProgressHistory = new List();
@@ -158,6 +164,790 @@ getHis() async {
       });
 }
 
+dentalHistory() {
+  Firestore firestore = Firestore.instance;
+  CollectionReference collectionReference = firestore
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
+      .collection('Patients')
+      .document(uid)
+      .collection('DentalCase');
+  collectionReference.document('dentalCase').get().then((value) {
+    if (value.data['tooth 1 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 1 Front'].length; i++) {
+        if (tooth1Front.contains(value.data['tooth 1 Front'][i]['Case']) ==
+            false) {
+          tooth1Front.add(value.data['tooth 1 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 1 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 1 Middle'].length; i++) {
+        if (tooth1Middle.contains(value.data['tooth 1 Middle'][i]['Case']) ==
+            false) {
+          tooth1Middle.add(value.data['tooth 1 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 1 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 1 Back'].length; i++) {
+        if (tooth1Back.contains(value.data['tooth 1 Back'][i]['Case']) ==
+            false) {
+          tooth1Back.add(value.data['tooth 1 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 2 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 2 Front'].length; i++) {
+        if (tooth2Front.contains(value.data['tooth 2 Front'][i]['Case']) ==
+            false) {
+          tooth2Front.add(value.data['tooth 2 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 2 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 2 Middle'].length; i++) {
+        if (tooth2Middle.contains(value.data['tooth 2 Middle'][i]['Case']) ==
+            false) {
+          tooth2Middle.add(value.data['tooth 2 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 2 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 2 Back'].length; i++) {
+        if (tooth2Back.contains(value.data['tooth 2 Back'][i]['Case']) ==
+            false) {
+          tooth2Back.add(value.data['tooth 2 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 3 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 3 Front'].length; i++) {
+        if (tooth3Front.contains(value.data['tooth 3 Front'][i]['Case']) ==
+            false) {
+          tooth3Front.add(value.data['tooth 3 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 3 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 3 Middle'].length; i++) {
+        if (tooth3Middle.contains(value.data['tooth 3 Middle'][i]['Case']) ==
+            false) {
+          tooth3Middle.add(value.data['tooth 3 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 3 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 3 Back'].length; i++) {
+        if (tooth3Back.contains(value.data['tooth 3 Back'][i]['Case']) ==
+            false) {
+          tooth3Back.add(value.data['tooth 3 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 4 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 4 Front'].length; i++) {
+        if (tooth4Front.contains(value.data['tooth 4 Front'][i]['Case']) ==
+            false) {
+          tooth4Front.add(value.data['tooth 4 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 4 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 4 Middle'].length; i++) {
+        if (tooth4Middle.contains(value.data['tooth 4 Middle'][i]['Case']) ==
+            false) {
+          tooth4Middle.add(value.data['tooth 4 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 4 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 4 Back'].length; i++) {
+        if (tooth4Back.contains(value.data['tooth 4 Back'][i]['Case']) ==
+            false) {
+          tooth4Back.add(value.data['tooth 4 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 5 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 5 Front'].length; i++) {
+        if (tooth5Front.contains(value.data['tooth 5 Front'][i]['Case']) ==
+            false) {
+          tooth5Front.add(value.data['tooth 5 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 5 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 5 Middle'].length; i++) {
+        if (tooth5Middle.contains(value.data['tooth 5 Middle'][i]['Case']) ==
+            false) {
+          tooth5Middle.add(value.data['tooth 5 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 5 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 5 Back'].length; i++) {
+        if (tooth5Back.contains(value.data['tooth 5 Back'][i]['Case']) ==
+            false) {
+          tooth5Back.add(value.data['tooth 5 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 6 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 6 Front'].length; i++) {
+        if (tooth6Front.contains(value.data['tooth 6 Front'][i]['Case']) ==
+            false) {
+          tooth6Front.add(value.data['tooth 6 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 6 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 6 Middle'].length; i++) {
+        if (tooth6Middle.contains(value.data['tooth 6 Middle'][i]['Case']) ==
+            false) {
+          tooth6Middle.add(value.data['tooth 6 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 6 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 6 Back'].length; i++) {
+        if (tooth6Back.contains(value.data['tooth 6 Back'][i]['Case']) ==
+            false) {
+          tooth6Back.add(value.data['tooth 6 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 7 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 7 Front'].length; i++) {
+        if (tooth7Front.contains(value.data['tooth 7 Front'][i]['Case']) ==
+            false) {
+          tooth7Front.add(value.data['tooth 7 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 7 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 7 Middle'].length; i++) {
+        if (tooth7Middle.contains(value.data['tooth 7 Middle'][i]['Case']) ==
+            false) {
+          tooth7Middle.add(value.data['tooth 7 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 7 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 7 Back'].length; i++) {
+        if (tooth7Back.contains(value.data['tooth 7 Back'][i]['Case']) ==
+            false) {
+          tooth7Back.add(value.data['tooth 7 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 8 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 8 Front'].length; i++) {
+        if (tooth8Front.contains(value.data['tooth 8 Front'][i]['Case']) ==
+            false) {
+          tooth8Front.add(value.data['tooth 8 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 8 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 8 Middle'].length; i++) {
+        if (tooth8Middle.contains(value.data['tooth 8 Middle'][i]['Case']) ==
+            false) {
+          tooth8Middle.add(value.data['tooth 8 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 8 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 8 Back'].length; i++) {
+        if (tooth8Back.contains(value.data['tooth 8 Back'][i]['Case']) ==
+            false) {
+          tooth8Back.add(value.data['tooth 8 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 9 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 9 Front'].length; i++) {
+        if (tooth9Front.contains(value.data['tooth 9 Front'][i]['Case']) ==
+            false) {
+          tooth9Front.add(value.data['tooth 9 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 9 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 9 Middle'].length; i++) {
+        if (tooth9Middle.contains(value.data['tooth 9 Middle'][i]['Case']) ==
+            false) {
+          tooth9Middle.add(value.data['tooth 9 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 9 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 9 Back'].length; i++) {
+        if (tooth9Back.contains(value.data['tooth 9 Back'][i]['Case']) ==
+            false) {
+          tooth9Back.add(value.data['tooth 9 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 10 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 10 Front'].length; i++) {
+        if (tooth10Front.contains(value.data['tooth 10 Front'][i]['Case']) ==
+            false) {
+          tooth10Front.add(value.data['tooth 10 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 10 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 10 Middle'].length; i++) {
+        if (tooth10Middle.contains(value.data['tooth 10 Middle'][i]['Case']) ==
+            false) {
+          tooth10Middle.add(value.data['tooth 10 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 10 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 10 Back'].length; i++) {
+        if (tooth10Back.contains(value.data['tooth 10 Back'][i]['Case']) ==
+            false) {
+          tooth10Back.add(value.data['tooth 10 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 11 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 11 Front'].length; i++) {
+        if (tooth11Front.contains(value.data['tooth 11 Front'][i]['Case']) ==
+            false) {
+          tooth11Front.add(value.data['tooth 11 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 11 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 11 Middle'].length; i++) {
+        if (tooth11Middle.contains(value.data['tooth 11 Middle'][i]['Case']) ==
+            false) {
+          tooth11Middle.add(value.data['tooth 11 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 11 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 11 Back'].length; i++) {
+        if (tooth11Back.contains(value.data['tooth 11 Back'][i]['Case']) ==
+            false) {
+          tooth11Back.add(value.data['tooth 11 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 12 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 12 Front'].length; i++) {
+        if (tooth12Front.contains(value.data['tooth 12 Front'][i]['Case']) ==
+            false) {
+          tooth12Front.add(value.data['tooth 12 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 12 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 12 Middle'].length; i++) {
+        if (tooth12Middle.contains(value.data['tooth 12 Middle'][i]['Case']) ==
+            false) {
+          tooth12Middle.add(value.data['tooth 12 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 12 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 12 Back'].length; i++) {
+        if (tooth12Back.contains(value.data['tooth 12 Back'][i]['Case']) ==
+            false) {
+          tooth12Back.add(value.data['tooth 12 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 13 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 13 Front'].length; i++) {
+        if (tooth13Front.contains(value.data['tooth 13 Front'][i]['Case']) ==
+            false) {
+          tooth13Front.add(value.data['tooth 13 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 13 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 13 Middle'].length; i++) {
+        if (tooth13Middle.contains(value.data['tooth 13 Middle'][i]['Case']) ==
+            false) {
+          tooth13Middle.add(value.data['tooth 13 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 13 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 13 Back'].length; i++) {
+        if (tooth13Back.contains(value.data['tooth 13 Back'][i]['Case']) ==
+            false) {
+          tooth13Back.add(value.data['tooth 13 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 14 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 14 Front'].length; i++) {
+        if (tooth14Front.contains(value.data['tooth 14 Front'][i]['Case']) ==
+            false) {
+          tooth14Front.add(value.data['tooth 14 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 14 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 14 Middle'].length; i++) {
+        if (tooth14Middle.contains(value.data['tooth 14 Middle'][i]['Case']) ==
+            false) {
+          tooth14Middle.add(value.data['tooth 14 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 14 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 14 Back'].length; i++) {
+        if (tooth14Back.contains(value.data['tooth 14 Back'][i]['Case']) ==
+            false) {
+          tooth14Back.add(value.data['tooth 14 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 15 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 15 Front'].length; i++) {
+        if (tooth15Front.contains(value.data['tooth 15 Front'][i]['Case']) ==
+            false) {
+          tooth15Front.add(value.data['tooth 15 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 15 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 15 Middle'].length; i++) {
+        if (tooth15Middle.contains(value.data['tooth 15 Middle'][i]['Case']) ==
+            false) {
+          tooth15Middle.add(value.data['tooth 15 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 15 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 15 Back'].length; i++) {
+        if (tooth15Back.contains(value.data['tooth 15 Back'][i]['Case']) ==
+            false) {
+          tooth15Back.add(value.data['tooth 15 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 16 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 16 Front'].length; i++) {
+        if (tooth16Front.contains(value.data['tooth 16 Front'][i]['Case']) ==
+            false) {
+          tooth16Front.add(value.data['tooth 16 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 16 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 16 Middle'].length; i++) {
+        if (tooth16Middle.contains(value.data['tooth 16 Middle'][i]['Case']) ==
+            false) {
+          tooth16Middle.add(value.data['tooth 16 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 16 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 16 Back'].length; i++) {
+        if (tooth16Back.contains(value.data['tooth 16 Back'][i]['Case']) ==
+            false) {
+          tooth16Back.add(value.data['tooth 16 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 17 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 17 Front'].length; i++) {
+        if (tooth17Front.contains(value.data['tooth 17 Front'][i]['Case']) ==
+            false) {
+          tooth17Front.add(value.data['tooth 17 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 17 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 17 Middle'].length; i++) {
+        if (tooth17Middle.contains(value.data['tooth 17 Middle'][i]['Case']) ==
+            false) {
+          tooth17Middle.add(value.data['tooth 17 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 17 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 17 Back'].length; i++) {
+        if (tooth17Back.contains(value.data['tooth 17 Back'][i]['Case']) ==
+            false) {
+          tooth17Back.add(value.data['tooth 17 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 18 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 18 Front'].length; i++) {
+        if (tooth18Front.contains(value.data['tooth 18 Front'][i]['Case']) ==
+            false) {
+          tooth18Front.add(value.data['tooth 18 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 18 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 18 Middle'].length; i++) {
+        if (tooth18Middle.contains(value.data['tooth 18 Middle'][i]['Case']) ==
+            false) {
+          tooth18Middle.add(value.data['tooth 18 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 18 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 18 Back'].length; i++) {
+        if (tooth18Back.contains(value.data['tooth 18 Back'][i]['Case']) ==
+            false) {
+          tooth18Back.add(value.data['tooth 18 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 19 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 19 Front'].length; i++) {
+        if (tooth19Front.contains(value.data['tooth 19 Front'][i]['Case']) ==
+            false) {
+          tooth19Front.add(value.data['tooth 19 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 19 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 19 Middle'].length; i++) {
+        if (tooth19Middle.contains(value.data['tooth 19 Middle'][i]['Case']) ==
+            false) {
+          tooth19Middle.add(value.data['tooth 19 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 19 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 19 Back'].length; i++) {
+        if (tooth19Back.contains(value.data['tooth 19 Back'][i]['Case']) ==
+            false) {
+          tooth19Back.add(value.data['tooth 19 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 20 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 20 Front'].length; i++) {
+        if (tooth20Front.contains(value.data['tooth 20 Front'][i]['Case']) ==
+            false) {
+          tooth20Front.add(value.data['tooth 20 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 20 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 20 Middle'].length; i++) {
+        if (tooth20Middle.contains(value.data['tooth 20 Middle'][i]['Case']) ==
+            false) {
+          tooth20Middle.add(value.data['tooth 20 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 20 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 20 Back'].length; i++) {
+        if (tooth20Back.contains(value.data['tooth 20 Back'][i]['Case']) ==
+            false) {
+          tooth20Back.add(value.data['tooth 20 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 21 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 21 Front'].length; i++) {
+        if (tooth21Front.contains(value.data['tooth 21 Front'][i]['Case']) ==
+            false) {
+          tooth21Front.add(value.data['tooth 21 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 21 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 21 Middle'].length; i++) {
+        if (tooth21Middle.contains(value.data['tooth 21 Middle'][i]['Case']) ==
+            false) {
+          tooth21Middle.add(value.data['tooth 21 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 21 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 21 Back'].length; i++) {
+        if (tooth21Back.contains(value.data['tooth 21 Back'][i]['Case']) ==
+            false) {
+          tooth21Back.add(value.data['tooth 21 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 22 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 22 Front'].length; i++) {
+        if (tooth22Front.contains(value.data['tooth 22 Front'][i]['Case']) ==
+            false) {
+          tooth22Front.add(value.data['tooth 22 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 22 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 22 Middle'].length; i++) {
+        if (tooth22Middle.contains(value.data['tooth 22 Middle'][i]['Case']) ==
+            false) {
+          tooth22Middle.add(value.data['tooth 22 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 22 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 22 Back'].length; i++) {
+        if (tooth22Back.contains(value.data['tooth 22 Back'][i]['Case']) ==
+            false) {
+          tooth22Back.add(value.data['tooth 22 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 23 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 23 Front'].length; i++) {
+        if (tooth23Front.contains(value.data['tooth 23 Front'][i]['Case']) ==
+            false) {
+          tooth23Front.add(value.data['tooth 23 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 23 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 23 Middle'].length; i++) {
+        if (tooth23Middle.contains(value.data['tooth 23 Middle'][i]['Case']) ==
+            false) {
+          tooth23Middle.add(value.data['tooth 23 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 23 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 23 Back'].length; i++) {
+        if (tooth23Back.contains(value.data['tooth 23 Back'][i]['Case']) ==
+            false) {
+          tooth23Back.add(value.data['tooth 23 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 24 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 24 Front'].length; i++) {
+        if (tooth24Front.contains(value.data['tooth 24 Front'][i]['Case']) ==
+            false) {
+          tooth24Front.add(value.data['tooth 24 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 24 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 24 Middle'].length; i++) {
+        if (tooth24Middle.contains(value.data['tooth 24 Middle'][i]['Case']) ==
+            false) {
+          tooth24Middle.add(value.data['tooth 24 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 24 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 24 Back'].length; i++) {
+        if (tooth24Back.contains(value.data['tooth 24 Back'][i]['Case']) ==
+            false) {
+          tooth24Back.add(value.data['tooth 24 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 25 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 25 Front'].length; i++) {
+        if (tooth25Front.contains(value.data['tooth 25 Front'][i]['Case']) ==
+            false) {
+          tooth25Front.add(value.data['tooth 25 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 25 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 25 Middle'].length; i++) {
+        if (tooth25Middle.contains(value.data['tooth 25 Middle'][i]['Case']) ==
+            false) {
+          tooth25Middle.add(value.data['tooth 25 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 25 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 25 Back'].length; i++) {
+        if (tooth25Back.contains(value.data['tooth 25 Back'][i]['Case']) ==
+            false) {
+          tooth25Back.add(value.data['tooth 25 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 26 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 26 Front'].length; i++) {
+        if (tooth26Front.contains(value.data['tooth 26 Front'][i]['Case']) ==
+            false) {
+          tooth26Front.add(value.data['tooth 26 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 26 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 26 Middle'].length; i++) {
+        if (tooth26Middle.contains(value.data['tooth 26 Middle'][i]['Case']) ==
+            false) {
+          tooth26Middle.add(value.data['tooth 26 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 26 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 26 Back'].length; i++) {
+        if (tooth26Back.contains(value.data['tooth 26 Back'][i]['Case']) ==
+            false) {
+          tooth26Back.add(value.data['tooth 26 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 27 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 27 Front'].length; i++) {
+        if (tooth27Front.contains(value.data['tooth 27 Front'][i]['Case']) ==
+            false) {
+          tooth27Front.add(value.data['tooth 27 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 27 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 27 Middle'].length; i++) {
+        if (tooth27Middle.contains(value.data['tooth 27 Middle'][i]['Case']) ==
+            false) {
+          tooth27Middle.add(value.data['tooth 27 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 27 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 27 Back'].length; i++) {
+        if (tooth27Back.contains(value.data['tooth 27 Back'][i]['Case']) ==
+            false) {
+          tooth27Back.add(value.data['tooth 27 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 28 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 28 Front'].length; i++) {
+        if (tooth28Front.contains(value.data['tooth 28 Front'][i]['Case']) ==
+            false) {
+          tooth28Front.add(value.data['tooth 28 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 28 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 28 Middle'].length; i++) {
+        if (tooth28Middle.contains(value.data['tooth 28 Middle'][i]['Case']) ==
+            false) {
+          tooth28Middle.add(value.data['tooth 28 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 28 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 28 Back'].length; i++) {
+        if (tooth28Back.contains(value.data['tooth 28 Back'][i]['Case']) ==
+            false) {
+          tooth28Back.add(value.data['tooth 28 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 29 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 29 Front'].length; i++) {
+        if (tooth29Front.contains(value.data['tooth 29 Front'][i]['Case']) ==
+            false) {
+          tooth29Front.add(value.data['tooth 29 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 29 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 29 Middle'].length; i++) {
+        if (tooth29Middle.contains(value.data['tooth 29 Middle'][i]['Case']) ==
+            false) {
+          tooth29Middle.add(value.data['tooth 29 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 29 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 29 Back'].length; i++) {
+        if (tooth29Back.contains(value.data['tooth 29 Back'][i]['Case']) ==
+            false) {
+          tooth29Back.add(value.data['tooth 29 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 30 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 30 Front'].length; i++) {
+        if (tooth30Front.contains(value.data['tooth 30 Front'][i]['Case']) ==
+            false) {
+          tooth30Front.add(value.data['tooth 30 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 30 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 30 Middle'].length; i++) {
+        if (tooth30Middle.contains(value.data['tooth 30 Middle'][i]['Case']) ==
+            false) {
+          tooth30Middle.add(value.data['tooth 30 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 30 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 30 Back'].length; i++) {
+        if (tooth30Back.contains(value.data['tooth 30 Back'][i]['Case']) ==
+            false) {
+          tooth30Back.add(value.data['tooth 30 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 31 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 31 Front'].length; i++) {
+        if (tooth31Front.contains(value.data['tooth 31 Front'][i]['Case']) ==
+            false) {
+          tooth31Front.add(value.data['tooth 31 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 31 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 31 Middle'].length; i++) {
+        if (tooth31Middle.contains(value.data['tooth 31 Middle'][i]['Case']) ==
+            false) {
+          tooth31Middle.add(value.data['tooth 31 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 31 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 31 Back'].length; i++) {
+        if (tooth31Back.contains(value.data['tooth 31 Back'][i]['Case']) ==
+            false) {
+          tooth31Back.add(value.data['tooth 31 Back'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 32 Front'] != null) {
+      for (var i = 0; i < value.data['tooth 32 Front'].length; i++) {
+        if (tooth32Front.contains(value.data['tooth 32 Front'][i]['Case']) ==
+            false) {
+          tooth32Front.add(value.data['tooth 32 Front'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 32 Middle'] != null) {
+      for (var i = 0; i < value.data['tooth 32 Middle'].length; i++) {
+        if (tooth32Middle.contains(value.data['tooth 32 Middle'][i]['Case']) ==
+            false) {
+          tooth32Middle.add(value.data['tooth 32 Middle'][i]['Case']);
+        }
+      }
+    }
+    if (value.data['tooth 32 Back'] != null) {
+      for (var i = 0; i < value.data['tooth 32 Back'].length; i++) {
+        if (tooth32Back.contains(value.data['tooth 32 Back'][i]['Case']) ==
+            false) {
+          tooth32Back.add(value.data['tooth 32 Back'][i]['Case']);
+        }
+      }
+    }
+  });
+}
+
 class _DentalRecordState extends State<DentalRecord> {
   void initState() {
     super.initState();
@@ -167,818 +957,12 @@ class _DentalRecordState extends State<DentalRecord> {
     getuserid(widget.uid);
     getUid();
     getHis();
-    dentailHistory();
+    dentalHistory();
+    getUser();
   }
 
   getUid() {
     uid = widget.uid;
-  }
-
-  dentailHistory() {
-    Firestore firestore = Firestore.instance;
-    CollectionReference collectionReference = firestore
-        .collection('FunD')
-        .document('funD')
-        .collection('Clinic')
-        .document('clinic')
-        .collection(clinic)
-        .document(clinic)
-        .collection('Patients')
-        .document(widget.uid)
-        .collection('DentalCase');
-    collectionReference.document('dentalCase').get().then((value) {
-      if (value.data['tooth 1 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 1 Front'].length; i++) {
-          if (tooth1Front.contains(value.data['tooth 1 Front'][i]['Case']) ==
-              false) {
-            tooth1Front.add(value.data['tooth 1 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 1 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 1 Middle'].length; i++) {
-          if (tooth1Middle.contains(value.data['tooth 1 Middle'][i]['Case']) ==
-              false) {
-            tooth1Middle.add(value.data['tooth 1 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 1 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 1 Back'].length; i++) {
-          if (tooth1Back.contains(value.data['tooth 1 Back'][i]['Case']) ==
-              false) {
-            tooth1Back.add(value.data['tooth 1 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 2 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 2 Front'].length; i++) {
-          if (tooth2Front.contains(value.data['tooth 2 Front'][i]['Case']) ==
-              false) {
-            tooth2Front.add(value.data['tooth 2 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 2 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 2 Middle'].length; i++) {
-          if (tooth2Middle.contains(value.data['tooth 2 Middle'][i]['Case']) ==
-              false) {
-            tooth2Middle.add(value.data['tooth 2 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 2 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 2 Back'].length; i++) {
-          if (tooth2Back.contains(value.data['tooth 2 Back'][i]['Case']) ==
-              false) {
-            tooth2Back.add(value.data['tooth 2 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 3 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 3 Front'].length; i++) {
-          if (tooth3Front.contains(value.data['tooth 3 Front'][i]['Case']) ==
-              false) {
-            tooth3Front.add(value.data['tooth 3 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 3 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 3 Middle'].length; i++) {
-          if (tooth3Middle.contains(value.data['tooth 3 Middle'][i]['Case']) ==
-              false) {
-            tooth3Middle.add(value.data['tooth 3 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 3 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 3 Back'].length; i++) {
-          if (tooth3Back.contains(value.data['tooth 3 Back'][i]['Case']) ==
-              false) {
-            tooth3Back.add(value.data['tooth 3 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 4 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 4 Front'].length; i++) {
-          if (tooth4Front.contains(value.data['tooth 4 Front'][i]['Case']) ==
-              false) {
-            tooth4Front.add(value.data['tooth 4 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 4 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 4 Middle'].length; i++) {
-          if (tooth4Middle.contains(value.data['tooth 4 Middle'][i]['Case']) ==
-              false) {
-            tooth4Middle.add(value.data['tooth 4 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 4 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 4 Back'].length; i++) {
-          if (tooth4Back.contains(value.data['tooth 4 Back'][i]['Case']) ==
-              false) {
-            tooth4Back.add(value.data['tooth 4 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 5 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 5 Front'].length; i++) {
-          if (tooth5Front.contains(value.data['tooth 5 Front'][i]['Case']) ==
-              false) {
-            tooth5Front.add(value.data['tooth 5 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 5 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 5 Middle'].length; i++) {
-          if (tooth5Middle.contains(value.data['tooth 5 Middle'][i]['Case']) ==
-              false) {
-            tooth5Middle.add(value.data['tooth 5 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 5 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 5 Back'].length; i++) {
-          if (tooth5Back.contains(value.data['tooth 5 Back'][i]['Case']) ==
-              false) {
-            tooth5Back.add(value.data['tooth 5 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 6 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 6 Front'].length; i++) {
-          if (tooth6Front.contains(value.data['tooth 6 Front'][i]['Case']) ==
-              false) {
-            tooth6Front.add(value.data['tooth 6 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 6 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 6 Middle'].length; i++) {
-          if (tooth6Middle.contains(value.data['tooth 6 Middle'][i]['Case']) ==
-              false) {
-            tooth6Middle.add(value.data['tooth 6 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 6 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 6 Back'].length; i++) {
-          if (tooth6Back.contains(value.data['tooth 6 Back'][i]['Case']) ==
-              false) {
-            tooth6Back.add(value.data['tooth 6 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 7 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 7 Front'].length; i++) {
-          if (tooth7Front.contains(value.data['tooth 7 Front'][i]['Case']) ==
-              false) {
-            tooth7Front.add(value.data['tooth 7 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 7 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 7 Middle'].length; i++) {
-          if (tooth7Middle.contains(value.data['tooth 7 Middle'][i]['Case']) ==
-              false) {
-            tooth7Middle.add(value.data['tooth 7 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 7 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 7 Back'].length; i++) {
-          if (tooth7Back.contains(value.data['tooth 7 Back'][i]['Case']) ==
-              false) {
-            tooth7Back.add(value.data['tooth 7 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 8 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 8 Front'].length; i++) {
-          if (tooth8Front.contains(value.data['tooth 8 Front'][i]['Case']) ==
-              false) {
-            tooth8Front.add(value.data['tooth 8 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 8 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 8 Middle'].length; i++) {
-          if (tooth8Middle.contains(value.data['tooth 8 Middle'][i]['Case']) ==
-              false) {
-            tooth8Middle.add(value.data['tooth 8 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 8 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 8 Back'].length; i++) {
-          if (tooth8Back.contains(value.data['tooth 8 Back'][i]['Case']) ==
-              false) {
-            tooth8Back.add(value.data['tooth 8 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 9 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 9 Front'].length; i++) {
-          if (tooth9Front.contains(value.data['tooth 9 Front'][i]['Case']) ==
-              false) {
-            tooth9Front.add(value.data['tooth 9 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 9 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 9 Middle'].length; i++) {
-          if (tooth9Middle.contains(value.data['tooth 9 Middle'][i]['Case']) ==
-              false) {
-            tooth9Middle.add(value.data['tooth 9 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 9 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 9 Back'].length; i++) {
-          if (tooth9Back.contains(value.data['tooth 9 Back'][i]['Case']) ==
-              false) {
-            tooth9Back.add(value.data['tooth 9 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 10 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 10 Front'].length; i++) {
-          if (tooth10Front.contains(value.data['tooth 10 Front'][i]['Case']) ==
-              false) {
-            tooth10Front.add(value.data['tooth 10 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 10 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 10 Middle'].length; i++) {
-          if (tooth10Middle
-                  .contains(value.data['tooth 10 Middle'][i]['Case']) ==
-              false) {
-            tooth10Middle.add(value.data['tooth 10 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 10 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 10 Back'].length; i++) {
-          if (tooth10Back.contains(value.data['tooth 10 Back'][i]['Case']) ==
-              false) {
-            tooth10Back.add(value.data['tooth 10 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 11 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 11 Front'].length; i++) {
-          if (tooth11Front.contains(value.data['tooth 11 Front'][i]['Case']) ==
-              false) {
-            tooth11Front.add(value.data['tooth 11 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 11 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 11 Middle'].length; i++) {
-          if (tooth11Middle
-                  .contains(value.data['tooth 11 Middle'][i]['Case']) ==
-              false) {
-            tooth11Middle.add(value.data['tooth 11 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 11 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 11 Back'].length; i++) {
-          if (tooth11Back.contains(value.data['tooth 11 Back'][i]['Case']) ==
-              false) {
-            tooth11Back.add(value.data['tooth 11 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 12 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 12 Front'].length; i++) {
-          if (tooth12Front.contains(value.data['tooth 12 Front'][i]['Case']) ==
-              false) {
-            tooth12Front.add(value.data['tooth 12 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 12 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 12 Middle'].length; i++) {
-          if (tooth12Middle
-                  .contains(value.data['tooth 12 Middle'][i]['Case']) ==
-              false) {
-            tooth12Middle.add(value.data['tooth 12 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 12 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 12 Back'].length; i++) {
-          if (tooth12Back.contains(value.data['tooth 12 Back'][i]['Case']) ==
-              false) {
-            tooth12Back.add(value.data['tooth 12 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 13 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 13 Front'].length; i++) {
-          if (tooth13Front.contains(value.data['tooth 13 Front'][i]['Case']) ==
-              false) {
-            tooth13Front.add(value.data['tooth 13 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 13 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 13 Middle'].length; i++) {
-          if (tooth13Middle
-                  .contains(value.data['tooth 13 Middle'][i]['Case']) ==
-              false) {
-            tooth13Middle.add(value.data['tooth 13 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 13 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 13 Back'].length; i++) {
-          if (tooth13Back.contains(value.data['tooth 13 Back'][i]['Case']) ==
-              false) {
-            tooth13Back.add(value.data['tooth 13 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 14 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 14 Front'].length; i++) {
-          if (tooth14Front.contains(value.data['tooth 14 Front'][i]['Case']) ==
-              false) {
-            tooth14Front.add(value.data['tooth 14 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 14 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 14 Middle'].length; i++) {
-          if (tooth14Middle
-                  .contains(value.data['tooth 14 Middle'][i]['Case']) ==
-              false) {
-            tooth14Middle.add(value.data['tooth 14 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 14 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 14 Back'].length; i++) {
-          if (tooth14Back.contains(value.data['tooth 14 Back'][i]['Case']) ==
-              false) {
-            tooth14Back.add(value.data['tooth 14 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 15 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 15 Front'].length; i++) {
-          if (tooth15Front.contains(value.data['tooth 15 Front'][i]['Case']) ==
-              false) {
-            tooth15Front.add(value.data['tooth 15 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 15 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 15 Middle'].length; i++) {
-          if (tooth15Middle
-                  .contains(value.data['tooth 15 Middle'][i]['Case']) ==
-              false) {
-            tooth15Middle.add(value.data['tooth 15 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 15 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 15 Back'].length; i++) {
-          if (tooth15Back.contains(value.data['tooth 15 Back'][i]['Case']) ==
-              false) {
-            tooth15Back.add(value.data['tooth 15 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 16 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 16 Front'].length; i++) {
-          if (tooth16Front.contains(value.data['tooth 16 Front'][i]['Case']) ==
-              false) {
-            tooth16Front.add(value.data['tooth 16 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 16 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 16 Middle'].length; i++) {
-          if (tooth16Middle
-                  .contains(value.data['tooth 16 Middle'][i]['Case']) ==
-              false) {
-            tooth16Middle.add(value.data['tooth 16 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 16 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 16 Back'].length; i++) {
-          if (tooth16Back.contains(value.data['tooth 16 Back'][i]['Case']) ==
-              false) {
-            tooth16Back.add(value.data['tooth 16 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 17 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 17 Front'].length; i++) {
-          if (tooth17Front.contains(value.data['tooth 17 Front'][i]['Case']) ==
-              false) {
-            tooth17Front.add(value.data['tooth 17 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 17 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 17 Middle'].length; i++) {
-          if (tooth17Middle
-                  .contains(value.data['tooth 17 Middle'][i]['Case']) ==
-              false) {
-            tooth17Middle.add(value.data['tooth 17 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 17 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 17 Back'].length; i++) {
-          if (tooth17Back.contains(value.data['tooth 17 Back'][i]['Case']) ==
-              false) {
-            tooth17Back.add(value.data['tooth 17 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 18 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 18 Front'].length; i++) {
-          if (tooth18Front.contains(value.data['tooth 18 Front'][i]['Case']) ==
-              false) {
-            tooth18Front.add(value.data['tooth 18 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 18 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 18 Middle'].length; i++) {
-          if (tooth18Middle
-                  .contains(value.data['tooth 18 Middle'][i]['Case']) ==
-              false) {
-            tooth18Middle.add(value.data['tooth 18 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 18 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 18 Back'].length; i++) {
-          if (tooth18Back.contains(value.data['tooth 18 Back'][i]['Case']) ==
-              false) {
-            tooth18Back.add(value.data['tooth 18 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 19 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 19 Front'].length; i++) {
-          if (tooth19Front.contains(value.data['tooth 19 Front'][i]['Case']) ==
-              false) {
-            tooth19Front.add(value.data['tooth 19 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 19 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 19 Middle'].length; i++) {
-          if (tooth19Middle
-                  .contains(value.data['tooth 19 Middle'][i]['Case']) ==
-              false) {
-            tooth19Middle.add(value.data['tooth 19 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 19 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 19 Back'].length; i++) {
-          if (tooth19Back.contains(value.data['tooth 19 Back'][i]['Case']) ==
-              false) {
-            tooth19Back.add(value.data['tooth 19 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 20 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 20 Front'].length; i++) {
-          if (tooth20Front.contains(value.data['tooth 20 Front'][i]['Case']) ==
-              false) {
-            tooth20Front.add(value.data['tooth 20 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 20 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 20 Middle'].length; i++) {
-          if (tooth20Middle
-                  .contains(value.data['tooth 20 Middle'][i]['Case']) ==
-              false) {
-            tooth20Middle.add(value.data['tooth 20 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 20 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 20 Back'].length; i++) {
-          if (tooth20Back.contains(value.data['tooth 20 Back'][i]['Case']) ==
-              false) {
-            tooth20Back.add(value.data['tooth 20 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 21 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 21 Front'].length; i++) {
-          if (tooth21Front.contains(value.data['tooth 21 Front'][i]['Case']) ==
-              false) {
-            tooth21Front.add(value.data['tooth 21 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 21 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 21 Middle'].length; i++) {
-          if (tooth21Middle
-                  .contains(value.data['tooth 21 Middle'][i]['Case']) ==
-              false) {
-            tooth21Middle.add(value.data['tooth 21 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 21 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 21 Back'].length; i++) {
-          if (tooth21Back.contains(value.data['tooth 21 Back'][i]['Case']) ==
-              false) {
-            tooth21Back.add(value.data['tooth 21 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 22 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 22 Front'].length; i++) {
-          if (tooth22Front.contains(value.data['tooth 22 Front'][i]['Case']) ==
-              false) {
-            tooth22Front.add(value.data['tooth 22 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 22 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 22 Middle'].length; i++) {
-          if (tooth22Middle
-                  .contains(value.data['tooth 22 Middle'][i]['Case']) ==
-              false) {
-            tooth22Middle.add(value.data['tooth 22 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 22 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 22 Back'].length; i++) {
-          if (tooth22Back.contains(value.data['tooth 22 Back'][i]['Case']) ==
-              false) {
-            tooth22Back.add(value.data['tooth 22 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 23 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 23 Front'].length; i++) {
-          if (tooth23Front.contains(value.data['tooth 23 Front'][i]['Case']) ==
-              false) {
-            tooth23Front.add(value.data['tooth 23 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 23 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 23 Middle'].length; i++) {
-          if (tooth23Middle
-                  .contains(value.data['tooth 23 Middle'][i]['Case']) ==
-              false) {
-            tooth23Middle.add(value.data['tooth 23 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 23 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 23 Back'].length; i++) {
-          if (tooth23Back.contains(value.data['tooth 23 Back'][i]['Case']) ==
-              false) {
-            tooth23Back.add(value.data['tooth 23 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 24 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 24 Front'].length; i++) {
-          if (tooth24Front.contains(value.data['tooth 24 Front'][i]['Case']) ==
-              false) {
-            tooth24Front.add(value.data['tooth 24 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 24 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 24 Middle'].length; i++) {
-          if (tooth24Middle
-                  .contains(value.data['tooth 24 Middle'][i]['Case']) ==
-              false) {
-            tooth24Middle.add(value.data['tooth 24 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 24 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 24 Back'].length; i++) {
-          if (tooth24Back.contains(value.data['tooth 24 Back'][i]['Case']) ==
-              false) {
-            tooth24Back.add(value.data['tooth 24 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 25 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 25 Front'].length; i++) {
-          if (tooth25Front.contains(value.data['tooth 25 Front'][i]['Case']) ==
-              false) {
-            tooth25Front.add(value.data['tooth 25 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 25 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 25 Middle'].length; i++) {
-          if (tooth25Middle
-                  .contains(value.data['tooth 25 Middle'][i]['Case']) ==
-              false) {
-            tooth25Middle.add(value.data['tooth 25 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 25 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 25 Back'].length; i++) {
-          if (tooth25Back.contains(value.data['tooth 25 Back'][i]['Case']) ==
-              false) {
-            tooth25Back.add(value.data['tooth 25 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 26 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 26 Front'].length; i++) {
-          if (tooth26Front.contains(value.data['tooth 26 Front'][i]['Case']) ==
-              false) {
-            tooth26Front.add(value.data['tooth 26 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 26 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 26 Middle'].length; i++) {
-          if (tooth26Middle
-                  .contains(value.data['tooth 26 Middle'][i]['Case']) ==
-              false) {
-            tooth26Middle.add(value.data['tooth 26 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 26 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 26 Back'].length; i++) {
-          if (tooth26Back.contains(value.data['tooth 26 Back'][i]['Case']) ==
-              false) {
-            tooth26Back.add(value.data['tooth 26 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 27 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 27 Front'].length; i++) {
-          if (tooth27Front.contains(value.data['tooth 27 Front'][i]['Case']) ==
-              false) {
-            tooth27Front.add(value.data['tooth 27 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 27 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 27 Middle'].length; i++) {
-          if (tooth27Middle
-                  .contains(value.data['tooth 27 Middle'][i]['Case']) ==
-              false) {
-            tooth27Middle.add(value.data['tooth 27 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 27 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 27 Back'].length; i++) {
-          if (tooth27Back.contains(value.data['tooth 27 Back'][i]['Case']) ==
-              false) {
-            tooth27Back.add(value.data['tooth 27 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 28 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 28 Front'].length; i++) {
-          if (tooth28Front.contains(value.data['tooth 28 Front'][i]['Case']) ==
-              false) {
-            tooth28Front.add(value.data['tooth 28 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 28 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 28 Middle'].length; i++) {
-          if (tooth28Middle
-                  .contains(value.data['tooth 28 Middle'][i]['Case']) ==
-              false) {
-            tooth28Middle.add(value.data['tooth 28 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 28 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 28 Back'].length; i++) {
-          if (tooth28Back.contains(value.data['tooth 28 Back'][i]['Case']) ==
-              false) {
-            tooth28Back.add(value.data['tooth 28 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 29 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 29 Front'].length; i++) {
-          if (tooth29Front.contains(value.data['tooth 29 Front'][i]['Case']) ==
-              false) {
-            tooth29Front.add(value.data['tooth 29 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 29 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 29 Middle'].length; i++) {
-          if (tooth29Middle
-                  .contains(value.data['tooth 29 Middle'][i]['Case']) ==
-              false) {
-            tooth29Middle.add(value.data['tooth 29 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 29 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 29 Back'].length; i++) {
-          if (tooth29Back.contains(value.data['tooth 29 Back'][i]['Case']) ==
-              false) {
-            tooth29Back.add(value.data['tooth 29 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 30 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 30 Front'].length; i++) {
-          if (tooth30Front.contains(value.data['tooth 30 Front'][i]['Case']) ==
-              false) {
-            tooth30Front.add(value.data['tooth 30 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 30 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 30 Middle'].length; i++) {
-          if (tooth30Middle
-                  .contains(value.data['tooth 30 Middle'][i]['Case']) ==
-              false) {
-            tooth30Middle.add(value.data['tooth 30 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 30 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 30 Back'].length; i++) {
-          if (tooth30Back.contains(value.data['tooth 30 Back'][i]['Case']) ==
-              false) {
-            tooth30Back.add(value.data['tooth 30 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 31 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 31 Front'].length; i++) {
-          if (tooth31Front.contains(value.data['tooth 31 Front'][i]['Case']) ==
-              false) {
-            tooth31Front.add(value.data['tooth 31 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 31 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 31 Middle'].length; i++) {
-          if (tooth31Middle
-                  .contains(value.data['tooth 31 Middle'][i]['Case']) ==
-              false) {
-            tooth31Middle.add(value.data['tooth 31 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 31 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 31 Back'].length; i++) {
-          if (tooth31Back.contains(value.data['tooth 31 Back'][i]['Case']) ==
-              false) {
-            tooth31Back.add(value.data['tooth 31 Back'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 32 Front'] != null) {
-        for (var i = 0; i < value.data['tooth 32 Front'].length; i++) {
-          if (tooth32Front.contains(value.data['tooth 32 Front'][i]['Case']) ==
-              false) {
-            tooth32Front.add(value.data['tooth 32 Front'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 32 Middle'] != null) {
-        for (var i = 0; i < value.data['tooth 32 Middle'].length; i++) {
-          if (tooth32Middle
-                  .contains(value.data['tooth 32 Middle'][i]['Case']) ==
-              false) {
-            tooth32Middle.add(value.data['tooth 32 Middle'][i]['Case']);
-          }
-        }
-      }
-      if (value.data['tooth 32 Back'] != null) {
-        for (var i = 0; i < value.data['tooth 32 Back'].length; i++) {
-          if (tooth32Back.contains(value.data['tooth 32 Back'][i]['Case']) ==
-              false) {
-            tooth32Back.add(value.data['tooth 32 Back'][i]['Case']);
-          }
-        }
-      }
-    });
   }
 
   @override
@@ -1375,7 +1359,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth1Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth1Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 243, 200, 0),
@@ -1393,7 +1379,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth2Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth2Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 211, 200, 0),
@@ -1411,7 +1399,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth3Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth3Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 180.5, 190, 0),
@@ -1429,7 +1419,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth4Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth4Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 155, 175, 0),
@@ -1447,7 +1439,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth5Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth5Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 131, 153, 0),
@@ -1465,7 +1459,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth6Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth6Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 111, 115, 0),
@@ -1483,7 +1479,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth7Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth7Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 91, 80, 0),
@@ -1501,7 +1499,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth8Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth8Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 84, 29, 0),
@@ -1519,7 +1519,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth9Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth9Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(27.5, 84, 0, 0),
@@ -1537,7 +1539,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth10Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth10Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(78, 92, 0, 0),
@@ -1555,7 +1559,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth11Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth11Detail(context)));
                   },
                   child: Container(
                     child: Padding(
@@ -1575,7 +1581,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth12Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth12Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(143, 128.5, 0, 0),
@@ -1593,7 +1601,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth13Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth13Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(172, 151.5, 0, 0),
@@ -1611,7 +1621,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth14Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth14Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(185, 178, 0, 0),
@@ -1629,7 +1641,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth15Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth15Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(197, 207.5, 0, 0),
@@ -1647,7 +1661,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth16Detail(context)));
+                            builder: (context) => DentalDetailScreen(user)
+                                .createState()
+                                .tooth16Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(198, 239.5, 0, 0),
@@ -1665,7 +1681,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth17Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth17Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(203, 330, 0, 0),
@@ -1683,7 +1701,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth18Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth18Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(203, 370, 0, 0),
@@ -1701,7 +1721,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth19Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth19Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(191, 405, 0, 0),
@@ -1719,7 +1741,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth20Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth20Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(171, 435, 0, 0),
@@ -1737,7 +1761,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth21Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth21Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(130, 461, 0, 0),
@@ -1755,7 +1781,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth22Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth22Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(104, 478, 0, 0),
@@ -1773,7 +1801,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth23Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth23Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(74, 492, 0, 0),
@@ -1791,7 +1821,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth24Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth24Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(26, 498, 00, 0),
@@ -1809,7 +1841,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth25Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth25Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 498, 22, 0),
@@ -1827,7 +1861,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth26Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth26Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 493, 69, 0),
@@ -1845,7 +1881,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth27Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth27Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 480, 101, 0),
@@ -1863,7 +1901,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth28Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth28Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 460, 134, 0),
@@ -1881,7 +1921,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth29Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth29Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 431, 165, 0),
@@ -1899,7 +1941,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth30Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth30Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 400.5, 185, 0),
@@ -1917,7 +1961,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth31Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth31Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 369, 200, 0),
@@ -1935,7 +1981,9 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => tooth32Detail(context)));
+                            builder: (context) => DentalDetail2Screen()
+                                .createState()
+                                .tooth32Detail(context)));
                   },
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 330, 200, 0),

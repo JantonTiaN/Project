@@ -6,55 +6,54 @@ import 'package:fundee/Screen/constants.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 
-class DentailHistoryToothCard extends StatefulWidget {
+class DentalHistoryToothCard extends StatefulWidget {
   @override
-  _DentailHistoryToothCardState createState() =>
-      _DentailHistoryToothCardState();
+  _DentalHistoryToothCardState createState() => _DentalHistoryToothCardState();
 }
 
-class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
+class _DentalHistoryToothCardState extends State<DentalHistoryToothCard> {
   @override
   void initState() {
     super.initState();
-    dentailHistoryTooth1Card(context);
-    dentailHistoryTooth2Card(context);
-    dentailHistoryTooth3Card(context);
-    dentailHistoryTooth4Card(context);
-    dentailHistoryTooth5Card(context);
-    dentailHistoryTooth6Card(context);
-    dentailHistoryTooth7Card(context);
-    dentailHistoryTooth8Card(context);
-    dentailHistoryTooth9Card(context);
-    dentailHistoryTooth10Card(context);
-    dentailHistoryTooth11Card(context);
-    dentailHistoryTooth12Card(context);
-    dentailHistoryTooth13Card(context);
-    dentailHistoryTooth14Card(context);
-    dentailHistoryTooth15Card(context);
-    dentailHistoryTooth16Card(context);
-    dentailHistoryTooth17Card(context);
-    dentailHistoryTooth18Card(context);
-    dentailHistoryTooth19Card(context);
-    dentailHistoryTooth20Card(context);
-    dentailHistoryTooth21Card(context);
-    dentailHistoryTooth22Card(context);
-    dentailHistoryTooth23Card(context);
-    dentailHistoryTooth24Card(context);
-    dentailHistoryTooth25Card(context);
-    dentailHistoryTooth26Card(context);
-    dentailHistoryTooth27Card(context);
-    dentailHistoryTooth28Card(context);
-    dentailHistoryTooth29Card(context);
-    dentailHistoryTooth30Card(context);
-    dentailHistoryTooth31Card(context);
-    dentailHistoryTooth32Card(context);
+    dentalHistoryTooth1Card(context);
+    dentalHistoryTooth2Card(context);
+    dentalHistoryTooth3Card(context);
+    dentalHistoryTooth4Card(context);
+    dentalHistoryTooth5Card(context);
+    dentalHistoryTooth6Card(context);
+    dentalHistoryTooth7Card(context);
+    dentalHistoryTooth8Card(context);
+    dentalHistoryTooth9Card(context);
+    dentalHistoryTooth10Card(context);
+    dentalHistoryTooth11Card(context);
+    dentalHistoryTooth12Card(context);
+    dentalHistoryTooth13Card(context);
+    dentalHistoryTooth14Card(context);
+    dentalHistoryTooth15Card(context);
+    dentalHistoryTooth16Card(context);
+    dentalHistoryTooth17Card(context);
+    dentalHistoryTooth18Card(context);
+    dentalHistoryTooth19Card(context);
+    dentalHistoryTooth20Card(context);
+    dentalHistoryTooth21Card(context);
+    dentalHistoryTooth22Card(context);
+    dentalHistoryTooth23Card(context);
+    dentalHistoryTooth24Card(context);
+    dentalHistoryTooth25Card(context);
+    dentalHistoryTooth26Card(context);
+    dentalHistoryTooth27Card(context);
+    dentalHistoryTooth28Card(context);
+    dentalHistoryTooth29Card(context);
+    dentalHistoryTooth30Card(context);
+    dentalHistoryTooth31Card(context);
+    dentalHistoryTooth32Card(context);
     getClinic();
   }
 
   @override
   void setState(fn) {
     super.setState(fn);
-    dentailHistoryTooth1Card(context);
+    dentalHistoryTooth1Card(context);
   }
 
   @override
@@ -119,7 +118,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     );
   }
 
-  dentailHistoryTooth1Card(BuildContext context) {
+  dentalHistoryTooth1Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -462,7 +461,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth2Card(BuildContext context) {
+  dentalHistoryTooth2Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -805,7 +804,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth3Card(BuildContext context) {
+  dentalHistoryTooth3Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -1148,7 +1147,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth4Card(BuildContext context) {
+  dentalHistoryTooth4Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -1491,7 +1490,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth5Card(BuildContext context) {
+  dentalHistoryTooth5Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -1834,7 +1833,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth6Card(BuildContext context) {
+  dentalHistoryTooth6Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -2177,7 +2176,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth7Card(BuildContext context) {
+  dentalHistoryTooth7Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -2520,7 +2519,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth8Card(BuildContext context) {
+  dentalHistoryTooth8Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -2863,7 +2862,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth9Card(BuildContext context) {
+  dentalHistoryTooth9Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -3206,7 +3205,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth10Card(BuildContext context) {
+  dentalHistoryTooth10Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -3551,7 +3550,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth11Card(BuildContext context) {
+  dentalHistoryTooth11Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -3896,7 +3895,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth12Card(BuildContext context) {
+  dentalHistoryTooth12Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -4241,7 +4240,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth13Card(BuildContext context) {
+  dentalHistoryTooth13Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -4586,7 +4585,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth14Card(BuildContext context) {
+  dentalHistoryTooth14Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -4931,7 +4930,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth15Card(BuildContext context) {
+  dentalHistoryTooth15Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -5276,7 +5275,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth16Card(BuildContext context) {
+  dentalHistoryTooth16Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -5621,7 +5620,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth17Card(BuildContext context) {
+  dentalHistoryTooth17Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -5966,7 +5965,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth18Card(BuildContext context) {
+  dentalHistoryTooth18Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -6311,7 +6310,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth19Card(BuildContext context) {
+  dentalHistoryTooth19Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -6656,7 +6655,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth20Card(BuildContext context) {
+  dentalHistoryTooth20Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -7001,7 +7000,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth21Card(BuildContext context) {
+  dentalHistoryTooth21Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -7346,7 +7345,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth22Card(BuildContext context) {
+  dentalHistoryTooth22Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -7691,7 +7690,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth23Card(BuildContext context) {
+  dentalHistoryTooth23Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -8036,7 +8035,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth24Card(BuildContext context) {
+  dentalHistoryTooth24Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -8381,7 +8380,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth25Card(BuildContext context) {
+  dentalHistoryTooth25Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -8726,7 +8725,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth26Card(BuildContext context) {
+  dentalHistoryTooth26Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -9071,7 +9070,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth27Card(BuildContext context) {
+  dentalHistoryTooth27Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -9416,7 +9415,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth28Card(BuildContext context) {
+  dentalHistoryTooth28Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -9761,7 +9760,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth29Card(BuildContext context) {
+  dentalHistoryTooth29Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -10106,7 +10105,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth30Card(BuildContext context) {
+  dentalHistoryTooth30Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -10451,7 +10450,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth31Card(BuildContext context) {
+  dentalHistoryTooth31Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
@@ -10796,7 +10795,7 @@ class _DentailHistoryToothCardState extends State<DentailHistoryToothCard> {
     }
   }
 
-  dentailHistoryTooth32Card(BuildContext context) {
+  dentalHistoryTooth32Card(BuildContext context) {
     Firestore firestore = Firestore.instance;
     CollectionReference collectionReference = firestore
         .collection('FunD')
