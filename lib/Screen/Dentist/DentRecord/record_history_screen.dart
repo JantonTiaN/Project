@@ -83,9 +83,7 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                         ],
                       ),
                     );
-                  } else if (snapshot
-                          .data.documents[0].data['history'].length ==
-                      0) {
+                  } else if (snapshot.data.documents[0].data.length == 0) {
                     return Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -196,20 +194,8 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
-                          Image.asset(
-                            'assets/images/Logo/No-data.png',
-                            width: 150,
-                            height: 150,
-                          ),
                           Text(
-                            'Oh...',
-                            style: TextStyle(
-                                fontFamily: 'Kanit',
-                                color: Colors.blue[300],
-                                fontSize: 25),
-                          ),
-                          Text(
-                            'Patient don\'t have any record',
+                            '0 history record(s) found',
                             style: TextStyle(
                                 fontFamily: 'Kanit',
                                 color: Colors.blue[300],
