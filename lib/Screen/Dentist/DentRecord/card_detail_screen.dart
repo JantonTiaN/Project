@@ -14,6 +14,18 @@ class CardDetailScreen extends StatefulWidget {
   _CardDetailScreenState createState() => _CardDetailScreenState();
 }
 
+DocumentReference caseReference = firestore
+    .collection('FunD')
+    .document('funD')
+    .collection('Clinic')
+    .document('clinic')
+    .collection(clinic)
+    .document(clinic)
+    .collection('Patients')
+    .document(uid)
+    .collection('DentalCase')
+    .document('dentalCase');
+
 class _CardDetailScreenState extends State<CardDetailScreen> {
   @override
   void initState() {
@@ -194,7 +206,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 1'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 1'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth1Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth1Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth1Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -215,6 +241,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case1(date);
                                           tooth1Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -250,10 +277,32 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 1'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 1'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth1Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth1Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth1Back.remove(cases);
+                                          }
                                           tooth1delete(date);
                                           case1(date);
                                           tooth1Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
+                                          print(tooth1Front);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -428,7 +477,22 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 2'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 2'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth2Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth2Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth2Back.remove(cases);
+                                          }
+
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -449,6 +513,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case2(date);
                                           tooth2Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -484,10 +549,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 2'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 2'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth2Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth2Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth2Back.remove(cases);
+                                          }
                                           tooth2delete(date);
                                           case2(date);
                                           tooth2Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -662,7 +748,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 3'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 3'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth3Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth3Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth3Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -683,6 +783,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case3(date);
                                           tooth3Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -718,10 +819,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 3'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 3'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth3Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth3Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth3Back.remove(cases);
+                                          }
                                           tooth3delete(date);
                                           case3(date);
                                           tooth3Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -896,7 +1018,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 4'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 4'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth4Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth4Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth4Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -917,6 +1053,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case4(date);
                                           tooth4Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -952,10 +1089,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 4'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 4'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth4Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth4Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth4Back.remove(cases);
+                                          }
                                           tooth4delete(date);
                                           case4(date);
                                           tooth4Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -1130,7 +1288,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 5'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 5'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth5Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth5Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth5Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -1151,6 +1323,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case5(date);
                                           tooth5Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -1186,10 +1359,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 5'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 5'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth5Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth5Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth5Back.remove(cases);
+                                          }
                                           tooth5delete(date);
                                           case5(date);
                                           tooth5Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -1364,7 +1558,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 6'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 6'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth6Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth6Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth6Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -1385,6 +1593,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case6(date);
                                           tooth6Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -1420,10 +1629,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 6'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 6'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth6Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth6Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth6Back.remove(cases);
+                                          }
                                           tooth6delete(date);
                                           case6(date);
                                           tooth6Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -1598,7 +1828,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 7'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 7'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth7Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth7Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth7Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -1619,6 +1863,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case7(date);
                                           tooth7Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -1654,10 +1899,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 6'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 6'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth6Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth6Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth6Back.remove(cases);
+                                          }
                                           tooth7delete(date);
                                           case7(date);
                                           tooth7Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -1832,7 +2098,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 8'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 8'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth8Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth8Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth8Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -1853,6 +2133,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case8(date);
                                           tooth8Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -1888,10 +2169,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 8'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 8'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth8Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth8Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth8Back.remove(cases);
+                                          }
                                           tooth8delete(date);
                                           case8(date);
                                           tooth8Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -2066,7 +2368,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 9'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 9'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth9Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth9Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth9Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -2087,6 +2403,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case9(date);
                                           tooth9Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -2122,10 +2439,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 9'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 9'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth9Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth9Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth9Back.remove(cases);
+                                          }
                                           tooth9delete(date);
                                           case9(date);
                                           tooth9Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -2302,7 +2640,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 10'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 10'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth10Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth10Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth10Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -2323,6 +2675,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case10(date);
                                           tooth10Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -2358,10 +2711,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 10'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 10'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth10Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth10Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth10Back.remove(cases);
+                                          }
                                           tooth10delete(date);
                                           case10(date);
                                           tooth10Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -2538,7 +2912,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 11'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 11'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth11Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth11Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth11Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -2559,6 +2947,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case11(date);
                                           tooth11Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -2594,10 +2983,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 11'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 11'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth11Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth11Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth11Back.remove(cases);
+                                          }
                                           tooth11delete(date);
                                           case11(date);
                                           tooth11Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -2774,7 +3184,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 12'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 12'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth12Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth12Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth12Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -2795,6 +3219,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case12(date);
                                           tooth12Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -2830,10 +3255,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 12'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 12'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth12Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth12Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth12Back.remove(cases);
+                                          }
                                           tooth12delete(date);
                                           case12(date);
                                           tooth12Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -3010,7 +3456,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 13'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 13'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth13Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth13Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth13Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -3031,6 +3491,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case13(date);
                                           tooth13Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -3066,10 +3527,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 13'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 13'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth13Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth13Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth13Back.remove(cases);
+                                          }
                                           tooth13delete(date);
                                           case13(date);
                                           tooth13Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -3246,7 +3728,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 14'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 14'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth14Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth14Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth14Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -3267,6 +3763,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case14(date);
                                           tooth14Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -3302,10 +3799,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 14'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 14'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth14Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth14Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth14Back.remove(cases);
+                                          }
                                           tooth14delete(date);
                                           case14(date);
                                           tooth14Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -3482,7 +4000,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 15'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 15'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth15Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth15Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth15Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -3503,6 +4035,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case15(date);
                                           tooth15Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -3538,10 +4071,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 15'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 15'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth15Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth15Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth15Back.remove(cases);
+                                          }
                                           tooth15delete(date);
                                           case15(date);
                                           tooth15Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -3718,7 +4272,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 16'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 16'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth16Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth16Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth16Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -3739,6 +4307,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case16(date);
                                           tooth16Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -3774,10 +4343,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 16'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 16'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth16Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth16Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth16Back.remove(cases);
+                                          }
                                           tooth16delete(date);
                                           case16(date);
                                           tooth16Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -3954,7 +4544,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 17'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 17'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth17Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth17Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth17Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -3975,6 +4579,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case17(date);
                                           tooth17Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -4010,10 +4615,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 17'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 17'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth17Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth17Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth17Back.remove(cases);
+                                          }
                                           tooth17delete(date);
                                           case17(date);
                                           tooth17Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -4190,7 +4816,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 18'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 18'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth18Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth18Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth18Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -4211,6 +4851,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case18(date);
                                           tooth18Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -4246,10 +4887,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 18'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 18'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth18Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth18Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth18Back.remove(cases);
+                                          }
                                           tooth18delete(date);
                                           case18(date);
                                           tooth18Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -4426,7 +5088,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 19'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 19'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth19Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth19Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth19Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -4447,6 +5123,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case19(date);
                                           tooth19Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -4482,10 +5159,30 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth '][index]['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 19'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth19Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth19Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth19Back.remove(cases);
+                                          }
                                           tooth19delete(date);
                                           case19(date);
                                           tooth19Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -4662,7 +5359,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 20'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 20'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth20Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth20Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth20Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -4683,6 +5394,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case20(date);
                                           tooth20Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -4718,10 +5430,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 20'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 20'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth20Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth20Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth20Back.remove(cases);
+                                          }
                                           tooth20delete(date);
                                           case20(date);
                                           tooth20Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -4898,7 +5631,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 21'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 21'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth21Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth21Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth21Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -4919,6 +5666,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case21(date);
                                           tooth21Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -4954,10 +5702,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 21'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 21'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth21Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth21Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth21Back.remove(cases);
+                                          }
                                           tooth21delete(date);
                                           case21(date);
                                           tooth21Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -5134,7 +5903,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 22'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 22'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth22Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth22Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth22Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -5155,6 +5938,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case22(date);
                                           tooth22Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -5190,10 +5974,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 22'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 22'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth22Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth22Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth22Back.remove(cases);
+                                          }
                                           tooth22delete(date);
                                           case22(date);
                                           tooth22Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -5370,7 +6175,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 23'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 23'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth23Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth23Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth23Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -5391,6 +6210,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case23(date);
                                           tooth23Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -5426,10 +6246,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 23'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 23'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth23Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth23Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth23Back.remove(cases);
+                                          }
                                           tooth23delete(date);
                                           case23(date);
                                           tooth23Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -5606,7 +6447,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 24'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 24'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth24Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth24Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth24Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -5627,6 +6482,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case24(date);
                                           tooth24Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -5662,10 +6518,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 24'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 24'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth24Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth24Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth24Back.remove(cases);
+                                          }
                                           tooth24delete(date);
                                           case24(date);
                                           tooth24Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -5842,7 +6719,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 25'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 25'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth25Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth25Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth25Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -5863,6 +6754,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case25(date);
                                           tooth25Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -5898,10 +6790,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 25'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 25'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth25Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth25Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth25Back.remove(cases);
+                                          }
                                           tooth25delete(date);
                                           case25(date);
                                           tooth25Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -6078,7 +6991,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 26'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 26'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth26Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth26Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth26Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -6099,6 +7026,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case26(date);
                                           tooth26Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -6134,10 +7062,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 26'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 26'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth26Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth26Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth26Back.remove(cases);
+                                          }
                                           tooth26delete(date);
                                           case26(date);
                                           tooth26Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -6314,7 +7263,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 27'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 27'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth27Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth27Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth27Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -6335,6 +7298,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case27(date);
                                           tooth27Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -6370,10 +7334,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 27'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 27'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth27Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth27Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth27Back.remove(cases);
+                                          }
                                           tooth27delete(date);
                                           case27(date);
                                           tooth27Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -6550,7 +7535,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 28'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 28'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth28Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth28Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth28Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -6571,6 +7570,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case28(date);
                                           tooth28Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -6606,10 +7606,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 28'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 28'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth28Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth28Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth28Back.remove(cases);
+                                          }
                                           tooth28delete(date);
                                           case28(date);
                                           tooth28Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -6786,7 +7807,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 29'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 29'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth29Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth29Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth29Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -6807,6 +7842,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case29(date);
                                           tooth29Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -6842,10 +7878,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 29'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 29'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth29Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth29Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth29Back.remove(cases);
+                                          }
                                           tooth29delete(date);
                                           case29(date);
                                           tooth29Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -7022,7 +8079,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 30'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 30'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth30Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth30Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth30Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -7043,6 +8114,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case30(date);
                                           tooth30Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -7078,10 +8150,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 30'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 30'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth30Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth30Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth30Back.remove(cases);
+                                          }
                                           tooth30delete(date);
                                           case30(date);
                                           tooth30Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -7258,7 +8351,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 31'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 31'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth31Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth31Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth31Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -7279,6 +8386,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case31(date);
                                           tooth31Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -7314,10 +8422,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 31'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 31'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth31Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth31Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth31Back.remove(cases);
+                                          }
                                           tooth31delete(date);
                                           case31(date);
                                           tooth31Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -7494,7 +8623,21 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                               .documents[0]
                                               .data['tooth 32'][index]['Detail']
                                               .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 32'][index]['Case']
+                                              .toString();
                                           String status = 'Finised';
+                                          if (position == 'Front') {
+                                            tooth32Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth32Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth32Back.remove(cases);
+                                          }
                                           Map map = ({
                                             'Date': _currentDate
                                                 .toString()
@@ -7515,6 +8658,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                           case32(date);
                                           tooth32Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -7550,10 +8694,31 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             style:
                                                 TextStyle(color: Colors.red)),
                                         onPressed: () {
+                                          String position = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 32'][index]
+                                                  ['Position']
+                                              .toString();
+                                          String cases = snapshot
+                                              .data
+                                              .documents[0]
+                                              .data['tooth 32'][index]['Case']
+                                              .toString();
+                                          if (position == 'Front') {
+                                            tooth32Front.remove(cases);
+                                          }
+                                          if (position == 'Middle') {
+                                            tooth32Middle.remove(cases);
+                                          }
+                                          if (position == 'Back') {
+                                            tooth32Back.remove(cases);
+                                          }
                                           tooth32delete(date);
                                           case32(date);
                                           tooth32Count--;
                                           deleteFromHistory(date);
+                                          dentalHistory();
                                           Navigator.pop(context);
                                         })
                                   ],

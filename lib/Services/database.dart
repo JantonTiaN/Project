@@ -101,7 +101,7 @@ class PatientDatabase {
           .document('history')
           .collection('OnProgress')
           .document('onProgress')
-          .setData({'history': null});
+          .setData({});
       await _firestore
           .collection('FunD')
           .document('funD')
@@ -115,7 +115,7 @@ class PatientDatabase {
           .document('history')
           .collection('Finished')
           .document('finished')
-          .setData({'history': null});
+          .setData({});
       await _firestore
           .collection('FunD')
           .document('funD')
@@ -387,7 +387,7 @@ class PatientWithFBAndGGDatabase {
           .document('history')
           .collection('OnProgress')
           .document('onProgress')
-          .setData({'history': null});
+          .setData({});
       await _firestore
           .collection('FunD')
           .document('funD')
@@ -401,7 +401,7 @@ class PatientWithFBAndGGDatabase {
           .document('history')
           .collection('Finished')
           .document('finished')
-          .setData({'history': null});
+          .setData({});
       await _firestore
           .collection('FunD')
           .document('funD')
