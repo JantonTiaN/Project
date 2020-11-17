@@ -42,10 +42,10 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                     text: 'Finished',
                   )
                 ],
-                indicatorColor: Colors.blue[800],
+                indicatorColor: Colors.white,
                 indicatorWeight: 4,
-                // labelColor: Colors.white,
-                unselectedLabelColor: Colors.black,
+                labelColor: Colors.white,
+                // unselectedLabelColor: Colors.black,
                 labelStyle: TextStyle(fontWeight: FontWeight.bold),
                 unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
               )),
