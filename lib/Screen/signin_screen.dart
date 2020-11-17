@@ -432,10 +432,11 @@ helloPatient(BuildContext context) async {
   getPatientClinic();
   FirebaseUser user = await FirebaseAuth.instance.currentUser();
   String name = user.displayName;
+  String greetingmeg = greeting();
   showDialog<String>(
       context: context,
       builder: (BuildContext context) => AlertDialog(
-            content: Text('Hello, $name'),
+            content: Text('$greetingmeg, $name !'),
             actions: <Widget>[
               FlatButton(
                 child: Text('OK'),
@@ -455,6 +456,8 @@ helloDentist(BuildContext context) async {
   Firestore firestore = Firestore.instance;
   String message;
   String name = user.displayName;
+  String greetingmeg = greeting();
+
   DocumentReference documentReference = firestore
       .collection('FunD')
       .document('funD')
@@ -465,7 +468,7 @@ helloDentist(BuildContext context) async {
   documentReference.get().then((value) => {
         if (value.data['workingTime'] != null)
           {
-            message = 'Hello, $name',
+            message = '$greetingmeg, $name !',
             showDialog<String>(
                 context: context,
                 builder: (BuildContext context) => AlertDialog(
@@ -486,7 +489,8 @@ helloDentist(BuildContext context) async {
           }
         else
           {
-            message = 'Hello, $name กรุณากรอกเวลาทำงานใน Edit profile ด้วยค่ะ',
+            message =
+                'Welcome $name , Plaese fill in your Timetable at Edit Profile ',
             showDialog<String>(
                 context: context,
                 builder: (BuildContext context) => AlertDialog(
@@ -506,4 +510,15 @@ helloDentist(BuildContext context) async {
                     ))
           }
       });
+}
+
+String greeting() {
+  var hour = DateTime.now().hour;
+  if (hour < 12) {
+    return 'Good Morning';
+  }
+  if (hour < 17) {
+    return 'Good Afternoon';
+  }
+  return 'Good Evening';
 }
