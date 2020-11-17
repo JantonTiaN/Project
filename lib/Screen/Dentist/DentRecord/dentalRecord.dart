@@ -156,8 +156,8 @@ getHis() async {
       .document(uid)
       .collection('History')
       .document('history')
-      .collection('Finished')
-      .document('finished');
+      .collection('OnProgress')
+      .document('onProgress');
   onProgressDocumentReference.get().then((value) => {
         if (value.data['history'] != null)
           {onProgressHistory = value.data['history']}
@@ -1681,7 +1681,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth17Detail(context)));
                   },
@@ -1701,7 +1701,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth18Detail(context)));
                   },
@@ -1721,7 +1721,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth19Detail(context)));
                   },
@@ -1741,7 +1741,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth20Detail(context)));
                   },
@@ -1761,7 +1761,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth21Detail(context)));
                   },
@@ -1781,7 +1781,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth22Detail(context)));
                   },
@@ -1801,7 +1801,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth23Detail(context)));
                   },
@@ -1821,7 +1821,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth24Detail(context)));
                   },
@@ -1841,7 +1841,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth25Detail(context)));
                   },
@@ -1861,7 +1861,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth26Detail(context)));
                   },
@@ -1881,7 +1881,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth27Detail(context)));
                   },
@@ -1901,7 +1901,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth28Detail(context)));
                   },
@@ -1921,7 +1921,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth29Detail(context)));
                   },
@@ -1941,7 +1941,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth30Detail(context)));
                   },
@@ -1961,7 +1961,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth31Detail(context)));
                   },
@@ -1981,7 +1981,7 @@ class _DentalRecordState extends State<DentalRecord> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DentalDetail2Screen()
+                            builder: (context) => DentalDetail2Screen(user)
                                 .createState()
                                 .tooth32Detail(context)));
                   },
