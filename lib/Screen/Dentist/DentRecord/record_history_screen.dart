@@ -98,62 +98,80 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                         ],
                       ),
                     );
-                  } else {
-                    return ListView.builder(
-                      itemCount:
-                          snapshot.data.documents[0].data['history'].length,
-                      itemBuilder: (context, index) {
-                        final idx = index + 1;
-                        return Padding(
-                          padding: const EdgeInsets.all(8.0),
-                          child: Card(
-                            child: Container(
-                              child: Row(
-                                children: <Widget>[
-                                  Text(
-                                    '   $idx ',
-                                    style: TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.black),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Case: ' +
-                                            snapshot.data.documents[0]
-                                                    .data['history'][index]
-                                                ['Detail']),
-                                        Text('Date: ' +
-                                            snapshot.data.documents[0]
-                                                    .data['history'][index]
-                                                ['Date']),
-                                        Text('Dentist: ' +
-                                            snapshot.data.documents[0]
-                                                    .data['history'][index]
-                                                ['Dentist']),
-                                        Text(
-                                          'Status: ' +
+                  } else if (snapshot.data.documents[0].data.isNotEmpty) {
+                    if (snapshot.data.documents[0].data['history'].length ==
+                        0) {
+                      return Center(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              '0 history record(s) found',
+                              style: TextStyle(
+                                  fontFamily: 'Kanit',
+                                  color: Colors.blue[300],
+                                  fontSize: 16),
+                            ),
+                          ],
+                        ),
+                      );
+                    } else {
+                      return ListView.builder(
+                        itemCount:
+                            snapshot.data.documents[0].data['history'].length,
+                        itemBuilder: (context, index) {
+                          final idx = index + 1;
+                          return Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Card(
+                              child: Container(
+                                child: Row(
+                                  children: <Widget>[
+                                    Text(
+                                      '   $idx ',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.black),
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text('Case: ' +
                                               snapshot.data.documents[0]
                                                       .data['history'][index]
-                                                  ['Status'],
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.blue),
-                                        )
-                                      ],
-                                    ),
-                                  )
-                                ],
+                                                  ['Detail']),
+                                          Text('Date: ' +
+                                              snapshot.data.documents[0]
+                                                      .data['history'][index]
+                                                  ['Date']),
+                                          Text('Dentist: ' +
+                                              snapshot.data.documents[0]
+                                                      .data['history'][index]
+                                                  ['Dentist']),
+                                          Text(
+                                            'Status: ' +
+                                                snapshot.data.documents[0]
+                                                        .data['history'][index]
+                                                    ['Status'],
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.blue),
+                                          )
+                                        ],
+                                      ),
+                                    )
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        );
-                      },
-                    );
+                          );
+                        },
+                      );
+                    }
                   }
                 },
               ),
