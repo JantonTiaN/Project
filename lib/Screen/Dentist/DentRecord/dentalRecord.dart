@@ -18,7 +18,8 @@ class DentalRecord extends StatefulWidget {
   _DentalRecordState createState() => _DentalRecordState();
 }
 
-var recordHistory = new List();
+var onProgressHistory = new List();
+var finishedHistory = new List();
 String uid;
 
 List<String> tooth1Front = new List();
@@ -120,7 +121,7 @@ List<String> tooth32Back = new List();
 
 getHis() async {
   Firestore firestore = Firestore.instance;
-  DocumentReference hisDocumentReference = firestore
+  DocumentReference onProgressDocumentReference = firestore
       .collection('FunD')
       .document('funD')
       .collection('Clinic')
@@ -130,12 +131,26 @@ getHis() async {
       .collection('Patients')
       .document(uid)
       .collection('History')
-      .document('history');
-  hisDocumentReference.get().then((value) => {
+      .document('history')
+      .collection('OnProgress')
+      .document('onProgress');
+  DocumentReference finishedDocumentReference = firestore
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
+      .collection('Patients')
+      .document(uid)
+      .collection('History')
+      .document('history')
+      .collection('OnProgress')
+      .document('onProgress');
+  finishedDocumentReference.get().then((value) => {
         if (value.data['history'] != null)
-          {recordHistory = value.data['history']}
+          {finishedHistory = value.data['history']}
       });
-  return recordHistory;
 }
 
 class _DentalRecordState extends State<DentalRecord> {

@@ -209,7 +209,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth1delete(date);
                                           case1(date);
@@ -443,11 +443,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth2delete(date);
                                           case2(date);
                                           tooth2Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -676,11 +677,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth3delete(date);
                                           case3(date);
                                           tooth3Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -909,11 +911,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth4delete(date);
                                           case4(date);
                                           tooth4Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -1142,11 +1145,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth5delete(date);
                                           case5(date);
                                           tooth5Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -1375,11 +1379,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth6delete(date);
                                           case6(date);
                                           tooth6Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -1608,11 +1613,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth7delete(date);
                                           case7(date);
                                           tooth7Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -1841,11 +1847,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth8delete(date);
                                           case8(date);
                                           tooth8Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -2074,11 +2081,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth9delete(date);
                                           case9(date);
                                           tooth9Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -2309,11 +2317,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth10delete(date);
                                           case10(date);
                                           tooth10Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -2544,11 +2553,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth11delete(date);
                                           case11(date);
                                           tooth11Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -2779,11 +2789,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth12delete(date);
                                           case12(date);
                                           tooth12Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -3014,11 +3025,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth13delete(date);
                                           case13(date);
                                           tooth13Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -3249,11 +3261,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth14delete(date);
                                           case14(date);
                                           tooth14Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -3484,11 +3497,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth15delete(date);
                                           case15(date);
                                           tooth15Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -3719,11 +3733,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth16delete(date);
                                           case16(date);
                                           tooth16Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -3954,11 +3969,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth17delete(date);
                                           case17(date);
                                           tooth17Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -4189,11 +4205,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth18delete(date);
                                           case18(date);
                                           tooth18Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -4424,11 +4441,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth19delete(date);
                                           case19(date);
                                           tooth19Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -4659,11 +4677,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth20delete(date);
                                           case20(date);
                                           tooth20Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -4894,11 +4913,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth21delete(date);
                                           case21(date);
                                           tooth21Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -5129,11 +5149,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth22delete(date);
                                           case22(date);
                                           tooth22Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -5364,11 +5385,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth23delete(date);
                                           case23(date);
                                           tooth23Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -5599,11 +5621,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth24delete(date);
                                           case24(date);
                                           tooth24Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -5834,11 +5857,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth25delete(date);
                                           case25(date);
                                           tooth25Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -6069,11 +6093,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth26delete(date);
                                           case26(date);
                                           tooth26Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -6304,11 +6329,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth27delete(date);
                                           case27(date);
                                           tooth27Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -6539,11 +6565,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth28delete(date);
                                           case28(date);
                                           tooth28Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -6774,11 +6801,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth29delete(date);
                                           case29(date);
                                           tooth29Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -7009,11 +7037,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth30delete(date);
                                           case30(date);
                                           tooth30Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -7244,11 +7273,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth31delete(date);
                                           case31(date);
                                           tooth31Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -7479,11 +7509,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                                             'Status': status,
                                             'Detail': detail
                                           });
-                                          recordHistory.add(map);
+                                          finishedHistory.add(map);
                                           toothFinish();
                                           tooth32delete(date);
                                           case32(date);
                                           tooth32Count--;
+                                          deleteFromHistory(date);
                                           Navigator.pop(context);
                                         })
                                   ],
@@ -7886,7 +7917,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
         tooth16.removeAt(i);
       }
     }
-    documentReference.updateData({'tooth 7': tooth16});
+    documentReference.updateData({'tooth 16': tooth16});
   }
 
   tooth17delete(String date) {
@@ -8252,14 +8283,16 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
         .collection('Patients')
         .document(uid)
         .collection('History')
-        .document('history');
-    documentReference.updateData({'history': recordHistory});
+        .document('history')
+        .collection('Finished')
+        .document('finished');
+    documentReference.updateData({'history': finishedHistory});
   }
 
   deleteFromHistory(String date) {
-    for (var i = 0; i < recordHistory.length; i++) {
-      if (recordHistory[i]['Date'] == date) {
-        recordHistory.removeAt(i);
+    for (var i = 0; i < onProgressHistory.length; i++) {
+      if (onProgressHistory[i]['Date'] == date) {
+        onProgressHistory.removeAt(i);
       }
     }
     DocumentReference documentReference = Firestore.instance
@@ -8272,8 +8305,10 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
         .collection('Patients')
         .document(uid)
         .collection('History')
-        .document('history');
-    documentReference.updateData({'history': recordHistory});
+        .document('history')
+        .collection('OnProgress')
+        .document('onProgress');
+    documentReference.updateData({'history': onProgressHistory});
   }
 }
 

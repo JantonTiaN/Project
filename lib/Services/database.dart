@@ -99,7 +99,23 @@ class PatientDatabase {
           .document(user.uid)
           .collection('History')
           .document('history')
-          .setData({});
+          .collection('OnProgress')
+          .document('onProgress')
+          .setData({'history': null});
+      await _firestore
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(patient.patientClinic)
+          .document(patient.patientClinic)
+          .collection('Patients')
+          .document(user.uid)
+          .collection('History')
+          .document('history')
+          .collection('Finished')
+          .document('finished')
+          .setData({'history': null});
       await _firestore
           .collection('FunD')
           .document('funD')
@@ -117,8 +133,6 @@ class PatientDatabase {
           'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208';
       user.updateProfile(userUpdateInfo);
       user.updateEmail(patient.patientEmail);
-      print(patient.patientImage);
-      print(user.displayName);
       retVal = 'success';
     } catch (e) {
       print(e);
@@ -371,7 +385,23 @@ class PatientWithFBAndGGDatabase {
           .document(user.uid)
           .collection('History')
           .document('history')
-          .setData({});
+          .collection('OnProgress')
+          .document('onProgress')
+          .setData({'history': null});
+      await _firestore
+          .collection('FunD')
+          .document('funD')
+          .collection('Clinic')
+          .document('clinic')
+          .collection(patient.patientClinic)
+          .document(patient.patientClinic)
+          .collection('Patients')
+          .document(user.uid)
+          .collection('History')
+          .document('history')
+          .collection('Finished')
+          .document('finished')
+          .setData({'history': null});
       await _firestore
           .collection('FunD')
           .document('funD')

@@ -108,6 +108,7 @@ class _PatientListState extends State<PatientList> {
                       itemBuilder: (BuildContext ctx, int index) {
                         return GestureDetector(
                           onTap: () {
+                            clearData();
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
@@ -131,5 +132,106 @@ class _PatientListState extends State<PatientList> {
                       }),
             ),
     );
+  }
+
+  clearData() {
+    finishedHistory.clear();
+    onProgressHistory.clear();
+    tooth1Front.clear();
+    tooth2Front.clear();
+    tooth3Front.clear();
+    tooth4Front.clear();
+    tooth5Front.clear();
+    tooth6Front.clear();
+    tooth7Front.clear();
+    tooth8Front.clear();
+    tooth9Front.clear();
+    tooth10Front.clear();
+    tooth11Front.clear();
+    tooth12Front.clear();
+    tooth13Front.clear();
+    tooth14Front.clear();
+    tooth15Front.clear();
+    tooth16Front.clear();
+    tooth17Front.clear();
+    tooth18Front.clear();
+    tooth19Front.clear();
+    tooth20Front.clear();
+    tooth21Front.clear();
+    tooth22Front.clear();
+    tooth23Front.clear();
+    tooth24Front.clear();
+    tooth25Front.clear();
+    tooth26Front.clear();
+    tooth27Front.clear();
+    tooth28Front.clear();
+    tooth29Front.clear();
+    tooth30Front.clear();
+    tooth31Front.clear();
+    tooth32Front.clear();
+    tooth1Middle.clear();
+    tooth2Middle.clear();
+    tooth3Middle.clear();
+    tooth4Middle.clear();
+    tooth5Middle.clear();
+    tooth6Middle.clear();
+    tooth7Middle.clear();
+    tooth8Middle.clear();
+    tooth9Middle.clear();
+    tooth10Middle.clear();
+    tooth11Middle.clear();
+    tooth12Middle.clear();
+    tooth13Middle.clear();
+    tooth14Middle.clear();
+    tooth15Middle.clear();
+    tooth16Middle.clear();
+    tooth17Middle.clear();
+    tooth18Middle.clear();
+    tooth19Middle.clear();
+    tooth20Middle.clear();
+    tooth21Middle.clear();
+    tooth22Middle.clear();
+    tooth23Middle.clear();
+    tooth24Middle.clear();
+    tooth25Middle.clear();
+    tooth26Middle.clear();
+    tooth27Middle.clear();
+    tooth28Middle.clear();
+    tooth29Middle.clear();
+    tooth30Middle.clear();
+    tooth31Middle.clear();
+    tooth32Middle.clear();
+    tooth1Back.clear();
+    tooth2Back.clear();
+    tooth3Back.clear();
+    tooth4Back.clear();
+    tooth5Back.clear();
+    tooth6Back.clear();
+    tooth7Back.clear();
+    tooth8Back.clear();
+    tooth9Back.clear();
+    tooth10Back.clear();
+    tooth11Back.clear();
+    tooth12Back.clear();
+    tooth13Back.clear();
+    tooth14Back.clear();
+    tooth15Back.clear();
+    tooth16Back.clear();
+    tooth17Back.clear();
+    tooth18Back.clear();
+    tooth19Back.clear();
+    tooth20Back.clear();
+    tooth21Back.clear();
+    tooth22Back.clear();
+    tooth23Back.clear();
+    tooth24Back.clear();
+    tooth25Back.clear();
+    tooth26Back.clear();
+    tooth27Back.clear();
+    tooth28Back.clear();
+    tooth29Back.clear();
+    tooth30Back.clear();
+    tooth31Back.clear();
+    tooth32Back.clear();
   }
 }

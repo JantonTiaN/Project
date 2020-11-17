@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fundee/Screen/signin_screen.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -464,7 +465,6 @@ class _PatientSignUpScreenState extends State<PatientSignUpScreen> {
     FirebaseUser user = await FirebaseAuth.instance.currentUser();
     await user.reload();
     user = await auth.currentUser();
-    Navigator.push(context,
-        MaterialPageRoute(builder: (context) => PatientMenuScreen(user)));
+    helloPatient(context);
   }
 }

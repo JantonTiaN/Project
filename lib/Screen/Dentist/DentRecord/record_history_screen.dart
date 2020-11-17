@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 
 class RecordHistoryScreen extends StatefulWidget {
@@ -61,6 +62,8 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                     .collection('Patients')
                     .document(uid)
                     .collection('History')
+                    .document('history')
+                    .collection('OnProgress')
                     .snapshots(),
                 builder: (BuildContext context,
                     AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -80,7 +83,9 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                         ],
                       ),
                     );
-                  } else if (snapshot.data.documents[0].data.length == 0) {
+                  } else if (snapshot
+                          .data.documents[0].data['history'].length ==
+                      0) {
                     return Center(
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -92,24 +97,13 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                                 color: Colors.blue[300],
                                 fontSize: 16),
                           ),
-                          // )
                         ],
                       ),
                     );
                   } else {
-                    int y = 0;
-                    for (var i = 0;
-                        i < snapshot.data.documents[0].data['history'].length;
-                        i++) {
-                      if (snapshot.data.documents[0].data['history'][i]
-                              ['Status'] ==
-                          'On Progress') {
-                        y++;
-                      }
-                    }
-                    print(y);
                     return ListView.builder(
-                      itemCount: y,
+                      itemCount:
+                          snapshot.data.documents[0].data['history'].length,
                       itemBuilder: (context, index) {
                         final idx = index + 1;
                         return Padding(
@@ -176,6 +170,8 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                     .collection('Patients')
                     .document(uid)
                     .collection('History')
+                    .document('history')
+                    .collection('Finished')
                     .snapshots(),
                 builder: (BuildContext context,
                     AsyncSnapshot<QuerySnapshot> snapshot) {
@@ -224,19 +220,9 @@ class _RecordHistoryScreenState extends State<RecordHistoryScreen> {
                       ),
                     );
                   } else {
-                    int x = 0;
-                    for (var i = 0;
-                        i < snapshot.data.documents[0].data['history'].length;
-                        i++) {
-                      if (snapshot.data.documents[0].data['history'][i]
-                              ['Status'] ==
-                          'Finised') {
-                        x++;
-                      }
-                    }
-                    print(x);
                     return ListView.builder(
-                      itemCount: x,
+                      itemCount:
+                          snapshot.data.documents[0].data['history'].length,
                       itemBuilder: (context, index) {
                         final idx = index + 1;
                         return Padding(

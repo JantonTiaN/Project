@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:fundee/Screen/signin_screen.dart';
 import 'package:fundee/States/current_user.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -67,7 +68,7 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                     FlatButton(
                       child: Text('OK'),
                       onPressed: () {
-                        signupComplete();
+                        helloDentist(context);
                       },
                     )
                   ],
