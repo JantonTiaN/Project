@@ -51,12 +51,12 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
       appBar: AppBar(
         title: Text('Case Detail'),
         backgroundColor: Colors.blue[300],
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back),
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-        ),
+        // leading: IconButton(
+        //   icon: Icon(Icons.arrow_back),
+        //   onPressed: () {
+        //     Navigator.of(context).pop();
+        //   },
+        // ),
       ),
       body: StreamBuilder(
           stream: Firestore.instance
