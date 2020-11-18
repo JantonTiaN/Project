@@ -2,8 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
-import 'package:fundee/Screen/Patient/suggestion_detail_screen.dart';
+import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 
 class PatientHistoryScreen extends StatefulWidget {
   final FirebaseUser user;
@@ -13,6 +12,8 @@ class PatientHistoryScreen extends StatefulWidget {
 }
 
 class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
+  List alldata = [];
+
   @override
   void initState() {
     super.initState();
@@ -278,4 +279,9 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
           )),
     );
   }
+}
+
+String uid;
+void getuserid(String getuserid) {
+  uid = getuserid;
 }
