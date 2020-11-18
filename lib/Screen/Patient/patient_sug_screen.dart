@@ -67,14 +67,7 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                     height: 150,
                   ),
                   Text(
-                    'Oh...',
-                    style: TextStyle(
-                        fontFamily: 'Kanit',
-                        color: Colors.blue[300],
-                        fontSize: 25),
-                  ),
-                  Text(
-                    'You don\'t have any suggestion',
+                    '0 note(s) found',
                     style: TextStyle(
                         fontFamily: 'Kanit',
                         color: Colors.blue[300],
