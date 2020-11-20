@@ -412,8 +412,3 @@ class _DentalHistoryToothCardState extends State<DentalHistoryToothCard> {
     }
   }
 }
-
-String uid;
-void toothid(String getidtohis) {
-  uid = getidtohis;
-}

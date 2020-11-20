@@ -5,6 +5,7 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail1_screen.dart';
+import 'package:fundee/Screen/Dentist/patientList.dart';
 
 class CardDetailScreen extends StatefulWidget {
   // final FirebaseUser user;
@@ -424,9 +425,4 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
         .document('onProgress');
     documentReference.updateData({'history': onProgressHistory});
   }
-}
-
-String uid;
-void patientUid(String patientUid) {
-  uid = patientUid;
 }

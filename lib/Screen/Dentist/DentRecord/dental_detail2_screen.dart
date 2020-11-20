@@ -14,11 +14,6 @@ class DentalDetail2Screen extends StatefulWidget {
   _DentalDetail2ScreenState createState() => _DentalDetail2ScreenState();
 }
 
-String uid;
-void detail2Uid(String getuid) {
-  uid = getuid;
-}
-
 var case17Front = new List();
 var case18Front = new List();
 var case19Front = new List();

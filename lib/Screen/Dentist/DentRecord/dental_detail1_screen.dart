@@ -1,10 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fundee/States/current_user.dart';
-import 'package:fundee/models/account_model.dart';
-import 'package:provider/provider.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/widgets/detail_history_card.dart';
+import 'package:fundee/Screen/Dentist/patientList.dart';
+import 'package:fundee/models/account_model.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dentalRecord.dart';
 
@@ -15,88 +14,10 @@ class DentalDetailScreen extends StatefulWidget {
   _DentalDetailScreenState createState() => _DentalDetailScreenState();
 }
 
-var case1Front = new List();
-var case2Front = new List();
-var case3Front = new List();
-var case4Front = new List();
-var case5Front = new List();
-var case6Front = new List();
-var case7Front = new List();
-var case8Front = new List();
-var case9Front = new List();
-var case10Front = new List();
-var case11Front = new List();
-var case12Front = new List();
-var case13Front = new List();
-var case14Front = new List();
-var case15Front = new List();
-var case16Front = new List();
-var case1Back = new List();
-var case3Back = new List();
-var case4Back = new List();
-var case2Back = new List();
-var case5Back = new List();
-var case6Back = new List();
-var case7Back = new List();
-var case8Back = new List();
-var case9Back = new List();
-var case10Back = new List();
-var case11Back = new List();
-var case12Back = new List();
-var case13Back = new List();
-var case14Back = new List();
-var case15Back = new List();
-var case16Back = new List();
-var case1Middle = new List();
-var case2Middle = new List();
-var case3Middle = new List();
-var case4Middle = new List();
-var case5Middle = new List();
-var case6Middle = new List();
-var case7Middle = new List();
-var case8Middle = new List();
-var case9Middle = new List();
-var case10Middle = new List();
-var case11Middle = new List();
-var case12Middle = new List();
-var case13Middle = new List();
-var case14Middle = new List();
-var case15Middle = new List();
-var case16Middle = new List();
-var tooth1 = new List();
-var tooth2 = new List();
-var tooth3 = new List();
-var tooth4 = new List();
-var tooth5 = new List();
-var tooth6 = new List();
-var tooth7 = new List();
-var tooth8 = new List();
-var tooth9 = new List();
-var tooth10 = new List();
-var tooth11 = new List();
-var tooth12 = new List();
-var tooth13 = new List();
-var tooth14 = new List();
-var tooth15 = new List();
-var tooth16 = new List();
-var tooth17 = new List();
-var tooth18 = new List();
-var tooth19 = new List();
-var tooth20 = new List();
-var tooth21 = new List();
-var tooth22 = new List();
-var tooth23 = new List();
-var tooth24 = new List();
-var tooth25 = new List();
-var tooth26 = new List();
-var tooth27 = new List();
-var tooth28 = new List();
-var tooth29 = new List();
-var tooth30 = new List();
-var tooth31 = new List();
-var tooth32 = new List();
-Map<String, String> map;
-Map<String, String> addCase;
+Firestore firestore = Firestore.instance;
+DocumentReference onProgressDocumentReference,
+    caseDocumentReference,
+    cardDocumentReference;
 
 toothOnTap(
     BuildContext context,
@@ -106,6 +27,45 @@ toothOnTap(
     String _case,
     String position,
     int toothNumber) {
+  onProgressDocumentReference = firestore
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
+      .collection('Patients')
+      .document(uid)
+      .collection('History')
+      .document('history')
+      .collection('OnProgress')
+      .document('onProgress');
+
+  caseDocumentReference = firestore
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
+      .collection('Patients')
+      .document(uid)
+      .collection('DentalCase')
+      .document('dentalCase');
+
+  cardDocumentReference = firestore
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
+      .collection('Patients')
+      .document(uid)
+      .collection('DentalCase')
+      .document('dentalCase')
+      .collection('CaseDetail')
+      .document('caseDetail');
   dentalHistory();
   DateTime _currentDate = new DateTime.now();
   String timeDate =
@@ -157,54 +117,6 @@ toothOnTap(
   onProgressDocumentReference.updateData({'history': onProgressHistory});
   Navigator.pop(context);
 }
-
-String uid;
-void getuid(String getuid) {
-  uid = getuid;
-  toothid(uid);
-}
-
-String caseDetail;
-Firestore firestore = Firestore.instance;
-DocumentReference onProgressDocumentReference = firestore
-    .collection('FunD')
-    .document('funD')
-    .collection('Clinic')
-    .document('clinic')
-    .collection(clinic)
-    .document(clinic)
-    .collection('Patients')
-    .document(uid)
-    .collection('History')
-    .document('history')
-    .collection('OnProgress')
-    .document('onProgress');
-
-DocumentReference caseDocumentReference = firestore
-    .collection('FunD')
-    .document('funD')
-    .collection('Clinic')
-    .document('clinic')
-    .collection(clinic)
-    .document(clinic)
-    .collection('Patients')
-    .document(uid)
-    .collection('DentalCase')
-    .document('dentalCase');
-
-DocumentReference cardDocumentReference = firestore
-    .collection('FunD')
-    .document('funD')
-    .collection('Clinic')
-    .document('clinic')
-    .collection(clinic)
-    .document(clinic)
-    .collection('Patients')
-    .document(uid)
-    .collection('DentalCase')
-    .document('dentalCase')
-    .collection('CaseDetail')
-    .document('caseDetail');
 
 class _DentalDetailScreenState extends State<DentalDetailScreen> {
   List<AccountModel> accountModels = List();

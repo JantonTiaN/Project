@@ -24,8 +24,6 @@ class _DentHomeScreenState extends State<DentHomeScreen> {
   void initState() {
     super.initState();
     getDentistClinic();
-    print(dentistClinic);
-    print(dentistUid);
   }
 
   Map<DateTime, List<dynamic>> _groupEvents(List<EventModel> events) {

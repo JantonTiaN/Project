@@ -469,9 +469,6 @@ helloPatient(BuildContext context) async {
 helloDentist(BuildContext context) async {
   getDentistClinic();
   FirebaseUser user = await FirebaseAuth.instance.currentUser();
-  print(dentistUid);
-  print(dentistClinic);
-  print(user.uid);
   Firestore firestore = Firestore.instance;
   String message;
   String name = user.displayName;

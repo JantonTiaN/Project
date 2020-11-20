@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:fundee/Screen/Dentist/DentRecord/dental_detail1_screen.dart';
 import 'package:fundee/Screen/Dentist/DentRecord/dental_detail2_screen.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/font_awesome_flutter.dart';
@@ -15,6 +14,8 @@ class PatientList extends StatefulWidget {
   @override
   _PatientListState createState() => _PatientListState();
 }
+
+String uid;
 
 class _PatientListState extends State<PatientList> {
   Firestore _firestore = Firestore.instance;
@@ -111,11 +112,11 @@ class _PatientListState extends State<PatientList> {
                         return GestureDetector(
                           onTap: () {
                             clearData();
+                            uid = _patient[index].data['uid'];
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => DentalRecord(
-                                          uid: _patient[index].data['uid'],
                                           fullname:
                                               _patient[index].data['fullName'],
                                         )));
