@@ -176,8 +176,22 @@ dentalHistory() {
       .collection('Patients')
       .document(uid)
       .collection('DentalCase');
+  DocumentReference caseDetailDocument = firestore
+      .collection('FunD')
+      .document('funD')
+      .collection('Clinic')
+      .document('clinic')
+      .collection(clinic)
+      .document(clinic)
+      .collection('Patients')
+      .document(uid)
+      .collection('DentalCase')
+      .document('dentalCase')
+      .collection('CaseDetail')
+      .document('caseDetail');
   collectionReference.document('dentalCase').get().then((value) {
     if (value.data['tooth 1 Front'] != null) {
+      case1Front = value.data['tooth 1 Front'];
       for (var i = 0; i < value.data['tooth 1 Front'].length; i++) {
         if (tooth1Front.contains(value.data['tooth 1 Front'][i]['Case']) ==
             false) {
@@ -946,6 +960,102 @@ dentalHistory() {
       }
     }
   });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 1'] != null) {tooth1 = value.data['tooth 1']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 2'] != null) {tooth2 = value.data['tooth 2']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 3'] != null) {tooth3 = value.data['tooth 3']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 4'] != null) {tooth4 = value.data['tooth 4']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 5'] != null) {tooth5 = value.data['tooth 5']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 6'] != null) {tooth6 = value.data['tooth 6']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 7'] != null) {tooth7 = value.data['tooth 7']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 8'] != null) {tooth8 = value.data['tooth 8']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 9'] != null) {tooth9 = value.data['tooth 9']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 10'] != null) {tooth10 = value.data['tooth 10']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 11'] != null) {tooth11 = value.data['tooth 11']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 12'] != null) {tooth12 = value.data['tooth 12']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 13'] != null) {tooth13 = value.data['tooth 13']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 14'] != null) {tooth14 = value.data['tooth 14']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 15'] != null) {tooth15 = value.data['tooth 15']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 16'] != null) {tooth16 = value.data['tooth 16']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 17'] != null) {tooth17 = value.data['tooth 17']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 18'] != null) {tooth18 = value.data['tooth 18']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 19'] != null) {tooth19 = value.data['tooth 19']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 20'] != null) {tooth20 = value.data['tooth 20']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 21'] != null) {tooth21 = value.data['tooth 21']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 22'] != null) {tooth22 = value.data['tooth 22']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 23'] != null) {tooth23 = value.data['tooth 23']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 24'] != null) {tooth24 = value.data['tooth 24']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 25'] != null) {tooth25 = value.data['tooth 25']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 26'] != null) {tooth26 = value.data['tooth 26']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 27'] != null) {tooth27 = value.data['tooth 27']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 28'] != null) {tooth28 = value.data['tooth 28']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 29'] != null) {tooth29 = value.data['tooth 29']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 30'] != null) {tooth30 = value.data['tooth 30']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 31'] != null) {tooth31 = value.data['tooth 31']}
+      });
+  caseDetailDocument.get().then((value) => {
+        if (value.data['tooth 32'] != null) {tooth32 = value.data['tooth 32']}
+      });
 }
 
 class _DentalRecordState extends State<DentalRecord> {
