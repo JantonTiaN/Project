@@ -420,11 +420,26 @@ getPatientClinic() async {
       .document(user.uid)
       .get()
       .then((value) => {
-            if (value.data['clinic'] != null)
-              {
-                patientClinic = value.data['clinic'],
-                patientUid = value.data['uid']
-              }
+            patientClinic = value.data['clinic'],
+            patientUid = value.data['uid']
+          });
+}
+
+String dentistClinic;
+String dentistUid;
+getDentistClinic() async {
+  FirebaseUser user = await FirebaseAuth.instance.currentUser();
+  Firestore.instance
+      .collection('FunD')
+      .document('funD')
+      .collection('AllUsers')
+      .document('allUsers')
+      .collection('Dentists')
+      .document(user.uid)
+      .get()
+      .then((value) => {
+            dentistClinic = value.data['clinic'],
+            dentistUid = value.data['uid']
           });
 }
 
@@ -452,6 +467,7 @@ helloPatient(BuildContext context) async {
 }
 
 helloDentist(BuildContext context) async {
+  getDentistClinic();
   FirebaseUser user = await FirebaseAuth.instance.currentUser();
   Firestore firestore = Firestore.instance;
   String message;

@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
+import 'package:fundee/Screen/Dentist/patientList.dart';
 import 'package:fundee/Services/database.dart';
 
 class DentSuggestionScreen extends StatefulWidget {
@@ -111,9 +112,4 @@ class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
           ),
         ));
   }
-}
-
-String uid;
-void suggestionuid(String suggestionuid) {
-  uid = suggestionuid;
 }

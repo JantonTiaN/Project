@@ -1,5 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_helpers/firebase_helpers.dart';
 import 'package:flutter/material.dart';
+import 'package:fundee/Screen/signin_screen.dart';
+import 'package:fundee/Services/event.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class DentHomeScreen extends StatefulWidget {
@@ -20,6 +23,18 @@ class _DentHomeScreenState extends State<DentHomeScreen> {
   @override
   void initState() {
     super.initState();
+    getDentistClinic();
+  }
+
+  Map<DateTime, List<dynamic>> _groupEvents(List<EventModel> events) {
+    Map<DateTime, List<dynamic>> data = {};
+    events.forEach((event) {
+      DateTime date = DateTime(
+          event.eventDate.year, event.eventDate.month, event.eventDate.day, 12);
+      if (data[date] == null) data[date] = [];
+      data[date].add(event);
+    });
+    return data;
   }
 
   @override
@@ -45,7 +60,7 @@ class _DentHomeScreenState extends State<DentHomeScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
                   Text(
-                    "Your Plans Today",
+                    "Welcome, ",
                     style: TextStyle(color: Colors.white60, fontSize: 16),
                   ),
                   SizedBox(height: 5),
@@ -59,41 +74,96 @@ class _DentHomeScreenState extends State<DentHomeScreen> {
             SizedBox(
               height: 30,
             ),
-            Flexible(
-              child: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(50),
-                      topRight: Radius.circular(50)),
-                ),
-                child: Column(
-                  children: [
-                    TableCalendar(
-                      calendarController: _calendarController,
-                      events: _events,
-                      availableGestures: AvailableGestures.horizontalSwipe,
-                      // headerStyle: HeaderStyle(formatButtonVisible: false),
-                      initialCalendarFormat: _calendarFormat,
-                      calendarStyle: CalendarStyle(
-                          todayColor: Colors.blue[200],
-                          selectedColor: Colors.blue[600]),
-                      onDaySelected: (date, events) {
-                        setState(() {
-                          _selectedEvents = events;
-                        });
-                      },
+            StreamBuilder<List<EventModel>>(
+                stream: eventDBS.streamList(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    List<EventModel> allEvents = snapshot.data;
+                    if (allEvents.isNotEmpty) {
+                      _events = _groupEvents(allEvents);
+                    } else {
+                      _events = {};
+                      _selectedEvents = [];
+                    }
+                  }
+                  return Flexible(
+                    child: Container(
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(50),
+                            topRight: Radius.circular(50)),
+                      ),
+                      child: Column(
+                        children: [
+                          TableCalendar(
+                            calendarController: _calendarController,
+                            events: _events,
+                            availableGestures:
+                                AvailableGestures.horizontalSwipe,
+                            // headerStyle:
+                            //     HeaderStyle(formatButtonVisible: false),
+                            initialCalendarFormat: _calendarFormat,
+                            calendarStyle: CalendarStyle(
+                                todayColor: Colors.blue[200],
+                                selectedColor: Colors.blue[600]),
+                            onDaySelected: (date, events) {
+                              setState(() {
+                                _selectedEvents = events;
+                              });
+                            },
+                          ),
+                          ..._selectedEvents.map((event) => ListTile(
+                                title: Text(event.title),
+                              )),
+                        ],
+                      ),
                     ),
-                    ..._selectedEvents.map((event) => ListTile(
-                          title: Text(event),
-                        ))
-                  ],
-                ),
-              ),
-            ),
+                  );
+                }),
           ],
         ),
       ),
+      // floatingActionButton: FloatingActionButton(
+      //   child: Icon(Icons.add),
+      //   onPressed: showAddDialog,
+      // ),
     );
   }
+
+  showAddDialog() {
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              content: TextField(
+                controller: _eventController,
+                decoration: InputDecoration(),
+              ),
+              actions: <Widget>[
+                FlatButton(
+                    onPressed: () {
+                      if (_eventController.text.isEmpty) return;
+                      setState(() {
+                        if (_events[_calendarController.selectedDay] != null) {
+                          _events[_calendarController.selectedDay]
+                              .add(_eventController.text);
+                        } else {
+                          _events[_calendarController.selectedDay] = [
+                            _eventController.text
+                          ];
+                        }
+                        _eventController.clear();
+                        Navigator.pop(context);
+                      });
+                    },
+                    child: Text('Save'))
+              ],
+            ));
+  }
+
+  DatabaseService<EventModel> eventDBS = DatabaseService<EventModel>(
+    "FunD/funD/Clinic/clinic/$dentistClinic/$dentistClinic/Dentists/$dentistUid/Appointment",
+    fromDS: (id, data) => EventModel.fromDS(id, data),
+    toMap: (event) => event.toMap(),
+  );
 }
