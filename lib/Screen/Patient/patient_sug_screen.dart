@@ -84,18 +84,6 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
-                    // GestureDetector(
-                    //   onTap: () {
-                    //     Navigator.push(
-                    //         context,
-                    //         MaterialPageRoute(
-                    //             builder: (context) => SuggestionDetailScreen(
-                    //                   suggestion: snapshot.data.documents[0]
-                    //                           .data['suggestion'][index]
-                    //                       ['suggestion'],
-                    //                 )));
-                    //   },
-                    // child:
                     ListTile(
                       leading: Text('$idx'),
                       title: Text(snapshot.data.documents[0].data['suggestion']

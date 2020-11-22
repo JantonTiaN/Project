@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:fundee/Screen/signin_screen.dart';
 import 'package:fundee/Services/event.dart';
 import 'package:table_calendar/table_calendar.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 import 'package:firebase_helpers/firebase_helpers.dart';
 
@@ -119,6 +118,7 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                           ),
                           ..._selectedEvents.map((event) => ListTile(
                                 title: Text(event.title),
+                                subtitle: Text(event.description),
                               )),
                         ],
                       ),

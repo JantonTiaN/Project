@@ -115,6 +115,7 @@ class _DentHomeScreenState extends State<DentHomeScreen> {
                           ),
                           ..._selectedEvents.map((event) => ListTile(
                                 title: Text(event.title),
+                                subtitle: Text(event.description),
                               )),
                         ],
                       ),

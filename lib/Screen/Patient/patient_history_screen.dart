@@ -25,6 +25,7 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
       child: Scaffold(
           appBar: AppBar(
               title: Text('History'),
+              automaticallyImplyLeading: false,
               backgroundColor: Colors.blue[300],
               bottom: TabBar(
                 tabs: <Widget>[
