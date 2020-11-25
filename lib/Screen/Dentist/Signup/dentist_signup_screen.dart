@@ -67,7 +67,17 @@ class _DentistSignUpScreenState extends State<DentistSignUpScreen> {
                   actions: <Widget>[
                     FlatButton(
                       child: Text('OK'),
-                      onPressed: () {
+                      onPressed: () async {
+                        FirebaseUser user =
+                            await FirebaseAuth.instance.currentUser();
+                        UserUpdateInfo userUpdateInfo = new UserUpdateInfo();
+                        if (user != null) {
+                          userUpdateInfo.displayName = fullName;
+                          userUpdateInfo.photoUrl =
+                              'https://firebasestorage.googleapis.com/v0/b/fun-d-d3f33.appspot.com/o/App-Icon-drop-shadow.jpg?alt=media&token=b4e55348-6a2c-47f4-9eec-2a4f4f380208';
+                          user.updateEmail(email);
+                          user.updateProfile(userUpdateInfo);
+                        }
                         helloDentist(context);
                       },
                     )
