@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
-import 'package:fundee/Screen/Patient/suggestion_detail_screen.dart';
 
 class PatientSuggestion extends StatefulWidget {
   final FirebaseUser user;
@@ -67,14 +66,7 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                     height: 150,
                   ),
                   Text(
-                    'Oh...',
-                    style: TextStyle(
-                        fontFamily: 'Kanit',
-                        color: Colors.blue[300],
-                        fontSize: 25),
-                  ),
-                  Text(
-                    'You don\'t have any suggestion',
+                    '0 note(s) found',
                     style: TextStyle(
                         fontFamily: 'Kanit',
                         color: Colors.blue[300],

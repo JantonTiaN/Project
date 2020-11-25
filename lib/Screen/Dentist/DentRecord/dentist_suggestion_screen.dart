@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:fundee/Screen/Dentist/dentist_menu_screen.dart';
 import 'package:fundee/Screen/Dentist/patientList.dart';
 import 'package:fundee/Services/database.dart';
-import 'package:rich_alert/rich_alert.dart';
 
 class DentSuggestionScreen extends StatefulWidget {
   @override

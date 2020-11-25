@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
-import 'package:fundee/Screen/Patient/suggestion_detail_screen.dart';
 
 class PatientHistoryScreen extends StatefulWidget {
   final FirebaseUser user;
