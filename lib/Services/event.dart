@@ -1,21 +1,26 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_helpers/firebase_helpers.dart';
-import 'package:fundee/Screen/Patient/patient_menu_screen.dart';
 
 class EventModel extends DatabaseItem {
   final String id;
   final String title;
   final String description;
   final DateTime eventDate;
+  final String dentistName;
 
-  EventModel({this.id, this.title, this.description, this.eventDate})
-      : super(id);
+  EventModel({
+    this.id,
+    this.title,
+    this.description,
+    this.eventDate,
+    this.dentistName,
+  }) : super(id);
 
   factory EventModel.fromMap(Map data) {
     return EventModel(
       title: data['title'],
       description: data['description'],
       eventDate: data['event_date'],
+      dentistName: data['dentist'],
     );
   }
 
@@ -25,6 +30,7 @@ class EventModel extends DatabaseItem {
       title: data['title'],
       description: data['description'],
       eventDate: data['event_date'].toDate(),
+      dentistName: data['dentist'],
     );
   }
 
@@ -34,7 +40,7 @@ class EventModel extends DatabaseItem {
       "description": description,
       "event_date": eventDate,
       "id": id,
+      "dentist": dentistName,
     };
   }
 }
-  

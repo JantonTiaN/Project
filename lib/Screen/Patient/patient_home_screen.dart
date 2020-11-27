@@ -17,7 +17,7 @@ class PatientHomeScreen extends StatefulWidget {
 class _PatientHomeScreenState extends State<PatientHomeScreen> {
   final Firestore _firebase = Firestore.instance;
   CalendarController _calendarController = CalendarController();
-  CalendarFormat _calendarFormat = CalendarFormat.week;
+  CalendarFormat _calendarFormat = CalendarFormat.month;
   Map<DateTime, List<dynamic>> _events = {};
   List<dynamic> _selectedEvents = [];
   TextEditingController _eventController = TextEditingController();
@@ -43,6 +43,7 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Container(
         // padding: EdgeInsets.symmetric(vertical: 30),
         width: double.infinity,
@@ -97,15 +98,15 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                             topLeft: Radius.circular(50),
                             topRight: Radius.circular(50)),
                       ),
-                      child: Column(
+                      child: ListView(
                         children: [
                           TableCalendar(
                             calendarController: _calendarController,
                             events: _events,
                             availableGestures:
                                 AvailableGestures.horizontalSwipe,
-                            // headerStyle:
-                            //     HeaderStyle(formatButtonVisible: false),
+                            headerStyle:
+                                HeaderStyle(formatButtonVisible: false),
                             initialCalendarFormat: _calendarFormat,
                             calendarStyle: CalendarStyle(
                                 todayColor: Colors.blue[200],
@@ -116,10 +117,22 @@ class _PatientHomeScreenState extends State<PatientHomeScreen> {
                               });
                             },
                           ),
-                          ..._selectedEvents.map((event) => ListTile(
-                                title: Text(event.title),
-                                subtitle: Text(event.description),
-                              )),
+                          ..._selectedEvents.map(
+                            (event) => Flexible(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(width: 0.8),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                margin: const EdgeInsets.symmetric(
+                                    horizontal: 8.0, vertical: 4.0),
+                                child: ListTile(
+                                  title: Text(event.title),
+                                  subtitle: Text(event.description),
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),

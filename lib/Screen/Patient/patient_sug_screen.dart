@@ -84,22 +84,63 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                 return Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: <Widget>[
-                    ListTile(
-                      leading: Text('$idx'),
-                      title: Text(snapshot.data.documents[0].data['suggestion']
-                          [index]['date']),
-                      subtitle: Text(snapshot.data.documents[0]
-                          .data['suggestion'][index]['suggestion']),
-                    ),
                     Padding(
-                      padding: const EdgeInsets.only(right: 8.0),
-                      child: Text('Recorded by: ' +
-                          snapshot.data.documents[0].data['suggestion'][index]
-                              ['dentist']),
-                    ),
-                    Divider(
-                      color: Colors.blueGrey,
-                    ),
+                      padding: const EdgeInsets.all(8.0),
+                      child: Card(
+                        child: Container(
+                          child: Row(
+                            children: <Widget>[
+                              Text(
+                                '   $idx ',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black),
+                              ),
+                              Expanded(
+                                child: Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text('Date: ' +
+                                          snapshot.data.documents[0]
+                                                  .data['suggestion'][index]
+                                              ['date']),
+                                      Text(
+                                        'Text: ' +
+                                            snapshot.data.documents[0]
+                                                    .data['suggestion'][index]
+                                                ['suggestion'],
+                                        overflow: TextOverflow.ellipsis,
+                                        maxLines: 5,
+                                      ),
+                                      Text('Recorded by: ' +
+                                          snapshot.data.documents[0]
+                                                  .data['suggestion'][index]
+                                              ['dentist']),
+                                    ],
+                                  ),
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                    // ListTile(
+                    //   leading: Text('$idx'),
+                    //   title: Text(snapshot.data.documents[0].data['suggestion']
+                    //       [index]['date']),
+                    //   subtitle: Text(snapshot.data.documents[0]
+                    //       .data['suggestion'][index]['suggestion']),
+                    // ),
+                    // Text('Recorded by: ' +
+                    //     snapshot.data.documents[0].data['suggestion'][index]
+                    //         ['dentist']),
+                    // Divider(
+                    //   color: Colors.blueGrey,
                   ],
                 );
               },

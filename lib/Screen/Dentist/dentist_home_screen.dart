@@ -15,7 +15,7 @@ class DentHomeScreen extends StatefulWidget {
 
 class _DentHomeScreenState extends State<DentHomeScreen> {
   CalendarController _calendarController = CalendarController();
-  CalendarFormat _calendarFormat = CalendarFormat.week;
+  CalendarFormat _calendarFormat = CalendarFormat.month;
   Map<DateTime, List<dynamic>> _events = {};
   List<dynamic> _selectedEvents = [];
   TextEditingController _eventController = TextEditingController();
@@ -94,15 +94,15 @@ class _DentHomeScreenState extends State<DentHomeScreen> {
                             topLeft: Radius.circular(50),
                             topRight: Radius.circular(50)),
                       ),
-                      child: Column(
+                      child: ListView(
                         children: [
                           TableCalendar(
                             calendarController: _calendarController,
                             events: _events,
                             availableGestures:
                                 AvailableGestures.horizontalSwipe,
-                            // headerStyle:
-                            //     HeaderStyle(formatButtonVisible: false),
+                            headerStyle:
+                                HeaderStyle(formatButtonVisible: false),
                             initialCalendarFormat: _calendarFormat,
                             calendarStyle: CalendarStyle(
                                 todayColor: Colors.blue[200],
@@ -113,10 +113,22 @@ class _DentHomeScreenState extends State<DentHomeScreen> {
                               });
                             },
                           ),
-                          ..._selectedEvents.map((event) => ListTile(
-                                title: Text(event.title),
-                                subtitle: Text(event.description),
-                              )),
+                          ..._selectedEvents.map(
+                            (event) => Flexible(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  border: Border.all(width: 0.8),
+                                  borderRadius: BorderRadius.circular(12.0),
+                                ),
+                                margin: const EdgeInsets.symmetric(
+                                    horizontal: 8.0, vertical: 4.0),
+                                child: ListTile(
+                                  title: Text(event.title),
+                                  subtitle: Text(event.description),
+                                ),
+                              ),
+                            ),
+                          ),
                         ],
                       ),
                     ),

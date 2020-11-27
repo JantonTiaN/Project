@@ -23,6 +23,7 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+          resizeToAvoidBottomInset: true,
           appBar: AppBar(
               title: Text('History'),
               automaticallyImplyLeading: false,
@@ -115,48 +116,56 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
                           final idx = index + 1;
                           return Padding(
                             padding: const EdgeInsets.all(8.0),
-                            child: Card(
-                              child: Container(
-                                child: Row(
-                                  children: <Widget>[
-                                    Text(
-                                      '   $idx ',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.bold,
-                                          color: Colors.black),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text('Case: ' +
-                                              snapshot.data.documents[0]
-                                                      .data['history'][index]
-                                                  ['Detail']),
-                                          Text('Date: ' +
-                                              snapshot.data.documents[0]
-                                                      .data['history'][index]
-                                                  ['Date']),
-                                          Text('Dentist: ' +
-                                              snapshot.data.documents[0]
-                                                      .data['history'][index]
-                                                  ['Dentist']),
-                                          Text(
-                                            'Status: ' +
-                                                snapshot.data.documents[0]
-                                                        .data['history'][index]
-                                                    ['Status'],
-                                            style: TextStyle(
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.blue),
-                                          )
-                                        ],
+                            child: Flexible(
+                              child: Card(
+                                child: Container(
+                                  child: Row(
+                                    children: <Widget>[
+                                      Text(
+                                        '   $idx ',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.black),
                                       ),
-                                    )
-                                  ],
+                                      Expanded(
+                                        child: Padding(
+                                          padding: const EdgeInsets.all(8.0),
+                                          child: Column(
+                                            mainAxisSize: MainAxisSize.min,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                'Case: ' +
+                                                    snapshot.data.documents[0]
+                                                            .data['history']
+                                                        [index]['Detail'],
+                                                overflow: TextOverflow.ellipsis,
+                                                maxLines: 2,
+                                              ),
+                                              Text('Date: ' +
+                                                  snapshot.data.documents[0]
+                                                          .data['history']
+                                                      [index]['Date']),
+                                              Text('Dentist: ' +
+                                                  snapshot.data.documents[0]
+                                                          .data['history']
+                                                      [index]['Dentist']),
+                                              Text(
+                                                'Status: ' +
+                                                    snapshot.data.documents[0]
+                                                            .data['history']
+                                                        [index]['Status'],
+                                                style: TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Colors.orange),
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
                                 ),
                               ),
                             ),
@@ -233,35 +242,41 @@ class _PatientHistoryScreenState extends State<PatientHistoryScreen> {
                                         fontWeight: FontWeight.bold,
                                         color: Colors.black),
                                   ),
-                                  Padding(
-                                    padding: const EdgeInsets.all(8.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text('Case: ' +
-                                            snapshot.data.documents[0]
-                                                    .data['history'][index]
-                                                ['Detail']),
-                                        Text('Date: ' +
-                                            snapshot.data.documents[0]
-                                                    .data['history'][index]
-                                                ['Date']),
-                                        Text('Dentist: ' +
-                                            snapshot.data.documents[0]
-                                                    .data['history'][index]
-                                                ['Dentist']),
-                                        Text(
-                                          'Status: ' +
+                                  Expanded(
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Column(
+                                        mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Text(
+                                            'Case: ' +
+                                                snapshot.data.documents[0]
+                                                        .data['history'][index]
+                                                    ['Detail'],
+                                            overflow: TextOverflow.ellipsis,
+                                            maxLines: 2,
+                                          ),
+                                          Text('Date: ' +
                                               snapshot.data.documents[0]
                                                       .data['history'][index]
-                                                  ['Status'],
-                                          style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.blue),
-                                        )
-                                      ],
+                                                  ['Date']),
+                                          Text('Dentist: ' +
+                                              snapshot.data.documents[0]
+                                                      .data['history'][index]
+                                                  ['Dentist']),
+                                          Text(
+                                            'Status: ' +
+                                                snapshot.data.documents[0]
+                                                        .data['history'][index]
+                                                    ['Status'],
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.green),
+                                          )
+                                        ],
+                                      ),
                                     ),
                                   )
                                 ],
