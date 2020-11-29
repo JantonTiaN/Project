@@ -6,32 +6,34 @@ class EventModel extends DatabaseItem {
   final String description;
   final DateTime eventDate;
   final String dentistName;
+  final String patientName;
 
-  EventModel({
-    this.id,
-    this.title,
-    this.description,
-    this.eventDate,
-    this.dentistName,
-  }) : super(id);
+  EventModel(
+      {this.id,
+      this.title,
+      this.description,
+      this.eventDate,
+      this.dentistName,
+      this.patientName})
+      : super(id);
 
   factory EventModel.fromMap(Map data) {
     return EventModel(
-      title: data['title'],
-      description: data['description'],
-      eventDate: data['event_date'],
-      dentistName: data['dentist'],
-    );
+        title: data['title'],
+        description: data['description'],
+        eventDate: data['event_date'],
+        dentistName: data['dentist'],
+        patientName: data['patient']);
   }
 
   factory EventModel.fromDS(String id, Map<String, dynamic> data) {
     return EventModel(
-      id: id,
-      title: data['title'],
-      description: data['description'],
-      eventDate: data['event_date'].toDate(),
-      dentistName: data['dentist'],
-    );
+        id: id,
+        title: data['title'],
+        description: data['description'],
+        eventDate: data['event_date'].toDate(),
+        dentistName: data['dentist'],
+        patientName: data['patient']);
   }
 
   Map<String, dynamic> toMap() {
@@ -41,6 +43,7 @@ class EventModel extends DatabaseItem {
       "event_date": eventDate,
       "id": id,
       "dentist": dentistName,
+      "patient": patientName
     };
   }
 }

@@ -131,7 +131,7 @@ class _CardDetailScreenState extends State<CardDetailScreen> {
                             color: Colors.white,
                             child: Card(
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
+                                // mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
                                     snapshot.data.documents[0]
