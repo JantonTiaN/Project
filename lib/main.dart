@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => CurrentUser(),
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: "Fun-D",
         theme: ThemeData(
           primaryColor: bPrimaryColor,
