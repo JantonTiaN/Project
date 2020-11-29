@@ -108,14 +108,14 @@ class _PatientSuggestionState extends State<PatientSuggestion> {
                                           snapshot.data.documents[0]
                                                   .data['suggestion'][index]
                                               ['date']),
-                                      Text(
-                                        'Text: ' +
-                                            snapshot.data.documents[0]
+                                        Text(
+                                        snapshot.data.documents[0]
                                                     .data['suggestion'][index]
                                                 ['suggestion'],
                                         overflow: TextOverflow.ellipsis,
                                         maxLines: 5,
-                                      ),
+                                        style: TextStyle(color: Colors.blue)),
+                                      
                                       Text('Recorded by: ' +
                                           snapshot.data.documents[0]
                                                   .data['suggestion'][index]
