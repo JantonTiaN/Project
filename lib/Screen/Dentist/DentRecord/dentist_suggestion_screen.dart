@@ -74,16 +74,20 @@ class _DentSuggestionScreenState extends State<DentSuggestionScreen> {
                 FittedBox(
                   child: GestureDetector(
                     onTap: () {
-                      DateTime _dateTime = DateTime.now();
-                      sug.add(map = {
-                        'suggestion': _suggestion.text,
-                        'dentist': dentistName,
-                        'date': _dateTime
-                            .toString()
-                            .substring(0, _dateTime.toString().length - 7),
-                      });
-                      suggestion(sug, clinic, uid);
-                      Navigator.pop(context);
+                      if (_suggestion.text != "") {
+                        DateTime _dateTime = DateTime.now();
+                        sug.add(map = {
+                          'suggestion': _suggestion.text,
+                          'dentist': dentistName,
+                          'date': _dateTime
+                              .toString()
+                              .substring(0, _dateTime.toString().length - 7),
+                        });
+                        suggestion(sug, clinic, uid);
+                        Navigator.pop(context);
+                      } else {
+                        print("No Suggestion");
+                      }
                     },
                     child: Container(
                       margin: EdgeInsets.only(bottom: 55),
